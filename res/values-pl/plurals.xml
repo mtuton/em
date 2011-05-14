@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <plurals name="notification_new_one_account_fmt">
+        <item quantity="other">%d nieprzeczytanych (%s)</item>
+        <item quantity="one">%d nieprzeczytanych (%s)</item>
+        <item quantity="few">%d nieprzeczytanych (%s)</item>
+    </plurals>
+    <plurals name="notification_new_multi_account_fmt">
+        <item quantity="other">na %d kontach</item>
+        <item quantity="few">na %d kontach</item>
+    </plurals>
+    <plurals name="search_results_title">
+        <item quantity="other">Wyników dla \"%2$s\": %1$s</item>
+        <item quantity="one">%1$s wynik dla \"%2$s\"</item>
+    </plurals>
+    <plurals name="gal_completed_fmt">
+        <item quantity="other">Liczba wyników: %d z %s</item>
+        <item quantity="one">%d wynik z %s</item>
+    </plurals>
+    <plurals name="message_moved_toast_fmt">
+        <item quantity="other">Liczba przeniesionych wiad.: %1$d</item>
+        <item quantity="one">Przeniesiono 1 wiadomość</item>
+    </plurals>
+    <plurals name="message_deleted_toast">
+        <item quantity="other">Liczba usuniętych wiad.: %1$d</item>
+        <item quantity="one">Usunięto 1 wiadomość</item>
+    </plurals>
+    <plurals name="message_delete_text">
+        <item quantity="other">Liczba elementów, które zostaną usunięte: %1$d</item>
+        <item quantity="one">Ten widget zostanie usunięty</item>
+    </plurals>
+</resources>

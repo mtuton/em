@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.android.email.activity.MessageListItem android:layout_width="fill_parent" android:layout_height="?android:listPreferredItemHeight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <View android:id="@id/chip" android:background="@android:drawable/title_bar" android:layout_width="4.0dip" android:layout_height="fill_parent" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/selected" android:paddingLeft="4.0dip" android:paddingTop="17.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_check_buttonless_dark_off" android:layout_toRightOf="@id/chip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+            <ImageView android:id="@id/priority_listview" android:paddingTop="6.0dip" android:visibility="gone" android:layout_width="40.0px" android:layout_height="40.0px" android:layout_toLeftOf="@id/attachment" />
+            <ImageView android:id="@id/attachment" android:paddingTop="6.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0px" android:src="@drawable/list_icon_attach" android:layout_toLeftOf="@id/follow_up_flag" />
+            <ImageView android:id="@id/follow_up_flag" android:paddingTop="6.0dip" android:visibility="gone" android:layout_width="40.0px" android:layout_height="40.0px" android:src="@drawable/list_icon_flag" android:layout_toLeftOf="@id/favorite" />
+            <ImageView android:id="@id/favorite" android:paddingTop="6.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0px" android:src="@drawable/list_icon_favorite_off" android:layout_toLeftOf="@id/view_blank_temp_1" />
+            <View android:id="@id/view_blank_temp_1" android:visibility="gone" android:layout_width="1.0px" android:layout_height="40.0px" android:layout_alignParentRight="true" />
+        </LinearLayout>
+        <ImageView android:id="@id/listItem_thread_updown" android:paddingTop="7.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/list_icon_expandable_up" android:layout_alignParentRight="true" />
+        <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLineSecondaryGrey" android:id="@id/date" android:paddingTop="35.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_alignParentRight="true" />
+        <TextView android:textAppearance="@style/EmailTextAppearanceMiddle" android:ellipsize="end" android:id="@id/subject" android:paddingLeft="5.0dip" android:paddingTop="6.0dip" android:paddingRight="10.0px" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:singleLine="true" android:layout_toLeftOf="@id/date" android:layout_toRightOf="@id/selected" />
+        <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLineSecondary" android:ellipsize="end" android:id="@id/display_name" android:paddingLeft="10.0px" android:paddingTop="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:drawablePadding="4.0dip" android:layout_toLeftOf="@id/date" android:layout_toRightOf="@id/selected" android:layout_below="@id/subject" />
+    </RelativeLayout>
+    <View android:id="@id/Lineview" android:background="@android:drawable/divider_horizontal_dark" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</com.android.email.activity.MessageListItem>
