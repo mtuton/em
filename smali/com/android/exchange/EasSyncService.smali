@@ -215,91 +215,27 @@
     iput-object v3, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 282
-    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+	const-string v0, "Apple-iPhone3C1/803.148"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
     .line 283
-    iget-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
+    # const-string v0, "Apple-iPhone3C1/803.148"
 
-    const-string v1, "\\-"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
+    # iput-object v0, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
 
     .line 284
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v1, v1, v2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v1, v1, v4
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    const-string v0, "iPhone"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
 
     .line 285
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "SAMSUNG"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    const-string v0, "iPhone"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
     .line 286
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "SAMSUNG-"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    const-string v0, "Apple-iPhone3C1/803.148"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
@@ -405,91 +341,27 @@
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 282
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+	const-string v1, "Apple-iPhone3C1/803.148"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
     .line 283
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
+    # const-string v1, "Apple-iPhone3C1/803.148"
 
-    const-string v2, "\\-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
+    # iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
 
     .line 284
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v2, v2, v3
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v2, v2, v4
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "iPhone"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
 
     .line 285
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SAMSUNG"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "iPhone"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
     .line 286
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SAMSUNG-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "Apple-iPhone3C1/803.148"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
@@ -648,91 +520,27 @@
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 282
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+	const-string v1, "Apple-iPhone3C1/803.148"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
     .line 283
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
+    # const-string v1, "Apple-iPhone3C1/803.148"
 
-    const-string v2, "\\-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
+    # iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
 
     .line 284
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v2, v2, v3
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v2, v2, v4
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "iPhone"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
 
     .line 285
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SAMSUNG"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "iPhone"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
     .line 286
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SAMSUNG-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "Apple-iPhone3C1/803.148"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
@@ -912,91 +720,27 @@
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 282
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+	const-string v1, "Apple-iPhone3C1/803.148"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
     .line 283
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
+    # const-string v1, "Apple-iPhone3C1/803.148"
 
-    const-string v2, "\\-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
+    # iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
 
     .line 284
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v2, v2, v3
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v2, v2, v4
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "iPhone"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
 
     .line 285
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SAMSUNG"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "iPhone"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
     .line 286
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SAMSUNG-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "Apple-iPhone3C1/803.148"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
@@ -1154,91 +898,27 @@
     iput-object v3, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 282
-    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+	const-string v0, "Apple-iPhone3C1/803.148"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
     .line 283
-    iget-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
+	# const-string v0, "Apple-iPhone3C1/803.148"
 
-    const-string v1, "\\-"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
+    # iput-object v0, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
 
     .line 284
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v1, v1, v2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v1, v1, v4
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    const-string v0, "iPhone"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
 
     .line 285
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "SAMSUNG"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    const-string v0, "iPhone"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
     .line 286
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "SAMSUNG-"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+	const-string v0, "Apple-iPhone3C1/803.148"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
@@ -19122,29 +18802,29 @@
 
     move-result-object v2
 
-    const/16 v3, 0x2f
+    # const/16 v3, 0x2f
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    # invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    # move-result-object v2
 
-    const-string v3, "100"
+    # const-string v3, "100"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    # invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    # move-result-object v2
 
-    const-string v3, "."
+    # const-string v3, "."
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    # invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    # move-result-object v2
 
-    const-string v3, "202"
+    # const-string v3, "202"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    # invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    # move-result-object v2
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
