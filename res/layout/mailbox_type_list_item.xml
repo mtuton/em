@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CheckedTextView android:textAppearance="?android:textAppearanceLargeInverse" android:textSize="33.0px" android:gravity="left" android:id="@id/mailbox_type" android:paddingLeft="20.0px" android:paddingTop="31.0px" android:paddingBottom="31.0px" android:layout_width="fill_parent" android:layout_height="?android:listPreferredItemHeight" android:layout_marginTop="1.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" />
