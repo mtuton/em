@@ -1,0 +1,1 @@
+jarsigner -verbose -keystore ~/development/keystore/my-release.keystore -signedjar File_signed.apk File.apk androidKey
