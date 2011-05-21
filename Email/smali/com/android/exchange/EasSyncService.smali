@@ -186,15 +186,15 @@
 
     const/4 v2, 0x0
 
-    .line 381
+    .line 380
     invoke-direct {p0, p1}, Lcom/android/exchange/AbstractSyncService;-><init>(Landroid/content/Context;)V
 
-    .line 271
+    .line 270
     const-string v0, "2.5"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
-    .line 274
+    .line 273
     iget-object v0, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -207,158 +207,94 @@
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersionDouble:Ljava/lang/Double;
 
-    .line 278
+    .line 277
     iput-object v3, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
-    .line 283
-    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    .line 282
+	const-string v0, "Apple-iPhone3C1/803.148"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
+    .line 283
+    # const-string v0, "Apple-iPhone3C1/803.148"
+
+    # iput-object v0, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
+
     .line 284
-    iget-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    const-string v1, "\\-"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    .line 285
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v1, v1, v2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v1, v1, v4
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    const-string v0, "iPhone"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
 
-    .line 286
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "SAMSUNG"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    .line 285
+    const-string v0, "iPhone"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
-    .line 287
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "SAMSUNG-"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    .line 286
+    const-string v0, "Apple-iPhone3C1/803.148"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
-    .line 291
+    .line 290
     iput-object v3, p0, Lcom/android/exchange/EasSyncService;->mAuthString:Ljava/lang/String;
 
-    .line 292
+    .line 291
     iput-object v3, p0, Lcom/android/exchange/EasSyncService;->mCmdString:Ljava/lang/String;
 
-    .line 300
+    .line 299
     iput-boolean v4, p0, Lcom/android/exchange/EasSyncService;->mSsl:Z
 
-    .line 301
+    .line 300
     iput-boolean v2, p0, Lcom/android/exchange/EasSyncService;->mTrustSsl:Z
 
-    .line 303
+    .line 302
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mBindArguments:[Ljava/lang/String;
 
-    .line 306
+    .line 305
     iput-object v3, p0, Lcom/android/exchange/EasSyncService;->mPendingPost:Lorg/apache/http/client/methods/HttpPost;
 
-    .line 307
+    .line 306
     iput-boolean v2, p0, Lcom/android/exchange/EasSyncService;->commandFinished:Z
 
-    .line 309
+    .line 308
     const/16 v0, 0x78
 
     iput v0, p0, Lcom/android/exchange/EasSyncService;->mPingForceHeartbeat:I
 
-    .line 312
+    .line 311
     iput v5, p0, Lcom/android/exchange/EasSyncService;->mPingMinHeartbeat:I
 
-    .line 314
+    .line 313
     const/16 v0, 0xdca
 
     iput v0, p0, Lcom/android/exchange/EasSyncService;->mPingMaxHeartbeat:I
 
-    .line 316
+    .line 315
     iput v5, p0, Lcom/android/exchange/EasSyncService;->mPingHeartbeat:I
 
-    .line 318
+    .line 317
     iput v2, p0, Lcom/android/exchange/EasSyncService;->mPingHighWaterMark:I
 
-    .line 320
+    .line 319
     iput-boolean v2, p0, Lcom/android/exchange/EasSyncService;->mPingHeartbeatDropped:Z
 
-    .line 322
+    .line 321
     iput-boolean v2, p0, Lcom/android/exchange/EasSyncService;->mPostAborted:Z
 
-    .line 324
+    .line 323
     iput-boolean v2, p0, Lcom/android/exchange/EasSyncService;->mPostReset:Z
 
-    .line 326
+    .line 325
     iput-boolean v4, p0, Lcom/android/exchange/EasSyncService;->mIsValid:Z
 
-    .line 328
+    .line 327
     iput-boolean v2, p0, Lcom/android/exchange/EasSyncService;->mIsHTMLDisabled:Z
 
-    .line 382
+    .line 381
     return-void
 .end method
 
@@ -376,15 +312,15 @@
 
     const/4 v3, 0x0
 
-    .line 353
+    .line 352
     invoke-direct {p0, p1, p2}, Lcom/android/exchange/AbstractSyncService;-><init>(Landroid/content/Context;Lcom/android/email/provider/EmailContent$Account;)V
 
-    .line 271
+    .line 270
     const-string v1, "2.5"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
-    .line 274
+    .line 273
     iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -397,165 +333,101 @@
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersionDouble:Ljava/lang/Double;
 
-    .line 278
+    .line 277
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
-    .line 283
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    .line 282
+	const-string v1, "Apple-iPhone3C1/803.148"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
+    .line 283
+    # const-string v1, "Apple-iPhone3C1/803.148"
+
+    # iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
+
     .line 284
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    const-string v2, "\\-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    .line 285
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v2, v2, v3
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v2, v2, v4
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "iPhone"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
 
-    .line 286
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SAMSUNG"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    .line 285
+    const-string v1, "iPhone"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
-    .line 287
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SAMSUNG-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    .line 286
+    const-string v1, "Apple-iPhone3C1/803.148"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
-    .line 291
+    .line 290
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mAuthString:Ljava/lang/String;
 
-    .line 292
+    .line 291
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mCmdString:Ljava/lang/String;
 
-    .line 300
+    .line 299
     iput-boolean v4, p0, Lcom/android/exchange/EasSyncService;->mSsl:Z
 
-    .line 301
+    .line 300
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mTrustSsl:Z
 
-    .line 303
+    .line 302
     const/4 v1, 0x2
 
     new-array v1, v1, [Ljava/lang/String;
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mBindArguments:[Ljava/lang/String;
 
-    .line 306
+    .line 305
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mPendingPost:Lorg/apache/http/client/methods/HttpPost;
 
-    .line 307
+    .line 306
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->commandFinished:Z
 
-    .line 309
+    .line 308
     const/16 v1, 0x78
 
     iput v1, p0, Lcom/android/exchange/EasSyncService;->mPingForceHeartbeat:I
 
-    .line 312
+    .line 311
     iput v6, p0, Lcom/android/exchange/EasSyncService;->mPingMinHeartbeat:I
 
-    .line 314
+    .line 313
     const/16 v1, 0xdca
 
     iput v1, p0, Lcom/android/exchange/EasSyncService;->mPingMaxHeartbeat:I
 
-    .line 316
+    .line 315
     iput v6, p0, Lcom/android/exchange/EasSyncService;->mPingHeartbeat:I
 
-    .line 318
+    .line 317
     iput v3, p0, Lcom/android/exchange/EasSyncService;->mPingHighWaterMark:I
 
-    .line 320
+    .line 319
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mPingHeartbeatDropped:Z
 
-    .line 322
+    .line 321
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mPostAborted:Z
 
-    .line 324
+    .line 323
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mPostReset:Z
 
-    .line 326
+    .line 325
     iput-boolean v4, p0, Lcom/android/exchange/EasSyncService;->mIsValid:Z
 
-    .line 328
+    .line 327
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mIsHTMLDisabled:Z
 
-    .line 354
+    .line 353
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 355
+    .line 354
     iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mHostAuthKeyRecv:J
@@ -564,7 +436,7 @@
 
     move-result-object v0
 
-    .line 356
+    .line 355
     .local v0, ha:Lcom/android/email/provider/EmailContent$HostAuth;
     iget v1, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
@@ -577,7 +449,7 @@
     :goto_0
     iput-boolean v1, p0, Lcom/android/exchange/EasSyncService;->mSsl:Z
 
-    .line 357
+    .line 356
     iget v1, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
     and-int/lit8 v1, v1, 0x8
@@ -589,19 +461,19 @@
     :goto_1
     iput-boolean v1, p0, Lcom/android/exchange/EasSyncService;->mTrustSsl:Z
 
-    .line 358
+    .line 357
     return-void
 
     :cond_0
     move v1, v3
 
-    .line 356
+    .line 355
     goto :goto_0
 
     :cond_1
     move v1, v3
 
-    .line 357
+    .line 356
     goto :goto_1
 .end method
 
@@ -619,15 +491,15 @@
 
     const/4 v3, 0x0
 
-    .line 334
+    .line 333
     invoke-direct {p0, p1, p2}, Lcom/android/exchange/AbstractSyncService;-><init>(Landroid/content/Context;Lcom/android/email/provider/EmailContent$Mailbox;)V
 
-    .line 271
+    .line 270
     const-string v1, "2.5"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
-    .line 274
+    .line 273
     iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -640,177 +512,113 @@
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersionDouble:Ljava/lang/Double;
 
-    .line 278
+    .line 277
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
-    .line 283
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    .line 282
+	const-string v1, "Apple-iPhone3C1/803.148"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
+    .line 283
+    # const-string v1, "Apple-iPhone3C1/803.148"
+
+    # iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
+
     .line 284
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    const-string v2, "\\-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    .line 285
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v2, v2, v3
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v2, v2, v4
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "iPhone"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
 
-    .line 286
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SAMSUNG"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    .line 285
+    const-string v1, "iPhone"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
-    .line 287
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SAMSUNG-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    .line 286
+    const-string v1, "Apple-iPhone3C1/803.148"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
-    .line 291
+    .line 290
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mAuthString:Ljava/lang/String;
 
-    .line 292
+    .line 291
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mCmdString:Ljava/lang/String;
 
-    .line 300
+    .line 299
     iput-boolean v4, p0, Lcom/android/exchange/EasSyncService;->mSsl:Z
 
-    .line 301
+    .line 300
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mTrustSsl:Z
 
-    .line 303
+    .line 302
     const/4 v1, 0x2
 
     new-array v1, v1, [Ljava/lang/String;
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mBindArguments:[Ljava/lang/String;
 
-    .line 306
+    .line 305
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mPendingPost:Lorg/apache/http/client/methods/HttpPost;
 
-    .line 307
+    .line 306
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->commandFinished:Z
 
-    .line 309
+    .line 308
     const/16 v1, 0x78
 
     iput v1, p0, Lcom/android/exchange/EasSyncService;->mPingForceHeartbeat:I
 
-    .line 312
+    .line 311
     iput v6, p0, Lcom/android/exchange/EasSyncService;->mPingMinHeartbeat:I
 
-    .line 314
+    .line 313
     const/16 v1, 0xdca
 
     iput v1, p0, Lcom/android/exchange/EasSyncService;->mPingMaxHeartbeat:I
 
-    .line 316
+    .line 315
     iput v6, p0, Lcom/android/exchange/EasSyncService;->mPingHeartbeat:I
 
-    .line 318
+    .line 317
     iput v3, p0, Lcom/android/exchange/EasSyncService;->mPingHighWaterMark:I
 
-    .line 320
+    .line 319
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mPingHeartbeatDropped:Z
 
-    .line 322
+    .line 321
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mPostAborted:Z
 
-    .line 324
+    .line 323
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mPostReset:Z
 
-    .line 326
+    .line 325
     iput-boolean v4, p0, Lcom/android/exchange/EasSyncService;->mIsValid:Z
 
-    .line 328
+    .line 327
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mIsHTMLDisabled:Z
 
-    .line 335
+    .line 334
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 336
+    .line 335
     iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     if-nez v1, :cond_0
 
-    .line 337
+    .line 336
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mIsValid:Z
 
-    .line 347
+    .line 346
     :goto_0
     return-void
 
-    .line 340
+    .line 339
     :cond_0
     iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
@@ -820,16 +628,16 @@
 
     move-result-object v0
 
-    .line 341
+    .line 340
     .local v0, ha:Lcom/android/email/provider/EmailContent$HostAuth;
     if-nez v0, :cond_1
 
-    .line 342
+    .line 341
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mIsValid:Z
 
     goto :goto_0
 
-    .line 345
+    .line 344
     :cond_1
     iget v1, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
@@ -842,7 +650,7 @@
     :goto_1
     iput-boolean v1, p0, Lcom/android/exchange/EasSyncService;->mSsl:Z
 
-    .line 346
+    .line 345
     iget v1, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
     and-int/lit8 v1, v1, 0x8
@@ -859,13 +667,13 @@
     :cond_2
     move v1, v3
 
-    .line 345
+    .line 344
     goto :goto_1
 
     :cond_3
     move v1, v3
 
-    .line 346
+    .line 345
     goto :goto_2
 .end method
 
@@ -883,15 +691,15 @@
 
     const/4 v3, 0x0
 
-    .line 363
+    .line 362
     invoke-direct {p0, p1, p2}, Lcom/android/exchange/AbstractSyncService;-><init>(Landroid/content/Context;Lcom/android/email/provider/EmailContent$Message;)V
 
-    .line 271
+    .line 270
     const-string v1, "2.5"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
-    .line 274
+    .line 273
     iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -904,165 +712,101 @@
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersionDouble:Ljava/lang/Double;
 
-    .line 278
+    .line 277
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
-    .line 283
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    .line 282
+	const-string v1, "Apple-iPhone3C1/803.148"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
+    .line 283
+    # const-string v1, "Apple-iPhone3C1/803.148"
+
+    # iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
+
     .line 284
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    const-string v2, "\\-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    .line 285
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v2, v2, v3
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v2, v2, v4
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "iPhone"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
 
-    .line 286
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SAMSUNG"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    .line 285
+    const-string v1, "iPhone"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
-    .line 287
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SAMSUNG-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    .line 286
+    const-string v1, "Apple-iPhone3C1/803.148"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
-    .line 291
+    .line 290
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mAuthString:Ljava/lang/String;
 
-    .line 292
+    .line 291
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mCmdString:Ljava/lang/String;
 
-    .line 300
+    .line 299
     iput-boolean v4, p0, Lcom/android/exchange/EasSyncService;->mSsl:Z
 
-    .line 301
+    .line 300
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mTrustSsl:Z
 
-    .line 303
+    .line 302
     const/4 v1, 0x2
 
     new-array v1, v1, [Ljava/lang/String;
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mBindArguments:[Ljava/lang/String;
 
-    .line 306
+    .line 305
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mPendingPost:Lorg/apache/http/client/methods/HttpPost;
 
-    .line 307
+    .line 306
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->commandFinished:Z
 
-    .line 309
+    .line 308
     const/16 v1, 0x78
 
     iput v1, p0, Lcom/android/exchange/EasSyncService;->mPingForceHeartbeat:I
 
-    .line 312
+    .line 311
     iput v6, p0, Lcom/android/exchange/EasSyncService;->mPingMinHeartbeat:I
 
-    .line 314
+    .line 313
     const/16 v1, 0xdca
 
     iput v1, p0, Lcom/android/exchange/EasSyncService;->mPingMaxHeartbeat:I
 
-    .line 316
+    .line 315
     iput v6, p0, Lcom/android/exchange/EasSyncService;->mPingHeartbeat:I
 
-    .line 318
+    .line 317
     iput v3, p0, Lcom/android/exchange/EasSyncService;->mPingHighWaterMark:I
 
-    .line 320
+    .line 319
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mPingHeartbeatDropped:Z
 
-    .line 322
+    .line 321
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mPostAborted:Z
 
-    .line 324
+    .line 323
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mPostReset:Z
 
-    .line 326
+    .line 325
     iput-boolean v4, p0, Lcom/android/exchange/EasSyncService;->mIsValid:Z
 
-    .line 328
+    .line 327
     iput-boolean v3, p0, Lcom/android/exchange/EasSyncService;->mIsHTMLDisabled:Z
 
-    .line 364
+    .line 363
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 365
+    .line 364
     iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mHostAuthKeyRecv:J
@@ -1071,7 +815,7 @@
 
     move-result-object v0
 
-    .line 366
+    .line 365
     .local v0, ha:Lcom/android/email/provider/EmailContent$HostAuth;
     iget v1, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
@@ -1084,7 +828,7 @@
     :goto_0
     iput-boolean v1, p0, Lcom/android/exchange/EasSyncService;->mSsl:Z
 
-    .line 367
+    .line 366
     iget v1, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
     and-int/lit8 v1, v1, 0x8
@@ -1096,19 +840,19 @@
     :goto_1
     iput-boolean v1, p0, Lcom/android/exchange/EasSyncService;->mTrustSsl:Z
 
-    .line 368
+    .line 367
     return-void
 
     :cond_0
     move v1, v3
 
-    .line 366
+    .line 365
     goto :goto_0
 
     :cond_1
     move v1, v3
 
-    .line 367
+    .line 366
     goto :goto_1
 .end method
 
@@ -1125,15 +869,15 @@
 
     const/4 v2, 0x0
 
-    .line 372
+    .line 371
     invoke-direct {p0, p1}, Lcom/android/exchange/AbstractSyncService;-><init>(Ljava/lang/String;)V
 
-    .line 271
+    .line 270
     const-string v0, "2.5"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
-    .line 274
+    .line 273
     iget-object v0, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -1146,158 +890,94 @@
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersionDouble:Ljava/lang/Double;
 
-    .line 278
+    .line 277
     iput-object v3, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
-    .line 283
-    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    .line 282
+	const-string v0, "Apple-iPhone3C1/803.148"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
+    .line 283
+	# const-string v0, "Apple-iPhone3C1/803.148"
+
+    # iput-object v0, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
+
     .line 284
-    iget-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    const-string v1, "\\-"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    .line 285
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v1, v1, v2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
-
-    aget-object v1, v1, v4
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    const-string v0, "iPhone"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
 
-    .line 286
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "SAMSUNG"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    .line 285
+    const-string v0, "iPhone"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
-    .line 287
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "SAMSUNG-"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    .line 286
+	const-string v0, "Apple-iPhone3C1/803.148"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
-    .line 291
+    .line 290
     iput-object v3, p0, Lcom/android/exchange/EasSyncService;->mAuthString:Ljava/lang/String;
 
-    .line 292
+    .line 291
     iput-object v3, p0, Lcom/android/exchange/EasSyncService;->mCmdString:Ljava/lang/String;
 
-    .line 300
+    .line 299
     iput-boolean v4, p0, Lcom/android/exchange/EasSyncService;->mSsl:Z
 
-    .line 301
+    .line 300
     iput-boolean v2, p0, Lcom/android/exchange/EasSyncService;->mTrustSsl:Z
 
-    .line 303
+    .line 302
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mBindArguments:[Ljava/lang/String;
 
-    .line 306
+    .line 305
     iput-object v3, p0, Lcom/android/exchange/EasSyncService;->mPendingPost:Lorg/apache/http/client/methods/HttpPost;
 
-    .line 307
+    .line 306
     iput-boolean v2, p0, Lcom/android/exchange/EasSyncService;->commandFinished:Z
 
-    .line 309
+    .line 308
     const/16 v0, 0x78
 
     iput v0, p0, Lcom/android/exchange/EasSyncService;->mPingForceHeartbeat:I
 
-    .line 312
+    .line 311
     iput v5, p0, Lcom/android/exchange/EasSyncService;->mPingMinHeartbeat:I
 
-    .line 314
+    .line 313
     const/16 v0, 0xdca
 
     iput v0, p0, Lcom/android/exchange/EasSyncService;->mPingMaxHeartbeat:I
 
-    .line 316
+    .line 315
     iput v5, p0, Lcom/android/exchange/EasSyncService;->mPingHeartbeat:I
 
-    .line 318
+    .line 317
     iput v2, p0, Lcom/android/exchange/EasSyncService;->mPingHighWaterMark:I
 
-    .line 320
+    .line 319
     iput-boolean v2, p0, Lcom/android/exchange/EasSyncService;->mPingHeartbeatDropped:Z
 
-    .line 322
+    .line 321
     iput-boolean v2, p0, Lcom/android/exchange/EasSyncService;->mPostAborted:Z
 
-    .line 324
+    .line 323
     iput-boolean v2, p0, Lcom/android/exchange/EasSyncService;->mPostReset:Z
 
-    .line 326
+    .line 325
     iput-boolean v4, p0, Lcom/android/exchange/EasSyncService;->mIsValid:Z
 
-    .line 328
+    .line 327
     iput-boolean v2, p0, Lcom/android/exchange/EasSyncService;->mIsHTMLDisabled:Z
 
-    .line 373
+    .line 372
     return-void
 .end method
 
