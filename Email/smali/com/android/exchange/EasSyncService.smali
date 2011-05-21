@@ -211,12 +211,12 @@
     iput-object v3, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 282
-	const-string v0, "Apple-iPhone3C1/803.148"
+    const-string v0, "Apple-iPhone3C1"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
     .line 283
-    # const-string v0, "Apple-iPhone3C1/803.148"
+    # const-string v0, "Apple-iPhone3C1"
 
     # iput-object v0, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
 
@@ -231,7 +231,7 @@
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
     .line 286
-    const-string v0, "Apple-iPhone3C1/803.148"
+    const-string v0, "Apple-iPhone3C1"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
@@ -337,12 +337,12 @@
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 282
-	const-string v1, "Apple-iPhone3C1/803.148"
+    const-string v1, "Apple-iPhone3C1"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
     .line 283
-    # const-string v1, "Apple-iPhone3C1/803.148"
+    # const-string v1, "Apple-iPhone3C1"
 
     # iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
 
@@ -357,7 +357,7 @@
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
     .line 286
-    const-string v1, "Apple-iPhone3C1/803.148"
+    const-string v1, "Apple-iPhone3C1"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
@@ -516,12 +516,12 @@
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 282
-	const-string v1, "Apple-iPhone3C1/803.148"
+	const-string v1, "Apple-iPhone3C1"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
     .line 283
-    # const-string v1, "Apple-iPhone3C1/803.148"
+    # const-string v1, "Apple-iPhone3C1"
 
     # iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
 
@@ -536,7 +536,7 @@
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
     .line 286
-    const-string v1, "Apple-iPhone3C1/803.148"
+    const-string v1, "Apple-iPhone3C1"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
@@ -716,12 +716,12 @@
     iput-object v5, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 282
-	const-string v1, "Apple-iPhone3C1/803.148"
+    const-string v1, "Apple-iPhone3C1"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
     .line 283
-    # const-string v1, "Apple-iPhone3C1/803.148"
+    # const-string v1, "Apple-iPhone3C1"
 
     # iput-object v1, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
 
@@ -736,7 +736,7 @@
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
     .line 286
-    const-string v1, "Apple-iPhone3C1/803.148"
+    const-string v1, "Apple-iPhone3C1"
 
     iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
@@ -894,12 +894,12 @@
     iput-object v3, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 282
-	const-string v0, "Apple-iPhone3C1/803.148"
+    const-string v0, "Apple-iPhone3C1"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
     .line 283
-	# const-string v0, "Apple-iPhone3C1/803.148"
+    # const-string v0, "Apple-iPhone3C1"
 
     # iput-object v0, p0, Lcom/android/exchange/EasSyncService;->UserAgentSplited:[Ljava/lang/String;
 
@@ -914,7 +914,7 @@
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mDeviceType:Ljava/lang/String;
 
     .line 286
-	const-string v0, "Apple-iPhone3C1/803.148"
+    const-string v0, "Apple-iPhone3C1"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mDeviceTypeForUserAgent:Ljava/lang/String;
 
@@ -19088,29 +19088,29 @@
 
     move-result-object v2
 
-#    const/16 v3, 0x2f
+    const/16 v3, 0x2f
 
-#    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-#    move-result-object v2
+    move-result-object v2
 
-#    const-string v3, "100"
+    const-string v3, "807"
 
-#    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-#    move-result-object v2
+    move-result-object v2
 
-#    const-string v3, "."
+    const-string v3, "."
 
-#    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-#    move-result-object v2
+    move-result-object v2
 
-#    const-string v3, "202"
+    const-string v3, "4"
 
-#    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-#    move-result-object v2
+    move-result-object v2
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
