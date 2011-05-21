@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <plurals name="notification_new_one_account_fmt">
+        <item quantity="other">%d ongelezen (%s)</item>
+        <item quantity="one">%d ongelezen (%s)</item>
+        <item quantity="few">%d ongelezen (%s)</item>
+    </plurals>
+    <plurals name="notification_new_multi_account_fmt">
+        <item quantity="other">in %d accounts</item>
+        <item quantity="few">in %d accounts</item>
+    </plurals>
+    <plurals name="search_results_title">
+        <item quantity="other">%1$s resultaten voor \"%2$s\"</item>
+        <item quantity="one">%1$s resultaat voor \"%2$s\"</item>
+    </plurals>
+    <plurals name="gal_completed_fmt">
+        <item quantity="other">%d resultaten van %s</item>
+        <item quantity="one">%d resultaat van %s</item>
+    </plurals>
+    <plurals name="message_moved_toast_fmt">
+        <item quantity="other">%1$d berichten verplaatst</item>
+        <item quantity="one">1 bericht verplaatst</item>
+    </plurals>
+    <plurals name="message_deleted_toast">
+        <item quantity="other">%1$d berichten verwijderd</item>
+        <item quantity="one">1 bericht verwijderd</item>
+    </plurals>
+    <plurals name="message_delete_text">
+        <item quantity="other">%1$d items worden verwijderd</item>
+        <item quantity="one">Dit item wordt verwijderd</item>
+    </plurals>
+</resources>

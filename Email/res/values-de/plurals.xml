@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <plurals name="notification_new_one_account_fmt">
+        <item quantity="other">%d ungelesen (%s)</item>
+        <item quantity="one">%d ungelesen (%s)</item>
+        <item quantity="few">%d ungelesen (%s)</item>
+    </plurals>
+    <plurals name="notification_new_multi_account_fmt">
+        <item quantity="other">In %d Konten</item>
+        <item quantity="few">In %d Konten</item>
+    </plurals>
+    <plurals name="search_results_title">
+        <item quantity="other">%1$s Ergebnisse für \"%2$s\"</item>
+        <item quantity="one">%1$s Ergebnis für \"%2$s\"</item>
+    </plurals>
+    <plurals name="gal_completed_fmt">
+        <item quantity="other">%d Ergebnisse von %s</item>
+        <item quantity="one">%d Ergebnis von %s</item>
+    </plurals>
+    <plurals name="message_moved_toast_fmt">
+        <item quantity="other">%1$d Nachrichten verschoben</item>
+        <item quantity="one">1 Nachricht verschoben</item>
+    </plurals>
+    <plurals name="message_deleted_toast">
+        <item quantity="other">%1$d Nachrichten gelöscht</item>
+        <item quantity="one">1 Nachricht gelöscht</item>
+    </plurals>
+    <plurals name="message_delete_text">
+        <item quantity="other">%1$d Elemente werden gelöscht.</item>
+        <item quantity="one">Dieses Element wird gelöscht</item>
+    </plurals>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <plurals name="notification_new_one_account_fmt">
+        <item quantity="other">%1$d neamhléite (%2$s)</item>
+        <item quantity="one">%1$d neamhléite (%2$s)</item>
+        <item quantity="few">%1$d neamhléite (%2$s)</item>
+    </plurals>
+    <plurals name="notification_new_multi_account_fmt">
+        <item quantity="other">i %d cuntas</item>
+        <item quantity="few">i %d cuntas</item>
+    </plurals>
+    <plurals name="search_results_title">
+        <item quantity="other">%1$s toradh ar \"%2$s\"</item>
+        <item quantity="one">%1$s toradh ar \"%2$s\"</item>
+    </plurals>
+    <plurals name="gal_completed_fmt">
+        <item quantity="other">%1$d toradh as %2$s</item>
+        <item quantity="one">1 toradh as %2$s</item>
+    </plurals>
+    <plurals name="message_moved_toast_fmt">
+        <item quantity="other">%1$d teachtaireacht bogtha</item>
+        <item quantity="one">1 teachtaireacht bogtha</item>
+    </plurals>
+    <plurals name="message_deleted_toast">
+        <item quantity="other">%1$d teachtaireacht scriosta</item>
+        <item quantity="one">1 teachtaireacht scriosta</item>
+    </plurals>
+    <plurals name="message_delete_text">
+        <item quantity="other">Scriosfar %1$d mír</item>
+        <item quantity="one">Scriosfar an mhír seo</item>
+    </plurals>
+</resources>

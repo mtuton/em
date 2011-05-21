@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <color name="folder_message_list_child_background">#ff3b3b3b</color>
+    <color name="message_list_item_background_unread">#ff363636</color>
+    <color name="message_list_item_background_read">#ff000000</color>
+    <color name="message_list_item_background_thread_item">#ff1e1e1e</color>
+    <color name="account_folder_list_item_separator">#ff303030</color>
+    <color name="connection_error_banner">#fffff1a8</color>
+    <color name="original_mode_bg_color">#ffffffff</color>
+    <color name="original_mode_text_color">#ff000000</color>
+    <color name="economy1_mode_bg_color">#ff000000</color>
+    <color name="economy1_mode_text_color">#ff9e9e9e</color>
+    <color name="economy2_mode_bg_color">#ff00113e</color>
+    <color name="economy2_mode_text_color">#ff7baccd</color>
+    <color name="economy3_mode_bg_color">#ff032532</color>
+    <color name="economy3_mode_text_color">#ffb1c8e7</color>
+    <color name="economy4_mode_bg_color">#ff35160e</color>
+    <color name="economy4_mode_text_color">#ffecd0c7</color>
+    <color name="economy5_mode_bg_color">#ffb0a989</color>
+    <color name="economy5_mode_text_color">#ff000000</color>
+    <color name="subject_text_color_unread">#ffebebeb</color>
+    <color name="subject_text_color_read">#ff666666</color>
+    <color name="from_text_color_unread">#ff7abee1</color>
+    <color name="from_text_color_read">#ff424242</color>
+    <color name="datetime_text_color_unread">#ffa2a2a2</color>
+    <color name="datetime_text_color_read">#ff3b3b3b</color>
+</resources>

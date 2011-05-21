@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <plurals name="notification_new_one_account_fmt">
+        <item quantity="other">%1$d μη αναγνωσμένα (%2$s)</item>
+        <item quantity="one">%1$d μη αναγνωσμένα (%2$s)</item>
+        <item quantity="few">%1$d μη αναγνωσμένα (%2$s)</item>
+    </plurals>
+    <plurals name="notification_new_multi_account_fmt">
+        <item quantity="other">σε %d λογαριασμούς</item>
+        <item quantity="few">σε %d λογαριασμούς</item>
+    </plurals>
+    <plurals name="search_results_title">
+        <item quantity="other">%1$s αποτελέσματα για \"%2$s\"</item>
+        <item quantity="one">%1$s αποτέλεσμα για \"%2$s\"</item>
+    </plurals>
+    <plurals name="gal_completed_fmt">
+        <item quantity="other">%1$d αποτελέσματα από %2$s</item>
+        <item quantity="one">%1$d αποτέλεσμα από %2$s</item>
+    </plurals>
+    <plurals name="message_moved_toast_fmt">
+        <item quantity="other">Μετακινήθηκαν %1$d μηνύματα</item>
+        <item quantity="one">1 μήνυμα μετακινήθηκε</item>
+    </plurals>
+    <plurals name="message_deleted_toast">
+        <item quantity="other">Διαγράφηκαν %1$d μηνύματα</item>
+        <item quantity="one">1 μήνυμα διεγράφη</item>
+    </plurals>
+    <plurals name="message_delete_text">
+        <item quantity="other">Θα διαγραφούν %1$d στοιχεία</item>
+        <item quantity="one">Αυτό το στοιχείο θα διαγραφεί</item>
+    </plurals>
+</resources>

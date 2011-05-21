@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@id/delete_all_group">
+        <item android:icon="@drawable/ic_menu_delete" android:id="@id/delete_all" android:title="@string/delete_all_action" />
+    </group>
+    <group android:id="@id/restore_all_group">
+        <item android:icon="@drawable/ic_menu_restore" android:id="@id/restore_all" android:visibility="gone" android:title="@string/restore" android:alphabeticShortcut="r" />
+    </group>
+    <item android:icon="@drawable/ic_menu_compose" android:id="@id/compose" android:title="@string/compose_action" android:alphabeticShortcut="c" />
+    <item android:icon="@drawable/ic_menu_refresh" android:id="@id/refresh" android:title="@string/refresh_action" android:alphabeticShortcut="r" />
+    <item android:icon="@drawable/ic_menu_search" android:id="@id/search" android:title="@string/search_action" />
+    <item android:icon="@drawable/ic_menu_account_list" android:id="@id/accounts" android:title="@string/accounts_action" />
+    <item android:icon="@drawable/ic_menu_sort_alphabetically" android:id="@id/sort" android:title="@string/list_by" />
+    <item android:icon="@drawable/ic_menu_account_settings" android:id="@id/account_settings" android:title="@string/account_settings_action" />
+    <item android:icon="@drawable/ic_menu_zoom" android:id="@id/text_size_action" android:title="@string/text_size_action" />
+    <group android:id="@id/follow_up_flag_group">
+        <item android:icon="@drawable/ic_menu_email_deselect_mail" android:id="@id/follow_up_flag" android:title="@string/follow_up_flag" />
+    </group>
+    <item android:icon="@drawable/ic_menu_viewmode" android:id="@id/view_mode" android:title="@string/view_mode_action" android:alphabeticShortcut="v" />
+    <group android:id="@id/deselect_all_group">
+        <item android:icon="@drawable/ic_menu_email_deselect_mail" android:id="@id/deselect_all" android:title="@string/deselect_all_action" />
+    </group>
+</menu>

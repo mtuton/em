@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <plurals name="notification_new_one_account_fmt">
+        <item quantity="other">%1$d lugemata (%2$s)</item>
+        <item quantity="one">%1$d lugemata (%2$s)</item>
+        <item quantity="few">%1$d lugemata (%2$s)</item>
+    </plurals>
+    <plurals name="notification_new_multi_account_fmt">
+        <item quantity="other">%d kontol</item>
+        <item quantity="few">%d kontol</item>
+    </plurals>
+    <plurals name="search_results_title">
+        <item quantity="other">%1$s tulemust otsingu \"%2$s\" kohta</item>
+        <item quantity="one">%1$s tulemus otsingu \"%2$s\" kohta</item>
+    </plurals>
+    <plurals name="gal_completed_fmt">
+        <item quantity="other">%1$d tulemus otsingumootorist %s%2$s</item>
+        <item quantity="one">1 tulemus otsingumootorist %2$s</item>
+    </plurals>
+    <plurals name="message_moved_toast_fmt">
+        <item quantity="other">%1$d sõnumit on teisaldatud</item>
+        <item quantity="one">1 sõnum on teisaldatud</item>
+    </plurals>
+    <plurals name="message_deleted_toast">
+        <item quantity="other">%1$d sõnumit on kustutatud</item>
+        <item quantity="one">1 sõnum on kustutatud</item>
+    </plurals>
+    <plurals name="message_delete_text">
+        <item quantity="other">%1$d üksust kustutatakse</item>
+        <item quantity="one">See üksus kustutatakse</item>
+    </plurals>
+</resources>
