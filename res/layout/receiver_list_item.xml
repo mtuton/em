@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TextView android:textAppearance="?android:textAppearanceLargeInverse" android:textSize="26.0px" android:typeface="sans" android:textColor="#ffffffff" android:gravity="left" android:id="@id/receiver_list_item" android:background="#ff000000" android:paddingLeft="20.0px" android:paddingTop="20.0px" android:paddingBottom="20.0px" android:layout_width="fill_parent" android:layout_height="81.0px" android:layout_marginTop="10.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android" />
