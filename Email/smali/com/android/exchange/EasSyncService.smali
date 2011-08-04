@@ -341,12 +341,12 @@
     iput-object v4, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 341
-    const-string v0, "Apple-iPhone3C1";
+    const-string v0, "Apple-iPhone3C1"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_UserAgent:Ljava/lang/String;
 
     .line 343
-    const-string v0, "iPhone";
+    const-string v0, "iPhone"
 
     iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mModelName_DeviceType:Ljava/lang/String;
 
