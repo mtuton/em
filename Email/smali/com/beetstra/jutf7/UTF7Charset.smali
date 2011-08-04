@@ -3,16 +3,6 @@
 .source "UTF7Charset.java"
 
 
-# static fields
-.field private static final BASE64_ALPHABET:Ljava/lang/String; = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-
-.field private static final RULE_3:Ljava/lang/String; = " \t\r\n"
-
-.field private static final SET_D:Ljava/lang/String; = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\'(),-./:?"
-
-.field private static final SET_O:Ljava/lang/String; = "!\"#$%&*;<=>@[]^_`{|}"
-
-
 # instance fields
 .field final directlyEncoded:Ljava/lang/String;
 

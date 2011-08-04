@@ -68,26 +68,6 @@
 
     iput-object v2, p0, Lcom/android/exchange/EasOoOSvc;->mEndDate:Ljava/util/Date;
 
-    .line 81
-    iget-object v2, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
-
-    iget-object v2, v2, Lcom/android/email/provider/EmailContent$Account;->mProtocolVersion:Ljava/lang/String;
-
-    iput-object v2, p0, Lcom/android/exchange/EasOoOSvc;->mProtocolVersion:Ljava/lang/String;
-
-    .line 82
-    iget-object v2, p0, Lcom/android/exchange/EasOoOSvc;->mProtocolVersion:Ljava/lang/String;
-
-    invoke-static {v2}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/android/exchange/EasOoOSvc;->mProtocolVersionDouble:Ljava/lang/Double;
-
     .line 85
     iget-object v2, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
@@ -240,7 +220,7 @@
 .end method
 
 .method private getOoO()I
-    .locals 28
+    .locals 32
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -249,7 +229,7 @@
     .end annotation
 
     .prologue
-    .line 363
+    .line 368
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
@@ -268,20 +248,20 @@
 
     invoke-direct/range {v4 .. v9}, Lcom/android/exchange/EasOoOSvc;->outOfOfficeCb(JIILandroid/os/Bundle;)V
 
-    .line 365
-    const/16 v24, 0x0
+    .line 370
+    const/4 v13, 0x0
 
-    .line 367
-    .local v24, result:I
-    new-instance v25, Lcom/android/exchange/adapter/Serializer;
+    .line 372
+    .local v13, result:I
+    new-instance v29, Lcom/android/exchange/adapter/Serializer;
 
-    invoke-direct/range {v25 .. v25}, Lcom/android/exchange/adapter/Serializer;-><init>()V
+    invoke-direct/range {v29 .. v29}, Lcom/android/exchange/adapter/Serializer;-><init>()V
 
-    .line 369
-    .local v25, s:Lcom/android/exchange/adapter/Serializer;
+    .line 374
+    .local v29, s:Lcom/android/exchange/adapter/Serializer;
     const/16 v4, 0x485
 
-    move-object/from16 v0, v25
+    move-object/from16 v0, v29
 
     move v1, v4
 
@@ -331,13 +311,13 @@
 
     invoke-virtual {v4}, Lcom/android/exchange/adapter/Serializer;->done()V
 
-    .line 378
+    .line 383
     :try_start_0
     sget-boolean v4, Lcom/android/exchange/Eas;->PARSER_LOG:Z
 
     if-eqz v4, :cond_0
 
-    .line 379
+    .line 384
     const/4 v4, 0x1
 
     new-array v4, v4, [Ljava/lang/String;
@@ -354,24 +334,24 @@
 
     invoke-virtual {v0, v1}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    .line 380
-    invoke-virtual/range {v25 .. v25}, Lcom/android/exchange/adapter/Serializer;->toByteArray()[B
+    .line 385
+    invoke-virtual/range {v29 .. v29}, Lcom/android/exchange/adapter/Serializer;->toByteArray()[B
 
-    move-result-object v16
+    move-result-object v20
 
-    .line 381
-    .local v16, b:[B
-    new-instance v17, Ljava/io/ByteArrayInputStream;
+    .line 386
+    .local v20, b:[B
+    new-instance v21, Ljava/io/ByteArrayInputStream;
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v21
 
-    move-object/from16 v1, v16
+    move-object/from16 v1, v20
 
     invoke-direct {v0, v1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    .line 382
-    .local v17, byTe:Ljava/io/ByteArrayInputStream;
-    new-instance v22, Lcom/android/exchange/adapter/LogAdapter;
+    .line 387
+    .local v21, byTe:Ljava/io/ByteArrayInputStream;
+    new-instance v26, Lcom/android/exchange/adapter/LogAdapter;
 
     move-object/from16 v0, p0
 
@@ -379,7 +359,7 @@
 
     move-object v4, v0
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v26
 
     move-object v1, v4
 
@@ -387,24 +367,24 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/exchange/adapter/LogAdapter;-><init>(Lcom/android/email/provider/EmailContent$Mailbox;Lcom/android/exchange/EasSyncService;)V
 
-    .line 383
-    .local v22, logA:Lcom/android/exchange/adapter/LogAdapter;
-    move-object/from16 v0, v22
+    .line 388
+    .local v26, logA:Lcom/android/exchange/adapter/LogAdapter;
+    move-object/from16 v0, v26
 
-    move-object/from16 v1, v17
+    move-object/from16 v1, v21
 
     invoke-virtual {v0, v1}, Lcom/android/exchange/adapter/LogAdapter;->parse(Ljava/io/InputStream;)Z
 
-    .line 387
-    .end local v16           #b:[B
-    .end local v17           #byTe:Ljava/io/ByteArrayInputStream;
-    .end local v22           #logA:Lcom/android/exchange/adapter/LogAdapter;
+    .line 392
+    .end local v20           #b:[B
+    .end local v21           #byTe:Ljava/io/ByteArrayInputStream;
+    .end local v26           #logA:Lcom/android/exchange/adapter/LogAdapter;
     :cond_0
     const-string v4, "Settings"
 
     new-instance v5, Lorg/apache/http/entity/ByteArrayEntity;
 
-    invoke-virtual/range {v25 .. v25}, Lcom/android/exchange/adapter/Serializer;->toByteArray()[B
+    invoke-virtual/range {v29 .. v29}, Lcom/android/exchange/adapter/Serializer;->toByteArray()[B
 
     move-result-object v6
 
@@ -424,47 +404,47 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v23
+    move-result-object v27
 
-    .line 395
-    .local v23, resp:Lorg/apache/http/HttpResponse;
-    invoke-interface/range {v23 .. v23}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+    .line 400
+    .local v27, resp:Lorg/apache/http/HttpResponse;
+    invoke-interface/range {v27 .. v27}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
 
     move-result-object v4
 
     invoke-interface {v4}, Lorg/apache/http/StatusLine;->getStatusCode()I
 
-    move-result v27
+    move-result v31
 
-    .line 398
-    .local v27, status:I
+    .line 403
+    .local v31, status:I
     const-string v4, "getOoO(): sendHttpClientPost HTTP response code: "
 
     move-object/from16 v0, p0
 
     move-object v1, v4
 
-    move/from16 v2, v27
+    move/from16 v2, v31
 
     invoke-virtual {v0, v1, v2}, Lcom/android/exchange/EasOoOSvc;->userLog(Ljava/lang/String;I)V
 
-    .line 400
+    .line 405
     const/16 v4, 0xc8
 
-    move/from16 v0, v27
+    move/from16 v0, v31
 
     move v1, v4
 
-    if-ne v0, v1, :cond_3
+    if-ne v0, v1, :cond_4
 
-    .line 402
-    invoke-interface/range {v23 .. v23}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+    .line 407
+    invoke-interface/range {v27 .. v27}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
-    move-result-object v19
+    move-result-object v23
 
-    .line 404
-    .local v19, entity:Lorg/apache/http/HttpEntity;
-    invoke-interface/range {v19 .. v19}, Lorg/apache/http/HttpEntity;->getContentLength()J
+    .line 409
+    .local v23, entity:Lorg/apache/http/HttpEntity;
+    invoke-interface/range {v23 .. v23}, Lorg/apache/http/HttpEntity;->getContentLength()J
 
     move-result-wide v4
 
@@ -472,20 +452,20 @@
 
     long-to-int v0, v0
 
-    move/from16 v21, v0
+    move/from16 v25, v0
 
-    .line 406
-    .local v21, len:I
-    if-eqz v21, :cond_2
+    .line 411
+    .local v25, len:I
+    if-eqz v25, :cond_3
 
-    .line 407
-    invoke-interface/range {v19 .. v19}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
+    .line 412
+    invoke-interface/range {v23 .. v23}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
 
-    move-result-object v20
+    move-result-object v24
 
-    .line 408
-    .local v20, in:Ljava/io/InputStream;
-    new-instance v26, Lcom/android/exchange/adapter/OoOCommandParser;
+    .line 413
+    .local v24, in:Ljava/io/InputStream;
+    new-instance v30, Lcom/android/exchange/adapter/OoOCommandParser;
 
     new-instance v4, Lcom/android/exchange/adapter/SettingsCommandAdapter;
 
@@ -503,39 +483,39 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/exchange/adapter/SettingsCommandAdapter;-><init>(Lcom/android/email/provider/EmailContent$Mailbox;Lcom/android/exchange/EasSyncService;)V
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v30
 
-    move-object/from16 v1, v20
+    move-object/from16 v1, v24
 
     move-object v2, v4
 
     invoke-direct {v0, v1, v2}, Lcom/android/exchange/adapter/OoOCommandParser;-><init>(Ljava/io/InputStream;Lcom/android/exchange/adapter/AbstractSyncAdapter;)V
 
-    .line 411
-    .local v26, sParser:Lcom/android/exchange/adapter/OoOCommandParser;
+    .line 416
+    .local v30, sParser:Lcom/android/exchange/adapter/OoOCommandParser;
     :try_start_1
-    invoke-virtual/range {v26 .. v26}, Lcom/android/exchange/adapter/OoOCommandParser;->parse()Z
+    invoke-virtual/range {v30 .. v30}, Lcom/android/exchange/adapter/OoOCommandParser;->parse()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 412
+    .line 417
     new-instance v9, Landroid/os/Bundle;
 
     invoke-direct {v9}, Landroid/os/Bundle;-><init>()V
 
-    .line 415
+    .line 420
     .local v9, parserResult:Landroid/os/Bundle;
     sget-object v4, Lcom/android/email/activity/setup/OoOConstants;->OOO_GET_DATA:Ljava/lang/String;
 
-    invoke-virtual/range {v26 .. v26}, Lcom/android/exchange/adapter/OoOCommandParser;->getParsedData()Lcom/android/exchange/OoODataList;
+    invoke-virtual/range {v30 .. v30}, Lcom/android/exchange/adapter/OoOCommandParser;->getParsedData()Lcom/android/exchange/OoODataList;
 
     move-result-object v5
 
     invoke-virtual {v9, v4, v5}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 416
+    .line 421
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
@@ -555,39 +535,34 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .end local v9           #parserResult:Landroid/os/Bundle;
+    .end local v23           #entity:Lorg/apache/http/HttpEntity;
+    .end local v24           #in:Ljava/io/InputStream;
+    .end local v25           #len:I
+    .end local v30           #sParser:Lcom/android/exchange/adapter/OoOCommandParser;
     :goto_0
-    move/from16 v13, v24
+    move/from16 v28, v13
 
-    .end local v19           #entity:Lorg/apache/http/HttpEntity;
-    .end local v20           #in:Ljava/io/InputStream;
-    .end local v21           #len:I
-    .end local v24           #result:I
-    .end local v26           #sParser:Lcom/android/exchange/adapter/OoOCommandParser;
-    .local v13, result:I
-    :goto_1
-    move/from16 v24, v13
-
-    .line 442
+    .line 452
     .end local v13           #result:I
-    .end local v23           #resp:Lorg/apache/http/HttpResponse;
-    .end local v27           #status:I
-    .restart local v24       #result:I
-    :goto_2
-    return v24
+    .end local v27           #resp:Lorg/apache/http/HttpResponse;
+    .end local v31           #status:I
+    .local v28, result:I
+    :goto_1
+    return v28
 
-    .line 389
+    .line 394
+    .end local v28           #result:I
+    .restart local v13       #result:I
     :catch_0
     move-exception v4
 
-    move-object/from16 v18, v4
+    move-object/from16 v22, v4
 
-    .line 390
-    .local v18, e:Ljava/lang/Exception;
+    .line 395
+    .local v22, e:Ljava/lang/Exception;
     const/4 v13, 0x0
 
-    .line 391
-    .end local v24           #result:I
-    .restart local v13       #result:I
+    .line 396
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
@@ -606,23 +581,40 @@
 
     invoke-direct/range {v4 .. v9}, Lcom/android/exchange/EasOoOSvc;->outOfOfficeCb(JIILandroid/os/Bundle;)V
 
-    move/from16 v24, v13
+    move/from16 v28, v13
 
-    .line 392
+    .line 397
     .end local v13           #result:I
-    .restart local v24       #result:I
-    goto :goto_2
+    .restart local v28       #result:I
+    goto :goto_1
 
-    .line 419
-    .end local v18           #e:Ljava/lang/Exception;
-    .restart local v19       #entity:Lorg/apache/http/HttpEntity;
-    .restart local v20       #in:Ljava/io/InputStream;
-    .restart local v21       #len:I
-    .restart local v23       #resp:Lorg/apache/http/HttpResponse;
-    .restart local v26       #sParser:Lcom/android/exchange/adapter/OoOCommandParser;
-    .restart local v27       #status:I
+    .line 424
+    .end local v22           #e:Ljava/lang/Exception;
+    .end local v28           #result:I
+    .restart local v13       #result:I
+    .restart local v23       #entity:Lorg/apache/http/HttpEntity;
+    .restart local v24       #in:Ljava/io/InputStream;
+    .restart local v25       #len:I
+    .restart local v27       #resp:Lorg/apache/http/HttpResponse;
+    .restart local v30       #sParser:Lcom/android/exchange/adapter/OoOCommandParser;
+    .restart local v31       #status:I
     :cond_1
     :try_start_2
+    move-object/from16 v0, p0
+
+    move/from16 v1, v31
+
+    invoke-virtual {v0, v1}, Lcom/android/exchange/EasOoOSvc;->isProvisionError(I)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    .line 425
+    const/16 v13, 0x17
+
+    .line 429
+    :goto_2
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
@@ -630,8 +622,6 @@
     move-object v4, v0
 
     iget-wide v11, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
-
-    const/4 v13, -0x8
 
     const/16 v14, 0x64
 
@@ -645,59 +635,99 @@
 
     goto :goto_0
 
-    .line 421
+    .line 433
     :catch_1
     move-exception v4
 
-    move-object/from16 v18, v4
+    move-object/from16 v22, v4
 
-    .line 422
-    .restart local v18       #e:Ljava/lang/Exception;
-    const/16 v24, 0x0
-
-    .line 423
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
-
-    move-object v4, v0
-
-    iget-wide v11, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
-
-    const/16 v13, -0x9
-
-    const/16 v14, 0x64
-
-    const/4 v15, 0x0
-
-    move-object/from16 v10, p0
-
-    invoke-direct/range {v10 .. v15}, Lcom/android/exchange/EasOoOSvc;->outOfOfficeCb(JIILandroid/os/Bundle;)V
-
-    .end local v18           #e:Ljava/lang/Exception;
-    .end local v20           #in:Ljava/io/InputStream;
-    .end local v26           #sParser:Lcom/android/exchange/adapter/OoOCommandParser;
-    :goto_3
-    move/from16 v13, v24
-
-    .end local v24           #result:I
-    .restart local v13       #result:I
-    goto :goto_1
-
-    .line 427
-    .end local v13           #result:I
-    .restart local v24       #result:I
-    :cond_2
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
-
-    move-object v4, v0
-
-    iget-wide v11, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
-
+    .line 434
+    .restart local v22       #e:Ljava/lang/Exception;
     const/4 v13, 0x0
 
+    .line 435
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+
+    move-object v4, v0
+
+    iget-wide v15, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
+
+    const/16 v17, -0x9
+
+    const/16 v18, 0x64
+
+    const/16 v19, 0x0
+
+    move-object/from16 v14, p0
+
+    invoke-direct/range {v14 .. v19}, Lcom/android/exchange/EasOoOSvc;->outOfOfficeCb(JIILandroid/os/Bundle;)V
+
+    goto :goto_0
+
+    .line 427
+    .end local v22           #e:Ljava/lang/Exception;
+    :cond_2
+    const/4 v13, -0x8
+
+    goto :goto_2
+
+    .line 439
+    .end local v24           #in:Ljava/io/InputStream;
+    .end local v30           #sParser:Lcom/android/exchange/adapter/OoOCommandParser;
+    :cond_3
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+
+    move-object v4, v0
+
+    iget-wide v15, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x64
+
+    const/16 v19, 0x0
+
+    move-object/from16 v14, p0
+
+    invoke-direct/range {v14 .. v19}, Lcom/android/exchange/EasOoOSvc;->outOfOfficeCb(JIILandroid/os/Bundle;)V
+
+    goto :goto_0
+
+    .line 442
+    .end local v23           #entity:Lorg/apache/http/HttpEntity;
+    .end local v25           #len:I
+    :cond_4
+    const/16 v13, 0x15
+
+    .line 443
+    move-object/from16 v0, p0
+
+    move/from16 v1, v31
+
+    invoke-virtual {v0, v1}, Lcom/android/exchange/EasOoOSvc;->isProvisionError(I)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_6
+
+    .line 444
+    const/16 v13, 0x17
+
+    .line 448
+    :cond_5
+    :goto_3
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+
+    move-object v4, v0
+
+    iget-wide v11, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
+
     const/16 v14, 0x64
 
     const/4 v15, 0x0
@@ -706,20 +736,13 @@
 
     invoke-direct/range {v10 .. v15}, Lcom/android/exchange/EasOoOSvc;->outOfOfficeCb(JIILandroid/os/Bundle;)V
 
-    goto :goto_3
+    goto :goto_0
 
-    .line 429
-    .end local v19           #entity:Lorg/apache/http/HttpEntity;
-    .end local v21           #len:I
-    :cond_3
-    const/16 v13, 0x15
-
-    .line 431
-    .end local v24           #result:I
-    .restart local v13       #result:I
+    .line 445
+    :cond_6
     move-object/from16 v0, p0
 
-    move/from16 v1, v27
+    move/from16 v1, v31
 
     invoke-virtual {v0, v1}, Lcom/android/exchange/EasOoOSvc;->isAuthError(I)Z
 
@@ -727,46 +750,10 @@
 
     if-eqz v4, :cond_5
 
-    .line 432
+    .line 446
     const/16 v13, 0x16
 
-    .line 439
-    :cond_4
-    :goto_4
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
-
-    move-object v4, v0
-
-    iget-wide v11, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
-
-    const/16 v14, 0x64
-
-    const/4 v15, 0x0
-
-    move-object/from16 v10, p0
-
-    invoke-direct/range {v10 .. v15}, Lcom/android/exchange/EasOoOSvc;->outOfOfficeCb(JIILandroid/os/Bundle;)V
-
-    goto :goto_1
-
-    .line 435
-    :cond_5
-    move-object/from16 v0, p0
-
-    move/from16 v1, v27
-
-    invoke-virtual {v0, v1}, Lcom/android/exchange/EasOoOSvc;->isProvisionError(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_4
-
-    .line 436
-    const/16 v13, 0x17
-
-    goto :goto_4
+    goto :goto_3
 .end method
 
 .method private outOfOfficeCb(JIILandroid/os/Bundle;)V
@@ -1308,7 +1295,7 @@
 
     move v1, v4
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_9
 
     .line 321
     invoke-interface/range {v23 .. v23}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
@@ -1329,7 +1316,7 @@
 
     .line 325
     .local v21, len:I
-    if-eqz v21, :cond_7
+    if-eqz v21, :cond_8
 
     .line 326
     invoke-interface/range {v19 .. v19}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
@@ -1402,28 +1389,27 @@
 
     invoke-direct/range {v4 .. v9}, Lcom/android/exchange/EasOoOSvc;->outOfOfficeCb(JIILandroid/os/Bundle;)V
 
-    .end local v9           #bundle:Landroid/os/Bundle;
-    .end local v20           #in:Ljava/io/InputStream;
-    .end local v26           #sParser:Lcom/android/exchange/adapter/OoOCommandParser;
-    :goto_1
-    move/from16 v13, v24
+    move/from16 v7, v24
 
+    .end local v9           #bundle:Landroid/os/Bundle;
     .end local v19           #entity:Lorg/apache/http/HttpEntity;
+    .end local v20           #in:Ljava/io/InputStream;
     .end local v21           #len:I
     .end local v24           #result:I
-    .local v13, result:I
-    :goto_2
-    move/from16 v24, v13
+    .end local v26           #sParser:Lcom/android/exchange/adapter/OoOCommandParser;
+    .local v7, result:I
+    :goto_1
+    move/from16 v24, v7
 
-    .line 355
-    .end local v13           #result:I
+    .line 360
+    .end local v7           #result:I
     .end local v27           #status:I
-    .restart local v24       #result:I
-    :goto_3
+    :goto_2
     return v24
 
     .line 217
     .end local v23           #resp:Lorg/apache/http/HttpResponse;
+    .restart local v24       #result:I
     :cond_1
     const/16 v4, 0x485
 
@@ -1552,7 +1538,7 @@
     move-result-object v25
 
     .line 230
-    :goto_4
+    :goto_3
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/exchange/EasOoOSvc;->mIsInternal:Z
@@ -1639,7 +1625,7 @@
     move-result-object v25
 
     .line 247
-    :goto_5
+    :goto_4
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/exchange/EasOoOSvc;->mIsExtKnown:Z
@@ -1767,7 +1753,7 @@
     move-result-object v25
 
     .line 289
-    :goto_6
+    :goto_5
     invoke-virtual/range {v25 .. v25}, Lcom/android/exchange/adapter/Serializer;->end()Lcom/android/exchange/adapter/Serializer;
 
     move-result-object v4
@@ -1807,7 +1793,7 @@
 
     move-result-object v25
 
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     .line 239
     :cond_3
@@ -1877,7 +1863,7 @@
 
     move-result-object v25
 
-    goto/16 :goto_5
+    goto/16 :goto_4
 
     .line 262
     :cond_4
@@ -2043,7 +2029,7 @@
 
     move-result-object v25
 
-    goto/16 :goto_6
+    goto/16 :goto_5
 
     .line 277
     :cond_5
@@ -2128,7 +2114,7 @@
 
     move-result-object v25
 
-    goto/16 :goto_6
+    goto/16 :goto_5
 
     .line 307
     .restart local v23       #resp:Lorg/apache/http/HttpResponse;
@@ -2139,11 +2125,9 @@
 
     .line 308
     .local v18, e:Ljava/lang/Exception;
-    const/4 v13, 0x0
+    const/16 v24, 0x0
 
     .line 309
-    .end local v24           #result:I
-    .restart local v13       #result:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
@@ -2162,19 +2146,21 @@
 
     invoke-direct/range {v4 .. v9}, Lcom/android/exchange/EasOoOSvc;->outOfOfficeCb(JIILandroid/os/Bundle;)V
 
-    move/from16 v24, v13
+    move/from16 v7, v24
 
     .line 310
-    .end local v13           #result:I
-    .restart local v24       #result:I
-    goto/16 :goto_3
+    .end local v24           #result:I
+    .restart local v7       #result:I
+    goto/16 :goto_2
 
-    .line 335
+    .line 336
+    .end local v7           #result:I
     .end local v18           #e:Ljava/lang/Exception;
     .restart local v9       #bundle:Landroid/os/Bundle;
     .restart local v19       #entity:Lorg/apache/http/HttpEntity;
     .restart local v20       #in:Ljava/io/InputStream;
     .restart local v21       #len:I
+    .restart local v24       #result:I
     .restart local v26       #sParser:Lcom/android/exchange/adapter/OoOCommandParser;
     .restart local v27       #status:I
     :cond_6
@@ -2184,7 +2170,24 @@
 
     invoke-virtual {v9, v4, v5}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 336
+    .line 337
+    move-object/from16 v0, p0
+
+    move/from16 v1, v27
+
+    invoke-virtual {v0, v1}, Lcom/android/exchange/EasOoOSvc;->isProvisionError(I)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_7
+
+    .line 338
+    const/16 v7, 0x17
+
+    .line 342
+    .end local v24           #result:I
+    .restart local v7       #result:I
+    :goto_6
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
@@ -2192,8 +2195,6 @@
     move-object v4, v0
 
     iget-wide v5, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
-
-    const/4 v7, -0x7
 
     const/16 v8, 0x64
 
@@ -2204,10 +2205,22 @@
     goto/16 :goto_1
 
     .line 340
+    .end local v7           #result:I
+    .restart local v24       #result:I
+    :cond_7
+    const/4 v7, -0x7
+
+    .end local v24           #result:I
+    .restart local v7       #result:I
+    goto :goto_6
+
+    .line 347
+    .end local v7           #result:I
     .end local v9           #bundle:Landroid/os/Bundle;
     .end local v20           #in:Ljava/io/InputStream;
     .end local v26           #sParser:Lcom/android/exchange/adapter/OoOCommandParser;
-    :cond_7
+    .restart local v24       #result:I
+    :cond_8
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
@@ -2226,32 +2239,38 @@
 
     invoke-direct/range {v10 .. v15}, Lcom/android/exchange/EasOoOSvc;->outOfOfficeCb(JIILandroid/os/Bundle;)V
 
+    move/from16 v7, v24
+
+    .end local v24           #result:I
+    .restart local v7       #result:I
     goto/16 :goto_1
 
-    .line 342
+    .line 350
+    .end local v7           #result:I
     .end local v19           #entity:Lorg/apache/http/HttpEntity;
     .end local v21           #len:I
-    :cond_8
-    const/16 v13, 0x15
+    .restart local v24       #result:I
+    :cond_9
+    const/16 v7, 0x15
 
-    .line 344
+    .line 351
     .end local v24           #result:I
-    .restart local v13       #result:I
+    .restart local v7       #result:I
     move-object/from16 v0, p0
 
     move/from16 v1, v27
 
-    invoke-virtual {v0, v1}, Lcom/android/exchange/EasOoOSvc;->isAuthError(I)Z
+    invoke-virtual {v0, v1}, Lcom/android/exchange/EasOoOSvc;->isProvisionError(I)Z
 
     move-result v4
 
-    if-eqz v4, :cond_a
-
-    .line 345
-    const/16 v13, 0x16
+    if-eqz v4, :cond_b
 
     .line 352
-    :cond_9
+    const/16 v7, 0x17
+
+    .line 356
+    :cond_a
     :goto_7
     move-object/from16 v0, p0
 
@@ -2267,24 +2286,26 @@
 
     move-object/from16 v10, p0
 
+    move v13, v7
+
     invoke-direct/range {v10 .. v15}, Lcom/android/exchange/EasOoOSvc;->outOfOfficeCb(JIILandroid/os/Bundle;)V
 
-    goto/16 :goto_2
+    goto/16 :goto_1
 
-    .line 348
-    :cond_a
+    .line 353
+    :cond_b
     move-object/from16 v0, p0
 
     move/from16 v1, v27
 
-    invoke-virtual {v0, v1}, Lcom/android/exchange/EasOoOSvc;->isProvisionError(I)Z
+    invoke-virtual {v0, v1}, Lcom/android/exchange/EasOoOSvc;->isAuthError(I)Z
 
     move-result v4
 
-    if-eqz v4, :cond_9
+    if-eqz v4, :cond_a
 
-    .line 349
-    const/16 v13, 0x17
+    .line 354
+    const/16 v7, 0x16
 
     goto :goto_7
 .end method
@@ -2292,23 +2313,23 @@
 
 # virtual methods
 .method public run()V
-    .locals 12
+    .locals 13
 
     .prologue
-    const/4 v10, 0x4
+    const/4 v9, 0x0
 
-    const/4 v9, 0x2
+    const/4 v8, 0x1
 
-    const/4 v8, 0x0
+    const-string v12, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS true case!!!"
 
-    const/4 v7, 0x1
+    const-string v11, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS false case!!!"
 
-    const-string v11, ": OoO operation finished"
+    const-string v10, "OoO finished"
 
-    .line 447
+    .line 457
     invoke-virtual {p0}, Lcom/android/exchange/EasOoOSvc;->setupService()Z
 
-    .line 449
+    .line 459
     :try_start_0
     invoke-static {}, Lcom/android/exchange/SyncManager;->getDeviceId()Ljava/lang/String;
 
@@ -2316,10 +2337,10 @@
 
     iput-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mDeviceId:Ljava/lang/String;
 
-    .line 451
+    .line 461
     const/4 v3, 0x0
 
-    .line 455
+    .line 465
     .local v3, result:I
     iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mProtocolVersionDouble:Ljava/lang/Double;
 
@@ -2331,12 +2352,12 @@
 
     cmpg-double v0, v0, v4
 
-    if-gez v0, :cond_2
+    if-gez v0, :cond_1
 
-    .line 457
+    .line 467
     const/4 v3, -0x2
 
-    .line 458
+    .line 468
     iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-wide v1, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
@@ -2349,13 +2370,24 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/exchange/EasOoOSvc;->outOfOfficeCb(JIILandroid/os/Bundle;)V
 
-    .line 467
+    .line 477
     :goto_0
+    const/16 v0, 0x17
+
+    if-ne v3, v0, :cond_0
+
+    .line 478
+    const/4 v0, 0x4
+
+    iput v0, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
+
+    .line 481
+    :cond_0
     const/16 v0, 0x16
 
-    if-ne v3, v0, :cond_4
+    if-ne v3, v0, :cond_3
 
-    .line 468
+    .line 482
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
@@ -2364,97 +2396,58 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 488
-    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    .line 503
+    new-array v0, v8, [Ljava/lang/String;
 
-    if-eqz v0, :cond_11
+    const-string v1, "OoO finished"
 
-    .line 489
-    new-array v0, v9, [Ljava/lang/String;
-
-    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
-
-    iget-object v1, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    aput-object v1, v0, v8
-
-    const-string v1, ": sync finished"
-
-    aput-object v1, v0, v7
+    aput-object v10, v0, v9
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    .line 494
-    :cond_0
-    :goto_1
-    const-string v0, "OoB exited with status "
-
-    iget v1, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/exchange/EasOoOSvc;->userLog(Ljava/lang/String;I)V
-
-    .line 496
-    invoke-static {p0}, Lcom/android/exchange/SyncManager;->doneOutOfBand(Lcom/android/exchange/AbstractSyncService;)V
-
-    .line 499
-    iget v0, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
-
-    if-ne v0, v10, :cond_1
-
-    .line 500
-    new-array v0, v7, [Ljava/lang/String;
-
-    const-string v1, "Outbox calling: SyncManager.reloadFolderList"
-
-    aput-object v1, v0, v8
-
-    invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
-
-    .line 501
-    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mContext:Landroid/content/Context;
-
-    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
-
-    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
-
-    .end local v3           #result:I
-    :goto_2
-    invoke-static {v0, v1, v2, v7}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
+    .line 504
+    invoke-static {p0}, Lcom/android/exchange/SyncManager;->done(Lcom/android/exchange/AbstractSyncService;)V
 
     .line 505
-    :cond_1
+    iget v0, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
+
+    packed-switch v0, :pswitch_data_0
+
+    .line 524
+    .end local v3           #result:I
+    :goto_1
     return-void
 
-    .line 461
+    .line 471
     .restart local v3       #result:I
-    :cond_2
+    :cond_1
     :try_start_1
     iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mSvcData:Lcom/android/exchange/OoODataList;
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
-    .line 462
+    .line 472
     invoke-direct {p0}, Lcom/android/exchange/EasOoOSvc;->getOoO()I
 
     move-result v3
 
     goto :goto_0
 
-    .line 464
-    :cond_3
+    .line 474
+    :cond_2
     invoke-direct {p0}, Lcom/android/exchange/EasOoOSvc;->setOoO()I
 
     move-result v3
 
     goto :goto_0
 
-    .line 470
-    :cond_4
+    .line 484
+    :cond_3
     const/16 v0, 0x15
 
-    if-ne v3, v0, :cond_6
+    if-ne v3, v0, :cond_4
 
-    .line 471
+    .line 485
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
@@ -2463,68 +2456,57 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 488
-    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    .line 503
+    new-array v0, v8, [Ljava/lang/String;
 
-    if-eqz v0, :cond_12
+    const-string v1, "OoO finished"
 
-    .line 489
-    new-array v0, v9, [Ljava/lang/String;
-
-    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
-
-    iget-object v1, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    aput-object v1, v0, v8
-
-    const-string v1, ": sync finished"
-
-    aput-object v1, v0, v7
+    aput-object v10, v0, v9
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    .line 494
-    :cond_5
-    :goto_3
-    const-string v0, "OoB exited with status "
+    .line 504
+    invoke-static {p0}, Lcom/android/exchange/SyncManager;->done(Lcom/android/exchange/AbstractSyncService;)V
 
-    iget v1, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/exchange/EasOoOSvc;->userLog(Ljava/lang/String;I)V
-
-    .line 496
-    invoke-static {p0}, Lcom/android/exchange/SyncManager;->doneOutOfBand(Lcom/android/exchange/AbstractSyncService;)V
-
-    .line 499
+    .line 505
     iget v0, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
 
-    if-ne v0, v10, :cond_1
+    packed-switch v0, :pswitch_data_1
 
-    .line 500
-    new-array v0, v7, [Ljava/lang/String;
+    goto :goto_1
 
-    const-string v1, "Outbox calling: SyncManager.reloadFolderList"
+    .line 507
+    :pswitch_0
+    const/16 v7, 0x17
 
-    aput-object v1, v0, v8
+    .line 513
+    .local v7, status:I
+    sget-boolean v0, Lcom/android/exchange/EasOoOSvc;->CHECK_PROVISIONING_IN_PROGRESS:Z
 
+    if-eqz v0, :cond_a
+
+    .line 514
+    new-array v0, v8, [Ljava/lang/String;
+
+    const-string v1, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS true case!!!"
+
+    aput-object v12, v0, v9
+
+    .end local v3           #result:I
+    :goto_2
     invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    .line 501
-    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mContext:Landroid/content/Context;
+    goto :goto_1
 
-    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
-
-    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
-
-    goto :goto_2
-
-    .line 475
-    :cond_6
+    .line 489
+    .end local v7           #status:I
+    .restart local v3       #result:I
+    :cond_4
     const/16 v0, 0x17
 
-    if-ne v3, v0, :cond_8
+    if-ne v3, v0, :cond_5
 
-    .line 476
+    .line 490
     const/4 v0, 0x4
 
     :try_start_2
@@ -2534,63 +2516,47 @@
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 488
-    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    .line 503
+    new-array v0, v8, [Ljava/lang/String;
 
-    if-eqz v0, :cond_13
+    const-string v1, "OoO finished"
 
-    .line 489
-    new-array v0, v9, [Ljava/lang/String;
-
-    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
-
-    iget-object v1, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    aput-object v1, v0, v8
-
-    const-string v1, ": sync finished"
-
-    aput-object v1, v0, v7
+    aput-object v10, v0, v9
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    .line 494
-    :cond_7
-    :goto_4
-    const-string v0, "OoB exited with status "
+    .line 504
+    invoke-static {p0}, Lcom/android/exchange/SyncManager;->done(Lcom/android/exchange/AbstractSyncService;)V
 
-    iget v1, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/exchange/EasOoOSvc;->userLog(Ljava/lang/String;I)V
-
-    .line 496
-    invoke-static {p0}, Lcom/android/exchange/SyncManager;->doneOutOfBand(Lcom/android/exchange/AbstractSyncService;)V
-
-    .line 499
+    .line 505
     iget v0, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
 
-    if-ne v0, v10, :cond_1
+    packed-switch v0, :pswitch_data_2
 
-    .line 500
-    new-array v0, v7, [Ljava/lang/String;
+    goto :goto_1
 
-    const-string v1, "Outbox calling: SyncManager.reloadFolderList"
+    .line 507
+    :pswitch_1
+    const/16 v7, 0x17
 
-    aput-object v1, v0, v8
+    .line 513
+    .restart local v7       #status:I
+    sget-boolean v0, Lcom/android/exchange/EasOoOSvc;->CHECK_PROVISIONING_IN_PROGRESS:Z
 
-    invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
+    if-eqz v0, :cond_b
 
-    .line 501
-    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mContext:Landroid/content/Context;
+    .line 514
+    new-array v0, v8, [Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    const-string v1, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS true case!!!"
 
-    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    aput-object v12, v0, v9
 
-    goto/16 :goto_2
+    goto :goto_2
 
-    .line 480
-    :cond_8
+    .line 494
+    .end local v7           #status:I
+    :cond_5
     const/4 v0, 0x0
 
     :try_start_3
@@ -2600,69 +2566,53 @@
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 488
-    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    .line 503
+    new-array v0, v8, [Ljava/lang/String;
 
-    if-eqz v0, :cond_14
+    const-string v1, "OoO finished"
 
-    .line 489
-    new-array v0, v9, [Ljava/lang/String;
-
-    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
-
-    iget-object v1, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    aput-object v1, v0, v8
-
-    const-string v1, ": sync finished"
-
-    aput-object v1, v0, v7
+    aput-object v10, v0, v9
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    .line 494
-    :cond_9
-    :goto_5
-    const-string v0, "OoB exited with status "
+    .line 504
+    invoke-static {p0}, Lcom/android/exchange/SyncManager;->done(Lcom/android/exchange/AbstractSyncService;)V
 
-    iget v1, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/exchange/EasOoOSvc;->userLog(Ljava/lang/String;I)V
-
-    .line 496
-    invoke-static {p0}, Lcom/android/exchange/SyncManager;->doneOutOfBand(Lcom/android/exchange/AbstractSyncService;)V
-
-    .line 499
+    .line 505
     iget v0, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
 
-    if-ne v0, v10, :cond_1
+    packed-switch v0, :pswitch_data_3
 
-    .line 500
-    new-array v0, v7, [Ljava/lang/String;
+    goto :goto_1
 
-    const-string v1, "Outbox calling: SyncManager.reloadFolderList"
+    .line 507
+    :pswitch_2
+    const/16 v7, 0x17
 
-    aput-object v1, v0, v8
+    .line 513
+    .restart local v7       #status:I
+    sget-boolean v0, Lcom/android/exchange/EasOoOSvc;->CHECK_PROVISIONING_IN_PROGRESS:Z
 
-    invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
+    if-eqz v0, :cond_c
 
-    .line 501
-    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mContext:Landroid/content/Context;
+    .line 514
+    new-array v0, v8, [Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    const-string v1, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS true case!!!"
 
-    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    aput-object v12, v0, v9
 
-    goto/16 :goto_2
+    goto :goto_2
 
-    .line 481
+    .line 495
     .end local v3           #result:I
+    .end local v7           #status:I
     :catch_0
     move-exception v0
 
     move-object v6, v0
 
-    .line 482
+    .line 496
     .local v6, e:Ljava/io/IOException;
     const/4 v0, 0x1
 
@@ -2671,558 +2621,364 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 488
-    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    .line 503
+    new-array v0, v8, [Ljava/lang/String;
 
-    if-eqz v0, :cond_f
+    const-string v1, "OoO finished"
 
-    .line 489
-    new-array v0, v9, [Ljava/lang/String;
-
-    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
-
-    iget-object v1, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    aput-object v1, v0, v8
-
-    const-string v1, ": sync finished"
-
-    aput-object v1, v0, v7
+    aput-object v10, v0, v9
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    .line 494
-    :cond_a
-    :goto_6
-    const-string v0, "OoB exited with status "
+    .line 504
+    invoke-static {p0}, Lcom/android/exchange/SyncManager;->done(Lcom/android/exchange/AbstractSyncService;)V
 
-    iget v1, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/exchange/EasOoOSvc;->userLog(Ljava/lang/String;I)V
-
-    .line 496
-    invoke-static {p0}, Lcom/android/exchange/SyncManager;->doneOutOfBand(Lcom/android/exchange/AbstractSyncService;)V
-
-    .line 499
+    .line 505
     iget v0, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
 
-    if-ne v0, v10, :cond_1
+    packed-switch v0, :pswitch_data_4
 
-    .line 500
-    new-array v0, v7, [Ljava/lang/String;
+    goto/16 :goto_1
 
-    const-string v1, "Outbox calling: SyncManager.reloadFolderList"
+    .line 507
+    :pswitch_3
+    const/16 v7, 0x17
 
-    aput-object v1, v0, v8
+    .line 513
+    .restart local v7       #status:I
+    sget-boolean v0, Lcom/android/exchange/EasOoOSvc;->CHECK_PROVISIONING_IN_PROGRESS:Z
 
-    invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
+    if-eqz v0, :cond_7
 
-    .line 501
-    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mContext:Landroid/content/Context;
+    .line 514
+    new-array v0, v8, [Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    const-string v1, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS true case!!!"
 
-    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    aput-object v12, v0, v9
 
-    goto/16 :goto_2
+    goto :goto_2
 
-    .line 483
+    .line 497
     .end local v6           #e:Ljava/io/IOException;
+    .end local v7           #status:I
     :catch_1
     move-exception v0
 
     move-object v6, v0
 
-    .line 484
+    .line 498
     .local v6, e:Ljava/lang/Exception;
     :try_start_5
     const-string v0, "Exception caught in EasOOFSvc"
 
     invoke-virtual {p0, v0, v6}, Lcom/android/exchange/EasOoOSvc;->userLog(Ljava/lang/String;Ljava/lang/Exception;)V
 
-    .line 485
+    .line 499
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 488
-    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    .line 503
+    new-array v0, v8, [Ljava/lang/String;
 
-    if-eqz v0, :cond_10
+    const-string v1, "OoO finished"
 
-    .line 489
-    new-array v0, v9, [Ljava/lang/String;
-
-    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
-
-    iget-object v1, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    aput-object v1, v0, v8
-
-    const-string v1, ": sync finished"
-
-    aput-object v1, v0, v7
+    aput-object v10, v0, v9
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    .line 494
-    :cond_b
-    :goto_7
-    const-string v0, "OoB exited with status "
+    .line 504
+    invoke-static {p0}, Lcom/android/exchange/SyncManager;->done(Lcom/android/exchange/AbstractSyncService;)V
 
-    iget v1, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/exchange/EasOoOSvc;->userLog(Ljava/lang/String;I)V
-
-    .line 496
-    invoke-static {p0}, Lcom/android/exchange/SyncManager;->doneOutOfBand(Lcom/android/exchange/AbstractSyncService;)V
-
-    .line 499
+    .line 505
     iget v0, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
 
-    if-ne v0, v10, :cond_1
+    packed-switch v0, :pswitch_data_5
 
-    .line 500
-    new-array v0, v7, [Ljava/lang/String;
+    goto/16 :goto_1
 
-    const-string v1, "Outbox calling: SyncManager.reloadFolderList"
+    .line 507
+    :pswitch_4
+    const/16 v7, 0x17
 
-    aput-object v1, v0, v8
+    .line 513
+    .restart local v7       #status:I
+    sget-boolean v0, Lcom/android/exchange/EasOoOSvc;->CHECK_PROVISIONING_IN_PROGRESS:Z
 
-    invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
+    if-eqz v0, :cond_8
 
-    .line 501
-    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mContext:Landroid/content/Context;
+    .line 514
+    new-array v0, v8, [Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    const-string v1, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS true case!!!"
 
-    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    aput-object v12, v0, v9
 
     goto/16 :goto_2
 
-    .line 488
+    .line 502
     .end local v6           #e:Ljava/lang/Exception;
+    .end local v7           #status:I
     :catchall_0
     move-exception v0
 
-    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    .line 503
+    new-array v1, v8, [Ljava/lang/String;
 
-    if-eqz v1, :cond_e
+    const-string v2, "OoO finished"
 
-    .line 489
-    new-array v1, v9, [Ljava/lang/String;
-
-    iget-object v2, p0, Lcom/android/exchange/EasOoOSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
-
-    iget-object v2, v2, Lcom/android/email/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    aput-object v2, v1, v8
-
-    const-string v2, ": sync finished"
-
-    aput-object v2, v1, v7
+    aput-object v10, v1, v9
 
     invoke-virtual {p0, v1}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    .line 494
-    :cond_c
-    :goto_8
-    const-string v1, "OoB exited with status "
+    .line 504
+    invoke-static {p0}, Lcom/android/exchange/SyncManager;->done(Lcom/android/exchange/AbstractSyncService;)V
 
-    iget v2, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
-
-    invoke-virtual {p0, v1, v2}, Lcom/android/exchange/EasOoOSvc;->userLog(Ljava/lang/String;I)V
-
-    .line 496
-    invoke-static {p0}, Lcom/android/exchange/SyncManager;->doneOutOfBand(Lcom/android/exchange/AbstractSyncService;)V
-
-    .line 499
+    .line 505
     iget v1, p0, Lcom/android/exchange/EasOoOSvc;->mExitStatus:I
 
-    if-ne v1, v10, :cond_d
+    packed-switch v1, :pswitch_data_6
 
-    .line 500
-    new-array v1, v7, [Ljava/lang/String;
+    .line 502
+    :goto_3
+    throw v0
 
-    const-string v2, "Outbox calling: SyncManager.reloadFolderList"
+    .line 507
+    :pswitch_5
+    const/16 v7, 0x17
 
-    aput-object v2, v1, v8
+    .line 513
+    .restart local v7       #status:I
+    sget-boolean v1, Lcom/android/exchange/EasOoOSvc;->CHECK_PROVISIONING_IN_PROGRESS:Z
+
+    if-eqz v1, :cond_6
+
+    .line 514
+    new-array v1, v8, [Ljava/lang/String;
+
+    const-string v2, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS true case!!!"
+
+    aput-object v12, v1, v9
 
     invoke-virtual {p0, v1}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    .line 501
+    goto :goto_3
+
+    .line 516
+    :cond_6
+    new-array v1, v8, [Ljava/lang/String;
+
+    const-string v2, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS false case!!!"
+
+    aput-object v11, v1, v9
+
+    invoke-virtual {p0, v1}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
+
+    .line 517
     iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-wide v4, v2, Lcom/android/email/provider/EmailContent$Account;->mId:J
 
-    invoke-static {v1, v4, v5, v7}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
+    invoke-static {v1, v4, v5, v8}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
 
-    .line 488
-    :cond_d
-    throw v0
+    .line 518
+    sput-boolean v8, Lcom/android/exchange/EasOoOSvc;->CHECK_PROVISIONING_IN_PROGRESS:Z
 
-    .line 490
-    :cond_e
-    iget-wide v1, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
+    goto :goto_3
 
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MIN:J
-
-    cmp-long v1, v1, v4
-
-    if-lez v1, :cond_c
-
-    iget-wide v1, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
-
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MAX:J
-
-    cmp-long v1, v1, v4
-
-    if-gez v1, :cond_c
-
-    .line 492
-    new-array v1, v9, [Ljava/lang/String;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "OoBMailbox:"
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-wide v4, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
-
-    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v1, v8
-
-    const-string v2, ": OoO operation finished"
-
-    aput-object v11, v1, v7
-
-    invoke-virtual {p0, v1}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
-
-    goto :goto_8
-
-    .line 490
+    .line 516
     .local v6, e:Ljava/io/IOException;
-    :cond_f
-    iget-wide v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
+    :cond_7
+    new-array v0, v8, [Ljava/lang/String;
 
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MIN:J
+    const-string v1, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS false case!!!"
 
-    cmp-long v0, v0, v4
-
-    if-lez v0, :cond_a
-
-    iget-wide v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
-
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MAX:J
-
-    cmp-long v0, v0, v4
-
-    if-gez v0, :cond_a
-
-    .line 492
-    new-array v0, v9, [Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "OoBMailbox:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-wide v4, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
-
-    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    aput-object v1, v0, v8
-
-    const-string v1, ": OoO operation finished"
-
-    aput-object v11, v0, v7
+    aput-object v11, v0, v9
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    goto/16 :goto_6
+    .line 517
+    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mContext:Landroid/content/Context;
 
-    .line 490
-    .local v6, e:Ljava/lang/Exception;
-    :cond_10
-    iget-wide v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
+    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MIN:J
+    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
 
-    cmp-long v0, v0, v4
+    invoke-static {v0, v1, v2, v8}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
 
-    if-lez v0, :cond_b
-
-    iget-wide v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
-
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MAX:J
-
-    cmp-long v0, v0, v4
-
-    if-gez v0, :cond_b
-
-    .line 492
-    new-array v0, v9, [Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "OoBMailbox:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-wide v4, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
-
-    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    aput-object v1, v0, v8
-
-    const-string v1, ": OoO operation finished"
-
-    aput-object v11, v0, v7
-
-    invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
-
-    goto/16 :goto_7
-
-    .line 490
-    .end local v6           #e:Ljava/lang/Exception;
-    .restart local v3       #result:I
-    :cond_11
-    iget-wide v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
-
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MIN:J
-
-    cmp-long v0, v0, v4
-
-    if-lez v0, :cond_0
-
-    iget-wide v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
-
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MAX:J
-
-    cmp-long v0, v0, v4
-
-    if-gez v0, :cond_0
-
-    .line 492
-    new-array v0, v9, [Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "OoBMailbox:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-wide v4, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
-
-    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    aput-object v1, v0, v8
-
-    const-string v1, ": OoO operation finished"
-
-    aput-object v11, v0, v7
-
-    invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
+    .line 518
+    .end local v6           #e:Ljava/io/IOException;
+    :goto_4
+    sput-boolean v8, Lcom/android/exchange/EasOoOSvc;->CHECK_PROVISIONING_IN_PROGRESS:Z
 
     goto/16 :goto_1
 
-    .line 490
-    :cond_12
-    iget-wide v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
+    .line 516
+    .local v6, e:Ljava/lang/Exception;
+    :cond_8
+    new-array v0, v8, [Ljava/lang/String;
 
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MIN:J
+    const-string v1, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS false case!!!"
 
-    cmp-long v0, v0, v4
-
-    if-lez v0, :cond_5
-
-    iget-wide v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
-
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MAX:J
-
-    cmp-long v0, v0, v4
-
-    if-gez v0, :cond_5
-
-    .line 492
-    new-array v0, v9, [Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "OoBMailbox:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-wide v4, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
-
-    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    aput-object v1, v0, v8
-
-    const-string v1, ": OoO operation finished"
-
-    aput-object v11, v0, v7
+    aput-object v11, v0, v9
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    goto/16 :goto_3
+    .line 517
+    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mContext:Landroid/content/Context;
 
-    .line 490
-    :cond_13
-    iget-wide v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
+    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MIN:J
+    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
 
-    cmp-long v0, v0, v4
+    invoke-static {v0, v1, v2, v8}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
 
-    if-lez v0, :cond_7
+    goto :goto_4
 
-    iget-wide v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
+    .line 507
+    .end local v6           #e:Ljava/lang/Exception;
+    .end local v7           #status:I
+    .restart local v3       #result:I
+    :pswitch_6
+    const/16 v7, 0x17
 
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MAX:J
+    .line 513
+    .restart local v7       #status:I
+    sget-boolean v0, Lcom/android/exchange/EasOoOSvc;->CHECK_PROVISIONING_IN_PROGRESS:Z
 
-    cmp-long v0, v0, v4
+    if-eqz v0, :cond_9
 
-    if-gez v0, :cond_7
+    .line 514
+    new-array v0, v8, [Ljava/lang/String;
 
-    .line 492
-    new-array v0, v9, [Ljava/lang/String;
+    const-string v1, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS true case!!!"
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    aput-object v12, v0, v9
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    goto/16 :goto_2
 
-    const-string v2, "OoBMailbox:"
+    .line 516
+    :cond_9
+    new-array v0, v8, [Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS false case!!!"
 
-    move-result-object v1
-
-    iget-wide v4, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
-
-    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    aput-object v1, v0, v8
-
-    const-string v1, ": OoO operation finished"
-
-    aput-object v11, v0, v7
+    aput-object v11, v0, v9
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    goto/16 :goto_4
+    .line 517
+    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mContext:Landroid/content/Context;
 
-    .line 490
-    :cond_14
-    iget-wide v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
+    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MIN:J
+    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
 
-    cmp-long v0, v0, v4
+    invoke-static {v0, v1, v2, v8}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
 
-    if-lez v0, :cond_9
+    goto :goto_4
 
-    iget-wide v0, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
+    .line 516
+    :cond_a
+    new-array v0, v8, [Ljava/lang/String;
 
-    sget-wide v4, Lcom/android/exchange/SyncManager;->MAILBOX_DUMMY_MAX:J
+    const-string v1, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS false case!!!"
 
-    cmp-long v0, v0, v4
-
-    if-gez v0, :cond_9
-
-    .line 492
-    new-array v0, v9, [Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "OoBMailbox:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-wide v4, p0, Lcom/android/exchange/EasOoOSvc;->mMailboxId:J
-
-    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    aput-object v1, v0, v8
-
-    const-string v1, ": OoO operation finished"
-
-    aput-object v11, v0, v7
+    aput-object v11, v0, v9
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
 
-    goto/16 :goto_5
+    .line 517
+    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mContext:Landroid/content/Context;
+
+    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+
+    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+
+    invoke-static {v0, v1, v2, v8}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
+
+    goto :goto_4
+
+    .line 516
+    :cond_b
+    new-array v0, v8, [Ljava/lang/String;
+
+    const-string v1, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS false case!!!"
+
+    aput-object v11, v0, v9
+
+    invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
+
+    .line 517
+    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mContext:Landroid/content/Context;
+
+    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+
+    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+
+    invoke-static {v0, v1, v2, v8}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
+
+    goto :goto_4
+
+    .line 516
+    :cond_c
+    new-array v0, v8, [Ljava/lang/String;
+
+    const-string v1, "Sync ended due to CHECK_PROVISIONING_IN_PROGRESS false case!!!"
+
+    aput-object v11, v0, v9
+
+    invoke-virtual {p0, v0}, Lcom/android/exchange/EasOoOSvc;->userLog([Ljava/lang/String;)V
+
+    .line 517
+    iget-object v0, p0, Lcom/android/exchange/EasOoOSvc;->mContext:Landroid/content/Context;
+
+    iget-object v1, p0, Lcom/android/exchange/EasOoOSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+
+    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+
+    invoke-static {v0, v1, v2, v8}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
+
+    goto :goto_4
+
+    .line 505
+    :pswitch_data_0
+    .packed-switch 0x4
+        :pswitch_6
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x4
+        :pswitch_0
+    .end packed-switch
+
+    :pswitch_data_2
+    .packed-switch 0x4
+        :pswitch_1
+    .end packed-switch
+
+    :pswitch_data_3
+    .packed-switch 0x4
+        :pswitch_2
+    .end packed-switch
+
+    :pswitch_data_4
+    .packed-switch 0x4
+        :pswitch_3
+    .end packed-switch
+
+    :pswitch_data_5
+    .packed-switch 0x4
+        :pswitch_4
+    .end packed-switch
+
+    :pswitch_data_6
+    .packed-switch 0x4
+        :pswitch_5
+    .end packed-switch
 .end method

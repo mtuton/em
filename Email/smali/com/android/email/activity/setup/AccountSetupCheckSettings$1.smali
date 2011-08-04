@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 182
+    .line 181
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     iput-object p2, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->val$intent:Landroid/content/Intent;
@@ -40,15 +40,15 @@
 
 # virtual methods
 .method public run()V
-    .locals 20
+    .locals 21
 
     .prologue
-    .line 183
+    .line 184
     const/16 v4, 0xa
 
     invoke-static {v4}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 185
+    .line 186
     :try_start_0
     move-object/from16 v0, p0
 
@@ -62,12 +62,12 @@
 
     if-eqz v4, :cond_1
 
-    .line 369
+    .line 382
     :cond_0
     :goto_0
     return-void
 
-    .line 188
+    .line 189
     :cond_1
     move-object/from16 v0, p0
 
@@ -81,7 +81,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 191
+    .line 192
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -92,7 +92,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->setResult(I)V
 
-    .line 194
+    .line 195
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -101,7 +101,7 @@
 
     invoke-virtual {v4}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->finish()V
     :try_end_0
-    .catch Lcom/android/email/activity/setup/AccountSetupCheckSettings$AutoDiscoverAuthenticationException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lcom/android/email/mail/DeviceAccessException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Lcom/android/email/mail/AuthenticationFailedException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Lcom/android/email/mail/CertificateValidationException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Lcom/android/email/mail/MessagingException; {:try_start_0 .. :try_end_0} :catch_3
@@ -112,44 +112,45 @@
     :catch_0
     move-exception v4
 
-    move-object v9, v4
+    move-object v11, v4
 
     .line 314
-    .local v9, afe:Lcom/android/email/activity/setup/AccountSetupCheckSettings$AutoDiscoverAuthenticationException;
-    invoke-virtual {v9}, Lcom/android/email/activity/setup/AccountSetupCheckSettings$AutoDiscoverAuthenticationException;->getMessage()Ljava/lang/String;
+    .local v11, e:Lcom/android/email/mail/DeviceAccessException;
+    invoke-virtual {v11}, Lcom/android/email/mail/DeviceAccessException;->getMessage()Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v17
 
     .line 315
-    .local v16, message:Ljava/lang/String;
-    const v13, 0x7f08023a
-
-    .line 316
-    .local v13, id:I
+    .local v17, message:Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     move-object v4, v0
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
 
-    const/4 v6, 0x1
+    const v6, 0x7f0802cb
 
-    new-array v6, v6, [Ljava/lang/Object;
+    const/4 v7, 0x1
 
-    const/4 v7, 0x0
+    new-array v7, v7, [Ljava/lang/Object;
 
-    aput-object v16, v6, v7
+    const/4 v8, 0x0
 
-    invoke-static {v4, v5, v13, v6}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$800(Lcom/android/email/activity/setup/AccountSetupCheckSettings;ZI[Ljava/lang/Object;)V
+    invoke-virtual {v11}, Lcom/android/email/mail/DeviceAccessException;->getMessage()Ljava/lang/String;
+
+    move-result-object v9
+
+    aput-object v9, v7, v8
+
+    invoke-static {v4, v5, v6, v7}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$800(Lcom/android/email/activity/setup/AccountSetupCheckSettings;ZI[Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 197
-    .end local v9           #afe:Lcom/android/email/activity/setup/AccountSetupCheckSettings$AutoDiscoverAuthenticationException;
-    .end local v13           #id:I
-    .end local v16           #message:Ljava/lang/String;
+    .line 198
+    .end local v11           #e:Lcom/android/email/mail/DeviceAccessException;
+    .end local v17           #message:Ljava/lang/String;
     :cond_2
     :try_start_1
     move-object/from16 v0, p0
@@ -164,7 +165,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 198
+    .line 199
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->val$intent:Landroid/content/Intent;
@@ -177,7 +178,7 @@
 
     move-result-object v5
 
-    .line 199
+    .line 200
     .local v5, userName:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -191,7 +192,7 @@
 
     move-result-object v6
 
-    .line 202
+    .line 203
     .local v6, password:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -205,7 +206,7 @@
 
     move-result-object v7
 
-    .line 203
+    .line 204
     .local v7, domain:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -221,7 +222,7 @@
 
     move-result v8
 
-    .line 206
+    .line 207
     .local v8, bTrustCert:Z
     const-string v4, "Email"
 
@@ -245,7 +246,7 @@
 
     invoke-static {v4, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 207
+    .line 208
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -282,7 +283,7 @@
 
     move-result-object v3
 
-    .line 212
+    .line 213
     .local v3, store:Lcom/android/email/mail/Store;
     move-object/from16 v0, p0
 
@@ -292,10 +293,10 @@
 
     invoke-virtual/range {v3 .. v8}, Lcom/android/email/mail/Store;->autoDiscover(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/os/Bundle;
 
-    move-result-object v17
+    move-result-object v18
 
-    .line 222
-    .local v17, result:Landroid/os/Bundle;
+    .line 223
+    .local v18, result:Landroid/os/Bundle;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -308,7 +309,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 223
+    .line 224
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -319,7 +320,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->setResult(I)V
 
-    .line 224
+    .line 225
     .end local v5           #userName:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -329,40 +330,41 @@
 
     invoke-virtual {v4}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->finish()V
     :try_end_1
-    .catch Lcom/android/email/activity/setup/AccountSetupCheckSettings$AutoDiscoverAuthenticationException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Lcom/android/email/mail/DeviceAccessException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Lcom/android/email/mail/AuthenticationFailedException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Lcom/android/email/mail/CertificateValidationException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Lcom/android/email/mail/MessagingException; {:try_start_1 .. :try_end_1} :catch_3
 
     goto/16 :goto_0
 
-    .line 319
+    .line 318
     .end local v3           #store:Lcom/android/email/mail/Store;
     .end local v6           #password:Ljava/lang/String;
     .end local v7           #domain:Ljava/lang/String;
     .end local v8           #bTrustCert:Z
-    .end local v17           #result:Landroid/os/Bundle;
+    .end local v18           #result:Landroid/os/Bundle;
     :catch_1
     move-exception v4
 
     move-object v9, v4
 
-    .line 322
+    .line 321
     .local v9, afe:Lcom/android/email/mail/AuthenticationFailedException;
     invoke-virtual {v9}, Lcom/android/email/mail/AuthenticationFailedException;->getMessage()Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v17
 
     .line 323
-    .restart local v16       #message:Ljava/lang/String;
-    if-nez v16, :cond_b
+    .restart local v17       #message:Ljava/lang/String;
+    instance-of v4, v9, Lcom/android/email/activity/setup/AccountSetupCheckSettings$AutoDiscoverAuthenticationException;
 
-    const v4, 0x7f0800c7
+    if-eqz v4, :cond_b
 
-    move v13, v4
+    .line 325
+    const v14, 0x7f0800d2
 
-    .line 326
-    .restart local v13       #id:I
+    .line 334
+    .local v14, id:I
     :goto_1
     move-object/from16 v0, p0
 
@@ -378,44 +380,44 @@
 
     const/4 v7, 0x0
 
-    aput-object v16, v6, v7
+    aput-object v17, v6, v7
 
-    invoke-static {v4, v5, v13, v6}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$800(Lcom/android/email/activity/setup/AccountSetupCheckSettings;ZI[Ljava/lang/Object;)V
+    invoke-static {v4, v5, v14, v6}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$800(Lcom/android/email/activity/setup/AccountSetupCheckSettings;ZI[Ljava/lang/Object;)V
 
     goto/16 :goto_0
 
-    .line 229
+    .line 230
     .end local v9           #afe:Lcom/android/email/mail/AuthenticationFailedException;
-    .end local v13           #id:I
-    .end local v16           #message:Ljava/lang/String;
+    .end local v14           #id:I
+    .end local v17           #message:Ljava/lang/String;
     .restart local v3       #store:Lcom/android/email/mail/Store;
     .restart local v5       #userName:Ljava/lang/String;
     .restart local v6       #password:Ljava/lang/String;
     .restart local v7       #domain:Ljava/lang/String;
     .restart local v8       #bTrustCert:Z
-    .restart local v17       #result:Landroid/os/Bundle;
+    .restart local v18       #result:Landroid/os/Bundle;
     :cond_3
-    if-eqz v17, :cond_6
+    if-eqz v18, :cond_6
 
-    .line 230
+    .line 231
     :try_start_2
     const-string v4, "autodiscover_error_code"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     move-object v1, v4
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
-    move-result v11
+    move-result v12
 
-    .line 234
-    .local v11, errorCode:I
+    .line 235
+    .local v12, errorCode:I
     const/4 v4, -0x1
 
-    if-eq v11, v4, :cond_5
+    if-eq v12, v4, :cond_5
 
-    .line 236
+    .line 237
     const/4 v4, 0x1
 
     sget v5, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->mAutoDiscoverRetryCount:I
@@ -423,7 +425,7 @@
     .end local v5           #userName:Ljava/lang/String;
     if-ne v4, v5, :cond_4
 
-    .line 239
+    .line 240
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -434,7 +436,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->setResult(I)V
 
-    .line 240
+    .line 241
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -443,41 +445,41 @@
 
     invoke-virtual {v4}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->finish()V
     :try_end_2
-    .catch Lcom/android/email/activity/setup/AccountSetupCheckSettings$AutoDiscoverAuthenticationException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Lcom/android/email/mail/DeviceAccessException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Lcom/android/email/mail/AuthenticationFailedException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Lcom/android/email/mail/CertificateValidationException; {:try_start_2 .. :try_end_2} :catch_2
     .catch Lcom/android/email/mail/MessagingException; {:try_start_2 .. :try_end_2} :catch_3
 
     goto/16 :goto_0
 
-    .line 328
+    .line 336
     .end local v3           #store:Lcom/android/email/mail/Store;
     .end local v6           #password:Ljava/lang/String;
     .end local v7           #domain:Ljava/lang/String;
     .end local v8           #bTrustCert:Z
-    .end local v11           #errorCode:I
-    .end local v17           #result:Landroid/os/Bundle;
+    .end local v12           #errorCode:I
+    .end local v18           #result:Landroid/os/Bundle;
     :catch_2
     move-exception v4
 
     move-object v10, v4
 
-    .line 329
+    .line 337
     .local v10, cve:Lcom/android/email/mail/CertificateValidationException;
     invoke-virtual {v10}, Lcom/android/email/mail/CertificateValidationException;->getMessage()Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v17
 
-    .line 330
-    .restart local v16       #message:Ljava/lang/String;
-    if-nez v16, :cond_c
+    .line 338
+    .restart local v17       #message:Ljava/lang/String;
+    if-nez v17, :cond_e
 
-    const v4, 0x7f0800c9
+    const v4, 0x7f0800d4
 
-    move v13, v4
+    move v14, v4
 
-    .line 333
-    .restart local v13       #id:I
+    .line 341
+    .restart local v14       #id:I
     :goto_2
     move-object/from16 v0, p0
 
@@ -493,22 +495,22 @@
 
     const/4 v7, 0x0
 
-    aput-object v16, v6, v7
+    aput-object v17, v6, v7
 
-    invoke-static {v4, v5, v13, v6}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$800(Lcom/android/email/activity/setup/AccountSetupCheckSettings;ZI[Ljava/lang/Object;)V
+    invoke-static {v4, v5, v14, v6}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$800(Lcom/android/email/activity/setup/AccountSetupCheckSettings;ZI[Ljava/lang/Object;)V
 
     goto/16 :goto_0
 
-    .line 242
+    .line 243
     .end local v10           #cve:Lcom/android/email/mail/CertificateValidationException;
-    .end local v13           #id:I
-    .end local v16           #message:Ljava/lang/String;
+    .end local v14           #id:I
+    .end local v17           #message:Ljava/lang/String;
     .restart local v3       #store:Lcom/android/email/mail/Store;
     .restart local v6       #password:Ljava/lang/String;
     .restart local v7       #domain:Ljava/lang/String;
     .restart local v8       #bTrustCert:Z
-    .restart local v11       #errorCode:I
-    .restart local v17       #result:Landroid/os/Bundle;
+    .restart local v12       #errorCode:I
+    .restart local v18       #result:Landroid/os/Bundle;
     :cond_4
     const/4 v4, 0x2
 
@@ -517,7 +519,7 @@
 
     if-ne v4, v5, :cond_5
 
-    .line 247
+    .line 248
     new-instance v4, Lcom/android/email/activity/setup/AccountSetupCheckSettings$AutoDiscoverAuthenticationException;
 
     move-object/from16 v0, p0
@@ -533,35 +535,35 @@
     .end local v6           #password:Ljava/lang/String;
     throw v4
     :try_end_3
-    .catch Lcom/android/email/activity/setup/AccountSetupCheckSettings$AutoDiscoverAuthenticationException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Lcom/android/email/mail/DeviceAccessException; {:try_start_3 .. :try_end_3} :catch_0
     .catch Lcom/android/email/mail/AuthenticationFailedException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Lcom/android/email/mail/CertificateValidationException; {:try_start_3 .. :try_end_3} :catch_2
     .catch Lcom/android/email/mail/MessagingException; {:try_start_3 .. :try_end_3} :catch_3
 
-    .line 334
+    .line 342
     .end local v3           #store:Lcom/android/email/mail/Store;
     .end local v7           #domain:Ljava/lang/String;
     .end local v8           #bTrustCert:Z
-    .end local v11           #errorCode:I
-    .end local v17           #result:Landroid/os/Bundle;
+    .end local v12           #errorCode:I
+    .end local v18           #result:Landroid/os/Bundle;
     :catch_3
     move-exception v4
 
-    move-object v15, v4
+    move-object/from16 v16, v4
 
-    .line 335
-    .local v15, me:Lcom/android/email/mail/MessagingException;
-    invoke-virtual {v15}, Lcom/android/email/mail/MessagingException;->getExceptionType()I
+    .line 343
+    .local v16, me:Lcom/android/email/mail/MessagingException;
+    invoke-virtual/range {v16 .. v16}, Lcom/android/email/mail/MessagingException;->getExceptionType()I
 
-    move-result v12
+    move-result v13
 
-    .line 337
-    .local v12, exceptionType:I
+    .line 345
+    .local v13, exceptionType:I
     const/4 v4, 0x7
 
-    if-ne v12, v4, :cond_d
+    if-ne v13, v4, :cond_f
 
-    .line 338
+    .line 346
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -572,28 +574,28 @@
 
     goto/16 :goto_0
 
-    .line 254
-    .end local v12           #exceptionType:I
-    .end local v15           #me:Lcom/android/email/mail/MessagingException;
+    .line 255
+    .end local v13           #exceptionType:I
+    .end local v16           #me:Lcom/android/email/mail/MessagingException;
     .restart local v3       #store:Lcom/android/email/mail/Store;
     .restart local v6       #password:Ljava/lang/String;
     .restart local v7       #domain:Ljava/lang/String;
     .restart local v8       #bTrustCert:Z
-    .restart local v11       #errorCode:I
-    .restart local v17       #result:Landroid/os/Bundle;
+    .restart local v12       #errorCode:I
+    .restart local v18       #result:Landroid/os/Bundle;
     :cond_5
     :try_start_4
-    new-instance v18, Landroid/content/Intent;
+    new-instance v19, Landroid/content/Intent;
 
-    invoke-direct/range {v18 .. v18}, Landroid/content/Intent;-><init>()V
+    invoke-direct/range {v19 .. v19}, Landroid/content/Intent;-><init>()V
 
-    .line 255
-    .local v18, resultIntent:Landroid/content/Intent;
+    .line 256
+    .local v19, resultIntent:Landroid/content/Intent;
     const-string v4, "HostAuth"
 
     const-string v5, "autodiscover_host_auth"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     move-object v1, v5
 
@@ -601,7 +603,7 @@
 
     move-result-object v5
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     move-object v1, v4
 
@@ -609,7 +611,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 257
+    .line 258
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -622,11 +624,11 @@
 
     move v1, v5
 
-    move-object/from16 v2, v18
+    move-object/from16 v2, v19
 
     invoke-virtual {v0, v1, v2}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->setResult(ILandroid/content/Intent;)V
 
-    .line 258
+    .line 259
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -637,14 +639,14 @@
 
     goto/16 :goto_0
 
-    .line 263
+    .line 264
     .end local v3           #store:Lcom/android/email/mail/Store;
     .end local v6           #password:Ljava/lang/String;
     .end local v7           #domain:Ljava/lang/String;
     .end local v8           #bTrustCert:Z
-    .end local v11           #errorCode:I
-    .end local v17           #result:Landroid/os/Bundle;
-    .end local v18           #resultIntent:Landroid/content/Intent;
+    .end local v12           #errorCode:I
+    .end local v18           #result:Landroid/os/Bundle;
+    .end local v19           #resultIntent:Landroid/content/Intent;
     :cond_6
     move-object/from16 v0, p0
 
@@ -658,7 +660,7 @@
 
     if-nez v4, :cond_0
 
-    .line 266
+    .line 267
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -671,7 +673,7 @@
 
     if-eqz v4, :cond_7
 
-    .line 268
+    .line 269
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -682,7 +684,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->setResult(I)V
 
-    .line 270
+    .line 271
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -693,7 +695,7 @@
 
     goto/16 :goto_0
 
-    .line 273
+    .line 274
     :cond_7
     move-object/from16 v0, p0
 
@@ -707,25 +709,25 @@
 
     if-eqz v4, :cond_8
 
-    .line 274
+    .line 275
     const-string v4, "Email"
 
     const-string v5, "Begin check of incoming email settings"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 275
+    .line 276
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     move-object v4, v0
 
-    const v5, 0x7f080087
+    const v5, 0x7f080091
 
     invoke-static {v4, v5}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$500(Lcom/android/email/activity/setup/AccountSetupCheckSettings;I)V
 
-    .line 277
+    .line 278
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -750,7 +752,7 @@
 
     invoke-static {v4, v5, v6}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$600(Lcom/android/email/activity/setup/AccountSetupCheckSettings;Landroid/content/Context;Lcom/android/email/provider/EmailContent$Account;)V
 
-    .line 279
+    .line 280
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -787,11 +789,11 @@
 
     move-result-object v3
 
-    .line 282
+    .line 283
     .restart local v3       #store:Lcom/android/email/mail/Store;
     invoke-virtual {v3}, Lcom/android/email/mail/Store;->checkSettings()V
 
-    .line 284
+    .line 285
     .end local v3           #store:Lcom/android/email/mail/Store;
     :cond_8
     move-object/from16 v0, p0
@@ -806,7 +808,7 @@
 
     if-nez v4, :cond_0
 
-    .line 287
+    .line 288
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -819,7 +821,7 @@
 
     if-eqz v4, :cond_9
 
-    .line 288
+    .line 289
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -830,7 +832,7 @@
 
     goto/16 :goto_0
 
-    .line 291
+    .line 292
     :cond_9
     move-object/from16 v0, p0
 
@@ -844,25 +846,25 @@
 
     if-eqz v4, :cond_a
 
-    .line 292
+    .line 293
     const-string v4, "Email"
 
     const-string v5, "Begin check of outgoing email settings"
 
     invoke-static {v4, v5}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 293
+    .line 294
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     move-object v4, v0
 
-    const v5, 0x7f080088
+    const v5, 0x7f080092
 
     invoke-static {v4, v5}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$500(Lcom/android/email/activity/setup/AccountSetupCheckSettings;I)V
 
-    .line 294
+    .line 295
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -895,20 +897,20 @@
 
     invoke-static {v4, v5}, Lcom/android/email/mail/Sender;->getInstance(Landroid/content/Context;Ljava/lang/String;)Lcom/android/email/mail/Sender;
 
-    move-result-object v19
-
-    .line 296
-    .local v19, sender:Lcom/android/email/mail/Sender;
-    invoke-virtual/range {v19 .. v19}, Lcom/android/email/mail/Sender;->close()V
+    move-result-object v20
 
     .line 297
-    invoke-virtual/range {v19 .. v19}, Lcom/android/email/mail/Sender;->open()V
+    .local v20, sender:Lcom/android/email/mail/Sender;
+    invoke-virtual/range {v20 .. v20}, Lcom/android/email/mail/Sender;->close()V
 
     .line 298
-    invoke-virtual/range {v19 .. v19}, Lcom/android/email/mail/Sender;->close()V
+    invoke-virtual/range {v20 .. v20}, Lcom/android/email/mail/Sender;->open()V
 
-    .line 300
-    .end local v19           #sender:Lcom/android/email/mail/Sender;
+    .line 299
+    invoke-virtual/range {v20 .. v20}, Lcom/android/email/mail/Sender;->close()V
+
+    .line 301
+    .end local v20           #sender:Lcom/android/email/mail/Sender;
     :cond_a
     move-object/from16 v0, p0
 
@@ -922,13 +924,13 @@
 
     if-nez v4, :cond_0
 
-    .line 306
-    new-instance v14, Landroid/content/Intent;
-
-    invoke-direct {v14}, Landroid/content/Intent;-><init>()V
-
     .line 307
-    .local v14, intent:Landroid/content/Intent;
+    new-instance v15, Landroid/content/Intent;
+
+    invoke-direct {v15}, Landroid/content/Intent;-><init>()V
+
+    .line 308
+    .local v15, intent:Landroid/content/Intent;
     const-string v4, "com.android.email.AccountSetupBasics.account"
 
     move-object/from16 v0, p0
@@ -941,9 +943,9 @@
 
     move-result-object v5
 
-    invoke-virtual {v14, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+    invoke-virtual {v15, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 308
+    .line 309
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -952,9 +954,9 @@
 
     const/4 v5, -0x1
 
-    invoke-virtual {v4, v5, v14}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->setResult(ILandroid/content/Intent;)V
+    invoke-virtual {v4, v5, v15}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->setResult(ILandroid/content/Intent;)V
 
-    .line 310
+    .line 311
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -963,58 +965,84 @@
 
     invoke-virtual {v4}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->finish()V
     :try_end_4
-    .catch Lcom/android/email/activity/setup/AccountSetupCheckSettings$AutoDiscoverAuthenticationException; {:try_start_4 .. :try_end_4} :catch_0
+    .catch Lcom/android/email/mail/DeviceAccessException; {:try_start_4 .. :try_end_4} :catch_0
     .catch Lcom/android/email/mail/AuthenticationFailedException; {:try_start_4 .. :try_end_4} :catch_1
     .catch Lcom/android/email/mail/CertificateValidationException; {:try_start_4 .. :try_end_4} :catch_2
     .catch Lcom/android/email/mail/MessagingException; {:try_start_4 .. :try_end_4} :catch_3
 
     goto/16 :goto_0
 
-    .line 323
-    .end local v14           #intent:Landroid/content/Intent;
+    .line 329
+    .end local v15           #intent:Landroid/content/Intent;
     .restart local v9       #afe:Lcom/android/email/mail/AuthenticationFailedException;
-    .restart local v16       #message:Ljava/lang/String;
+    .restart local v17       #message:Ljava/lang/String;
     :cond_b
-    const v4, 0x7f0800c8
+    if-eqz v17, :cond_c
 
-    move v13, v4
+    const-string v4, ""
 
+    move-object/from16 v0, v17
+
+    move-object v1, v4
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_d
+
+    :cond_c
+    const v4, 0x7f0800d1
+
+    move v14, v4
+
+    .restart local v14       #id:I
+    :goto_3
     goto/16 :goto_1
 
-    .line 330
+    .end local v14           #id:I
+    :cond_d
+    const v4, 0x7f0800d3
+
+    move v14, v4
+
+    goto :goto_3
+
+    .line 338
     .end local v9           #afe:Lcom/android/email/mail/AuthenticationFailedException;
     .restart local v10       #cve:Lcom/android/email/mail/CertificateValidationException;
-    :cond_c
-    const v4, 0x7f0800ca
+    :cond_e
+    const v4, 0x7f0800d5
 
-    move v13, v4
+    move v14, v4
 
     goto/16 :goto_2
 
-    .line 343
+    .line 351
     .end local v10           #cve:Lcom/android/email/mail/CertificateValidationException;
-    .end local v16           #message:Ljava/lang/String;
-    .restart local v12       #exceptionType:I
-    .restart local v15       #me:Lcom/android/email/mail/MessagingException;
-    :cond_d
-    invoke-virtual {v15}, Lcom/android/email/mail/MessagingException;->getMessage()Ljava/lang/String;
+    .end local v17           #message:Ljava/lang/String;
+    .restart local v13       #exceptionType:I
+    .restart local v16       #me:Lcom/android/email/mail/MessagingException;
+    :cond_f
+    invoke-virtual/range {v16 .. v16}, Lcom/android/email/mail/MessagingException;->getMessage()Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v17
 
-    .line 344
-    .restart local v16       #message:Ljava/lang/String;
-    sparse-switch v12, :sswitch_data_0
+    .line 352
+    .restart local v17       #message:Ljava/lang/String;
+    packed-switch v13, :pswitch_data_0
 
-    .line 362
-    if-nez v16, :cond_e
+    .line 375
+    :pswitch_0
+    if-nez v17, :cond_10
 
-    const v4, 0x7f0800cb
+    const v4, 0x7f0800d6
 
-    move v13, v4
+    move v14, v4
 
-    .line 367
-    .restart local v13       #id:I
-    :goto_3
+    .line 380
+    .restart local v14       #id:I
+    :goto_4
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$1;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -1029,76 +1057,101 @@
 
     const/4 v7, 0x0
 
-    aput-object v16, v6, v7
+    aput-object v17, v6, v7
 
-    invoke-static {v4, v5, v13, v6}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$800(Lcom/android/email/activity/setup/AccountSetupCheckSettings;ZI[Ljava/lang/Object;)V
+    invoke-static {v4, v5, v14, v6}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$800(Lcom/android/email/activity/setup/AccountSetupCheckSettings;ZI[Ljava/lang/Object;)V
 
     goto/16 :goto_0
 
-    .line 347
-    .end local v13           #id:I
-    :sswitch_0
-    const v13, 0x7f0800d0
-
-    .line 348
-    .restart local v13       #id:I
-    goto :goto_3
-
-    .line 350
-    .end local v13           #id:I
-    :sswitch_1
-    const v13, 0x7f0800cd
-
-    .line 351
-    .restart local v13       #id:I
-    goto :goto_3
-
-    .line 353
-    .end local v13           #id:I
-    :sswitch_2
-    const v13, 0x7f0800ce
-
     .line 354
-    .restart local v13       #id:I
-    goto :goto_3
+    .end local v14           #id:I
+    :pswitch_1
+    const v14, 0x7f0800db
 
-    .line 356
-    .end local v13           #id:I
-    :sswitch_3
-    const v13, 0x7f08018a
+    .line 355
+    .restart local v14       #id:I
+    goto :goto_4
 
     .line 357
-    .restart local v13       #id:I
-    goto :goto_3
+    .end local v14           #id:I
+    :pswitch_2
+    const v14, 0x7f0800d8
 
-    .line 359
-    .end local v13           #id:I
-    :sswitch_4
-    const v13, 0x7f0800cf
+    .line 358
+    .restart local v14       #id:I
+    goto :goto_4
 
     .line 360
-    .restart local v13       #id:I
-    goto :goto_3
+    .end local v14           #id:I
+    :pswitch_3
+    const v14, 0x7f0800d9
 
-    .line 362
-    .end local v13           #id:I
-    :cond_e
-    const v4, 0x7f0800cc
+    .line 361
+    .restart local v14       #id:I
+    goto :goto_4
 
-    move v13, v4
+    .line 363
+    .end local v14           #id:I
+    :pswitch_4
+    const v14, 0x7f080187
 
-    goto :goto_3
+    .line 364
+    .restart local v14       #id:I
+    goto :goto_4
 
-    .line 344
+    .line 366
+    .end local v14           #id:I
+    :pswitch_5
+    const v14, 0x7f0801a5
+
+    .line 367
+    .restart local v14       #id:I
+    goto :goto_4
+
+    .line 369
+    .end local v14           #id:I
+    :pswitch_6
+    const v14, 0x7f0800da
+
+    .line 370
+    .restart local v14       #id:I
+    goto :goto_4
+
+    .line 372
+    .end local v14           #id:I
+    :pswitch_7
+    const v14, 0x7f0802f8
+
+    .line 373
+    .restart local v14       #id:I
+    goto :goto_4
+
+    .line 375
+    .end local v14           #id:I
+    :cond_10
+    const v4, 0x7f0800d7
+
+    move v14, v4
+
+    goto :goto_4
+
+    .line 352
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x1 -> :sswitch_0
-        0x2 -> :sswitch_1
-        0x3 -> :sswitch_2
-        0x4 -> :sswitch_4
-        0x8 -> :sswitch_3
-        0x14 -> :sswitch_0
-    .end sparse-switch
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_6
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_4
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_5
+        :pswitch_7
+    .end packed-switch
 .end method

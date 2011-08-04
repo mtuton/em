@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 412
+    .line 415
     iput-object p1, p0, Lcom/android/email/activity/MailboxList$2;->this$0:Lcom/android/email/activity/MailboxList;
 
     iput-wide p2, p0, Lcom/android/email/activity/MailboxList$2;->val$mailboxId:J
@@ -53,7 +53,7 @@
     .parameter "item"
 
     .prologue
-    .line 413
+    .line 417
     iget-object v1, p0, Lcom/android/email/activity/MailboxList$2;->this$0:Lcom/android/email/activity/MailboxList;
 
     invoke-virtual {v1}, Lcom/android/email/activity/MailboxList;->getApplication()Landroid/app/Application;
@@ -64,7 +64,7 @@
 
     move-result-object v0
 
-    .line 414
+    .line 418
     .local v0, controller:Lcom/android/email/Controller;
     iget-wide v1, p0, Lcom/android/email/activity/MailboxList$2;->val$mailboxId:J
 
@@ -78,6 +78,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/email/Controller;->moveFolder(JJ)V
 
-    .line 415
+    .line 419
     return-void
 .end method

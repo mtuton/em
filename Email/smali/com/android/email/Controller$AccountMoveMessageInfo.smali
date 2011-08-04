@@ -14,14 +14,6 @@
 .end annotation
 
 
-# static fields
-.field public static final STATE_NONE:I = -0x1
-
-.field public static final STATE_WAIT_DOWNLOAD:I = 0x0
-
-.field public static final STATE_WAIT_MOVE:I = 0x1
-
-
 # instance fields
 .field public delay_cnt:I
 
@@ -53,39 +45,39 @@
     .parameter "delaycnt"
 
     .prologue
-    .line 84
+    .line 79
     iput-object p1, p0, Lcom/android/email/Controller$AccountMoveMessageInfo;->this$0:Lcom/android/email/Controller;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 97
+    .line 92
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/android/email/Controller$AccountMoveMessageInfo;->state:J
 
-    .line 85
+    .line 80
     int-to-long v0, p2
 
     iput-wide v0, p0, Lcom/android/email/Controller$AccountMoveMessageInfo;->state:J
 
-    .line 86
+    .line 81
     iput-wide p3, p0, Lcom/android/email/Controller$AccountMoveMessageInfo;->messageId:J
 
-    .line 87
+    .line 82
     iput-wide p5, p0, Lcom/android/email/Controller$AccountMoveMessageInfo;->target_accountId:J
 
-    .line 88
+    .line 83
     iput-wide p7, p0, Lcom/android/email/Controller$AccountMoveMessageInfo;->target_boxId:J
 
-    .line 89
+    .line 84
     iput-wide p9, p0, Lcom/android/email/Controller$AccountMoveMessageInfo;->source_accountId:J
 
-    .line 90
+    .line 85
     iput-wide p11, p0, Lcom/android/email/Controller$AccountMoveMessageInfo;->source_boxId:J
 
-    .line 91
+    .line 86
     iput p13, p0, Lcom/android/email/Controller$AccountMoveMessageInfo;->delay_cnt:I
 
-    .line 92
+    .line 87
     return-void
 .end method

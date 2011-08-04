@@ -1,4 +1,4 @@
-.class Lcom/android/email/service/MailService$1;
+.class synthetic Lcom/android/email/service/MailService$1;
 .super Ljava/lang/Object;
 .source "MailService.java"
 

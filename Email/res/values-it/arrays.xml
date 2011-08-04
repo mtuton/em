@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="search_list">
+        <item>Google</item>
+        <item>Traduci con Google</item>
+        <item>Wikipedia</item>
+        <item>Dizionario</item>
+    </string-array>
+    <string-array name="share_list">
+        <item>Condividi come testo</item>
+        <item>Condividi come immagine</item>
+    </string-array>
+</resources>

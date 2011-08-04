@@ -1145,16 +1145,6 @@
     return-object v0
 .end method
 
-.method public getParameters()Ljava/util/Map;
-    .locals 1
-
-    .prologue
-    .line 374
-    iget-object v0, p0, Lorg/apache/james/mime4j/BodyDescriptor;->parameters:Ljava/util/Map;
-
-    return-object v0
-.end method
-
 .method public getTransferEncoding()Ljava/lang/String;
     .locals 1
 
@@ -1163,38 +1153,6 @@
     iget-object v0, p0, Lorg/apache/james/mime4j/BodyDescriptor;->transferEncoding:Ljava/lang/String;
 
     return-object v0
-.end method
-
-.method public isBase64Encoded()Z
-    .locals 2
-
-    .prologue
-    .line 393
-    const-string v0, "base64"
-
-    iget-object v1, p0, Lorg/apache/james/mime4j/BodyDescriptor;->transferEncoding:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isMessage()Z
-    .locals 2
-
-    .prologue
-    .line 329
-    iget-object v0, p0, Lorg/apache/james/mime4j/BodyDescriptor;->mimeType:Ljava/lang/String;
-
-    const-string v1, "message/rfc822"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public isMimeType(Ljava/lang/String;)Z
@@ -1226,22 +1184,6 @@
     const-string v1, "multipart/"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isQuotedPrintableEncoded()Z
-    .locals 2
-
-    .prologue
-    .line 401
-    const-string v0, "quoted-printable"
-
-    iget-object v1, p0, Lorg/apache/james/mime4j/BodyDescriptor;->transferEncoding:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 

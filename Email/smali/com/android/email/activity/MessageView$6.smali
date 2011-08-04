@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1536
+    .line 2114
     iput-object p1, p0, Lcom/android/email/activity/MessageView$6;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,19 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
+    .locals 1
     .parameter "dialog"
     .parameter "whichButton"
 
     .prologue
-    .line 1537
+    .line 2116
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$6;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$1900(Lcom/android/email/activity/MessageView;)V
+
+    .line 2118
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 1538
+    .line 2119
     return-void
 .end method

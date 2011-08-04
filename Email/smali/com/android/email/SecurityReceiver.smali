@@ -4,8 +4,6 @@
 
 
 # static fields
-.field public static final ACTION_PASSWORD_RECOVERY:Ljava/lang/String; = "com.android.security.intent.action.PASSWORD_RECOVERY"
-
 .field private static final TAG:Ljava/lang/String;
 
 

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<manifest android:versionCode="8" android:versionName="2.2.1" package="com.android.email"
+<manifest android:versionCode="10" android:versionName="2.3.4" package="com.android.email"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <original-package android:name="com.android.email" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" />
     <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_TASKS" />
     <uses-permission android:name="android.permission.READ_OWNER_DATA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,13 +18,19 @@
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
-    <uses-permission android:name="android.permission.MASTER_CLEAR" />
-    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.MASTER_CLEAR" /> //change@siso.Mahsky start NotesSync
+<uses-permission android:name="android.permission.READ_NOTES" />
+    <uses-permission android:name="android.permission.WRITE_NOTES" /> //change@siso.Mahsky end NotesSync
+<uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.sec.MDM_SECURITY" />
     <uses-permission android:name="android.permission.READ_POLICIES" />
     <uses-permission android:name="android.permission.WRITE_POLICIES" />
     <uses-permission android:name="android.permission.BIND_DEVICE_ADMIN" />
@@ -47,6 +55,7 @@
         <activity android:label="@string/account_setup_account_type_title" android:name=".activity.setup.AccountSetupAccountType" android:configChanges="keyboardHidden|orientation" />
         <activity android:label="@string/account_setup_incoming_title" android:name=".activity.setup.AccountSetupIncoming" android:configChanges="keyboardHidden|orientation" />
         <activity android:label="@string/account_setup_outgoing_title" android:name=".activity.setup.AccountSetupOutgoing" android:configChanges="keyboardHidden|orientation" />
+        <activity android:label="@string/account_settings_smime_security_options" android:name=".activity.SecurityOptions" />
         <activity android:label="@string/account_setup_exchange_title" android:name=".activity.setup.AccountSetupExchange" android:configChanges="keyboardHidden|orientation" />
         <activity android:label="@string/auto_discover_title" android:name=".activity.setup.AutoDiscoverSetupExchange" android:configChanges="keyboardHidden|orientation" />
         <activity android:label="@string/account_setup_options_title" android:name=".activity.setup.AccountSetupOptions" android:configChanges="keyboardHidden|orientation" />
@@ -95,6 +104,8 @@
                 <data android:mimeType="vnd.android.cursor.item/email" />
             </intent-filter>
         </activity>
+        <activity android:label="@string/account_settings_smime_security_options" android:name=".smime.SecurityPreference" />
+        <activity android:label="@string/account_settings_smime_security_policy_list" android:name=".activity.PoliciesList" android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation" />
         <activity android:label="@string/out_of_office_label" android:name=".activity.setup.OoOSettings" android:configChanges="keyboardHidden|orientation" />
         <activity android:label="@string/out_of_office_message_label" android:name=".activity.setup.OoOSetMessage" android:configChanges="keyboardHidden|orientation" />
         <activity android:name=".activity.EmailSearchQuery" android:configChanges="keyboardHidden|orientation" />
@@ -127,7 +138,9 @@
         <activity android:label="@string/date" android:name=".activity.CustomizeDateScreen" android:configChanges="keyboardHidden|orientation" />
         <activity android:label="@string/date" android:name=".activity.CustomizeDate" android:configChanges="keyboardHidden|orientation" />
         <receiver android:name="com.android.exchange.EmailSyncAlarmReceiver" />
+        <receiver android:name="com.android.exchange.TasksSyncAlarmReceiver" />
         <receiver android:name="com.android.exchange.MailboxAlarmReceiver" />
+        <receiver android:name="com.android.exchange.NotesSyncAlarmReceiver" />
         <receiver android:name="com.android.exchange.BootReceiver" android:enabled="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -150,6 +163,12 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_THUMBWORKER_RESUME" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".service.EmailPushReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED" />
+                <data android:mimeType="application/vnd.wap.emn+wbxml" />
             </intent-filter>
         </receiver>
         <receiver android:name=".service.CarrierAccountReceiver" android:enabled="true">
@@ -176,9 +195,13 @@
                 <action android:name="com.android.security.intent.action.PASSWORD_RECOVERY" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".EmailGateReceiver">
+        <receiver android:name=".service.EnterpriseDMReceiver" android:enabled="true">
             <intent-filter>
-                <action android:name="com.sec.android.app.GateAgent.GATE_CONFIG" />
+                <action android:name="com.android.email.SIGNATURE_UPDATED" />
+                <action android:name="com.android.email.INSTALL_CERTIFICATE" />
+                <action android:name="com.android.email.RENAME_CERTIFICATE" />
+                <action android:name="com.android.email.ACCOUNT_DELETED" />
+                <action android:name="com.android.email.ENABLE_MESSAGECOMPOSE" />
             </intent-filter>
         </receiver>
         <service android:name=".service.DefaultAccountService" android:enabled="true" />
@@ -194,6 +217,18 @@
                 <action android:name="android.content.SyncAdapter" />
             </intent-filter>
             <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter_calendar" />
+        </service>
+        <service android:name="com.android.exchange.TasksSyncAdapterService" android:enabled="false" android:exported="true">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter_tasks" />
+        </service>
+        <service android:name="com.android.exchange.NotesSyncAdapterService" android:enabled="false" android:exported="true">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter_notes" />
         </service>
         <service android:name="com.android.exchange.SyncManager" android:enabled="true" />
         <service android:name=".service.EasAuthenticatorService" android:enabled="true" android:exported="true">
@@ -212,8 +247,19 @@
         <provider android:name=".provider.AttachmentProvider" android:readPermission="com.android.email.permission.READ_ATTACHMENT" android:multiprocess="true" android:authorities="com.android.email.attachmentprovider" android:grantUriPermissions="true" />
         <provider android:name=".provider.EmailProvider" android:permission="com.android.email.permission.ACCESS_PROVIDER" android:multiprocess="true" android:authorities="com.android.email.provider" />
         <provider android:name="com.android.exchange.provider.ExchangeProvider" android:permission="com.android.email.permission.ACCESS_PROVIDER" android:multiprocess="true" android:authorities="com.android.exchange.provider" />
+        <service android:name="com.android.exchange.security.ode.ODEService">
+            <intent-filter>
+                <action android:name="com.android.email.security.ODEService" />
+            </intent-filter>
+        </service>
+        <service android:name="com.android.exchange.SmsRelayService" android:enabled="true" />
+        <receiver android:name="com.android.exchange.SmsReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
         <uses-library android:name="touchwiz" />
         <uses-library android:name="sechardware" />
     </application>
-    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="8" />
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="10" />
 </manifest>

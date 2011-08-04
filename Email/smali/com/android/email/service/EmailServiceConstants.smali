@@ -3,14 +3,6 @@
 .source "EmailServiceConstants.java"
 
 
-# static fields
-.field public static final MEETING_REQUEST_ACCEPTED:I = 0x1
-
-.field public static final MEETING_REQUEST_DECLINED:I = 0x3
-
-.field public static final MEETING_REQUEST_TENTATIVE:I = 0x2
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0

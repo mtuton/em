@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <plurals name="notification_new_one_account_fmt">
-        <item quantity="other">%d ólesið (%s)</item>
-        <item quantity="one">%d ólesið (%s)</item>
-        <item quantity="few">%d ólesið (%s)</item>
+        <item quantity="other">%1$d ólesið (%2$s)</item>
+        <item quantity="one">%1$d ólesið (%2$s)</item>
+        <item quantity="few">%1$d ólesið (%2$s)</item>
     </plurals>
     <plurals name="notification_new_multi_account_fmt">
         <item quantity="other">í %d áskriftum</item>

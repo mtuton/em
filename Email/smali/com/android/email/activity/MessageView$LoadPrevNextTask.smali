@@ -38,15 +38,15 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 4040
+    .line 5866
     iput-object p1, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 4041
+    .line 5867
     iput-wide p2, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->mLocalMailboxId:J
 
-    .line 4042
+    .line 5868
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .parameter "params"
 
     .prologue
-    .line 4046
+    .line 5872
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-virtual {v0}, Lcom/android/email/activity/MessageView;->getContentResolver()Landroid/content/ContentResolver;
@@ -70,39 +70,39 @@
 
     move-result-object v3
 
-    .line 4048
+    .line 5874
     .local v3, selection:Ljava/lang/String;
     const/4 v7, 0x0
 
-    .line 4052
+    .line 5878
     .local v7, c:Landroid/database/Cursor;
     sget v0, Lcom/android/email/activity/MessageList;->mSortType:I
 
     const/4 v1, 0x6
 
-    if-ne v0, v1, :cond_7
+    if-ne v0, v1, :cond_8
 
-    .line 4053
+    .line 5879
     invoke-static {}, Lcom/android/email/activity/MessageList;->getSelectedSearchType()I
 
     move-result v6
 
-    .line 4054
+    .line 5880
     .local v6, SearchType:I
     invoke-static {}, Lcom/android/email/activity/MessageList;->getstrSearchWord()Ljava/lang/String;
 
     move-result-object v13
 
-    .line 4057
+    .line 5883
     .local v13, strSearchWord:Ljava/lang/String;
     packed-switch v6, :pswitch_data_0
 
-    .line 4069
+    .line 5895
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
     iget-object v1, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageView;->access$3700(Lcom/android/email/activity/MessageView;)Lcom/android/email/provider/EmailContent$Message;
+    invoke-static {v1}, Lcom/android/email/activity/MessageView;->access$500(Lcom/android/email/activity/MessageView;)Lcom/android/email/provider/EmailContent$Message;
 
     move-result-object v1
 
@@ -112,13 +112,13 @@
 
     move-result-object v11
 
-    .line 4070
+    .line 5896
     .local v11, mb:Lcom/android/email/provider/EmailContent$Mailbox;
     iget v0, v11, Lcom/android/email/provider/EmailContent$Mailbox;->mType:I
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
-    .line 4071
+    .line 5897
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -159,7 +159,7 @@
 
     move-result-object v12
 
-    .line 4087
+    .line 5913
     .end local v11           #mb:Lcom/android/email/provider/EmailContent$Mailbox;
     .local v12, strSearch:Ljava/lang/String;
     :goto_0
@@ -207,7 +207,7 @@
 
     move-result-object v7
 
-    .line 4274
+    .line 6100
     .end local v12           #strSearch:Ljava/lang/String;
     .end local v13           #strSearchWord:Ljava/lang/String;
     :cond_0
@@ -216,24 +216,34 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    .line 4275
+    .line 6101
+    if-eqz v7, :cond_1
+
+    invoke-interface {v7}, Landroid/database/Cursor;->isClosed()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 6102
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 4276
+    .line 6104
+    :cond_1
     const/4 v7, 0x0
 
-    :cond_1
+    :cond_2
     move-object v8, v7
 
-    .line 4278
+    .line 6106
     .end local v7           #c:Landroid/database/Cursor;
     .local v8, c:Landroid/database/Cursor;
     :goto_2
     return-object v8
 
-    .line 4060
+    .line 5886
     .end local v8           #c:Landroid/database/Cursor;
     .restart local v3       #selection:Ljava/lang/String;
     .restart local v6       #SearchType:I
@@ -264,11 +274,11 @@
 
     move-result-object v12
 
-    .line 4061
+    .line 5887
     .restart local v12       #strSearch:Ljava/lang/String;
     goto :goto_0
 
-    .line 4063
+    .line 5889
     .end local v12           #strSearch:Ljava/lang/String;
     :pswitch_1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -295,11 +305,11 @@
 
     move-result-object v12
 
-    .line 4064
+    .line 5890
     .restart local v12       #strSearch:Ljava/lang/String;
     goto :goto_0
 
-    .line 4066
+    .line 5892
     .end local v12           #strSearch:Ljava/lang/String;
     :pswitch_2
     new-instance v0, Ljava/lang/StringBuilder;
@@ -326,34 +336,34 @@
 
     move-result-object v12
 
-    .line 4067
+    .line 5893
     .restart local v12       #strSearch:Ljava/lang/String;
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 4074
+    .line 5900
     .end local v12           #strSearch:Ljava/lang/String;
     .restart local v11       #mb:Lcom/android/email/provider/EmailContent$Mailbox;
-    :cond_2
+    :cond_3
     iget v0, v11, Lcom/android/email/provider/EmailContent$Mailbox;->mType:I
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_3
+    if-eq v0, v1, :cond_4
 
     iget v0, v11, Lcom/android/email/provider/EmailContent$Mailbox;->mType:I
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_3
+    if-eq v0, v1, :cond_4
 
     iget v0, v11, Lcom/android/email/provider/EmailContent$Mailbox;->mType:I
 
     const/4 v1, 0x5
 
-    if-ne v0, v1, :cond_4
+    if-ne v0, v1, :cond_5
 
-    .line 4076
-    :cond_3
+    .line 5902
+    :cond_4
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -397,9 +407,9 @@
     .restart local v12       #strSearch:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 4080
+    .line 5906
     .end local v12           #strSearch:Ljava/lang/String;
-    :cond_4
+    :cond_5
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -443,7 +453,7 @@
     .restart local v12       #strSearch:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 4091
+    .line 5917
     .end local v3           #selection:Ljava/lang/String;
     .end local v6           #SearchType:I
     .end local v11           #mb:Lcom/android/email/provider/EmailContent$Mailbox;
@@ -452,7 +462,7 @@
 
     move-object v9, v0
 
-    .line 4092
+    .line 5918
     .local v9, e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
     const-string v0, "View >>"
 
@@ -460,44 +470,10 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4093
+    .line 5919
     invoke-virtual {v9}, Landroid/database/sqlite/DatabaseObjectNotClosedException;->printStackTrace()V
 
-    .line 4094
-    if-eqz v7, :cond_5
-
-    invoke-interface {v7}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_5
-
-    .line 4095
-    invoke-interface {v7}, Landroid/database/Cursor;->close()V
-
-    .line 4097
-    :cond_5
-    const/4 v7, 0x0
-
-    .line 4108
-    goto/16 :goto_1
-
-    .line 4101
-    .end local v9           #e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
-    :catch_1
-    move-exception v0
-
-    move-object v9, v0
-
-    .line 4102
-    .local v9, e:Ljava/lang/Exception;
-    const-string v0, "View >>"
-
-    const-string v1, "LoadPrevNextTask exception"
-
-    invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 4103
+    .line 5920
     if-eqz v7, :cond_6
 
     invoke-interface {v7}, Landroid/database/Cursor;->isClosed()Z
@@ -506,43 +482,77 @@
 
     if-nez v0, :cond_6
 
-    .line 4104
+    .line 5921
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 4106
+    .line 5923
     :cond_6
+    const/4 v7, 0x0
+
+    .line 5934
+    goto/16 :goto_1
+
+    .line 5927
+    .end local v9           #e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
+    :catch_1
+    move-exception v0
+
+    move-object v9, v0
+
+    .line 5928
+    .local v9, e:Ljava/lang/Exception;
+    const-string v0, "View >>"
+
+    const-string v1, "LoadPrevNextTask exception"
+
+    invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 5929
+    if-eqz v7, :cond_7
+
+    invoke-interface {v7}, Landroid/database/Cursor;->isClosed()Z
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
+    .line 5930
+    invoke-interface {v7}, Landroid/database/Cursor;->close()V
+
+    .line 5932
+    :cond_7
     const/4 v7, 0x0
 
     goto/16 :goto_1
 
-    .line 4112
+    .line 5938
     .end local v9           #e:Ljava/lang/Exception;
     .end local v12           #strSearch:Ljava/lang/String;
     .end local v13           #strSearchWord:Ljava/lang/String;
     .restart local v3       #selection:Ljava/lang/String;
-    :cond_7
+    :cond_8
     sget v0, Lcom/android/email/activity/MessageList;->mSortType:I
 
     const/16 v1, 0x8
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_a
 
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$3800(Lcom/android/email/activity/MessageView;)Z
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$4500(Lcom/android/email/activity/MessageView;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_a
 
-    .line 4113
+    .line 5939
     const-string v0, "View >>"
 
     const-string v1, "LoadPrevNextTask.doInBackground() called at EAS account"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4115
+    .line 5941
     :try_start_1
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
@@ -567,13 +577,13 @@
 
     goto/16 :goto_1
 
-    .line 4119
+    .line 5945
     :catch_2
     move-exception v0
 
     move-object v10, v0
 
-    .line 4120
+    .line 5946
     .local v10, ise:Ljava/lang/IllegalStateException;
     const-string v0, "Email"
 
@@ -581,43 +591,43 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4121
+    .line 5947
     invoke-virtual {v10}, Ljava/lang/IllegalStateException;->printStackTrace()V
 
-    .line 4122
-    if-eqz v7, :cond_8
+    .line 5948
+    if-eqz v7, :cond_9
 
     invoke-interface {v7}, Landroid/database/Cursor;->isClosed()Z
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_9
 
-    .line 4123
+    .line 5949
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 4125
-    :cond_8
+    .line 5951
+    :cond_9
     const-string v0, "Email"
 
     const-string v1, " ===== LoadPrevNextTask doInBackground Exception Cursor.close() return null ===== "
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4126
+    .line 5952
     const/4 v7, 0x0
 
-    .line 4136
+    .line 5962
     goto/16 :goto_1
 
-    .line 4131
+    .line 5957
     .end local v10           #ise:Ljava/lang/IllegalStateException;
     :catch_3
     move-exception v0
 
     move-object v9, v0
 
-    .line 4132
+    .line 5958
     .local v9, e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
     const-string v0, "View >>"
 
@@ -625,46 +635,46 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4133
+    .line 5959
     invoke-virtual {v9}, Landroid/database/sqlite/DatabaseObjectNotClosedException;->printStackTrace()V
 
-    .line 4134
+    .line 5960
     const/4 v7, 0x0
 
     move-object v8, v7
 
-    .line 4135
+    .line 5961
     .end local v7           #c:Landroid/database/Cursor;
     .restart local v8       #c:Landroid/database/Cursor;
     goto/16 :goto_2
 
-    .line 4138
+    .line 5964
     .end local v8           #c:Landroid/database/Cursor;
     .end local v9           #e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
     .restart local v7       #c:Landroid/database/Cursor;
-    :cond_9
+    :cond_a
     sget v0, Lcom/android/email/activity/MessageList;->mSortType:I
 
     const/16 v1, 0x9
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_c
 
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$3800(Lcom/android/email/activity/MessageView;)Z
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$4500(Lcom/android/email/activity/MessageView;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_c
 
-    .line 4139
+    .line 5965
     const-string v0, "View >>"
 
     const-string v1, "LoadPrevNextTask.doInBackground() called at EAS account"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4141
+    .line 5967
     :try_start_2
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
@@ -689,13 +699,13 @@
 
     goto/16 :goto_1
 
-    .line 4145
+    .line 5971
     :catch_4
     move-exception v0
 
     move-object v10, v0
 
-    .line 4146
+    .line 5972
     .restart local v10       #ise:Ljava/lang/IllegalStateException;
     const-string v0, "Email"
 
@@ -703,43 +713,43 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4147
+    .line 5973
     invoke-virtual {v10}, Ljava/lang/IllegalStateException;->printStackTrace()V
 
-    .line 4148
-    if-eqz v7, :cond_a
+    .line 5974
+    if-eqz v7, :cond_b
 
     invoke-interface {v7}, Landroid/database/Cursor;->isClosed()Z
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_b
 
-    .line 4149
+    .line 5975
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 4151
-    :cond_a
+    .line 5977
+    :cond_b
     const-string v0, "Email"
 
     const-string v1, " ===== LoadPrevNextTask doInBackground Exception Cursor.close() return null ===== "
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4152
+    .line 5978
     const/4 v7, 0x0
 
-    .line 4162
+    .line 5988
     goto/16 :goto_1
 
-    .line 4157
+    .line 5983
     .end local v10           #ise:Ljava/lang/IllegalStateException;
     :catch_5
     move-exception v0
 
     move-object v9, v0
 
-    .line 4158
+    .line 5984
     .restart local v9       #e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
     const-string v0, "View >>"
 
@@ -747,29 +757,29 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4159
+    .line 5985
     invoke-virtual {v9}, Landroid/database/sqlite/DatabaseObjectNotClosedException;->printStackTrace()V
 
-    .line 4160
+    .line 5986
     const/4 v7, 0x0
 
     move-object v8, v7
 
-    .line 4161
+    .line 5987
     .end local v7           #c:Landroid/database/Cursor;
     .restart local v8       #c:Landroid/database/Cursor;
     goto/16 :goto_2
 
-    .line 4166
+    .line 5992
     .end local v8           #c:Landroid/database/Cursor;
     .end local v9           #e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
     .restart local v7       #c:Landroid/database/Cursor;
-    :cond_b
+    :cond_c
     sget v0, Lcom/android/email/activity/MessageList;->mSortType:I
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_e
 
-    .line 4169
+    .line 5995
     :try_start_3
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
@@ -794,13 +804,13 @@
 
     goto/16 :goto_1
 
-    .line 4173
+    .line 5999
     :catch_6
     move-exception v0
 
     move-object v10, v0
 
-    .line 4174
+    .line 6000
     .restart local v10       #ise:Ljava/lang/IllegalStateException;
     const-string v0, "Email"
 
@@ -808,43 +818,43 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4175
+    .line 6001
     invoke-virtual {v10}, Ljava/lang/IllegalStateException;->printStackTrace()V
 
-    .line 4176
-    if-eqz v7, :cond_c
+    .line 6002
+    if-eqz v7, :cond_d
 
     invoke-interface {v7}, Landroid/database/Cursor;->isClosed()Z
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_d
 
-    .line 4177
+    .line 6003
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 4179
-    :cond_c
+    .line 6005
+    :cond_d
     const-string v0, "Email"
 
     const-string v1, " ===== LoadPrevNextTask doInBackground Exception Cursor.close() return null ===== "
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4180
+    .line 6006
     const/4 v7, 0x0
 
-    .line 4190
+    .line 6016
     goto/16 :goto_1
 
-    .line 4185
+    .line 6011
     .end local v10           #ise:Ljava/lang/IllegalStateException;
     :catch_7
     move-exception v0
 
     move-object v9, v0
 
-    .line 4186
+    .line 6012
     .restart local v9       #e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
     const-string v0, "View >>"
 
@@ -852,31 +862,31 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4187
+    .line 6013
     invoke-virtual {v9}, Landroid/database/sqlite/DatabaseObjectNotClosedException;->printStackTrace()V
 
-    .line 4188
+    .line 6014
     const/4 v7, 0x0
 
     move-object v8, v7
 
-    .line 4189
+    .line 6015
     .end local v7           #c:Landroid/database/Cursor;
     .restart local v8       #c:Landroid/database/Cursor;
     goto/16 :goto_2
 
-    .line 4193
+    .line 6019
     .end local v8           #c:Landroid/database/Cursor;
     .end local v9           #e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
     .restart local v7       #c:Landroid/database/Cursor;
-    :cond_d
+    :cond_e
     sget v0, Lcom/android/email/activity/MessageList;->mSortType:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_f
+    if-ne v0, v1, :cond_10
 
-    .line 4196
+    .line 6022
     :try_start_4
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
@@ -901,13 +911,13 @@
 
     goto/16 :goto_1
 
-    .line 4201
+    .line 6027
     :catch_8
     move-exception v0
 
     move-object v10, v0
 
-    .line 4202
+    .line 6028
     .restart local v10       #ise:Ljava/lang/IllegalStateException;
     const-string v0, "Email"
 
@@ -915,43 +925,43 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4203
+    .line 6029
     invoke-virtual {v10}, Ljava/lang/IllegalStateException;->printStackTrace()V
 
-    .line 4204
-    if-eqz v7, :cond_e
+    .line 6030
+    if-eqz v7, :cond_f
 
     invoke-interface {v7}, Landroid/database/Cursor;->isClosed()Z
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_f
 
-    .line 4205
+    .line 6031
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 4207
-    :cond_e
+    .line 6033
+    :cond_f
     const-string v0, "Email"
 
     const-string v1, " ===== LoadPrevNextTask doInBackground Exception Cursor.close() return null ===== "
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4208
+    .line 6034
     const/4 v7, 0x0
 
-    .line 4218
+    .line 6044
     goto/16 :goto_1
 
-    .line 4213
+    .line 6039
     .end local v10           #ise:Ljava/lang/IllegalStateException;
     :catch_9
     move-exception v0
 
     move-object v9, v0
 
-    .line 4214
+    .line 6040
     .restart local v9       #e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
     const-string v0, "View >>"
 
@@ -959,31 +969,31 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4215
+    .line 6041
     invoke-virtual {v9}, Landroid/database/sqlite/DatabaseObjectNotClosedException;->printStackTrace()V
 
-    .line 4216
+    .line 6042
     const/4 v7, 0x0
 
     move-object v8, v7
 
-    .line 4217
+    .line 6043
     .end local v7           #c:Landroid/database/Cursor;
     .restart local v8       #c:Landroid/database/Cursor;
     goto/16 :goto_2
 
-    .line 4220
+    .line 6046
     .end local v8           #c:Landroid/database/Cursor;
     .end local v9           #e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
     .restart local v7       #c:Landroid/database/Cursor;
-    :cond_f
+    :cond_10
     sget v0, Lcom/android/email/activity/MessageList;->mSortType:I
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_12
 
-    .line 4223
+    .line 6049
     :try_start_5
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
@@ -1008,13 +1018,13 @@
 
     goto/16 :goto_1
 
-    .line 4228
+    .line 6054
     :catch_a
     move-exception v0
 
     move-object v10, v0
 
-    .line 4229
+    .line 6055
     .restart local v10       #ise:Ljava/lang/IllegalStateException;
     const-string v0, "Email"
 
@@ -1022,43 +1032,43 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4230
+    .line 6056
     invoke-virtual {v10}, Ljava/lang/IllegalStateException;->printStackTrace()V
 
-    .line 4231
-    if-eqz v7, :cond_10
+    .line 6057
+    if-eqz v7, :cond_11
 
     invoke-interface {v7}, Landroid/database/Cursor;->isClosed()Z
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_11
 
-    .line 4232
+    .line 6058
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 4234
-    :cond_10
+    .line 6060
+    :cond_11
     const-string v0, "Email"
 
     const-string v1, " ===== LoadPrevNextTask doInBackground Exception Cursor.close() return null ===== "
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4235
+    .line 6061
     const/4 v7, 0x0
 
-    .line 4245
+    .line 6071
     goto/16 :goto_1
 
-    .line 4240
+    .line 6066
     .end local v10           #ise:Ljava/lang/IllegalStateException;
     :catch_b
     move-exception v0
 
     move-object v9, v0
 
-    .line 4241
+    .line 6067
     .restart local v9       #e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
     const-string v0, "View >>"
 
@@ -1066,31 +1076,31 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4242
+    .line 6068
     invoke-virtual {v9}, Landroid/database/sqlite/DatabaseObjectNotClosedException;->printStackTrace()V
 
-    .line 4243
+    .line 6069
     const/4 v7, 0x0
 
     move-object v8, v7
 
-    .line 4244
+    .line 6070
     .end local v7           #c:Landroid/database/Cursor;
     .restart local v8       #c:Landroid/database/Cursor;
     goto/16 :goto_2
 
-    .line 4247
+    .line 6073
     .end local v8           #c:Landroid/database/Cursor;
     .end local v9           #e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
     .restart local v7       #c:Landroid/database/Cursor;
-    :cond_11
+    :cond_12
     sget v0, Lcom/android/email/activity/MessageList;->mSortType:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 4250
+    .line 6076
     :try_start_6
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
@@ -1115,13 +1125,13 @@
 
     goto/16 :goto_1
 
-    .line 4254
+    .line 6080
     :catch_c
     move-exception v0
 
     move-object v10, v0
 
-    .line 4255
+    .line 6081
     .restart local v10       #ise:Ljava/lang/IllegalStateException;
     const-string v0, "Email"
 
@@ -1129,43 +1139,43 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4256
+    .line 6082
     invoke-virtual {v10}, Ljava/lang/IllegalStateException;->printStackTrace()V
 
-    .line 4257
-    if-eqz v7, :cond_12
+    .line 6083
+    if-eqz v7, :cond_13
 
     invoke-interface {v7}, Landroid/database/Cursor;->isClosed()Z
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_13
 
-    .line 4258
+    .line 6084
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 4260
-    :cond_12
+    .line 6086
+    :cond_13
     const-string v0, "Email"
 
     const-string v1, " ===== LoadPrevNextTask doInBackground Exception Cursor.close() return null ===== "
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4261
+    .line 6087
     const/4 v7, 0x0
 
-    .line 4271
+    .line 6097
     goto/16 :goto_1
 
-    .line 4266
+    .line 6092
     .end local v10           #ise:Ljava/lang/IllegalStateException;
     :catch_d
     move-exception v0
 
     move-object v9, v0
 
-    .line 4267
+    .line 6093
     .restart local v9       #e:Landroid/database/sqlite/DatabaseObjectNotClosedException;
     const-string v0, "View >>"
 
@@ -1173,22 +1183,20 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4268
+    .line 6094
     invoke-virtual {v9}, Landroid/database/sqlite/DatabaseObjectNotClosedException;->printStackTrace()V
 
-    .line 4269
+    .line 6095
     const/4 v7, 0x0
 
     move-object v8, v7
 
-    .line 4270
+    .line 6096
     .end local v7           #c:Landroid/database/Cursor;
     .restart local v8       #c:Landroid/database/Cursor;
     goto/16 :goto_2
 
-    .line 4057
-    nop
-
+    .line 5883
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -1202,7 +1210,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4037
+    .line 5863
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -1218,58 +1226,58 @@
     .parameter "cursor"
 
     .prologue
-    .line 4283
+    .line 6111
     if-nez p1, :cond_1
 
-    .line 4297
+    .line 6125
     :cond_0
     :goto_0
     return-void
 
-    .line 4287
+    .line 6115
     :cond_1
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/email/activity/MessageView;->access$3002(Lcom/android/email/activity/MessageView;Lcom/android/email/activity/MessageView$LoadPrevNextTask;)Lcom/android/email/activity/MessageView$LoadPrevNextTask;
+    invoke-static {v0, v1}, Lcom/android/email/activity/MessageView;->access$3902(Lcom/android/email/activity/MessageView;Lcom/android/email/activity/MessageView$LoadPrevNextTask;)Lcom/android/email/activity/MessageView$LoadPrevNextTask;
 
-    .line 4289
+    .line 6117
     invoke-interface {p1}, Landroid/database/Cursor;->isClosed()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 4293
+    .line 6121
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$3900(Lcom/android/email/activity/MessageView;)V
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$4600(Lcom/android/email/activity/MessageView;)V
 
-    .line 4294
+    .line 6122
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v0, p1}, Lcom/android/email/activity/MessageView;->access$3102(Lcom/android/email/activity/MessageView;Landroid/database/Cursor;)Landroid/database/Cursor;
+    invoke-static {v0, p1}, Lcom/android/email/activity/MessageView;->access$4002(Lcom/android/email/activity/MessageView;Landroid/database/Cursor;)Landroid/database/Cursor;
 
-    .line 4295
+    .line 6123
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$3100(Lcom/android/email/activity/MessageView;)Landroid/database/Cursor;
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$4000(Lcom/android/email/activity/MessageView;)Landroid/database/Cursor;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageView;->access$4000(Lcom/android/email/activity/MessageView;)Landroid/database/ContentObserver;
+    invoke-static {v1}, Lcom/android/email/activity/MessageView;->access$4700(Lcom/android/email/activity/MessageView;)Landroid/database/ContentObserver;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->registerContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 4296
+    .line 6124
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$4100(Lcom/android/email/activity/MessageView;)V
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$4800(Lcom/android/email/activity/MessageView;)V
 
     goto :goto_0
 .end method
@@ -1279,7 +1287,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4037
+    .line 5863
     check-cast p1, Landroid/database/Cursor;
 
     .end local p1

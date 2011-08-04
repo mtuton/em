@@ -1,0 +1,7 @@
+<default_policies>
+	<device_password_enabled>1</device_password_enabled>
+	<!-- <alpha_numeric_password>1</alpha_numeric_password> -->
+	<minimum_password_length>4</minimum_password_length>
+	<max_password_fails>5</max_password_fails>
+	<max_screen_lock_time_in_seconds>15</max_screen_lock_time_in_seconds>
+</default_policies>

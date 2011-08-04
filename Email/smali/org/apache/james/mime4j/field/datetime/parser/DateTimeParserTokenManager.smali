@@ -522,22 +522,6 @@
     return-void
 .end method
 
-.method public constructor <init>(Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;I)V
-    .locals 0
-    .parameter "stream"
-    .parameter "lexState"
-
-    .prologue
-    .line 680
-    invoke-direct {p0, p1}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;-><init>(Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;)V
-
-    .line 681
-    invoke-virtual {p0, p2}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->SwitchTo(I)V
-
-    .line 682
-    return-void
-.end method
-
 .method private final ReInitRounds()V
     .locals 4
 
@@ -556,9 +540,7 @@
     .end local v0           #i:I
     .local v1, i:I
     :goto_0
-    const/4 v2, 0x1
-
-    sub-int v0, v1, v2
+    add-int/lit8 v0, v1, -0x1
 
     .end local v1           #i:I
     .restart local v0       #i:I
@@ -582,46 +564,6 @@
     .restart local v0       #i:I
     :cond_0
     return-void
-.end method
-
-.method private final jjAddStates(II)V
-    .locals 4
-    .parameter "start"
-    .parameter "end"
-
-    .prologue
-    .line 277
-    :goto_0
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjstateSet:[I
-
-    iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjnewStateCnt:I
-
-    add-int/lit8 v3, v2, 0x1
-
-    iput v3, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjnewStateCnt:I
-
-    sget-object v3, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjnextStates:[I
-
-    aget v3, v3, p1
-
-    aput v3, v1, v2
-
-    .line 278
-    add-int/lit8 v0, p1, 0x1
-
-    .end local p1
-    .local v0, start:I
-    if-ne p1, p2, :cond_0
-
-    .line 279
-    return-void
-
-    :cond_0
-    move p1, v0
-
-    .end local v0           #start:I
-    .restart local p1
-    goto :goto_0
 .end method
 
 .method private final jjCheckNAdd(I)V
@@ -658,79 +600,6 @@
 
     .line 273
     :cond_0
-    return-void
-.end method
-
-.method private final jjCheckNAddStates(I)V
-    .locals 2
-    .parameter "start"
-
-    .prologue
-    .line 293
-    sget-object v0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjnextStates:[I
-
-    aget v0, v0, p1
-
-    invoke-direct {p0, v0}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjCheckNAdd(I)V
-
-    .line 294
-    sget-object v0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjnextStates:[I
-
-    add-int/lit8 v1, p1, 0x1
-
-    aget v0, v0, v1
-
-    invoke-direct {p0, v0}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjCheckNAdd(I)V
-
-    .line 295
-    return-void
-.end method
-
-.method private final jjCheckNAddStates(II)V
-    .locals 2
-    .parameter "start"
-    .parameter "end"
-
-    .prologue
-    .line 288
-    :goto_0
-    sget-object v1, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjnextStates:[I
-
-    aget v1, v1, p1
-
-    invoke-direct {p0, v1}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjCheckNAdd(I)V
-
-    .line 289
-    add-int/lit8 v0, p1, 0x1
-
-    .end local p1
-    .local v0, start:I
-    if-ne p1, p2, :cond_0
-
-    .line 290
-    return-void
-
-    :cond_0
-    move p1, v0
-
-    .end local v0           #start:I
-    .restart local p1
-    goto :goto_0
-.end method
-
-.method private final jjCheckNAddTwoStates(II)V
-    .locals 0
-    .parameter "state1"
-    .parameter "state2"
-
-    .prologue
-    .line 282
-    invoke-direct {p0, p1}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjCheckNAdd(I)V
-
-    .line 283
-    invoke-direct {p0, p2}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjCheckNAdd(I)V
-
-    .line 284
     return-void
 .end method
 
@@ -2983,147 +2852,6 @@
     .end sparse-switch
 .end method
 
-.method private final jjStartNfaWithStates_0(III)I
-    .locals 2
-    .parameter "pos"
-    .parameter "kind"
-    .parameter "state"
-
-    .prologue
-    .line 70
-    iput p2, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjmatchedKind:I
-
-    .line 71
-    iput p1, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjmatchedPos:I
-
-    .line 72
-    :try_start_0
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->input_stream:Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;
-
-    invoke-virtual {v1}, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->readChar()C
-
-    move-result v1
-
-    iput-char v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->curChar:C
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 74
-    add-int/lit8 v1, p1, 0x1
-
-    invoke-direct {p0, p3, v1}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjMoveNfa_0(II)I
-
-    move-result v1
-
-    :goto_0
-    return v1
-
-    .line 73
-    :catch_0
-    move-exception v1
-
-    move-object v0, v1
-
-    .local v0, e:Ljava/io/IOException;
-    add-int/lit8 v1, p1, 0x1
-
-    goto :goto_0
-.end method
-
-.method private final jjStartNfaWithStates_1(III)I
-    .locals 2
-    .parameter "pos"
-    .parameter "kind"
-    .parameter "state"
-
-    .prologue
-    .line 404
-    iput p2, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjmatchedKind:I
-
-    .line 405
-    iput p1, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjmatchedPos:I
-
-    .line 406
-    :try_start_0
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->input_stream:Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;
-
-    invoke-virtual {v1}, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->readChar()C
-
-    move-result v1
-
-    iput-char v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->curChar:C
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 408
-    add-int/lit8 v1, p1, 0x1
-
-    invoke-direct {p0, p3, v1}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjMoveNfa_1(II)I
-
-    move-result v1
-
-    :goto_0
-    return v1
-
-    .line 407
-    :catch_0
-    move-exception v1
-
-    move-object v0, v1
-
-    .local v0, e:Ljava/io/IOException;
-    add-int/lit8 v1, p1, 0x1
-
-    goto :goto_0
-.end method
-
-.method private final jjStartNfaWithStates_2(III)I
-    .locals 2
-    .parameter "pos"
-    .parameter "kind"
-    .parameter "state"
-
-    .prologue
-    .line 528
-    iput p2, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjmatchedKind:I
-
-    .line 529
-    iput p1, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjmatchedPos:I
-
-    .line 530
-    :try_start_0
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->input_stream:Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;
-
-    invoke-virtual {v1}, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->readChar()C
-
-    move-result v1
-
-    iput-char v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->curChar:C
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 532
-    add-int/lit8 v1, p1, 0x1
-
-    invoke-direct {p0, p3, v1}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjMoveNfa_2(II)I
-
-    move-result v1
-
-    :goto_0
-    return v1
-
-    .line 531
-    :catch_0
-    move-exception v1
-
-    move-object v0, v1
-
-    .local v0, e:Ljava/io/IOException;
-    add-int/lit8 v1, p1, 0x1
-
-    goto :goto_0
-.end method
-
 .method private final jjStartNfa_0(IJ)I
     .locals 2
     .parameter "pos"
@@ -3138,46 +2866,6 @@
     add-int/lit8 v1, p1, 0x1
 
     invoke-direct {p0, v0, v1}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjMoveNfa_0(II)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private final jjStartNfa_1(IJ)I
-    .locals 2
-    .parameter "pos"
-    .parameter "active0"
-
-    .prologue
-    .line 400
-    invoke-direct {p0, p1, p2, p3}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjStopStringLiteralDfa_1(IJ)I
-
-    move-result v0
-
-    add-int/lit8 v1, p1, 0x1
-
-    invoke-direct {p0, v0, v1}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjMoveNfa_1(II)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private final jjStartNfa_2(IJ)I
-    .locals 2
-    .parameter "pos"
-    .parameter "active0"
-
-    .prologue
-    .line 524
-    invoke-direct {p0, p1, p2, p3}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjStopStringLiteralDfa_2(IJ)I
-
-    move-result v0
-
-    add-int/lit8 v1, p1, 0x1
-
-    invoke-direct {p0, v0, v1}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjMoveNfa_2(II)I
 
     move-result v0
 
@@ -3286,32 +2974,6 @@
         :pswitch_0
         :pswitch_1
     .end packed-switch
-.end method
-
-.method private final jjStopStringLiteralDfa_1(IJ)I
-    .locals 1
-    .parameter "pos"
-    .parameter "active0"
-
-    .prologue
-    .line 392
-    .line 395
-    const/4 v0, -0x1
-
-    return v0
-.end method
-
-.method private final jjStopStringLiteralDfa_2(IJ)I
-    .locals 1
-    .parameter "pos"
-    .parameter "active0"
-
-    .prologue
-    .line 516
-    .line 519
-    const/4 v0, -0x1
-
-    return v0
 .end method
 
 
@@ -3571,49 +3233,6 @@
         :pswitch_4
         :pswitch_5
     .end packed-switch
-.end method
-
-.method public ReInit(Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;)V
-    .locals 1
-    .parameter "stream"
-
-    .prologue
-    .line 685
-    const/4 v0, 0x0
-
-    iput v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjnewStateCnt:I
-
-    iput v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->jjmatchedPos:I
-
-    .line 686
-    iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->defaultLexState:I
-
-    iput v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->curLexState:I
-
-    .line 687
-    iput-object p1, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->input_stream:Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;
-
-    .line 688
-    invoke-direct {p0}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->ReInitRounds()V
-
-    .line 689
-    return-void
-.end method
-
-.method public ReInit(Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;I)V
-    .locals 0
-    .parameter "stream"
-    .parameter "lexState"
-
-    .prologue
-    .line 699
-    invoke-virtual {p0, p1}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->ReInit(Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;)V
-
-    .line 700
-    invoke-virtual {p0, p2}, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->SwitchTo(I)V
-
-    .line 701
-    return-void
 .end method
 
 .method public SwitchTo(I)V
@@ -4282,15 +3901,4 @@
 
     .line 715
     goto :goto_0
-.end method
-
-.method public setDebugStream(Ljava/io/PrintStream;)V
-    .locals 0
-    .parameter "ds"
-
-    .prologue
-    .line 31
-    iput-object p1, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParserTokenManager;->debugStream:Ljava/io/PrintStream;
-
-    return-void
 .end method

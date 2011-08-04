@@ -7,13 +7,7 @@
 
 
 # static fields
-.field private static final HOSTNAME_VERIFIER:Ljavax/net/ssl/HostnameVerifier; = null
-
-.field public static final SOCKET_CONNECT_TIMEOUT:I = 0x2710
-
-.field public static final SOCKET_READ_TIMEOUT:I = 0xea60
-
-.field private static final TAG:Ljava/lang/String; = "MailTransport"
+.field private static final HOSTNAME_VERIFIER:Ljavax/net/ssl/HostnameVerifier;
 
 
 # instance fields
@@ -302,16 +296,6 @@
     .prologue
     .line 123
     iget v0, p0, Lcom/android/email/mail/transport/MailTransport;->mPort:I
-
-    return v0
-.end method
-
-.method public getSecurity()I
-    .locals 1
-
-    .prologue
-    .line 132
-    iget v0, p0, Lcom/android/email/mail/transport/MailTransport;->mConnectionSecurity:I
 
     return v0
 .end method

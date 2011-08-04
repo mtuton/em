@@ -38,15 +38,15 @@
     .parameter "accountId"
 
     .prologue
-    .line 493
+    .line 497
     iput-object p1, p0, Lcom/android/email/activity/MailboxList$LoadMailboxesTask;->this$0:Lcom/android/email/activity/MailboxList;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 494
+    .line 498
     iput-wide p2, p0, Lcom/android/email/activity/MailboxList$LoadMailboxesTask;->mAccountKey:J
 
-    .line 495
+    .line 499
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .parameter "params"
 
     .prologue
-    .line 499
+    .line 503
     iget-object v0, p0, Lcom/android/email/activity/MailboxList$LoadMailboxesTask;->this$0:Lcom/android/email/activity/MailboxList;
 
     sget-object v1, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
@@ -100,7 +100,7 @@
     .parameter "x0"
 
     .prologue
-    .line 486
+    .line 490
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -116,7 +116,7 @@
     .parameter "cursor"
 
     .prologue
-    .line 509
+    .line 513
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/database/Cursor;->isClosed()Z
@@ -125,12 +125,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 513
+    .line 517
     :cond_0
     :goto_0
     return-void
 
-    .line 512
+    .line 516
     :cond_1
     iget-object v0, p0, Lcom/android/email/activity/MailboxList$LoadMailboxesTask;->this$0:Lcom/android/email/activity/MailboxList;
 
@@ -148,7 +148,7 @@
     .parameter "x0"
 
     .prologue
-    .line 486
+    .line 490
     check-cast p1, Landroid/database/Cursor;
 
     .end local p1

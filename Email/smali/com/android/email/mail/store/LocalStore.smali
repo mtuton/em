@@ -19,11 +19,7 @@
 
 
 # static fields
-.field private static final DB_VERSION:I = 0x18
-
-.field private static final PERMANENT_FLAGS:[Lcom/android/email/mail/Flag; = null
-
-.field private static final TAG:Ljava/lang/String; = "LocalStore >>"
+.field private static final PERMANENT_FLAGS:[Lcom/android/email/mail/Flag;
 
 
 # instance fields
@@ -1105,104 +1101,6 @@
 
 
 # virtual methods
-.method public addPendingCommand(Lcom/android/email/mail/store/LocalStore$PendingCommand;)V
-    .locals 6
-    .parameter "command"
-
-    .prologue
-    const-string v3, "command"
-
-    .line 499
-    const/4 v1, 0x0
-
-    .local v1, i:I
-    :goto_0
-    :try_start_0
-    iget-object v3, p1, Lcom/android/email/mail/store/LocalStore$PendingCommand;->arguments:[Ljava/lang/String;
-
-    array-length v3, v3
-
-    if-ge v1, v3, :cond_0
-
-    .line 500
-    iget-object v3, p1, Lcom/android/email/mail/store/LocalStore$PendingCommand;->arguments:[Ljava/lang/String;
-
-    iget-object v4, p1, Lcom/android/email/mail/store/LocalStore$PendingCommand;->arguments:[Ljava/lang/String;
-
-    aget-object v4, v4, v1
-
-    const-string v5, "UTF-8"
-
-    invoke-static {v4, v5}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    aput-object v4, v3, v1
-
-    .line 499
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 502
-    :cond_0
-    new-instance v0, Landroid/content/ContentValues;
-
-    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
-
-    .line 503
-    .local v0, cv:Landroid/content/ContentValues;
-    const-string v3, "command"
-
-    iget-object v4, p1, Lcom/android/email/mail/store/LocalStore$PendingCommand;->command:Ljava/lang/String;
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 504
-    const-string v3, "arguments"
-
-    iget-object v4, p1, Lcom/android/email/mail/store/LocalStore$PendingCommand;->arguments:[Ljava/lang/String;
-
-    const/16 v5, 0x2c
-
-    invoke-static {v4, v5}, Lcom/android/email/Utility;->combine([Ljava/lang/Object;C)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 505
-    iget-object v3, p0, Lcom/android/email/mail/store/LocalStore;->mDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    const-string v4, "pending_commands"
-
-    const-string v5, "command"
-
-    invoke-virtual {v3, v4, v5, v0}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-    :try_end_0
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 510
-    return-void
-
-    .line 507
-    .end local v0           #cv:Landroid/content/ContentValues;
-    :catch_0
-    move-exception v3
-
-    move-object v2, v3
-
-    .line 508
-    .local v2, usee:Ljava/io/UnsupportedEncodingException;
-    new-instance v3, Ljava/lang/Error;
-
-    const-string v4, "Aparently UTF-8 has been lost to the annals of history."
-
-    invoke-direct {v3, v4}, Ljava/lang/Error;-><init>(Ljava/lang/String;)V
-
-    throw v3
-.end method
-
 .method public checkSettings()V
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
@@ -1401,186 +1299,6 @@
     return-object v0
 .end method
 
-.method public getPendingCommands()Ljava/util/ArrayList;
-    .locals 13
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/ArrayList",
-            "<",
-            "Lcom/android/email/mail/store/LocalStore$PendingCommand;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 467
-    const/4 v11, 0x0
-
-    .line 469
-    .local v11, cursor:Landroid/database/Cursor;
-    :try_start_0
-    iget-object v0, p0, Lcom/android/email/mail/store/LocalStore;->mDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    const-string v1, "pending_commands"
-
-    const/4 v2, 0x3
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    const-string v4, "id"
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x1
-
-    const-string v4, "command"
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x2
-
-    const-string v4, "arguments"
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const-string v7, "id ASC"
-
-    invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v11
-
-    .line 476
-    new-instance v10, Ljava/util/ArrayList;
-
-    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
-
-    .line 477
-    .local v10, commands:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/store/LocalStore$PendingCommand;>;"
-    :goto_0
-    invoke-interface {v11}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 478
-    new-instance v9, Lcom/android/email/mail/store/LocalStore$PendingCommand;
-
-    invoke-direct {v9}, Lcom/android/email/mail/store/LocalStore$PendingCommand;-><init>()V
-
-    .line 479
-    .local v9, command:Lcom/android/email/mail/store/LocalStore$PendingCommand;
-    const/4 v0, 0x0
-
-    invoke-interface {v11, v0}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v0
-
-    invoke-static {v9, v0, v1}, Lcom/android/email/mail/store/LocalStore$PendingCommand;->access$002(Lcom/android/email/mail/store/LocalStore$PendingCommand;J)J
-
-    .line 480
-    const/4 v0, 0x1
-
-    invoke-interface {v11, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, v9, Lcom/android/email/mail/store/LocalStore$PendingCommand;->command:Ljava/lang/String;
-
-    .line 481
-    const/4 v0, 0x2
-
-    invoke-interface {v11, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 482
-    .local v8, arguments:Ljava/lang/String;
-    const-string v0, ","
-
-    invoke-virtual {v8, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, v9, Lcom/android/email/mail/store/LocalStore$PendingCommand;->arguments:[Ljava/lang/String;
-
-    .line 483
-    const/4 v12, 0x0
-
-    .local v12, i:I
-    :goto_1
-    iget-object v0, v9, Lcom/android/email/mail/store/LocalStore$PendingCommand;->arguments:[Ljava/lang/String;
-
-    array-length v0, v0
-
-    if-ge v12, v0, :cond_0
-
-    .line 484
-    iget-object v0, v9, Lcom/android/email/mail/store/LocalStore$PendingCommand;->arguments:[Ljava/lang/String;
-
-    iget-object v1, v9, Lcom/android/email/mail/store/LocalStore$PendingCommand;->arguments:[Ljava/lang/String;
-
-    aget-object v1, v1, v12
-
-    invoke-static {v1}, Lcom/android/email/Utility;->fastUrlDecode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    aput-object v1, v0, v12
-
-    .line 483
-    add-int/lit8 v12, v12, 0x1
-
-    goto :goto_1
-
-    .line 486
-    :cond_0
-    invoke-virtual {v10, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    .line 491
-    .end local v8           #arguments:Ljava/lang/String;
-    .end local v9           #command:Lcom/android/email/mail/store/LocalStore$PendingCommand;
-    .end local v10           #commands:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/store/LocalStore$PendingCommand;>;"
-    .end local v12           #i:I
-    :catchall_0
-    move-exception v0
-
-    if-eqz v11, :cond_1
-
-    .line 492
-    invoke-interface {v11}, Landroid/database/Cursor;->close()V
-
-    .line 491
-    :cond_1
-    throw v0
-
-    .restart local v10       #commands:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/store/LocalStore$PendingCommand;>;"
-    :cond_2
-    if-eqz v11, :cond_3
-
-    .line 492
-    invoke-interface {v11}, Landroid/database/Cursor;->close()V
-
-    .line 488
-    :cond_3
-    return-object v10
-.end method
-
 .method public getPersistentCallbacks()Lcom/android/email/mail/Store$PersistentDataCallbacks;
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
@@ -1714,7 +1432,7 @@
     .end annotation
 
     .prologue
-    .line 1885
+    .line 1887
     const/4 v0, 0x0
 
     return-object v0
@@ -1762,7 +1480,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1806
+    .line 1808
     invoke-virtual {p1, p2}, Lcom/android/email/mail/Message;->isSet(Lcom/android/email/mail/Flag;)Z
 
     move-result v0
@@ -1785,14 +1503,14 @@
     .parameter "message"
 
     .prologue
-    .line 1779
+    .line 1781
     const/4 v5, 0x0
 
-    .line 1780
+    .line 1782
     .local v5, sb:Ljava/lang/StringBuilder;
     const/4 v4, 0x0
 
-    .line 1781
+    .line 1783
     .local v4, nonEmpty:Z
     invoke-static {}, Lcom/android/email/mail/Flag;->values()[Lcom/android/email/mail/Flag;
 
@@ -1810,7 +1528,7 @@
 
     aget-object v1, v0, v2
 
-    .line 1782
+    .line 1784
     .local v1, flag:Lcom/android/email/mail/Flag;
     sget-object v6, Lcom/android/email/mail/Flag;->X_STORE_1:Lcom/android/email/mail/Flag;
 
@@ -1838,26 +1556,26 @@
 
     if-eqz v6, :cond_2
 
-    .line 1786
+    .line 1788
     if-nez v5, :cond_0
 
-    .line 1787
+    .line 1789
     new-instance v5, Ljava/lang/StringBuilder;
 
     .end local v5           #sb:Ljava/lang/StringBuilder;
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1789
+    .line 1791
     .restart local v5       #sb:Ljava/lang/StringBuilder;
     :cond_0
     if-eqz v4, :cond_1
 
-    .line 1790
+    .line 1792
     const/16 v6, 0x2c
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1792
+    .line 1794
     :cond_1
     invoke-virtual {v1}, Lcom/android/email/mail/Flag;->toString()Ljava/lang/String;
 
@@ -1865,16 +1583,16 @@
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1793
+    .line 1795
     const/4 v4, 0x1
 
-    .line 1781
+    .line 1783
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1796
+    .line 1798
     .end local v1           #flag:Lcom/android/email/mail/Flag;
     :cond_3
     if-nez v5, :cond_4
@@ -2113,40 +1831,6 @@
     .end local v12           #file:Ljava/io/File;
     :cond_5
     return v16
-.end method
-
-.method public removePendingCommand(Lcom/android/email/mail/store/LocalStore$PendingCommand;)V
-    .locals 7
-    .parameter "command"
-
-    .prologue
-    .line 513
-    iget-object v0, p0, Lcom/android/email/mail/store/LocalStore;->mDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    const-string v1, "pending_commands"
-
-    const-string v2, "id = ?"
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/String;
-
-    const/4 v4, 0x0
-
-    invoke-static {p1}, Lcom/android/email/mail/store/LocalStore$PendingCommand;->access$000(Lcom/android/email/mail/store/LocalStore$PendingCommand;)J
-
-    move-result-wide v5
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    .line 514
-    return-void
 .end method
 
 .method public resetVisibleLimits(I)V

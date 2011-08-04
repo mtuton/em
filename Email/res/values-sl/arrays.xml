@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="search_list">
+        <item>Google</item>
+        <item>Prevajalnik Google</item>
+        <item>Wikipedija</item>
+        <item>Slovar</item>
+    </string-array>
+    <string-array name="share_list">
+        <item>Daj v skupno rabo kot besedilo</item>
+        <item>Daj v skupno rabo kot sliko</item>
+    </string-array>
+</resources>

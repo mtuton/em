@@ -1,4 +1,4 @@
-.class Lcom/android/email/activity/MessageView$AttachmentInfo;
+.class public Lcom/android/email/activity/MessageView$AttachmentInfo;
 .super Ljava/lang/Object;
 .source "MessageView.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x9
     name = "AttachmentInfo"
 .end annotation
 
@@ -29,23 +29,12 @@
 
 
 # direct methods
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 791
+    .line 1026
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/android/email/activity/MessageView$1;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 791
-    invoke-direct {p0}, Lcom/android/email/activity/MessageView$AttachmentInfo;-><init>()V
 
     return-void
 .end method

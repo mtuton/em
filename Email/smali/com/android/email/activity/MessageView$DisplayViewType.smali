@@ -30,18 +30,18 @@
     .parameter "img"
 
     .prologue
-    .line 3344
+    .line 4574
     iput-object p1, p0, Lcom/android/email/activity/MessageView$DisplayViewType;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3345
+    .line 4575
     iput-object p2, p0, Lcom/android/email/activity/MessageView$DisplayViewType;->_name:Ljava/lang/String;
 
-    .line 3346
+    .line 4576
     iput-object p3, p0, Lcom/android/email/activity/MessageView$DisplayViewType;->_img:Landroid/graphics/drawable/Drawable;
 
-    .line 3347
+    .line 4577
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .locals 1
 
     .prologue
-    .line 3354
+    .line 4584
     iget-object v0, p0, Lcom/android/email/activity/MessageView$DisplayViewType;->_img:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -61,7 +61,7 @@
     .locals 1
 
     .prologue
-    .line 3350
+    .line 4580
     iget-object v0, p0, Lcom/android/email/activity/MessageView$DisplayViewType;->_name:Ljava/lang/String;
 
     return-object v0

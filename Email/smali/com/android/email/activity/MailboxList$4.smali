@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 455
+    .line 458
     iput-object p1, p0, Lcom/android/email/activity/MailboxList$4;->this$0:Lcom/android/email/activity/MailboxList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,9 +43,9 @@
     .parameter "which"
 
     .prologue
-    .line 456
+    .line 460
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 457
+    .line 461
     return-void
 .end method

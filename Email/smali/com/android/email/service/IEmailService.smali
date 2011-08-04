@@ -105,6 +105,14 @@
     .end annotation
 .end method
 
+.method public abstract moveConversationAlways(JJ[BI)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract renameFolder(JLjava/lang/String;Ljava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -130,6 +138,14 @@
 .end method
 
 .method public abstract setCallback(Lcom/android/email/service/IEmailServiceCallback;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setDeviceInfo(J)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

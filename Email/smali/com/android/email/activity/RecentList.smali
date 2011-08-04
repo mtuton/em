@@ -13,10 +13,6 @@
 .end annotation
 
 
-# static fields
-.field private static final MAX_RECENT_SENT_EMAIL_ADDRESS_COUNT:I = 0x1e
-
-
 # instance fields
 .field private selectButtonListener:Landroid/view/View$OnClickListener;
 
@@ -31,14 +27,14 @@
     .line 41
     invoke-direct {p0}, Landroid/app/ListActivity;-><init>()V
 
-    .line 321
+    .line 320
     new-instance v0, Lcom/android/email/activity/RecentList$3;
 
     invoke-direct {v0, p0}, Lcom/android/email/activity/RecentList$3;-><init>(Lcom/android/email/activity/RecentList;)V
 
     iput-object v0, p0, Lcom/android/email/activity/RecentList;->selectButtonListener:Landroid/view/View$OnClickListener;
 
-    .line 367
+    .line 366
     return-void
 .end method
 
@@ -56,7 +52,7 @@
 
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 21
+    .locals 20
     .parameter "savedInstanceState"
 
     .prologue
@@ -64,7 +60,7 @@
     invoke-super/range {p0 .. p1}, Landroid/app/ListActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 72
-    const v3, 0x7f030034
+    const v3, 0x7f03003f
 
     move-object/from16 v0, p0
 
@@ -75,13 +71,13 @@
     .line 76
     invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/RecentList;->getListView()Landroid/widget/ListView;
 
-    move-result-object v19
+    move-result-object v18
 
     .line 78
-    .local v19, listView:Landroid/widget/ListView;
+    .local v18, listView:Landroid/widget/ListView;
     const/4 v3, 0x0
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v18
 
     move v1, v3
 
@@ -90,14 +86,14 @@
     .line 79
     const/4 v3, 0x2
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v18
 
     move v1, v3
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setChoiceMode(I)V
 
     .line 86
-    const v3, 0x7f070109
+    const v3, 0x7f07015d
 
     move-object/from16 v0, p0
 
@@ -143,7 +139,7 @@
     invoke-virtual {v3, v4}, Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;->setEnabled(Z)V
 
     .line 92
-    const v3, 0x7f070022
+    const v3, 0x7f070025
 
     move-object/from16 v0, p0
 
@@ -209,10 +205,10 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    move-result-object v20
+    move-result-object v19
 
     .line 182
-    .local v20, logCursor:Landroid/database/Cursor;
+    .local v19, logCursor:Landroid/database/Cursor;
     new-instance v6, Landroid/database/MatrixCursor;
 
     const/4 v3, 0x3
@@ -243,7 +239,7 @@
 
     .line 193
     .local v6, outputCursor:Landroid/database/MatrixCursor;
-    invoke-interface/range {v20 .. v20}, Landroid/database/Cursor;->moveToFirst()Z
+    invoke-interface/range {v19 .. v19}, Landroid/database/Cursor;->moveToFirst()Z
 
     .line 194
     const/16 v17, 0x1
@@ -257,40 +253,16 @@
     .line 200
     .local v15, emailHashSet:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     :goto_0
-    invoke-interface/range {v20 .. v20}, Landroid/database/Cursor;->isAfterLast()Z
+    invoke-interface/range {v19 .. v19}, Landroid/database/Cursor;->isAfterLast()Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
     .line 202
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object v0, v3
-
-    move/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ""
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    .line 203
-    .local v18, id:Ljava/lang/String;
     const-string v3, "number"
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v19
 
     move-object v1, v3
 
@@ -298,7 +270,7 @@
 
     move-result v3
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v19
 
     move v1, v3
 
@@ -306,11 +278,11 @@
 
     move-result-object v14
 
-    .line 205
+    .line 204
     .local v14, email:Ljava/lang/String;
     const-string v3, "contactid"
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v19
 
     move-object v1, v3
 
@@ -318,7 +290,7 @@
 
     move-result v3
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v19
 
     move v1, v3
 
@@ -326,7 +298,7 @@
 
     move-result-wide v11
 
-    .line 219
+    .line 218
     .local v11, contactId:J
     invoke-virtual {v15, v14}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
@@ -334,27 +306,26 @@
 
     if-eqz v3, :cond_0
 
-    .line 220
-    invoke-interface/range {v20 .. v20}, Landroid/database/Cursor;->moveToNext()Z
+    .line 219
+    invoke-interface/range {v19 .. v19}, Landroid/database/Cursor;->moveToNext()Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 293
+    .line 292
     .end local v6           #outputCursor:Landroid/database/MatrixCursor;
     .end local v11           #contactId:J
     .end local v14           #email:Ljava/lang/String;
     .end local v15           #emailHashSet:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     .end local v17           #i:I
-    .end local v18           #id:Ljava/lang/String;
-    .end local v20           #logCursor:Landroid/database/Cursor;
+    .end local v19           #logCursor:Landroid/database/Cursor;
     :catch_0
     move-exception v3
 
     move-object v13, v3
 
-    .line 294
+    .line 293
     .local v13, e:Ljava/lang/Exception;
     new-instance v9, Landroid/app/AlertDialog$Builder;
 
@@ -364,7 +335,7 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 295
+    .line 294
     .local v9, builder:Landroid/app/AlertDialog$Builder;
     const-string v3, "Connection problem is occured"
 
@@ -396,35 +367,38 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 304
+    .line 303
     invoke-virtual {v9}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 309
+    .line 308
     .end local v9           #builder:Landroid/app/AlertDialog$Builder;
     .end local v13           #e:Ljava/lang/Exception;
     :goto_1
     return-void
 
-    .line 223
+    .line 222
     .restart local v6       #outputCursor:Landroid/database/MatrixCursor;
     .restart local v11       #contactId:J
     .restart local v14       #email:Ljava/lang/String;
     .restart local v15       #emailHashSet:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     .restart local v17       #i:I
-    .restart local v18       #id:Ljava/lang/String;
-    .restart local v20       #logCursor:Landroid/database/Cursor;
+    .restart local v19       #logCursor:Landroid/database/Cursor;
     :cond_0
     :try_start_1
     invoke-virtual {v15, v14}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 226
+    .line 225
     const/4 v3, 0x3
 
     new-array v3, v3, [Ljava/lang/Object;
 
     const/4 v4, 0x0
 
-    aput-object v18, v3, v4
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
 
     const/4 v4, 0x1
 
@@ -440,10 +414,10 @@
 
     invoke-virtual {v6, v3}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    .line 233
+    .line 232
     add-int/lit8 v17, v17, 0x1
 
-    .line 235
+    .line 234
     invoke-virtual {v6}, Landroid/database/MatrixCursor;->getCount()I
 
     move-result v3
@@ -452,10 +426,9 @@
 
     if-lt v3, v4, :cond_3
 
-    .line 244
+    .line 243
     .end local v11           #contactId:J
     .end local v14           #email:Ljava/lang/String;
-    .end local v18           #id:Ljava/lang/String;
     :cond_1
     invoke-virtual {v6}, Landroid/database/MatrixCursor;->getCount()I
 
@@ -463,8 +436,8 @@
 
     if-lez v3, :cond_2
 
-    .line 245
-    const v3, 0x7f07003d
+    .line 244
+    const v3, 0x7f070047
 
     move-object/from16 v0, p0
 
@@ -476,7 +449,7 @@
 
     check-cast v16, Landroid/widget/LinearLayout;
 
-    .line 246
+    .line 245
     .local v16, emptyView:Landroid/widget/LinearLayout;
     const/16 v3, 0x8
 
@@ -486,21 +459,21 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 247
+    .line 246
     const/4 v3, 0x0
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v18
 
     move v1, v3
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setVisibility(I)V
 
-    .line 278
+    .line 277
     .end local v16           #emptyView:Landroid/widget/LinearLayout;
     :cond_2
     new-instance v2, Lcom/android/email/activity/RecentList$RecentListAdapter;
 
-    const v5, 0x7f030035
+    const v5, 0x7f030040
 
     const/4 v3, 0x1
 
@@ -518,7 +491,7 @@
 
     const/4 v3, 0x0
 
-    const v4, 0x7f07010a
+    const v4, 0x7f07015e
 
     aput v4, v8, v3
 
@@ -528,7 +501,7 @@
 
     invoke-direct/range {v2 .. v8}, Lcom/android/email/activity/RecentList$RecentListAdapter;-><init>(Lcom/android/email/activity/RecentList;Landroid/content/Context;ILandroid/database/Cursor;[Ljava/lang/String;[I)V
 
-    .line 291
+    .line 290
     .local v2, adapter:Landroid/widget/ListAdapter;
     move-object/from16 v0, p0
 
@@ -538,13 +511,12 @@
 
     goto :goto_1
 
-    .line 239
+    .line 238
     .end local v2           #adapter:Landroid/widget/ListAdapter;
     .restart local v11       #contactId:J
     .restart local v14       #email:Ljava/lang/String;
-    .restart local v18       #id:Ljava/lang/String;
     :cond_3
-    invoke-interface/range {v20 .. v20}, Landroid/database/Cursor;->moveToNext()Z
+    invoke-interface/range {v19 .. v19}, Landroid/database/Cursor;->moveToNext()Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -559,10 +531,10 @@
     .parameter "id"
 
     .prologue
-    .line 353
+    .line 352
     invoke-super/range {p0 .. p5}, Landroid/app/ListActivity;->onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)V
 
-    .line 359
+    .line 358
     invoke-virtual {p0}, Lcom/android/email/activity/RecentList;->getListAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
@@ -575,13 +547,13 @@
 
     invoke-virtual {v0, p3, v1}, Lcom/android/email/activity/RecentList$RecentListAdapter;->setChecked(IZ)V
 
-    .line 364
+    .line 363
     iget-object v0, p0, Lcom/android/email/activity/RecentList;->selectTwSoftkeyItem:Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;->setEnabled(Z)V
 
-    .line 366
+    .line 365
     return-void
 .end method

@@ -39,25 +39,3 @@
     .line 39
     return-void
 .end method
-
-
-# virtual methods
-.method public getMailboxList()Lorg/apache/james/mime4j/field/address/MailboxList;
-    .locals 1
-
-    .prologue
-    .line 42
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/MailboxListField;->mailboxList:Lorg/apache/james/mime4j/field/address/MailboxList;
-
-    return-object v0
-.end method
-
-.method public getParseException()Lorg/apache/james/mime4j/field/address/parser/ParseException;
-    .locals 1
-
-    .prologue
-    .line 46
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/MailboxListField;->parseException:Lorg/apache/james/mime4j/field/address/parser/ParseException;
-
-    return-object v0
-.end method

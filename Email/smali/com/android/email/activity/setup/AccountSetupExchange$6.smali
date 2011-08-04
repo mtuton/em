@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 509
+    .line 507
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupExchange$6;->this$0:Lcom/android/email/activity/setup/AccountSetupExchange;
 
     iput-object p2, p0, Lcom/android/email/activity/setup/AccountSetupExchange$6;->val$mSharedPreferences:Landroid/content/SharedPreferences;
@@ -53,21 +53,21 @@
     .parameter "which"
 
     .prologue
-    .line 510
+    .line 509
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupExchange$6;->this$0:Lcom/android/email/activity/setup/AccountSetupExchange;
 
     const/4 v2, 0x2
 
     invoke-virtual {v1, v2}, Lcom/android/email/activity/setup/AccountSetupExchange;->dismissDialog(I)V
 
-    .line 511
+    .line 510
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupExchange$6;->val$mSharedPreferences:Landroid/content/SharedPreferences;
 
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 512
+    .line 511
     .local v0, editPref:Landroid/content/SharedPreferences$Editor;
     const-string v1, "isCheckIMEI"
 
@@ -79,14 +79,14 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 513
+    .line 512
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 514
+    .line 513
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupExchange$6;->this$0:Lcom/android/email/activity/setup/AccountSetupExchange;
 
     invoke-static {v1}, Lcom/android/email/activity/setup/AccountSetupExchange;->access$200(Lcom/android/email/activity/setup/AccountSetupExchange;)V
 
-    .line 515
+    .line 514
     return-void
 .end method

@@ -1,4 +1,4 @@
-.class Lcom/android/email/AccountBackupRestore$1;
+.class final Lcom/android/email/AccountBackupRestore$1;
 .super Ljava/lang/Thread;
 .source "AccountBackupRestore.java"
 
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 51
+    .line 53
     iget-object v0, p0, Lcom/android/email/AccountBackupRestore$1;->val$context:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/email/AccountBackupRestore$1;->val$context:Landroid/content/Context;
@@ -49,6 +49,6 @@
 
     invoke-static {v0, v1}, Lcom/android/email/AccountBackupRestore;->doBackupAccounts(Landroid/content/Context;Lcom/android/email/Preferences;)V
 
-    .line 52
+    .line 54
     return-void
 .end method

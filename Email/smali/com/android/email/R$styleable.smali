@@ -15,13 +15,7 @@
 
 
 # static fields
-.field public static final EmailTwSoftkeyItem:[I = null
-
-.field public static final EmailTwSoftkeyItem_itemImage:I = 0x2
-
-.field public static final EmailTwSoftkeyItem_itemImageAlign:I = 0x0
-
-.field public static final EmailTwSoftkeyItem_itemText:I = 0x1
+.field public static final EmailTwSoftkeyItem:[I
 
 
 # direct methods
@@ -29,7 +23,7 @@
     .locals 1
 
     .prologue
-    .line 22075
+    .line 23266
     const/4 v0, 0x3
 
     new-array v0, v0, [I
@@ -54,7 +48,7 @@
     .locals 0
 
     .prologue
-    .line 22060
+    .line 23251
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

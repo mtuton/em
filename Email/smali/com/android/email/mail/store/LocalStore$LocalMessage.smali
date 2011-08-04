@@ -35,18 +35,18 @@
     .end annotation
 
     .prologue
-    .line 1667
+    .line 1669
     iput-object p1, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->this$0:Lcom/android/email/mail/store/LocalStore;
 
     invoke-direct {p0}, Lcom/android/email/mail/internet/MimeMessage;-><init>()V
 
-    .line 1668
+    .line 1670
     iput-object p2, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mUid:Ljava/lang/String;
 
-    .line 1669
+    .line 1671
     iput-object p3, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mFolder:Lcom/android/email/mail/Folder;
 
-    .line 1670
+    .line 1672
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1663
+    .line 1665
     iget-wide v0, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mId:J
 
     return-wide v0
@@ -67,7 +67,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1663
+    .line 1665
     iput-wide p1, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mId:J
 
     return-wide p1
@@ -79,7 +79,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1663
+    .line 1665
     iput p1, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mAttachmentCount:I
 
     return p1
@@ -87,26 +87,6 @@
 
 
 # virtual methods
-.method public getAttachmentCount()I
-    .locals 1
-
-    .prologue
-    .line 1673
-    iget v0, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mAttachmentCount:I
-
-    return v0
-.end method
-
-.method public getId()J
-    .locals 2
-
-    .prologue
-    .line 1685
-    iget-wide v0, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mId:J
-
-    return-wide v0
-.end method
-
 .method public parse(Ljava/io/InputStream;)V
     .locals 0
     .parameter "in"
@@ -118,10 +98,10 @@
     .end annotation
 
     .prologue
-    .line 1677
+    .line 1679
     invoke-super {p0, p1}, Lcom/android/email/mail/internet/MimeMessage;->parse(Ljava/io/InputStream;)V
 
-    .line 1678
+    .line 1680
     return-void
 .end method
 
@@ -140,14 +120,14 @@
 
     const/4 v7, 0x1
 
-    .line 1690
+    .line 1692
     sget-object v2, Lcom/android/email/mail/Flag;->DELETED:Lcom/android/email/mail/Flag;
 
     if-ne p1, v2, :cond_3
 
     if-eqz p2, :cond_3
 
-    .line 1700
+    .line 1702
     iget-object v2, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->this$0:Lcom/android/email/mail/store/LocalStore;
 
     invoke-static {v2}, Lcom/android/email/mail/store/LocalStore;->access$100(Lcom/android/email/mail/store/LocalStore;)Landroid/database/sqlite/SQLiteDatabase;
@@ -168,7 +148,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 1716
+    .line 1718
     iget-object v2, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mFolder:Lcom/android/email/mail/Folder;
 
     check-cast v2, Lcom/android/email/mail/store/LocalStore$LocalFolder;
@@ -179,7 +159,7 @@
 
     invoke-static {v2, v3}, Lcom/android/email/mail/store/LocalStore$LocalFolder;->access$1000(Lcom/android/email/mail/store/LocalStore$LocalFolder;Ljava/lang/String;)V
 
-    .line 1721
+    .line 1723
     iget-object v2, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->this$0:Lcom/android/email/mail/store/LocalStore;
 
     invoke-static {v2}, Lcom/android/email/mail/store/LocalStore;->access$100(Lcom/android/email/mail/store/LocalStore;)Landroid/database/sqlite/SQLiteDatabase;
@@ -200,7 +180,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 1736
+    .line 1738
     :cond_0
     :goto_0
     :try_start_0
@@ -216,13 +196,13 @@
 
     if-ne p1, v2, :cond_2
 
-    .line 1737
+    .line 1739
     :cond_1
     iget-object v0, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mFolder:Lcom/android/email/mail/Folder;
 
     check-cast v0, Lcom/android/email/mail/store/LocalStore$LocalFolder;
 
-    .line 1738
+    .line 1740
     .local v0, folder:Lcom/android/email/mail/store/LocalStore$LocalFolder;
     if-eqz p2, :cond_4
 
@@ -234,7 +214,7 @@
 
     if-nez v2, :cond_4
 
-    .line 1739
+    .line 1741
     invoke-virtual {v0}, Lcom/android/email/mail/store/LocalStore$LocalFolder;->getUnreadMessageCount()I
 
     move-result v2
@@ -245,13 +225,13 @@
     :try_end_0
     .catch Lcom/android/email/mail/MessagingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1752
+    .line 1754
     .end local v0           #folder:Lcom/android/email/mail/store/LocalStore$LocalFolder;
     :cond_2
     :goto_1
     invoke-super {p0, p1, p2}, Lcom/android/email/mail/internet/MimeMessage;->setFlag(Lcom/android/email/mail/Flag;Z)V
 
-    .line 1756
+    .line 1758
     iget-object v2, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->this$0:Lcom/android/email/mail/store/LocalStore;
 
     invoke-static {v2}, Lcom/android/email/mail/store/LocalStore;->access$100(Lcom/android/email/mail/store/LocalStore;)Landroid/database/sqlite/SQLiteDatabase;
@@ -362,10 +342,10 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 1769
+    .line 1771
     return-void
 
-    .line 1726
+    .line 1728
     :cond_3
     sget-object v2, Lcom/android/email/mail/Flag;->X_DESTROYED:Lcom/android/email/mail/Flag;
 
@@ -373,7 +353,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 1727
+    .line 1729
     iget-object v2, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mFolder:Lcom/android/email/mail/Folder;
 
     check-cast v2, Lcom/android/email/mail/store/LocalStore$LocalFolder;
@@ -384,7 +364,7 @@
 
     invoke-static {v2, v3}, Lcom/android/email/mail/store/LocalStore$LocalFolder;->access$1000(Lcom/android/email/mail/store/LocalStore$LocalFolder;Ljava/lang/String;)V
 
-    .line 1728
+    .line 1730
     iget-object v2, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->this$0:Lcom/android/email/mail/store/LocalStore;
 
     invoke-static {v2}, Lcom/android/email/mail/store/LocalStore;->access$100(Lcom/android/email/mail/store/LocalStore;)Landroid/database/sqlite/SQLiteDatabase;
@@ -407,7 +387,7 @@
 
     goto/16 :goto_0
 
-    .line 1741
+    .line 1743
     .restart local v0       #folder:Lcom/android/email/mail/store/LocalStore$LocalFolder;
     :cond_4
     if-nez p2, :cond_2
@@ -421,7 +401,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 1742
+    .line 1744
     invoke-virtual {v0}, Lcom/android/email/mail/store/LocalStore$LocalFolder;->getUnreadMessageCount()I
 
     move-result v2
@@ -434,14 +414,14 @@
 
     goto/16 :goto_1
 
-    .line 1746
+    .line 1748
     .end local v0           #folder:Lcom/android/email/mail/store/LocalStore$LocalFolder;
     :catch_0
     move-exception v2
 
     move-object v1, v2
 
-    .line 1747
+    .line 1749
     .local v1, me:Lcom/android/email/mail/MessagingException;
     const-string v2, "Email"
 
@@ -449,7 +429,7 @@
 
     invoke-static {v2, v3, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 1749
+    .line 1751
     new-instance v2, Ljava/lang/RuntimeException;
 
     invoke-direct {v2, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -468,9 +448,9 @@
     .end annotation
 
     .prologue
-    .line 1681
+    .line 1683
     invoke-super {p0, p1, p2}, Lcom/android/email/mail/internet/MimeMessage;->setFlag(Lcom/android/email/mail/Flag;Z)V
 
-    .line 1682
+    .line 1684
     return-void
 .end method

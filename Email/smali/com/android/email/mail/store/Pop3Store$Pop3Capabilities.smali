@@ -34,7 +34,7 @@
     .parameter
 
     .prologue
-    .line 1030
+    .line 1024
     iput-object p1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
     .locals 4
 
     .prologue
-    .line 1043
+    .line 1037
     const-string v0, "STLS %b, TOP %b, USER %b, UIDL %b, PIPELINING %b"
 
     const/4 v1, 0x5

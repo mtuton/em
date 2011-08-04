@@ -1,11 +1,14 @@
 .class Lcom/android/email/activity/MessageCompose$5;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "MessageCompose.java"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/email/activity/MessageCompose;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/email/activity/MessageCompose;->initViews()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,66 +27,152 @@
     .parameter
 
     .prologue
-    .line 708
+    .line 1475
     iput-object p1, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onClick(Landroid/view/View;)V
     .locals 3
-    .parameter "context"
-    .parameter "intent"
+    .parameter "arg0"
 
     .prologue
-    .line 709
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    const v2, 0x7f0700d3
+
+    const/4 v1, 0x0
+
+    .line 1478
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$1700(Lcom/android/email/activity/MessageCompose;)Landroid/widget/LinearLayout;
 
     move-result-object v0
 
-    .line 710
-    .local v0, action:Ljava/lang/String;
-    sget-object v1, Ljava/lang/System;->out:Ljava/io/PrintStream;
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->isShown()Z
 
-    const-string v2, "11111 MessageCompose.java >>>>> BroadcastReceiver >>>>> 700"
+    move-result v0
 
-    invoke-virtual {v1, v2}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+    if-eqz v0, :cond_0
 
-    .line 711
-    const-string v1, "android.app.action.DEVICE_POLICY_MANAGER_STATE_CHANGED"
+    .line 1480
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$1800(Lcom/android/email/activity/MessageCompose;)Landroid/widget/LinearLayout;
 
-    move-result v1
+    move-result-object v0
 
-    if-eqz v1, :cond_0
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->isShown()Z
 
-    .line 712
-    const-string v1, "Email"
+    move-result v0
 
-    const-string v2, "DPMReceiver()"
+    if-eqz v0, :cond_1
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    .line 1481
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    .line 713
-    iget-object v1, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$1800(Lcom/android/email/activity/MessageCompose;)Landroid/widget/LinearLayout;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageCompose;->access$1100(Lcom/android/email/activity/MessageCompose;)Z
+    move-result-object v0
 
-    move-result v1
+    const/16 v1, 0x8
 
-    if-nez v1, :cond_0
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 715
-    iget-object v1, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
+    .line 1483
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageCompose;->access$1200(Lcom/android/email/activity/MessageCompose;)V
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$800(Lcom/android/email/activity/MessageCompose;)Landroid/widget/EditText;
 
-    .line 720
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/widget/EditText;->setNextFocusDownId(I)V
+
+    .line 1484
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$1900(Lcom/android/email/activity/MessageCompose;)Landroid/webkit/HtmlComposerView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/webkit/HtmlComposerView;->setNextFocusUpId(I)V
+
+    .line 1486
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$2000(Lcom/android/email/activity/MessageCompose;)Landroid/widget/ToggleButton;
+
+    move-result-object v0
+
+    const v1, 0x7f070099
+
+    invoke-virtual {v0, v1}, Landroid/widget/ToggleButton;->setNextFocusUpId(I)V
+
+    .line 1487
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$2000(Lcom/android/email/activity/MessageCompose;)Landroid/widget/ToggleButton;
+
+    move-result-object v0
+
+    const v1, 0x7f0700dd
+
+    invoke-virtual {v0, v1}, Landroid/widget/ToggleButton;->setNextFocusDownId(I)V
+
+    .line 1500
     :cond_0
+    :goto_0
     return-void
+
+    .line 1491
+    :cond_1
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$1800(Lcom/android/email/activity/MessageCompose;)Landroid/widget/LinearLayout;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 1493
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$800(Lcom/android/email/activity/MessageCompose;)Landroid/widget/EditText;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setNextFocusDownId(I)V
+
+    .line 1494
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$1900(Lcom/android/email/activity/MessageCompose;)Landroid/webkit/HtmlComposerView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/webkit/HtmlComposerView;->setNextFocusUpId(I)V
+
+    .line 1496
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$2000(Lcom/android/email/activity/MessageCompose;)Landroid/widget/ToggleButton;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/widget/ToggleButton;->setNextFocusUpId(I)V
+
+    .line 1497
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$5;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$2000(Lcom/android/email/activity/MessageCompose;)Landroid/widget/ToggleButton;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/widget/ToggleButton;->setNextFocusDownId(I)V
+
+    goto :goto_0
 .end method

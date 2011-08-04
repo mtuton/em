@@ -3,10 +3,6 @@
 .source "TwTabActivity.java"
 
 
-# static fields
-.field private static final TAG:Ljava/lang/String; = "TabActivity >>"
-
-
 # instance fields
 .field private mDefaultTab:Ljava/lang/String;
 
@@ -20,20 +16,20 @@
     .locals 1
 
     .prologue
-    .line 47
+    .line 64
     invoke-direct {p0}, Landroid/app/ActivityGroup;-><init>()V
 
-    .line 41
+    .line 58
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/email/winset/TwTabActivity;->mDefaultTab:Ljava/lang/String;
 
-    .line 42
+    .line 59
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/email/winset/TwTabActivity;->mDefaultTabIndex:I
 
-    .line 48
+    .line 65
     return-void
 .end method
 
@@ -41,17 +37,17 @@
     .locals 1
 
     .prologue
-    .line 127
+    .line 144
     iget-object v0, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
 
     if-nez v0, :cond_0
 
-    .line 128
+    .line 145
     const v0, 0x2030008
 
     invoke-virtual {p0, v0}, Lcom/android/email/winset/TwTabActivity;->setContentView(I)V
 
-    .line 130
+    .line 147
     :cond_0
     return-void
 .end method
@@ -62,25 +58,11 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 167
     invoke-direct {p0}, Lcom/android/email/winset/TwTabActivity;->ensureTwTabHost()V
 
-    .line 151
+    .line 168
     iget-object v0, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
-
-    return-object v0
-.end method
-
-.method public getTabWidget()Lcom/android/email/winset/TwTabWidget;
-    .locals 1
-
-    .prologue
-    .line 160
-    iget-object v0, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
-
-    invoke-virtual {v0}, Lcom/android/email/winset/TwTabHost;->getTabWidget()Lcom/android/email/winset/TwTabWidget;
-
-    move-result-object v0
 
     return-object v0
 .end method
@@ -91,7 +73,7 @@
     .parameter "title"
 
     .prologue
-    .line 136
+    .line 153
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabActivity;->getLocalActivityManager()Landroid/app/LocalActivityManager;
 
     move-result-object v1
@@ -102,14 +84,14 @@
 
     if-ne v1, p1, :cond_0
 
-    .line 137
+    .line 154
     iget-object v1, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
 
     invoke-virtual {v1}, Lcom/android/email/winset/TwTabHost;->getCurrentTabView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 138
+    .line 155
     .local v0, tabView:Landroid/view/View;
     if-eqz v0, :cond_0
 
@@ -117,13 +99,13 @@
 
     if-eqz v1, :cond_0
 
-    .line 139
+    .line 156
     check-cast v0, Landroid/widget/TextView;
 
     .end local v0           #tabView:Landroid/view/View;
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 142
+    .line 159
     :cond_0
     return-void
 .end method
@@ -132,10 +114,10 @@
     .locals 2
 
     .prologue
-    .line 115
+    .line 132
     invoke-super {p0}, Landroid/app/ActivityGroup;->onContentChanged()V
 
-    .line 116
+    .line 133
     const v0, 0x1020012
 
     invoke-virtual {p0, v0}, Lcom/android/email/winset/TwTabActivity;->findViewById(I)Landroid/view/View;
@@ -146,12 +128,12 @@
 
     iput-object v0, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
 
-    .line 118
+    .line 135
     iget-object v0, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
 
     if-nez v0, :cond_0
 
-    .line 119
+    .line 136
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Your content must have a TwTabHost whose id attribute is \'android.R.id.TwTabHost\'"
@@ -160,7 +142,7 @@
 
     throw v0
 
-    .line 123
+    .line 140
     :cond_0
     iget-object v0, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
 
@@ -170,7 +152,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/winset/TwTabHost;->setup(Landroid/app/LocalActivityManager;)V
 
-    .line 124
+    .line 141
     return-void
 .end method
 
@@ -179,13 +161,13 @@
     .parameter "icicle"
 
     .prologue
-    .line 89
+    .line 106
     invoke-super {p0, p1}, Landroid/app/ActivityGroup;->onPostCreate(Landroid/os/Bundle;)V
 
-    .line 91
+    .line 108
     invoke-direct {p0}, Lcom/android/email/winset/TwTabActivity;->ensureTwTabHost()V
 
-    .line 93
+    .line 110
     iget-object v0, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
 
     invoke-virtual {v0}, Lcom/android/email/winset/TwTabHost;->getCurrentTab()I
@@ -196,14 +178,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 94
+    .line 111
     iget-object v0, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/email/winset/TwTabHost;->setCurrentTab(I)V
 
-    .line 96
+    .line 113
     :cond_0
     return-void
 .end method
@@ -213,29 +195,29 @@
     .parameter "state"
 
     .prologue
-    .line 72
+    .line 89
     invoke-super {p0, p1}, Landroid/app/ActivityGroup;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
-    .line 73
+    .line 90
     invoke-direct {p0}, Lcom/android/email/winset/TwTabActivity;->ensureTwTabHost()V
 
-    .line 74
+    .line 91
     const-string v1, "currentTab"
 
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 75
+    .line 92
     .local v0, cur:Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 76
+    .line 93
     iget-object v1, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
 
     invoke-virtual {v1, v0}, Lcom/android/email/winset/TwTabHost;->setCurrentTabByTag(Ljava/lang/String;)V
 
-    .line 78
+    .line 95
     :cond_0
     iget-object v1, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
 
@@ -245,30 +227,30 @@
 
     if-gez v1, :cond_1
 
-    .line 79
+    .line 96
     iget-object v1, p0, Lcom/android/email/winset/TwTabActivity;->mDefaultTab:Ljava/lang/String;
 
     if-eqz v1, :cond_2
 
-    .line 80
+    .line 97
     iget-object v1, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
 
     iget-object v2, p0, Lcom/android/email/winset/TwTabActivity;->mDefaultTab:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Lcom/android/email/winset/TwTabHost;->setCurrentTabByTag(Ljava/lang/String;)V
 
-    .line 85
+    .line 102
     :cond_1
     :goto_0
     return-void
 
-    .line 81
+    .line 98
     :cond_2
     iget v1, p0, Lcom/android/email/winset/TwTabActivity;->mDefaultTabIndex:I
 
     if-ltz v1, :cond_1
 
-    .line 82
+    .line 99
     iget-object v1, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
 
     iget v2, p0, Lcom/android/email/winset/TwTabActivity;->mDefaultTabIndex:I
@@ -283,60 +265,26 @@
     .parameter "outState"
 
     .prologue
-    .line 100
+    .line 117
     invoke-super {p0, p1}, Landroid/app/ActivityGroup;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 101
+    .line 118
     iget-object v1, p0, Lcom/android/email/winset/TwTabActivity;->mTabHost:Lcom/android/email/winset/TwTabHost;
 
     invoke-virtual {v1}, Lcom/android/email/winset/TwTabHost;->getCurrentTabTag()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 102
+    .line 119
     .local v0, currentTabTag:Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 103
+    .line 120
     const-string v1, "currentTab"
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 105
+    .line 122
     :cond_0
-    return-void
-.end method
-
-.method public setDefaultTab(I)V
-    .locals 1
-    .parameter "index"
-
-    .prologue
-    .line 66
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/email/winset/TwTabActivity;->mDefaultTab:Ljava/lang/String;
-
-    .line 67
-    iput p1, p0, Lcom/android/email/winset/TwTabActivity;->mDefaultTabIndex:I
-
-    .line 68
-    return-void
-.end method
-
-.method public setDefaultTab(Ljava/lang/String;)V
-    .locals 1
-    .parameter "tag"
-
-    .prologue
-    .line 56
-    iput-object p1, p0, Lcom/android/email/winset/TwTabActivity;->mDefaultTab:Ljava/lang/String;
-
-    .line 57
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcom/android/email/winset/TwTabActivity;->mDefaultTabIndex:I
-
-    .line 58
     return-void
 .end method

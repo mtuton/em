@@ -47,6 +47,14 @@
     .end annotation
 .end method
 
+.method public abstract moveConvAlwaysStatus([BIII)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract moveItemStatus(JI)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -64,6 +72,14 @@
 .end method
 
 .method public abstract sendMessageStatus(JLjava/lang/String;II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setDeviceInfoStatus(JII)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

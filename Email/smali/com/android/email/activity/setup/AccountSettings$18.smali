@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/activity/setup/AccountSettings;
 
+.field final synthetic val$mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/email/activity/setup/AccountSettings;)V
+.method constructor <init>(Lcom/android/email/activity/setup/AccountSettings;Lcom/android/email/provider/EmailContent$Mailbox;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 984
+    .line 1173
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSettings$18;->this$0:Lcom/android/email/activity/setup/AccountSettings;
+
+    iput-object p2, p0, Lcom/android/email/activity/setup/AccountSettings$18;->val$mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,16 +48,16 @@
     .parameter "newValue"
 
     .prologue
-    .line 985
+    .line 1175
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 986
+    .line 1176
     .local v1, summary:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$18;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettings;->access$2200(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/ListPreference;
+    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettings;->access$2400(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/ListPreference;
 
     move-result-object v2
 
@@ -60,17 +65,17 @@
 
     move-result v0
 
-    .line 987
+    .line 1177
     .local v0, index:I
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$18;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettings;->access$2200(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/ListPreference;
+    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettings;->access$2400(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/ListPreference;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSettings$18;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
-    invoke-static {v3}, Lcom/android/email/activity/setup/AccountSettings;->access$2200(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/ListPreference;
+    invoke-static {v3}, Lcom/android/email/activity/setup/AccountSettings;->access$2400(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/ListPreference;
 
     move-result-object v3
 
@@ -82,16 +87,29 @@
 
     invoke-virtual {v2, v3}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 988
+    .line 1178
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$18;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettings;->access$2200(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/ListPreference;
+    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettings;->access$2400(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/ListPreference;
 
     move-result-object v2
 
     invoke-virtual {v2, v1}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 989
+    .line 1180
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$18;->val$mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    iput v3, v2, Lcom/android/email/provider/EmailContent$Mailbox;->mVisibleLimit:I
+
+    .line 1181
     const/4 v2, 0x0
 
     return v2

@@ -4,8 +4,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/apache/james/mime4j/message/Header;-><init>(Ljava/io/InputStream;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/apache/james/mime4j/message/Header;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,24 +18,6 @@
 .field final synthetic this$0:Lorg/apache/james/mime4j/message/Header;
 
 .field final synthetic val$parser:Lorg/apache/james/mime4j/MimeStreamParser;
-
-
-# direct methods
-.method constructor <init>(Lorg/apache/james/mime4j/message/Header;Lorg/apache/james/mime4j/MimeStreamParser;)V
-    .locals 0
-    .parameter
-    .parameter
-
-    .prologue
-    .line 67
-    iput-object p1, p0, Lorg/apache/james/mime4j/message/Header$1;->this$0:Lorg/apache/james/mime4j/message/Header;
-
-    iput-object p2, p0, Lorg/apache/james/mime4j/message/Header$1;->val$parser:Lorg/apache/james/mime4j/MimeStreamParser;
-
-    invoke-direct {p0}, Lorg/apache/james/mime4j/AbstractContentHandler;-><init>()V
-
-    return-void
-.end method
 
 
 # virtual methods

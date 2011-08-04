@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.android.email.activity.MessageListItem android:orientation="vertical" android:background="@drawable/list_item_background" android:layout_width="fill_parent" android:layout_height="97.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/Lineview" android:background="@android:drawable/divider_horizontal_dark" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="96.0px">
+        <View android:id="@id/chip" android:background="@android:drawable/title_bar" android:layout_width="6.0px" android:layout_height="fill_parent" />
+        <ImageView android:gravity="center_vertical" android:id="@id/selected" android:paddingLeft="6.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_check_buttonless_dark_off" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="14.0px" android:layout_marginRight="10.0px">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="@style/EmailTextAppearanceMiddle" android:textSize="30.0px" android:typeface="sans" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/subject" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0px" android:singleLine="true" android:layout_weight="1.0" />
+                <ImageView android:id="@id/priority_listview" android:paddingTop="6.0dip" android:visibility="gone" android:layout_width="40.0px" android:layout_height="40.0px" android:layout_toLeftOf="@id/attachment" />
+                <ImageView android:id="@id/attachment" android:paddingTop="6.0dip" android:visibility="gone" android:layout_width="40.0px" android:layout_height="40.0px" android:src="@drawable/list_icon_attach" android:layout_toLeftOf="@id/smsIcon" />
+                <ImageView android:id="@id/smsIcon" android:paddingTop="6.0dip" android:visibility="gone" android:layout_width="40.0px" android:layout_height="40.0px" android:src="@drawable/list_icon_sms" android:layout_toLeftOf="@id/signIcon" />
+                <ImageView android:id="@id/signIcon" android:paddingTop="6.0dip" android:visibility="gone" android:layout_width="40.0px" android:layout_height="40.0px" android:src="@drawable/list_icon_sign" android:layout_toLeftOf="@id/encryptedIcon" />
+                <ImageView android:id="@id/encryptedIcon" android:paddingTop="6.0dip" android:visibility="gone" android:layout_width="40.0px" android:layout_height="40.0px" android:src="@drawable/list_icon_encryption" android:layout_toLeftOf="@id/follow_up_flag" />
+                <ImageView android:id="@id/follow_up_flag" android:paddingTop="6.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/list_icon_flag" android:layout_toLeftOf="@id/favorite" />
+                <ImageView android:id="@id/favorite" android:paddingTop="6.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0px" android:src="@drawable/list_icon_favorite_off" />
+                <ImageView android:id="@id/listItem_thread_updown" android:paddingTop="7.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/list_icon_expandable_up" android:layout_alignParentRight="true" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLineSecondary" android:textSize="23.0px" android:typeface="sans" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/display_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0px" android:singleLine="true" android:layout_weight="1.0" />
+                <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLineSecondaryGrey" android:textSize="23.0px" android:typeface="sans" android:gravity="right|center" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0px" android:singleLine="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.android.email.activity.MessageListItem>

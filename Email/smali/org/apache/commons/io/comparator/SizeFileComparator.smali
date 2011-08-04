@@ -3,8 +3,8 @@
 .source "SizeFileComparator.java"
 
 # interfaces
-.implements Ljava/util/Comparator;
 .implements Ljava/io/Serializable;
+.implements Ljava/util/Comparator;
 
 
 # static fields

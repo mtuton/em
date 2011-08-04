@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 674
+    .line 817
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSettings$8;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,12 +43,12 @@
     .parameter "newValue"
 
     .prologue
-    .line 675
+    .line 819
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 676
+    .line 820
     .local v1, summary:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$8;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
@@ -60,7 +60,7 @@
 
     move-result v0
 
-    .line 677
+    .line 821
     .local v0, index:I
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$8;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
@@ -82,7 +82,7 @@
 
     invoke-virtual {v2, v3}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 678
+    .line 822
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$8;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
     invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettings;->access$1400(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/ListPreference;
@@ -91,7 +91,7 @@
 
     invoke-virtual {v2, v1}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 679
+    .line 823
     const/4 v2, 0x0
 
     return v2

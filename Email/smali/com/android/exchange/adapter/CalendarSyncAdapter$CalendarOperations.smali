@@ -45,20 +45,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1448
+    .line 1486
     iput-object p1, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->this$0:Lcom/android/exchange/adapter/CalendarSyncAdapter;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1450
+    .line 1488
     iput v1, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mCount:I
 
-    .line 1451
+    .line 1489
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mResults:[Landroid/content/ContentProviderResult;
 
-    .line 1452
+    .line 1490
     iput v1, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mEventStart:I
 
     return-void
@@ -70,7 +70,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1448
+    .line 1486
     invoke-direct {p0, p1}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;-><init>(Lcom/android/exchange/adapter/CalendarSyncAdapter;)V
 
     return-void
@@ -81,7 +81,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1448
+    .line 1486
     iget-object v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mResults:[Landroid/content/ContentProviderResult;
 
     return-object v0
@@ -93,7 +93,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1448
+    .line 1486
     iput-object p1, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mResults:[Landroid/content/ContentProviderResult;
 
     return-object p1
@@ -105,7 +105,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1448
+    .line 1486
     iput p1, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mEventStart:I
 
     return p1
@@ -118,17 +118,17 @@
     .parameter "op"
 
     .prologue
-    .line 1456
+    .line 1494
     invoke-super {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1457
+    .line 1495
     iget v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mCount:I
 
-    .line 1458
+    .line 1496
     const/4 v0, 0x1
 
     return v0
@@ -139,7 +139,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1448
+    .line 1486
     check-cast p1, Landroid/content/ContentProviderOperation;
 
     .end local p1
@@ -156,7 +156,7 @@
     .parameter "syncId"
 
     .prologue
-    .line 1545
+    .line 1583
     invoke-static {}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->access$700()Landroid/net/Uri;
 
     move-result-object v0
@@ -175,7 +175,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->add(Landroid/content/ContentProviderOperation;)Z
 
-    .line 1548
+    .line 1586
     invoke-static {}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->access$700()Landroid/net/Uri;
 
     move-result-object v0
@@ -204,7 +204,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->add(Landroid/content/ContentProviderOperation;)Z
 
-    .line 1551
+    .line 1589
     return-void
 .end method
 
@@ -216,7 +216,7 @@
 
     const-string v1, "EasCalendarSyncAdapter"
 
-    .line 1554
+    .line 1592
     iget-object v1, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->this$0:Lcom/android/exchange/adapter/CalendarSyncAdapter;
 
     iget-object v1, v1, Lcom/android/exchange/adapter/CalendarSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
@@ -227,7 +227,7 @@
 
     monitor-enter v1
 
-    .line 1555
+    .line 1593
     :try_start_0
     iget-object v2, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->this$0:Lcom/android/exchange/adapter/CalendarSyncAdapter;
 
@@ -241,7 +241,7 @@
 
     if-nez v2, :cond_0
 
-    .line 1557
+    .line 1595
     :try_start_1
     invoke-virtual {p0}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->isEmpty()Z
 
@@ -249,7 +249,7 @@
 
     if-nez v2, :cond_0
 
-    .line 1558
+    .line 1596
     iget-object v2, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->this$0:Lcom/android/exchange/adapter/CalendarSyncAdapter;
 
     iget-object v2, v2, Lcom/android/exchange/adapter/CalendarSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
@@ -264,7 +264,7 @@
 
     invoke-virtual {v2, v3, v4, v5}, Lcom/android/exchange/EasSyncService;->userLog(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 1559
+    .line 1597
     iget-object v2, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->this$0:Lcom/android/exchange/adapter/CalendarSyncAdapter;
 
     iget-object v2, v2, Lcom/android/exchange/adapter/CalendarSyncAdapter;->mContext:Landroid/content/Context;
@@ -285,22 +285,22 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Landroid/content/OperationApplicationException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1570
+    .line 1608
     :cond_0
     :goto_0
     :try_start_2
     monitor-exit v1
 
-    .line 1571
+    .line 1609
     return-void
 
-    .line 1562
+    .line 1600
     :catch_0
     move-exception v2
 
     move-object v0, v2
 
-    .line 1564
+    .line 1602
     .local v0, e:Landroid/os/RemoteException;
     const-string v2, "EasCalendarSyncAdapter"
 
@@ -310,7 +310,7 @@
 
     goto :goto_0
 
-    .line 1570
+    .line 1608
     .end local v0           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v2
@@ -321,13 +321,13 @@
 
     throw v2
 
-    .line 1565
+    .line 1603
     :catch_1
     move-exception v2
 
     move-object v0, v2
 
-    .line 1567
+    .line 1605
     .local v0, e:Landroid/content/OperationApplicationException;
     :try_start_3
     const-string v2, "EasCalendarSyncAdapter"
@@ -346,12 +346,12 @@
     .parameter "cv"
 
     .prologue
-    .line 1474
+    .line 1512
     iget v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mEventStart:I
 
     invoke-virtual {p0, p1, v0}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->newAttendee(Landroid/content/ContentValues;I)V
 
-    .line 1475
+    .line 1513
     return-void
 .end method
 
@@ -361,7 +361,7 @@
     .parameter "eventStart"
 
     .prologue
-    .line 1478
+    .line 1516
     invoke-static {}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->access$500()Landroid/net/Uri;
 
     move-result-object v0
@@ -386,7 +386,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->add(Landroid/content/ContentProviderOperation;)Z
 
-    .line 1483
+    .line 1521
     return-void
 .end method
 
@@ -396,14 +396,14 @@
     .parameter "serverId"
 
     .prologue
-    .line 1468
+    .line 1506
     iget v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mCount:I
 
-    .line 1469
+    .line 1507
     .local v0, offset:I
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->delete(JLjava/lang/String;)V
 
-    .line 1470
+    .line 1508
     return v0
 .end method
 
@@ -412,15 +412,15 @@
     .parameter "op"
 
     .prologue
-    .line 1462
+    .line 1500
     iget v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mCount:I
 
     iput v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mEventStart:I
 
-    .line 1463
+    .line 1501
     invoke-virtual {p0, p1}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->add(Landroid/content/ContentProviderOperation;)Z
 
-    .line 1464
+    .line 1502
     iget v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mEventStart:I
 
     return v0
@@ -431,7 +431,7 @@
     .parameter "cv"
 
     .prologue
-    .line 1491
+    .line 1529
     invoke-static {}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->access$700()Landroid/net/Uri;
 
     move-result-object v0
@@ -450,7 +450,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->add(Landroid/content/ContentProviderOperation;)Z
 
-    .line 1492
+    .line 1530
     return-void
 .end method
 
@@ -460,7 +460,7 @@
     .parameter "value"
 
     .prologue
-    .line 1495
+    .line 1533
     invoke-static {}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->access$1600()Landroid/net/Uri;
 
     move-result-object v0
@@ -495,7 +495,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->add(Landroid/content/ContentProviderOperation;)Z
 
-    .line 1501
+    .line 1539
     return-void
 .end method
 
@@ -504,12 +504,12 @@
     .parameter "mins"
 
     .prologue
-    .line 1541
+    .line 1579
     iget v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->mEventStart:I
 
     invoke-virtual {p0, p1, v0}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->newReminder(II)V
 
-    .line 1542
+    .line 1580
     return-void
 .end method
 
@@ -519,7 +519,7 @@
     .parameter "eventStart"
 
     .prologue
-    .line 1532
+    .line 1570
     invoke-static {}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->access$1800()Landroid/net/Uri;
 
     move-result-object v0
@@ -562,7 +562,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->add(Landroid/content/ContentProviderOperation;)Z
 
-    .line 1538
+    .line 1576
     return-void
 .end method
 
@@ -572,7 +572,7 @@
     .parameter "id"
 
     .prologue
-    .line 1486
+    .line 1524
     const-string v0, "event_id"
 
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -581,7 +581,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1487
+    .line 1525
     invoke-static {}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->access$500()Landroid/net/Uri;
 
     move-result-object v0
@@ -600,7 +600,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->add(Landroid/content/ContentProviderOperation;)Z
 
-    .line 1488
+    .line 1526
     return-void
 .end method
 
@@ -613,7 +613,7 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 1505
+    .line 1543
     iget-object v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->this$0:Lcom/android/exchange/adapter/CalendarSyncAdapter;
 
     iget-object v0, v0, Lcom/android/exchange/adapter/CalendarSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
@@ -648,15 +648,15 @@
 
     move-result-object v6
 
-    .line 1508
+    .line 1546
     .local v6, c:Landroid/database/Cursor;
     const-wide/16 v7, -0x1
 
-    .line 1510
+    .line 1548
     .local v7, extendedPropertyId:J
     if-eqz v6, :cond_1
 
-    .line 1512
+    .line 1550
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -664,7 +664,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1513
+    .line 1551
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -673,11 +673,11 @@
 
     move-result-wide v7
 
-    .line 1516
+    .line 1554
     :cond_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 1520
+    .line 1558
     :cond_1
     const-wide/16 v0, 0x0
 
@@ -685,7 +685,7 @@
 
     if-ltz v0, :cond_2
 
-    .line 1521
+    .line 1559
     invoke-static {}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->access$1600()Landroid/net/Uri;
 
     move-result-object v0
@@ -710,11 +710,11 @@
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->add(Landroid/content/ContentProviderOperation;)Z
 
-    .line 1529
+    .line 1567
     :goto_0
     return-void
 
-    .line 1516
+    .line 1554
     :catchall_0
     move-exception v0
 
@@ -722,7 +722,7 @@
 
     throw v0
 
-    .line 1527
+    .line 1565
     :cond_2
     invoke-virtual {p0, p1, p2}, Lcom/android/exchange/adapter/CalendarSyncAdapter$CalendarOperations;->newExtendedProperty(Ljava/lang/String;Ljava/lang/String;)V
 

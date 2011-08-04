@@ -1,4 +1,4 @@
-.class Lcom/android/exchange/SyncManager$5;
+.class final Lcom/android/exchange/SyncManager$5;
 .super Ljava/lang/Object;
 .source "SyncManager.java"
 
@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 1708
+    .line 1864
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
     .parameter "route"
 
     .prologue
-    .line 1709
+    .line 1866
     const/16 v0, 0x8
 
     return v0

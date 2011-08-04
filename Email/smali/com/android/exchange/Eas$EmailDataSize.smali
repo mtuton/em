@@ -68,7 +68,7 @@
 
     const/4 v5, 0x0
 
-    .line 100
+    .line 123
     new-instance v0, Lcom/android/exchange/Eas$EmailDataSize;
 
     const-string v1, "HEADERS_ONLY"
@@ -133,7 +133,7 @@
 
     sput-object v0, Lcom/android/exchange/Eas$EmailDataSize;->TEN_KB:Lcom/android/exchange/Eas$EmailDataSize;
 
-    .line 101
+    .line 124
     new-instance v0, Lcom/android/exchange/Eas$EmailDataSize;
 
     const-string v1, "TWENTY_KB"
@@ -190,7 +190,7 @@
 
     sput-object v0, Lcom/android/exchange/Eas$EmailDataSize;->ALL:Lcom/android/exchange/Eas$EmailDataSize;
 
-    .line 99
+    .line 122
     const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/android/exchange/Eas$EmailDataSize;
@@ -250,34 +250,6 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;IBLjava/lang/String;)V
-    .locals 0
-    .parameter
-    .parameter
-    .parameter "value"
-    .parameter "text"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(B",
-            "Ljava/lang/String;",
-            ")V"
-        }
-    .end annotation
-
-    .prologue
-    .line 106
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 107
-    iput-byte p3, p0, Lcom/android/exchange/Eas$EmailDataSize;->mValue:B
-
-    .line 108
-    iput-object p4, p0, Lcom/android/exchange/Eas$EmailDataSize;->mText:Ljava/lang/String;
-
-    .line 109
-    return-void
-.end method
-
 .method private constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
     .locals 1
     .parameter
@@ -293,18 +265,18 @@
     .end annotation
 
     .prologue
-    .line 111
+    .line 134
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 112
+    .line 135
     int-to-byte v0, p3
 
     iput-byte v0, p0, Lcom/android/exchange/Eas$EmailDataSize;->mValue:B
 
-    .line 113
+    .line 136
     iput-object p4, p0, Lcom/android/exchange/Eas$EmailDataSize;->mText:Ljava/lang/String;
 
-    .line 114
+    .line 137
     return-void
 .end method
 
@@ -313,70 +285,70 @@
     .parameter "value"
 
     .prologue
-    .line 211
+    .line 234
     packed-switch p0, :pswitch_data_0
 
-    .line 246
+    .line 269
     sget-object v0, Lcom/android/exchange/Eas$EmailDataSize;->ALL:Lcom/android/exchange/Eas$EmailDataSize;
 
     :goto_0
     return-object v0
 
-    .line 214
+    .line 237
     :pswitch_0
     sget-object v0, Lcom/android/exchange/Eas$EmailDataSize;->HEADERS_ONLY:Lcom/android/exchange/Eas$EmailDataSize;
 
     goto :goto_0
 
-    .line 217
+    .line 240
     :pswitch_1
     sget-object v0, Lcom/android/exchange/Eas$EmailDataSize;->HALF_KB:Lcom/android/exchange/Eas$EmailDataSize;
 
     goto :goto_0
 
-    .line 220
+    .line 243
     :pswitch_2
     sget-object v0, Lcom/android/exchange/Eas$EmailDataSize;->ONE_KB:Lcom/android/exchange/Eas$EmailDataSize;
 
     goto :goto_0
 
-    .line 223
+    .line 246
     :pswitch_3
     sget-object v0, Lcom/android/exchange/Eas$EmailDataSize;->TWO_KB:Lcom/android/exchange/Eas$EmailDataSize;
 
     goto :goto_0
 
-    .line 226
+    .line 249
     :pswitch_4
     sget-object v0, Lcom/android/exchange/Eas$EmailDataSize;->FIVE_KB:Lcom/android/exchange/Eas$EmailDataSize;
 
     goto :goto_0
 
-    .line 229
+    .line 252
     :pswitch_5
     sget-object v0, Lcom/android/exchange/Eas$EmailDataSize;->TEN_KB:Lcom/android/exchange/Eas$EmailDataSize;
 
     goto :goto_0
 
-    .line 232
+    .line 255
     :pswitch_6
     sget-object v0, Lcom/android/exchange/Eas$EmailDataSize;->TWENTY_KB:Lcom/android/exchange/Eas$EmailDataSize;
 
     goto :goto_0
 
-    .line 235
+    .line 258
     :pswitch_7
     sget-object v0, Lcom/android/exchange/Eas$EmailDataSize;->FIFTY_KB:Lcom/android/exchange/Eas$EmailDataSize;
 
     goto :goto_0
 
-    .line 238
+    .line 261
     :pswitch_8
     sget-object v0, Lcom/android/exchange/Eas$EmailDataSize;->HUNDRED_KB:Lcom/android/exchange/Eas$EmailDataSize;
 
     goto :goto_0
 
-    .line 211
+    .line 234
     nop
 
     :pswitch_data_0
@@ -393,161 +365,110 @@
     .end packed-switch
 .end method
 
-.method public static parse(I)Lcom/android/exchange/Eas$EmailDataSize;
-    .locals 1
-    .parameter "value"
-
-    .prologue
-    .line 250
-    int-to-byte v0, p0
-
-    invoke-static {v0}, Lcom/android/exchange/Eas$EmailDataSize;->parse(B)Lcom/android/exchange/Eas$EmailDataSize;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static parse(Ljava/lang/String;)Lcom/android/exchange/Eas$EmailDataSize;
-    .locals 3
-    .parameter "parseMe"
-
-    .prologue
-    .line 254
-    const/4 v0, -0x1
-
-    .line 256
-    .local v0, b:B
-    :try_start_0
-    invoke-static {p0}, Ljava/lang/Byte;->parseByte(Ljava/lang/String;)B
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v0
-
-    .line 261
-    invoke-static {v0}, Lcom/android/exchange/Eas$EmailDataSize;->parse(B)Lcom/android/exchange/Eas$EmailDataSize;
-
-    move-result-object v2
-
-    :goto_0
-    return-object v2
-
-    .line 257
-    :catch_0
-    move-exception v1
-
-    .line 259
-    .local v1, nfe:Ljava/lang/NumberFormatException;
-    const/4 v2, 0x0
-
-    goto :goto_0
-.end method
-
 .method public static parseToByte(I)B
     .locals 1
     .parameter "valueInBytes"
 
     .prologue
-    .line 265
+    .line 288
     if-gtz p0, :cond_0
 
-    .line 266
+    .line 289
     const/4 v0, 0x0
 
-    .line 284
+    .line 307
     :goto_0
     return v0
 
-    .line 267
+    .line 290
     :cond_0
     const/16 v0, 0x200
 
     if-gt p0, v0, :cond_1
 
-    .line 268
+    .line 291
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 269
+    .line 292
     :cond_1
     const/16 v0, 0x400
 
     if-gt p0, v0, :cond_2
 
-    .line 270
+    .line 293
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 271
+    .line 294
     :cond_2
     const/16 v0, 0x800
 
     if-gt p0, v0, :cond_3
 
-    .line 272
+    .line 295
     const/4 v0, 0x3
 
     goto :goto_0
 
-    .line 273
+    .line 296
     :cond_3
     const/16 v0, 0x1400
 
     if-gt p0, v0, :cond_4
 
-    .line 274
+    .line 297
     const/4 v0, 0x4
 
     goto :goto_0
 
-    .line 275
+    .line 298
     :cond_4
     const/16 v0, 0x2800
 
     if-gt p0, v0, :cond_5
 
-    .line 276
+    .line 299
     const/4 v0, 0x5
 
     goto :goto_0
 
-    .line 277
+    .line 300
     :cond_5
     const/16 v0, 0x5000
 
     if-gt p0, v0, :cond_6
 
-    .line 278
+    .line 301
     const/4 v0, 0x6
 
     goto :goto_0
 
-    .line 279
+    .line 302
     :cond_6
     const v0, 0xc800
 
     if-gt p0, v0, :cond_7
 
-    .line 280
+    .line 303
     const/4 v0, 0x7
 
     goto :goto_0
 
-    .line 281
+    .line 304
     :cond_7
     const v0, 0x19000
 
     if-gt p0, v0, :cond_8
 
-    .line 282
+    .line 305
     const/16 v0, 0x8
 
     goto :goto_0
 
-    .line 284
+    .line 307
     :cond_8
     const/16 v0, 0x9
 
@@ -556,27 +477,26 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/exchange/Eas$EmailDataSize;
     .locals 1
-    .parameter "name"
+    .parameter
 
     .prologue
-    .line 99
+    .line 122
     const-class v0, Lcom/android/exchange/Eas$EmailDataSize;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
-    .end local p0
     check-cast p0, Lcom/android/exchange/Eas$EmailDataSize;
 
     return-object p0
 .end method
 
-.method public static final values()[Lcom/android/exchange/Eas$EmailDataSize;
+.method public static values()[Lcom/android/exchange/Eas$EmailDataSize;
     .locals 1
 
     .prologue
-    .line 99
+    .line 122
     sget-object v0, Lcom/android/exchange/Eas$EmailDataSize;->$VALUES:[Lcom/android/exchange/Eas$EmailDataSize;
 
     invoke-virtual {v0}, [Lcom/android/exchange/Eas$EmailDataSize;->clone()Ljava/lang/Object;
@@ -590,106 +510,76 @@
 
 
 # virtual methods
-.method public getAsByte()B
-    .locals 1
-
-    .prologue
-    .line 116
-    iget-byte v0, p0, Lcom/android/exchange/Eas$EmailDataSize;->mValue:B
-
-    return v0
-.end method
-
-.method public getAsInt()I
-    .locals 1
-
-    .prologue
-    .line 117
-    iget-byte v0, p0, Lcom/android/exchange/Eas$EmailDataSize;->mValue:B
-
-    return v0
-.end method
-
-.method public getAsString()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 118
-    iget-object v0, p0, Lcom/android/exchange/Eas$EmailDataSize;->mText:Ljava/lang/String;
-
-    return-object v0
-.end method
-
 .method public toEas12Text()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 168
+    .line 191
     iget-byte v0, p0, Lcom/android/exchange/Eas$EmailDataSize;->mValue:B
 
     packed-switch v0, :pswitch_data_0
 
-    .line 207
+    .line 230
     const-string v0, "2147483647"
 
     :goto_0
     return-object v0
 
-    .line 171
+    .line 194
     :pswitch_0
     const-string v0, "0"
 
     goto :goto_0
 
-    .line 174
+    .line 197
     :pswitch_1
     const-string v0, "512"
 
     goto :goto_0
 
-    .line 177
+    .line 200
     :pswitch_2
     const-string v0, "1024"
 
     goto :goto_0
 
-    .line 180
+    .line 203
     :pswitch_3
     const-string v0, "2048"
 
     goto :goto_0
 
-    .line 183
+    .line 206
     :pswitch_4
     const-string v0, "5120"
 
     goto :goto_0
 
-    .line 186
+    .line 209
     :pswitch_5
     const-string v0, "10240"
 
     goto :goto_0
 
-    .line 189
+    .line 212
     :pswitch_6
     const-string v0, "20480"
 
     goto :goto_0
 
-    .line 192
+    .line 215
     :pswitch_7
     const-string v0, "51200"
 
     goto :goto_0
 
-    .line 195
+    .line 218
     :pswitch_8
     const-string v0, "102400"
 
     goto :goto_0
 
-    .line 168
+    .line 191
     nop
 
     :pswitch_data_0
@@ -710,72 +600,72 @@
     .locals 1
 
     .prologue
-    .line 126
+    .line 149
     iget-byte v0, p0, Lcom/android/exchange/Eas$EmailDataSize;->mValue:B
 
     packed-switch v0, :pswitch_data_0
 
-    .line 165
+    .line 188
     const v0, 0x7fffffff
 
     :goto_0
     return v0
 
-    .line 129
+    .line 152
     :pswitch_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 132
+    .line 155
     :pswitch_1
     const/16 v0, 0x200
 
     goto :goto_0
 
-    .line 135
+    .line 158
     :pswitch_2
     const/16 v0, 0x400
 
     goto :goto_0
 
-    .line 138
+    .line 161
     :pswitch_3
     const/16 v0, 0x800
 
     goto :goto_0
 
-    .line 141
+    .line 164
     :pswitch_4
     const/16 v0, 0x1400
 
     goto :goto_0
 
-    .line 144
+    .line 167
     :pswitch_5
     const/16 v0, 0x2800
 
     goto :goto_0
 
-    .line 147
+    .line 170
     :pswitch_6
     const/16 v0, 0x5000
 
     goto :goto_0
 
-    .line 150
+    .line 173
     :pswitch_7
     const v0, 0xc800
 
     goto :goto_0
 
-    .line 153
+    .line 176
     :pswitch_8
     const v0, 0x19000
 
     goto :goto_0
 
-    .line 126
+    .line 149
     nop
 
     :pswitch_data_0
@@ -796,18 +686,8 @@
     .locals 1
 
     .prologue
-    .line 122
+    .line 145
     iget-object v0, p0, Lcom/android/exchange/Eas$EmailDataSize;->mText:Ljava/lang/String;
 
     return-object v0
-.end method
-
-.method public toEas2_5Value()I
-    .locals 1
-
-    .prologue
-    .line 121
-    iget-byte v0, p0, Lcom/android/exchange/Eas$EmailDataSize;->mValue:B
-
-    return v0
 .end method

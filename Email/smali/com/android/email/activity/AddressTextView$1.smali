@@ -1,4 +1,4 @@
-.class Lcom/android/email/activity/AddressTextView$1;
+.class synthetic Lcom/android/email/activity/AddressTextView$1;
 .super Ljava/lang/Object;
 .source "AddressTextView.java"
 

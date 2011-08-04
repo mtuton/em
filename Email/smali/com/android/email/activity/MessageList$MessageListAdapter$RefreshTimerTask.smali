@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 6548
+    .line 8304
     iput-object p1, p0, Lcom/android/email/activity/MessageList$MessageListAdapter$RefreshTimerTask;->this$1:Lcom/android/email/activity/MessageList$MessageListAdapter;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
@@ -38,11 +38,11 @@
     .locals 1
 
     .prologue
-    .line 6551
+    .line 8307
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListAdapter$RefreshTimerTask;->this$1:Lcom/android/email/activity/MessageList$MessageListAdapter;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList$MessageListAdapter;->access$4900(Lcom/android/email/activity/MessageList$MessageListAdapter;)V
+    invoke-static {v0}, Lcom/android/email/activity/MessageList$MessageListAdapter;->access$5300(Lcom/android/email/activity/MessageList$MessageListAdapter;)V
 
-    .line 6552
+    .line 8308
     return-void
 .end method

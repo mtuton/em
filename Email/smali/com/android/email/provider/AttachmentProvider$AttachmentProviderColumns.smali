@@ -14,16 +14,6 @@
 .end annotation
 
 
-# static fields
-.field public static final DATA:Ljava/lang/String; = "_data"
-
-.field public static final DISPLAY_NAME:Ljava/lang/String; = "_display_name"
-
-.field public static final SIZE:Ljava/lang/String; = "_size"
-
-.field public static final _ID:Ljava/lang/String; = "_id"
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0

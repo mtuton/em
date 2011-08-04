@@ -11,16 +11,6 @@
 .end annotation
 
 
-# static fields
-.field public static final OOO_MSG_REQ_DATA_EXTERNAL_KNOWN:Ljava/lang/String; = "oooMsgReqDataExternalKnown"
-
-.field public static final OOO_MSG_REQ_DATA_EXTERNAL_UNKNOWN:Ljava/lang/String; = "oooMsgReqDataInternalUnknown"
-
-.field public static final OOO_MSG_REQ_DATA_INTERNAL:Ljava/lang/String; = "oooMsgReqDataInternal"
-
-.field public static final OOO_MSG_REQ_TYPE:Ljava/lang/String; = "oooMsgReqType"
-
-
 # instance fields
 .field private final DATE_DIALOG_ID:I
 
@@ -134,93 +124,93 @@
 
     const/4 v1, 0x1
 
-    .line 33
+    .line 35
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 35
+    .line 37
     iput v2, p0, Lcom/android/email/activity/setup/OoOSettings;->DATE_DIALOG_ID:I
 
-    .line 36
+    .line 38
     iput v1, p0, Lcom/android/email/activity/setup/OoOSettings;->TIME_DIALOG_ID:I
 
-    .line 37
+    .line 39
     iput v3, p0, Lcom/android/email/activity/setup/OoOSettings;->REQUEST_FOR_INTERNAL_MESSAGES:I
 
-    .line 38
+    .line 40
     iput v4, p0, Lcom/android/email/activity/setup/OoOSettings;->REQUEST_FOR_EXTERNAL_MESSAGES:I
 
-    .line 54
+    .line 56
     iput-boolean v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsStartDate:Z
 
-    .line 60
+    .line 62
     iput-boolean v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsStartTime:Z
 
-    .line 83
+    .line 85
     new-instance v0, Lcom/android/email/activity/setup/OoOSettings$1;
 
     invoke-direct {v0, p0}, Lcom/android/email/activity/setup/OoOSettings$1;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
 
     iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mDateSetListener:Landroid/app/DatePickerDialog$OnDateSetListener;
 
-    .line 104
+    .line 106
     new-instance v0, Lcom/android/email/activity/setup/OoOSettings$2;
 
     invoke-direct {v0, p0}, Lcom/android/email/activity/setup/OoOSettings$2;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
 
     iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mTimeSetListener:Landroid/app/TimePickerDialog$OnTimeSetListener;
 
-    .line 121
+    .line 123
     iput v2, p0, Lcom/android/email/activity/setup/OoOSettings;->OOO_STATUS_COMPLETE:I
 
-    .line 122
+    .line 124
     iput v1, p0, Lcom/android/email/activity/setup/OoOSettings;->OOO_NO_STATUS:I
 
-    .line 123
+    .line 125
     iput v3, p0, Lcom/android/email/activity/setup/OoOSettings;->OOO_NO_PROTOCOL_SUPPORT:I
 
-    .line 124
+    .line 126
     iput v4, p0, Lcom/android/email/activity/setup/OoOSettings;->OOO_PROCESSING:I
 
-    .line 125
+    .line 127
     const/4 v0, 0x4
 
     iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->OOO_SET_ERROR:I
 
-    .line 126
+    .line 128
     const/4 v0, 0x5
 
     iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->OOO_GET_ERROR:I
 
-    .line 127
+    .line 129
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->OOO_SERVER_CONNECT:I
 
-    .line 128
+    .line 130
     const/4 v0, 0x7
 
     iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->OOO_RESPONSE_PARSE:I
 
-    .line 129
+    .line 131
     const/16 v0, 0x8
 
     iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->OOO_UNKNOWN_ERROR:I
 
-    .line 132
+    .line 134
     new-instance v0, Lcom/android/email/activity/setup/OoOSettings$Listener;
 
     invoke-direct {v0, p0}, Lcom/android/email/activity/setup/OoOSettings$Listener;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
 
     iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mListener:Lcom/android/email/activity/setup/OoOSettings$Listener;
 
-    .line 133
+    .line 135
     new-instance v0, Lcom/android/email/activity/setup/OoOSettings$3;
 
     invoke-direct {v0, p0}, Lcom/android/email/activity/setup/OoOSettings$3;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
 
     iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mHandler:Landroid/os/Handler;
 
-    .line 709
+    .line 786
     return-void
 .end method
 
@@ -229,7 +219,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
     iget-boolean v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsStartDate:Z
 
     return v0
@@ -241,7 +231,7 @@
     .parameter "x1"
 
     .prologue
-    .line 33
+    .line 35
     iput-boolean p1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsStartDate:Z
 
     return p1
@@ -252,7 +242,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
 
     return-object v0
@@ -264,7 +254,7 @@
     .parameter "x1"
 
     .prologue
-    .line 33
+    .line 35
     iput-boolean p1, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofState:Z
 
     return p1
@@ -275,7 +265,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
     invoke-direct {p0}, Lcom/android/email/activity/setup/OoOSettings;->toggleAllUIState()V
 
     return-void
@@ -286,20 +276,19 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
     invoke-direct {p0}, Lcom/android/email/activity/setup/OoOSettings;->prepareDateTimeButtons()V
 
     return-void
 .end method
 
-.method static synthetic access$1300(Lcom/android/email/activity/setup/OoOSettings;Z)V
+.method static synthetic access$1300(Lcom/android/email/activity/setup/OoOSettings;)V
     .locals 0
     .parameter "x0"
-    .parameter "x1"
 
     .prologue
-    .line 33
-    invoke-direct {p0, p1}, Lcom/android/email/activity/setup/OoOSettings;->onMessageClick(Z)V
+    .line 35
+    invoke-direct {p0}, Lcom/android/email/activity/setup/OoOSettings;->updateDate()V
 
     return-void
 .end method
@@ -309,29 +298,52 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
+    invoke-direct {p0}, Lcom/android/email/activity/setup/OoOSettings;->updateTime()V
+
+    return-void
+.end method
+
+.method static synthetic access$1500(Lcom/android/email/activity/setup/OoOSettings;Z)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 35
+    invoke-direct {p0, p1}, Lcom/android/email/activity/setup/OoOSettings;->onMessageClick(Z)V
+
+    return-void
+.end method
+
+.method static synthetic access$1600(Lcom/android/email/activity/setup/OoOSettings;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 35
     invoke-direct {p0}, Lcom/android/email/activity/setup/OoOSettings;->sendDataToExchange()V
 
     return-void
 .end method
 
-.method static synthetic access$1500(Lcom/android/email/activity/setup/OoOSettings;)Landroid/widget/Button;
+.method static synthetic access$1700(Lcom/android/email/activity/setup/OoOSettings;)Landroid/widget/Button;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgButton:Landroid/widget/Button;
 
     return-object v0
 .end method
 
-.method static synthetic access$1600(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
+.method static synthetic access$1800(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -342,7 +354,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
     invoke-direct {p0}, Lcom/android/email/activity/setup/OoOSettings;->updateStartDateTime()V
 
     return-void
@@ -353,7 +365,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
 
     return-object v0
@@ -364,7 +376,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
     invoke-direct {p0}, Lcom/android/email/activity/setup/OoOSettings;->updateEndDateTime()V
 
     return-void
@@ -375,7 +387,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
     iget-boolean v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsStartTime:Z
 
     return v0
@@ -387,7 +399,7 @@
     .parameter "x1"
 
     .prologue
-    .line 33
+    .line 35
     iput-boolean p1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsStartTime:Z
 
     return p1
@@ -398,7 +410,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mProgressDlg:Landroid/app/ProgressDialog;
 
     return-object v0
@@ -410,7 +422,7 @@
     .parameter "x1"
 
     .prologue
-    .line 33
+    .line 35
     iput-object p1, p0, Lcom/android/email/activity/setup/OoOSettings;->mProgressDlg:Landroid/app/ProgressDialog;
 
     return-object p1
@@ -421,7 +433,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mListener:Lcom/android/email/activity/setup/OoOSettings$Listener;
 
     return-object v0
@@ -432,7 +444,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 35
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mController:Lcom/android/email/Controller;
 
     return-object v0
@@ -444,7 +456,7 @@
     .parameter "x1"
 
     .prologue
-    .line 33
+    .line 35
     invoke-direct {p0, p1}, Lcom/android/email/activity/setup/OoOSettings;->onSetOutOfOfficeComplete(Landroid/os/Bundle;)V
 
     return-void
@@ -452,7 +464,7 @@
 
 .method private onMessageClick(Z)V
     .locals 8
-    .parameter "msgReq"
+    .parameter
 
     .prologue
     const/4 v5, 0x0
@@ -465,46 +477,44 @@
 
     const-string v4, "oooMsgReqType"
 
-    .line 591
+    .line 663
     if-ne p1, v3, :cond_1
 
-    .line 592
+    .line 664
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/email/activity/setup/OoOSetMessage;
 
     invoke-direct {v0, p0, v7}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 593
-    .local v0, intent:Landroid/content/Intent;
+    .line 665
     const-string v1, "oooMsgReqType"
 
     invoke-virtual {v0, v4, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 594
+    .line 666
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForInternalUsers:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 595
+    .line 667
     const-string v1, "oooMsgReqDataInternal"
 
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForInternalUsers:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 596
+    .line 668
     :cond_0
     const/4 v1, 0x2
 
     invoke-virtual {p0, v0, v1}, Lcom/android/email/activity/setup/OoOSettings;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 622
+    .line 694
     :goto_0
     return-void
 
-    .line 599
-    .end local v0           #intent:Landroid/content/Intent;
+    .line 671
     :cond_1
     new-instance v0, Landroid/content/Intent;
 
@@ -516,13 +526,12 @@
 
     invoke-direct {v0, v1, v7}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 601
-    .restart local v0       #intent:Landroid/content/Intent;
+    .line 673
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForExternalUnknownUsers:Ljava/lang/String;
 
     if-eqz v1, :cond_5
 
-    .line 602
+    .line 674
     iget v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalUnKnownMsgState:I
 
     if-eq v1, v3, :cond_2
@@ -535,7 +544,7 @@
 
     if-nez v1, :cond_4
 
-    .line 604
+    .line 676
     :cond_2
     const-string v1, "oooMsgReqDataInternalUnknown"
 
@@ -543,12 +552,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 605
+    .line 677
     const-string v1, "oooMsgReqType"
 
     invoke-virtual {v0, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 620
+    .line 692
     :cond_3
     :goto_1
     const/4 v1, 0x3
@@ -557,23 +566,23 @@
 
     goto :goto_0
 
-    .line 607
+    .line 679
     :cond_4
     iget v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalKnownMsgState:I
 
     if-ne v1, v3, :cond_3
 
-    .line 608
+    .line 680
     const-string v1, "oooMsgReqType"
 
     invoke-virtual {v0, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 609
+    .line 681
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForExternalKnownUsers:Ljava/lang/String;
 
     if-eqz v1, :cond_3
 
-    .line 610
+    .line 682
     const-string v1, "oooMsgReqDataExternalKnown"
 
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForExternalKnownUsers:Ljava/lang/String;
@@ -582,18 +591,18 @@
 
     goto :goto_1
 
-    .line 615
+    .line 687
     :cond_5
     const-string v1, "oooMsgReqType"
 
     invoke-virtual {v0, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 616
+    .line 688
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForExternalKnownUsers:Ljava/lang/String;
 
     if-eqz v1, :cond_3
 
-    .line 617
+    .line 689
     const-string v1, "oooMsgReqDataExternalKnown"
 
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForExternalKnownUsers:Ljava/lang/String;
@@ -610,25 +619,32 @@
     .prologue
     const/16 v3, 0x64
 
-    .line 700
+    .line 773
+    const/4 v0, 0x0
+
+    .line 774
+    .local v0, resultData:Z
+    if-eqz p1, :cond_0
+
+    .line 776
     sget-object v1, Lcom/android/email/activity/setup/OoOConstants;->OOO_SET_DATA:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 701
-    .local v0, resultData:Z
+    .line 778
+    :cond_0
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_1
 
-    .line 702
+    .line 779
     invoke-virtual {p0}, Lcom/android/email/activity/setup/OoOSettings;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    const v2, 0x7f080208
+    const v2, 0x7f080234
 
     invoke-static {v1, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -636,25 +652,25 @@
 
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 705
+    .line 782
     :goto_0
     const/4 v1, -0x1
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->setResult(I)V
 
-    .line 706
+    .line 783
     invoke-virtual {p0}, Lcom/android/email/activity/setup/OoOSettings;->finish()V
 
-    .line 707
+    .line 784
     return-void
 
-    .line 704
-    :cond_0
+    .line 781
+    :cond_1
     invoke-virtual {p0}, Lcom/android/email/activity/setup/OoOSettings;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    const v2, 0x7f080209
+    const v2, 0x7f080235
 
     invoke-static {v1, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -669,44 +685,44 @@
     .locals 2
 
     .prologue
-    .line 575
+    .line 647
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEnableDateTimeCB:Landroid/widget/CheckBox;
 
     invoke-virtual {v1}, Landroid/widget/CheckBox;->isChecked()Z
 
     move-result v0
 
-    .line 577
+    .line 649
     .local v0, value:Z
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDateButton:Landroid/widget/Button;
 
     invoke-virtual {v1, v0}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 578
+    .line 650
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDateButton:Landroid/widget/Button;
 
     invoke-virtual {v1, v0}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 579
+    .line 651
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartTimeButton:Landroid/widget/Button;
 
     invoke-virtual {v1, v0}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 580
+    .line 652
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndTimeButton:Landroid/widget/Button;
 
     invoke-virtual {v1, v0}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 582
+    .line 654
     if-eqz v0, :cond_0
 
-    .line 583
+    .line 655
     invoke-direct {p0}, Lcom/android/email/activity/setup/OoOSettings;->updateStartDateTime()V
 
-    .line 584
+    .line 656
     invoke-direct {p0}, Lcom/android/email/activity/setup/OoOSettings;->updateEndDateTime()V
 
-    .line 586
+    .line 658
     :cond_0
     return-void
 .end method
@@ -719,10 +735,10 @@
 
     const/4 v6, 0x1
 
-    .line 336
+    .line 349
     const/4 v2, 0x0
 
-    .line 337
+    .line 350
     .local v2, isTimeBased:Z
     invoke-virtual {p0}, Lcom/android/email/activity/setup/OoOSettings;->getIntent()Landroid/content/Intent;
 
@@ -732,15 +748,15 @@
 
     move-result-object v0
 
-    .line 338
+    .line 351
     .local v0, data:Landroid/os/Bundle;
     const/4 v3, 0x0
 
-    .line 340
+    .line 353
     .local v3, oodl:Lcom/android/exchange/OoODataList;
     if-eqz v0, :cond_0
 
-    .line 341
+    .line 354
     sget-object v5, Lcom/android/email/activity/setup/OoOConstants;->OOO_GET_DATA:Ljava/lang/String;
 
     invoke-virtual {v0, v5}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -750,12 +766,12 @@
     .end local v3           #oodl:Lcom/android/exchange/OoODataList;
     check-cast v3, Lcom/android/exchange/OoODataList;
 
-    .line 343
+    .line 356
     .restart local v3       #oodl:Lcom/android/exchange/OoODataList;
     :cond_0
     if-eqz v3, :cond_c
 
-    .line 344
+    .line 357
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -766,51 +782,51 @@
 
     if-ge v1, v5, :cond_c
 
-    .line 345
+    .line 358
     invoke-virtual {v3, v1}, Lcom/android/exchange/OoODataList;->getItem(I)Lcom/android/exchange/OoOData;
 
     move-result-object v4
 
-    .line 347
+    .line 360
     .local v4, singleData:Lcom/android/exchange/OoOData;
     if-eqz v4, :cond_1
 
-    .line 348
+    .line 361
     iget v5, v4, Lcom/android/exchange/OoOData;->state:I
 
     packed-switch v5, :pswitch_data_0
 
-    .line 344
+    .line 357
     :cond_1
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 350
+    .line 363
     :pswitch_0
     iput-boolean v7, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofState:Z
 
-    .line 351
+    .line 364
     iput-boolean v7, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
-    .line 352
+    .line 365
     iget v5, v4, Lcom/android/exchange/OoOData;->type:I
 
     packed-switch v5, :pswitch_data_1
 
     goto :goto_1
 
-    .line 354
+    .line 367
     :pswitch_1
     iget v5, v4, Lcom/android/exchange/OoOData;->enabled:I
 
     if-ne v5, v6, :cond_2
 
-    .line 355
+    .line 368
     iput v6, p0, Lcom/android/email/activity/setup/OoOSettings;->mInternalMsgState:I
 
-    .line 358
+    .line 371
     :goto_2
     iget-object v5, v4, Lcom/android/exchange/OoOData;->msg:Ljava/lang/String;
 
@@ -818,27 +834,27 @@
 
     goto :goto_1
 
-    .line 357
+    .line 370
     :cond_2
     iput v7, p0, Lcom/android/email/activity/setup/OoOSettings;->mInternalMsgState:I
 
     goto :goto_2
 
-    .line 361
+    .line 374
     :pswitch_2
     iget v5, v4, Lcom/android/exchange/OoOData;->enabled:I
 
     if-ne v5, v6, :cond_3
 
-    .line 362
+    .line 375
     iput v6, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalKnownMsgState:I
 
-    .line 363
+    .line 376
     iget-object v5, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
 
     invoke-virtual {v5, v6}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 367
+    .line 380
     :goto_3
     iget-object v5, v4, Lcom/android/exchange/OoOData;->msg:Ljava/lang/String;
 
@@ -846,27 +862,27 @@
 
     goto :goto_1
 
-    .line 366
+    .line 379
     :cond_3
     iput v7, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalKnownMsgState:I
 
     goto :goto_3
 
-    .line 370
+    .line 383
     :pswitch_3
     iget v5, v4, Lcom/android/exchange/OoOData;->enabled:I
 
     if-ne v5, v6, :cond_4
 
-    .line 371
+    .line 384
     iput v6, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalUnKnownMsgState:I
 
-    .line 372
+    .line 385
     iget-object v5, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
 
     invoke-virtual {v5, v6}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 376
+    .line 389
     :goto_4
     iget-object v5, v4, Lcom/android/exchange/OoOData;->msg:Ljava/lang/String;
 
@@ -874,36 +890,36 @@
 
     goto :goto_1
 
-    .line 375
+    .line 388
     :cond_4
     iput v7, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalUnKnownMsgState:I
 
     goto :goto_4
 
-    .line 383
+    .line 396
     :pswitch_4
     iput-boolean v6, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
-    .line 384
+    .line 397
     iput-boolean v6, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofState:Z
 
-    .line 385
+    .line 398
     iget v5, v4, Lcom/android/exchange/OoOData;->type:I
 
     packed-switch v5, :pswitch_data_2
 
     goto :goto_1
 
-    .line 387
+    .line 400
     :pswitch_5
     iget v5, v4, Lcom/android/exchange/OoOData;->enabled:I
 
     if-ne v5, v6, :cond_5
 
-    .line 388
+    .line 401
     iput v6, p0, Lcom/android/email/activity/setup/OoOSettings;->mInternalMsgState:I
 
-    .line 391
+    .line 404
     :goto_5
     iget-object v5, v4, Lcom/android/exchange/OoOData;->msg:Ljava/lang/String;
 
@@ -911,27 +927,27 @@
 
     goto :goto_1
 
-    .line 390
+    .line 403
     :cond_5
     iput v7, p0, Lcom/android/email/activity/setup/OoOSettings;->mInternalMsgState:I
 
     goto :goto_5
 
-    .line 394
+    .line 407
     :pswitch_6
     iget v5, v4, Lcom/android/exchange/OoOData;->enabled:I
 
     if-ne v5, v6, :cond_6
 
-    .line 395
+    .line 408
     iput v6, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalKnownMsgState:I
 
-    .line 396
+    .line 409
     iget-object v5, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
 
     invoke-virtual {v5, v6}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 400
+    .line 413
     :goto_6
     iget-object v5, v4, Lcom/android/exchange/OoOData;->msg:Ljava/lang/String;
 
@@ -939,27 +955,27 @@
 
     goto :goto_1
 
-    .line 399
+    .line 412
     :cond_6
     iput v7, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalKnownMsgState:I
 
     goto :goto_6
 
-    .line 403
+    .line 416
     :pswitch_7
     iget v5, v4, Lcom/android/exchange/OoOData;->enabled:I
 
     if-ne v5, v6, :cond_7
 
-    .line 404
+    .line 417
     iput v6, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalUnKnownMsgState:I
 
-    .line 405
+    .line 418
     iget-object v5, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
 
     invoke-virtual {v5, v6}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 409
+    .line 422
     :goto_7
     iget-object v5, v4, Lcom/android/exchange/OoOData;->msg:Ljava/lang/String;
 
@@ -967,41 +983,41 @@
 
     goto :goto_1
 
-    .line 408
+    .line 421
     :cond_7
     iput v7, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalUnKnownMsgState:I
 
     goto :goto_7
 
-    .line 416
+    .line 429
     :pswitch_8
     iput-boolean v6, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
-    .line 417
+    .line 430
     iput-boolean v6, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofState:Z
 
-    .line 418
+    .line 431
     if-nez v2, :cond_8
 
-    .line 419
+    .line 432
     iget-object v5, v4, Lcom/android/exchange/OoOData;->start:Ljava/util/Date;
 
     iput-object v5, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
 
-    .line 420
+    .line 433
     iget-object v5, v4, Lcom/android/exchange/OoOData;->end:Ljava/util/Date;
 
     iput-object v5, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
 
-    .line 421
+    .line 434
     iget-object v5, p0, Lcom/android/email/activity/setup/OoOSettings;->mEnableDateTimeCB:Landroid/widget/CheckBox;
 
     invoke-virtual {v5, v6}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 422
+    .line 435
     const/4 v2, 0x1
 
-    .line 425
+    .line 438
     :cond_8
     iget v5, v4, Lcom/android/exchange/OoOData;->type:I
 
@@ -1009,16 +1025,16 @@
 
     goto/16 :goto_1
 
-    .line 427
+    .line 440
     :pswitch_9
     iget v5, v4, Lcom/android/exchange/OoOData;->enabled:I
 
     if-ne v5, v6, :cond_9
 
-    .line 428
+    .line 441
     iput v6, p0, Lcom/android/email/activity/setup/OoOSettings;->mInternalMsgState:I
 
-    .line 433
+    .line 446
     :goto_8
     iget-object v5, v4, Lcom/android/exchange/OoOData;->msg:Ljava/lang/String;
 
@@ -1026,27 +1042,27 @@
 
     goto/16 :goto_1
 
-    .line 431
+    .line 444
     :cond_9
     iput v7, p0, Lcom/android/email/activity/setup/OoOSettings;->mInternalMsgState:I
 
     goto :goto_8
 
-    .line 436
+    .line 449
     :pswitch_a
     iget v5, v4, Lcom/android/exchange/OoOData;->enabled:I
 
     if-ne v5, v6, :cond_a
 
-    .line 437
+    .line 450
     iput v6, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalKnownMsgState:I
 
-    .line 438
+    .line 451
     iget-object v5, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
 
     invoke-virtual {v5, v6}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 442
+    .line 455
     :goto_9
     iget-object v5, v4, Lcom/android/exchange/OoOData;->msg:Ljava/lang/String;
 
@@ -1054,27 +1070,27 @@
 
     goto/16 :goto_1
 
-    .line 441
+    .line 454
     :cond_a
     iput v7, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalKnownMsgState:I
 
     goto :goto_9
 
-    .line 445
+    .line 458
     :pswitch_b
     iget v5, v4, Lcom/android/exchange/OoOData;->enabled:I
 
     if-ne v5, v6, :cond_b
 
-    .line 446
+    .line 459
     iput v6, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalUnKnownMsgState:I
 
-    .line 447
+    .line 460
     iget-object v5, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
 
     invoke-virtual {v5, v6}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 451
+    .line 464
     :goto_a
     iget-object v5, v4, Lcom/android/exchange/OoOData;->msg:Ljava/lang/String;
 
@@ -1082,22 +1098,22 @@
 
     goto/16 :goto_1
 
-    .line 450
+    .line 463
     :cond_b
     iput v7, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalUnKnownMsgState:I
 
     goto :goto_a
 
-    .line 463
+    .line 476
     .end local v1           #i:I
     .end local v4           #singleData:Lcom/android/exchange/OoOData;
     :cond_c
     invoke-direct {p0}, Lcom/android/email/activity/setup/OoOSettings;->toggleAllUIState()V
 
-    .line 464
+    .line 477
     return-void
 
-    .line 348
+    .line 361
     nop
 
     :pswitch_data_0
@@ -1107,7 +1123,7 @@
         :pswitch_8
     .end packed-switch
 
-    .line 352
+    .line 365
     :pswitch_data_1
     .packed-switch 0x4
         :pswitch_1
@@ -1115,7 +1131,7 @@
         :pswitch_3
     .end packed-switch
 
-    .line 385
+    .line 398
     :pswitch_data_2
     .packed-switch 0x4
         :pswitch_5
@@ -1123,7 +1139,7 @@
         :pswitch_7
     .end packed-switch
 
-    .line 425
+    .line 438
     :pswitch_data_3
     .packed-switch 0x4
         :pswitch_9
@@ -1146,10 +1162,10 @@
 
     const/4 v3, 0x1
 
-    .line 626
+    .line 698
     const/4 v9, 0x0
 
-    .line 628
+    .line 700
     .local v9, isTimeBased:Z
     invoke-virtual {p0}, Lcom/android/email/activity/setup/OoOSettings;->getApplication()Landroid/app/Application;
 
@@ -1161,24 +1177,24 @@
 
     iput-object v4, p0, Lcom/android/email/activity/setup/OoOSettings;->mController:Lcom/android/email/Controller;
 
-    .line 629
+    .line 701
     iget-object v4, p0, Lcom/android/email/activity/setup/OoOSettings;->mController:Lcom/android/email/Controller;
 
     iget-object v5, p0, Lcom/android/email/activity/setup/OoOSettings;->mListener:Lcom/android/email/activity/setup/OoOSettings$Listener;
 
     invoke-virtual {v4, v5}, Lcom/android/email/Controller;->addResultCallback(Lcom/android/email/Controller$Result;)V
 
-    .line 632
+    .line 704
     iget-boolean v4, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofState:Z
 
     if-ne v4, v3, :cond_8
 
-    .line 633
+    .line 705
     new-instance v0, Lcom/android/exchange/OoODataList;
 
     invoke-direct {v0}, Lcom/android/exchange/OoODataList;-><init>()V
 
-    .line 634
+    .line 706
     .local v0, oodl:Lcom/android/exchange/OoODataList;
     iget-object v4, p0, Lcom/android/email/activity/setup/OoOSettings;->mEnableDateTimeCB:Landroid/widget/CheckBox;
 
@@ -1188,10 +1204,10 @@
 
     if-eqz v4, :cond_1
 
-    .line 635
+    .line 707
     const/4 v9, 0x1
 
-    .line 636
+    .line 708
     iget-object v4, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
 
     invoke-virtual {v4}, Ljava/util/Date;->getTime()J
@@ -1210,12 +1226,12 @@
 
     if-gtz v4, :cond_0
 
-    .line 637
+    .line 709
     invoke-virtual {p0}, Lcom/android/email/activity/setup/OoOSettings;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    const v2, 0x7f08020d
+    const v2, 0x7f080239
 
     const/16 v3, 0x64
 
@@ -1225,18 +1241,18 @@
 
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 639
+    .line 711
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mController:Lcom/android/email/Controller;
 
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings;->mListener:Lcom/android/email/activity/setup/OoOSettings$Listener;
 
     invoke-virtual {v1, v2}, Lcom/android/email/Controller;->removeResultCallback(Lcom/android/email/Controller$Result;)V
 
-    .line 697
+    .line 769
     :goto_0
     return-void
 
-    .line 642
+    .line 714
     :cond_0
     iget-object v4, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
 
@@ -1254,12 +1270,12 @@
 
     if-gtz v4, :cond_1
 
-    .line 643
+    .line 715
     invoke-virtual {p0}, Lcom/android/email/activity/setup/OoOSettings;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    const v2, 0x7f08020d
+    const v2, 0x7f080239
 
     const/16 v3, 0x64
 
@@ -1269,7 +1285,7 @@
 
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 645
+    .line 717
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mController:Lcom/android/email/Controller;
 
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings;->mListener:Lcom/android/email/activity/setup/OoOSettings$Listener;
@@ -1278,16 +1294,16 @@
 
     goto :goto_0
 
-    .line 649
+    .line 721
     :cond_1
     iget-object v4, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForInternalUsers:Ljava/lang/String;
 
     if-eqz v4, :cond_2
 
-    .line 650
+    .line 722
     if-eqz v9, :cond_4
 
-    .line 651
+    .line 723
     iget-object v4, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForInternalUsers:Ljava/lang/String;
 
     iget-object v5, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
@@ -1296,7 +1312,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/exchange/OoODataList;->AddOoOData(IIILjava/lang/String;Ljava/util/Date;Ljava/util/Date;)I
 
-    .line 660
+    .line 732
     :cond_2
     :goto_1
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
@@ -1307,15 +1323,15 @@
 
     if-eqz v1, :cond_3
 
-    .line 661
+    .line 733
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForExternalKnownUsers:Ljava/lang/String;
 
     if-eqz v1, :cond_6
 
-    .line 662
+    .line 734
     if-eqz v9, :cond_5
 
-    .line 663
+    .line 735
     iget-object v4, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForExternalKnownUsers:Ljava/lang/String;
 
     iget-object v5, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
@@ -1326,7 +1342,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/exchange/OoODataList;->AddOoOData(IIILjava/lang/String;Ljava/util/Date;Ljava/util/Date;)I
 
-    .line 687
+    .line 759
     :cond_3
     :goto_2
     invoke-virtual {p0}, Lcom/android/email/activity/setup/OoOSettings;->getIntent()Landroid/content/Intent;
@@ -1341,7 +1357,7 @@
 
     move-result-wide v7
 
-    .line 688
+    .line 760
     .local v7, accountID:J
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mController:Lcom/android/email/Controller;
 
@@ -1349,7 +1365,7 @@
 
     goto :goto_0
 
-    .line 656
+    .line 728
     .end local v7           #accountID:J
     :cond_4
     iget-object v4, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForInternalUsers:Ljava/lang/String;
@@ -1358,7 +1374,7 @@
 
     goto :goto_1
 
-    .line 668
+    .line 740
     :cond_5
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForExternalKnownUsers:Ljava/lang/String;
 
@@ -1366,16 +1382,16 @@
 
     goto :goto_2
 
-    .line 673
+    .line 745
     :cond_6
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForExternalUnknownUsers:Ljava/lang/String;
 
     if-eqz v1, :cond_3
 
-    .line 674
+    .line 746
     if-eqz v9, :cond_7
 
-    .line 675
+    .line 747
     const/4 v1, 0x6
 
     iget-object v4, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForExternalUnknownUsers:Ljava/lang/String;
@@ -1388,7 +1404,7 @@
 
     goto :goto_2
 
-    .line 680
+    .line 752
     :cond_7
     const/4 v1, 0x6
 
@@ -1398,14 +1414,14 @@
 
     goto :goto_2
 
-    .line 692
+    .line 764
     .end local v0           #oodl:Lcom/android/exchange/OoODataList;
     :cond_8
     new-instance v0, Lcom/android/exchange/OoODataList;
 
     invoke-direct {v0}, Lcom/android/exchange/OoODataList;-><init>()V
 
-    .line 693
+    .line 765
     .restart local v0       #oodl:Lcom/android/exchange/OoODataList;
     const/4 v1, 0x3
 
@@ -1413,7 +1429,7 @@
 
     invoke-virtual {v0, v1, v6, v6, v2}, Lcom/android/exchange/OoODataList;->AddOoOData(IIILjava/lang/String;)I
 
-    .line 694
+    .line 766
     invoke-virtual {p0}, Lcom/android/email/activity/setup/OoOSettings;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
@@ -1426,7 +1442,7 @@
 
     move-result-wide v7
 
-    .line 695
+    .line 767
     .restart local v7       #accountID:J
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mController:Lcom/android/email/Controller;
 
@@ -1441,63 +1457,63 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 468
+    .line 481
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEnableDateTimeCB:Landroid/widget/CheckBox;
 
     iget-boolean v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setEnabled(Z)V
 
-    .line 469
+    .line 482
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDateButton:Landroid/widget/Button;
 
     iget-boolean v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 470
+    .line 483
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartTimeButton:Landroid/widget/Button;
 
     iget-boolean v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 471
+    .line 484
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDateButton:Landroid/widget/Button;
 
     iget-boolean v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 472
+    .line 485
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndTimeButton:Landroid/widget/Button;
 
     iget-boolean v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 473
+    .line 486
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mInternalMsgButton:Landroid/widget/Button;
 
     iget-boolean v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 474
+    .line 487
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgButton:Landroid/widget/Button;
 
     iget-boolean v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 475
+    .line 488
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
 
     iget-boolean v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setEnabled(Z)V
 
-    .line 477
+    .line 490
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofOnButton:Landroid/widget/Button;
 
     iget-boolean v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
@@ -1509,22 +1525,22 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 478
+    .line 491
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofOffButton:Landroid/widget/Button;
 
     iget-boolean v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 479
+    .line 492
     iget-boolean v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
     if-eqz v0, :cond_0
 
-    .line 480
+    .line 493
     invoke-direct {p0}, Lcom/android/email/activity/setup/OoOSettings;->prepareDateTimeButtons()V
 
-    .line 481
+    .line 494
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgButton:Landroid/widget/Button;
 
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
@@ -1535,7 +1551,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 483
+    .line 496
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
 
     invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
@@ -1544,29 +1560,104 @@
 
     if-eqz v0, :cond_0
 
-    .line 484
+    .line 497
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 486
+    .line 499
     :cond_0
     return-void
 
-    .line 477
+    .line 490
     :cond_1
     const/4 v1, 0x0
 
     goto :goto_0
 .end method
 
-.method private updateEndDateTime()V
-    .locals 5
+.method private updateDate()V
+    .locals 1
 
     .prologue
-    const/16 v4, 0xa
+    .line 564
+    iget-boolean v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsStartDate:Z
 
-    .line 514
+    if-eqz v0, :cond_0
+
+    .line 566
+    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
+
+    invoke-virtual {v0}, Ljava/util/Date;->getMonth()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mMonth:I
+
+    .line 567
+    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
+
+    invoke-virtual {v0}, Ljava/util/Date;->getDate()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mDay:I
+
+    .line 568
+    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
+
+    invoke-virtual {v0}, Ljava/util/Date;->getYear()I
+
+    move-result v0
+
+    add-int/lit16 v0, v0, 0x76c
+
+    iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mYear:I
+
+    .line 576
+    :goto_0
+    return-void
+
+    .line 572
+    :cond_0
+    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
+
+    invoke-virtual {v0}, Ljava/util/Date;->getMonth()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mMonth:I
+
+    .line 573
+    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
+
+    invoke-virtual {v0}, Ljava/util/Date;->getDate()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mDay:I
+
+    .line 574
+    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
+
+    invoke-virtual {v0}, Ljava/util/Date;->getYear()I
+
+    move-result v0
+
+    add-int/lit16 v0, v0, 0x76c
+
+    iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mYear:I
+
+    goto :goto_0
+.end method
+
+.method private updateEndDateTime()V
+    .locals 4
+
+    .prologue
+    const/16 v3, 0xa
+
+    .line 541
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getHours()I
@@ -1575,7 +1666,7 @@
 
     iput v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mHour:I
 
-    .line 515
+    .line 542
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getMinutes()I
@@ -1584,7 +1675,7 @@
 
     iput v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMinute:I
 
-    .line 516
+    .line 543
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getMonth()I
@@ -1593,7 +1684,7 @@
 
     iput v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMonth:I
 
-    .line 517
+    .line 544
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getDate()I
@@ -1602,7 +1693,7 @@
 
     iput v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mDay:I
 
-    .line 518
+    .line 545
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getYear()I
@@ -1613,70 +1704,23 @@
 
     iput v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mYear:I
 
-    .line 520
-    new-instance v0, Ljava/lang/String;
+    .line 547
+    const-string v0, ""
 
-    invoke-direct {v0}, Ljava/lang/String;-><init>()V
-
-    .line 521
+    .line 548
     .local v0, text:Ljava/lang/String;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget v2, p0, Lcom/android/email/activity/setup/OoOSettings;->mDay:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings;->mMonths:[Ljava/lang/String;
-
-    iget-object v3, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
-
-    invoke-virtual {v3}, Ljava/util/Date;->getMonth()I
-
-    move-result v3
-
-    aget-object v2, v2, v3
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/email/activity/setup/OoOSettings;->mYear:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 522
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDateButton:Landroid/widget/Button;
 
-    invoke-virtual {v1, v0}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+    iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
 
-    .line 524
+    invoke-virtual {p0, v1, v2}, Lcom/android/email/activity/setup/OoOSettings;->setDateButtonText(Landroid/widget/Button;Ljava/util/Date;)V
+
+    .line 550
     iget v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mHour:I
 
-    if-ge v1, v4, :cond_0
+    if-ge v1, v3, :cond_0
 
-    .line 525
+    .line 551
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1697,13 +1741,13 @@
 
     move-result-object v0
 
-    .line 529
+    .line 555
     :goto_0
     iget v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMinute:I
 
-    if-ge v1, v4, :cond_1
+    if-ge v1, v3, :cond_1
 
-    .line 530
+    .line 556
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1728,16 +1772,16 @@
 
     move-result-object v0
 
-    .line 534
+    .line 560
     :goto_1
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndTimeButton:Landroid/widget/Button;
 
     invoke-virtual {v1, v0}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 535
+    .line 561
     return-void
 
-    .line 527
+    .line 553
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1761,7 +1805,7 @@
 
     goto :goto_0
 
-    .line 532
+    .line 558
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1791,12 +1835,12 @@
 .end method
 
 .method private updateStartDateTime()V
-    .locals 5
+    .locals 4
 
     .prologue
-    const/16 v4, 0xa
+    const/16 v3, 0xa
 
-    .line 490
+    .line 518
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getHours()I
@@ -1805,7 +1849,7 @@
 
     iput v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mHour:I
 
-    .line 491
+    .line 519
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getMinutes()I
@@ -1814,7 +1858,7 @@
 
     iput v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMinute:I
 
-    .line 492
+    .line 520
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getMonth()I
@@ -1823,7 +1867,7 @@
 
     iput v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMonth:I
 
-    .line 493
+    .line 521
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getDate()I
@@ -1832,7 +1876,7 @@
 
     iput v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mDay:I
 
-    .line 494
+    .line 522
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getYear()I
@@ -1843,70 +1887,23 @@
 
     iput v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mYear:I
 
-    .line 496
-    new-instance v0, Ljava/lang/String;
+    .line 524
+    const-string v0, ""
 
-    invoke-direct {v0}, Ljava/lang/String;-><init>()V
-
-    .line 497
+    .line 525
     .local v0, text:Ljava/lang/String;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget v2, p0, Lcom/android/email/activity/setup/OoOSettings;->mDay:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings;->mMonths:[Ljava/lang/String;
-
-    iget-object v3, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
-
-    invoke-virtual {v3}, Ljava/util/Date;->getMonth()I
-
-    move-result v3
-
-    aget-object v2, v2, v3
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/email/activity/setup/OoOSettings;->mYear:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 498
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDateButton:Landroid/widget/Button;
 
-    invoke-virtual {v1, v0}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+    iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
 
-    .line 500
+    invoke-virtual {p0, v1, v2}, Lcom/android/email/activity/setup/OoOSettings;->setDateButtonText(Landroid/widget/Button;Ljava/util/Date;)V
+
+    .line 527
     iget v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mHour:I
 
-    if-ge v1, v4, :cond_0
+    if-ge v1, v3, :cond_0
 
-    .line 501
+    .line 528
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1927,13 +1924,13 @@
 
     move-result-object v0
 
-    .line 505
+    .line 532
     :goto_0
     iget v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMinute:I
 
-    if-ge v1, v4, :cond_1
+    if-ge v1, v3, :cond_1
 
-    .line 506
+    .line 533
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1958,16 +1955,16 @@
 
     move-result-object v0
 
-    .line 510
+    .line 537
     :goto_1
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartTimeButton:Landroid/widget/Button;
 
     invoke-virtual {v1, v0}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 511
+    .line 538
     return-void
 
-    .line 503
+    .line 530
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1991,7 +1988,7 @@
 
     goto :goto_0
 
-    .line 508
+    .line 535
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2020,6 +2017,59 @@
     goto :goto_1
 .end method
 
+.method private updateTime()V
+    .locals 1
+
+    .prologue
+    .line 579
+    iget-boolean v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mIsStartTime:Z
+
+    if-eqz v0, :cond_0
+
+    .line 581
+    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
+
+    invoke-virtual {v0}, Ljava/util/Date;->getHours()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mHour:I
+
+    .line 582
+    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
+
+    invoke-virtual {v0}, Ljava/util/Date;->getMinutes()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mMinute:I
+
+    .line 589
+    :goto_0
+    return-void
+
+    .line 586
+    :cond_0
+    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
+
+    invoke-virtual {v0}, Ljava/util/Date;->getHours()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mHour:I
+
+    .line 587
+    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
+
+    invoke-virtual {v0}, Ljava/util/Date;->getMinutes()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mMinute:I
+
+    goto :goto_0
+.end method
+
 
 # virtual methods
 .method protected onActivityResult(IILandroid/content/Intent;)V
@@ -2029,19 +2079,19 @@
     .parameter "data"
 
     .prologue
-    .line 558
+    .line 630
     packed-switch p1, :pswitch_data_0
 
-    .line 570
+    .line 642
     :cond_0
     :goto_0
     return-void
 
-    .line 560
+    .line 632
     :pswitch_0
     if-eqz p3, :cond_0
 
-    .line 561
+    .line 633
     const-string v0, "oooMsgReqDataInternal"
 
     invoke-virtual {p3, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -2052,11 +2102,11 @@
 
     goto :goto_0
 
-    .line 564
+    .line 636
     :pswitch_1
     if-eqz p3, :cond_0
 
-    .line 565
+    .line 637
     const-string v0, "oooMsgReqDataExternalKnown"
 
     invoke-virtual {p3, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -2065,7 +2115,7 @@
 
     iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mMessageForExternalKnownUsers:Ljava/lang/String;
 
-    .line 566
+    .line 638
     const-string v0, "oooMsgReqDataInternalUnknown"
 
     invoke-virtual {p3, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -2076,7 +2126,7 @@
 
     goto :goto_0
 
-    .line 558
+    .line 630
     :pswitch_data_0
     .packed-switch 0x2
         :pswitch_0
@@ -2085,314 +2135,352 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 3
+    .locals 4
     .parameter "savedInstanceState"
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    .line 189
+    .line 191
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 190
-    const v0, 0x7f030032
-
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/OoOSettings;->setContentView(I)V
-
     .line 192
-    new-instance v0, Ljava/util/Date;
+    const v1, 0x7f03003c
 
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
-
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
-
-    .line 193
-    new-instance v0, Ljava/util/Date;
-
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
-
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->setContentView(I)V
 
     .line 194
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
+    new-instance v1, Ljava/util/Date;
 
+    invoke-direct {v1}, Ljava/util/Date;-><init>()V
+
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
+
+    .line 195
+    new-instance v1, Ljava/util/Date;
+
+    invoke-direct {v1}, Ljava/util/Date;-><init>()V
+
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
+
+    .line 196
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
+
+    iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
+
+    invoke-virtual {v2}, Ljava/util/Date;->getDate()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    invoke-virtual {v1, v2}, Ljava/util/Date;->setDate(I)V
+
+    .line 197
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
 
-    invoke-virtual {v1}, Ljava/util/Date;->getDate()I
+    invoke-virtual {v1, v3}, Ljava/util/Date;->setMinutes(I)V
+
+    .line 198
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
+
+    invoke-virtual {v1, v3}, Ljava/util/Date;->setMinutes(I)V
+
+    .line 200
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/OoOSettings;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f060015
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mMonths:[Ljava/lang/String;
+
+    .line 202
+    const v1, 0x7f07014d
+
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/Button;
+
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofOnButton:Landroid/widget/Button;
+
+    .line 203
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofOnButton:Landroid/widget/Button;
+
+    new-instance v2, Lcom/android/email/activity/setup/OoOSettings$4;
+
+    invoke-direct {v2, p0}, Lcom/android/email/activity/setup/OoOSettings$4;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
+
+    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 214
+    const v1, 0x7f07014e
+
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/Button;
+
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofOffButton:Landroid/widget/Button;
+
+    .line 215
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofOffButton:Landroid/widget/Button;
+
+    new-instance v2, Lcom/android/email/activity/setup/OoOSettings$5;
+
+    invoke-direct {v2, p0}, Lcom/android/email/activity/setup/OoOSettings$5;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
+
+    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 226
+    const v1, 0x7f07014f
+
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/CheckBox;
+
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEnableDateTimeCB:Landroid/widget/CheckBox;
+
+    .line 227
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEnableDateTimeCB:Landroid/widget/CheckBox;
+
+    new-instance v2, Lcom/android/email/activity/setup/OoOSettings$6;
+
+    invoke-direct {v2, p0}, Lcom/android/email/activity/setup/OoOSettings$6;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
+
+    invoke-virtual {v1, v2}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+
+    .line 236
+    const v1, 0x7f070151
+
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/Button;
+
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDateButton:Landroid/widget/Button;
+
+    .line 237
+    const v1, 0x7f070154
+
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/Button;
+
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDateButton:Landroid/widget/Button;
+
+    .line 239
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDateButton:Landroid/widget/Button;
+
+    new-instance v2, Lcom/android/email/activity/setup/OoOSettings$7;
+
+    invoke-direct {v2, p0}, Lcom/android/email/activity/setup/OoOSettings$7;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
+
+    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 248
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDateButton:Landroid/widget/Button;
+
+    new-instance v2, Lcom/android/email/activity/setup/OoOSettings$8;
+
+    invoke-direct {v2, p0}, Lcom/android/email/activity/setup/OoOSettings$8;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
+
+    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 257
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/OoOSettings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "date_format"
+
+    invoke-static {v1, v2}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 259
+    .local v0, currentFormat:Ljava/lang/String;
+    if-eqz v0, :cond_0
+
+    const-string v1, ""
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    add-int/lit8 v1, v1, 0x1
+    if-eqz v1, :cond_1
 
-    invoke-virtual {v0, v1}, Ljava/util/Date;->setDate(I)V
+    .line 260
+    :cond_0
+    const-string v0, "MM-dd-yyyy"
 
-    .line 195
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDate:Ljava/util/Date;
+    .line 261
+    :cond_1
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDateButton:Landroid/widget/Button;
 
-    invoke-virtual {v0, v2}, Ljava/util/Date;->setMinutes(I)V
-
-    .line 196
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDate:Ljava/util/Date;
-
-    invoke-virtual {v0, v2}, Ljava/util/Date;->setMinutes(I)V
-
-    .line 198
-    invoke-virtual {p0}, Lcom/android/email/activity/setup/OoOSettings;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f060015
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mMonths:[Ljava/lang/String;
-
-    .line 200
-    const v0, 0x7f0700fa
-
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/Button;
-
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofOnButton:Landroid/widget/Button;
-
-    .line 201
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofOnButton:Landroid/widget/Button;
-
-    new-instance v1, Lcom/android/email/activity/setup/OoOSettings$4;
-
-    invoke-direct {v1, p0}, Lcom/android/email/activity/setup/OoOSettings$4;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 212
-    const v0, 0x7f0700fb
-
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/Button;
-
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofOffButton:Landroid/widget/Button;
-
-    .line 213
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mOofOffButton:Landroid/widget/Button;
-
-    new-instance v1, Lcom/android/email/activity/setup/OoOSettings$5;
-
-    invoke-direct {v1, p0}, Lcom/android/email/activity/setup/OoOSettings$5;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 224
-    const v0, 0x7f0700fc
-
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/CheckBox;
-
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEnableDateTimeCB:Landroid/widget/CheckBox;
-
-    .line 225
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEnableDateTimeCB:Landroid/widget/CheckBox;
-
-    new-instance v1, Lcom/android/email/activity/setup/OoOSettings$6;
-
-    invoke-direct {v1, p0}, Lcom/android/email/activity/setup/OoOSettings$6;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
-
-    .line 234
-    const v0, 0x7f0700fe
-
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/Button;
-
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDateButton:Landroid/widget/Button;
-
-    .line 235
-    const v0, 0x7f070101
-
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/Button;
-
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDateButton:Landroid/widget/Button;
-
-    .line 237
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartDateButton:Landroid/widget/Button;
-
-    new-instance v1, Lcom/android/email/activity/setup/OoOSettings$7;
-
-    invoke-direct {v1, p0}, Lcom/android/email/activity/setup/OoOSettings$7;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 245
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDateButton:Landroid/widget/Button;
-
-    new-instance v1, Lcom/android/email/activity/setup/OoOSettings$8;
-
-    invoke-direct {v1, p0}, Lcom/android/email/activity/setup/OoOSettings$8;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 253
-    const v0, 0x7f0700ff
-
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/Button;
-
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartTimeButton:Landroid/widget/Button;
-
-    .line 254
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartTimeButton:Landroid/widget/Button;
-
-    new-instance v1, Lcom/android/email/activity/setup/OoOSettings$9;
-
-    invoke-direct {v1, p0}, Lcom/android/email/activity/setup/OoOSettings$9;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v1, v0}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
     .line 262
-    const v0, 0x7f070102
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndDateButton:Landroid/widget/Button;
 
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v0}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    move-result-object v0
+    .line 264
+    const v1, 0x7f070152
 
-    check-cast v0, Landroid/widget/Button;
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
 
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndTimeButton:Landroid/widget/Button;
+    move-result-object v1
 
-    .line 263
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndTimeButton:Landroid/widget/Button;
+    check-cast v1, Landroid/widget/Button;
 
-    new-instance v1, Lcom/android/email/activity/setup/OoOSettings$10;
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartTimeButton:Landroid/widget/Button;
 
-    invoke-direct {v1, p0}, Lcom/android/email/activity/setup/OoOSettings$10;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
+    .line 265
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mStartTimeButton:Landroid/widget/Button;
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    new-instance v2, Lcom/android/email/activity/setup/OoOSettings$9;
 
-    .line 271
-    const v0, 0x7f070103
+    invoke-direct {v2, p0}, Lcom/android/email/activity/setup/OoOSettings$9;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
 
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    move-result-object v0
+    .line 274
+    const v1, 0x7f070155
 
-    check-cast v0, Landroid/widget/Button;
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
 
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mInternalMsgButton:Landroid/widget/Button;
+    move-result-object v1
 
-    .line 272
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mInternalMsgButton:Landroid/widget/Button;
+    check-cast v1, Landroid/widget/Button;
 
-    new-instance v1, Lcom/android/email/activity/setup/OoOSettings$11;
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndTimeButton:Landroid/widget/Button;
 
-    invoke-direct {v1, p0}, Lcom/android/email/activity/setup/OoOSettings$11;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
+    .line 275
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mEndTimeButton:Landroid/widget/Button;
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    new-instance v2, Lcom/android/email/activity/setup/OoOSettings$10;
 
-    .line 279
-    const v0, 0x7f070105
+    invoke-direct {v2, p0}, Lcom/android/email/activity/setup/OoOSettings$10;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
 
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    move-result-object v0
+    .line 284
+    const v1, 0x7f070156
 
-    check-cast v0, Landroid/widget/Button;
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
 
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgButton:Landroid/widget/Button;
+    move-result-object v1
 
-    .line 280
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgButton:Landroid/widget/Button;
+    check-cast v1, Landroid/widget/Button;
 
-    new-instance v1, Lcom/android/email/activity/setup/OoOSettings$12;
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mInternalMsgButton:Landroid/widget/Button;
 
-    invoke-direct {v1, p0}, Lcom/android/email/activity/setup/OoOSettings$12;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
+    .line 285
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mInternalMsgButton:Landroid/widget/Button;
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    new-instance v2, Lcom/android/email/activity/setup/OoOSettings$11;
 
-    .line 287
-    const v0, 0x7f070106
+    invoke-direct {v2, p0}, Lcom/android/email/activity/setup/OoOSettings$11;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
 
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    move-result-object v0
+    .line 292
+    const v1, 0x7f070158
 
-    check-cast v0, Landroid/widget/Button;
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
 
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mSetButton:Landroid/widget/Button;
+    move-result-object v1
 
-    .line 288
-    const v0, 0x7f070107
+    check-cast v1, Landroid/widget/Button;
 
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgButton:Landroid/widget/Button;
 
-    move-result-object v0
+    .line 293
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgButton:Landroid/widget/Button;
 
-    check-cast v0, Landroid/widget/Button;
+    new-instance v2, Lcom/android/email/activity/setup/OoOSettings$12;
 
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mCancelButton:Landroid/widget/Button;
+    invoke-direct {v2, p0}, Lcom/android/email/activity/setup/OoOSettings$12;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
 
-    .line 290
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mSetButton:Landroid/widget/Button;
+    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    new-instance v1, Lcom/android/email/activity/setup/OoOSettings$13;
+    .line 300
+    const v1, 0x7f070159
 
-    invoke-direct {v1, p0}, Lcom/android/email/activity/setup/OoOSettings$13;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    move-result-object v1
 
-    .line 297
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mCancelButton:Landroid/widget/Button;
+    check-cast v1, Landroid/widget/Button;
 
-    new-instance v1, Lcom/android/email/activity/setup/OoOSettings$14;
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mSetButton:Landroid/widget/Button;
 
-    invoke-direct {v1, p0}, Lcom/android/email/activity/setup/OoOSettings$14;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
+    .line 301
+    const v1, 0x7f07015a
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
 
-    .line 305
-    const v0, 0x7f070104
+    move-result-object v1
 
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
+    check-cast v1, Landroid/widget/Button;
 
-    move-result-object v0
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mCancelButton:Landroid/widget/Button;
 
-    check-cast v0, Landroid/widget/CheckBox;
+    .line 303
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mSetButton:Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
+    new-instance v2, Lcom/android/email/activity/setup/OoOSettings$13;
 
-    .line 306
-    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
+    invoke-direct {v2, p0}, Lcom/android/email/activity/setup/OoOSettings$13;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
 
-    new-instance v1, Lcom/android/email/activity/setup/OoOSettings$15;
+    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-direct {v1, p0}, Lcom/android/email/activity/setup/OoOSettings$15;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
+    .line 310
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mCancelButton:Landroid/widget/Button;
 
-    invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+    new-instance v2, Lcom/android/email/activity/setup/OoOSettings$14;
 
-    .line 313
+    invoke-direct {v2, p0}, Lcom/android/email/activity/setup/OoOSettings$14;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
+
+    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 318
+    const v1, 0x7f070157
+
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/OoOSettings;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/CheckBox;
+
+    iput-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
+
+    .line 319
+    iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mExternalMsgCB:Landroid/widget/CheckBox;
+
+    new-instance v2, Lcom/android/email/activity/setup/OoOSettings$15;
+
+    invoke-direct {v2, p0}, Lcom/android/email/activity/setup/OoOSettings$15;-><init>(Lcom/android/email/activity/setup/OoOSettings;)V
+
+    invoke-virtual {v1, v2}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+
+    .line 326
     invoke-direct {p0}, Lcom/android/email/activity/setup/OoOSettings;->prepareStartUpUI()V
 
-    .line 314
+    .line 327
     return-void
 .end method
 
@@ -2401,18 +2489,18 @@
     .parameter "id"
 
     .prologue
-    .line 539
+    .line 593
     const/4 v0, 0x0
 
-    .line 541
+    .line 595
     .local v0, dialog:Landroid/app/Dialog;
     packed-switch p1, :pswitch_data_0
 
-    .line 553
+    .line 607
     :goto_0
     return-object v0
 
-    .line 543
+    .line 597
     :pswitch_0
     new-instance v0, Landroid/app/DatePickerDialog;
 
@@ -2429,11 +2517,11 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/app/DatePickerDialog;-><init>(Landroid/content/Context;Landroid/app/DatePickerDialog$OnDateSetListener;III)V
 
-    .line 546
+    .line 600
     .restart local v0       #dialog:Landroid/app/Dialog;
     goto :goto_0
 
-    .line 549
+    .line 603
     :pswitch_1
     new-instance v0, Landroid/app/TimePickerDialog;
 
@@ -2453,7 +2541,7 @@
     .restart local v0       #dialog:Landroid/app/Dialog;
     goto :goto_0
 
-    .line 541
+    .line 595
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -2465,43 +2553,317 @@
     .locals 2
 
     .prologue
-    .line 319
+    .line 332
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 320
+    .line 333
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mProgressDlg:Landroid/app/ProgressDialog;
 
     if-eqz v0, :cond_0
 
-    .line 321
+    .line 334
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mProgressDlg:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 322
+    .line 335
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mProgressDlg:Landroid/app/ProgressDialog;
 
-    .line 325
+    .line 338
     :cond_0
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mListener:Lcom/android/email/activity/setup/OoOSettings$Listener;
 
     if-eqz v0, :cond_1
 
-    .line 327
+    .line 340
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mController:Lcom/android/email/Controller;
 
     if-eqz v0, :cond_1
 
-    .line 328
+    .line 341
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings;->mController:Lcom/android/email/Controller;
 
     iget-object v1, p0, Lcom/android/email/activity/setup/OoOSettings;->mListener:Lcom/android/email/activity/setup/OoOSettings$Listener;
 
     invoke-virtual {v0, v1}, Lcom/android/email/Controller;->removeResultCallback(Lcom/android/email/Controller$Result;)V
 
-    .line 331
+    .line 344
     :cond_1
     return-void
+.end method
+
+.method public onPrepareDialog(ILandroid/app/Dialog;)V
+    .locals 6
+    .parameter "id"
+    .parameter "dialog"
+
+    .prologue
+    .line 612
+    packed-switch p1, :pswitch_data_0
+
+    .line 626
+    :goto_0
+    return-void
+
+    .line 614
+    :pswitch_0
+    move-object v0, p2
+
+    check-cast v0, Landroid/app/DatePickerDialog;
+
+    move-object v1, v0
+
+    .line 615
+    .local v1, datePicker:Landroid/app/DatePickerDialog;
+    iget v3, p0, Lcom/android/email/activity/setup/OoOSettings;->mYear:I
+
+    iget v4, p0, Lcom/android/email/activity/setup/OoOSettings;->mMonth:I
+
+    iget v5, p0, Lcom/android/email/activity/setup/OoOSettings;->mDay:I
+
+    invoke-virtual {v1, v3, v4, v5}, Landroid/app/DatePickerDialog;->updateDate(III)V
+
+    goto :goto_0
+
+    .line 619
+    .end local v1           #datePicker:Landroid/app/DatePickerDialog;
+    :pswitch_1
+    move-object v0, p2
+
+    check-cast v0, Landroid/app/TimePickerDialog;
+
+    move-object v2, v0
+
+    .line 620
+    .local v2, timePicker:Landroid/app/TimePickerDialog;
+    iget v3, p0, Lcom/android/email/activity/setup/OoOSettings;->mHour:I
+
+    iget v4, p0, Lcom/android/email/activity/setup/OoOSettings;->mMinute:I
+
+    invoke-virtual {v2, v3, v4}, Landroid/app/TimePickerDialog;->updateTime(II)V
+
+    goto :goto_0
+
+    .line 612
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public setDateButtonText(Landroid/widget/Button;Ljava/util/Date;)V
+    .locals 7
+    .parameter "button"
+    .parameter "date"
+
+    .prologue
+    const-string v6, ", "
+
+    const-string v5, " "
+
+    .line 502
+    const-string v1, ""
+
+    .line 503
+    .local v1, text:Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/OoOSettings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "date_format"
+
+    invoke-static {v2, v3}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 506
+    .local v0, currentFormat:Ljava/lang/String;
+    if-eqz v0, :cond_0
+
+    const-string v2, ""
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v2, "MM-dd-yyyy"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 507
+    :cond_0
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v3, p0, Lcom/android/email/activity/setup/OoOSettings;->mMonths:[Ljava/lang/String;
+
+    invoke-virtual {p2}, Ljava/util/Date;->getMonth()I
+
+    move-result v4
+
+    aget-object v3, v3, v4
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " "
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, p0, Lcom/android/email/activity/setup/OoOSettings;->mDay:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ", "
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, p0, Lcom/android/email/activity/setup/OoOSettings;->mYear:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 513
+    :cond_1
+    :goto_0
+    invoke-virtual {p1, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+
+    .line 514
+    return-void
+
+    .line 508
+    :cond_2
+    const-string v2, "dd-MM-yyyy"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    .line 509
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget v3, p0, Lcom/android/email/activity/setup/OoOSettings;->mDay:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " "
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/email/activity/setup/OoOSettings;->mMonths:[Ljava/lang/String;
+
+    invoke-virtual {p2}, Ljava/util/Date;->getMonth()I
+
+    move-result v4
+
+    aget-object v3, v3, v4
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ", "
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, p0, Lcom/android/email/activity/setup/OoOSettings;->mYear:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    .line 510
+    :cond_3
+    const-string v2, "yyyy-MM-dd"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 511
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget v3, p0, Lcom/android/email/activity/setup/OoOSettings;->mYear:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ", "
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/email/activity/setup/OoOSettings;->mMonths:[Ljava/lang/String;
+
+    invoke-virtual {p2}, Ljava/util/Date;->getMonth()I
+
+    move-result v4
+
+    aget-object v3, v3, v4
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " "
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, p0, Lcom/android/email/activity/setup/OoOSettings;->mDay:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
 .end method

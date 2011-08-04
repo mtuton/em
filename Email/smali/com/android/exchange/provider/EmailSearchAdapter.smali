@@ -3,16 +3,12 @@
 .source "EmailSearchAdapter.java"
 
 
-# static fields
-.field private static final DEBUG_EMAIL_SEARCH_LOG:Z = true
-
-
 # instance fields
 .field private mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-.field private mAccountEmailDomain:Ljava/lang/String;
-
 .field private mActivity:Landroid/app/Activity;
+
+.field private mConversationId:Ljava/lang/String;
 
 .field private mFoldIdStr:Ljava/lang/String;
 
@@ -22,15 +18,9 @@
 
 .field private mIdStr:Ljava/lang/String;
 
-.field private mInflater:Landroid/view/LayoutInflater;
-
 .field private mLessThanDateStr:Ljava/lang/String;
 
 .field private mOptionsDeepTraversalStr:Ljava/lang/String;
-
-.field private mSeparatorDisplayCount:I
-
-.field private mSeparatorTotalCount:I
 
 
 # direct methods
@@ -39,13 +29,13 @@
     .parameter "activity"
 
     .prologue
-    .line 64
+    .line 69
     invoke-direct {p0, p1}, Lcom/android/email/EmailAddressAdapter;-><init>(Landroid/content/Context;)V
 
-    .line 65
+    .line 70
     iput-object p1, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mActivity:Landroid/app/Activity;
 
-    .line 66
+    .line 71
     return-void
 .end method
 
@@ -55,7 +45,7 @@
 
     .prologue
     .line 41
-    iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mOptionsDeepTraversalStr:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mConversationId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -66,7 +56,7 @@
 
     .prologue
     .line 41
-    iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mFoldIdStr:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mOptionsDeepTraversalStr:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -77,7 +67,7 @@
 
     .prologue
     .line 41
-    iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mIdStr:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mFoldIdStr:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -88,7 +78,7 @@
 
     .prologue
     .line 41
-    iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mLessThanDateStr:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mIdStr:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -99,7 +89,7 @@
 
     .prologue
     .line 41
-    iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mGreaterThanDateStr:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mLessThanDateStr:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -110,12 +100,23 @@
 
     .prologue
     .line 41
+    iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mGreaterThanDateStr:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$600(Lcom/android/exchange/provider/EmailSearchAdapter;)Ljava/lang/String;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 41
     iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mFreeText:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic access$600(Lcom/android/exchange/provider/EmailSearchAdapter;)Lcom/android/email/provider/EmailContent$Account;
+.method static synthetic access$700(Lcom/android/exchange/provider/EmailSearchAdapter;)Lcom/android/email/provider/EmailContent$Account;
     .locals 1
     .parameter "x0"
 
@@ -126,7 +127,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/android/exchange/provider/EmailSearchAdapter;)Landroid/content/ContentResolver;
+.method static synthetic access$800(Lcom/android/exchange/provider/EmailSearchAdapter;)Landroid/content/ContentResolver;
     .locals 1
     .parameter "x0"
 
@@ -143,10 +144,10 @@
     .locals 7
 
     .prologue
-    .line 101
+    .line 117
     const-wide/16 v1, -0x1
 
-    .line 103
+    .line 119
     .local v1, foldId:J
     :try_start_0
     iget-object v3, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mFoldIdStr:Ljava/lang/String;
@@ -157,7 +158,7 @@
 
     move-result-wide v1
 
-    .line 107
+    .line 123
     iget-object v3, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v4, Lcom/android/email/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
@@ -184,7 +185,7 @@
 
     invoke-virtual {v3, v4, v5, v6}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 109
+    .line 125
     new-instance v3, Ljava/lang/Thread;
 
     new-instance v4, Lcom/android/exchange/provider/EmailSearchAdapter$1;
@@ -195,18 +196,18 @@
 
     invoke-virtual {v3}, Ljava/lang/Thread;->start()V
 
-    .line 141
+    .line 165
     const/4 v3, 0x0
 
     return v3
 
-    .line 104
+    .line 120
     :catch_0
     move-exception v3
 
     move-object v0, v3
 
-    .line 105
+    .line 121
     .local v0, e:Ljava/lang/NumberFormatException;
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -222,10 +223,22 @@
     .parameter "account"
 
     .prologue
-    .line 70
+    .line 75
     iput-object p1, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    .line 71
+    .line 76
+    return-void
+.end method
+
+.method public setConvIdStr(Ljava/lang/String;)V
+    .locals 0
+    .parameter "convId"
+
+    .prologue
+    .line 108
+    iput-object p1, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mConversationId:Ljava/lang/String;
+
+    .line 110
     return-void
 .end method
 
@@ -234,10 +247,10 @@
     .parameter "numberStr"
 
     .prologue
-    .line 91
+    .line 96
     iput-object p1, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mFoldIdStr:Ljava/lang/String;
 
-    .line 92
+    .line 97
     return-void
 .end method
 
@@ -246,10 +259,10 @@
     .parameter "text"
 
     .prologue
-    .line 74
+    .line 79
     iput-object p1, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mFreeText:Ljava/lang/String;
 
-    .line 75
+    .line 80
     return-void
 .end method
 
@@ -258,10 +271,10 @@
     .parameter "dateStr"
 
     .prologue
-    .line 78
+    .line 83
     iput-object p1, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mGreaterThanDateStr:Ljava/lang/String;
 
-    .line 79
+    .line 84
     return-void
 .end method
 
@@ -270,10 +283,10 @@
     .parameter "numberStr"
 
     .prologue
-    .line 86
+    .line 91
     iput-object p1, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mIdStr:Ljava/lang/String;
 
-    .line 87
+    .line 92
     return-void
 .end method
 
@@ -282,10 +295,10 @@
     .parameter "dateStr"
 
     .prologue
-    .line 82
+    .line 87
     iput-object p1, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mLessThanDateStr:Ljava/lang/String;
 
-    .line 83
+    .line 88
     return-void
 .end method
 
@@ -294,9 +307,9 @@
     .parameter "boolStr"
 
     .prologue
-    .line 95
+    .line 100
     iput-object p1, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mOptionsDeepTraversalStr:Ljava/lang/String;
 
-    .line 96
+    .line 101
     return-void
 .end method

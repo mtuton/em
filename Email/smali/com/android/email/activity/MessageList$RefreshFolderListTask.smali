@@ -40,12 +40,12 @@
     .parameter
 
     .prologue
-    .line 5731
+    .line 7330
     iput-object p1, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 5733
+    .line 7332
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->folderNo:I
@@ -59,7 +59,7 @@
     .parameter "x1"
 
     .prologue
-    .line 5731
+    .line 7330
     invoke-direct {p0, p1}, Lcom/android/email/activity/MessageList$RefreshFolderListTask;-><init>(Lcom/android/email/activity/MessageList;)V
 
     return-void
@@ -72,7 +72,7 @@
     .parameter "x0"
 
     .prologue
-    .line 5731
+    .line 7330
     invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->doInBackground([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
@@ -85,7 +85,7 @@
     .parameter "arg0"
 
     .prologue
-    .line 5746
+    .line 7345
     array-length v0, p1
 
     if-nez v0, :cond_0
@@ -100,14 +100,14 @@
 
     iput-object v0, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->mCurrentTab:Ljava/lang/Integer;
 
-    .line 5747
+    .line 7346
     const-string v3, "accountKey=? AND type<64 AND flagVisible=1"
 
-    .line 5752
+    .line 7351
     .local v3, MAILBOX_SELECTION:Ljava/lang/String;
     iget-object v0, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$300(Lcom/android/email/activity/MessageList;)J
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$200(Lcom/android/email/activity/MessageList;)J
 
     move-result-wide v0
 
@@ -119,20 +119,20 @@
 
     iget-object v0, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$700(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$900(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v0
 
     if-nez v0, :cond_1
 
-    .line 5753
+    .line 7352
     iget-object v0, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
     iget-object v1, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
     iget-object v2, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$300(Lcom/android/email/activity/MessageList;)J
+    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$200(Lcom/android/email/activity/MessageList;)J
 
     move-result-wide v4
 
@@ -140,30 +140,30 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/email/activity/MessageList;->access$702(Lcom/android/email/activity/MessageList;Lcom/android/email/provider/EmailContent$Mailbox;)Lcom/android/email/provider/EmailContent$Mailbox;
+    invoke-static {v0, v1}, Lcom/android/email/activity/MessageList;->access$902(Lcom/android/email/activity/MessageList;Lcom/android/email/provider/EmailContent$Mailbox;)Lcom/android/email/provider/EmailContent$Mailbox;
 
-    .line 5754
+    .line 7353
     iget-object v0, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$700(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$900(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v0
 
     if-nez v0, :cond_1
 
-    .line 5755
+    .line 7354
     iget-object v0, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-virtual {v0}, Lcom/android/email/activity/MessageList;->finish()V
 
-    .line 5756
+    .line 7355
     const/4 v0, 0x0
 
-    .line 5798
+    .line 7397
     :goto_1
     return-object v0
 
-    .line 5746
+    .line 7345
     .end local v3           #MAILBOX_SELECTION:Ljava/lang/String;
     .restart local p1
     :cond_0
@@ -180,13 +180,13 @@
 
     goto :goto_0
 
-    .line 5761
+    .line 7360
     .restart local v3       #MAILBOX_SELECTION:Ljava/lang/String;
     :cond_1
     :try_start_0
     iget-object v0, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$3400(Lcom/android/email/activity/MessageList;)Landroid/content/ContentResolver;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$3700(Lcom/android/email/activity/MessageList;)Landroid/content/ContentResolver;
 
     move-result-object v0
 
@@ -222,7 +222,7 @@
 
     iget-object v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$700(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
+    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$900(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v6
 
@@ -240,17 +240,17 @@
 
     move-result-object v12
 
-    .line 5768
+    .line 7367
     .local v12, cursor:Landroid/database/Cursor;
     const/4 v11, 0x0
 
-    .line 5769
+    .line 7368
     .local v11, count:I
     const/4 v0, -0x1
 
     invoke-interface {v12, v0}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 5770
+    .line 7369
     :cond_2
     :goto_2
     invoke-interface {v12}, Landroid/database/Cursor;->moveToNext()Z
@@ -259,7 +259,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 5771
+    .line 7370
     const/4 v0, 0x2
 
     invoke-interface {v12, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -268,7 +268,7 @@
 
     if-nez v0, :cond_2
 
-    .line 5773
+    .line 7372
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -281,7 +281,7 @@
 
     iget-object v1, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$3400(Lcom/android/email/activity/MessageList;)Landroid/content/ContentResolver;
+    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$3700(Lcom/android/email/activity/MessageList;)Landroid/content/ContentResolver;
 
     move-result-object v1
 
@@ -307,16 +307,16 @@
 
     move-result-object v7
 
-    .line 5776
+    .line 7375
     .local v7, selection_unread:Ljava/lang/String;
     const/4 v10, 0x0
 
-    .line 5778
+    .line 7377
     .local v10, c_unread:Landroid/database/Cursor;
     :try_start_1
     iget-object v0, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$3400(Lcom/android/email/activity/MessageList;)Landroid/content/ContentResolver;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$3700(Lcom/android/email/activity/MessageList;)Landroid/content/ContentResolver;
 
     move-result-object v4
 
@@ -344,7 +344,7 @@
 
     iget-object v1, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$700(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
+    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$900(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v1
 
@@ -362,14 +362,14 @@
 
     move-result-object v10
 
-    .line 5783
+    .line 7382
     invoke-interface {v10}, Landroid/database/Cursor;->getCount()I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result v11
 
-    .line 5787
+    .line 7386
     if-eqz v10, :cond_2
 
     :try_start_2
@@ -379,14 +379,14 @@
 
     if-nez v0, :cond_2
 
-    .line 5788
+    .line 7387
     invoke-interface {v10}, Landroid/database/Cursor;->close()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     goto :goto_2
 
-    .line 5796
+    .line 7395
     .end local v7           #selection_unread:Ljava/lang/String;
     .end local v10           #c_unread:Landroid/database/Cursor;
     .end local v11           #count:I
@@ -396,16 +396,16 @@
 
     move-object v13, v0
 
-    .line 5797
+    .line 7396
     .local v13, e:Ljava/lang/Exception;
     invoke-virtual {v13}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 5798
+    .line 7397
     const/4 v0, 0x0
 
     goto/16 :goto_1
 
-    .line 5787
+    .line 7386
     .end local v13           #e:Ljava/lang/Exception;
     .restart local v7       #selection_unread:Ljava/lang/String;
     .restart local v10       #c_unread:Landroid/database/Cursor;
@@ -423,13 +423,14 @@
 
     if-nez v1, :cond_3
 
-    .line 5788
+    .line 7387
     invoke-interface {v10}, Landroid/database/Cursor;->close()V
 
+    .line 7386
     :cond_3
     throw v0
 
-    .line 5793
+    .line 7392
     .end local v7           #selection_unread:Ljava/lang/String;
     .end local v10           #c_unread:Landroid/database/Cursor;
     :cond_4
@@ -459,7 +460,7 @@
     .parameter "x0"
 
     .prologue
-    .line 5731
+    .line 7330
     check-cast p1, [Ljava/lang/Object;
 
     .end local p1
@@ -479,21 +480,21 @@
 
     const-string v9, "MessageList >>"
 
-    .line 5804
+    .line 7403
     if-nez p1, :cond_1
 
-    .line 5861
+    .line 7460
     :cond_0
     :goto_0
     return-void
 
-    .line 5807
+    .line 7406
     :cond_1
     aget-object v1, p1, v6
 
     check-cast v1, Landroid/database/Cursor;
 
-    .line 5808
+    .line 7407
     .local v1, cursor:Landroid/database/Cursor;
     aget-object v6, p1, v7
 
@@ -503,7 +504,7 @@
 
     move-result v0
 
-    .line 5810
+    .line 7409
     .local v0, count:I
     if-eqz v1, :cond_0
 
@@ -513,22 +514,22 @@
 
     if-nez v6, :cond_0
 
-    .line 5815
+    .line 7414
     :try_start_0
     iget-object v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$8000(Lcom/android/email/activity/MessageList;)Lcom/android/email/winset/TwTabHost;
+    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$8900(Lcom/android/email/activity/MessageList;)Lcom/android/email/winset/TwTabHost;
 
     move-result-object v6
 
     invoke-virtual {v6}, Lcom/android/email/winset/TwTabHost;->clearAllTabs()V
 
-    .line 5816
+    .line 7415
     const/4 v6, -0x1
 
     invoke-interface {v1, v6}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 5817
+    .line 7416
     :goto_1
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -536,7 +537,7 @@
 
     if-eqz v6, :cond_c
 
-    .line 5818
+    .line 7417
     iget-object v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-static {v6}, Lcom/android/email/Utility$FolderProperties;->getInstance(Landroid/content/Context;)Lcom/android/email/Utility$FolderProperties;
@@ -553,27 +554,27 @@
 
     move-result-object v5
 
-    .line 5819
+    .line 7418
     .local v5, text:Ljava/lang/String;
     if-nez v5, :cond_2
 
-    .line 5820
+    .line 7419
     const/4 v6, 0x1
 
     invoke-interface {v1, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 5824
+    .line 7423
     :cond_2
     sget-boolean v6, Lcom/android/email/activity/MessageList;->isStartedFromMailboxList:Z
 
     if-eqz v6, :cond_9
 
-    .line 5825
+    .line 7424
     iget-object v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$700(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
+    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$900(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v6
 
@@ -597,7 +598,7 @@
 
     iget-object v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$700(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
+    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$900(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v6
 
@@ -624,7 +625,7 @@
 
     iget-object v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$700(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
+    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$900(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v6
 
@@ -651,7 +652,7 @@
 
     iget-object v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$700(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
+    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$900(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v6
 
@@ -678,7 +679,7 @@
 
     iget-object v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$700(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
+    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$900(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v6
 
@@ -705,7 +706,7 @@
 
     iget-object v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$700(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
+    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$900(Lcom/android/email/activity/MessageList;)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v6
 
@@ -719,7 +720,7 @@
 
     if-eqz v6, :cond_8
 
-    .line 5831
+    .line 7430
     :cond_7
     iget v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->folderNo:I
 
@@ -729,7 +730,7 @@
 
     iput-object v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->mCurrentTab:Ljava/lang/Integer;
 
-    .line 5833
+    .line 7432
     :cond_8
     iget v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->folderNo:I
 
@@ -737,7 +738,7 @@
 
     iput v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->folderNo:I
 
-    .line 5836
+    .line 7435
     :cond_9
     const/4 v6, 0x2
 
@@ -747,12 +748,12 @@
 
     if-nez v6, :cond_a
 
-    .line 5838
+    .line 7437
     new-instance v3, Ljava/lang/StringBuffer;
 
     invoke-direct {v3}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 5839
+    .line 7438
     .local v3, sTextbuf:Ljava/lang/StringBuffer;
     invoke-virtual {v3, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -778,7 +779,7 @@
 
     move-result-object v5
 
-    .line 5842
+    .line 7441
     .end local v3           #sTextbuf:Ljava/lang/StringBuffer;
     :cond_a
     sget-boolean v6, Lcom/android/email/Email;->DEBUG:Z
@@ -789,12 +790,12 @@
 
     if-eqz v6, :cond_b
 
-    .line 5844
+    .line 7443
     new-instance v4, Ljava/lang/StringBuffer;
 
     invoke-direct {v4}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 5845
+    .line 7444
     .local v4, sbuf:Ljava/lang/StringBuffer;
     const-string v6, "MessageList >>"
 
@@ -828,18 +829,18 @@
 
     invoke-static {v6, v7}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5847
+    .line 7446
     .end local v4           #sbuf:Ljava/lang/StringBuffer;
     :cond_b
     iget-object v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$8000(Lcom/android/email/activity/MessageList;)Lcom/android/email/winset/TwTabHost;
+    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$8900(Lcom/android/email/activity/MessageList;)Lcom/android/email/winset/TwTabHost;
 
     move-result-object v6
 
     iget-object v7, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v7}, Lcom/android/email/activity/MessageList;->access$8000(Lcom/android/email/activity/MessageList;)Lcom/android/email/winset/TwTabHost;
+    invoke-static {v7}, Lcom/android/email/activity/MessageList;->access$8900(Lcom/android/email/activity/MessageList;)Lcom/android/email/winset/TwTabHost;
 
     move-result-object v7
 
@@ -857,7 +858,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0700b2
+    const v8, 0x7f0700ec
 
     invoke-virtual {v7, v8}, Lcom/android/email/winset/TwTabHost$TabSpec;->setContent(I)Lcom/android/email/winset/TwTabHost$TabSpec;
 
@@ -869,14 +870,14 @@
 
     goto/16 :goto_1
 
-    .line 5851
+    .line 7450
     .end local v5           #text:Ljava/lang/String;
     :catch_0
     move-exception v6
 
     move-object v2, v6
 
-    .line 5852
+    .line 7451
     .local v2, ise:Ljava/lang/IllegalStateException;
     const-string v6, "MessageList >>"
 
@@ -900,17 +901,17 @@
 
     invoke-static {v9, v6}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5853
+    .line 7452
     invoke-virtual {v2}, Ljava/lang/IllegalStateException;->printStackTrace()V
 
     goto/16 :goto_0
 
-    .line 5856
+    .line 7455
     .end local v2           #ise:Ljava/lang/IllegalStateException;
     :cond_c
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 5858
+    .line 7457
     iget-object v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
     iget-object v7, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->mCurrentTab:Ljava/lang/Integer;
@@ -919,12 +920,12 @@
 
     move-result v7
 
-    invoke-static {v6, v7}, Lcom/android/email/activity/MessageList;->access$6302(Lcom/android/email/activity/MessageList;I)I
+    invoke-static {v6, v7}, Lcom/android/email/activity/MessageList;->access$7002(Lcom/android/email/activity/MessageList;I)I
 
-    .line 5859
+    .line 7458
     iget-object v6, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$8000(Lcom/android/email/activity/MessageList;)Lcom/android/email/winset/TwTabHost;
+    invoke-static {v6}, Lcom/android/email/activity/MessageList;->access$8900(Lcom/android/email/activity/MessageList;)Lcom/android/email/winset/TwTabHost;
 
     move-result-object v6
 
@@ -934,7 +935,7 @@
 
     move-result v7
 
-    invoke-virtual {v6, v7}, Lcom/android/email/winset/TwTabHost;->setCurrentTab(I)V
+    invoke-virtual {v6, v7}, Lcom/android/email/winset/TwTabHost;->setAndRefreshCurrentTab(I)V
 
     goto/16 :goto_0
 .end method
@@ -943,10 +944,10 @@
     .locals 4
 
     .prologue
-    .line 5737
+    .line 7336
     iget-object v0, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$300(Lcom/android/email/activity/MessageList;)J
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$200(Lcom/android/email/activity/MessageList;)J
 
     move-result-wide v0
 
@@ -956,7 +957,7 @@
 
     if-gez v0, :cond_0
 
-    .line 5738
+    .line 7337
     const-string v0, "MessageList >>"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -971,7 +972,7 @@
 
     iget-object v2, p0, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$300(Lcom/android/email/activity/MessageList;)J
+    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$200(Lcom/android/email/activity/MessageList;)J
 
     move-result-wide v2
 
@@ -985,12 +986,12 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5739
+    .line 7338
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->cancel(Z)Z
 
-    .line 5742
+    .line 7341
     :cond_0
     return-void
 .end method

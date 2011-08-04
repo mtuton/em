@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/MessagingController;->sendPendingMessages(Lcom/android/email/provider/EmailContent$Account;JJLcom/android/email/MessagingListener;)V
+    value = Lcom/android/email/MessagingController;->sendPendingMessages(Lcom/android/email/provider/EmailContent$Account;JLcom/android/email/MessagingListener;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,28 +22,23 @@
 
 .field final synthetic val$account:Lcom/android/email/provider/EmailContent$Account;
 
-.field final synthetic val$outFolderId:J
-
-.field final synthetic val$sentboxId:J
+.field final synthetic val$sentFolderId:J
 
 
 # direct methods
-.method constructor <init>(Lcom/android/email/MessagingController;Lcom/android/email/provider/EmailContent$Account;JJ)V
+.method constructor <init>(Lcom/android/email/MessagingController;Lcom/android/email/provider/EmailContent$Account;J)V
     .locals 0
-    .parameter
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 3712
+    .line 3810
     iput-object p1, p0, Lcom/android/email/MessagingController$16;->this$0:Lcom/android/email/MessagingController;
 
     iput-object p2, p0, Lcom/android/email/MessagingController$16;->val$account:Lcom/android/email/provider/EmailContent$Account;
 
-    iput-wide p3, p0, Lcom/android/email/MessagingController$16;->val$sentboxId:J
-
-    iput-wide p5, p0, Lcom/android/email/MessagingController$16;->val$outFolderId:J
+    iput-wide p3, p0, Lcom/android/email/MessagingController$16;->val$sentFolderId:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,20 +48,18 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .locals 4
 
     .prologue
-    .line 3713
+    .line 3812
     iget-object v0, p0, Lcom/android/email/MessagingController$16;->this$0:Lcom/android/email/MessagingController;
 
     iget-object v1, p0, Lcom/android/email/MessagingController$16;->val$account:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v2, p0, Lcom/android/email/MessagingController$16;->val$sentboxId:J
+    iget-wide v2, p0, Lcom/android/email/MessagingController$16;->val$sentFolderId:J
 
-    iget-wide v4, p0, Lcom/android/email/MessagingController$16;->val$outFolderId:J
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/email/MessagingController;->sendPendingMessagesSynchronous(Lcom/android/email/provider/EmailContent$Account;J)V
 
-    invoke-virtual/range {v0 .. v5}, Lcom/android/email/MessagingController;->sendPendingMessagesSynchronous(Lcom/android/email/provider/EmailContent$Account;JJ)V
-
-    .line 3714
+    .line 3813
     return-void
 .end method

@@ -12,58 +12,6 @@
 .field private final size:J
 
 
-# direct methods
-.method public constructor <init>(J)V
-    .locals 1
-    .parameter "size"
-
-    .prologue
-    .line 56
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p1, p2, v0}, Lorg/apache/commons/io/filefilter/SizeFileFilter;-><init>(JZ)V
-
-    .line 57
-    return-void
-.end method
-
-.method public constructor <init>(JZ)V
-    .locals 2
-    .parameter "size"
-    .parameter "acceptLarger"
-
-    .prologue
-    .line 68
-    invoke-direct {p0}, Lorg/apache/commons/io/filefilter/AbstractFileFilter;-><init>()V
-
-    .line 69
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
-
-    if-gez v0, :cond_0
-
-    .line 70
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "The size must be non-negative"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 72
-    :cond_0
-    iput-wide p1, p0, Lorg/apache/commons/io/filefilter/SizeFileFilter;->size:J
-
-    .line 73
-    iput-boolean p3, p0, Lorg/apache/commons/io/filefilter/SizeFileFilter;->acceptLarger:Z
-
-    .line 74
-    return-void
-.end method
-
-
 # virtual methods
 .method public accept(Ljava/io/File;)Z
     .locals 7

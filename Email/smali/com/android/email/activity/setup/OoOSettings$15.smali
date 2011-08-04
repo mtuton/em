@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 308
+    .line 319
     iput-object p1, p0, Lcom/android/email/activity/setup/OoOSettings$15;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,15 +43,15 @@
     .parameter "isChecked"
 
     .prologue
-    .line 309
+    .line 322
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$15;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
-    invoke-static {v0}, Lcom/android/email/activity/setup/OoOSettings;->access$1500(Lcom/android/email/activity/setup/OoOSettings;)Landroid/widget/Button;
+    invoke-static {v0}, Lcom/android/email/activity/setup/OoOSettings;->access$1700(Lcom/android/email/activity/setup/OoOSettings;)Landroid/widget/Button;
 
     move-result-object v0
 
     invoke-virtual {v0, p2}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 310
+    .line 323
     return-void
 .end method

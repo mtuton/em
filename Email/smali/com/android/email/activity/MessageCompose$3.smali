@@ -3,7 +3,7 @@
 .source "MessageCompose.java"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 660
+    .line 969
     iput-object p1, p0, Lcom/android/email/activity/MessageCompose$3;->this$0:Lcom/android/email/activity/MessageCompose;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,38 +37,16 @@
 
 
 # virtual methods
-.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method public onClick(Landroid/view/View;)V
     .locals 1
     .parameter "v"
-    .parameter "event"
 
     .prologue
-    .line 661
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v0
-
-    packed-switch v0, :pswitch_data_0
-
-    .line 669
-    :goto_0
-    const/4 v0, 0x1
-
-    return v0
-
-    .line 663
-    :pswitch_0
+    .line 971
     iget-object v0, p0, Lcom/android/email/activity/MessageCompose$3;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$1000(Lcom/android/email/activity/MessageCompose;)V
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$1400(Lcom/android/email/activity/MessageCompose;)V
 
-    goto :goto_0
-
-    .line 661
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 972
+    return-void
 .end method

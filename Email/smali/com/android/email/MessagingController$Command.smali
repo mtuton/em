@@ -27,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 3938
+    .line 3946
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3938
+    .line 3946
     invoke-direct {p0}, Lcom/android/email/MessagingController$Command;-><init>()V
 
     return-void
@@ -50,7 +50,7 @@
     .locals 1
 
     .prologue
-    .line 3947
+    .line 3955
     iget-object v0, p0, Lcom/android/email/MessagingController$Command;->description:Ljava/lang/String;
 
     return-object v0

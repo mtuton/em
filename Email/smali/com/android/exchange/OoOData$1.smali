@@ -1,4 +1,4 @@
-.class Lcom/android/exchange/OoOData$1;
+.class final Lcom/android/exchange/OoOData$1;
 .super Ljava/lang/Object;
 .source "OoOData.java"
 
@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 37
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -60,7 +60,7 @@
     .parameter "x0"
 
     .prologue
-    .line 37
+    .line 33
     invoke-virtual {p0, p1}, Lcom/android/exchange/OoOData$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/exchange/OoOData;
 
     move-result-object v0
@@ -84,7 +84,7 @@
     .parameter "x0"
 
     .prologue
-    .line 37
+    .line 33
     invoke-virtual {p0, p1}, Lcom/android/exchange/OoOData$1;->newArray(I)[Lcom/android/exchange/OoOData;
 
     move-result-object v0

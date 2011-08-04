@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 1309
+    .line 1874
     iput-object p1, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -50,7 +50,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1309
+    .line 1874
     invoke-direct {p0, p1}, Lcom/android/email/activity/MessageCompose$LoadMessageTask;-><init>(Lcom/android/email/activity/MessageCompose;)V
 
     return-void
@@ -63,7 +63,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1309
+    .line 1874
     check-cast p1, [Ljava/lang/Long;
 
     .end local p1
@@ -87,7 +87,7 @@
 
     const/4 v9, 0x0
 
-    .line 1312
+    .line 1877
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
     aget-object v7, p1, v10
@@ -100,26 +100,26 @@
 
     move-result-object v5
 
-    .line 1313
+    .line 1878
     .local v5, message:Lcom/android/email/provider/EmailContent$Message;
     if-nez v5, :cond_0
 
-    .line 1314
+    .line 1879
     new-array v6, v12, [Ljava/lang/Object;
 
     aput-object v9, v6, v10
 
     aput-object v9, v6, v11
 
-    .line 1357
+    .line 1922
     :goto_0
     return-object v6
 
-    .line 1316
+    .line 1881
     :cond_0
     iget-wide v1, v5, Lcom/android/email/provider/EmailContent$Message;->mAccountKey:J
 
-    .line 1317
+    .line 1882
     .local v1, accountId:J
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
@@ -127,43 +127,43 @@
 
     move-result-object v0
 
-    .line 1319
+    .line 1884
     .local v0, account:Lcom/android/email/provider/EmailContent$Account;
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-static {v6, v0}, Lcom/android/email/activity/MessageCompose;->access$502(Lcom/android/email/activity/MessageCompose;Lcom/android/email/provider/EmailContent$Account;)Lcom/android/email/provider/EmailContent$Account;
+    invoke-static {v6, v0}, Lcom/android/email/activity/MessageCompose;->access$902(Lcom/android/email/activity/MessageCompose;Lcom/android/email/provider/EmailContent$Account;)Lcom/android/email/provider/EmailContent$Account;
 
-    .line 1322
+    .line 1887
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-static {v6}, Lcom/android/email/activity/MessageCompose;->access$500(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Account;
+    invoke-static {v6}, Lcom/android/email/activity/MessageCompose;->access$900(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Account;
 
     move-result-object v6
 
     if-nez v6, :cond_1
 
-    .line 1323
+    .line 1888
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
     invoke-static {v6}, Lcom/android/email/provider/EmailContent$Account;->getDefaultAccountId(Landroid/content/Context;)J
 
     move-result-wide v1
 
-    .line 1324
+    .line 1889
     const-wide/16 v6, -0x1
 
     cmp-long v6, v1, v6
 
     if-nez v6, :cond_2
 
-    .line 1325
+    .line 1890
     const-string v6, "Compose >>"
 
     const-string v7, "[r2d209 check] There is no default account"
 
     invoke-static {v6, v7}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1337
+    .line 1902
     :cond_1
     :try_start_0
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
@@ -176,7 +176,7 @@
 
     iput-object v6, v5, Lcom/android/email/provider/EmailContent$Message;->mHtml:Ljava/lang/String;
 
-    .line 1338
+    .line 1903
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
     iget-wide v7, v5, Lcom/android/email/provider/EmailContent$Message;->mId:J
@@ -187,12 +187,12 @@
 
     iput-object v6, v5, Lcom/android/email/provider/EmailContent$Message;->mText:Ljava/lang/String;
 
-    .line 1339
+    .line 1904
     const-string v6, "com.android.email.intent.action.EDIT_DRAFT"
 
     iget-object v7, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-static {v7}, Lcom/android/email/activity/MessageCompose;->access$1600(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
+    invoke-static {v7}, Lcom/android/email/activity/MessageCompose;->access$2100(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -200,11 +200,11 @@
 
     move-result v4
 
-    .line 1341
+    .line 1906
     .local v4, isEditDraft:Z
     if-eqz v4, :cond_3
 
-    .line 1342
+    .line 1907
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
     iget-wide v7, v5, Lcom/android/email/provider/EmailContent$Message;->mId:J
@@ -215,7 +215,7 @@
 
     iput-object v6, v5, Lcom/android/email/provider/EmailContent$Message;->mHtmlReply:Ljava/lang/String;
 
-    .line 1344
+    .line 1909
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
     iget-wide v7, v5, Lcom/android/email/provider/EmailContent$Message;->mId:J
@@ -226,7 +226,7 @@
 
     iput-object v6, v5, Lcom/android/email/provider/EmailContent$Message;->mTextReply:Ljava/lang/String;
 
-    .line 1346
+    .line 1911
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
     iget-wide v7, v5, Lcom/android/email/provider/EmailContent$Message;->mId:J
@@ -239,7 +239,7 @@
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1357
+    .line 1922
     :goto_1
     new-array v6, v12, [Ljava/lang/Object;
 
@@ -249,7 +249,7 @@
 
     goto :goto_0
 
-    .line 1327
+    .line 1892
     .end local v4           #isEditDraft:Z
     :cond_2
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
@@ -260,18 +260,18 @@
 
     move-result-object v7
 
-    invoke-static {v6, v7}, Lcom/android/email/activity/MessageCompose;->access$502(Lcom/android/email/activity/MessageCompose;Lcom/android/email/provider/EmailContent$Account;)Lcom/android/email/provider/EmailContent$Account;
+    invoke-static {v6, v7}, Lcom/android/email/activity/MessageCompose;->access$902(Lcom/android/email/activity/MessageCompose;Lcom/android/email/provider/EmailContent$Account;)Lcom/android/email/provider/EmailContent$Account;
 
-    .line 1328
+    .line 1893
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-static {v6}, Lcom/android/email/activity/MessageCompose;->access$500(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Account;
+    invoke-static {v6}, Lcom/android/email/activity/MessageCompose;->access$900(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Account;
 
     move-result-object v6
 
     if-nez v6, :cond_1
 
-    .line 1329
+    .line 1894
     new-array v6, v12, [Ljava/lang/Object;
 
     aput-object v9, v6, v10
@@ -280,7 +280,7 @@
 
     goto/16 :goto_0
 
-    .line 1349
+    .line 1914
     .restart local v4       #isEditDraft:Z
     :cond_3
     const/4 v6, 0x0
@@ -288,12 +288,12 @@
     :try_start_1
     iput-object v6, v5, Lcom/android/email/provider/EmailContent$Message;->mHtmlReply:Ljava/lang/String;
 
-    .line 1350
+    .line 1915
     const/4 v6, 0x0
 
     iput-object v6, v5, Lcom/android/email/provider/EmailContent$Message;->mTextReply:Ljava/lang/String;
 
-    .line 1351
+    .line 1916
     const/4 v6, 0x0
 
     iput-object v6, v5, Lcom/android/email/provider/EmailContent$Message;->mIntroText:Ljava/lang/String;
@@ -302,14 +302,14 @@
 
     goto :goto_1
 
-    .line 1353
+    .line 1918
     .end local v4           #isEditDraft:Z
     :catch_0
     move-exception v6
 
     move-object v3, v6
 
-    .line 1354
+    .line 1919
     .local v3, e:Ljava/lang/RuntimeException;
     const-string v6, "Email"
 
@@ -333,7 +333,7 @@
 
     invoke-static {v6, v7}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1355
+    .line 1920
     new-array v6, v12, [Ljava/lang/Object;
 
     aput-object v9, v6, v10
@@ -348,7 +348,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1309
+    .line 1874
     check-cast p1, [Ljava/lang/Object;
 
     .end local p1
@@ -358,383 +358,422 @@
 .end method
 
 .method protected onPostExecute([Ljava/lang/Object;)V
-    .locals 9
+    .locals 10
     .parameter "messageAndAccount"
 
     .prologue
-    const/16 v4, 0x8
+    const/16 v5, 0x8
+
+    const/4 v9, 0x1
 
     const/4 v8, 0x0
 
-    const/4 v7, 0x1
+    const-string v7, "com.android.email.intent.action.REPLY_ALL"
 
-    const-string v6, "com.android.email.intent.action.REPLY_ALL"
+    const-string v6, "com.android.email.intent.action.FORWARD_OLD"
 
-    const-string v5, "com.android.email.intent.action.FORWARD_OLD"
-
-    .line 1362
+    .line 1927
     if-nez p1, :cond_0
 
-    .line 1452
+    .line 2048
     :goto_0
     return-void
 
-    .line 1366
+    .line 1931
     :cond_0
-    aget-object v1, p1, v8
+    aget-object v2, p1, v8
 
-    check-cast v1, Lcom/android/email/provider/EmailContent$Message;
+    check-cast v2, Lcom/android/email/provider/EmailContent$Message;
 
-    .line 1367
-    .local v1, message:Lcom/android/email/provider/EmailContent$Message;
-    aget-object v0, p1, v7
+    .line 1932
+    .local v2, message:Lcom/android/email/provider/EmailContent$Message;
+    aget-object v0, p1, v9
 
     check-cast v0, Lcom/android/email/provider/EmailContent$Account;
 
-    .line 1368
+    .line 1933
     .local v0, account:Lcom/android/email/provider/EmailContent$Account;
-    if-nez v1, :cond_1
+    if-nez v2, :cond_1
 
-    if-nez v0, :cond_1
+    .line 1937
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    .line 1372
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+    const v4, 0x7f08003e
 
-    const v3, 0x7f080037
+    invoke-static {v3, v4, v8}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
-    invoke-static {v2, v3, v7}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    move-result-object v3
 
-    move-result-object v2
+    invoke-virtual {v3}, Landroid/widget/Toast;->show()V
 
-    invoke-virtual {v2}, Landroid/widget/Toast;->show()V
+    .line 1939
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    .line 1374
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-virtual {v2}, Lcom/android/email/activity/MessageCompose;->finish()V
+    invoke-virtual {v3}, Lcom/android/email/activity/MessageCompose;->finish()V
 
     goto :goto_0
 
-    .line 1378
+    .line 1943
     :cond_1
-    const-string v2, "com.android.email.intent.action.EDIT_DRAFT"
+    const-string v3, "com.android.email.intent.action.EDIT_DRAFT"
 
+    iget-object v4, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v4}, Lcom/android/email/activity/MessageCompose;->access$2100(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_5
+
+    .line 1945
     iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$1600(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$2500(Lcom/android/email/activity/MessageCompose;)V
+
+    .line 1948
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3, v2}, Lcom/android/email/activity/MessageCompose;->access$1102(Lcom/android/email/activity/MessageCompose;Lcom/android/email/provider/EmailContent$Message;)Lcom/android/email/provider/EmailContent$Message;
+
+    .line 1950
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$1100(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Message;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget v1, v3, Lcom/android/email/provider/EmailContent$Message;->mFlags:I
 
-    move-result v2
+    .line 1951
+    .local v1, flags:I
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    if-eqz v2, :cond_4
+    and-int/lit16 v4, v1, 0x200
 
-    .line 1379
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+    if-eqz v4, :cond_4
 
-    invoke-static {v2, v1}, Lcom/android/email/activity/MessageCompose;->access$702(Lcom/android/email/activity/MessageCompose;Lcom/android/email/provider/EmailContent$Message;)Lcom/android/email/provider/EmailContent$Message;
+    move v4, v9
 
-    .line 1380
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    new-instance v3, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;
-
-    invoke-direct {v3, p0}, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;-><init>(Lcom/android/email/activity/MessageCompose$LoadMessageTask;)V
-
-    new-array v4, v7, [Ljava/lang/Long;
-
-    iget-wide v5, v1, Lcom/android/email/provider/EmailContent$Message;->mId:J
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    aput-object v5, v4, v8
-
-    invoke-virtual {v3, v4}, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Lcom/android/email/activity/MessageCompose;->access$1702(Lcom/android/email/activity/MessageCompose;Landroid/os/AsyncTask;)Landroid/os/AsyncTask;
-
-    .line 1432
-    :cond_2
     :goto_1
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+    invoke-static {v3, v4}, Lcom/android/email/activity/MessageCompose;->access$2602(Lcom/android/email/activity/MessageCompose;Z)Z
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$500(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Account;
-
-    move-result-object v2
-
-    if-nez v2, :cond_3
-
-    .line 1433
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v2, v0}, Lcom/android/email/activity/MessageCompose;->access$502(Lcom/android/email/activity/MessageCompose;Lcom/android/email/provider/EmailContent$Account;)Lcom/android/email/provider/EmailContent$Account;
-
-    .line 1439
-    :cond_3
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$2500(Lcom/android/email/activity/MessageCompose;)V
-
-    .line 1441
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
+    .line 1953
     iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$500(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Account;
+    new-instance v4, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;
 
-    move-result-object v3
+    invoke-direct {v4, p0, v2}, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;-><init>(Lcom/android/email/activity/MessageCompose$LoadMessageTask;Lcom/android/email/provider/EmailContent$Message;)V
 
-    invoke-virtual {v2, v1, v3}, Lcom/android/email/activity/MessageCompose;->processSourceMessageGuarded(Lcom/android/email/provider/EmailContent$Message;Lcom/android/email/provider/EmailContent$Account;)V
+    new-array v5, v9, [Ljava/lang/Long;
 
-    .line 1442
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+    iget-wide v6, v2, Lcom/android/email/provider/EmailContent$Message;->mId:J
 
-    invoke-static {v2, v7}, Lcom/android/email/activity/MessageCompose;->access$2602(Lcom/android/email/activity/MessageCompose;Z)Z
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    .line 1446
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+    move-result-object v6
 
-    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+    aput-object v6, v5, v8
 
-    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$500(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Account;
+    invoke-virtual {v4, v5}, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v2, v3}, Lcom/android/email/activity/MessageCompose;->showHideGalButton(Lcom/android/email/provider/EmailContent$Account;)V
+    invoke-static {v3, v4}, Lcom/android/email/activity/MessageCompose;->access$2702(Lcom/android/email/activity/MessageCompose;Landroid/os/AsyncTask;)Landroid/os/AsyncTask;
 
-    goto :goto_0
-
-    .line 1396
-    :cond_4
-    const-string v2, "com.android.email.intent.action.REPLY"
-
-    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$1600(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_5
-
-    const-string v2, "com.android.email.intent.action.REPLY_ALL"
-
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$1600(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v6, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_5
-
-    const-string v2, "com.android.email.intent.action.FORWARD"
-
-    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$1600(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_5
-
-    const-string v2, "com.android.email.intent.action.FORWARD_OLD"
-
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$1600(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v5, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 1400
-    :cond_5
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v2, v1}, Lcom/android/email/activity/MessageCompose;->access$1902(Lcom/android/email/activity/MessageCompose;Lcom/android/email/provider/EmailContent$Message;)Lcom/android/email/provider/EmailContent$Message;
-
-    .line 1403
-    const-string v2, "com.android.email.intent.action.REPLY_ALL"
-
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$1600(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v6, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_6
-
-    const-string v2, "com.android.email.intent.action.FORWARD_OLD"
-
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$1600(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v5, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_7
-
-    .line 1404
-    :cond_6
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$1900(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Message;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lcom/android/email/provider/EmailContent$Message;->mCc:Ljava/lang/String;
-
-    if-eqz v2, :cond_8
-
-    .line 1405
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$1900(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Message;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lcom/android/email/provider/EmailContent$Message;->mCc:Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-lez v2, :cond_7
-
-    .line 1406
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$2000(Lcom/android/email/activity/MessageCompose;)Landroid/widget/MultiAutoCompleteTextView;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v8}, Landroid/widget/MultiAutoCompleteTextView;->setVisibility(I)V
-
-    .line 1407
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$2100(Lcom/android/email/activity/MessageCompose;)Landroid/widget/MultiAutoCompleteTextView;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v8}, Landroid/widget/MultiAutoCompleteTextView;->setVisibility(I)V
-
-    .line 1408
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$2200(Lcom/android/email/activity/MessageCompose;)Landroid/widget/TextView;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 1409
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v2, v7}, Lcom/android/email/activity/MessageCompose;->access$2302(Lcom/android/email/activity/MessageCompose;Z)Z
-
-    .line 1425
-    :cond_7
+    .line 2028
+    .end local v1           #flags:I
+    :cond_2
     :goto_2
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$2400(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/Controller;
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$900(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Account;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-wide v3, v1, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    if-nez v3, :cond_3
 
-    invoke-virtual {v2, v3, v4, v7}, Lcom/android/email/Controller;->setMessageRead(JZ)V
+    .line 2029
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    goto/16 :goto_1
+    invoke-static {v3, v0}, Lcom/android/email/activity/MessageCompose;->access$902(Lcom/android/email/activity/MessageCompose;Lcom/android/email/provider/EmailContent$Account;)Lcom/android/email/provider/EmailContent$Account;
 
-    .line 1412
+    .line 2035
+    :cond_3
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$3400(Lcom/android/email/activity/MessageCompose;)Z
+
+    .line 2037
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    iget-object v4, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v4}, Lcom/android/email/activity/MessageCompose;->access$900(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Account;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v2, v4}, Lcom/android/email/activity/MessageCompose;->processSourceMessageGuarded(Lcom/android/email/provider/EmailContent$Message;Lcom/android/email/provider/EmailContent$Account;)V
+
+    .line 2038
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3, v9}, Lcom/android/email/activity/MessageCompose;->access$3502(Lcom/android/email/activity/MessageCompose;Z)Z
+
+    .line 2042
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    iget-object v4, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v4}, Lcom/android/email/activity/MessageCompose;->access$900(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Account;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Lcom/android/email/activity/MessageCompose;->showHideGalButton(Lcom/android/email/provider/EmailContent$Account;)V
+
+    goto/16 :goto_0
+
+    .restart local v1       #flags:I
+    :cond_4
+    move v4, v8
+
+    .line 1951
+    goto :goto_1
+
+    .line 1989
+    .end local v1           #flags:I
+    :cond_5
+    const-string v3, "com.android.email.intent.action.REPLY"
+
+    iget-object v4, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v4}, Lcom/android/email/activity/MessageCompose;->access$2100(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_6
+
+    const-string v3, "com.android.email.intent.action.REPLY_ALL"
+
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$2100(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v7, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_6
+
+    const-string v3, "com.android.email.intent.action.FORWARD"
+
+    iget-object v4, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v4}, Lcom/android/email/activity/MessageCompose;->access$2100(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_6
+
+    const-string v3, "com.android.email.intent.action.FORWARD_OLD"
+
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$2100(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v6, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    .line 1994
+    :cond_6
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$2500(Lcom/android/email/activity/MessageCompose;)V
+
+    .line 1997
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3, v2}, Lcom/android/email/activity/MessageCompose;->access$202(Lcom/android/email/activity/MessageCompose;Lcom/android/email/provider/EmailContent$Message;)Lcom/android/email/provider/EmailContent$Message;
+
+    .line 1999
+    const-string v3, "com.android.email.intent.action.REPLY_ALL"
+
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$2100(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v7, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_7
+
+    const-string v3, "com.android.email.intent.action.FORWARD_OLD"
+
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$2100(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v6, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_8
+
+    .line 2000
+    :cond_7
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$200(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Message;
+
+    move-result-object v3
+
+    iget-object v3, v3, Lcom/android/email/provider/EmailContent$Message;->mCc:Ljava/lang/String;
+
+    if-eqz v3, :cond_9
+
+    .line 2001
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$200(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Message;
+
+    move-result-object v3
+
+    iget-object v3, v3, Lcom/android/email/provider/EmailContent$Message;->mCc:Ljava/lang/String;
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-lez v3, :cond_8
+
+    .line 2002
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$2900(Lcom/android/email/activity/MessageCompose;)Landroid/widget/LinearLayout;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v8}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 2003
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$3000(Lcom/android/email/activity/MessageCompose;)Landroid/widget/LinearLayout;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v8}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 2004
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$3100(Lcom/android/email/activity/MessageCompose;)Landroid/widget/LinearLayout;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v5}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 2005
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3, v9}, Lcom/android/email/activity/MessageCompose;->access$3202(Lcom/android/email/activity/MessageCompose;Z)Z
+
+    .line 2021
     :cond_8
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+    :goto_3
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$1900(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Message;
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$3300(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/Controller;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-object v2, v2, Lcom/android/email/provider/EmailContent$Message;->mBcc:Ljava/lang/String;
+    iget-wide v4, v2, Lcom/android/email/provider/EmailContent$Message;->mId:J
 
-    if-eqz v2, :cond_7
+    invoke-virtual {v3, v4, v5, v9}, Lcom/android/email/Controller;->setMessageRead(JZ)V
 
-    .line 1413
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+    goto/16 :goto_2
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$1900(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Message;
+    .line 2008
+    :cond_9
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    move-result-object v2
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$200(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Message;
 
-    iget-object v2, v2, Lcom/android/email/provider/EmailContent$Message;->mBcc:Ljava/lang/String;
+    move-result-object v3
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    iget-object v3, v3, Lcom/android/email/provider/EmailContent$Message;->mBcc:Ljava/lang/String;
 
-    move-result v2
+    if-eqz v3, :cond_8
 
-    if-lez v2, :cond_7
+    .line 2009
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    .line 1414
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$200(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/provider/EmailContent$Message;
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$2000(Lcom/android/email/activity/MessageCompose;)Landroid/widget/MultiAutoCompleteTextView;
+    move-result-object v3
 
-    move-result-object v2
+    iget-object v3, v3, Lcom/android/email/provider/EmailContent$Message;->mBcc:Ljava/lang/String;
 
-    invoke-virtual {v2, v8}, Landroid/widget/MultiAutoCompleteTextView;->setVisibility(I)V
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    .line 1415
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+    move-result v3
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$2100(Lcom/android/email/activity/MessageCompose;)Landroid/widget/MultiAutoCompleteTextView;
+    if-lez v3, :cond_8
 
-    move-result-object v2
+    .line 2010
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-virtual {v2, v8}, Landroid/widget/MultiAutoCompleteTextView;->setVisibility(I)V
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$2900(Lcom/android/email/activity/MessageCompose;)Landroid/widget/LinearLayout;
 
-    .line 1416
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+    move-result-object v3
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$2200(Lcom/android/email/activity/MessageCompose;)Landroid/widget/TextView;
+    invoke-virtual {v3, v8}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    move-result-object v2
+    .line 2011
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$3000(Lcom/android/email/activity/MessageCompose;)Landroid/widget/LinearLayout;
 
-    .line 1417
-    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+    move-result-object v3
 
-    invoke-static {v2, v7}, Lcom/android/email/activity/MessageCompose;->access$2302(Lcom/android/email/activity/MessageCompose;Z)Z
+    invoke-virtual {v3, v8}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    goto :goto_2
+    .line 2012
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3}, Lcom/android/email/activity/MessageCompose;->access$3100(Lcom/android/email/activity/MessageCompose;)Landroid/widget/LinearLayout;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v5}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 2013
+    iget-object v3, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v3, v9}, Lcom/android/email/activity/MessageCompose;->access$3202(Lcom/android/email/activity/MessageCompose;Z)Z
+
+    goto :goto_3
 .end method

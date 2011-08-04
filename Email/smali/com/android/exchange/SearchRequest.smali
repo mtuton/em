@@ -21,15 +21,7 @@
 
 
 # static fields
-.field private static final BODY_PREFERENCE_TYPE_HTML:Ljava/lang/String; = "2"
-
-.field private static final BODY_PREFERENCE_TYPE_MIME:Ljava/lang/String; = "4"
-
-.field private static final BODY_PREFERENCE_TYPE_PLAIN_TEXT:Ljava/lang/String; = "1"
-
-.field private static final BODY_PREFERENCE_TYPE_RTF:Ljava/lang/String; = "3"
-
-.field public static final CREATOR:Landroid/os/Parcelable$Creator; = null
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator",
@@ -40,23 +32,13 @@
     .end annotation
 .end field
 
-.field public static final DEFAULT_OPTIONS_BODY_PREFERENCE_TRUNCATION_SIZE:I = 0x400
-
-.field public static final NO_OPTIONS_BODY_PREFERENCE_TRUNCATION_SIZE:I = -0x1
-
-.field private static final QUERY_CLASS_EMAIL:Ljava/lang/String; = "Email"
-
-.field public static final STORE_NAME_GAL:Ljava/lang/String; = "GAL"
-
-.field private static final STORE_NAME_MAILBOX:Ljava/lang/String; = "Mailbox"
-
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 264
+    .line 287
     new-instance v0, Lcom/android/exchange/SearchRequest$1;
 
     invoke-direct {v0}, Lcom/android/exchange/SearchRequest$1;-><init>()V
@@ -89,9 +71,6 @@
 
 
 # virtual methods
-.method public abstract getAccountId()J
-.end method
-
 .method public abstract getOptionsBodyPreferenceTruncationSize()Ljava/lang/String;
 .end method
 
@@ -114,6 +93,9 @@
 .end method
 
 .method public abstract getQueryCollectionIds()[J
+.end method
+
+.method public abstract getQueryConvIdText()Ljava/lang/String;
 .end method
 
 .method public abstract getQueryFreeText()Ljava/lang/String;

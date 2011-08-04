@@ -12,21 +12,3 @@
     accessFlags = 0x609
     name = "MessageUpdateCallbacks"
 .end annotation
-
-
-# virtual methods
-.method public abstract onMessageNotFound(Lcom/android/email/mail/Message;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
-.method public abstract onMessageUidChange(Lcom/android/email/mail/Message;Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method

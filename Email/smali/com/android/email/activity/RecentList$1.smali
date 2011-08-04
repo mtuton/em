@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 94
+    .line 93
     iput-object p1, p0, Lcom/android/email/activity/RecentList$1;->this$0:Lcom/android/email/activity/RecentList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

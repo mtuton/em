@@ -28,7 +28,7 @@
     .parameter
 
     .prologue
-    .line 262
+    .line 268
     iput-object p1, p0, Lcom/android/email/activity/SearchActivity$1;->this$0:Lcom/android/email/activity/SearchActivity;
 
     iput-object p3, p0, Lcom/android/email/activity/SearchActivity$1;->val$listView:Landroid/widget/ListView;
@@ -49,19 +49,19 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 271
+    .line 278
     const/4 v0, 0x0
 
-    .line 272
+    .line 279
     .local v0, cursorCount:I
     if-eqz p3, :cond_0
 
-    .line 273
+    .line 280
     invoke-interface {p3}, Landroid/database/Cursor;->getCount()I
 
     move-result v0
 
-    .line 275
+    .line 282
     :cond_0
     iget-object v1, p0, Lcom/android/email/activity/SearchActivity$1;->this$0:Lcom/android/email/activity/SearchActivity;
 
@@ -99,7 +99,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/email/activity/SearchActivity;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 281
+    .line 288
     iget-object v1, p0, Lcom/android/email/activity/SearchActivity$1;->this$0:Lcom/android/email/activity/SearchActivity;
 
     new-instance v2, Lcom/android/email/activity/SearchActivity$1$1;
@@ -110,21 +110,21 @@
 
     invoke-virtual {v1, v2}, Lcom/android/email/activity/SearchActivity;->setListAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 356
+    .line 363
     iget-object v1, p0, Lcom/android/email/activity/SearchActivity$1;->val$listView:Landroid/widget/ListView;
 
     invoke-virtual {v1, v7}, Landroid/widget/ListView;->setFocusable(Z)V
 
-    .line 357
+    .line 364
     iget-object v1, p0, Lcom/android/email/activity/SearchActivity$1;->val$listView:Landroid/widget/ListView;
 
     invoke-virtual {v1, v7}, Landroid/widget/ListView;->setFocusableInTouchMode(Z)V
 
-    .line 358
+    .line 365
     iget-object v1, p0, Lcom/android/email/activity/SearchActivity$1;->val$listView:Landroid/widget/ListView;
 
     invoke-virtual {v1}, Landroid/widget/ListView;->requestFocus()Z
 
-    .line 359
+    .line 366
     return-void
 .end method

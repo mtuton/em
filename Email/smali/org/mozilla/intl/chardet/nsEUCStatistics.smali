@@ -20,22 +20,10 @@
 .method public abstract mFirstByteFreq()[F
 .end method
 
-.method public abstract mFirstByteMean()F
-.end method
-
-.method public abstract mFirstByteStdDev()F
-.end method
-
 .method public abstract mFirstByteWeight()F
 .end method
 
 .method public abstract mSecondByteFreq()[F
-.end method
-
-.method public abstract mSecondByteMean()F
-.end method
-
-.method public abstract mSecondByteStdDev()F
 .end method
 
 .method public abstract mSecondByteWeight()F

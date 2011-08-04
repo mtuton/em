@@ -1,27 +1,19 @@
 .class Lcom/android/email/activity/MessageCompose$15;
-.super Landroid/os/AsyncTask;
+.super Ljava/lang/Object;
 .source "MessageCompose.java"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageCompose;->onDeleteAttachment(Landroid/view/View;)V
+    value = Lcom/android/email/activity/MessageCompose;->onAddText()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x0
     name = null
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/os/AsyncTask",
-        "<",
-        "Ljava/lang/Long;",
-        "Ljava/lang/Void;",
-        "Ljava/lang/Void;",
-        ">;"
-    }
 .end annotation
 
 
@@ -35,56 +27,40 @@
     .parameter
 
     .prologue
-    .line 3554
+    .line 3656
     iput-object p1, p0, Lcom/android/email/activity/MessageCompose$15;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter "x0"
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 2
+    .parameter "dialog"
+    .parameter "which"
 
     .prologue
-    .line 3554
-    check-cast p1, [Ljava/lang/Long;
-
-    .end local p1
-    invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageCompose$15;->doInBackground([Ljava/lang/Long;)Ljava/lang/Void;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected varargs doInBackground([Ljava/lang/Long;)Ljava/lang/Void;
-    .locals 3
-    .parameter "attachmentIds"
-
-    .prologue
-    .line 3555
+    .line 3658
     iget-object v0, p0, Lcom/android/email/activity/MessageCompose$15;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$2400(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/Controller;
+    iget-object v1, p0, Lcom/android/email/activity/MessageCompose$15;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    move-result-object v0
+    invoke-static {v1}, Lcom/android/email/activity/MessageCompose;->access$4100(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/activity/AddTextSelectorAdapter;
 
-    const/4 v1, 0x0
+    move-result-object v1
 
-    aget-object v1, p1, v1
+    invoke-virtual {v1, p2}, Lcom/android/email/activity/AddTextSelectorAdapter;->buttonToCommand(I)I
 
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    move-result v1
 
-    move-result-wide v1
+    invoke-static {v0, v1}, Lcom/android/email/activity/MessageCompose;->access$4200(Lcom/android/email/activity/MessageCompose;I)V
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/email/Controller;->deleteAttachment(J)V
+    .line 3659
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 3556
-    const/4 v0, 0x0
-
-    return-object v0
+    .line 3660
+    return-void
 .end method

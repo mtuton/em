@@ -29,12 +29,12 @@
     .parameter
 
     .prologue
-    .line 33
+    .line 37
     iput-object p1, p0, Lcom/android/email/activity/AddressTextView$ForwardValidator;->this$0:Lcom/android/email/activity/AddressTextView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
+    .line 38
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/email/activity/AddressTextView$ForwardValidator;->mValidator:Landroid/widget/AutoCompleteTextView$Validator;
@@ -48,7 +48,7 @@
     .parameter "x1"
 
     .prologue
-    .line 33
+    .line 37
     invoke-direct {p0, p1}, Lcom/android/email/activity/AddressTextView$ForwardValidator;-><init>(Lcom/android/email/activity/AddressTextView;)V
 
     return-void
@@ -61,14 +61,14 @@
     .parameter "invalidText"
 
     .prologue
-    .line 37
+    .line 41
     iget-object v0, p0, Lcom/android/email/activity/AddressTextView$ForwardValidator;->this$0:Lcom/android/email/activity/AddressTextView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/email/activity/AddressTextView;->access$002(Lcom/android/email/activity/AddressTextView;Z)Z
 
-    .line 38
+    .line 42
     return-object p1
 .end method
 
@@ -77,7 +77,7 @@
     .parameter "text"
 
     .prologue
-    .line 42
+    .line 46
     iget-object v0, p0, Lcom/android/email/activity/AddressTextView$ForwardValidator;->mValidator:Landroid/widget/AutoCompleteTextView$Validator;
 
     if-eqz v0, :cond_0
@@ -102,9 +102,9 @@
     .parameter "validator"
 
     .prologue
-    .line 46
+    .line 50
     iput-object p1, p0, Lcom/android/email/activity/AddressTextView$ForwardValidator;->mValidator:Landroid/widget/AutoCompleteTextView$Validator;
 
-    .line 47
+    .line 51
     return-void
 .end method

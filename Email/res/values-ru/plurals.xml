@@ -10,7 +10,7 @@
         <item quantity="few">в %d уч. зап.</item>
     </plurals>
     <plurals name="search_results_title">
-        <item quantity="other">Результаты (%d) для %s</item>
+        <item quantity="other">Результаты (%1$d) для %2$s</item>
         <item quantity="one">1 результат для %s</item>
     </plurals>
     <plurals name="gal_completed_fmt">

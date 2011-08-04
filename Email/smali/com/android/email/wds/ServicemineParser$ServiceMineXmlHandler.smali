@@ -57,30 +57,30 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 152
+    .line 154
     iput-object p1, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->this$0:Lcom/android/email/wds/ServicemineParser;
 
     invoke-direct {p0}, Lorg/xml/sax/helpers/DefaultHandler;-><init>()V
 
-    .line 154
+    .line 156
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->settings:Ljava/util/Map;
 
-    .line 155
+    .line 157
     iput-object v1, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characters:Ljava/lang/StringBuffer;
 
-    .line 157
+    .line 159
     iput-object v1, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->autoCorrectedDomain:Ljava/lang/String;
 
-    .line 158
+    .line 160
     const-string v0, "$user"
 
     iput-object v0, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->authNameFormat:Ljava/lang/String;
 
-    .line 159
+    .line 161
     new-instance v0, Ljava/util/Stack;
 
     invoke-direct {v0}, Ljava/util/Stack;-><init>()V
@@ -96,7 +96,7 @@
     .parameter "x1"
 
     .prologue
-    .line 152
+    .line 154
     invoke-direct {p0, p1}, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;-><init>(Lcom/android/email/wds/ServicemineParser;)V
 
     return-void
@@ -116,25 +116,25 @@
     .end annotation
 
     .prologue
-    .line 163
+    .line 165
     iget-object v0, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characters:Ljava/lang/StringBuffer;
 
     if-nez v0, :cond_0
 
-    .line 164
+    .line 166
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
     iput-object v0, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characters:Ljava/lang/StringBuffer;
 
-    .line 165
+    .line 167
     :cond_0
     iget-object v0, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characters:Ljava/lang/StringBuffer;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/lang/StringBuffer;->append([CII)Ljava/lang/StringBuffer;
 
-    .line 166
+    .line 168
     return-void
 .end method
 
@@ -152,10 +152,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 200
+    .line 202
     move-object v0, p3
 
-    .line 201
+    .line 203
     .local v0, ourName:Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -163,21 +163,21 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 202
+    .line 204
     :cond_0
     move-object v0, p2
 
-    .line 207
+    .line 208
     :cond_1
     const-string v1, "configuration"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 208
+    .line 209
     iget-object v1, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->settings:Ljava/util/Map;
 
     iget-object v2, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->currentSetting:Lcom/android/email/wds/ServicemineEmailSetting;
@@ -188,28 +188,28 @@
 
     invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 209
+    .line 210
     iput-object v4, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->currentSetting:Lcom/android/email/wds/ServicemineEmailSetting;
 
-    .line 223
+    .line 224
     :cond_2
     :goto_0
     iput-object v4, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characters:Ljava/lang/StringBuffer;
 
-    .line 224
+    .line 225
     return-void
 
-    .line 210
+    .line 211
     :cond_3
     const-string v1, "protocol"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_4
 
-    .line 211
+    .line 212
     iget-object v1, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->currentSetting:Lcom/android/email/wds/ServicemineEmailSetting;
 
     iget-object v2, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characters:Ljava/lang/StringBuffer;
@@ -226,17 +226,17 @@
 
     goto :goto_0
 
-    .line 212
+    .line 213
     :cond_4
     const-string v1, "encryption-type"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_5
 
-    .line 213
+    .line 214
     iget-object v1, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->currentSetting:Lcom/android/email/wds/ServicemineEmailSetting;
 
     iget-object v2, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characters:Ljava/lang/StringBuffer;
@@ -253,34 +253,34 @@
 
     goto :goto_0
 
-    .line 214
+    .line 215
     :cond_5
     const-string v1, "characteristic"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_6
 
-    .line 215
+    .line 216
     iget-object v1, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characteristics:Ljava/util/Stack;
 
     invoke-virtual {v1}, Ljava/util/Stack;->pop()Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 216
+    .line 217
     :cond_6
     const-string v1, "lookup-domain"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_7
 
-    .line 217
+    .line 218
     iget-object v1, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characters:Ljava/lang/StringBuffer;
 
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
@@ -291,28 +291,28 @@
 
     goto :goto_0
 
-    .line 218
+    .line 219
     :cond_7
     const-string v1, "aauthname-format"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 219
-    iget-object v1, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characters:Ljava/lang/StringBuffer;
+    .line 220
+    const-string v1, "email-address"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characters:Ljava/lang/StringBuffer;
 
-    move-result-object v1
+    invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v1
+    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    const-string v2, "email-address"
+    move-result-object v2
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -320,7 +320,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 220
+    .line 221
     const-string v1, "$email"
 
     iput-object v1, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->authNameFormat:Ljava/lang/String;
@@ -341,7 +341,7 @@
     .end annotation
 
     .prologue
-    .line 227
+    .line 228
     iget-object v0, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->settings:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -372,10 +372,10 @@
 
     const-string v5, " | "
 
-    .line 171
+    .line 173
     move-object v1, p3
 
-    .line 172
+    .line 174
     .local v1, ourName:Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -383,28 +383,28 @@
 
     if-ne v1, v3, :cond_1
 
-    .line 173
+    .line 175
     :cond_0
     move-object v1, p2
 
-    .line 175
+    .line 177
     :cond_1
     const-string v3, "configuration"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_4
 
-    .line 176
+    .line 178
     const-string v3, "id"
 
     invoke-interface {p4, v3}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 177
+    .line 179
     .local v0, id:Ljava/lang/String;
     iget-object v3, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->settings:Ljava/util/Map;
 
@@ -416,7 +416,7 @@
 
     iput-object v3, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->currentSetting:Lcom/android/email/wds/ServicemineEmailSetting;
 
-    .line 178
+    .line 180
     const-string v3, "SERVICEMINE-PARSER: "
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -451,19 +451,19 @@
 
     invoke-static {v6, v3}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 179
+    .line 181
     iget-object v3, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->currentSetting:Lcom/android/email/wds/ServicemineEmailSetting;
 
     if-nez v3, :cond_2
 
-    .line 180
+    .line 182
     new-instance v3, Lcom/android/email/wds/ServicemineEmailSetting;
 
     invoke-direct {v3}, Lcom/android/email/wds/ServicemineEmailSetting;-><init>()V
 
     iput-object v3, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->currentSetting:Lcom/android/email/wds/ServicemineEmailSetting;
 
-    .line 181
+    .line 183
     :cond_2
     const-string v3, "SERVICEMINE-PARSER: "
 
@@ -499,28 +499,28 @@
 
     invoke-static {v6, v3}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 182
+    .line 184
     iget-object v3, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->currentSetting:Lcom/android/email/wds/ServicemineEmailSetting;
 
     iput-object v0, v3, Lcom/android/email/wds/ServicemineEmailSetting;->id:Ljava/lang/String;
 
-    .line 195
+    .line 197
     .end local v0           #id:Ljava/lang/String;
     :cond_3
     :goto_0
     return-void
 
-    .line 183
+    .line 185
     :cond_4
     const-string v3, "characteristic"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_5
 
-    .line 184
+    .line 186
     iget-object v3, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characteristics:Ljava/util/Stack;
 
     const-string v4, "type"
@@ -533,42 +533,40 @@
 
     goto :goto_0
 
-    .line 185
+    .line 187
     :cond_5
     const-string v3, "parm"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_7
 
-    .line 186
+    .line 188
     const-string v3, "name"
 
     invoke-interface {p4, v3}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 187
+    .line 189
     .local v2, parmType:Ljava/lang/String;
     const-string v3, "ADDR"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_6
 
-    iget-object v3, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characteristics:Ljava/util/Stack;
+    const-string v3, "APPADDR"
 
-    invoke-virtual {v3}, Ljava/util/Stack;->peek()Ljava/lang/Object;
+    iget-object v4, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characteristics:Ljava/util/Stack;
 
-    move-result-object v3
+    invoke-virtual {v4}, Ljava/util/Stack;->peek()Ljava/lang/Object;
 
-    check-cast v3, Ljava/lang/String;
-
-    const-string v4, "APPADDR"
+    move-result-object v4
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -576,7 +574,7 @@
 
     if-eqz v3, :cond_6
 
-    .line 188
+    .line 190
     iget-object v3, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->currentSetting:Lcom/android/email/wds/ServicemineEmailSetting;
 
     const-string v4, "value"
@@ -589,25 +587,23 @@
 
     goto :goto_0
 
-    .line 189
+    .line 191
     :cond_6
     const-string v3, "PORTNBR"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    iget-object v3, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characteristics:Ljava/util/Stack;
+    const-string v3, "PORT"
 
-    invoke-virtual {v3}, Ljava/util/Stack;->peek()Ljava/lang/Object;
+    iget-object v4, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->characteristics:Ljava/util/Stack;
 
-    move-result-object v3
+    invoke-virtual {v4}, Ljava/util/Stack;->peek()Ljava/lang/Object;
 
-    check-cast v3, Ljava/lang/String;
-
-    const-string v4, "PORT"
+    move-result-object v4
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -615,7 +611,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 190
+    .line 192
     iget-object v3, p0, Lcom/android/email/wds/ServicemineParser$ServiceMineXmlHandler;->currentSetting:Lcom/android/email/wds/ServicemineEmailSetting;
 
     const-string v4, "value"
@@ -636,18 +632,18 @@
 
     goto :goto_0
 
-    .line 192
+    .line 194
     .end local v2           #parmType:Ljava/lang/String;
     :cond_7
     const-string v3, "error"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    .line 193
+    .line 195
     new-instance v3, Lorg/xml/sax/SAXException;
 
     const-string v4, "Error tag encountered"

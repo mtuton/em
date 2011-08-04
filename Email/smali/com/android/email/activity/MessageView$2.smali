@@ -3,12 +3,12 @@
 .source "MessageView.java"
 
 # interfaces
-.implements Landroid/view/View$OnLongClickListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageView;->onCreate(Landroid/os/Bundle;)V
+    value = Lcom/android/email/activity/MessageView;->initMessageHeader()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1053
+    .line 1346
     iput-object p1, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,89 +37,188 @@
 
 
 # virtual methods
-.method public onLongClick(Landroid/view/View;)Z
+.method public onClick(Landroid/view/View;)V
     .locals 5
-    .parameter "v"
+    .parameter "arg0"
 
     .prologue
-    const/4 v4, 0x1
+    const/16 v4, 0x8
 
-    .line 1055
-    iget-object v2, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+    const/4 v3, 0x1
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageView;->access$600(Lcom/android/email/activity/MessageView;)Landroid/webkit/WebView;
+    const/4 v2, 0x0
 
-    move-result-object v2
+    .line 1349
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
 
-    if-eqz v2, :cond_3
-
-    .line 1057
-    iget-object v2, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
-
-    invoke-static {v2}, Lcom/android/email/activity/MessageView;->access$600(Lcom/android/email/activity/MessageView;)Landroid/webkit/WebView;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/webkit/WebView;->getHitTestResult()Landroid/webkit/WebView$HitTestResult;
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$1400(Lcom/android/email/activity/MessageView;)Lcom/android/email/winset/NonScrollView;
 
     move-result-object v0
 
-    .line 1058
-    .local v0, result:Landroid/webkit/WebView$HitTestResult;
-    if-nez v0, :cond_0
+    invoke-virtual {v0, v2}, Lcom/android/email/winset/NonScrollView;->setIsScrollBottom(Z)V
 
-    move v2, v4
+    .line 1350
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
 
-    .line 1076
-    .end local v0           #result:Landroid/webkit/WebView$HitTestResult;
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$900(Lcom/android/email/activity/MessageView;)Landroid/widget/LinearLayout;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->isShown()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 1351
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$1500(Lcom/android/email/activity/MessageView;)Landroid/view/View;
+
+    move-result-object v0
+
+    const v1, 0x7f020101
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
+
+    .line 1352
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$900(Lcom/android/email/activity/MessageView;)Landroid/widget/LinearLayout;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v4}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 1353
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$1600(Lcom/android/email/activity/MessageView;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 1354
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$800(Lcom/android/email/activity/MessageView;)Landroid/webkit/WebView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/webkit/WebView;->refreshDrawableState()V
+
+    .line 1357
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$800(Lcom/android/email/activity/MessageView;)Landroid/webkit/WebView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2, v3}, Landroid/webkit/WebView;->scrollTo(II)V
+
+    .line 1358
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$800(Lcom/android/email/activity/MessageView;)Landroid/webkit/WebView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2, v2}, Landroid/webkit/WebView;->scrollTo(II)V
+
+    .line 1360
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$1700(Lcom/android/email/activity/MessageView;)Landroid/widget/ToggleButton;
+
+    move-result-object v0
+
+    const v1, 0x7f0700dd
+
+    invoke-virtual {v0, v1}, Landroid/widget/ToggleButton;->setNextFocusDownId(I)V
+
+    .line 1380
     :goto_0
-    return v2
+    return-void
 
-    .line 1061
-    .restart local v0       #result:Landroid/webkit/WebView$HitTestResult;
+    .line 1363
     :cond_0
-    invoke-virtual {v0}, Landroid/webkit/WebView$HitTestResult;->getType()I
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
 
-    move-result v1
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$1500(Lcom/android/email/activity/MessageView;)Landroid/view/View;
 
-    .line 1063
-    .local v1, type:I
-    if-nez v1, :cond_1
+    move-result-object v0
 
-    move v2, v4
+    const v1, 0x7f020107
 
-    .line 1064
+    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
+
+    .line 1364
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$900(Lcom/android/email/activity/MessageView;)Landroid/widget/LinearLayout;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 1365
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$1800(Lcom/android/email/activity/MessageView;)Z
+
+    move-result v0
+
+    if-ne v0, v3, :cond_1
+
+    .line 1366
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$1600(Lcom/android/email/activity/MessageView;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 1371
+    :goto_1
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$800(Lcom/android/email/activity/MessageView;)Landroid/webkit/WebView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2, v3}, Landroid/webkit/WebView;->scrollTo(II)V
+
+    .line 1372
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$800(Lcom/android/email/activity/MessageView;)Landroid/webkit/WebView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2, v2}, Landroid/webkit/WebView;->scrollTo(II)V
+
+    .line 1374
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$1700(Lcom/android/email/activity/MessageView;)Landroid/widget/ToggleButton;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/widget/ToggleButton;->setNextFocusDownId(I)V
+
     goto :goto_0
 
-    .line 1066
+    .line 1369
     :cond_1
-    const/16 v2, 0x9
+    iget-object v0, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
 
-    if-ne v1, v2, :cond_2
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$1600(Lcom/android/email/activity/MessageView;)Landroid/widget/TextView;
 
-    move v2, v4
+    move-result-object v0
 
-    .line 1067
-    goto :goto_0
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1070
-    :cond_2
-    const/4 v2, 0x5
-
-    if-ne v1, v2, :cond_3
-
-    .line 1072
-    iget-object v2, p0, Lcom/android/email/activity/MessageView$2;->this$0:Lcom/android/email/activity/MessageView;
-
-    const/16 v3, 0x3f7
-
-    invoke-virtual {v2, v3}, Lcom/android/email/activity/MessageView;->onCreateDialog(I)Landroid/app/Dialog;
-
-    .end local v0           #result:Landroid/webkit/WebView$HitTestResult;
-    .end local v1           #type:I
-    :cond_3
-    move v2, v4
-
-    .line 1076
-    goto :goto_0
+    goto :goto_1
 .end method

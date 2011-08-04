@@ -29,13 +29,13 @@
     .parameter "savedInstanceState"
 
     .prologue
-    const v9, 0x7f0700f5
+    const v9, 0x7f070148
 
-    const v8, 0x7f0700f4
+    const v8, 0x7f070147
 
     const/16 v7, 0x8
 
-    const v6, 0x7f0700f6
+    const v6, 0x7f070149
 
     const/4 v5, 0x1
 
@@ -43,12 +43,12 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 23
-    const v3, 0x7f030031
+    const v3, 0x7f03003b
 
     invoke-virtual {p0, v3}, Lcom/android/email/activity/setup/OoOSetMessage;->setContentView(I)V
 
     .line 25
-    const v3, 0x7f0700f7
+    const v3, 0x7f07014a
 
     invoke-virtual {p0, v3}, Lcom/android/email/activity/setup/OoOSetMessage;->findViewById(I)Landroid/view/View;
 
@@ -59,7 +59,7 @@
     iput-object v3, p0, Lcom/android/email/activity/setup/OoOSetMessage;->mSetButton:Landroid/widget/Button;
 
     .line 26
-    const v3, 0x7f0700f8
+    const v3, 0x7f07014b
 
     invoke-virtual {p0, v3}, Lcom/android/email/activity/setup/OoOSetMessage;->findViewById(I)Landroid/view/View;
 
@@ -106,7 +106,7 @@
     if-ne v3, v5, :cond_3
 
     .line 73
-    const v3, 0x7f080203
+    const v3, 0x7f08022f
 
     invoke-virtual {p0, v3}, Lcom/android/email/activity/setup/OoOSetMessage;->setTitle(I)V
 
@@ -177,7 +177,7 @@
     .line 89
     .end local v1           #message:Ljava/lang/String;
     :cond_3
-    const v3, 0x7f080204
+    const v3, 0x7f080230
 
     invoke-virtual {p0, v3}, Lcom/android/email/activity/setup/OoOSetMessage;->setTitle(I)V
 

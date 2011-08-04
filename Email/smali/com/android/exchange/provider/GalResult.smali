@@ -26,6 +26,8 @@
     .end annotation
 .end field
 
+.field public protocolVerison:D
+
 .field public startRange:I
 
 .field public total:I
@@ -38,7 +40,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 35
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 29
@@ -47,14 +49,14 @@
     .line 30
     iput v0, p0, Lcom/android/exchange/provider/GalResult;->endRange:I
 
-    .line 33
+    .line 38
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult;->galData:Ljava/util/ArrayList;
 
-    .line 36
+    .line 41
     return-void
 .end method
 
@@ -76,7 +78,7 @@
     .parameter "_mMobilePhone"
 
     .prologue
-    .line 42
+    .line 47
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/provider/GalResult;->galData:Ljava/util/ArrayList;
@@ -119,6 +121,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 45
+    .line 50
     return-void
 .end method

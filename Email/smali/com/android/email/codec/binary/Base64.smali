@@ -3,20 +3,12 @@
 .source "Base64.java"
 
 # interfaces
-.implements Lorg/apache/commons/codec/BinaryEncoder;
 .implements Lorg/apache/commons/codec/BinaryDecoder;
+.implements Lorg/apache/commons/codec/BinaryEncoder;
 
 
 # static fields
-.field static final CHUNK_SEPARATOR:[B = null
-
-.field static final CHUNK_SIZE:I = 0x4c
-
-.field private static final MASK_6BITS:I = 0x3f
-
-.field private static final MASK_8BITS:I = 0xff
-
-.field private static final PAD:B = 0x3dt
+.field static final CHUNK_SEPARATOR:[B
 
 .field private static final base64ToInt:[B
 
@@ -567,162 +559,6 @@
     goto :goto_0
 .end method
 
-.method public static decodeInteger([B)Ljava/math/BigInteger;
-    .locals 3
-    .parameter "pArray"
-
-    .prologue
-    .line 747
-    new-instance v0, Ljava/math/BigInteger;
-
-    const/4 v1, 0x1
-
-    invoke-static {p0}, Lcom/android/email/codec/binary/Base64;->decodeBase64([B)[B
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Ljava/math/BigInteger;-><init>(I[B)V
-
-    return-object v0
-.end method
-
-.method static discardNonBase64([B)[B
-    .locals 7
-    .parameter "data"
-
-    .prologue
-    const/4 v6, 0x0
-
-    .line 692
-    array-length v5, p0
-
-    new-array v2, v5, [B
-
-    .line 693
-    .local v2, groomedData:[B
-    const/4 v0, 0x0
-
-    .line 695
-    .local v0, bytesCopied:I
-    const/4 v3, 0x0
-
-    .local v3, i:I
-    :goto_0
-    array-length v5, p0
-
-    if-ge v3, v5, :cond_1
-
-    .line 696
-    aget-byte v5, p0, v3
-
-    invoke-static {v5}, Lcom/android/email/codec/binary/Base64;->isBase64(B)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    .line 697
-    add-int/lit8 v1, v0, 0x1
-
-    .end local v0           #bytesCopied:I
-    .local v1, bytesCopied:I
-    aget-byte v5, p0, v3
-
-    aput-byte v5, v2, v0
-
-    move v0, v1
-
-    .line 695
-    .end local v1           #bytesCopied:I
-    .restart local v0       #bytesCopied:I
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    .line 701
-    :cond_1
-    new-array v4, v0, [B
-
-    .line 703
-    .local v4, packedData:[B
-    invoke-static {v2, v6, v4, v6, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 705
-    return-object v4
-.end method
-
-.method static discardWhitespace([B)[B
-    .locals 7
-    .parameter "data"
-
-    .prologue
-    const/4 v6, 0x0
-
-    .line 642
-    array-length v5, p0
-
-    new-array v2, v5, [B
-
-    .line 643
-    .local v2, groomedData:[B
-    const/4 v0, 0x0
-
-    .line 645
-    .local v0, bytesCopied:I
-    const/4 v3, 0x0
-
-    .local v3, i:I
-    :goto_0
-    array-length v5, p0
-
-    if-ge v3, v5, :cond_0
-
-    .line 646
-    aget-byte v5, p0, v3
-
-    sparse-switch v5, :sswitch_data_0
-
-    .line 653
-    add-int/lit8 v1, v0, 0x1
-
-    .end local v0           #bytesCopied:I
-    .local v1, bytesCopied:I
-    aget-byte v5, p0, v3
-
-    aput-byte v5, v2, v0
-
-    move v0, v1
-
-    .line 645
-    .end local v1           #bytesCopied:I
-    .restart local v0       #bytesCopied:I
-    :sswitch_0
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    .line 657
-    :cond_0
-    new-array v4, v0, [B
-
-    .line 659
-    .local v4, packedData:[B
-    invoke-static {v2, v6, v4, v6, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 661
-    return-object v4
-
-    .line 646
-    :sswitch_data_0
-    .sparse-switch
-        0x9 -> :sswitch_0
-        0xa -> :sswitch_0
-        0xd -> :sswitch_0
-        0x20 -> :sswitch_0
-    .end sparse-switch
-.end method
-
 .method public static encodeBase64([B)[B
     .locals 1
     .parameter "binaryData"
@@ -897,104 +733,6 @@
     goto :goto_0
 .end method
 
-.method public static encodeBase64Chunked([B)[B
-    .locals 1
-    .parameter "binaryData"
-
-    .prologue
-    .line 522
-    const/4 v0, 0x1
-
-    invoke-static {p0, v0}, Lcom/android/email/codec/binary/Base64;->encodeBase64([BZ)[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static encodeInteger(Ljava/math/BigInteger;)[B
-    .locals 2
-    .parameter "bigInt"
-
-    .prologue
-    .line 759
-    if-nez p0, :cond_0
-
-    .line 760
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "encodeInteger called with null parameter"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 763
-    :cond_0
-    invoke-static {p0}, Lcom/android/email/codec/binary/Base64;->toIntegerBytes(Ljava/math/BigInteger;)[B
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/android/email/codec/binary/Base64;->encodeBase64([BZ)[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static isArrayByteBase64([B)Z
-    .locals 2
-    .parameter "arrayOctet"
-
-    .prologue
-    .line 479
-    const/4 v0, 0x0
-
-    .local v0, i:I
-    :goto_0
-    array-length v1, p0
-
-    if-ge v0, v1, :cond_1
-
-    .line 480
-    aget-byte v1, p0, v0
-
-    invoke-static {v1}, Lcom/android/email/codec/binary/Base64;->isBase64(B)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    aget-byte v1, p0, v0
-
-    invoke-static {v1}, Lcom/android/email/codec/binary/Base64;->isWhiteSpace(B)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 481
-    const/4 v1, 0x0
-
-    .line 484
-    :goto_1
-    return v1
-
-    .line 479
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 484
-    :cond_1
-    const/4 v1, 0x1
-
-    goto :goto_1
-.end method
-
 .method public static isBase64(B)Z
     .locals 2
     .parameter "octet"
@@ -1031,38 +769,6 @@
     const/4 v0, 0x0
 
     goto :goto_0
-.end method
-
-.method private static isWhiteSpace(B)Z
-    .locals 1
-    .parameter "byteToCheck"
-
-    .prologue
-    .line 672
-    sparse-switch p0, :sswitch_data_0
-
-    .line 679
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    .line 677
-    :sswitch_0
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    .line 672
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x9 -> :sswitch_0
-        0xa -> :sswitch_0
-        0xd -> :sswitch_0
-        0x20 -> :sswitch_0
-    .end sparse-switch
 .end method
 
 .method private resizeBuf()V
@@ -1116,103 +822,6 @@
     .line 266
     iput-object v0, p0, Lcom/android/email/codec/binary/Base64;->buf:[B
 
-    goto :goto_0
-.end method
-
-.method static toIntegerBytes(Ljava/math/BigInteger;)[B
-    .locals 8
-    .parameter "bigInt"
-
-    .prologue
-    .line 774
-    invoke-virtual {p0}, Ljava/math/BigInteger;->bitLength()I
-
-    move-result v1
-
-    .line 776
-    .local v1, bitlen:I
-    add-int/lit8 v6, v1, 0x7
-
-    shr-int/lit8 v6, v6, 0x3
-
-    shl-int/lit8 v1, v6, 0x3
-
-    .line 777
-    invoke-virtual {p0}, Ljava/math/BigInteger;->toByteArray()[B
-
-    move-result-object v0
-
-    .line 779
-    .local v0, bigBytes:[B
-    invoke-virtual {p0}, Ljava/math/BigInteger;->bitLength()I
-
-    move-result v6
-
-    rem-int/lit8 v6, v6, 0x8
-
-    if-eqz v6, :cond_0
-
-    invoke-virtual {p0}, Ljava/math/BigInteger;->bitLength()I
-
-    move-result v6
-
-    div-int/lit8 v6, v6, 0x8
-
-    add-int/lit8 v6, v6, 0x1
-
-    div-int/lit8 v7, v1, 0x8
-
-    if-ne v6, v7, :cond_0
-
-    move-object v6, v0
-
-    .line 799
-    :goto_0
-    return-object v6
-
-    .line 785
-    :cond_0
-    const/4 v5, 0x0
-
-    .line 786
-    .local v5, startSrc:I
-    array-length v2, v0
-
-    .line 789
-    .local v2, len:I
-    invoke-virtual {p0}, Ljava/math/BigInteger;->bitLength()I
-
-    move-result v6
-
-    rem-int/lit8 v6, v6, 0x8
-
-    if-nez v6, :cond_1
-
-    .line 790
-    const/4 v5, 0x1
-
-    .line 791
-    add-int/lit8 v2, v2, -0x1
-
-    .line 794
-    :cond_1
-    div-int/lit8 v6, v1, 0x8
-
-    sub-int v4, v6, v2
-
-    .line 795
-    .local v4, startDst:I
-    div-int/lit8 v6, v1, 0x8
-
-    new-array v3, v6, [B
-
-    .line 797
-    .local v3, resizedBytes:[B
-    invoke-static {v0, v5, v3, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    move-object v6, v3
-
-    .line 799
     goto :goto_0
 .end method
 
@@ -2094,26 +1703,6 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method hasData()Z
-    .locals 1
-
-    .prologue
-    .line 248
-    iget-object v0, p0, Lcom/android/email/codec/binary/Base64;->buf:[B
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method readResults([BII)I

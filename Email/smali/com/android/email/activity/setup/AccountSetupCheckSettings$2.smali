@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 382
+    .line 394
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$2;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     iput p2, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$2;->val$resId:I
@@ -46,7 +46,7 @@
     .locals 3
 
     .prologue
-    .line 383
+    .line 396
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$2;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     invoke-static {v0}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$000(Lcom/android/email/activity/setup/AccountSetupCheckSettings;)Z
@@ -55,11 +55,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 387
+    .line 400
     :goto_0
     return-void
 
-    .line 386
+    .line 399
     :cond_0
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$2;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 

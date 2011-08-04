@@ -33,15 +33,3 @@
     .line 37
     return-void
 .end method
-
-
-# virtual methods
-.method public getValue()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 40
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/UnstructuredField;->value:Ljava/lang/String;
-
-    return-object v0
-.end method

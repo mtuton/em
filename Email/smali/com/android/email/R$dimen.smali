@@ -14,16 +14,12 @@
 .end annotation
 
 
-# static fields
-.field public static final button_minWidth:I = 0x7f0a0000
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 153
+    .line 185
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

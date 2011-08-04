@@ -4,8 +4,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/Controller;->setEmailPriority(JI)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/email/Controller;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,30 +20,12 @@
 .field final synthetic val$message:Lcom/android/email/provider/EmailContent$Message;
 
 
-# direct methods
-.method constructor <init>(Lcom/android/email/Controller;Lcom/android/email/provider/EmailContent$Message;)V
-    .locals 0
-    .parameter
-    .parameter
-
-    .prologue
-    .line 1772
-    iput-object p1, p0, Lcom/android/email/Controller$18;->this$0:Lcom/android/email/Controller;
-
-    iput-object p2, p0, Lcom/android/email/Controller$18;->val$message:Lcom/android/email/provider/EmailContent$Message;
-
-    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
-
-    return-void
-.end method
-
-
 # virtual methods
 .method public run()V
     .locals 4
 
     .prologue
-    .line 1773
+    .line 2042
     iget-object v0, p0, Lcom/android/email/Controller$18;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v0}, Lcom/android/email/Controller;->access$300(Lcom/android/email/Controller;)Lcom/android/email/MessagingController;
@@ -58,6 +40,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/email/MessagingController;->processPendingActions(JZ)V
 
-    .line 1774
+    .line 2043
     return-void
 .end method

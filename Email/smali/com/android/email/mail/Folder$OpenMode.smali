@@ -94,7 +94,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/email/mail/Folder$OpenMode;
     .locals 1
-    .parameter "name"
+    .parameter
 
     .prologue
     .line 21
@@ -104,13 +104,12 @@
 
     move-result-object p0
 
-    .end local p0
     check-cast p0, Lcom/android/email/mail/Folder$OpenMode;
 
     return-object p0
 .end method
 
-.method public static final values()[Lcom/android/email/mail/Folder$OpenMode;
+.method public static values()[Lcom/android/email/mail/Folder$OpenMode;
     .locals 1
 
     .prologue

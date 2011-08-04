@@ -28,18 +28,18 @@
 .method public constructor <init>(Lcom/android/exchange/SyncManager;Landroid/os/Handler;)V
     .locals 4
     .parameter
-    .parameter "handler"
+    .parameter
 
     .prologue
     const/4 v3, 0x0
 
-    .line 1189
+    .line 1327
     iput-object p1, p0, Lcom/android/exchange/SyncManager$SyncedMessageObserver;->this$0:Lcom/android/exchange/SyncManager;
 
-    .line 1190
+    .line 1328
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 1184
+    .line 1322
     new-instance v0, Landroid/content/Intent;
 
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
@@ -50,7 +50,7 @@
 
     iput-object v0, p0, Lcom/android/exchange/SyncManager$SyncedMessageObserver;->syncAlarmIntent:Landroid/content/Intent;
 
-    .line 1185
+    .line 1323
     sget-object v0, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     iget-object v1, p0, Lcom/android/exchange/SyncManager$SyncedMessageObserver;->syncAlarmIntent:Landroid/content/Intent;
@@ -61,7 +61,7 @@
 
     iput-object v0, p0, Lcom/android/exchange/SyncManager$SyncedMessageObserver;->syncAlarmPendingIntent:Landroid/app/PendingIntent;
 
-    .line 1187
+    .line 1325
     sget-object v0, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     const-string v1, "alarm"
@@ -74,7 +74,7 @@
 
     iput-object v0, p0, Lcom/android/exchange/SyncManager$SyncedMessageObserver;->alarmManager:Landroid/app/AlarmManager;
 
-    .line 1191
+    .line 1329
     return-void
 .end method
 
@@ -85,12 +85,12 @@
     .parameter "selfChange"
 
     .prologue
-    .line 1195
+    .line 1333
     const-string v0, "SyncedMessage changed: (re)setting alarm for 10s"
 
     invoke-static {v0}, Lcom/android/exchange/SyncManager;->log(Ljava/lang/String;)V
 
-    .line 1196
+    .line 1334
     iget-object v0, p0, Lcom/android/exchange/SyncManager$SyncedMessageObserver;->alarmManager:Landroid/app/AlarmManager;
 
     const/4 v1, 0x0
@@ -107,6 +107,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
-    .line 1198
+    .line 1336
     return-void
 .end method

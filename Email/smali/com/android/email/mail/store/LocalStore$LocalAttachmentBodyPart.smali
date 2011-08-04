@@ -33,21 +33,21 @@
     .end annotation
 
     .prologue
-    .line 1813
+    .line 1815
     iput-object p1, p0, Lcom/android/email/mail/store/LocalStore$LocalAttachmentBodyPart;->this$0:Lcom/android/email/mail/store/LocalStore;
 
-    .line 1814
+    .line 1816
     invoke-direct {p0, p2}, Lcom/android/email/mail/internet/MimeBodyPart;-><init>(Lcom/android/email/mail/Body;)V
 
-    .line 1811
+    .line 1813
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/android/email/mail/store/LocalStore$LocalAttachmentBodyPart;->mAttachmentId:J
 
-    .line 1815
+    .line 1817
     iput-wide p3, p0, Lcom/android/email/mail/store/LocalStore$LocalAttachmentBodyPart;->mAttachmentId:J
 
-    .line 1816
+    .line 1818
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .locals 2
 
     .prologue
-    .line 1823
+    .line 1825
     iget-wide v0, p0, Lcom/android/email/mail/store/LocalStore$LocalAttachmentBodyPart;->mAttachmentId:J
 
     return-wide v0
@@ -68,10 +68,10 @@
     .parameter "attachmentId"
 
     .prologue
-    .line 1827
+    .line 1829
     iput-wide p1, p0, Lcom/android/email/mail/store/LocalStore$LocalAttachmentBodyPart;->mAttachmentId:J
 
-    .line 1828
+    .line 1830
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .locals 3
 
     .prologue
-    .line 1831
+    .line 1833
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

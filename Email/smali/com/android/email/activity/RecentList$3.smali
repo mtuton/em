@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 323
+    .line 320
     iput-object p1, p0, Lcom/android/email/activity/RecentList$3;->this$0:Lcom/android/email/activity/RecentList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +42,14 @@
     .parameter "v"
 
     .prologue
-    .line 325
+    .line 324
     iget-object v7, p0, Lcom/android/email/activity/RecentList$3;->this$0:Lcom/android/email/activity/RecentList;
 
     invoke-virtual {v7}, Lcom/android/email/activity/RecentList;->getIntent()Landroid/content/Intent;
 
     move-result-object v4
 
-    .line 327
+    .line 326
     .local v4, intent:Landroid/content/Intent;
     iget-object v7, p0, Lcom/android/email/activity/RecentList$3;->this$0:Lcom/android/email/activity/RecentList;
 
@@ -63,13 +63,13 @@
 
     move-result-object v6
 
-    .line 328
+    .line 327
     .local v6, sba:Landroid/util/SparseBooleanArray;
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    .line 330
+    .line 329
     .local v1, checkedAddress:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     const/4 v2, 0x0
 
@@ -81,7 +81,7 @@
 
     if-ge v2, v7, :cond_1
 
-    .line 331
+    .line 330
     invoke-virtual {v6, v2}, Landroid/util/SparseBooleanArray;->valueAt(I)Z
 
     move-result v7
@@ -90,7 +90,7 @@
 
     if-ne v7, v8, :cond_0
 
-    .line 332
+    .line 331
     iget-object v7, p0, Lcom/android/email/activity/RecentList$3;->this$0:Lcom/android/email/activity/RecentList;
 
     invoke-virtual {v7}, Lcom/android/email/activity/RecentList;->getListAdapter()Landroid/widget/ListAdapter;
@@ -107,7 +107,7 @@
 
     check-cast v0, Landroid/database/Cursor;
 
-    .line 333
+    .line 332
     .local v0, c:Landroid/database/Cursor;
     const-string v7, "email"
 
@@ -121,20 +121,20 @@
 
     invoke-virtual {v1, v7}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 330
+    .line 329
     .end local v0           #c:Landroid/database/Cursor;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 336
+    .line 335
     :cond_1
     invoke-virtual {v1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    .line 339
+    .line 338
     .local v3, i:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/String;>;"
     new-instance v5, Ljava/lang/StringBuffer;
 
@@ -142,7 +142,7 @@
 
     invoke-direct {v5, v7}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
-    .line 340
+    .line 339
     .local v5, recents:Ljava/lang/StringBuffer;
     :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
@@ -151,7 +151,7 @@
 
     if-eqz v7, :cond_2
 
-    .line 341
+    .line 340
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v7
@@ -168,7 +168,7 @@
 
     goto :goto_1
 
-    .line 343
+    .line 342
     :cond_2
     const-string v7, "recents"
 
@@ -178,18 +178,18 @@
 
     invoke-virtual {v4, v7, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 344
+    .line 343
     iget-object v7, p0, Lcom/android/email/activity/RecentList$3;->this$0:Lcom/android/email/activity/RecentList;
 
     const/4 v8, -0x1
 
     invoke-virtual {v7, v8, v4}, Lcom/android/email/activity/RecentList;->setResult(ILandroid/content/Intent;)V
 
-    .line 345
+    .line 344
     iget-object v7, p0, Lcom/android/email/activity/RecentList$3;->this$0:Lcom/android/email/activity/RecentList;
 
     invoke-virtual {v7}, Lcom/android/email/activity/RecentList;->finish()V
 
-    .line 346
+    .line 345
     return-void
 .end method

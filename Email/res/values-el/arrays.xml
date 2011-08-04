@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="search_list">
+        <item>Google</item>
+        <item>Μετάφραση Google</item>
+        <item>Wikipedia</item>
+        <item>Λεξικό</item>
+    </string-array>
+    <string-array name="share_list">
+        <item>Κοινή χρήση ως κείμενο</item>
+        <item>Κοινή χρήση ως εικόνα</item>
+    </string-array>
+</resources>

@@ -14,10 +14,6 @@
 .end annotation
 
 
-# static fields
-.field private static final DEBUG_FAIL_DOWNLOADS:Z
-
-
 # instance fields
 .field final synthetic this$0:Lcom/android/email/Controller;
 
@@ -28,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2822
+    .line 3168
     iput-object p1, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
     invoke-direct {p0}, Lcom/android/email/service/IEmailServiceCallback$Stub;-><init>()V
@@ -42,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2822
+    .line 3168
     invoke-direct {p0, p1}, Lcom/android/email/Controller$ServiceCallback;-><init>(Lcom/android/email/Controller;)V
 
     return-void
@@ -59,10 +55,10 @@
 
     const/4 v2, 0x1
 
-    .line 3078
+    .line 3456
     sparse-switch p1, :sswitch_data_0
 
-    .line 3132
+    .line 3518
     new-instance v0, Lcom/android/email/mail/MessagingException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -74,13 +70,13 @@
     :goto_0
     return-object v0
 
-    .line 3081
+    .line 3459
     :sswitch_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 3084
+    .line 3462
     :sswitch_1
     new-instance v0, Lcom/android/email/mail/AuthenticationFailedException;
 
@@ -90,7 +86,7 @@
 
     goto :goto_0
 
-    .line 3087
+    .line 3465
     :sswitch_2
     new-instance v0, Lcom/android/email/mail/MessagingException;
 
@@ -98,7 +94,7 @@
 
     goto :goto_0
 
-    .line 3093
+    .line 3471
     :sswitch_3
     new-instance v0, Lcom/android/email/mail/MessagingException;
 
@@ -108,7 +104,7 @@
 
     goto :goto_0
 
-    .line 3099
+    .line 3477
     :sswitch_4
     new-instance v0, Lcom/android/email/mail/MessagingException;
 
@@ -118,7 +114,7 @@
 
     goto :goto_0
 
-    .line 3102
+    .line 3480
     :sswitch_5
     new-instance v0, Lcom/android/email/mail/MessagingException;
 
@@ -128,7 +124,7 @@
 
     goto :goto_0
 
-    .line 3105
+    .line 3483
     :sswitch_6
     new-instance v0, Lcom/android/email/mail/MessagingException;
 
@@ -138,7 +134,7 @@
 
     goto :goto_0
 
-    .line 3108
+    .line 3486
     :sswitch_7
     new-instance v0, Lcom/android/email/mail/MessagingException;
 
@@ -148,7 +144,7 @@
 
     goto :goto_0
 
-    .line 3113
+    .line 3491
     :sswitch_8
     new-instance v0, Lcom/android/email/mail/MessagingException;
 
@@ -158,7 +154,7 @@
 
     goto :goto_0
 
-    .line 3118
+    .line 3496
     :sswitch_9
     new-instance v0, Lcom/android/email/mail/MessagingException;
 
@@ -168,7 +164,7 @@
 
     goto :goto_0
 
-    .line 3122
+    .line 3500
     :sswitch_a
     new-instance v0, Lcom/android/email/mail/MessagingException;
 
@@ -178,7 +174,31 @@
 
     goto :goto_0
 
-    .line 3078
+    .line 3504
+    :sswitch_b
+    new-instance v0, Lcom/android/email/mail/DeviceAccessException;
+
+    const v1, 0x40001
+
+    const v2, 0x7f0802cb
+
+    invoke-direct {v0, v1, v2}, Lcom/android/email/mail/DeviceAccessException;-><init>(II)V
+
+    goto :goto_0
+
+    .line 3507
+    :sswitch_c
+    new-instance v0, Lcom/android/email/mail/DeviceAccessException;
+
+    const v1, 0x40002
+
+    const v2, 0x7f0802cd
+
+    invoke-direct {v0, v1, v2}, Lcom/android/email/mail/DeviceAccessException;-><init>(II)V
+
+    goto :goto_0
+
+    .line 3456
     :sswitch_data_0
     .sparse-switch
         -0x6 -> :sswitch_7
@@ -188,6 +208,8 @@
         -0x2 -> :sswitch_3
         0x0 -> :sswitch_0
         0x1 -> :sswitch_0
+        0x3 -> :sswitch_b
+        0x4 -> :sswitch_c
         0x16 -> :sswitch_1
         0x17 -> :sswitch_a
         0x20 -> :sswitch_2
@@ -205,16 +227,16 @@
     .parameter "progress"
 
     .prologue
-    .line 3006
+    .line 3384
     invoke-direct {p0, p3}, Lcom/android/email/Controller$ServiceCallback;->mapStatusToException(I)Lcom/android/email/mail/MessagingException;
 
     move-result-object v2
 
-    .line 3007
+    .line 3385
     .local v2, result:Lcom/android/email/mail/MessagingException;
     packed-switch p3, :pswitch_data_0
 
-    .line 3018
+    .line 3396
     :cond_0
     :goto_0
     iget-object v3, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
@@ -225,7 +247,7 @@
 
     monitor-enter v3
 
-    .line 3019
+    .line 3397
     :try_start_0
     iget-object v4, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -251,13 +273,13 @@
 
     check-cast v1, Lcom/android/email/Controller$Result;
 
-    .line 3020
+    .line 3398
     .local v1, listener:Lcom/android/email/Controller$Result;
     invoke-interface {v1, v2, p1, p2, p4}, Lcom/android/email/Controller$Result;->emptyTrashCallback(Lcom/android/email/mail/MessagingException;JI)V
 
     goto :goto_1
 
-    .line 3022
+    .line 3400
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #listener:Lcom/android/email/Controller$Result;
     :catchall_0
@@ -269,14 +291,14 @@
 
     throw v4
 
-    .line 3009
+    .line 3387
     :pswitch_0
     const/16 p4, 0x64
 
-    .line 3010
+    .line 3388
     goto :goto_0
 
-    .line 3013
+    .line 3391
     :pswitch_1
     if-ltz p4, :cond_1
 
@@ -284,12 +306,12 @@
 
     if-lt p4, v3, :cond_0
 
-    .line 3023
+    .line 3401
     :cond_1
     :goto_2
     return-void
 
-    .line 3022
+    .line 3400
     .restart local v0       #i$:Ljava/util/Iterator;
     :cond_2
     :try_start_1
@@ -299,7 +321,7 @@
 
     goto :goto_2
 
-    .line 3007
+    .line 3385
     nop
 
     :pswitch_data_0
@@ -316,12 +338,12 @@
     .parameter "statusCode"
 
     .prologue
-    .line 2920
+    .line 3266
     invoke-direct {p0, p4}, Lcom/android/email/Controller$ServiceCallback;->mapStatusToException(I)Lcom/android/email/mail/MessagingException;
 
     move-result-object v2
 
-    .line 2921
+    .line 3267
     .local v2, result:Lcom/android/email/mail/MessagingException;
     iget-object v3, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -331,7 +353,7 @@
 
     monitor-enter v3
 
-    .line 2922
+    .line 3268
     :try_start_0
     iget-object v4, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -357,13 +379,13 @@
 
     check-cast v1, Lcom/android/email/Controller$Result;
 
-    .line 2923
+    .line 3269
     .local v1, listener:Lcom/android/email/Controller$Result;
     invoke-interface {v1, p1, v2, p2, p3}, Lcom/android/email/Controller$Result;->folderCommandCallback(ILcom/android/email/mail/MessagingException;J)V
 
     goto :goto_0
 
-    .line 2925
+    .line 3271
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #listener:Lcom/android/email/Controller$Result;
     :catchall_0
@@ -382,7 +404,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2926
+    .line 3272
     return-void
 .end method
 
@@ -394,7 +416,7 @@
     .parameter "progress"
 
     .prologue
-    .line 2829
+    .line 3175
     iget-object v2, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v2}, Lcom/android/email/Controller;->access$900(Lcom/android/email/Controller;)Ljava/util/HashSet;
@@ -403,7 +425,7 @@
 
     monitor-enter v2
 
-    .line 2831
+    .line 3177
     :try_start_0
     iget-object v3, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -429,7 +451,7 @@
 
     check-cast v7, Lcom/android/email/Controller$AccountMoveMessageInfo;
 
-    .line 2833
+    .line 3179
     .local v7, AMInfo:Lcom/android/email/Controller$AccountMoveMessageInfo;
     iget-wide v3, v7, Lcom/android/email/Controller$AccountMoveMessageInfo;->messageId:J
 
@@ -437,7 +459,7 @@
 
     if-nez v3, :cond_0
 
-    .line 2836
+    .line 3182
     const/16 v3, 0x11
 
     if-eq p5, v3, :cond_1
@@ -448,7 +470,7 @@
 
     if-eq p5, v3, :cond_2
 
-    .line 2838
+    .line 3184
     :cond_1
     iget-object v3, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -458,32 +480,32 @@
 
     invoke-virtual {v3, v7}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 2841
+    .line 3187
     :cond_2
     monitor-exit v2
 
-    .line 2882
+    .line 3228
     .end local v7           #AMInfo:Lcom/android/email/Controller$AccountMoveMessageInfo;
     :cond_3
     :goto_0
     return-void
 
-    .line 2844
+    .line 3190
     :cond_4
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 2847
+    .line 3193
     invoke-direct {p0, p5}, Lcom/android/email/Controller$ServiceCallback;->mapStatusToException(I)Lcom/android/email/mail/MessagingException;
 
     move-result-object v1
 
-    .line 2848
+    .line 3194
     .local v1, result:Lcom/android/email/mail/MessagingException;
     packed-switch p5, :pswitch_data_0
 
-    .line 2863
+    .line 3209
     :cond_5
     :goto_1
     iget-object v2, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
@@ -494,7 +516,7 @@
 
     monitor-enter v7
 
-    .line 2864
+    .line 3210
     :try_start_1
     iget-object v2, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -519,7 +541,7 @@
 
     check-cast v0, Lcom/android/email/Controller$Result;
 
-    .line 2866
+    .line 3212
     .local v0, listener:Lcom/android/email/Controller$Result;
     iget-object v2, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -535,7 +557,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 2867
+    .line 3213
     sparse-switch p6, :sswitch_data_0
 
     :cond_6
@@ -546,12 +568,12 @@
 
     move v6, p6
 
-    .line 2879
+    .line 3225
     invoke-interface/range {v0 .. v6}, Lcom/android/email/Controller$Result;->loadAttachmentCallback(Lcom/android/email/mail/MessagingException;JJI)V
 
     goto :goto_2
 
-    .line 2881
+    .line 3227
     .end local v0           #listener:Lcom/android/email/Controller$Result;
     :catchall_0
     move-exception v2
@@ -562,7 +584,7 @@
 
     throw v2
 
-    .line 2844
+    .line 3190
     .end local v1           #result:Lcom/android/email/mail/MessagingException;
     .end local v8           #i$:Ljava/util/Iterator;
     :catchall_1
@@ -575,16 +597,16 @@
 
     throw v3
 
-    .line 2850
+    .line 3196
     .restart local v1       #result:Lcom/android/email/mail/MessagingException;
     .restart local v8       #i$:Ljava/util/Iterator;
     :pswitch_0
     const/16 p6, 0x64
 
-    .line 2851
+    .line 3197
     goto :goto_1
 
-    .line 2858
+    .line 3204
     :pswitch_1
     if-ltz p6, :cond_3
 
@@ -594,21 +616,21 @@
 
     goto :goto_0
 
-    .line 2869
+    .line 3215
     .restart local v0       #listener:Lcom/android/email/Controller$Result;
     :sswitch_0
     const/4 p6, -0x1
 
-    .line 2870
+    .line 3216
     goto :goto_3
 
-    .line 2872
+    .line 3218
     :sswitch_1
     const/16 p6, 0xc8
 
     goto :goto_3
 
-    .line 2881
+    .line 3227
     .end local v0           #listener:Lcom/android/email/Controller$Result;
     :cond_7
     :try_start_3
@@ -618,7 +640,7 @@
 
     goto :goto_0
 
-    .line 2848
+    .line 3194
     nop
 
     :pswitch_data_0
@@ -627,7 +649,7 @@
         :pswitch_1
     .end packed-switch
 
-    .line 2867
+    .line 3213
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0
@@ -642,16 +664,16 @@
     .parameter "progress"
 
     .prologue
-    .line 2963
+    .line 3341
     invoke-direct {p0, p3}, Lcom/android/email/Controller$ServiceCallback;->mapStatusToException(I)Lcom/android/email/mail/MessagingException;
 
     move-result-object v2
 
-    .line 2964
+    .line 3342
     .local v2, result:Lcom/android/email/mail/MessagingException;
     packed-switch p3, :pswitch_data_0
 
-    .line 2975
+    .line 3353
     :cond_0
     :goto_0
     iget-object v3, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
@@ -662,7 +684,7 @@
 
     monitor-enter v3
 
-    .line 2976
+    .line 3354
     :try_start_0
     iget-object v4, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -688,13 +710,13 @@
 
     check-cast v1, Lcom/android/email/Controller$Result;
 
-    .line 2977
+    .line 3355
     .local v1, listener:Lcom/android/email/Controller$Result;
     invoke-interface {v1, v2, p1, p2, p4}, Lcom/android/email/Controller$Result;->loadMoreCallback(Lcom/android/email/mail/MessagingException;JI)V
 
     goto :goto_1
 
-    .line 2979
+    .line 3357
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #listener:Lcom/android/email/Controller$Result;
     :catchall_0
@@ -706,14 +728,14 @@
 
     throw v4
 
-    .line 2966
+    .line 3344
     :pswitch_0
     const/16 p4, 0x64
 
-    .line 2967
+    .line 3345
     goto :goto_0
 
-    .line 2970
+    .line 3348
     :pswitch_1
     if-ltz p4, :cond_1
 
@@ -721,12 +743,12 @@
 
     if-lt p4, v3, :cond_0
 
-    .line 2980
+    .line 3358
     :cond_1
     :goto_2
     return-void
 
-    .line 2979
+    .line 3357
     .restart local v0       #i$:Ljava/util/Iterator;
     :cond_2
     :try_start_1
@@ -736,7 +758,119 @@
 
     goto :goto_2
 
-    .line 2964
+    .line 3342
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public moveConvAlwaysStatus([BIII)V
+    .locals 5
+    .parameter "convId"
+    .parameter "statusCode"
+    .parameter "progress"
+    .parameter "ignore"
+
+    .prologue
+    .line 3307
+    invoke-direct {p0, p2}, Lcom/android/email/Controller$ServiceCallback;->mapStatusToException(I)Lcom/android/email/mail/MessagingException;
+
+    move-result-object v2
+
+    .line 3308
+    .local v2, result:Lcom/android/email/mail/MessagingException;
+    packed-switch p2, :pswitch_data_0
+
+    .line 3319
+    :cond_0
+    :goto_0
+    iget-object v3, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
+
+    invoke-static {v3}, Lcom/android/email/Controller;->access$800(Lcom/android/email/Controller;)Ljava/util/HashSet;
+
+    move-result-object v3
+
+    monitor-enter v3
+
+    .line 3320
+    :try_start_0
+    iget-object v4, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
+
+    invoke-static {v4}, Lcom/android/email/Controller;->access$800(Lcom/android/email/Controller;)Ljava/util/HashSet;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/email/Controller$Result;
+
+    .line 3321
+    .local v1, listener:Lcom/android/email/Controller$Result;
+    invoke-interface {v1, v2, p1, p3, p4}, Lcom/android/email/Controller$Result;->moveConvAlwaysCallback(Lcom/android/email/mail/MessagingException;[BII)V
+
+    goto :goto_1
+
+    .line 3323
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #listener:Lcom/android/email/Controller$Result;
+    :catchall_0
+    move-exception v4
+
+    monitor-exit v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v4
+
+    .line 3310
+    :pswitch_0
+    const/16 p3, 0x64
+
+    .line 3311
+    goto :goto_0
+
+    .line 3314
+    :pswitch_1
+    if-ltz p3, :cond_1
+
+    const/16 v3, 0x64
+
+    if-lt p3, v3, :cond_0
+
+    .line 3324
+    :cond_1
+    :goto_2
+    return-void
+
+    .line 3323
+    .restart local v0       #i$:Ljava/util/Iterator;
+    :cond_2
+    :try_start_1
+    monitor-exit v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_2
+
+    .line 3308
     nop
 
     :pswitch_data_0
@@ -752,12 +886,12 @@
     .parameter "statusCode"
 
     .prologue
-    .line 2952
+    .line 3298
     invoke-direct {p0, p3}, Lcom/android/email/Controller$ServiceCallback;->mapStatusToException(I)Lcom/android/email/mail/MessagingException;
 
     move-result-object v2
 
-    .line 2953
+    .line 3299
     .local v2, result:Lcom/android/email/mail/MessagingException;
     iget-object v3, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -767,7 +901,7 @@
 
     monitor-enter v3
 
-    .line 2954
+    .line 3300
     :try_start_0
     iget-object v4, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -793,13 +927,13 @@
 
     check-cast v1, Lcom/android/email/Controller$Result;
 
-    .line 2955
+    .line 3301
     .local v1, listener:Lcom/android/email/Controller$Result;
     invoke-interface {v1, v2, p1, p2}, Lcom/android/email/Controller$Result;->moveMessageCallback(Lcom/android/email/mail/MessagingException;J)V
 
     goto :goto_0
 
-    .line 2957
+    .line 3303
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #listener:Lcom/android/email/Controller$Result;
     :catchall_0
@@ -818,7 +952,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2958
+    .line 3304
     return-void
 .end method
 
@@ -830,16 +964,16 @@
     .parameter "oooResults"
 
     .prologue
-    .line 2985
+    .line 3363
     invoke-direct {p0, p3}, Lcom/android/email/Controller$ServiceCallback;->mapStatusToException(I)Lcom/android/email/mail/MessagingException;
 
     move-result-object v1
 
-    .line 2986
+    .line 3364
     .local v1, result:Lcom/android/email/mail/MessagingException;
     packed-switch p3, :pswitch_data_0
 
-    .line 2997
+    .line 3375
     :cond_0
     :goto_0
     iget-object v2, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
@@ -850,7 +984,7 @@
 
     monitor-enter v7
 
-    .line 2998
+    .line 3376
     :try_start_0
     iget-object v2, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -883,12 +1017,12 @@
 
     move-object v5, p5
 
-    .line 2999
+    .line 3377
     invoke-interface/range {v0 .. v5}, Lcom/android/email/Controller$Result;->OoOCallback(Lcom/android/email/mail/MessagingException;JILandroid/os/Bundle;)V
 
     goto :goto_1
 
-    .line 3001
+    .line 3379
     .end local v0           #listener:Lcom/android/email/Controller$Result;
     .end local v6           #i$:Ljava/util/Iterator;
     :catchall_0
@@ -900,14 +1034,14 @@
 
     throw v2
 
-    .line 2988
+    .line 3366
     :pswitch_0
     const/16 p4, 0x64
 
-    .line 2989
+    .line 3367
     goto :goto_0
 
-    .line 2992
+    .line 3370
     :pswitch_1
     if-ltz p4, :cond_1
 
@@ -915,12 +1049,12 @@
 
     if-lt p4, v2, :cond_0
 
-    .line 3002
+    .line 3380
     :cond_1
     :goto_2
     return-void
 
-    .line 3001
+    .line 3379
     .restart local v6       #i$:Ljava/util/Iterator;
     :cond_2
     :try_start_1
@@ -930,123 +1064,7 @@
 
     goto :goto_2
 
-    .line 2986
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
-.end method
-
-.method public searchGALStatus(JIILandroid/os/Bundle;)V
-    .locals 8
-    .parameter "acc"
-    .parameter "statusCode"
-    .parameter "progress"
-    .parameter "searchresults"
-
-    .prologue
-    .line 2931
-    invoke-direct {p0, p3}, Lcom/android/email/Controller$ServiceCallback;->mapStatusToException(I)Lcom/android/email/mail/MessagingException;
-
-    move-result-object v1
-
-    .line 2932
-    .local v1, result:Lcom/android/email/mail/MessagingException;
-    packed-switch p3, :pswitch_data_0
-
-    .line 2943
-    :cond_0
-    :goto_0
-    iget-object v2, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
-
-    invoke-static {v2}, Lcom/android/email/Controller;->access$800(Lcom/android/email/Controller;)Ljava/util/HashSet;
-
-    move-result-object v7
-
-    monitor-enter v7
-
-    .line 2944
-    :try_start_0
-    iget-object v2, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
-
-    invoke-static {v2}, Lcom/android/email/Controller;->access$800(Lcom/android/email/Controller;)Ljava/util/HashSet;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v6
-
-    .local v6, i$:Ljava/util/Iterator;
-    :goto_1
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/email/Controller$Result;
-
-    .local v0, listener:Lcom/android/email/Controller$Result;
-    move-wide v2, p1
-
-    move v4, p4
-
-    move-object v5, p5
-
-    .line 2945
-    invoke-interface/range {v0 .. v5}, Lcom/android/email/Controller$Result;->GALSearchCallback(Lcom/android/email/mail/MessagingException;JILandroid/os/Bundle;)V
-
-    goto :goto_1
-
-    .line 2947
-    .end local v0           #listener:Lcom/android/email/Controller$Result;
-    .end local v6           #i$:Ljava/util/Iterator;
-    :catchall_0
-    move-exception v2
-
-    monitor-exit v7
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v2
-
-    .line 2934
-    :pswitch_0
-    const/16 p4, 0x64
-
-    .line 2935
-    goto :goto_0
-
-    .line 2938
-    :pswitch_1
-    if-ltz p4, :cond_1
-
-    const/16 v2, 0x64
-
-    if-lt p4, v2, :cond_0
-
-    .line 2948
-    :cond_1
-    :goto_2
-    return-void
-
-    .line 2947
-    .restart local v6       #i$:Ljava/util/Iterator;
-    :cond_2
-    :try_start_1
-    monitor-exit v7
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_2
-
-    .line 2932
+    .line 3364
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -1062,20 +1080,20 @@
     .parameter "progress"
 
     .prologue
-    .line 2895
+    .line 3241
     const-wide/16 v2, -0x1
 
-    .line 2896
+    .line 3242
     .local v2, accountId:J
     invoke-direct {p0, p4}, Lcom/android/email/Controller$ServiceCallback;->mapStatusToException(I)Lcom/android/email/mail/MessagingException;
 
     move-result-object v1
 
-    .line 2897
+    .line 3243
     .local v1, result:Lcom/android/email/mail/MessagingException;
     packed-switch p4, :pswitch_data_0
 
-    .line 2910
+    .line 3256
     :cond_0
     :goto_0
     iget-object v4, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
@@ -1086,7 +1104,7 @@
 
     monitor-enter v8
 
-    .line 2911
+    .line 3257
     :try_start_0
     iget-object v4, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -1117,12 +1135,12 @@
 
     move v6, p5
 
-    .line 2912
+    .line 3258
     invoke-interface/range {v0 .. v6}, Lcom/android/email/Controller$Result;->sendMailCallback(Lcom/android/email/mail/MessagingException;JJI)V
 
     goto :goto_1
 
-    .line 2914
+    .line 3260
     .end local v0           #listener:Lcom/android/email/Controller$Result;
     .end local v7           #i$:Ljava/util/Iterator;
     :catchall_0
@@ -1134,14 +1152,14 @@
 
     throw v4
 
-    .line 2899
+    .line 3245
     :pswitch_0
     const/16 p5, 0x64
 
-    .line 2900
+    .line 3246
     goto :goto_0
 
-    .line 2903
+    .line 3249
     :pswitch_1
     if-ltz p5, :cond_1
 
@@ -1149,12 +1167,12 @@
 
     if-lt p5, v4, :cond_0
 
-    .line 2915
+    .line 3261
     :cond_1
     :goto_2
     return-void
 
-    .line 2914
+    .line 3260
     .restart local v7       #i$:Ljava/util/Iterator;
     :cond_2
     :try_start_1
@@ -1164,7 +1182,7 @@
 
     goto :goto_2
 
-    .line 2897
+    .line 3243
     nop
 
     :pswitch_data_0
@@ -1174,23 +1192,28 @@
     .end packed-switch
 .end method
 
-.method public syncMailboxListStatus(JII)V
+.method public setDeviceInfoStatus(JII)V
     .locals 5
     .parameter "accountId"
     .parameter "statusCode"
     .parameter "progress"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .prologue
-    .line 3028
+    .line 3525
     invoke-direct {p0, p3}, Lcom/android/email/Controller$ServiceCallback;->mapStatusToException(I)Lcom/android/email/mail/MessagingException;
 
     move-result-object v2
 
-    .line 3029
+    .line 3526
     .local v2, result:Lcom/android/email/mail/MessagingException;
     packed-switch p3, :pswitch_data_0
 
-    .line 3040
+    .line 3537
     :cond_0
     :goto_0
     iget-object v3, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
@@ -1201,7 +1224,7 @@
 
     monitor-enter v3
 
-    .line 3041
+    .line 3538
     :try_start_0
     iget-object v4, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -1227,13 +1250,13 @@
 
     check-cast v1, Lcom/android/email/Controller$Result;
 
-    .line 3042
+    .line 3539
     .local v1, listener:Lcom/android/email/Controller$Result;
-    invoke-interface {v1, v2, p1, p2, p4}, Lcom/android/email/Controller$Result;->updateMailboxListCallback(Lcom/android/email/mail/MessagingException;JI)V
+    invoke-interface {v1, v2, p1, p2, p4}, Lcom/android/email/Controller$Result;->deviceInformationCallback(Lcom/android/email/mail/MessagingException;JI)V
 
     goto :goto_1
 
-    .line 3044
+    .line 3541
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #listener:Lcom/android/email/Controller$Result;
     :catchall_0
@@ -1245,14 +1268,14 @@
 
     throw v4
 
-    .line 3031
+    .line 3528
     :pswitch_0
     const/16 p4, 0x64
 
-    .line 3032
+    .line 3529
     goto :goto_0
 
-    .line 3035
+    .line 3532
     :pswitch_1
     if-ltz p4, :cond_1
 
@@ -1260,12 +1283,12 @@
 
     if-lt p4, v3, :cond_0
 
-    .line 3045
+    .line 3543
     :cond_1
     :goto_2
     return-void
 
-    .line 3044
+    .line 3541
     .restart local v0       #i$:Ljava/util/Iterator;
     :cond_2
     :try_start_1
@@ -1275,7 +1298,118 @@
 
     goto :goto_2
 
-    .line 3029
+    .line 3526
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public syncMailboxListStatus(JII)V
+    .locals 5
+    .parameter "accountId"
+    .parameter "statusCode"
+    .parameter "progress"
+
+    .prologue
+    .line 3406
+    invoke-direct {p0, p3}, Lcom/android/email/Controller$ServiceCallback;->mapStatusToException(I)Lcom/android/email/mail/MessagingException;
+
+    move-result-object v2
+
+    .line 3407
+    .local v2, result:Lcom/android/email/mail/MessagingException;
+    packed-switch p3, :pswitch_data_0
+
+    .line 3418
+    :cond_0
+    :goto_0
+    iget-object v3, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
+
+    invoke-static {v3}, Lcom/android/email/Controller;->access$800(Lcom/android/email/Controller;)Ljava/util/HashSet;
+
+    move-result-object v3
+
+    monitor-enter v3
+
+    .line 3419
+    :try_start_0
+    iget-object v4, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
+
+    invoke-static {v4}, Lcom/android/email/Controller;->access$800(Lcom/android/email/Controller;)Ljava/util/HashSet;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/email/Controller$Result;
+
+    .line 3420
+    .local v1, listener:Lcom/android/email/Controller$Result;
+    invoke-interface {v1, v2, p1, p2, p4}, Lcom/android/email/Controller$Result;->updateMailboxListCallback(Lcom/android/email/mail/MessagingException;JI)V
+
+    goto :goto_1
+
+    .line 3422
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #listener:Lcom/android/email/Controller$Result;
+    :catchall_0
+    move-exception v4
+
+    monitor-exit v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v4
+
+    .line 3409
+    :pswitch_0
+    const/16 p4, 0x64
+
+    .line 3410
+    goto :goto_0
+
+    .line 3413
+    :pswitch_1
+    if-ltz p4, :cond_1
+
+    const/16 v3, 0x64
+
+    if-lt p4, v3, :cond_0
+
+    .line 3423
+    :cond_1
+    :goto_2
+    return-void
+
+    .line 3422
+    .restart local v0       #i$:Ljava/util/Iterator;
+    :cond_2
+    :try_start_1
+    monitor-exit v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_2
+
+    .line 3407
     nop
 
     :pswitch_data_0
@@ -1292,16 +1426,16 @@
     .parameter "progress"
 
     .prologue
-    .line 3048
+    .line 3426
     invoke-direct {p0, p3}, Lcom/android/email/Controller$ServiceCallback;->mapStatusToException(I)Lcom/android/email/mail/MessagingException;
 
     move-result-object v1
 
-    .line 3049
+    .line 3427
     .local v1, result:Lcom/android/email/mail/MessagingException;
     packed-switch p3, :pswitch_data_0
 
-    .line 3066
+    .line 3444
     :cond_0
     :goto_0
     iget-object v4, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
@@ -1314,24 +1448,24 @@
 
     move-result-object v9
 
-    .line 3068
+    .line 3446
     .local v9, mbx:Lcom/android/email/provider/EmailContent$Mailbox;
     if-nez v9, :cond_2
 
-    .line 3075
+    .line 3453
     .end local v9           #mbx:Lcom/android/email/provider/EmailContent$Mailbox;
     :cond_1
     :goto_1
     return-void
 
-    .line 3051
+    .line 3429
     :pswitch_0
     const/16 p4, 0x64
 
-    .line 3052
+    .line 3430
     goto :goto_0
 
-    .line 3055
+    .line 3433
     :pswitch_1
     if-ltz p4, :cond_1
 
@@ -1341,7 +1475,7 @@
 
     goto :goto_1
 
-    .line 3060
+    .line 3438
     :pswitch_2
     iget-object v4, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -1351,12 +1485,12 @@
 
     goto :goto_1
 
-    .line 3069
+    .line 3447
     .restart local v9       #mbx:Lcom/android/email/provider/EmailContent$Mailbox;
     :cond_2
     iget-wide v2, v9, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
 
-    .line 3070
+    .line 3448
     .local v2, accountId:J
     iget-object v4, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -1366,7 +1500,7 @@
 
     monitor-enter v10
 
-    .line 3071
+    .line 3449
     :try_start_0
     iget-object v4, p0, Lcom/android/email/Controller$ServiceCallback;->this$0:Lcom/android/email/Controller;
 
@@ -1392,9 +1526,9 @@
 
     check-cast v0, Lcom/android/email/Controller$Result;
 
-    .line 3072
+    .line 3450
     .local v0, listener:Lcom/android/email/Controller$Result;
-    const/4 v7, 0x0
+    const/4 v7, -0x1
 
     move-wide v4, p1
 
@@ -1404,7 +1538,7 @@
 
     goto :goto_2
 
-    .line 3074
+    .line 3452
     .end local v0           #listener:Lcom/android/email/Controller$Result;
     .end local v8           #i$:Ljava/util/Iterator;
     :catchall_0
@@ -1425,7 +1559,7 @@
 
     goto :goto_1
 
-    .line 3049
+    .line 3427
     nop
 
     :pswitch_data_0

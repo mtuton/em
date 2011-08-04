@@ -27,15 +27,15 @@
     .parameter "_mailbox"
 
     .prologue
-    .line 544
+    .line 545
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 545
+    .line 546
     iput-object p1, p0, Lcom/android/email/activity/UpgradeAccounts$FolderConversion;->folder:Lcom/android/email/mail/Folder;
 
-    .line 546
+    .line 547
     iput-object p2, p0, Lcom/android/email/activity/UpgradeAccounts$FolderConversion;->mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    .line 547
+    .line 548
     return-void
 .end method

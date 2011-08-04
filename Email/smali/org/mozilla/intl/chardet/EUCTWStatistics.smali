@@ -289,26 +289,6 @@
     return-object v0
 .end method
 
-.method public mFirstByteMean()F
-    .locals 1
-
-    .prologue
-    .line 135
-    sget v0, Lorg/mozilla/intl/chardet/EUCTWStatistics;->mFirstByteMean:F
-
-    return v0
-.end method
-
-.method public mFirstByteStdDev()F
-    .locals 1
-
-    .prologue
-    .line 133
-    sget v0, Lorg/mozilla/intl/chardet/EUCTWStatistics;->mFirstByteStdDev:F
-
-    return v0
-.end method
-
 .method public mFirstByteWeight()F
     .locals 1
 
@@ -327,26 +307,6 @@
     sget-object v0, Lorg/mozilla/intl/chardet/EUCTWStatistics;->mSecondByteFreq:[F
 
     return-object v0
-.end method
-
-.method public mSecondByteMean()F
-    .locals 1
-
-    .prologue
-    .line 143
-    sget v0, Lorg/mozilla/intl/chardet/EUCTWStatistics;->mSecondByteMean:F
-
-    return v0
-.end method
-
-.method public mSecondByteStdDev()F
-    .locals 1
-
-    .prologue
-    .line 141
-    sget v0, Lorg/mozilla/intl/chardet/EUCTWStatistics;->mSecondByteStdDev:F
-
-    return v0
 .end method
 
 .method public mSecondByteWeight()F

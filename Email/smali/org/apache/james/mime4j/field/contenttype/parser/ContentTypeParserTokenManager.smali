@@ -345,22 +345,6 @@
     return-void
 .end method
 
-.method public constructor <init>(Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;I)V
-    .locals 0
-    .parameter "stream"
-    .parameter "lexState"
-
-    .prologue
-    .line 641
-    invoke-direct {p0, p1}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;-><init>(Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;)V
-
-    .line 642
-    invoke-virtual {p0, p2}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->SwitchTo(I)V
-
-    .line 643
-    return-void
-.end method
-
 .method private final ReInitRounds()V
     .locals 4
 
@@ -379,9 +363,7 @@
     .end local v0           #i:I
     .local v1, i:I
     :goto_0
-    const/4 v2, 0x1
-
-    sub-int v0, v1, v2
+    add-int/lit8 v0, v1, -0x1
 
     .end local v1           #i:I
     .restart local v0       #i:I
@@ -405,46 +387,6 @@
     .restart local v0       #i:I
     :cond_0
     return-void
-.end method
-
-.method private final jjAddStates(II)V
-    .locals 4
-    .parameter "start"
-    .parameter "end"
-
-    .prologue
-    .line 90
-    :goto_0
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjstateSet:[I
-
-    iget v2, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjnewStateCnt:I
-
-    add-int/lit8 v3, v2, 0x1
-
-    iput v3, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjnewStateCnt:I
-
-    sget-object v3, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjnextStates:[I
-
-    aget v3, v3, p1
-
-    aput v3, v1, v2
-
-    .line 91
-    add-int/lit8 v0, p1, 0x1
-
-    .end local p1
-    .local v0, start:I
-    if-ne p1, p2, :cond_0
-
-    .line 92
-    return-void
-
-    :cond_0
-    move p1, v0
-
-    .end local v0           #start:I
-    .restart local p1
-    goto :goto_0
 .end method
 
 .method private final jjCheckNAdd(I)V
@@ -481,79 +423,6 @@
 
     .line 86
     :cond_0
-    return-void
-.end method
-
-.method private final jjCheckNAddStates(I)V
-    .locals 2
-    .parameter "start"
-
-    .prologue
-    .line 106
-    sget-object v0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjnextStates:[I
-
-    aget v0, v0, p1
-
-    invoke-direct {p0, v0}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjCheckNAdd(I)V
-
-    .line 107
-    sget-object v0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjnextStates:[I
-
-    add-int/lit8 v1, p1, 0x1
-
-    aget v0, v0, v1
-
-    invoke-direct {p0, v0}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjCheckNAdd(I)V
-
-    .line 108
-    return-void
-.end method
-
-.method private final jjCheckNAddStates(II)V
-    .locals 2
-    .parameter "start"
-    .parameter "end"
-
-    .prologue
-    .line 101
-    :goto_0
-    sget-object v1, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjnextStates:[I
-
-    aget v1, v1, p1
-
-    invoke-direct {p0, v1}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjCheckNAdd(I)V
-
-    .line 102
-    add-int/lit8 v0, p1, 0x1
-
-    .end local p1
-    .local v0, start:I
-    if-ne p1, p2, :cond_0
-
-    .line 103
-    return-void
-
-    :cond_0
-    move p1, v0
-
-    .end local v0           #start:I
-    .restart local p1
-    goto :goto_0
-.end method
-
-.method private final jjCheckNAddTwoStates(II)V
-    .locals 0
-    .parameter "state1"
-    .parameter "state2"
-
-    .prologue
-    .line 95
-    invoke-direct {p0, p1}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjCheckNAdd(I)V
-
-    .line 96
-    invoke-direct {p0, p2}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjCheckNAdd(I)V
-
-    .line 97
     return-void
 .end method
 
@@ -2418,227 +2287,6 @@
     goto :goto_0
 .end method
 
-.method private final jjStartNfaWithStates_1(III)I
-    .locals 2
-    .parameter "pos"
-    .parameter "kind"
-    .parameter "state"
-
-    .prologue
-    .line 240
-    iput p2, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjmatchedKind:I
-
-    .line 241
-    iput p1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjmatchedPos:I
-
-    .line 242
-    :try_start_0
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->input_stream:Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;
-
-    invoke-virtual {v1}, Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;->readChar()C
-
-    move-result v1
-
-    iput-char v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->curChar:C
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 244
-    add-int/lit8 v1, p1, 0x1
-
-    invoke-direct {p0, p3, v1}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjMoveNfa_1(II)I
-
-    move-result v1
-
-    :goto_0
-    return v1
-
-    .line 243
-    :catch_0
-    move-exception v1
-
-    move-object v0, v1
-
-    .local v0, e:Ljava/io/IOException;
-    add-int/lit8 v1, p1, 0x1
-
-    goto :goto_0
-.end method
-
-.method private final jjStartNfaWithStates_2(III)I
-    .locals 2
-    .parameter "pos"
-    .parameter "kind"
-    .parameter "state"
-
-    .prologue
-    .line 495
-    iput p2, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjmatchedKind:I
-
-    .line 496
-    iput p1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjmatchedPos:I
-
-    .line 497
-    :try_start_0
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->input_stream:Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;
-
-    invoke-virtual {v1}, Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;->readChar()C
-
-    move-result v1
-
-    iput-char v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->curChar:C
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 499
-    add-int/lit8 v1, p1, 0x1
-
-    invoke-direct {p0, p3, v1}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjMoveNfa_2(II)I
-
-    move-result v1
-
-    :goto_0
-    return v1
-
-    .line 498
-    :catch_0
-    move-exception v1
-
-    move-object v0, v1
-
-    .local v0, e:Ljava/io/IOException;
-    add-int/lit8 v1, p1, 0x1
-
-    goto :goto_0
-.end method
-
-.method private final jjStartNfaWithStates_3(III)I
-    .locals 2
-    .parameter "pos"
-    .parameter "kind"
-    .parameter "state"
-
-    .prologue
-    .line 361
-    iput p2, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjmatchedKind:I
-
-    .line 362
-    iput p1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjmatchedPos:I
-
-    .line 363
-    :try_start_0
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->input_stream:Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;
-
-    invoke-virtual {v1}, Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;->readChar()C
-
-    move-result v1
-
-    iput-char v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->curChar:C
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 365
-    add-int/lit8 v1, p1, 0x1
-
-    invoke-direct {p0, p3, v1}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjMoveNfa_3(II)I
-
-    move-result v1
-
-    :goto_0
-    return v1
-
-    .line 364
-    :catch_0
-    move-exception v1
-
-    move-object v0, v1
-
-    .local v0, e:Ljava/io/IOException;
-    add-int/lit8 v1, p1, 0x1
-
-    goto :goto_0
-.end method
-
-.method private final jjStartNfa_0(IJ)I
-    .locals 2
-    .parameter "pos"
-    .parameter "active0"
-
-    .prologue
-    .line 41
-    invoke-direct {p0, p1, p2, p3}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjStopStringLiteralDfa_0(IJ)I
-
-    move-result v0
-
-    add-int/lit8 v1, p1, 0x1
-
-    invoke-direct {p0, v0, v1}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjMoveNfa_0(II)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private final jjStartNfa_1(IJ)I
-    .locals 2
-    .parameter "pos"
-    .parameter "active0"
-
-    .prologue
-    .line 236
-    invoke-direct {p0, p1, p2, p3}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjStopStringLiteralDfa_1(IJ)I
-
-    move-result v0
-
-    add-int/lit8 v1, p1, 0x1
-
-    invoke-direct {p0, v0, v1}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjMoveNfa_1(II)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private final jjStartNfa_2(IJ)I
-    .locals 2
-    .parameter "pos"
-    .parameter "active0"
-
-    .prologue
-    .line 491
-    invoke-direct {p0, p1, p2, p3}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjStopStringLiteralDfa_2(IJ)I
-
-    move-result v0
-
-    add-int/lit8 v1, p1, 0x1
-
-    invoke-direct {p0, v0, v1}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjMoveNfa_2(II)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private final jjStartNfa_3(IJ)I
-    .locals 2
-    .parameter "pos"
-    .parameter "active0"
-
-    .prologue
-    .line 357
-    invoke-direct {p0, p1, p2, p3}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjStopStringLiteralDfa_3(IJ)I
-
-    move-result v0
-
-    add-int/lit8 v1, p1, 0x1
-
-    invoke-direct {p0, v0, v1}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjMoveNfa_3(II)I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method private final jjStopAtPos(II)I
     .locals 1
     .parameter "pos"
@@ -2653,58 +2301,6 @@
 
     .line 47
     add-int/lit8 v0, p1, 0x1
-
-    return v0
-.end method
-
-.method private final jjStopStringLiteralDfa_0(IJ)I
-    .locals 1
-    .parameter "pos"
-    .parameter "active0"
-
-    .prologue
-    .line 33
-    .line 36
-    const/4 v0, -0x1
-
-    return v0
-.end method
-
-.method private final jjStopStringLiteralDfa_1(IJ)I
-    .locals 1
-    .parameter "pos"
-    .parameter "active0"
-
-    .prologue
-    .line 228
-    .line 231
-    const/4 v0, -0x1
-
-    return v0
-.end method
-
-.method private final jjStopStringLiteralDfa_2(IJ)I
-    .locals 1
-    .parameter "pos"
-    .parameter "active0"
-
-    .prologue
-    .line 483
-    .line 486
-    const/4 v0, -0x1
-
-    return v0
-.end method
-
-.method private final jjStopStringLiteralDfa_3(IJ)I
-    .locals 1
-    .parameter "pos"
-    .parameter "active0"
-
-    .prologue
-    .line 349
-    .line 352
-    const/4 v0, -0x1
 
     return v0
 .end method
@@ -3059,49 +2655,6 @@
         :pswitch_6
         :pswitch_7
     .end packed-switch
-.end method
-
-.method public ReInit(Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;)V
-    .locals 1
-    .parameter "stream"
-
-    .prologue
-    .line 646
-    const/4 v0, 0x0
-
-    iput v0, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjnewStateCnt:I
-
-    iput v0, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->jjmatchedPos:I
-
-    .line 647
-    iget v0, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->defaultLexState:I
-
-    iput v0, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->curLexState:I
-
-    .line 648
-    iput-object p1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->input_stream:Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;
-
-    .line 649
-    invoke-direct {p0}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->ReInitRounds()V
-
-    .line 650
-    return-void
-.end method
-
-.method public ReInit(Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;I)V
-    .locals 0
-    .parameter "stream"
-    .parameter "lexState"
-
-    .prologue
-    .line 660
-    invoke-virtual {p0, p1}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->ReInit(Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;)V
-
-    .line 661
-    invoke-virtual {p0, p2}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->SwitchTo(I)V
-
-    .line 662
-    return-void
 .end method
 
 .method public SwitchTo(I)V
@@ -3872,15 +3425,4 @@
 
     .line 676
     goto :goto_0
-.end method
-
-.method public setDebugStream(Ljava/io/PrintStream;)V
-    .locals 0
-    .parameter "ds"
-
-    .prologue
-    .line 30
-    iput-object p1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;->debugStream:Ljava/io/PrintStream;
-
-    return-void
 .end method

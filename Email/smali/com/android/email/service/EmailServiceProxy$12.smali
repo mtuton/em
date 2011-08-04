@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/service/EmailServiceProxy;->loadMore(J)V
+    value = Lcom/android/email/service/EmailServiceProxy;->sendMeetingResponse(JI)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,18 +22,23 @@
 
 .field final synthetic val$messageId:J
 
+.field final synthetic val$response:I
+
 
 # direct methods
-.method constructor <init>(Lcom/android/email/service/EmailServiceProxy;J)V
+.method constructor <init>(Lcom/android/email/service/EmailServiceProxy;JI)V
     .locals 0
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 333
+    .line 317
     iput-object p1, p0, Lcom/android/email/service/EmailServiceProxy$12;->this$0:Lcom/android/email/service/EmailServiceProxy;
 
     iput-wide p2, p0, Lcom/android/email/service/EmailServiceProxy$12;->val$messageId:J
+
+    iput p4, p0, Lcom/android/email/service/EmailServiceProxy$12;->val$response:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,10 +48,10 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 335
+    .line 320
     :try_start_0
     iget-object v0, p0, Lcom/android/email/service/EmailServiceProxy$12;->this$0:Lcom/android/email/service/EmailServiceProxy;
 
@@ -70,7 +75,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/email/service/IEmailService;->setCallback(Lcom/android/email/service/IEmailServiceCallback;)V
 
-    .line 336
+    .line 321
     :cond_0
     iget-object v0, p0, Lcom/android/email/service/EmailServiceProxy$12;->this$0:Lcom/android/email/service/EmailServiceProxy;
 
@@ -80,15 +85,17 @@
 
     iget-wide v1, p0, Lcom/android/email/service/EmailServiceProxy$12;->val$messageId:J
 
-    invoke-interface {v0, v1, v2}, Lcom/android/email/service/IEmailService;->loadMore(J)V
+    iget v3, p0, Lcom/android/email/service/EmailServiceProxy$12;->val$response:I
+
+    invoke-interface {v0, v1, v2, v3}, Lcom/android/email/service/IEmailService;->sendMeetingResponse(JI)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 340
+    .line 324
     :goto_0
     return-void
 
-    .line 337
+    .line 322
     :catch_0
     move-exception v0
 

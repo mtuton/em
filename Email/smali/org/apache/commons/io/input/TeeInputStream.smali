@@ -9,43 +9,6 @@
 .field private final closeBranch:Z
 
 
-# direct methods
-.method public constructor <init>(Ljava/io/InputStream;Ljava/io/OutputStream;)V
-    .locals 1
-    .parameter "input"
-    .parameter "branch"
-
-    .prologue
-    .line 60
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, v0}, Lorg/apache/commons/io/input/TeeInputStream;-><init>(Ljava/io/InputStream;Ljava/io/OutputStream;Z)V
-
-    .line 61
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/io/InputStream;Ljava/io/OutputStream;Z)V
-    .locals 0
-    .parameter "input"
-    .parameter "branch"
-    .parameter "closeBranch"
-
-    .prologue
-    .line 76
-    invoke-direct {p0, p1}, Lorg/apache/commons/io/input/ProxyInputStream;-><init>(Ljava/io/InputStream;)V
-
-    .line 77
-    iput-object p2, p0, Lorg/apache/commons/io/input/TeeInputStream;->branch:Ljava/io/OutputStream;
-
-    .line 78
-    iput-boolean p3, p0, Lorg/apache/commons/io/input/TeeInputStream;->closeBranch:Z
-
-    .line 79
-    return-void
-.end method
-
-
 # virtual methods
 .method public close()V
     .locals 2

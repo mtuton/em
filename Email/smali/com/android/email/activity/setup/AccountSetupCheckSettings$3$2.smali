@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 429
+    .line 441
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$3$2;->this$1:Lcom/android/email/activity/setup/AccountSetupCheckSettings$3;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,14 +43,14 @@
     .parameter "which"
 
     .prologue
-    .line 430
+    .line 443
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$3$2;->this$1:Lcom/android/email/activity/setup/AccountSetupCheckSettings$3;
 
     iget-boolean v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$3;->val$autoDiscoverAuthException:Z
 
     if-eqz v0, :cond_0
 
-    .line 431
+    .line 444
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$3$2;->this$1:Lcom/android/email/activity/setup/AccountSetupCheckSettings$3;
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$3;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -59,7 +59,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->setResult(I)V
 
-    .line 435
+    .line 448
     :cond_0
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$3$2;->this$1:Lcom/android/email/activity/setup/AccountSetupCheckSettings$3;
 
@@ -67,6 +67,6 @@
 
     invoke-virtual {v0}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->finish()V
 
-    .line 436
+    .line 449
     return-void
 .end method

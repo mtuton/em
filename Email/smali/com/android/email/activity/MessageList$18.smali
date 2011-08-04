@@ -3,12 +3,12 @@
 .source "MessageList.java"
 
 # interfaces
-.implements Lcom/android/email/activity/MessageList$MultiToggleHelper;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageList;->onMultiToggleFavorite(Ljava/util/Set;ZI)V
+    value = Lcom/android/email/activity/MessageList;->onFollowUpFlag(J)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/activity/MessageList;
 
+.field final synthetic val$id:J
+
 
 # direct methods
-.method constructor <init>(Lcom/android/email/activity/MessageList;)V
+.method constructor <init>(Lcom/android/email/activity/MessageList;J)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 3274
+    .line 3273
     iput-object p1, p0, Lcom/android/email/activity/MessageList$18;->this$0:Lcom/android/email/activity/MessageList;
+
+    iput-wide p2, p0, Lcom/android/email/activity/MessageList$18;->val$id:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,174 +42,89 @@
 
 
 # virtual methods
-.method public getField(JLandroid/database/Cursor;)Z
-    .locals 3
-    .parameter "messageId"
-    .parameter "c"
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 5
+    .parameter "dialog"
+    .parameter "item"
 
     .prologue
-    .line 3252
-    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
+    .line 3276
+    if-nez p2, :cond_2
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 3277
+    const/4 v0, 0x2
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 3282
+    .local v0, allWereSet:I
+    :goto_0
+    iget-object v2, p0, Lcom/android/email/activity/MessageList$18;->this$0:Lcom/android/email/activity/MessageList;
 
-    const-string v2, ">>>>>>>>>>>  getField Cursor >>>>>>>>>>>>>>>>>>>>>>>>> "
+    iget-wide v3, p0, Lcom/android/email/activity/MessageList$18;->val$id:J
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3, v4}, Lcom/android/email/activity/MessageList;->getFlag(J)I
 
-    move-result-object v1
+    move-result v1
 
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    .line 3283
+    .local v1, oldValue:I
+    if-eq v1, v0, :cond_0
 
-    move-result-object v1
+    .line 3284
+    iget-object v2, p0, Lcom/android/email/activity/MessageList$18;->this$0:Lcom/android/email/activity/MessageList;
 
-    const-string v2, ">>>>>>>>><<<<<<<<<<"
+    iget-wide v3, p0, Lcom/android/email/activity/MessageList$18;->val$id:J
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3, v4, v0}, Lcom/android/email/activity/MessageList;->access$3100(Lcom/android/email/activity/MessageList;JI)V
 
-    move-result-object v1
+    .line 3290
+    :cond_0
+    iget-object v2, p0, Lcom/android/email/activity/MessageList$18;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/4 v3, 0x0
 
-    move-result-object v1
+    invoke-static {v2, v3}, Lcom/android/email/activity/MessageList;->access$2900(Lcom/android/email/activity/MessageList;Z)V
 
-    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+    .line 3291
+    iget-object v2, p0, Lcom/android/email/activity/MessageList$18;->this$0:Lcom/android/email/activity/MessageList;
 
-    .line 3253
-    const/4 v0, 0x7
+    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$3000(Lcom/android/email/activity/MessageList;)Landroid/app/AlertDialog;
 
-    invoke-interface {p3, v0}, Landroid/database/Cursor;->getInt(I)I
+    move-result-object v2
 
-    move-result v0
+    if-eqz v2, :cond_1
 
-    if-eqz v0, :cond_0
+    .line 3292
+    iget-object v2, p0, Lcom/android/email/activity/MessageList$18;->this$0:Lcom/android/email/activity/MessageList;
 
+    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$3000(Lcom/android/email/activity/MessageList;)Landroid/app/AlertDialog;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/app/AlertDialog;->dismiss()V
+
+    .line 3293
+    :cond_1
+    return-void
+
+    .line 3278
+    .end local v0           #allWereSet:I
+    .end local v1           #oldValue:I
+    :cond_2
+    const/4 v2, 0x1
+
+    if-ne p2, v2, :cond_3
+
+    .line 3279
     const/4 v0, 0x1
 
-    :goto_0
-    return v0
+    .restart local v0       #allWereSet:I
+    goto :goto_0
 
-    :cond_0
+    .line 3281
+    .end local v0           #allWereSet:I
+    :cond_3
     const/4 v0, 0x0
 
+    .restart local v0       #allWereSet:I
     goto :goto_0
-.end method
-
-.method public getFlagField(JLandroid/database/Cursor;)I
-    .locals 3
-    .parameter "messageId"
-    .parameter "c"
-
-    .prologue
-    .line 3257
-    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, ">>>>>>>>>>>  getFlagField Cursor >>>>>>>>>>>>>>>>>>>>>>>>> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ">>>>>>>>><<<<<<<<<<"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-
-    .line 3258
-    const/4 v0, -0x1
-
-    return v0
-.end method
-
-.method public setField(JLandroid/database/Cursor;Z)Z
-    .locals 2
-    .parameter "messageId"
-    .parameter "c"
-    .parameter "newValue"
-
-    .prologue
-    .line 3262
-    invoke-virtual {p0, p1, p2, p3}, Lcom/android/email/activity/MessageList$18;->getField(JLandroid/database/Cursor;)Z
-
-    move-result v0
-
-    .line 3263
-    .local v0, oldValue:Z
-    if-eq v0, p4, :cond_0
-
-    .line 3264
-    iget-object v1, p0, Lcom/android/email/activity/MessageList$18;->this$0:Lcom/android/email/activity/MessageList;
-
-    invoke-static {v1, p1, p2, p4}, Lcom/android/email/activity/MessageList;->access$3300(Lcom/android/email/activity/MessageList;JZ)V
-
-    .line 3265
-    const/4 v1, 0x1
-
-    .line 3267
-    :goto_0
-    return v1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
-.method public setFlagField(JLandroid/database/Cursor;I)Z
-    .locals 3
-    .parameter "messageId"
-    .parameter "c"
-    .parameter "newValue"
-
-    .prologue
-    .line 3272
-    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, ">>>>>>>>>>>  setFlagField newValue >>>>>>>>>>>>>>>>>>>>>>> "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "<<<<<<<<<<"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-
-    .line 3273
-    const/4 v0, 0x0
-
-    return v0
 .end method

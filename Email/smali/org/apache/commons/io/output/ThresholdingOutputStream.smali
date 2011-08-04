@@ -11,23 +11,6 @@
 .field private written:J
 
 
-# direct methods
-.method public constructor <init>(I)V
-    .locals 0
-    .parameter "threshold"
-
-    .prologue
-    .line 76
-    invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
-
-    .line 77
-    iput p1, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->threshold:I
-
-    .line 78
-    return-void
-.end method
-
-
 # virtual methods
 .method protected checkThreshold(I)V
     .locals 4
@@ -124,76 +107,12 @@
     return-void
 .end method
 
-.method public getByteCount()J
-    .locals 2
-
-    .prologue
-    .line 186
-    iget-wide v0, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->written:J
-
-    return-wide v0
-.end method
-
 .method protected abstract getStream()Ljava/io/OutputStream;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
-.end method
-
-.method public getThreshold()I
-    .locals 1
-
-    .prologue
-    .line 175
-    iget v0, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->threshold:I
-
-    return v0
-.end method
-
-.method public isThresholdExceeded()Z
-    .locals 4
-
-    .prologue
-    .line 199
-    iget-wide v0, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->written:J
-
-    iget v2, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->threshold:I
-
-    int-to-long v2, v2
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method protected resetByteCount()V
-    .locals 2
-
-    .prologue
-    .line 231
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->thresholdExceeded:Z
-
-    .line 232
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->written:J
-
-    .line 233
-    return-void
 .end method
 
 .method protected abstract thresholdReached()V

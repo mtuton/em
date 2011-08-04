@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 247
+    .line 248
     iput-object p1, p0, Lcom/android/email/activity/setup/OoOSettings$8;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,16 +44,21 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 248
+    .line 251
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$8;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-static {v0, v1}, Lcom/android/email/activity/setup/OoOSettings;->access$002(Lcom/android/email/activity/setup/OoOSettings;Z)Z
 
-    .line 249
+    .line 252
+    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$8;->this$0:Lcom/android/email/activity/setup/OoOSettings;
+
+    invoke-static {v0}, Lcom/android/email/activity/setup/OoOSettings;->access$1300(Lcom/android/email/activity/setup/OoOSettings;)V
+
+    .line 253
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$8;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/setup/OoOSettings;->showDialog(I)V
 
-    .line 250
+    .line 254
     return-void
 .end method

@@ -3,7 +3,7 @@
 .source "MessagingController.java"
 
 # interfaces
-.implements Lcom/android/email/mail/MessageRetrievalListener;
+.implements Lcom/android/email/mail/Folder$MessageRetrievalListener;
 
 
 # annotations
@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 1308
+    .line 1317
     iput-object p1, p0, Lcom/android/email/MessagingController$7;->this$0:Lcom/android/email/MessagingController;
 
     iput-object p2, p0, Lcom/android/email/MessagingController$7;->val$account:Lcom/android/email/provider/EmailContent$Account;
@@ -47,16 +47,14 @@
 
 
 # virtual methods
-.method public messageFinished(Lcom/android/email/mail/Message;II)V
+.method public messageRetrieved(Lcom/android/email/mail/Message;)V
     .locals 6
     .parameter "message"
-    .parameter "number"
-    .parameter "ofTotal"
 
     .prologue
     const/4 v4, 0x1
 
-    .line 1304
+    .line 1322
     iget-object v0, p0, Lcom/android/email/MessagingController$7;->this$0:Lcom/android/email/MessagingController;
 
     iget-object v2, p0, Lcom/android/email/MessagingController$7;->val$account:Lcom/android/email/provider/EmailContent$Account;
@@ -69,17 +67,6 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/email/MessagingController;->access$800(Lcom/android/email/MessagingController;Lcom/android/email/mail/Message;Lcom/android/email/provider/EmailContent$Account;Lcom/android/email/provider/EmailContent$Mailbox;IZ)V
 
-    .line 1306
-    return-void
-.end method
-
-.method public messageStarted(Ljava/lang/String;II)V
-    .locals 0
-    .parameter "uid"
-    .parameter "number"
-    .parameter "ofTotal"
-
-    .prologue
-    .line 1309
+    .line 1324
     return-void
 .end method

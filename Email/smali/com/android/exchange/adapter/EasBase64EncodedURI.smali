@@ -3,82 +3,6 @@
 .source "EasBase64EncodedURI.java"
 
 
-# static fields
-.field private static final TAG:Ljava/lang/String; = "EasBase64EncodedURI"
-
-.field static final acceptMultiPart:B = 0x27t
-
-.field static final attachmentName:B = 0x0t
-
-.field static final collectionId:B = 0x1t
-
-.field static final collectionName:B = 0x2t
-
-.field static final createCollection:B = 0x6t
-
-.field static final deleteCollection:B = 0x7t
-
-.field static final folderCreate:B = 0xat
-
-.field static final folderDelete:B = 0xbt
-
-.field static final folderSync:B = 0x9t
-
-.field static final folderUpdate:B = 0xct
-
-.field static final getAttachment:B = 0x4t
-
-.field static final getHierarchy:B = 0x5t
-
-.field static final getItemEstimate:B = 0xet
-
-.field static final itemId:B = 0x3t
-
-.field static final itemOperations:B = 0x13t
-
-.field static final longId:B = 0x4t
-
-.field static final maxCommand:B = 0x17t
-
-.field static final maxParamTag:B = 0x3ft
-
-.field static final meetingResponse:B = 0xft
-
-.field static final moveCollection:B = 0x8t
-
-.field static final moveItems:B = 0xdt
-
-.field static final occurrence:B = 0x6t
-
-.field static final options:B = 0x7t
-
-.field static final parentId:B = 0x5t
-
-.field static final ping:B = 0x12t
-
-.field static final provision:B = 0x14t
-
-.field static final resolveRecipients:B = 0x15t
-
-.field static final roundTripId:B = 0x8t
-
-.field static final saveInSent:B = 0x17t
-
-.field static final search:B = 0x10t
-
-.field static final sendMail:B = 0x1t
-
-.field static final settings:B = 0x11t
-
-.field static final smartForward:B = 0x2t
-
-.field static final smartReply:B = 0x3t
-
-.field static final sync:B = 0x0t
-
-.field static final validateCert:B = 0x16t
-
-
 # instance fields
 .field mCmd:[B
 
@@ -120,10 +44,10 @@
 
     const/4 v2, 0x0
 
-    .line 153
+    .line 154
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
+    .line 19
     new-array v0, v4, [B
 
     const/16 v1, 0x79
@@ -132,15 +56,15 @@
 
     iput-object v0, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mProtocol:[B
 
-    .line 19
+    .line 20
     iput-object v2, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceId:Ljava/lang/String;
 
-    .line 20
+    .line 21
     const-string v0, "Android"
 
     iput-object v0, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceType:Ljava/lang/String;
 
-    .line 21
+    .line 22
     new-array v0, v4, [B
 
     const/16 v1, 0x17
@@ -149,16 +73,16 @@
 
     iput-object v0, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mCmd:[B
 
-    .line 22
+    .line 23
     iput-object v2, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mExtraCmd:Ljava/lang/String;
 
-    .line 23
+    .line 24
     iput-object v2, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mExtra:Ljava/lang/String;
 
-    .line 24
+    .line 25
     iput-object v2, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mPolicyKey:Ljava/lang/String;
 
-    .line 27
+    .line 28
     const/4 v0, 0x2
 
     new-array v0, v0, [B
@@ -167,28 +91,28 @@
 
     iput-object v0, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mLocale:[B
 
-    .line 154
+    .line 155
     iput-boolean p1, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mSsl:Z
 
-    .line 155
+    .line 156
     iput-boolean p2, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mTrustSsl:Z
 
-    .line 156
+    .line 157
     iput-object p3, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mHostAddress:Ljava/lang/String;
 
-    .line 157
+    .line 158
     iput-object p4, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mUserName:Ljava/lang/String;
 
-    .line 158
+    .line 159
     iput-object v2, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mExtraCmd:Ljava/lang/String;
 
-    .line 159
+    .line 160
     iput-object v2, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mExtra:Ljava/lang/String;
 
-    .line 160
+    .line 161
     return-void
 
-    .line 27
+    .line 28
     nop
 
     :array_0
@@ -207,12 +131,12 @@
     .end annotation
 
     .prologue
-    .line 218
+    .line 222
     new-instance v4, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v4}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 220
+    .line 224
     .local v4, buf:Ljava/io/ByteArrayOutputStream;
     const/16 v19, 0x5
 
@@ -222,7 +146,7 @@
 
     move-object v12, v0
 
-    .line 221
+    .line 225
     .local v12, policyByte:[B
     const/16 v19, 0x1
 
@@ -238,7 +162,7 @@
 
     aput-byte v20, v11, v19
 
-    .line 222
+    .line 226
     .local v11, optionsByte:[B
     const/16 v19, 0x1
 
@@ -254,7 +178,7 @@
 
     aput-byte v20, v9, v19
 
-    .line 223
+    .line 229
     .local v9, length:[B
     new-instance v19, Ljava/lang/StringBuilder;
 
@@ -299,7 +223,22 @@
 
     move-result-object v19
 
-    const-string v20, "/Microsoft-Server-ActiveSync?"
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mSsl:Z
+
+    move/from16 v20, v0
+
+    if-eqz v20, :cond_3
+
+    const-string v20, ":443"
+
+    :goto_1
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v19
+
+    const-string v20, "/Microsoft-Server-ActiveSync"
 
     invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -309,7 +248,7 @@
 
     move-result-object v17
 
-    .line 227
+    .line 234
     .local v17, us:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -323,7 +262,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    .line 229
+    .line 236
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mCmd:[B
@@ -336,7 +275,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    .line 231
+    .line 238
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mLocale:[B
@@ -349,16 +288,16 @@
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    .line 233
+    .line 240
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceId:Ljava/lang/String;
 
     move-object/from16 v19, v0
 
-    if-nez v19, :cond_3
+    if-nez v19, :cond_4
 
-    .line 235
+    .line 242
     const/16 v19, 0x0
 
     move-object v0, v4
@@ -367,17 +306,17 @@
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 248
-    :goto_1
+    .line 255
+    :goto_2
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mPolicyKey:Ljava/lang/String;
 
     move-object/from16 v19, v0
 
-    if-nez v19, :cond_5
+    if-nez v19, :cond_6
 
-    .line 250
+    .line 257
     const/16 v19, 0x0
 
     move-object v0, v4
@@ -386,17 +325,17 @@
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 281
-    :goto_2
+    .line 288
+    :goto_3
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceType:Ljava/lang/String;
 
     move-object/from16 v19, v0
 
-    if-nez v19, :cond_a
+    if-nez v19, :cond_b
 
-    .line 283
+    .line 290
     const/16 v19, 0x0
 
     move-object v0, v4
@@ -405,8 +344,8 @@
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 296
-    :goto_3
+    .line 303
+    :goto_4
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mExtraCmd:Ljava/lang/String;
@@ -423,7 +362,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/android/exchange/adapter/EasBase64EncodedURI;->writeCmdParams(Ljava/io/OutputStream;[BLjava/lang/String;)V
 
-    .line 298
+    .line 305
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mExtra:Ljava/lang/String;
@@ -440,14 +379,14 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/android/exchange/adapter/EasBase64EncodedURI;->writeCmdParams(Ljava/io/OutputStream;[BLjava/lang/String;)V
 
-    .line 301
+    .line 308
     const/16 v19, 0x0
 
     aget-byte v19, v11, v19
 
     if-eqz v19, :cond_0
 
-    .line 303
+    .line 310
     const/16 v19, 0x7
 
     move-object v0, v4
@@ -456,7 +395,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 305
+    .line 312
     const/16 v19, 0x1
 
     move-object v0, v4
@@ -465,7 +404,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 307
+    .line 314
     const/16 v19, 0x0
 
     aget-byte v19, v11, v19
@@ -476,13 +415,13 @@
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 314
+    .line 321
     :cond_0
     invoke-virtual {v4}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v5
 
-    .line 316
+    .line 323
     .local v5, byteData:[B
     new-instance v6, Ljava/lang/String;
 
@@ -496,7 +435,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
 
-    .line 317
+    .line 324
     .local v6, encoded:Ljava/lang/String;
     const-string v19, "EasBase64EncodedURI"
 
@@ -524,7 +463,7 @@
 
     invoke-static/range {v19 .. v20}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 318
+    .line 325
     new-instance v19, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
@@ -549,10 +488,10 @@
 
     move-result-object v17
 
-    .line 319
+    .line 326
     return-object v17
 
-    .line 223
+    .line 229
     .end local v5           #byteData:[B
     .end local v6           #encoded:Ljava/lang/String;
     .end local v17           #us:Ljava/lang/String;
@@ -566,9 +505,14 @@
 
     goto/16 :goto_0
 
-    .line 237
-    .restart local v17       #us:Ljava/lang/String;
     :cond_3
+    const-string v20, ""
+
+    goto/16 :goto_1
+
+    .line 244
+    .restart local v17       #us:Ljava/lang/String;
+    :cond_4
     const/16 v19, 0x0
 
     move-object/from16 v0, p0
@@ -589,7 +533,7 @@
 
     aput-byte v20, v9, v19
 
-    .line 239
+    .line 246
     const/16 v19, 0x0
 
     aget-byte v19, v9, v19
@@ -600,9 +544,9 @@
 
     move/from16 v1, v20
 
-    if-le v0, v1, :cond_4
+    if-le v0, v1, :cond_5
 
-    .line 240
+    .line 247
     const/16 v19, 0x0
 
     aget-byte v19, v9, v19
@@ -611,7 +555,7 @@
 
     sub-int v10, v19, v20
 
-    .line 241
+    .line 248
     .local v10, lengthExtra:I
     move-object/from16 v0, p0
 
@@ -633,19 +577,19 @@
 
     iput-object v0, v1, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceId:Ljava/lang/String;
 
-    .line 242
+    .line 249
     const/16 v19, 0x0
 
     const/16 v20, 0x10
 
     aput-byte v20, v9, v19
 
-    .line 244
+    .line 251
     .end local v10           #lengthExtra:I
-    :cond_4
+    :cond_5
     invoke-virtual {v4, v9}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    .line 245
+    .line 252
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceId:Ljava/lang/String;
@@ -660,10 +604,10 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/exchange/adapter/EasBase64EncodedURI;->writeLiteralString(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
-    .line 252
-    :cond_5
+    .line 259
+    :cond_6
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mPolicyKey:Ljava/lang/String;
@@ -676,49 +620,49 @@
 
     move-result v18
 
-    .line 253
+    .line 260
     .local v18, zeroPolicy:Z
-    if-eqz v18, :cond_7
+    if-eqz v18, :cond_8
 
-    .line 254
+    .line 261
     const/4 v8, 0x1
 
     .local v8, i:I
-    :goto_4
+    :goto_5
     const/16 v19, 0x5
 
     move v0, v8
 
     move/from16 v1, v19
 
-    if-ge v0, v1, :cond_6
+    if-ge v0, v1, :cond_7
 
-    .line 255
+    .line 262
     const/16 v19, 0x0
 
     aput-byte v19, v12, v8
 
-    .line 254
+    .line 261
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_4
+    goto :goto_5
 
-    .line 257
-    :cond_6
+    .line 264
+    :cond_7
     const/16 v19, 0x0
 
     const/16 v20, 0x4
 
     aput-byte v20, v12, v19
 
-    .line 258
+    .line 265
     invoke-virtual {v4, v12}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
-    .line 260
+    .line 267
     .end local v8           #i:I
-    :cond_7
+    :cond_8
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mPolicyKey:Ljava/lang/String;
@@ -733,19 +677,19 @@
 
     move-result-wide v14
 
-    .line 261
+    .line 268
     .local v14, policyKeyValue:J
     invoke-static {v14, v15}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
 
     move-result-object v13
 
-    .line 262
+    .line 269
     .local v13, policyKeyString:Ljava/lang/String;
     invoke-virtual {v13}, Ljava/lang/String;->length()I
 
     move-result v16
 
-    .line 264
+    .line 271
     .local v16, size:I
     const/16 v19, 0x8
 
@@ -753,9 +697,9 @@
 
     move/from16 v1, v19
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_9
 
-    .line 266
+    .line 273
     const/16 v19, 0x0
 
     move-object v0, v4
@@ -764,23 +708,23 @@
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
-    .line 268
-    :cond_8
+    .line 275
+    :cond_9
     const/4 v8, 0x0
 
     .restart local v8       #i:I
-    :goto_5
+    :goto_6
     const/16 v19, 0x4
 
     move v0, v8
 
     move/from16 v1, v19
 
-    if-ge v0, v1, :cond_9
+    if-ge v0, v1, :cond_a
 
-    .line 269
+    .line 276
     const/16 v19, 0x4
 
     sub-int v19, v19, v8
@@ -827,20 +771,20 @@
 
     aput-byte v20, v12, v19
 
-    .line 268
+    .line 275
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_5
+    goto :goto_6
 
-    .line 273
-    :cond_9
+    .line 280
+    :cond_a
     const/16 v19, 0x0
 
     const/16 v20, 0x4
 
     aput-byte v20, v12, v19
 
-    .line 274
+    .line 281
     const-string v19, "EasBase64EncodedURI"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -923,18 +867,18 @@
 
     invoke-static/range {v19 .. v20}, Lcom/android/exchange/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 276
+    .line 283
     invoke-virtual {v4, v12}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
-    .line 285
+    .line 292
     .end local v8           #i:I
     .end local v13           #policyKeyString:Ljava/lang/String;
     .end local v14           #policyKeyValue:J
     .end local v16           #size:I
     .end local v18           #zeroPolicy:Z
-    :cond_a
+    :cond_b
     const/16 v19, 0x0
 
     move-object/from16 v0, p0
@@ -955,7 +899,7 @@
 
     aput-byte v20, v9, v19
 
-    .line 287
+    .line 294
     const/16 v19, 0x0
 
     aget-byte v19, v9, v19
@@ -966,9 +910,9 @@
 
     move/from16 v1, v20
 
-    if-le v0, v1, :cond_b
+    if-le v0, v1, :cond_c
 
-    .line 288
+    .line 295
     const/16 v19, 0x0
 
     aget-byte v19, v9, v19
@@ -977,7 +921,7 @@
 
     sub-int v7, v19, v20
 
-    .line 289
+    .line 296
     .local v7, extra:I
     move-object/from16 v0, p0
 
@@ -999,19 +943,19 @@
 
     iput-object v0, v1, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceType:Ljava/lang/String;
 
-    .line 290
+    .line 297
     const/16 v19, 0x0
 
     const/16 v20, 0x10
 
     aput-byte v20, v9, v19
 
-    .line 292
+    .line 299
     .end local v7           #extra:I
-    :cond_b
+    :cond_c
     invoke-virtual {v4, v9}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    .line 293
+    .line 300
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceType:Ljava/lang/String;
@@ -1026,7 +970,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/exchange/adapter/EasBase64EncodedURI;->writeLiteralString(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 .end method
 
 .method private getCommandCode(Ljava/lang/String;)B
@@ -1034,12 +978,12 @@
     .parameter "command"
 
     .prologue
-    .line 57
+    .line 58
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 58
+    .line 59
     .local v0, cmd:Ljava/lang/String;
     const-string v1, "sync"
 
@@ -1049,14 +993,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 59
+    .line 60
     const/4 v1, 0x0
 
-    .line 106
+    .line 107
     :goto_0
     return v1
 
-    .line 60
+    .line 61
     :cond_0
     const-string v1, "sendmail"
 
@@ -1066,12 +1010,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 61
+    .line 62
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 62
+    .line 63
     :cond_1
     const-string v1, "smartforward"
 
@@ -1081,12 +1025,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 63
+    .line 64
     const/4 v1, 0x2
 
     goto :goto_0
 
-    .line 64
+    .line 65
     :cond_2
     const-string v1, "smartreply"
 
@@ -1096,12 +1040,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 65
+    .line 66
     const/4 v1, 0x3
 
     goto :goto_0
 
-    .line 66
+    .line 67
     :cond_3
     const-string v1, "getattachment"
 
@@ -1111,12 +1055,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 67
+    .line 68
     const/4 v1, 0x4
 
     goto :goto_0
 
-    .line 68
+    .line 69
     :cond_4
     const-string v1, "gethierarchy"
 
@@ -1126,12 +1070,12 @@
 
     if-eqz v1, :cond_5
 
-    .line 69
+    .line 70
     const/4 v1, 0x5
 
     goto :goto_0
 
-    .line 70
+    .line 71
     :cond_5
     const-string v1, "createcollection"
 
@@ -1141,12 +1085,12 @@
 
     if-eqz v1, :cond_6
 
-    .line 71
+    .line 72
     const/4 v1, 0x6
 
     goto :goto_0
 
-    .line 72
+    .line 73
     :cond_6
     const-string v1, "deletecollection"
 
@@ -1156,12 +1100,12 @@
 
     if-eqz v1, :cond_7
 
-    .line 73
+    .line 74
     const/4 v1, 0x7
 
     goto :goto_0
 
-    .line 74
+    .line 75
     :cond_7
     const-string v1, "movecollection"
 
@@ -1171,12 +1115,12 @@
 
     if-eqz v1, :cond_8
 
-    .line 75
+    .line 76
     const/16 v1, 0x8
 
     goto :goto_0
 
-    .line 76
+    .line 77
     :cond_8
     const-string v1, "foldersync"
 
@@ -1186,12 +1130,12 @@
 
     if-eqz v1, :cond_9
 
-    .line 77
+    .line 78
     const/16 v1, 0x9
 
     goto :goto_0
 
-    .line 78
+    .line 79
     :cond_9
     const-string v1, "foldercreate"
 
@@ -1201,12 +1145,12 @@
 
     if-eqz v1, :cond_a
 
-    .line 79
+    .line 80
     const/16 v1, 0xa
 
     goto :goto_0
 
-    .line 80
+    .line 81
     :cond_a
     const-string v1, "folderdelete"
 
@@ -1216,12 +1160,12 @@
 
     if-eqz v1, :cond_b
 
-    .line 81
+    .line 82
     const/16 v1, 0xb
 
     goto :goto_0
 
-    .line 82
+    .line 83
     :cond_b
     const-string v1, "folderupdate"
 
@@ -1231,12 +1175,12 @@
 
     if-eqz v1, :cond_c
 
-    .line 83
+    .line 84
     const/16 v1, 0xc
 
     goto :goto_0
 
-    .line 84
+    .line 85
     :cond_c
     const-string v1, "moveitems"
 
@@ -1246,12 +1190,12 @@
 
     if-eqz v1, :cond_d
 
-    .line 85
+    .line 86
     const/16 v1, 0xd
 
     goto/16 :goto_0
 
-    .line 86
+    .line 87
     :cond_d
     const-string v1, "getitemestimate"
 
@@ -1261,12 +1205,12 @@
 
     if-eqz v1, :cond_e
 
-    .line 87
+    .line 88
     const/16 v1, 0xe
 
     goto/16 :goto_0
 
-    .line 88
+    .line 89
     :cond_e
     const-string v1, "meetingresponse"
 
@@ -1276,12 +1220,12 @@
 
     if-eqz v1, :cond_f
 
-    .line 89
+    .line 90
     const/16 v1, 0xf
 
     goto/16 :goto_0
 
-    .line 90
+    .line 91
     :cond_f
     const-string v1, "search"
 
@@ -1291,12 +1235,12 @@
 
     if-eqz v1, :cond_10
 
-    .line 91
+    .line 92
     const/16 v1, 0x10
 
     goto/16 :goto_0
 
-    .line 92
+    .line 93
     :cond_10
     const-string v1, "settings"
 
@@ -1306,12 +1250,12 @@
 
     if-eqz v1, :cond_11
 
-    .line 93
+    .line 94
     const/16 v1, 0x11
 
     goto/16 :goto_0
 
-    .line 94
+    .line 95
     :cond_11
     const-string v1, "ping"
 
@@ -1321,12 +1265,12 @@
 
     if-eqz v1, :cond_12
 
-    .line 95
+    .line 96
     const/16 v1, 0x12
 
     goto/16 :goto_0
 
-    .line 96
+    .line 97
     :cond_12
     const-string v1, "itemoperations"
 
@@ -1336,12 +1280,12 @@
 
     if-eqz v1, :cond_13
 
-    .line 97
+    .line 98
     const/16 v1, 0x13
 
     goto/16 :goto_0
 
-    .line 98
+    .line 99
     :cond_13
     const-string v1, "provision"
 
@@ -1351,12 +1295,12 @@
 
     if-eqz v1, :cond_14
 
-    .line 99
+    .line 100
     const/16 v1, 0x14
 
     goto/16 :goto_0
 
-    .line 100
+    .line 101
     :cond_14
     const-string v1, "resolverecipients"
 
@@ -1366,12 +1310,12 @@
 
     if-eqz v1, :cond_15
 
-    .line 101
+    .line 102
     const/16 v1, 0x15
 
     goto/16 :goto_0
 
-    .line 102
+    .line 103
     :cond_15
     const-string v1, "validatecert"
 
@@ -1381,12 +1325,12 @@
 
     if-eqz v1, :cond_16
 
-    .line 103
+    .line 104
     const/16 v1, 0x16
 
     goto/16 :goto_0
 
-    .line 106
+    .line 107
     :cond_16
     const/16 v1, 0x17
 
@@ -1398,12 +1342,12 @@
     .parameter "parameters"
 
     .prologue
-    .line 123
+    .line 124
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 124
+    .line 125
     .local v0, paramName:Ljava/lang/String;
     const-string v1, "attachmentname"
 
@@ -1413,14 +1357,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 125
+    .line 126
     const/4 v1, 0x0
 
-    .line 148
+    .line 149
     :goto_0
     return v1
 
-    .line 126
+    .line 127
     :cond_0
     const-string v1, "collectionid"
 
@@ -1430,12 +1374,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 127
+    .line 128
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 128
+    .line 129
     :cond_1
     const-string v1, "collectionname"
 
@@ -1445,12 +1389,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 129
+    .line 130
     const/4 v1, 0x2
 
     goto :goto_0
 
-    .line 130
+    .line 131
     :cond_2
     const-string v1, "itemid"
 
@@ -1460,12 +1404,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 131
+    .line 132
     const/4 v1, 0x3
 
     goto :goto_0
 
-    .line 132
+    .line 133
     :cond_3
     const-string v1, "longid"
 
@@ -1475,12 +1419,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 133
+    .line 134
     const/4 v1, 0x4
 
     goto :goto_0
 
-    .line 134
+    .line 135
     :cond_4
     const-string v1, "parentid"
 
@@ -1490,12 +1434,12 @@
 
     if-eqz v1, :cond_5
 
-    .line 135
+    .line 136
     const/4 v1, 0x5
 
     goto :goto_0
 
-    .line 136
+    .line 137
     :cond_5
     const-string v1, "occurrence"
 
@@ -1505,12 +1449,12 @@
 
     if-eqz v1, :cond_6
 
-    .line 137
+    .line 138
     const/4 v1, 0x6
 
     goto :goto_0
 
-    .line 138
+    .line 139
     :cond_6
     const-string v1, "options"
 
@@ -1520,12 +1464,12 @@
 
     if-eqz v1, :cond_7
 
-    .line 139
+    .line 140
     const/4 v1, 0x7
 
     goto :goto_0
 
-    .line 140
+    .line 141
     :cond_7
     const-string v1, "roundtripid"
 
@@ -1535,12 +1479,12 @@
 
     if-eqz v1, :cond_8
 
-    .line 141
+    .line 142
     const/16 v1, 0x8
 
     goto :goto_0
 
-    .line 142
+    .line 143
     :cond_8
     const-string v1, "saveinsent"
 
@@ -1550,12 +1494,12 @@
 
     if-eqz v1, :cond_9
 
-    .line 143
+    .line 144
     const/16 v1, 0x17
 
     goto :goto_0
 
-    .line 144
+    .line 145
     :cond_9
     const-string v1, "acceptmultipart"
 
@@ -1565,12 +1509,12 @@
 
     if-eqz v1, :cond_a
 
-    .line 145
+    .line 146
     const/16 v1, 0x27
 
     goto :goto_0
 
-    .line 148
+    .line 149
     :cond_a
     const/16 v1, 0x3f
 
@@ -1582,29 +1526,29 @@
     .parameter "b"
 
     .prologue
-    .line 201
+    .line 205
     const/16 v1, 0x61
 
     if-lt p0, v1, :cond_0
 
-    .line 202
+    .line 206
     const/16 v1, 0x57
 
     sub-int v1, p0, v1
 
     int-to-char v0, v1
 
-    .line 206
+    .line 210
     .local v0, num:C
     :goto_0
     and-int/lit8 v1, v0, 0xf
 
     int-to-char v0, v1
 
-    .line 207
+    .line 211
     return v0
 
-    .line 204
+    .line 208
     .end local v0           #num:C
     :cond_0
     const/16 v1, 0x30
@@ -1629,20 +1573,20 @@
     .end annotation
 
     .prologue
-    .line 324
+    .line 331
     if-nez p3, :cond_1
 
-    .line 385
+    .line 392
     :cond_0
     return-void
 
-    .line 328
+    .line 335
     :cond_1
     invoke-virtual {p3}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    .line 329
+    .line 336
     .local v0, extraLen:I
     const/4 v10, 0x1
 
@@ -1654,7 +1598,7 @@
 
     aput-byte v11, v1, v10
 
-    .line 331
+    .line 338
     .local v1, length:[B
     const/4 v10, 0x1
 
@@ -1662,31 +1606,31 @@
 
     move-result-object p3
 
-    .line 332
+    .line 339
     :goto_0
     if-lez v0, :cond_0
 
-    .line 335
+    .line 342
     const/16 v10, 0x26
 
     invoke-virtual {p3, v10}, Ljava/lang/String;->indexOf(I)I
 
     move-result v3
 
-    .line 336
+    .line 343
     .local v3, myLength:I
     const/4 v10, -0x1
 
     if-eq v3, v10, :cond_4
 
-    .line 337
+    .line 344
     const/4 v10, 0x0
 
     invoke-virtual {p3, v10, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 339
+    .line 346
     .local v2, myExtra:Ljava/lang/String;
     add-int/lit8 v10, v3, 0x1
 
@@ -1694,7 +1638,7 @@
 
     move-result-object p3
 
-    .line 345
+    .line 352
     :goto_1
     const/16 v10, 0x3d
 
@@ -1702,13 +1646,13 @@
 
     move-result v9
 
-    .line 346
+    .line 353
     .local v9, tagLength:I
     const/4 v10, -0x1
 
     if-ne v9, v10, :cond_2
 
-    .line 349
+    .line 356
     :cond_2
     const/4 v10, 0x0
 
@@ -1716,7 +1660,7 @@
 
     move-result-object v5
 
-    .line 350
+    .line 357
     .local v5, paramsTag:Ljava/lang/String;
     add-int/lit8 v10, v9, 0x1
 
@@ -1724,7 +1668,7 @@
 
     move-result-object v7
 
-    .line 353
+    .line 360
     .local v7, paramsValue:Ljava/lang/String;
     const/4 v10, 0x1
 
@@ -1736,13 +1680,13 @@
 
     aput-byte v11, v8, v10
 
-    .line 354
+    .line 361
     .local v8, tag:[B
     invoke-direct {p0, v5}, Lcom/android/exchange/adapter/EasBase64EncodedURI;->getParameterTag(Ljava/lang/String;)B
 
     move-result v6
 
-    .line 355
+    .line 362
     .local v6, paramsTagByte:I
     const/4 v10, 0x0
 
@@ -1752,7 +1696,7 @@
 
     if-ne v10, v11, :cond_3
 
-    .line 358
+    .line 365
     :cond_3
     const/4 v10, 0x0
 
@@ -1762,7 +1706,7 @@
 
     aput-byte v11, v8, v10
 
-    .line 359
+    .line 366
     const/4 v10, 0x0
 
     aget-byte v10, v8, v10
@@ -1771,14 +1715,14 @@
 
     if-ne v10, v11, :cond_5
 
-    .line 362
+    .line 369
     and-int/lit8 v10, v6, 0x30
 
     shr-int/lit8 v10, v10, 0x4
 
     int-to-byte v4, v10
 
-    .line 363
+    .line 370
     .local v4, optionValueByte:B
     const/4 v10, 0x0
 
@@ -1790,20 +1734,20 @@
 
     aput-byte v11, p2, v10
 
-    .line 380
+    .line 387
     .end local v4           #optionValueByte:B
     :goto_2
     if-eqz p3, :cond_0
 
-    .line 383
+    .line 390
     invoke-virtual {p3}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    .line 384
+    .line 391
     goto :goto_0
 
-    .line 341
+    .line 348
     .end local v2           #myExtra:Ljava/lang/String;
     .end local v5           #paramsTag:Ljava/lang/String;
     .end local v6           #paramsTagByte:I
@@ -1817,13 +1761,13 @@
 
     move-result-object v2
 
-    .line 342
+    .line 349
     .restart local v2       #myExtra:Ljava/lang/String;
     const/4 p3, 0x0
 
     goto :goto_1
 
-    .line 367
+    .line 374
     .restart local v5       #paramsTag:Ljava/lang/String;
     .restart local v6       #paramsTagByte:I
     .restart local v7       #paramsValue:Ljava/lang/String;
@@ -1832,17 +1776,17 @@
     :cond_5
     invoke-virtual {p1, v8}, Ljava/io/OutputStream;->write([B)V
 
-    .line 369
+    .line 376
     if-nez v7, :cond_6
 
-    .line 371
+    .line 378
     const/4 v10, 0x0
 
     invoke-virtual {p1, v10}, Ljava/io/OutputStream;->write(I)V
 
     goto :goto_2
 
-    .line 373
+    .line 380
     :cond_6
     const/4 v10, 0x0
 
@@ -1854,10 +1798,10 @@
 
     aput-byte v11, v1, v10
 
-    .line 375
+    .line 382
     invoke-virtual {p1, v1}, Ljava/io/OutputStream;->write([B)V
 
-    .line 376
+    .line 383
     invoke-direct {p0, p1, v7}, Lcom/android/exchange/adapter/EasBase64EncodedURI;->writeLiteralString(Ljava/io/OutputStream;Ljava/lang/String;)V
 
     goto :goto_2
@@ -1874,21 +1818,21 @@
     .end annotation
 
     .prologue
-    .line 211
+    .line 215
     if-eqz p2, :cond_0
 
-    .line 212
+    .line 216
     const-string v1, "UTF-8"
 
     invoke-virtual {p2, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 213
+    .line 217
     .local v0, data:[B
     invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write([B)V
 
-    .line 215
+    .line 219
     .end local v0           #data:[B
     :cond_0
     return-void
@@ -1897,7 +1841,7 @@
 
 # virtual methods
 .method public getUriString(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 9
+    .locals 12
     .parameter "protocolVersion"
     .parameter "cmd"
     .parameter "extra"
@@ -1906,139 +1850,163 @@
     .parameter "deviceType"
 
     .prologue
-    const/16 v8, 0x10
+    .line 166
+    invoke-static {p1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    const/4 v7, 0x0
+    move-result-wide v7
 
-    .line 164
-    const-string v5, "14.0"
+    .line 167
+    .local v7, version:D
+    const-wide/high16 v9, 0x402c
 
-    invoke-virtual {p1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    cmpl-double v9, v7, v9
 
-    move-result v5
+    if-ltz v9, :cond_2
 
-    if-eqz v5, :cond_2
+    .line 169
+    iget-object v9, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mProtocol:[B
 
-    .line 165
-    iget-object v5, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mProtocol:[B
+    const/4 v10, 0x0
 
-    const/16 v6, -0x74
+    const/16 v11, -0x74
 
-    aput-byte v6, v5, v7
+    aput-byte v11, v9, v10
 
-    .line 170
+    .line 174
     :goto_0
-    const/16 v5, 0x26
+    const/16 v9, 0x26
 
-    invoke-virtual {p2, v5}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {p2, v9}, Ljava/lang/String;->indexOf(I)I
 
-    move-result v0
+    move-result v2
 
-    .line 171
-    .local v0, cmdLength:I
-    const/4 v5, -0x1
+    .line 175
+    .local v2, cmdLength:I
+    const/4 v9, -0x1
 
-    if-eq v0, v5, :cond_0
+    if-eq v2, v9, :cond_0
 
-    .line 172
-    invoke-virtual {p2, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    .line 176
+    invoke-virtual {p2, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v9
 
-    iput-object v5, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mExtraCmd:Ljava/lang/String;
+    iput-object v9, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mExtraCmd:Ljava/lang/String;
 
-    .line 173
-    invoke-virtual {p2, v7, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    .line 177
+    const/4 v9, 0x0
+
+    invoke-virtual {p2, v9, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 175
+    .line 179
     :cond_0
-    iget-object v5, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mCmd:[B
+    iget-object v9, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mCmd:[B
+
+    const/4 v10, 0x0
 
     invoke-direct {p0, p2}, Lcom/android/exchange/adapter/EasBase64EncodedURI;->getCommandCode(Ljava/lang/String;)B
 
-    move-result v6
+    move-result v11
 
-    aput-byte v6, v5, v7
+    aput-byte v11, v9, v10
 
-    .line 176
+    .line 180
     iput-object p3, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mExtra:Ljava/lang/String;
 
-    .line 177
-    iput-object p4, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceId:Ljava/lang/String;
+    .line 181
+    move-object/from16 v0, p4
 
-    .line 178
-    iput-object p5, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mPolicyKey:Ljava/lang/String;
+    move-object v1, p0
 
-    .line 179
-    iput-object p6, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceType:Ljava/lang/String;
+    iput-object v0, v1, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceId:Ljava/lang/String;
 
     .line 182
-    iget-object v5, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceId:Ljava/lang/String;
+    move-object/from16 v0, p5
 
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
+    move-object v1, p0
 
-    move-result v3
+    iput-object v0, v1, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mPolicyKey:Ljava/lang/String;
 
     .line 183
-    .local v3, idLength:I
-    if-le v3, v8, :cond_1
+    move-object/from16 v0, p6
 
-    .line 184
-    sub-int v4, v3, v8
+    move-object v1, p0
 
-    .line 185
-    .local v4, index:I
-    iget-object v5, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceId:Ljava/lang/String;
+    iput-object v0, v1, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceType:Ljava/lang/String;
 
-    invoke-virtual {v5, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    .line 186
+    iget-object v9, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceId:Ljava/lang/String;
 
-    move-result-object v5
+    invoke-virtual {v9}, Ljava/lang/String;->length()I
 
-    iput-object v5, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceId:Ljava/lang/String;
+    move-result v5
+
+    .line 187
+    .local v5, idLength:I
+    const/16 v9, 0x10
+
+    if-le v5, v9, :cond_1
+
+    .line 188
+    const/16 v9, 0x10
+
+    sub-int v6, v5, v9
 
     .line 189
-    .end local v4           #index:I
-    :cond_1
-    const/4 v2, 0x0
+    .local v6, index:I
+    iget-object v9, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceId:Ljava/lang/String;
 
-    .line 191
-    .local v2, encodedURI:Ljava/lang/String;
+    invoke-virtual {v9, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    iput-object v9, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mDeviceId:Ljava/lang/String;
+
+    .line 193
+    .end local v6           #index:I
+    :cond_1
+    const/4 v4, 0x0
+
+    .line 195
+    .local v4, encodedURI:Ljava/lang/String;
     :try_start_0
     invoke-direct {p0}, Lcom/android/exchange/adapter/EasBase64EncodedURI;->encodeUriString()Ljava/lang/String;
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v2
+    move-result-object v4
 
-    .line 196
+    .line 200
     :goto_1
-    return-object v2
+    return-object v4
 
-    .line 167
-    .end local v0           #cmdLength:I
-    .end local v2           #encodedURI:Ljava/lang/String;
-    .end local v3           #idLength:I
+    .line 171
+    .end local v2           #cmdLength:I
+    .end local v4           #encodedURI:Ljava/lang/String;
+    .end local v5           #idLength:I
     :cond_2
-    iget-object v5, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mProtocol:[B
+    iget-object v9, p0, Lcom/android/exchange/adapter/EasBase64EncodedURI;->mProtocol:[B
 
-    const/16 v6, 0x79
+    const/4 v10, 0x0
 
-    aput-byte v6, v5, v7
+    const/16 v11, 0x79
+
+    aput-byte v11, v9, v10
 
     goto :goto_0
 
-    .line 192
-    .restart local v0       #cmdLength:I
-    .restart local v2       #encodedURI:Ljava/lang/String;
-    .restart local v3       #idLength:I
+    .line 196
+    .restart local v2       #cmdLength:I
+    .restart local v4       #encodedURI:Ljava/lang/String;
+    .restart local v5       #idLength:I
     :catch_0
-    move-exception v1
+    move-exception v3
 
-    .line 194
-    .local v1, e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    .line 198
+    .local v3, e:Ljava/io/IOException;
+    invoke-virtual {v3}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_1
 .end method

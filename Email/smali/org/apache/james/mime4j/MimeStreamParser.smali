@@ -4,8 +4,6 @@
 
 
 # static fields
-.field private static final DEBUG_LOG_MESSAGE:Z
-
 .field private static fieldChars:Ljava/util/BitSet;
 
 .field private static final log:Lorg/apache/james/mime4j/Log;
@@ -27,30 +25,29 @@
 
     .prologue
     .line 54
-    const-class v1, Lorg/apache/james/mime4j/MimeStreamParser;
+    const-class v0, Lorg/apache/james/mime4j/MimeStreamParser;
 
-    invoke-static {v1}, Lorg/apache/james/mime4j/LogFactory;->getLog(Ljava/lang/Class;)Lorg/apache/james/mime4j/Log;
+    invoke-static {v0}, Lorg/apache/james/mime4j/LogFactory;->getLog(Ljava/lang/Class;)Lorg/apache/james/mime4j/Log;
 
-    move-result-object v1
+    move-result-object v0
 
-    sput-object v1, Lorg/apache/james/mime4j/MimeStreamParser;->log:Lorg/apache/james/mime4j/Log;
+    sput-object v0, Lorg/apache/james/mime4j/MimeStreamParser;->log:Lorg/apache/james/mime4j/Log;
 
     .line 58
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    sput-object v1, Lorg/apache/james/mime4j/MimeStreamParser;->fieldChars:Ljava/util/BitSet;
+    sput-object v0, Lorg/apache/james/mime4j/MimeStreamParser;->fieldChars:Ljava/util/BitSet;
 
     .line 66
-    new-instance v1, Ljava/util/BitSet;
+    new-instance v0, Ljava/util/BitSet;
 
-    invoke-direct {v1}, Ljava/util/BitSet;-><init>()V
+    invoke-direct {v0}, Ljava/util/BitSet;-><init>()V
 
-    sput-object v1, Lorg/apache/james/mime4j/MimeStreamParser;->fieldChars:Ljava/util/BitSet;
+    sput-object v0, Lorg/apache/james/mime4j/MimeStreamParser;->fieldChars:Ljava/util/BitSet;
 
     .line 67
     const/16 v0, 0x21
 
-    .local v0, i:I
     :goto_0
     const/16 v1, 0x39
 
@@ -919,16 +916,6 @@
 
 
 # virtual methods
-.method public isRaw()Z
-    .locals 1
-
-    .prologue
-    .line 103
-    iget-boolean v0, p0, Lorg/apache/james/mime4j/MimeStreamParser;->raw:Z
-
-    return v0
-.end method
-
 .method public parse(Ljava/io/InputStream;)V
     .locals 1
     .parameter "is"
@@ -964,18 +951,6 @@
     iput-object p1, p0, Lorg/apache/james/mime4j/MimeStreamParser;->handler:Lorg/apache/james/mime4j/ContentHandler;
 
     .line 329
-    return-void
-.end method
-
-.method public setRaw(Z)V
-    .locals 0
-    .parameter "raw"
-
-    .prologue
-    .line 117
-    iput-boolean p1, p0, Lorg/apache/james/mime4j/MimeStreamParser;->raw:Z
-
-    .line 118
     return-void
 .end method
 

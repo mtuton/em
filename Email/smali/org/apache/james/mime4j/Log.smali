@@ -116,36 +116,6 @@
     goto :goto_0
 .end method
 
-.method public debug(Ljava/lang/Object;Ljava/lang/Throwable;)V
-    .locals 2
-    .parameter "message"
-    .parameter "t"
-
-    .prologue
-    .line 68
-    invoke-virtual {p0}, Lorg/apache/james/mime4j/Log;->isDebugEnabled()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 70
-    :goto_0
-    return-void
-
-    .line 69
-    :cond_0
-    const-string v0, "Email"
-
-    invoke-static {p1, p2}, Lorg/apache/james/mime4j/Log;->toString(Ljava/lang/Object;Ljava/lang/Throwable;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-.end method
-
 .method public error(Ljava/lang/Object;)V
     .locals 2
     .parameter "message"
@@ -163,64 +133,6 @@
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 92
-    return-void
-.end method
-
-.method public error(Ljava/lang/Object;Ljava/lang/Throwable;)V
-    .locals 2
-    .parameter "message"
-    .parameter "t"
-
-    .prologue
-    .line 95
-    const-string v0, "Email"
-
-    invoke-static {p1, p2}, Lorg/apache/james/mime4j/Log;->toString(Ljava/lang/Object;Ljava/lang/Throwable;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 96
-    return-void
-.end method
-
-.method public fatal(Ljava/lang/Object;)V
-    .locals 2
-    .parameter "message"
-
-    .prologue
-    .line 99
-    const-string v0, "Email"
-
-    const/4 v1, 0x0
-
-    invoke-static {p1, v1}, Lorg/apache/james/mime4j/Log;->toString(Ljava/lang/Object;Ljava/lang/Throwable;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 100
-    return-void
-.end method
-
-.method public fatal(Ljava/lang/Object;Ljava/lang/Throwable;)V
-    .locals 2
-    .parameter "message"
-    .parameter "t"
-
-    .prologue
-    .line 103
-    const-string v0, "Email"
-
-    invoke-static {p1, p2}, Lorg/apache/james/mime4j/Log;->toString(Ljava/lang/Object;Ljava/lang/Throwable;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 104
     return-void
 .end method
 
@@ -255,62 +167,12 @@
     goto :goto_0
 .end method
 
-.method public info(Ljava/lang/Object;Ljava/lang/Throwable;)V
-    .locals 2
-    .parameter "message"
-    .parameter "t"
-
-    .prologue
-    .line 78
-    invoke-virtual {p0}, Lorg/apache/james/mime4j/Log;->isInfoEnabled()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 80
-    :goto_0
-    return-void
-
-    .line 79
-    :cond_0
-    const-string v0, "Email"
-
-    invoke-static {p1, p2}, Lorg/apache/james/mime4j/Log;->toString(Ljava/lang/Object;Ljava/lang/Throwable;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-.end method
-
 .method public isDebugEnabled()Z
     .locals 1
 
     .prologue
     .line 29
     const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public isErrorEnabled()Z
-    .locals 1
-
-    .prologue
-    .line 33
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public isFatalEnabled()Z
-    .locals 1
-
-    .prologue
-    .line 37
-    const/4 v0, 0x1
 
     return v0
 .end method
@@ -325,16 +187,6 @@
     return v0
 .end method
 
-.method public isTraceEnabled()Z
-    .locals 1
-
-    .prologue
-    .line 45
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public isWarnEnabled()Z
     .locals 1
 
@@ -343,67 +195,6 @@
     const/4 v0, 0x1
 
     return v0
-.end method
-
-.method public trace(Ljava/lang/Object;)V
-    .locals 2
-    .parameter "message"
-
-    .prologue
-    .line 53
-    invoke-virtual {p0}, Lorg/apache/james/mime4j/Log;->isTraceEnabled()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 55
-    :goto_0
-    return-void
-
-    .line 54
-    :cond_0
-    const-string v0, "Email"
-
-    const/4 v1, 0x0
-
-    invoke-static {p1, v1}, Lorg/apache/james/mime4j/Log;->toString(Ljava/lang/Object;Ljava/lang/Throwable;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-.end method
-
-.method public trace(Ljava/lang/Object;Ljava/lang/Throwable;)V
-    .locals 2
-    .parameter "message"
-    .parameter "t"
-
-    .prologue
-    .line 58
-    invoke-virtual {p0}, Lorg/apache/james/mime4j/Log;->isTraceEnabled()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 60
-    :goto_0
-    return-void
-
-    .line 59
-    :cond_0
-    const-string v0, "Email"
-
-    invoke-static {p1, p2}, Lorg/apache/james/mime4j/Log;->toString(Ljava/lang/Object;Ljava/lang/Throwable;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
 .end method
 
 .method public warn(Ljava/lang/Object;)V

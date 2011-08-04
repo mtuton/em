@@ -93,47 +93,6 @@
     return-object p0
 .end method
 
-.method public print()V
-    .locals 4
-
-    .prologue
-    .line 65
-    const/4 v0, 0x0
-
-    .local v0, i:I
-    :goto_0
-    invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/MailboxList;->size()I
-
-    move-result v2
-
-    if-ge v0, v2, :cond_0
-
-    .line 66
-    invoke-virtual {p0, v0}, Lorg/apache/james/mime4j/field/address/MailboxList;->get(I)Lorg/apache/james/mime4j/field/address/Mailbox;
-
-    move-result-object v1
-
-    .line 67
-    .local v1, mailbox:Lorg/apache/james/mime4j/field/address/Mailbox;
-    sget-object v2, Ljava/lang/System;->out:Ljava/io/PrintStream;
-
-    invoke-virtual {v1}, Lorg/apache/james/mime4j/field/address/Mailbox;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-
-    .line 65
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 69
-    .end local v1           #mailbox:Lorg/apache/james/mime4j/field/address/Mailbox;
-    :cond_0
-    return-void
-.end method
-
 .method public size()I
     .locals 1
 

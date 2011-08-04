@@ -47,14 +47,14 @@
     .end annotation
 
     .prologue
-    .line 3619
+    .line 5574
     .local p4, items:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     iput-object p1, p0, Lcom/android/email/activity/MessageCompose$SecurityPolicyArrayAdaptor;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    .line 3620
+    .line 5575
     invoke-direct {p0, p2, p3, p4}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
-    .line 3621
+    .line 5576
     return-void
 .end method
 
@@ -69,17 +69,17 @@
     .prologue
     const/16 v9, 0x8
 
-    .line 3627
+    .line 5582
     sget-object v7, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     const-string v8, "11111 MessageCompose.java >>>>> SecurityPolicyArrayAdaptor()->getView  >>>>> 3502"
 
     invoke-virtual {v7, v8}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 3629
+    .line 5584
     move-object v6, p2
 
-    .line 3630
+    .line 5585
     .local v6, v:Landroid/view/View;
     invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageCompose$SecurityPolicyArrayAdaptor;->getItem(I)Ljava/lang/Object;
 
@@ -87,11 +87,11 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 3633
+    .line 5588
     .local v3, item:Ljava/lang/String;
     if-nez v6, :cond_0
 
-    .line 3634
+    .line 5589
     iget-object v7, p0, Lcom/android/email/activity/MessageCompose$SecurityPolicyArrayAdaptor;->this$0:Lcom/android/email/activity/MessageCompose;
 
     const-string v8, "layout_inflater"
@@ -102,7 +102,7 @@
 
     check-cast v4, Landroid/view/LayoutInflater;
 
-    .line 3635
+    .line 5590
     .local v4, li:Landroid/view/LayoutInflater;
     const/high16 v7, 0x7f03
 
@@ -112,12 +112,12 @@
 
     move-result-object v6
 
-    .line 3639
+    .line 5594
     .end local v4           #li:Landroid/view/LayoutInflater;
     :cond_0
     if-eqz v3, :cond_2
 
-    .line 3640
+    .line 5595
     const v7, 0x7f070004
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -128,7 +128,7 @@
 
     invoke-virtual {v7, v8}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3642
+    .line 5597
     const v7, 0x7f070007
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -137,11 +137,11 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 3643
+    .line 5598
     .local v5, titleView:Landroid/widget/TextView;
     invoke-virtual {v5, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3645
+    .line 5600
     const v7, 0x7f070008
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -150,22 +150,22 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 3646
+    .line 5601
     .local v0, addressView:Landroid/widget/TextView;
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 3648
+    .line 5603
     const v7, 0x7f070005
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 3649
+    .line 5604
     .local v2, image:Landroid/view/View;
     invoke-virtual {v2, v9}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3651
+    .line 5606
     const v7, 0x7f070006
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -174,11 +174,11 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 3652
+    .line 5607
     .local v1, icon:Landroid/widget/ImageView;
     iget-object v7, p0, Lcom/android/email/activity/MessageCompose$SecurityPolicyArrayAdaptor;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    const v8, 0x7f08001a
+    const v8, 0x7f080021
 
     invoke-virtual {v7, v8}, Lcom/android/email/activity/MessageCompose;->getString(I)Ljava/lang/String;
 
@@ -190,7 +190,7 @@
 
     if-eqz v7, :cond_1
 
-    .line 3655
+    .line 5610
     const v7, 0x7f020065
 
     invoke-virtual {v1, v7}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -198,7 +198,7 @@
     :goto_0
     move-object v7, v6
 
-    .line 3666
+    .line 5621
     .end local v0           #addressView:Landroid/widget/TextView;
     .end local v1           #icon:Landroid/widget/ImageView;
     .end local v2           #image:Landroid/view/View;
@@ -206,19 +206,19 @@
     :goto_1
     return-object v7
 
-    .line 3659
+    .line 5614
     .restart local v0       #addressView:Landroid/widget/TextView;
     .restart local v1       #icon:Landroid/widget/ImageView;
     .restart local v2       #image:Landroid/view/View;
     .restart local v5       #titleView:Landroid/widget/TextView;
     :cond_1
-    const v7, 0x7f020096
+    const v7, 0x7f020094
 
     invoke-virtual {v1, v7}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_0
 
-    .line 3666
+    .line 5621
     .end local v0           #addressView:Landroid/widget/TextView;
     .end local v1           #icon:Landroid/widget/ImageView;
     .end local v2           #image:Landroid/view/View;

@@ -8,41 +8,6 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
-    .parameter "name"
-    .parameter "localPart"
-    .parameter "domain"
-
-    .prologue
-    .line 34
-    invoke-direct {p0, p2, p3}, Lorg/apache/james/mime4j/field/address/Mailbox;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 35
-    iput-object p1, p0, Lorg/apache/james/mime4j/field/address/NamedMailbox;->name:Ljava/lang/String;
-
-    .line 36
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Lorg/apache/james/mime4j/field/address/DomainList;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
-    .parameter "name"
-    .parameter "route"
-    .parameter "localPart"
-    .parameter "domain"
-
-    .prologue
-    .line 42
-    invoke-direct {p0, p2, p3, p4}, Lorg/apache/james/mime4j/field/address/Mailbox;-><init>(Lorg/apache/james/mime4j/field/address/DomainList;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 43
-    iput-object p1, p0, Lorg/apache/james/mime4j/field/address/NamedMailbox;->name:Ljava/lang/String;
-
-    .line 44
-    return-void
-.end method
-
 .method public constructor <init>(Ljava/lang/String;Lorg/apache/james/mime4j/field/address/Mailbox;)V
     .locals 3
     .parameter "name"
@@ -130,14 +95,4 @@
     move-result-object v1
 
     goto :goto_0
-.end method
-
-.method public getName()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 58
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/address/NamedMailbox;->name:Ljava/lang/String;
-
-    return-object v0
 .end method

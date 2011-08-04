@@ -3,16 +3,10 @@
 .source "ServicemineClient.java"
 
 
-# static fields
-.field private static final TAG:Ljava/lang/String; = "ServiceMineClient >>"
-
-
 # instance fields
 .field private mContext:Landroid/content/Context;
 
 .field private mPassword:Ljava/lang/String;
-
-.field private mServicemineUri:Ljava/lang/String;
 
 .field private mUsername:Ljava/lang/String;
 

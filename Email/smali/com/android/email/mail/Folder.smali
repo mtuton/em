@@ -8,6 +8,7 @@
     value = {
         Lcom/android/email/mail/Folder$MessageUpdateCallbacks;,
         Lcom/android/email/mail/Folder$PersistentDataCallbacks;,
+        Lcom/android/email/mail/Folder$MessageRetrievalListener;,
         Lcom/android/email/mail/Folder$FolderRole;,
         Lcom/android/email/mail/Folder$FolderType;,
         Lcom/android/email/mail/Folder$OpenMode;
@@ -23,7 +24,7 @@
     .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 231
+    .line 241
     return-void
 .end method
 
@@ -96,7 +97,7 @@
     .end annotation
 .end method
 
-.method public abstract fetch([Lcom/android/email/mail/Message;Lcom/android/email/mail/FetchProfile;Lcom/android/email/mail/MessageRetrievalListener;)V
+.method public abstract fetch([Lcom/android/email/mail/Message;Lcom/android/email/mail/FetchProfile;Lcom/android/email/mail/Folder$MessageRetrievalListener;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/email/mail/MessagingException;
@@ -120,7 +121,7 @@
     .end annotation
 .end method
 
-.method public abstract getMessages(IILcom/android/email/mail/MessageRetrievalListener;)[Lcom/android/email/mail/Message;
+.method public abstract getMessages(IILcom/android/email/mail/Folder$MessageRetrievalListener;)[Lcom/android/email/mail/Message;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/email/mail/MessagingException;
@@ -128,7 +129,7 @@
     .end annotation
 .end method
 
-.method public abstract getMessages(ILjava/lang/String;Lcom/android/email/mail/MessageRetrievalListener;)[Lcom/android/email/mail/Message;
+.method public abstract getMessages(ILjava/lang/String;Lcom/android/email/mail/Folder$MessageRetrievalListener;)[Lcom/android/email/mail/Message;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/email/mail/MessagingException;
@@ -136,7 +137,7 @@
     .end annotation
 .end method
 
-.method public abstract getMessages(Lcom/android/email/mail/MessageRetrievalListener;)[Lcom/android/email/mail/Message;
+.method public abstract getMessages(Lcom/android/email/mail/Folder$MessageRetrievalListener;)[Lcom/android/email/mail/Message;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/email/mail/MessagingException;
@@ -144,7 +145,7 @@
     .end annotation
 .end method
 
-.method public getMessages([Lcom/android/email/mail/Flag;[Lcom/android/email/mail/Flag;Lcom/android/email/mail/MessageRetrievalListener;)[Lcom/android/email/mail/Message;
+.method public getMessages([Lcom/android/email/mail/Flag;[Lcom/android/email/mail/Flag;Lcom/android/email/mail/Folder$MessageRetrievalListener;)[Lcom/android/email/mail/Message;
     .locals 2
     .parameter "setFlags"
     .parameter "clearFlags"
@@ -156,7 +157,7 @@
     .end annotation
 
     .prologue
-    .line 139
+    .line 149
     new-instance v0, Lcom/android/email/mail/MessagingException;
 
     const-string v1, "Not implemented"
@@ -166,7 +167,7 @@
     throw v0
 .end method
 
-.method public abstract getMessages([Ljava/lang/String;Lcom/android/email/mail/MessageRetrievalListener;)[Lcom/android/email/mail/Message;
+.method public abstract getMessages([Ljava/lang/String;Lcom/android/email/mail/Folder$MessageRetrievalListener;)[Lcom/android/email/mail/Message;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/email/mail/MessagingException;
@@ -197,7 +198,7 @@
     .locals 1
 
     .prologue
-    .line 172
+    .line 182
     sget-object v0, Lcom/android/email/mail/Folder$FolderRole;->UNKNOWN:Lcom/android/email/mail/Folder$FolderRole;
 
     return-object v0
@@ -212,20 +213,6 @@
 .end method
 
 .method public abstract isOpen()Z
-.end method
-
-.method public localFolderSetupComplete(Lcom/android/email/mail/Folder;)V
-    .locals 0
-    .parameter "localFolder"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 187
-    return-void
 .end method
 
 .method public abstract open(Lcom/android/email/mail/Folder$OpenMode;Lcom/android/email/mail/Folder$PersistentDataCallbacks;)V
@@ -248,7 +235,7 @@
     .locals 1
 
     .prologue
-    .line 250
+    .line 260
     invoke-virtual {p0}, Lcom/android/email/mail/Folder;->getName()Ljava/lang/String;
 
     move-result-object v0

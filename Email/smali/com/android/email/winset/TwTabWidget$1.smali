@@ -1,4 +1,4 @@
-.class Lcom/android/email/winset/TwTabWidget$1;
+.class synthetic Lcom/android/email/winset/TwTabWidget$1;
 .super Ljava/lang/Object;
 .source "TwTabWidget.java"
 

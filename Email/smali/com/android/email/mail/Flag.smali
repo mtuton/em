@@ -289,7 +289,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/email/mail/Flag;
     .locals 1
-    .parameter "name"
+    .parameter
 
     .prologue
     .line 22
@@ -299,13 +299,12 @@
 
     move-result-object p0
 
-    .end local p0
     check-cast p0, Lcom/android/email/mail/Flag;
 
     return-object p0
 .end method
 
-.method public static final values()[Lcom/android/email/mail/Flag;
+.method public static values()[Lcom/android/email/mail/Flag;
     .locals 1
 
     .prologue

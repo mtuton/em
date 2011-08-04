@@ -29,15 +29,20 @@
 # instance fields
 .field final synthetic this$1:Lcom/android/email/activity/MessageCompose$LoadMessageTask;
 
+.field final synthetic val$message:Lcom/android/email/provider/EmailContent$Message;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/email/activity/MessageCompose$LoadMessageTask;)V
+.method constructor <init>(Lcom/android/email/activity/MessageCompose$LoadMessageTask;Lcom/android/email/provider/EmailContent$Message;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 1387
+    .line 1953
     iput-object p1, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;->this$1:Lcom/android/email/activity/MessageCompose$LoadMessageTask;
+
+    iput-object p2, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;->val$message:Lcom/android/email/provider/EmailContent$Message;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
@@ -51,7 +56,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1387
+    .line 1953
     check-cast p1, [Ljava/lang/Long;
 
     .end local p1
@@ -67,7 +72,7 @@
     .parameter "messageIds"
 
     .prologue
-    .line 1383
+    .line 1956
     iget-object v0, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;->this$1:Lcom/android/email/activity/MessageCompose$LoadMessageTask;
 
     iget-object v0, v0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
@@ -92,7 +97,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1387
+    .line 1953
     check-cast p1, [Lcom/android/email/provider/EmailContent$Attachment;
 
     .end local p1
@@ -102,18 +107,18 @@
 .end method
 
 .method protected onPostExecute([Lcom/android/email/provider/EmailContent$Attachment;)V
-    .locals 5
+    .locals 6
     .parameter "attachments"
 
     .prologue
-    .line 1388
+    .line 1961
     if-nez p1, :cond_1
 
-    .line 1394
+    .line 1987
     :cond_0
     return-void
 
-    .line 1391
+    .line 1964
     :cond_1
     move-object v0, p1
 
@@ -129,16 +134,67 @@
 
     aget-object v1, v0, v2
 
-    .line 1392
+    .line 1965
     .local v1, attachment:Lcom/android/email/provider/EmailContent$Attachment;
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Attachment;->mContentId:Ljava/lang/String;
+
+    if-eqz v4, :cond_4
+
+    .line 1966
+    iget-object v4, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;->val$message:Lcom/android/email/provider/EmailContent$Message;
+
+    iget-object v4, v4, Lcom/android/email/provider/EmailContent$Message;->mHtml:Ljava/lang/String;
+
+    if-eqz v4, :cond_3
+
+    .line 1967
+    iget-object v4, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;->val$message:Lcom/android/email/provider/EmailContent$Message;
+
+    iget-object v4, v4, Lcom/android/email/provider/EmailContent$Message;->mHtml:Ljava/lang/String;
+
+    iget-object v5, v1, Lcom/android/email/provider/EmailContent$Attachment;->mContentId:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    .line 1964
+    :cond_2
+    :goto_1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    .line 1969
+    :cond_3
+    iget-object v4, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;->val$message:Lcom/android/email/provider/EmailContent$Message;
+
+    iget-object v4, v4, Lcom/android/email/provider/EmailContent$Message;->mHtmlReply:Ljava/lang/String;
+
+    if-eqz v4, :cond_4
+
+    .line 1970
+    iget-object v4, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;->val$message:Lcom/android/email/provider/EmailContent$Message;
+
+    iget-object v4, v4, Lcom/android/email/provider/EmailContent$Message;->mHtmlReply:Ljava/lang/String;
+
+    iget-object v5, v1, Lcom/android/email/provider/EmailContent$Attachment;->mContentId:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_2
+
+    .line 1985
+    :cond_4
     iget-object v4, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask$1;->this$1:Lcom/android/email/activity/MessageCompose$LoadMessageTask;
 
     iget-object v4, v4, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-static {v4, v1}, Lcom/android/email/activity/MessageCompose;->access$1800(Lcom/android/email/activity/MessageCompose;Lcom/android/email/provider/EmailContent$Attachment;)V
+    invoke-static {v4, v1}, Lcom/android/email/activity/MessageCompose;->access$2800(Lcom/android/email/activity/MessageCompose;Lcom/android/email/provider/EmailContent$Attachment;)V
 
-    .line 1391
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
+    goto :goto_1
 .end method

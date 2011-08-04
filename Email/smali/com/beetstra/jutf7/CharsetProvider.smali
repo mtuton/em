@@ -4,17 +4,11 @@
 
 
 # static fields
-.field private static final UTF7_ALIASES:[Ljava/lang/String; = null
+.field private static final UTF7_ALIASES:[Ljava/lang/String;
 
-.field private static final UTF7_M_ALIASES:[Ljava/lang/String; = null
+.field private static final UTF7_M_ALIASES:[Ljava/lang/String;
 
-.field private static final UTF7_M_NAME:Ljava/lang/String; = "X-MODIFIED-UTF-7"
-
-.field private static final UTF7_NAME:Ljava/lang/String; = "UTF-7"
-
-.field private static final UTF7_O_ALIASES:[Ljava/lang/String; = null
-
-.field private static final UTF7_O_NAME:Ljava/lang/String; = "X-UTF-7-OPTIONAL"
+.field private static final UTF7_O_ALIASES:[Ljava/lang/String;
 
 
 # instance fields

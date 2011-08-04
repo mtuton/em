@@ -11,31 +11,6 @@
 .field protected position:J
 
 
-# direct methods
-.method public constructor <init>(Ljava/io/InputStream;)V
-    .locals 2
-    .parameter "inputStream"
-
-    .prologue
-    const-wide/16 v0, 0x0
-
-    .line 32
-    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
-
-    .line 29
-    iput-wide v0, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
-
-    .line 30
-    iput-wide v0, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->markedPosition:J
-
-    .line 33
-    iput-object p1, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->inputStream:Ljava/io/InputStream;
-
-    .line 34
-    return-void
-.end method
-
-
 # virtual methods
 .method public available()I
     .locals 1
@@ -72,16 +47,6 @@
 
     .line 53
     return-void
-.end method
-
-.method public getPosition()J
-    .locals 2
-
-    .prologue
-    .line 37
-    iget-wide v0, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
-
-    return-wide v0
 .end method
 
 .method public mark(I)V

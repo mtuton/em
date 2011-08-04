@@ -12,18 +12,6 @@
 
 
 # static fields
-.field public static final HEADER_ANDROID_ATTACHMENT_STORE_DATA:Ljava/lang/String; = "X-Android-Attachment-StoreData"
-
-.field public static final HEADER_ANDROID_BODY_QUOTED_PART:Ljava/lang/String; = "X-Android-Body-Quoted-Part"
-
-.field public static final HEADER_CONTENT_DISPOSITION:Ljava/lang/String; = "Content-Disposition"
-
-.field public static final HEADER_CONTENT_ID:Ljava/lang/String; = "Content-ID"
-
-.field public static final HEADER_CONTENT_TRANSFER_ENCODING:Ljava/lang/String; = "Content-Transfer-Encoding"
-
-.field public static final HEADER_CONTENT_TYPE:Ljava/lang/String; = "Content-Type"
-
 .field private static final writeOmitFields:[Ljava/lang/String;
 
 
@@ -75,7 +63,7 @@
 
     iput-object v0, p0, Lcom/android/email/mail/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
-    .line 136
+    .line 138
     return-void
 .end method
 
@@ -207,19 +195,19 @@
 
     goto :goto_0
 
-    .line 89
+    .line 90
     .end local v0           #field:Lcom/android/email/mail/internet/MimeHeader$Field;
     :cond_1
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v3
 
-    if-nez v3, :cond_2
+    if-eqz v3, :cond_2
 
-    .line 90
+    .line 91
     const/4 v3, 0x0
 
-    .line 92
+    .line 93
     .end local p0
     :goto_1
     return-object v3
@@ -252,12 +240,12 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 97
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 97
+    .line 98
     .local v2, removeFields:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/internet/MimeHeader$Field;>;"
     iget-object v3, p0, Lcom/android/email/mail/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
@@ -280,7 +268,7 @@
 
     check-cast v0, Lcom/android/email/mail/internet/MimeHeader$Field;
 
-    .line 98
+    .line 99
     .local v0, field:Lcom/android/email/mail/internet/MimeHeader$Field;
     iget-object v3, v0, Lcom/android/email/mail/internet/MimeHeader$Field;->name:Ljava/lang/String;
 
@@ -290,19 +278,19 @@
 
     if-eqz v3, :cond_0
 
-    .line 99
+    .line 100
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 102
+    .line 103
     .end local v0           #field:Lcom/android/email/mail/internet/MimeHeader$Field;
     :cond_1
     iget-object v3, p0, Lcom/android/email/mail/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->removeAll(Ljava/util/Collection;)Z
 
-    .line 103
+    .line 104
     return-void
 .end method
 
@@ -341,7 +329,7 @@
     .locals 1
 
     .prologue
-    .line 153
+    .line 155
     iget-object v0, p0, Lcom/android/email/mail/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
@@ -372,7 +360,7 @@
     .end annotation
 
     .prologue
-    .line 125
+    .line 127
     new-instance v2, Ljava/io/BufferedWriter;
 
     new-instance v4, Ljava/io/OutputStreamWriter;
@@ -383,13 +371,13 @@
 
     invoke-direct {v2, v4, v5}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
 
-    .line 126
+    .line 128
     .local v2, writer:Ljava/io/BufferedWriter;
     new-instance v3, Ljava/lang/StringBuffer;
 
     invoke-direct {v3}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 127
+    .line 129
     .local v3, writerTemp:Ljava/lang/StringBuffer;
     iget-object v4, p0, Lcom/android/email/mail/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
@@ -412,7 +400,7 @@
 
     check-cast v0, Lcom/android/email/mail/internet/MimeHeader$Field;
 
-    .line 128
+    .line 130
     .local v0, field:Lcom/android/email/mail/internet/MimeHeader$Field;
     sget-object v4, Lcom/android/email/mail/internet/MimeHeader;->writeOmitFields:[Ljava/lang/String;
 
@@ -424,7 +412,7 @@
 
     if-nez v4, :cond_0
 
-    .line 129
+    .line 131
     iget-object v4, v0, Lcom/android/email/mail/internet/MimeHeader$Field;->name:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -447,7 +435,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 130
+    .line 132
     invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -456,12 +444,12 @@
 
     goto :goto_0
 
-    .line 133
+    .line 135
     .end local v0           #field:Lcom/android/email/mail/internet/MimeHeader$Field;
     :cond_1
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->flush()V
 
-    .line 134
+    .line 136
     return-void
 .end method
 
@@ -469,29 +457,29 @@
     .locals 5
 
     .prologue
-    .line 112
+    .line 114
     iget-object v3, p0, Lcom/android/email/mail/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v3
 
-    if-nez v3, :cond_0
+    if-eqz v3, :cond_0
 
-    .line 113
+    .line 115
     const/4 v3, 0x0
 
-    .line 121
+    .line 123
     :goto_0
     return-object v3
 
-    .line 115
+    .line 117
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 116
+    .line 118
     .local v0, builder:Ljava/lang/StringBuilder;
     iget-object v3, p0, Lcom/android/email/mail/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
@@ -514,7 +502,7 @@
 
     check-cast v1, Lcom/android/email/mail/internet/MimeHeader$Field;
 
-    .line 117
+    .line 119
     .local v1, field:Lcom/android/email/mail/internet/MimeHeader$Field;
     sget-object v3, Lcom/android/email/mail/internet/MimeHeader;->writeOmitFields:[Ljava/lang/String;
 
@@ -526,7 +514,7 @@
 
     if-nez v3, :cond_1
 
-    .line 118
+    .line 120
     iget-object v3, v1, Lcom/android/email/mail/internet/MimeHeader$Field;->name:Ljava/lang/String;
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -551,7 +539,7 @@
 
     goto :goto_1
 
-    .line 121
+    .line 123
     .end local v1           #field:Lcom/android/email/mail/internet/MimeHeader$Field;
     :cond_2
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;

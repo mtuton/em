@@ -57,149 +57,149 @@
     .parameter "_mMobilePhone"
 
     .prologue
-    .line 70
+    .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
+    .line 54
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->_id:J
 
-    .line 50
+    .line 55
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->displayName:Ljava/lang/String;
 
-    .line 53
+    .line 58
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->mPhone:Ljava/lang/String;
 
-    .line 54
+    .line 59
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->mOffice:Ljava/lang/String;
 
-    .line 55
+    .line 60
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->mTitle:Ljava/lang/String;
 
-    .line 56
+    .line 61
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->mCompany:Ljava/lang/String;
 
-    .line 57
+    .line 62
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->mAlias:Ljava/lang/String;
 
-    .line 59
+    .line 64
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->emailAddress:Ljava/lang/String;
 
-    .line 61
+    .line 66
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->mFirstName:Ljava/lang/String;
 
-    .line 62
+    .line 67
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->mLastName:Ljava/lang/String;
 
-    .line 63
+    .line 68
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->mHomePhone:Ljava/lang/String;
 
-    .line 64
+    .line 69
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->mMobilePhone:Ljava/lang/String;
 
-    .line 72
+    .line 77
     iput-wide p1, p0, Lcom/android/exchange/provider/GalResult$GalData;->_id:J
 
-    .line 73
+    .line 78
     if-eqz p3, :cond_0
 
-    .line 74
+    .line 79
     iput-object p3, p0, Lcom/android/exchange/provider/GalResult$GalData;->displayName:Ljava/lang/String;
 
-    .line 76
+    .line 81
     :cond_0
     if-eqz p4, :cond_1
 
-    .line 77
+    .line 82
     iput-object p4, p0, Lcom/android/exchange/provider/GalResult$GalData;->mPhone:Ljava/lang/String;
 
-    .line 78
+    .line 83
     :cond_1
     if-eqz p5, :cond_2
 
-    .line 79
+    .line 84
     iput-object p5, p0, Lcom/android/exchange/provider/GalResult$GalData;->mOffice:Ljava/lang/String;
 
-    .line 80
+    .line 85
     :cond_2
     if-eqz p6, :cond_3
 
-    .line 81
+    .line 86
     iput-object p6, p0, Lcom/android/exchange/provider/GalResult$GalData;->mTitle:Ljava/lang/String;
 
-    .line 82
+    .line 87
     :cond_3
     if-eqz p7, :cond_4
 
-    .line 83
+    .line 88
     iput-object p7, p0, Lcom/android/exchange/provider/GalResult$GalData;->mCompany:Ljava/lang/String;
 
-    .line 84
+    .line 89
     :cond_4
     if-eqz p8, :cond_5
 
-    .line 85
+    .line 90
     iput-object p8, p0, Lcom/android/exchange/provider/GalResult$GalData;->mAlias:Ljava/lang/String;
 
-    .line 87
+    .line 92
     :cond_5
     if-eqz p9, :cond_6
 
-    .line 88
+    .line 93
     iput-object p9, p0, Lcom/android/exchange/provider/GalResult$GalData;->emailAddress:Ljava/lang/String;
 
-    .line 90
+    .line 95
     :cond_6
     if-eqz p10, :cond_7
 
-    .line 91
+    .line 96
     iput-object p10, p0, Lcom/android/exchange/provider/GalResult$GalData;->mFirstName:Ljava/lang/String;
 
-    .line 92
+    .line 97
     :cond_7
     if-eqz p11, :cond_8
 
-    .line 93
+    .line 98
     iput-object p11, p0, Lcom/android/exchange/provider/GalResult$GalData;->mLastName:Ljava/lang/String;
 
-    .line 94
+    .line 99
     :cond_8
     if-eqz p12, :cond_9
 
-    .line 95
+    .line 100
     iput-object p12, p0, Lcom/android/exchange/provider/GalResult$GalData;->mHomePhone:Ljava/lang/String;
 
-    .line 96
+    .line 101
     :cond_9
     if-eqz p13, :cond_a
 
-    .line 97
+    .line 102
     iput-object p13, p0, Lcom/android/exchange/provider/GalResult$GalData;->mMobilePhone:Ljava/lang/String;
 
-    .line 99
+    .line 104
     :cond_a
     return-void
 .end method
@@ -221,7 +221,7 @@
     .parameter "x12"
 
     .prologue
-    .line 48
+    .line 53
     invoke-direct/range {p0 .. p13}, Lcom/android/exchange/provider/GalResult$GalData;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void

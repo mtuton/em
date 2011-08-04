@@ -3,8 +3,8 @@
 .source "EmailContent.java"
 
 # interfaces
-.implements Lcom/android/email/provider/EmailContent$HostAuthColumns;
 .implements Landroid/os/Parcelable;
+.implements Lcom/android/email/provider/EmailContent$HostAuthColumns;
 
 
 # annotations
@@ -19,29 +19,11 @@
 
 
 # static fields
-.field public static final CONTENT_ACCOUNT_KEY_COLUMN:I = 0x8
+.field public static final CONTENT_PROJECTION:[Ljava/lang/String;
 
-.field public static final CONTENT_ADDRESS_COLUMN:I = 0x2
+.field public static final CONTENT_URI:Landroid/net/Uri;
 
-.field public static final CONTENT_DOMAIN_COLUMN:I = 0x7
-
-.field public static final CONTENT_FLAGS_COLUMN:I = 0x4
-
-.field public static final CONTENT_ID_COLUMN:I = 0x0
-
-.field public static final CONTENT_LOGIN_COLUMN:I = 0x5
-
-.field public static final CONTENT_PASSWORD_COLUMN:I = 0x6
-
-.field public static final CONTENT_PORT_COLUMN:I = 0x3
-
-.field public static final CONTENT_PROJECTION:[Ljava/lang/String; = null
-
-.field public static final CONTENT_PROTOCOL_COLUMN:I = 0x1
-
-.field public static final CONTENT_URI:Landroid/net/Uri; = null
-
-.field public static final CREATOR:Landroid/os/Parcelable$Creator; = null
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator",
@@ -51,16 +33,6 @@
         }
     .end annotation
 .end field
-
-.field public static final FLAG_AUTHENTICATE:I = 0x4
-
-.field public static final FLAG_SSL:I = 0x1
-
-.field public static final FLAG_TLS:I = 0x2
-
-.field public static final FLAG_TRUST_ALL_CERTIFICATES:I = 0x8
-
-.field public static final TABLE_NAME:Ljava/lang/String; = "HostAuth"
 
 
 # instance fields
@@ -86,7 +58,7 @@
     .locals 3
 
     .prologue
-    .line 3343
+    .line 3997
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -113,7 +85,7 @@
 
     sput-object v0, Lcom/android/email/provider/EmailContent$HostAuth;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 3369
+    .line 4023
     const/16 v0, 0x9
 
     new-array v0, v0, [Ljava/lang/String;
@@ -174,7 +146,7 @@
 
     sput-object v0, Lcom/android/email/provider/EmailContent$HostAuth;->CONTENT_PROJECTION:[Ljava/lang/String;
 
-    .line 3572
+    .line 4228
     new-instance v0, Lcom/android/email/provider/EmailContent$HostAuth$1;
 
     invoke-direct {v0}, Lcom/android/email/provider/EmailContent$HostAuth$1;-><init>()V
@@ -188,22 +160,22 @@
     .locals 1
 
     .prologue
-    .line 3379
+    .line 4033
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/email/provider/EmailContent;-><init>(Lcom/android/email/provider/EmailContent$1;)V
 
-    .line 3380
+    .line 4034
     sget-object v0, Lcom/android/email/provider/EmailContent$HostAuth;->CONTENT_URI:Landroid/net/Uri;
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mBaseUri:Landroid/net/Uri;
 
-    .line 3383
+    .line 4037
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPort:I
 
-    .line 3384
+    .line 4038
     return-void
 .end method
 
@@ -212,100 +184,109 @@
     .parameter "in"
 
     .prologue
-    .line 3602
+    .line 4258
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/email/provider/EmailContent;-><init>(Lcom/android/email/provider/EmailContent$1;)V
 
-    .line 3603
+    .line 4259
     sget-object v0, Lcom/android/email/provider/EmailContent$HostAuth;->CONTENT_URI:Landroid/net/Uri;
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mBaseUri:Landroid/net/Uri;
 
-    .line 3604
+    .line 4260
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mId:J
 
-    .line 3605
+    .line 4261
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mProtocol:Ljava/lang/String;
 
-    .line 3606
+    .line 4262
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mAddress:Ljava/lang/String;
 
-    .line 3607
+    .line 4263
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPort:I
 
-    .line 3608
+    .line 4264
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
-    .line 3609
+    .line 4265
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mLogin:Ljava/lang/String;
 
-    .line 3610
+    .line 4266
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPassword:Ljava/lang/String;
 
-    .line 3611
+    .line 4267
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mDomain:Ljava/lang/String;
 
-    .line 3612
+    .line 4268
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mAccountKey:J
 
-    .line 3613
+    .line 4269
     return-void
 .end method
 
 .method public static restoreHostAuthWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$HostAuth;
-    .locals 7
-    .parameter "context"
-    .parameter "id"
+    .locals 6
+    .parameter
+    .parameter
 
     .prologue
     const/4 v3, 0x0
 
-    .line 3393
+    .line 4047
     sget-object v0, Lcom/android/email/provider/EmailContent$HostAuth;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p1, p2}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 3394
-    .local v1, u:Landroid/net/Uri;
+    .line 4048
+    if-nez p0, :cond_0
+
+    move-object v0, v3
+
+    .line 4060
+    :goto_0
+    return-object v0
+
+    .line 4050
+    :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -318,52 +299,47 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    move-result-object v6
+    move-result-object v0
 
-    .line 3398
-    .local v6, c:Landroid/database/Cursor;
+    .line 4054
     :try_start_0
-    invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
+    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_1
 
-    .line 3399
-    const-class v0, Lcom/android/email/provider/EmailContent$HostAuth;
+    .line 4055
+    const-class v1, Lcom/android/email/provider/EmailContent$HostAuth;
 
-    invoke-static {v6, v0}, Lcom/android/email/provider/EmailContent$HostAuth;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/email/provider/EmailContent;
+    invoke-static {v0, v1}, Lcom/android/email/provider/EmailContent$HostAuth;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/email/provider/EmailContent;
 
     move-result-object p0
 
-    .end local p0
     check-cast p0, Lcom/android/email/provider/EmailContent$HostAuth;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3404
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    .line 4060
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     move-object v0, p0
 
-    :goto_0
-    return-object v0
+    goto :goto_0
 
-    .restart local p0
-    :cond_0
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    :cond_1
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     move-object v0, v3
 
     goto :goto_0
 
-    .end local p0
     :catchall_0
-    move-exception v0
+    move-exception v1
 
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    throw v0
+    throw v1
 .end method
 
 
@@ -372,7 +348,7 @@
     .locals 1
 
     .prologue
-    .line 3566
+    .line 4222
     const/4 v0, 0x0
 
     return v0
@@ -386,22 +362,22 @@
 
     const-string v4, ""
 
-    .line 3446
+    .line 4102
     iget v1, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
     and-int/lit8 v1, v1, 0xb
 
     sparse-switch v1, :sswitch_data_0
 
-    .line 3460
+    .line 4116
     const-string v9, ""
 
-    .line 3463
+    .line 4119
     .local v9, security:Ljava/lang/String;
     :goto_0
     const/4 v2, 0x0
 
-    .line 3464
+    .line 4120
     .local v2, userInfo:Ljava/lang/String;
     iget v1, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
@@ -409,7 +385,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 3465
+    .line 4121
     iget-object v1, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mLogin:Ljava/lang/String;
 
     if-eqz v1, :cond_1
@@ -422,7 +398,7 @@
 
     move-object v11, v1
 
-    .line 3466
+    .line 4122
     .local v11, trimUser:Ljava/lang/String;
     :goto_1
     iget-object v1, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPassword:Ljava/lang/String;
@@ -437,7 +413,7 @@
 
     move-object v10, v1
 
-    .line 3467
+    .line 4123
     .local v10, trimPassword:Ljava/lang/String;
     :goto_2
     new-instance v1, Ljava/lang/StringBuilder;
@@ -462,7 +438,7 @@
 
     move-result-object v2
 
-    .line 3469
+    .line 4125
     .end local v10           #trimPassword:Ljava/lang/String;
     .end local v11           #trimUser:Ljava/lang/String;
     :cond_0
@@ -478,7 +454,7 @@
 
     move-object v3, v1
 
-    .line 3470
+    .line 4126
     .local v3, address:Ljava/lang/String;
     :goto_3
     iget-object v1, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mDomain:Ljava/lang/String;
@@ -507,7 +483,7 @@
 
     move-object v5, v1
 
-    .line 3474
+    .line 4130
     .local v5, path:Ljava/lang/String;
     :goto_4
     :try_start_0
@@ -539,7 +515,7 @@
 
     invoke-direct/range {v0 .. v7}, Ljava/net/URI;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3482
+    .line 4138
     .local v0, uri:Ljava/net/URI;
     invoke-virtual {v0}, Ljava/net/URI;->toString()Ljava/lang/String;
     :try_end_0
@@ -547,12 +523,12 @@
 
     move-result-object v1
 
-    .line 3484
+    .line 4140
     .end local v0           #uri:Ljava/net/URI;
     :goto_5
     return-object v1
 
-    .line 3448
+    .line 4104
     .end local v2           #userInfo:Ljava/lang/String;
     .end local v3           #address:Ljava/lang/String;
     .end local v5           #path:Ljava/lang/String;
@@ -560,38 +536,38 @@
     :sswitch_0
     const-string v9, "+ssl+"
 
-    .line 3449
+    .line 4105
     .restart local v9       #security:Ljava/lang/String;
     goto :goto_0
 
-    .line 3451
+    .line 4107
     .end local v9           #security:Ljava/lang/String;
     :sswitch_1
     const-string v9, "+ssl+trustallcerts"
 
-    .line 3452
+    .line 4108
     .restart local v9       #security:Ljava/lang/String;
     goto :goto_0
 
-    .line 3454
+    .line 4110
     .end local v9           #security:Ljava/lang/String;
     :sswitch_2
     const-string v9, "+tls+"
 
-    .line 3455
+    .line 4111
     .restart local v9       #security:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 3457
+    .line 4113
     .end local v9           #security:Ljava/lang/String;
     :sswitch_3
     const-string v9, "+tls+trustallcerts"
 
-    .line 3458
+    .line 4114
     .restart local v9       #security:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 3465
+    .line 4121
     .restart local v2       #userInfo:Ljava/lang/String;
     :cond_1
     const-string v1, ""
@@ -600,7 +576,7 @@
 
     goto :goto_1
 
-    .line 3466
+    .line 4122
     .restart local v11       #trimUser:Ljava/lang/String;
     :cond_2
     const-string v1, ""
@@ -613,17 +589,17 @@
     :cond_3
     move-object v3, v12
 
-    .line 3469
+    .line 4125
     goto :goto_3
 
     .restart local v3       #address:Ljava/lang/String;
     :cond_4
     move-object v5, v12
 
-    .line 3470
+    .line 4126
     goto :goto_4
 
-    .line 3483
+    .line 4139
     .restart local v5       #path:Ljava/lang/String;
     :catch_0
     move-exception v1
@@ -633,10 +609,10 @@
     .local v8, e:Ljava/net/URISyntaxException;
     move-object v1, v12
 
-    .line 3484
+    .line 4140
     goto :goto_5
 
-    .line 3446
+    .line 4102
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -651,12 +627,12 @@
     .parameter "cursor"
 
     .prologue
-    .line 3411
+    .line 4067
     sget-object v0, Lcom/android/email/provider/EmailContent$HostAuth;->CONTENT_URI:Landroid/net/Uri;
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mBaseUri:Landroid/net/Uri;
 
-    .line 3412
+    .line 4068
     const/4 v0, 0x0
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -665,7 +641,7 @@
 
     iput-wide v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mId:J
 
-    .line 3413
+    .line 4069
     const/4 v0, 0x1
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -674,7 +650,7 @@
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mProtocol:Ljava/lang/String;
 
-    .line 3414
+    .line 4070
     const/4 v0, 0x2
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -683,7 +659,7 @@
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mAddress:Ljava/lang/String;
 
-    .line 3415
+    .line 4071
     const/4 v0, 0x3
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -692,7 +668,7 @@
 
     iput v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPort:I
 
-    .line 3416
+    .line 4072
     const/4 v0, 0x4
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -701,7 +677,7 @@
 
     iput v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
-    .line 3417
+    .line 4073
     const/4 v0, 0x5
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -710,7 +686,7 @@
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mLogin:Ljava/lang/String;
 
-    .line 3418
+    .line 4074
     const/4 v0, 0x6
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -719,7 +695,7 @@
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPassword:Ljava/lang/String;
 
-    .line 3419
+    .line 4075
     const/4 v0, 0x7
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -728,7 +704,7 @@
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mDomain:Ljava/lang/String;
 
-    .line 3420
+    .line 4076
     const/16 v0, 0x8
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -737,7 +713,7 @@
 
     iput-wide v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mAccountKey:J
 
-    .line 3421
+    .line 4077
     return-object p0
 .end method
 
@@ -746,7 +722,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3341
+    .line 3995
     invoke-virtual {p0, p1}, Lcom/android/email/provider/EmailContent$HostAuth;->restore(Landroid/database/Cursor;)Lcom/android/email/provider/EmailContent$HostAuth;
 
     move-result-object v0
@@ -767,38 +743,38 @@
 
     const/4 v10, 0x1
 
-    .line 3496
+    .line 4152
     :try_start_0
     new-instance v4, Ljava/net/URI;
 
     invoke-direct {v4, p1}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
 
-    .line 3497
+    .line 4153
     .local v4, uri:Ljava/net/URI;
     const/4 v7, 0x0
 
     iput-object v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mLogin:Ljava/lang/String;
 
-    .line 3498
+    .line 4154
     const/4 v7, 0x0
 
     iput-object v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPassword:Ljava/lang/String;
 
-    .line 3499
+    .line 4155
     iget v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
     and-int/lit8 v7, v7, -0x5
 
     iput v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
-    .line 3500
+    .line 4156
     invoke-virtual {v4}, Ljava/net/URI;->getUserInfo()Ljava/lang/String;
 
     move-result-object v7
 
     if-eqz v7, :cond_0
 
-    .line 3501
+    .line 4157
     invoke-virtual {v4}, Ljava/net/URI;->getUserInfo()Ljava/lang/String;
 
     move-result-object v7
@@ -811,7 +787,7 @@
 
     move-result-object v6
 
-    .line 3502
+    .line 4158
     .local v6, userInfoParts:[Ljava/lang/String;
     const/4 v7, 0x0
 
@@ -819,26 +795,26 @@
 
     iput-object v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mLogin:Ljava/lang/String;
 
-    .line 3503
+    .line 4159
     iget v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
     or-int/lit8 v7, v7, 0x4
 
     iput v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
-    .line 3504
+    .line 4160
     array-length v7, v6
 
     if-le v7, v10, :cond_0
 
-    .line 3505
+    .line 4161
     const/4 v7, 0x1
 
     aget-object v7, v6, v7
 
     iput-object v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPassword:Ljava/lang/String;
 
-    .line 3510
+    .line 4166
     .end local v6           #userInfoParts:[Ljava/lang/String;
     :cond_0
     invoke-virtual {v4}, Ljava/net/URI;->getScheme()Ljava/lang/String;
@@ -851,7 +827,7 @@
 
     move-result-object v2
 
-    .line 3511
+    .line 4167
     .local v2, schemeParts:[Ljava/lang/String;
     array-length v7, v2
 
@@ -864,28 +840,28 @@
     :goto_0
     iput-object v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mProtocol:Ljava/lang/String;
 
-    .line 3512
+    .line 4168
     iget v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
     and-int/lit8 v7, v7, -0xc
 
     iput v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
-    .line 3513
+    .line 4169
     const/4 v3, 0x0
 
-    .line 3514
+    .line 4170
     .local v3, ssl:Z
     array-length v7, v2
 
     if-lt v7, v11, :cond_2
 
-    .line 3515
+    .line 4171
     const/4 v7, 0x1
 
     aget-object v0, v2, v7
 
-    .line 3516
+    .line 4172
     .local v0, part1:Ljava/lang/String;
     const-string v7, "ssl"
 
@@ -895,17 +871,17 @@
 
     if-eqz v7, :cond_6
 
-    .line 3517
+    .line 4173
     const/4 v3, 0x1
 
-    .line 3518
+    .line 4174
     iget v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
     or-int/lit8 v7, v7, 0x1
 
     iput v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
-    .line 3522
+    .line 4178
     :cond_1
     :goto_1
     array-length v7, v2
@@ -914,12 +890,12 @@
 
     if-lt v7, v8, :cond_2
 
-    .line 3523
+    .line 4179
     const/4 v7, 0x2
 
     aget-object v1, v2, v7
 
-    .line 3524
+    .line 4180
     .local v1, part2:Ljava/lang/String;
     const-string v7, "trustallcerts"
 
@@ -929,14 +905,14 @@
 
     if-eqz v7, :cond_2
 
-    .line 3525
+    .line 4181
     iget v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
     or-int/lit8 v7, v7, 0x8
 
     iput v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
-    .line 3530
+    .line 4186
     .end local v0           #part1:Ljava/lang/String;
     .end local v1           #part2:Ljava/lang/String;
     :cond_2
@@ -946,21 +922,21 @@
 
     iput-object v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mAddress:Ljava/lang/String;
 
-    .line 3531
+    .line 4187
     invoke-virtual {v4}, Ljava/net/URI;->getPort()I
 
     move-result v7
 
     iput v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPort:I
 
-    .line 3532
+    .line 4188
     iget v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPort:I
 
     const/4 v8, -0x1
 
     if-ne v7, v8, :cond_3
 
-    .line 3537
+    .line 4193
     const-string v7, "pop3"
 
     iget-object v8, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mProtocol:Ljava/lang/String;
@@ -971,7 +947,7 @@
 
     if-eqz v7, :cond_8
 
-    .line 3538
+    .line 4194
     if-eqz v3, :cond_7
 
     const/16 v7, 0x3e3
@@ -979,7 +955,7 @@
     :goto_2
     iput v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPort:I
 
-    .line 3548
+    .line 4204
     :cond_3
     :goto_3
     invoke-virtual {v4}, Ljava/net/URI;->getPath()Ljava/lang/String;
@@ -998,7 +974,7 @@
 
     if-lez v7, :cond_4
 
-    .line 3549
+    .line 4205
     invoke-virtual {v4}, Ljava/net/URI;->getPath()Ljava/lang/String;
 
     move-result-object v7
@@ -1011,7 +987,7 @@
 
     iput-object v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mDomain:Ljava/lang/String;
 
-    .line 3560
+    .line 4216
     :cond_4
     return-void
 
@@ -1019,10 +995,10 @@
     :cond_5
     move-object v7, v12
 
-    .line 3511
+    .line 4167
     goto :goto_0
 
-    .line 3519
+    .line 4175
     .restart local v0       #part1:Ljava/lang/String;
     .restart local v3       #ssl:Z
     :cond_6
@@ -1034,7 +1010,7 @@
 
     if-eqz v7, :cond_1
 
-    .line 3520
+    .line 4176
     iget v7, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
     or-int/lit8 v7, v7, 0x2
@@ -1045,7 +1021,7 @@
 
     goto :goto_1
 
-    .line 3553
+    .line 4209
     .end local v0           #part1:Ljava/lang/String;
     .end local v2           #schemeParts:[Ljava/lang/String;
     .end local v3           #ssl:Z
@@ -1055,7 +1031,7 @@
 
     move-object v5, v7
 
-    .line 3557
+    .line 4213
     .local v5, use:Ljava/net/URISyntaxException;
     new-instance v7, Ljava/lang/Error;
 
@@ -1063,7 +1039,7 @@
 
     throw v7
 
-    .line 3538
+    .line 4194
     .end local v5           #use:Ljava/net/URISyntaxException;
     .restart local v2       #schemeParts:[Ljava/lang/String;
     .restart local v3       #ssl:Z
@@ -1073,7 +1049,7 @@
 
     goto :goto_2
 
-    .line 3539
+    .line 4195
     :cond_8
     :try_start_1
     const-string v7, "imap"
@@ -1086,7 +1062,7 @@
 
     if-eqz v7, :cond_a
 
-    .line 3540
+    .line 4196
     if-eqz v3, :cond_9
 
     const/16 v7, 0x3e1
@@ -1101,7 +1077,7 @@
 
     goto :goto_4
 
-    .line 3541
+    .line 4197
     :cond_a
     const-string v7, "eas"
 
@@ -1113,7 +1089,7 @@
 
     if-eqz v7, :cond_c
 
-    .line 3542
+    .line 4198
     if-eqz v3, :cond_b
 
     const/16 v7, 0x1bb
@@ -1128,7 +1104,7 @@
 
     goto :goto_5
 
-    .line 3543
+    .line 4199
     :cond_c
     const-string v7, "smtp"
 
@@ -1140,7 +1116,7 @@
 
     if-eqz v7, :cond_3
 
-    .line 3544
+    .line 4200
     if-eqz v3, :cond_d
 
     const/16 v7, 0x1d1
@@ -1162,12 +1138,12 @@
     .locals 4
 
     .prologue
-    .line 3426
+    .line 4082
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 3427
+    .line 4083
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "protocol"
 
@@ -1175,14 +1151,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3428
+    .line 4084
     const-string v1, "address"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mAddress:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3429
+    .line 4085
     const-string v1, "port"
 
     iget v2, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPort:I
@@ -1193,7 +1169,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3430
+    .line 4086
     const-string v1, "flags"
 
     iget v2, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
@@ -1204,28 +1180,28 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3431
+    .line 4087
     const-string v1, "login"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mLogin:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3432
+    .line 4088
     const-string v1, "password"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPassword:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3433
+    .line 4089
     const-string v1, "domain"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mDomain:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3434
+    .line 4090
     const-string v1, "accountKey"
 
     iget-wide v2, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mAccountKey:J
@@ -1236,7 +1212,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 3435
+    .line 4091
     return-object v0
 .end method
 
@@ -1244,7 +1220,7 @@
     .locals 1
 
     .prologue
-    .line 3620
+    .line 4276
     invoke-virtual {p0}, Lcom/android/email/provider/EmailContent$HostAuth;->getStoreUri()Ljava/lang/String;
 
     move-result-object v0
@@ -1258,51 +1234,51 @@
     .parameter "flags"
 
     .prologue
-    .line 3588
+    .line 4244
     iget-wide v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 3589
+    .line 4245
     iget-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mProtocol:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 3590
+    .line 4246
     iget-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mAddress:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 3591
+    .line 4247
     iget v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPort:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 3592
+    .line 4248
     iget v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 3593
+    .line 4249
     iget-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mLogin:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 3594
+    .line 4250
     iget-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mPassword:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 3595
+    .line 4251
     iget-object v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mDomain:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 3596
+    .line 4252
     iget-wide v0, p0, Lcom/android/email/provider/EmailContent$HostAuth;->mAccountKey:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 3597
+    .line 4253
     return-void
 .end method

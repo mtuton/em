@@ -3,8 +3,8 @@
 .source "EmailContent.java"
 
 # interfaces
-.implements Lcom/android/email/provider/EmailContent$SyncColumns;
 .implements Lcom/android/email/provider/EmailContent$MailboxColumns;
+.implements Lcom/android/email/provider/EmailContent$SyncColumns;
 
 
 # annotations
@@ -19,115 +19,11 @@
 
 
 # static fields
-.field public static final ADD_TO_FIELD_URI:Landroid/net/Uri; = null
+.field public static final ADD_TO_FIELD_URI:Landroid/net/Uri;
 
-.field public static final CHECK_INTERVAL_NEVER:I = -0x1
+.field public static final CONTENT_PROJECTION:[Ljava/lang/String;
 
-.field public static final CHECK_INTERVAL_PING:I = -0x3
-
-.field public static final CHECK_INTERVAL_PUSH:I = -0x2
-
-.field public static final CHECK_INTERVAL_PUSH_HOLD:I = -0x4
-
-.field public static final CONTENT_ACCOUNT_KEY_COLUMN:I = 0x4
-
-.field public static final CONTENT_DELIMITER_COLUMN:I = 0x6
-
-.field public static final CONTENT_DISPLAY_NAME_COLUMN:I = 0x1
-
-.field public static final CONTENT_DST_SERVER_ID:I = 0x11
-
-.field public static final CONTENT_FLAGS_COLUMN:I = 0xd
-
-.field public static final CONTENT_FLAG_CHANGED:I = 0x10
-
-.field public static final CONTENT_FLAG_VISIBLE_COLUMN:I = 0xc
-
-.field public static final CONTENT_ID_COLUMN:I = 0x0
-
-.field public static final CONTENT_NEW_DISPLAY_NAME:I = 0x12
-
-.field public static final CONTENT_PARENT_SERVER_ID_COLUMN:I = 0x3
-
-.field public static final CONTENT_PROJECTION:[Ljava/lang/String; = null
-
-.field public static final CONTENT_SERVER_ID_COLUMN:I = 0x2
-
-.field public static final CONTENT_SYNC_INTERVAL_COLUMN:I = 0x9
-
-.field public static final CONTENT_SYNC_KEY_COLUMN:I = 0x7
-
-.field public static final CONTENT_SYNC_LOOKBACK_COLUMN:I = 0x8
-
-.field public static final CONTENT_SYNC_STATUS_COLUMN:I = 0xf
-
-.field public static final CONTENT_SYNC_TIME_COLUMN:I = 0xa
-
-.field public static final CONTENT_TYPE_COLUMN:I = 0x5
-
-.field public static final CONTENT_UNREAD_COUNT_COLUMN:I = 0xb
-
-.field public static final CONTENT_URI:Landroid/net/Uri; = null
-
-.field public static final CONTENT_VISIBLE_LIMIT_COLUMN:I = 0xe
-
-.field public static final FLAG_CANT_PUSH:I = 0x4
-
-.field public static final FLAG_CHILDREN_VISIBLE:I = 0x2
-
-.field public static final FLAG_FOLDER_CREATED:I = 0x4
-
-.field public static final FLAG_FOLDER_DELETED:I = 0x1
-
-.field public static final FLAG_FOLDER_UPDATED:I = 0x2
-
-.field public static final FLAG_HAS_CHILDREN:I = 0x1
-
-.field public static final NO_MAILBOX:J = -0x1L
-
-.field public static final QUERY_ALL_DRAFTS:J = -0x5L
-
-.field public static final QUERY_ALL_FAVORITES:J = -0x4L
-
-.field public static final QUERY_ALL_INBOXES:J = -0x2L
-
-.field public static final QUERY_ALL_OUTBOX:J = -0x6L
-
-.field public static final QUERY_ALL_UNREAD:J = -0x3L
-
-.field public static final TABLE_NAME:Ljava/lang/String; = "Mailbox"
-
-.field public static final TYPE_CALENDAR:I = 0x41
-
-.field public static final TYPE_CONTACTS:I = 0x42
-
-.field public static final TYPE_DRAFTS:I = 0x3
-
-.field public static final TYPE_EAS_ACCOUNT_MAILBOX:I = 0x44
-
-.field public static final TYPE_INBOX:I = 0x0
-
-.field public static final TYPE_JUNK:I = 0x7
-
-.field public static final TYPE_MAIL:I = 0x1
-
-.field public static final TYPE_NOT_EMAIL:I = 0x40
-
-.field public static final TYPE_OUTBOX:I = 0x4
-
-.field public static final TYPE_PARENT:I = 0x2
-
-.field public static final TYPE_SEARCH_RESULTS:I = 0x8
-
-.field public static final TYPE_SENT:I = 0x5
-
-.field public static final TYPE_TASKS:I = 0x43
-
-.field public static final TYPE_TRASH:I = 0x6
-
-.field public static final TYPE_USER_CREATED_MAIL:I = 0xc
-
-.field private static final WHERE_TYPE_AND_ACCOUNT_KEY:Ljava/lang/String; = "type=? and accountKey=?"
+.field public static final CONTENT_URI:Landroid/net/Uri;
 
 .field public static mContextForMailbox:Landroid/content/Context;
 
@@ -177,7 +73,7 @@
     .locals 3
 
     .prologue
-    .line 3015
+    .line 3654
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -204,7 +100,7 @@
 
     sput-object v0, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 3016
+    .line 3655
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -231,12 +127,12 @@
 
     sput-object v0, Lcom/android/email/provider/EmailContent$Mailbox;->ADD_TO_FIELD_URI:Landroid/net/Uri;
 
-    .line 3042
+    .line 3681
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/email/provider/EmailContent$Mailbox;->mContextForMailbox:Landroid/content/Context;
 
-    .line 3066
+    .line 3705
     const/16 v0, 0x13
 
     new-array v0, v0, [Ljava/lang/String;
@@ -364,27 +260,27 @@
     .locals 1
 
     .prologue
-    .line 3148
+    .line 3802
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/email/provider/EmailContent;-><init>(Lcom/android/email/provider/EmailContent$1;)V
 
-    .line 3030
+    .line 3669
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mFlagVisible:Z
 
-    .line 3041
+    .line 3680
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/email/provider/EmailContent$Mailbox;->bFirstEnter:Z
 
-    .line 3149
+    .line 3803
     sget-object v0, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mBaseUri:Landroid/net/Uri;
 
-    .line 3150
+    .line 3804
     return-void
 .end method
 
@@ -397,10 +293,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3295
+    .line 3949
     const-wide/16 v7, -0x1
 
-    .line 3296
+    .line 3950
     .local v7, mailboxId:J
     const/4 v0, 0x2
 
@@ -422,7 +318,7 @@
 
     aput-object v1, v4, v0
 
-    .line 3297
+    .line 3951
     .local v4, bindArguments:[Ljava/lang/String;
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -440,7 +336,7 @@
 
     move-result-object v6
 
-    .line 3300
+    .line 3954
     .local v6, c:Landroid/database/Cursor;
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
@@ -449,7 +345,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3301
+    .line 3955
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -458,14 +354,14 @@
 
     move-result-wide v7
 
-    .line 3304
+    .line 3958
     :cond_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 3306
+    .line 3960
     return-wide v7
 
-    .line 3304
+    .line 3958
     :catchall_0
     move-exception v0
 
@@ -481,12 +377,12 @@
     .parameter "type"
 
     .prologue
-    .line 3313
+    .line 3967
     invoke-static {p0, p1, p2, p3}, Lcom/android/email/provider/EmailContent$Mailbox;->findMailboxOfType(Landroid/content/Context;JI)J
 
     move-result-wide v0
 
-    .line 3314
+    .line 3968
     .local v0, mailboxId:J
     const-wide/16 v2, -0x1
 
@@ -494,12 +390,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 3315
+    .line 3969
     invoke-static {p0, v0, v1}, Lcom/android/email/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v2
 
-    .line 3317
+    .line 3971
     :goto_0
     return-object v2
 
@@ -510,29 +406,24 @@
 .end method
 
 .method public static restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Mailbox;
-    .locals 9
-    .parameter "context"
-    .parameter "id"
+    .locals 7
+    .parameter
+    .parameter
 
     .prologue
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
-    .line 3159
+    .line 3813
     sget-object v0, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p1, p2}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 3162
-    .local v1, u:Landroid/net/Uri;
+    .line 3816
     sput-object p0, Lcom/android/email/provider/EmailContent$Mailbox;->mContextForMailbox:Landroid/content/Context;
 
-    .line 3164
-    const/4 v6, 0x0
-
-    .line 3166
-    .local v6, c:Landroid/database/Cursor;
+    .line 3820
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -551,45 +442,40 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_1
 
-    move-result-object v6
+    move-result-object v0
 
-    .line 3180
+    .line 3834
     :try_start_1
-    invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
+    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_2
+    if-eqz v1, :cond_2
 
-    .line 3181
-    const-class v0, Lcom/android/email/provider/EmailContent$Mailbox;
+    .line 3835
+    const-class v1, Lcom/android/email/provider/EmailContent$Mailbox;
 
-    invoke-static {v6, v0}, Lcom/android/email/provider/EmailContent;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/email/provider/EmailContent;
+    invoke-static {v0, v1}, Lcom/android/email/provider/EmailContent;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/email/provider/EmailContent;
 
     move-result-object p0
 
-    .end local p0
     check-cast p0, Lcom/android/email/provider/EmailContent$Mailbox;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 3186
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    .line 3840
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     move-object v0, p0
 
     :goto_0
     return-object v0
 
-    .line 3168
-    .restart local p0
+    .line 3822
     :catch_0
     move-exception v0
 
-    move-object v7, v0
-
-    .line 3169
-    .local v7, ie:Ljava/lang/IllegalArgumentException;
+    .line 3823
     if-eqz v6, :cond_0
 
     invoke-interface {v6}, Landroid/database/Cursor;->isClosed()Z
@@ -598,27 +484,23 @@
 
     if-nez v0, :cond_0
 
-    .line 3170
+    .line 3824
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_0
-    move-object v0, v8
+    move-object v0, v6
 
-    .line 3171
+    .line 3825
     goto :goto_0
 
-    .line 3172
-    .end local v7           #ie:Ljava/lang/IllegalArgumentException;
+    .line 3826
     :catch_1
     move-exception v0
 
-    move-object v7, v0
+    .line 3827
+    invoke-virtual {v0}, Ljava/lang/IllegalStateException;->printStackTrace()V
 
-    .line 3173
-    .local v7, ie:Ljava/lang/IllegalStateException;
-    invoke-virtual {v7}, Ljava/lang/IllegalStateException;->printStackTrace()V
-
-    .line 3174
+    .line 3828
     if-eqz v6, :cond_1
 
     invoke-interface {v6}, Landroid/database/Cursor;->isClosed()Z
@@ -627,31 +509,29 @@
 
     if-nez v0, :cond_1
 
-    .line 3175
+    .line 3829
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_1
-    move-object v0, v8
+    move-object v0, v6
 
-    .line 3176
+    .line 3830
     goto :goto_0
 
-    .line 3186
-    .end local v7           #ie:Ljava/lang/IllegalStateException;
+    .line 3840
     :cond_2
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    move-object v0, v8
+    move-object v0, v6
 
     goto :goto_0
 
-    .end local p0
     :catchall_0
-    move-exception v0
+    move-exception v1
 
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    throw v0
+    throw v1
 .end method
 
 
@@ -661,12 +541,12 @@
     .parameter "cursor"
 
     .prologue
-    .line 3193
+    .line 3847
     sget-object v8, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
     iput-object v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mBaseUri:Landroid/net/Uri;
 
-    .line 3194
+    .line 3848
     const/4 v8, 0x0
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getLong(I)J
@@ -675,7 +555,7 @@
 
     iput-wide v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
 
-    .line 3195
+    .line 3849
     const/4 v8, 0x1
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -684,7 +564,7 @@
 
     iput-object v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
 
-    .line 3196
+    .line 3850
     const/4 v8, 0x2
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -693,7 +573,7 @@
 
     iput-object v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mServerId:Ljava/lang/String;
 
-    .line 3197
+    .line 3851
     const/4 v8, 0x3
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -702,7 +582,7 @@
 
     iput-object v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mParentServerId:Ljava/lang/String;
 
-    .line 3198
+    .line 3852
     const/4 v8, 0x4
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getLong(I)J
@@ -711,7 +591,7 @@
 
     iput-wide v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
 
-    .line 3199
+    .line 3853
     const/4 v8, 0x5
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getInt(I)I
@@ -720,7 +600,7 @@
 
     iput v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mType:I
 
-    .line 3200
+    .line 3854
     const/4 v8, 0x6
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getInt(I)I
@@ -729,7 +609,7 @@
 
     iput v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mDelimiter:I
 
-    .line 3201
+    .line 3855
     const/4 v8, 0x7
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -738,7 +618,7 @@
 
     iput-object v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
 
-    .line 3202
+    .line 3856
     const/16 v8, 0x8
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getInt(I)I
@@ -747,7 +627,7 @@
 
     iput v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncLookback:I
 
-    .line 3203
+    .line 3857
     const/16 v8, 0x9
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getInt(I)I
@@ -756,15 +636,15 @@
 
     iput v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncInterval:I
 
-    .line 3208
+    .line 3862
     iget-boolean v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->bFirstEnter:Z
 
     if-nez v8, :cond_0
 
-    .line 3210
+    .line 3864
     const/4 v5, 0x0
 
-    .line 3212
+    .line 3866
     .local v5, isEAS:Z
     :try_start_0
     sget-object v8, Lcom/android/email/provider/EmailContent$Mailbox;->mContextForMailbox:Landroid/content/Context;
@@ -775,11 +655,11 @@
 
     move-result-object v0
 
-    .line 3213
+    .line 3867
     .local v0, account:Lcom/android/email/provider/EmailContent$Account;
     if-nez v0, :cond_1
 
-    .line 3214
+    .line 3868
     const-string v8, "EmailContent >>"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -806,21 +686,21 @@
     :try_end_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3229
+    .line 3883
     .end local v0           #account:Lcom/android/email/provider/EmailContent$Account;
     :goto_0
     if-nez v5, :cond_0
 
-    .line 3230
+    .line 3884
     const-wide/16 v1, 0x0
 
-    .line 3231
+    .line 3885
     .local v1, currentTime:J
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 3232
+    .line 3886
     sget-object v8, Lcom/android/email/provider/EmailContent$Mailbox;->mContextForMailbox:Landroid/content/Context;
 
     if-eqz v8, :cond_0
@@ -831,12 +711,12 @@
 
     if-lez v8, :cond_0
 
-    .line 3234
+    .line 3888
     new-instance v7, Landroid/content/ContentValues;
 
     invoke-direct {v7}, Landroid/content/ContentValues;-><init>()V
 
-    .line 3235
+    .line 3889
     .local v7, values:Landroid/content/ContentValues;
     const-string v8, "syncTime"
 
@@ -850,17 +730,17 @@
 
     invoke-virtual {v7, v8, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 3236
+    .line 3890
     sget-object v8, Lcom/android/email/provider/EmailContent$Mailbox;->mContextForMailbox:Landroid/content/Context;
 
     invoke-virtual {p0, v8, v7}, Lcom/android/email/provider/EmailContent$Mailbox;->update(Landroid/content/Context;Landroid/content/ContentValues;)I
 
-    .line 3237
+    .line 3891
     const/4 v8, 0x1
 
     iput-boolean v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->bFirstEnter:Z
 
-    .line 3245
+    .line 3899
     .end local v1           #currentTime:J
     .end local v5           #isEAS:Z
     .end local v7           #values:Landroid/content/ContentValues;
@@ -873,7 +753,7 @@
 
     iput-wide v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncTime:J
 
-    .line 3248
+    .line 3902
     const/16 v8, 0xb
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getInt(I)I
@@ -882,7 +762,7 @@
 
     iput v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mUnreadCount:I
 
-    .line 3249
+    .line 3903
     const/16 v8, 0xc
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getInt(I)I
@@ -898,7 +778,7 @@
     :goto_1
     iput-boolean v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mFlagVisible:Z
 
-    .line 3250
+    .line 3904
     const/16 v8, 0xd
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getInt(I)I
@@ -907,7 +787,7 @@
 
     iput v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mFlags:I
 
-    .line 3251
+    .line 3905
     const/16 v8, 0xe
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getInt(I)I
@@ -916,7 +796,7 @@
 
     iput v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mVisibleLimit:I
 
-    .line 3252
+    .line 3906
     const/16 v8, 0xf
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -925,7 +805,7 @@
 
     iput-object v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncStatus:Ljava/lang/String;
 
-    .line 3254
+    .line 3908
     const/16 v8, 0x10
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getInt(I)I
@@ -934,7 +814,7 @@
 
     iput v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mFlagChanged:I
 
-    .line 3255
+    .line 3909
     const/16 v8, 0x11
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -943,7 +823,7 @@
 
     iput-object v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mDstServerId:Ljava/lang/String;
 
-    .line 3256
+    .line 3910
     const/16 v8, 0x12
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -952,10 +832,10 @@
 
     iput-object v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mNewDisplayName:Ljava/lang/String;
 
-    .line 3258
+    .line 3912
     return-object p0
 
-    .line 3216
+    .line 3870
     .restart local v0       #account:Lcom/android/email/provider/EmailContent$Account;
     .restart local v5       #isEAS:Z
     :cond_1
@@ -972,11 +852,11 @@
 
     move-result-object v4
 
-    .line 3217
+    .line 3871
     .local v4, info:Lcom/android/email/mail/Store$StoreInfo;
     if-nez v4, :cond_2
 
-    .line 3218
+    .line 3872
     const-string v8, "EmailContent >>"
 
     const-string v9, "info is null"
@@ -987,7 +867,7 @@
 
     goto/16 :goto_0
 
-    .line 3225
+    .line 3879
     .end local v0           #account:Lcom/android/email/provider/EmailContent$Account;
     .end local v4           #info:Lcom/android/email/mail/Store$StoreInfo;
     :catch_0
@@ -995,7 +875,7 @@
 
     move-object v3, v8
 
-    .line 3226
+    .line 3880
     .local v3, e:Ljava/lang/NullPointerException;
     const-string v8, "EmailContent >>"
 
@@ -1005,7 +885,7 @@
 
     goto/16 :goto_0
 
-    .line 3220
+    .line 3874
     .end local v3           #e:Ljava/lang/NullPointerException;
     .restart local v0       #account:Lcom/android/email/provider/EmailContent$Account;
     .restart local v4       #info:Lcom/android/email/mail/Store$StoreInfo;
@@ -1013,7 +893,7 @@
     :try_start_2
     iget-object v6, v4, Lcom/android/email/mail/Store$StoreInfo;->mScheme:Ljava/lang/String;
 
-    .line 3221
+    .line 3875
     .local v6, scheme:Ljava/lang/String;
     const-string v8, "eas"
 
@@ -1025,7 +905,7 @@
 
     goto/16 :goto_0
 
-    .line 3249
+    .line 3903
     .end local v0           #account:Lcom/android/email/provider/EmailContent$Account;
     .end local v4           #info:Lcom/android/email/mail/Store$StoreInfo;
     .end local v5           #isEAS:Z
@@ -1041,7 +921,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3013
+    .line 3652
     invoke-virtual {p0, p1}, Lcom/android/email/provider/EmailContent$Mailbox;->restore(Landroid/database/Cursor;)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v0
@@ -1053,12 +933,12 @@
     .locals 4
 
     .prologue
-    .line 3263
+    .line 3917
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 3264
+    .line 3918
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "displayName"
 
@@ -1066,21 +946,21 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3265
+    .line 3919
     const-string v1, "serverId"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mServerId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3266
+    .line 3920
     const-string v1, "parentServerId"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mParentServerId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3267
+    .line 3921
     const-string v1, "accountKey"
 
     iget-wide v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
@@ -1091,7 +971,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 3268
+    .line 3922
     const-string v1, "type"
 
     iget v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mType:I
@@ -1102,7 +982,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3269
+    .line 3923
     const-string v1, "delimiter"
 
     iget v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mDelimiter:I
@@ -1113,14 +993,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3270
+    .line 3924
     const-string v1, "syncKey"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3271
+    .line 3925
     const-string v1, "syncLookback"
 
     iget v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncLookback:I
@@ -1131,7 +1011,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3272
+    .line 3926
     const-string v1, "syncInterval"
 
     iget v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncInterval:I
@@ -1142,7 +1022,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3273
+    .line 3927
     const-string v1, "syncTime"
 
     iget-wide v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncTime:J
@@ -1153,7 +1033,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 3274
+    .line 3928
     const-string v1, "unreadCount"
 
     iget v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mUnreadCount:I
@@ -1164,7 +1044,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3275
+    .line 3929
     const-string v1, "flagVisible"
 
     iget-boolean v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mFlagVisible:Z
@@ -1175,7 +1055,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 3276
+    .line 3930
     const-string v1, "flags"
 
     iget v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mFlags:I
@@ -1186,7 +1066,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3277
+    .line 3931
     const-string v1, "visibleLimit"
 
     iget v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mVisibleLimit:I
@@ -1197,14 +1077,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3278
+    .line 3932
     const-string v1, "syncStatus"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncStatus:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3280
+    .line 3934
     const-string v1, "flagChanged"
 
     iget v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mFlagChanged:I
@@ -1215,20 +1095,20 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3281
+    .line 3935
     const-string v1, "dstMailboxId"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mDstServerId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3282
+    .line 3936
     const-string v1, "newDisplayName"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mNewDisplayName:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3284
+    .line 3938
     return-object v0
 .end method

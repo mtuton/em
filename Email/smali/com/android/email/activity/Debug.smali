@@ -197,7 +197,7 @@
 
     .line 77
     :pswitch_data_0
-    .packed-switch 0x7f07006c
+    .packed-switch 0x7f07007f
         :pswitch_0
         :pswitch_1
         :pswitch_2
@@ -214,7 +214,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 49
-    const v0, 0x7f030012
+    const v0, 0x7f030015
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/Debug;->setContentView(I)V
 
@@ -226,7 +226,7 @@
     iput-object v0, p0, Lcom/android/email/activity/Debug;->mPreferences:Lcom/android/email/Preferences;
 
     .line 53
-    const v0, 0x7f07006b
+    const v0, 0x7f07007e
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/Debug;->findViewById(I)Landroid/view/View;
 
@@ -237,7 +237,7 @@
     iput-object v0, p0, Lcom/android/email/activity/Debug;->mVersionView:Landroid/widget/TextView;
 
     .line 54
-    const v0, 0x7f07006c
+    const v0, 0x7f07007f
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/Debug;->findViewById(I)Landroid/view/View;
 
@@ -248,7 +248,7 @@
     iput-object v0, p0, Lcom/android/email/activity/Debug;->mEnableDebugLoggingView:Landroid/widget/CheckBox;
 
     .line 55
-    const v0, 0x7f07006d
+    const v0, 0x7f070080
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/Debug;->findViewById(I)Landroid/view/View;
 
@@ -271,7 +271,7 @@
     .line 60
     iget-object v0, p0, Lcom/android/email/activity/Debug;->mVersionView:Landroid/widget/TextView;
 
-    const v1, 0x7f080044
+    const v1, 0x7f08004e
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/Debug;->getString(I)Ljava/lang/String;
 
@@ -316,7 +316,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
     .line 67
-    const v0, 0x7f07006e
+    const v0, 0x7f070081
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/Debug;->findViewById(I)Landroid/view/View;
 
@@ -327,7 +327,7 @@
     iput-object v0, p0, Lcom/android/email/activity/Debug;->mEnableExchangeLoggingView:Landroid/widget/CheckBox;
 
     .line 68
-    const v0, 0x7f07006f
+    const v0, 0x7f070082
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/Debug;->findViewById(I)Landroid/view/View;
 
@@ -378,7 +378,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0003
+    const v1, 0x7f0d0006
 
     invoke-virtual {v0, v1, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
@@ -400,7 +400,7 @@
 
     .line 105
     .local v0, id:I
-    const v1, 0x7f070121
+    const v1, 0x7f070186
 
     if-ne v0, v1, :cond_0
 

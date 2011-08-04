@@ -78,9 +78,9 @@
     .line 54
     :array_0
     .array-data 0x4
-        0x3ft 0x0t 0x7t 0x7ft
-        0x40t 0x0t 0x7t 0x7ft
-        0x41t 0x0t 0x7t 0x7ft
+        0x49t 0x0t 0x7t 0x7ft
+        0x4at 0x0t 0x7t 0x7ft
+        0x4bt 0x0t 0x7t 0x7ft
     .end array-data
 .end method
 
@@ -120,7 +120,7 @@
     invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 168
-    const v3, 0x7f0200b0
+    const v3, 0x7f0200b2
 
     invoke-static {p0, v3}, Landroid/content/Intent$ShortcutIconResource;->fromContext(Landroid/content/Context;I)Landroid/content/Intent$ShortcutIconResource;
 
@@ -227,7 +227,7 @@
     invoke-virtual {v6, v1}, Landroid/widget/ListView;->setItemsCanFocus(Z)V
 
     .line 86
-    const v1, 0x7f07003d
+    const v1, 0x7f070047
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/AccountShortcutPicker;->findViewById(I)Landroid/view/View;
 

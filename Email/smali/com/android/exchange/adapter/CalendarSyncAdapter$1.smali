@@ -1,4 +1,4 @@
-.class Lcom/android/exchange/adapter/CalendarSyncAdapter$1;
+.class synthetic Lcom/android/exchange/adapter/CalendarSyncAdapter$1;
 .super Ljava/lang/Object;
 .source "CalendarSyncAdapter.java"
 

@@ -11,39 +11,7 @@
 .field value:Ljava/lang/Object;
 
 
-# direct methods
-.method constructor <init>([I)V
-    .locals 1
-    .parameter "_array"
-
-    .prologue
-    .line 35
-    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
-
-    .line 32
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/android/exchange/MockParserStream;->pos:I
-
-    .line 36
-    iput-object p1, p0, Lcom/android/exchange/MockParserStream;->array:[I
-
-    .line 37
-    return-void
-.end method
-
-
 # virtual methods
-.method public getResult()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 53
-    iget-object v0, p0, Lcom/android/exchange/MockParserStream;->value:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
 .method public read()I
     .locals 4
     .annotation system Ldalvik/annotation/Throws;

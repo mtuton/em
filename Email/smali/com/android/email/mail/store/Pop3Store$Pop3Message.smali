@@ -31,24 +31,24 @@
     .end annotation
 
     .prologue
-    .line 1004
+    .line 998
     iput-object p1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
-    .line 1005
+    .line 999
     invoke-direct {p0}, Lcom/android/email/mail/internet/MimeMessage;-><init>()V
 
-    .line 1006
+    .line 1000
     iput-object p2, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->mUid:Ljava/lang/String;
 
-    .line 1007
+    .line 1001
     iput-object p3, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->mFolder:Lcom/android/email/mail/Folder;
 
-    .line 1008
+    .line 1002
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->mSize:I
 
-    .line 1009
+    .line 1003
     return-void
 .end method
 
@@ -65,10 +65,10 @@
     .end annotation
 
     .prologue
-    .line 1016
+    .line 1010
     invoke-super {p0, p1}, Lcom/android/email/mail/internet/MimeMessage;->parse(Ljava/io/InputStream;)V
 
-    .line 1017
+    .line 1011
     return-void
 .end method
 
@@ -87,10 +87,10 @@
 
     const/4 v3, 0x0
 
-    .line 1021
+    .line 1015
     invoke-super {p0, p1, p2}, Lcom/android/email/mail/internet/MimeMessage;->setFlag(Lcom/android/email/mail/Flag;Z)V
 
-    .line 1022
+    .line 1016
     iget-object v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->mFolder:Lcom/android/email/mail/Folder;
 
     new-array v1, v2, [Lcom/android/email/mail/Message;
@@ -103,7 +103,7 @@
 
     invoke-virtual {v0, v1, v2, p2}, Lcom/android/email/mail/Folder;->setFlags([Lcom/android/email/mail/Message;[Lcom/android/email/mail/Flag;Z)V
 
-    .line 1023
+    .line 1017
     return-void
 .end method
 
@@ -112,9 +112,9 @@
     .parameter "size"
 
     .prologue
-    .line 1012
+    .line 1006
     iput p1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->mSize:I
 
-    .line 1013
+    .line 1007
     return-void
 .end method

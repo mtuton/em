@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 499
+    .line 511
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$5;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 500
+    .line 513
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$5;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     invoke-static {v0}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$000(Lcom/android/email/activity/setup/AccountSetupCheckSettings;)Z
@@ -50,11 +50,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 508
+    .line 521
     :goto_0
     return-void
 
-    .line 503
+    .line 516
     :cond_0
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$5;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
@@ -64,14 +64,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 505
+    .line 518
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$5;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     const/4 v1, 0x5
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->setResult(I)V
 
-    .line 507
+    .line 520
     :cond_1
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$5;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 

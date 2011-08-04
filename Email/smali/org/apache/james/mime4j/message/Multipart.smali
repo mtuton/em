@@ -189,55 +189,6 @@
     return-object v0
 .end method
 
-.method public getSubType()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 66
-    iget-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->subType:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public setBodyParts(Ljava/util/List;)V
-    .locals 3
-    .parameter "bodyParts"
-
-    .prologue
-    .line 130
-    iput-object p1, p0, Lorg/apache/james/mime4j/message/Multipart;->bodyParts:Ljava/util/List;
-
-    .line 131
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, it:Ljava/util/Iterator;
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 132
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lorg/apache/james/mime4j/message/BodyPart;
-
-    iget-object v2, p0, Lorg/apache/james/mime4j/message/Multipart;->parent:Lorg/apache/james/mime4j/message/Entity;
-
-    invoke-virtual {v1, v2}, Lorg/apache/james/mime4j/message/BodyPart;->setParent(Lorg/apache/james/mime4j/message/Entity;)V
-
-    goto :goto_0
-
-    .line 134
-    :cond_0
-    return-void
-.end method
-
 .method public setEpilogue(Ljava/lang/String;)V
     .locals 0
     .parameter "epilogue"
@@ -299,18 +250,6 @@
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Multipart;->preamble:Ljava/lang/String;
 
     .line 162
-    return-void
-.end method
-
-.method public setSubType(Ljava/lang/String;)V
-    .locals 0
-    .parameter "subType"
-
-    .prologue
-    .line 77
-    iput-object p1, p0, Lorg/apache/james/mime4j/message/Multipart;->subType:Ljava/lang/String;
-
-    .line 78
     return-void
 .end method
 

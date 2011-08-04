@@ -18,9 +18,6 @@
 .method public abstract getField(JLandroid/database/Cursor;)Z
 .end method
 
-.method public abstract getFlagField(JLandroid/database/Cursor;)I
-.end method
-
 .method public abstract setField(JLandroid/database/Cursor;Z)Z
 .end method
 

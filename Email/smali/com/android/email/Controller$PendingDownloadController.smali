@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1565
+    .line 1732
     iput-object p1, p0, Lcom/android/email/Controller$PendingDownloadController;->this$0:Lcom/android/email/Controller;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 1567
+    .line 1734
     iget-object v0, p0, Lcom/android/email/Controller$PendingDownloadController;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v0}, Lcom/android/email/Controller;->access$700(Lcom/android/email/Controller;)V
 
-    .line 1568
+    .line 1735
     return-void
 .end method

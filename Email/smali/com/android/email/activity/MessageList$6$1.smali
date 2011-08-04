@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1784
+    .line 2052
     iput-object p1, p0, Lcom/android/email/activity/MessageList$6$1;->this$1:Lcom/android/email/activity/MessageList$6;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +41,14 @@
     .locals 7
 
     .prologue
-    .line 1785
+    .line 2054
     iget-object v1, p0, Lcom/android/email/activity/MessageList$6$1;->this$1:Lcom/android/email/activity/MessageList$6;
 
     iget v1, v1, Lcom/android/email/activity/MessageList$6;->val$ANIMATION_TYPE:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 1793
+    .line 2062
     :goto_0
     new-instance v0, Lcom/android/email/activity/Rotate3dAnimation;
 
@@ -56,7 +56,7 @@
 
     iget-object v1, v1, Lcom/android/email/activity/MessageList$6;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$1100(Lcom/android/email/activity/MessageList;)F
+    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$1400(Lcom/android/email/activity/MessageList;)F
 
     move-result v1
 
@@ -64,7 +64,7 @@
 
     iget-object v2, v2, Lcom/android/email/activity/MessageList$6;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$1200(Lcom/android/email/activity/MessageList;)F
+    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$1500(Lcom/android/email/activity/MessageList;)F
 
     move-result v2
 
@@ -72,7 +72,7 @@
 
     iget-object v3, v3, Lcom/android/email/activity/MessageList$6;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v3}, Lcom/android/email/activity/MessageList;->access$1300(Lcom/android/email/activity/MessageList;)F
+    invoke-static {v3}, Lcom/android/email/activity/MessageList;->access$1600(Lcom/android/email/activity/MessageList;)F
 
     move-result v3
 
@@ -80,7 +80,7 @@
 
     iget-object v4, v4, Lcom/android/email/activity/MessageList$6;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v4}, Lcom/android/email/activity/MessageList;->access$1400(Lcom/android/email/activity/MessageList;)F
+    invoke-static {v4}, Lcom/android/email/activity/MessageList;->access$1700(Lcom/android/email/activity/MessageList;)F
 
     move-result v4
 
@@ -88,7 +88,7 @@
 
     iget-object v5, v5, Lcom/android/email/activity/MessageList$6;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v5}, Lcom/android/email/activity/MessageList;->access$1500(Lcom/android/email/activity/MessageList;)F
+    invoke-static {v5}, Lcom/android/email/activity/MessageList;->access$1800(Lcom/android/email/activity/MessageList;)F
 
     move-result v5
 
@@ -96,42 +96,29 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/email/activity/Rotate3dAnimation;-><init>(FFFFFZ)V
 
-    .line 1795
+    .line 2064
     .local v0, rot:Lcom/android/email/activity/Rotate3dAnimation;
     const-wide/16 v1, 0x12c
 
     invoke-virtual {v0, v1, v2}, Lcom/android/email/activity/Rotate3dAnimation;->setDuration(J)V
 
-    .line 1796
+    .line 2065
     iget-object v1, p0, Lcom/android/email/activity/MessageList$6$1;->this$1:Lcom/android/email/activity/MessageList$6;
 
     iget-object v1, v1, Lcom/android/email/activity/MessageList$6;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$1700(Lcom/android/email/activity/MessageList;)Landroid/widget/LinearLayout;
+    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$1900(Lcom/android/email/activity/MessageList;)Lcom/android/email/winset/TwTabWidget;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->startAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {v1, v0}, Lcom/android/email/winset/TwTabWidget;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1797
+    .line 2066
     return-void
 
-    .line 1788
+    .line 2057
     .end local v0           #rot:Lcom/android/email/activity/Rotate3dAnimation;
     :pswitch_0
-    iget-object v1, p0, Lcom/android/email/activity/MessageList$6$1;->this$1:Lcom/android/email/activity/MessageList$6;
-
-    iget-object v1, v1, Lcom/android/email/activity/MessageList$6;->this$0:Lcom/android/email/activity/MessageList;
-
-    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$1000(Lcom/android/email/activity/MessageList;)Landroid/widget/LinearLayout;
-
-    move-result-object v1
-
-    const/16 v2, 0x8
-
-    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
-
-    .line 1789
     iget-object v1, p0, Lcom/android/email/activity/MessageList$6$1;->this$1:Lcom/android/email/activity/MessageList$6;
 
     iget-object v1, v1, Lcom/android/email/activity/MessageList$6;->this$0:Lcom/android/email/activity/MessageList;
@@ -142,17 +129,30 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
+    .line 2058
+    iget-object v1, p0, Lcom/android/email/activity/MessageList$6$1;->this$1:Lcom/android/email/activity/MessageList$6;
+
+    iget-object v1, v1, Lcom/android/email/activity/MessageList$6;->this$0:Lcom/android/email/activity/MessageList;
+
+    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$1300(Lcom/android/email/activity/MessageList;)Landroid/widget/LinearLayout;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
     goto :goto_0
 
-    .line 1785
+    .line 2054
     nop
 
     :pswitch_data_0
-    .packed-switch 0x1
+    .packed-switch 0x0
         :pswitch_0
     .end packed-switch
 .end method

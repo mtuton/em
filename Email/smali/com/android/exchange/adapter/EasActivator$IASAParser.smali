@@ -12,19 +12,3 @@
     accessFlags = 0x608
     name = "IASAParser"
 .end annotation
-
-
-# virtual methods
-.method public abstract parse(Ljava/io/InputStream;)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/io/InputStream;",
-            ")",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end method

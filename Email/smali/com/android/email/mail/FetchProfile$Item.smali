@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    .line 43
+    .line 45
     new-instance v0, Lcom/android/email/mail/FetchProfile$Item;
 
     const-string v1, "FLAGS"
@@ -61,7 +61,7 @@
 
     sput-object v0, Lcom/android/email/mail/FetchProfile$Item;->FLAGS:Lcom/android/email/mail/FetchProfile$Item;
 
-    .line 49
+    .line 51
     new-instance v0, Lcom/android/email/mail/FetchProfile$Item;
 
     const-string v1, "ENVELOPE"
@@ -70,7 +70,7 @@
 
     sput-object v0, Lcom/android/email/mail/FetchProfile$Item;->ENVELOPE:Lcom/android/email/mail/FetchProfile$Item;
 
-    .line 59
+    .line 61
     new-instance v0, Lcom/android/email/mail/FetchProfile$Item;
 
     const-string v1, "STRUCTURE"
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/android/email/mail/FetchProfile$Item;->STRUCTURE:Lcom/android/email/mail/FetchProfile$Item;
 
-    .line 65
+    .line 67
     new-instance v0, Lcom/android/email/mail/FetchProfile$Item;
 
     const-string v1, "BODY_SANE"
@@ -88,7 +88,7 @@
 
     sput-object v0, Lcom/android/email/mail/FetchProfile$Item;->BODY_SANE:Lcom/android/email/mail/FetchProfile$Item;
 
-    .line 70
+    .line 72
     new-instance v0, Lcom/android/email/mail/FetchProfile$Item;
 
     const-string v1, "BODY"
@@ -97,7 +97,7 @@
 
     sput-object v0, Lcom/android/email/mail/FetchProfile$Item;->BODY:Lcom/android/email/mail/FetchProfile$Item;
 
-    .line 39
+    .line 41
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/android/email/mail/FetchProfile$Item;
@@ -138,7 +138,7 @@
     .end annotation
 
     .prologue
-    .line 39
+    .line 41
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -146,27 +146,26 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/email/mail/FetchProfile$Item;
     .locals 1
-    .parameter "name"
+    .parameter
 
     .prologue
-    .line 39
+    .line 41
     const-class v0, Lcom/android/email/mail/FetchProfile$Item;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
-    .end local p0
     check-cast p0, Lcom/android/email/mail/FetchProfile$Item;
 
     return-object p0
 .end method
 
-.method public static final values()[Lcom/android/email/mail/FetchProfile$Item;
+.method public static values()[Lcom/android/email/mail/FetchProfile$Item;
     .locals 1
 
     .prologue
-    .line 39
+    .line 41
     sget-object v0, Lcom/android/email/mail/FetchProfile$Item;->$VALUES:[Lcom/android/email/mail/FetchProfile$Item;
 
     invoke-virtual {v0}, [Lcom/android/email/mail/FetchProfile$Item;->clone()Ljava/lang/Object;

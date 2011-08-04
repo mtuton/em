@@ -51,7 +51,7 @@
     .parameter
 
     .prologue
-    .line 1687
+    .line 1715
     iput-object p1, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
 
     iput-object p2, p0, Lcom/android/email/MessagingController$10;->val$messageId:Ljava/util/HashSet;
@@ -81,10 +81,10 @@
     .locals 34
 
     .prologue
-    .line 1688
+    .line 1717
     const/4 v9, 0x1
 
-    .line 1691
+    .line 1720
     .local v9, bret:Z
     move-object/from16 v0, p0
 
@@ -115,7 +115,7 @@
 
     check-cast v29, Ljava/lang/Long;
 
-    .line 1694
+    .line 1723
     .local v29, cur_messageId:Ljava/lang/Long;
     move-object/from16 v0, p0
 
@@ -135,11 +135,11 @@
 
     move-result-object v33
 
-    .line 1695
+    .line 1724
     .local v33, message:Lcom/android/email/provider/EmailContent$Message;
     if-nez v33, :cond_0
 
-    .line 1697
+    .line 1726
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
@@ -202,7 +202,7 @@
 
     goto :goto_0
 
-    .line 1701
+    .line 1730
     :cond_0
     move-object/from16 v0, v33
 
@@ -214,7 +214,7 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 1704
+    .line 1733
     :try_start_0
     move-object/from16 v0, p0
 
@@ -230,10 +230,10 @@
 
     move-result v28
 
-    .line 1705
+    .line 1734
     if-nez v28, :cond_1
 
-    .line 1707
+    .line 1736
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
@@ -298,13 +298,13 @@
 
     goto/16 :goto_0
 
-    .line 1711
+    .line 1740
     :catch_0
     move-exception v2
 
     move-object/from16 v32, v2
 
-    .line 1715
+    .line 1744
     .local v32, me:Lcom/android/email/mail/MessagingException;
     move-object/from16 v0, p0
 
@@ -368,7 +368,7 @@
 
     goto/16 :goto_0
 
-    .line 1721
+    .line 1750
     .end local v32           #me:Lcom/android/email/mail/MessagingException;
     :cond_1
     move-object/from16 v0, p0
@@ -397,12 +397,12 @@
 
     if-nez v2, :cond_2
 
-    .line 1723
+    .line 1752
     new-instance v27, Ljava/util/HashSet;
 
     invoke-direct/range {v27 .. v27}, Ljava/util/HashSet;-><init>()V
 
-    .line 1725
+    .line 1754
     .local v27, attachmentId:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Long;>;"
     move-object/from16 v0, p0
 
@@ -422,14 +422,14 @@
 
     move-result-object v27
 
-    .line 1727
+    .line 1756
     invoke-virtual/range {v27 .. v27}, Ljava/util/HashSet;->isEmpty()Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 1729
+    .line 1758
     invoke-virtual/range {v27 .. v27}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v31
@@ -448,7 +448,7 @@
 
     check-cast v26, Ljava/lang/Long;
 
-    .line 1732
+    .line 1761
     .local v26, attachId:Ljava/lang/Long;
     :try_start_1
     move-object/from16 v0, p0
@@ -483,13 +483,13 @@
 
     goto :goto_1
 
-    .line 1734
+    .line 1763
     :catch_1
     move-exception v2
 
     move-object/from16 v32, v2
 
-    .line 1738
+    .line 1767
     .restart local v32       #me:Lcom/android/email/mail/MessagingException;
     move-object/from16 v0, p0
 
@@ -553,7 +553,7 @@
 
     goto :goto_1
 
-    .line 1747
+    .line 1776
     .end local v26           #attachId:Ljava/lang/Long;
     .end local v27           #attachmentId:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Long;>;"
     .end local v31           #i$:Ljava/util/Iterator;
@@ -585,7 +585,7 @@
 
     if-nez v2, :cond_3
 
-    .line 1749
+    .line 1778
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
@@ -648,7 +648,7 @@
 
     goto/16 :goto_0
 
-    .line 1756
+    .line 1785
     :cond_3
     :try_start_2
     move-object/from16 v0, p0
@@ -671,11 +671,11 @@
 
     move-result-object v7
 
-    .line 1757
+    .line 1786
     .local v7, target_account:Lcom/android/email/provider/EmailContent$Account;
     if-nez v7, :cond_4
 
-    .line 1758
+    .line 1787
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
@@ -740,7 +740,7 @@
 
     goto/16 :goto_0
 
-    .line 1768
+    .line 1797
     .end local v7           #target_account:Lcom/android/email/provider/EmailContent$Account;
     :catch_2
     move-exception v2
@@ -749,7 +749,7 @@
 
     move/from16 v9, v28
 
-    .line 1772
+    .line 1801
     .end local v28           #bret:Z
     .restart local v9       #bret:Z
     .restart local v32       #me:Lcom/android/email/mail/MessagingException;
@@ -816,12 +816,12 @@
 
     move/from16 v28, v9
 
-    .line 1774
+    .line 1803
     .end local v9           #bret:Z
     .restart local v28       #bret:Z
     goto/16 :goto_0
 
-    .line 1763
+    .line 1792
     .end local v32           #me:Lcom/android/email/mail/MessagingException;
     .restart local v7       #target_account:Lcom/android/email/provider/EmailContent$Account;
     :cond_4
@@ -854,7 +854,7 @@
 
     move-result v9
 
-    .line 1765
+    .line 1794
     .end local v28           #bret:Z
     .restart local v9       #bret:Z
     :try_start_4
@@ -920,19 +920,19 @@
 
     move/from16 v28, v9
 
-    .line 1776
+    .line 1805
     .end local v9           #bret:Z
     .restart local v28       #bret:Z
     goto/16 :goto_0
 
-    .line 1777
+    .line 1806
     .end local v7           #target_account:Lcom/android/email/provider/EmailContent$Account;
     .end local v29           #cur_messageId:Ljava/lang/Long;
     .end local v33           #message:Lcom/android/email/provider/EmailContent$Message;
     :cond_5
     return-void
 
-    .line 1768
+    .line 1797
     .end local v28           #bret:Z
     .restart local v7       #target_account:Lcom/android/email/provider/EmailContent$Account;
     .restart local v9       #bret:Z

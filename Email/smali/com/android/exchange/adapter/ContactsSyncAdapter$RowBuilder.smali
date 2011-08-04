@@ -29,15 +29,15 @@
     .parameter "_builder"
 
     .prologue
-    .line 950
+    .line 952
     iput-object p1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 951
+    .line 953
     iput-object p2, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;->builder:Landroid/content/ContentProviderOperation$Builder;
 
-    .line 952
+    .line 954
     return-void
 .end method
 
@@ -48,20 +48,20 @@
     .parameter "_ncv"
 
     .prologue
-    .line 954
+    .line 956
     iput-object p1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 955
+    .line 957
     iput-object p2, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;->builder:Landroid/content/ContentProviderOperation$Builder;
 
-    .line 956
+    .line 958
     iget-object v0, p3, Landroid/content/Entity$NamedContentValues;->values:Landroid/content/ContentValues;
 
     iput-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;->cv:Landroid/content/ContentValues;
 
-    .line 957
+    .line 959
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .locals 1
 
     .prologue
-    .line 970
+    .line 972
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;->builder:Landroid/content/ContentProviderOperation$Builder;
 
     invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
@@ -87,12 +87,12 @@
     .parameter "value"
 
     .prologue
-    .line 974
+    .line 976
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;->builder:Landroid/content/ContentProviderOperation$Builder;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 975
+    .line 977
     return-object p0
 .end method
 
@@ -102,25 +102,11 @@
     .parameter "previousResult"
 
     .prologue
-    .line 965
+    .line 967
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;->builder:Landroid/content/ContentProviderOperation$Builder;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/ContentProviderOperation$Builder;->withValueBackReference(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 966
-    return-object p0
-.end method
-
-.method withValues(Landroid/content/ContentValues;)Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;
-    .locals 1
-    .parameter "values"
-
-    .prologue
-    .line 960
-    iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;->builder:Landroid/content/ContentProviderOperation$Builder;
-
-    invoke-virtual {v0, p1}, Landroid/content/ContentProviderOperation$Builder;->withValues(Landroid/content/ContentValues;)Landroid/content/ContentProviderOperation$Builder;
-
-    .line 961
+    .line 968
     return-object p0
 .end method

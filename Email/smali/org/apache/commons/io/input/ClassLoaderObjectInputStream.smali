@@ -7,30 +7,6 @@
 .field private classLoader:Ljava/lang/ClassLoader;
 
 
-# direct methods
-.method public constructor <init>(Ljava/lang/ClassLoader;Ljava/io/InputStream;)V
-    .locals 0
-    .parameter "classLoader"
-    .parameter "inputStream"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Ljava/io/StreamCorruptedException;
-        }
-    .end annotation
-
-    .prologue
-    .line 51
-    invoke-direct {p0, p2}, Ljava/io/ObjectInputStream;-><init>(Ljava/io/InputStream;)V
-
-    .line 52
-    iput-object p1, p0, Lorg/apache/commons/io/input/ClassLoaderObjectInputStream;->classLoader:Ljava/lang/ClassLoader;
-
-    .line 53
-    return-void
-.end method
-
-
 # virtual methods
 .method protected resolveClass(Ljava/io/ObjectStreamClass;)Ljava/lang/Class;
     .locals 4

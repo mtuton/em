@@ -14,14 +14,6 @@
 .end annotation
 
 
-# static fields
-.field static final RRULE_DATE:I = 0x2
-
-.field static final RRULE_DAY_WEEK:I = 0x1
-
-.field static final RRULE_NONE:I
-
-
 # instance fields
 .field date:I
 
@@ -41,21 +33,21 @@
     .parameter "_date"
 
     .prologue
-    .line 365
+    .line 368
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 366
+    .line 369
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/exchange/utility/CalendarUtilities$RRule;->type:I
 
-    .line 367
+    .line 370
     iput p1, p0, Lcom/android/exchange/utility/CalendarUtilities$RRule;->month:I
 
-    .line 368
+    .line 371
     iput p2, p0, Lcom/android/exchange/utility/CalendarUtilities$RRule;->date:I
 
-    .line 369
+    .line 372
     return-void
 .end method
 
@@ -66,24 +58,24 @@
     .parameter "_week"
 
     .prologue
-    .line 377
+    .line 380
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 378
+    .line 381
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/exchange/utility/CalendarUtilities$RRule;->type:I
 
-    .line 379
+    .line 382
     iput p1, p0, Lcom/android/exchange/utility/CalendarUtilities$RRule;->month:I
 
-    .line 380
+    .line 383
     iput p2, p0, Lcom/android/exchange/utility/CalendarUtilities$RRule;->dayOfWeek:I
 
-    .line 381
+    .line 384
     iput p3, p0, Lcom/android/exchange/utility/CalendarUtilities$RRule;->week:I
 
-    .line 382
+    .line 385
     return-void
 .end method
 
@@ -97,12 +89,12 @@
 
     const-string v2, "FREQ=YEARLY;BYMONTH="
 
-    .line 386
+    .line 389
     iget v0, p0, Lcom/android/exchange/utility/CalendarUtilities$RRule;->type:I
 
     if-ne v0, v3, :cond_0
 
-    .line 387
+    .line 390
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -147,7 +139,7 @@
 
     move-result-object v0
 
-    .line 390
+    .line 393
     :goto_0
     return-object v0
 

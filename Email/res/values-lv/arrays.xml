@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="search_list">
+        <item>Google</item>
+        <item>Google tulkotājs</item>
+        <item>Wikipedia</item>
+        <item>Vārdnīca</item>
+    </string-array>
+    <string-array name="share_list">
+        <item>Koplietot kā tekstu</item>
+        <item>Koplietot attēlu</item>
+    </string-array>
+</resources>

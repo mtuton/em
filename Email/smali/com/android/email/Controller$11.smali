@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 894
+    .line 923
     iput-object p1, p0, Lcom/android/email/Controller$11;->this$0:Lcom/android/email/Controller;
 
     iput-wide p2, p0, Lcom/android/email/Controller$11;->val$mailboxId:J
@@ -45,7 +45,7 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 895
+    .line 926
     iget-object v5, p0, Lcom/android/email/Controller$11;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v5}, Lcom/android/email/Controller;->access$400(Lcom/android/email/Controller;)Landroid/content/Context;
@@ -58,16 +58,16 @@
 
     move-result-object v3
 
-    .line 896
+    .line 927
     .local v3, mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     if-nez v3, :cond_1
 
-    .line 918
+    .line 949
     :cond_0
     :goto_0
     return-void
 
-    .line 899
+    .line 930
     :cond_1
     iget-object v5, p0, Lcom/android/email/Controller$11;->this$0:Lcom/android/email/Controller;
 
@@ -81,11 +81,11 @@
 
     move-result-object v0
 
-    .line 901
+    .line 932
     .local v0, account:Lcom/android/email/provider/EmailContent$Account;
     if-eqz v0, :cond_0
 
-    .line 904
+    .line 935
     iget-object v5, p0, Lcom/android/email/Controller$11;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v5}, Lcom/android/email/Controller;->access$400(Lcom/android/email/Controller;)Landroid/content/Context;
@@ -106,7 +106,7 @@
 
     move-result-object v2
 
-    .line 906
+    .line 937
     .local v2, info:Lcom/android/email/mail/Store$StoreInfo;
     if-eqz v2, :cond_0
 
@@ -114,12 +114,12 @@
 
     if-lez v5, :cond_0
 
-    .line 908
+    .line 939
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 909
+    .line 940
     .local v1, cv:Landroid/content/ContentValues;
     const-string v5, "field"
 
@@ -127,7 +127,7 @@
 
     invoke-virtual {v1, v5, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 910
+    .line 941
     const-string v5, "add"
 
     iget v6, v2, Lcom/android/email/mail/Store$StoreInfo;->mVisibleLimitIncrement:I
@@ -138,7 +138,7 @@
 
     invoke-virtual {v1, v5, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 911
+    .line 942
     sget-object v5, Lcom/android/email/provider/EmailContent$Mailbox;->ADD_TO_FIELD_URI:Landroid/net/Uri;
 
     iget-wide v6, p0, Lcom/android/email/Controller$11;->val$mailboxId:J
@@ -147,7 +147,7 @@
 
     move-result-object v4
 
-    .line 912
+    .line 943
     .local v4, uri:Landroid/net/Uri;
     iget-object v5, p0, Lcom/android/email/Controller$11;->this$0:Lcom/android/email/Controller;
 
@@ -161,7 +161,7 @@
 
     invoke-virtual {v5, v4, v1, v8, v8}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 914
+    .line 945
     iget v5, v3, Lcom/android/email/provider/EmailContent$Mailbox;->mVisibleLimit:I
 
     iget v6, v2, Lcom/android/email/mail/Store$StoreInfo;->mVisibleLimitIncrement:I
@@ -170,7 +170,7 @@
 
     iput v5, v3, Lcom/android/email/provider/EmailContent$Mailbox;->mVisibleLimit:I
 
-    .line 915
+    .line 946
     const-string v5, "Email"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -195,7 +195,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 916
+    .line 947
     iget-object v5, p0, Lcom/android/email/Controller$11;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v5}, Lcom/android/email/Controller;->access$300(Lcom/android/email/Controller;)Lcom/android/email/MessagingController;

@@ -15,13 +15,13 @@
 
 
 # virtual methods
-.method public abstract GALSearchCallback(Lcom/android/email/mail/MessagingException;JILandroid/os/Bundle;)V
-.end method
-
 .method public abstract OoOCallback(Lcom/android/email/mail/MessagingException;JILandroid/os/Bundle;)V
 .end method
 
 .method public abstract createMailbox()V
+.end method
+
+.method public abstract deviceInformationCallback(Lcom/android/email/mail/MessagingException;JI)V
 .end method
 
 .method public abstract emptyTrashCallback(Lcom/android/email/mail/MessagingException;JI)V
@@ -37,6 +37,9 @@
 .end method
 
 .method public abstract loadMoreCallback(Lcom/android/email/mail/MessagingException;JI)V
+.end method
+
+.method public abstract moveConvAlwaysCallback(Lcom/android/email/mail/MessagingException;[BII)V
 .end method
 
 .method public abstract moveMessageCallback(Lcom/android/email/mail/MessagingException;J)V

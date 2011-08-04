@@ -14,10 +14,6 @@
 .end annotation
 
 
-# static fields
-.field private static final MSG_PROGRESS:I = 0x1
-
-
 # instance fields
 .field final synthetic this$0:Lcom/android/email/activity/AccountFolderList;
 
@@ -28,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1003
+    .line 1014
     iput-object p1, p0, Lcom/android/email/activity/AccountFolderList$MessageListHandler;->this$0:Lcom/android/email/activity/AccountFolderList;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -42,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1003
+    .line 1014
     invoke-direct {p0, p1}, Lcom/android/email/activity/AccountFolderList$MessageListHandler;-><init>(Lcom/android/email/activity/AccountFolderList;)V
 
     return-void
@@ -57,19 +53,19 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1008
+    .line 1019
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 1018
+    .line 1029
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 1020
+    .line 1031
     :goto_0
     return-void
 
-    .line 1010
+    .line 1021
     :pswitch_0
     iget v1, p1, Landroid/os/Message;->arg1:I
 
@@ -79,15 +75,15 @@
 
     move v0, v1
 
-    .line 1011
+    .line 1022
     .local v0, showProgress:Z
     :goto_1
     if-eqz v0, :cond_1
 
-    .line 1012
+    .line 1023
     iget-object v1, p0, Lcom/android/email/activity/AccountFolderList$MessageListHandler;->this$0:Lcom/android/email/activity/AccountFolderList;
 
-    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$1200(Lcom/android/email/activity/AccountFolderList;)Landroid/widget/ProgressBar;
+    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$1300(Lcom/android/email/activity/AccountFolderList;)Landroid/widget/ProgressBar;
 
     move-result-object v1
 
@@ -99,15 +95,15 @@
     :cond_0
     move v0, v2
 
-    .line 1010
+    .line 1021
     goto :goto_1
 
-    .line 1014
+    .line 1025
     .restart local v0       #showProgress:Z
     :cond_1
     iget-object v1, p0, Lcom/android/email/activity/AccountFolderList$MessageListHandler;->this$0:Lcom/android/email/activity/AccountFolderList;
 
-    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$1200(Lcom/android/email/activity/AccountFolderList;)Landroid/widget/ProgressBar;
+    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$1300(Lcom/android/email/activity/AccountFolderList;)Landroid/widget/ProgressBar;
 
     move-result-object v1
 
@@ -117,7 +113,7 @@
 
     goto :goto_0
 
-    .line 1008
+    .line 1019
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -131,28 +127,28 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1027
+    .line 1038
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1028
+    .line 1039
     .local v0, msg:Landroid/os/Message;
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 1029
+    .line 1040
     if-eqz p1, :cond_0
 
     :goto_0
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    .line 1030
+    .line 1041
     invoke-virtual {p0, v0}, Lcom/android/email/activity/AccountFolderList$MessageListHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1031
+    .line 1042
     return-void
 
-    .line 1029
+    .line 1040
     :cond_0
     const/4 v1, 0x0
 

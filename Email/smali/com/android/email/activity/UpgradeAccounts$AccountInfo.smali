@@ -34,26 +34,26 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 182
+    .line 183
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 183
+    .line 184
     iput-object p1, p0, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->account:Lcom/android/email/Account;
 
-    .line 184
+    .line 185
     iput v1, p0, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->maxProgress:I
 
-    .line 185
+    .line 186
     iput v1, p0, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->progress:I
 
-    .line 186
+    .line 187
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->errorMessage:Ljava/lang/String;
 
-    .line 187
+    .line 188
     iput-boolean v1, p0, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->isError:Z
 
-    .line 188
+    .line 189
     return-void
 .end method

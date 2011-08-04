@@ -1,4 +1,4 @@
-.class Lorg/apache/james/mime4j/util/CharsetUtil$1;
+.class synthetic Lorg/apache/james/mime4j/util/CharsetUtil$1;
 .super Ljava/lang/Object;
 .source "CharsetUtil.java"
 

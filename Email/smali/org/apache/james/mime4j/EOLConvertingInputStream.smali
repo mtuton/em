@@ -3,14 +3,6 @@
 .source "EOLConvertingInputStream.java"
 
 
-# static fields
-.field public static final CONVERT_BOTH:I = 0x3
-
-.field public static final CONVERT_CR:I = 0x1
-
-.field public static final CONVERT_LF:I = 0x2
-
-
 # instance fields
 .field private flags:I
 

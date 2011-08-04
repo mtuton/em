@@ -20,10 +20,6 @@
 .end annotation
 
 
-# static fields
-.field private static final mResource:I = 0x7f03001e
-
-
 # instance fields
 .field protected mInflater:Landroid/view/LayoutInflater;
 
@@ -47,7 +43,7 @@
     .prologue
     .line 46
     .local p2, items:Ljava/util/List;,"Ljava/util/List<Lcom/android/email/activity/IconListAdapter$IconListItem;>;"
-    const v0, 0x7f03001e
+    const v0, 0x7f030022
 
     invoke-direct {p0, p1, v0, p2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
@@ -81,7 +77,7 @@
     .line 57
     iget-object v3, p0, Lcom/android/email/activity/IconListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v4, 0x7f03001e
+    const v4, 0x7f030022
 
     const/4 v5, 0x0
 
@@ -92,7 +88,7 @@
     .line 63
     .local v2, view:Landroid/view/View;
     :goto_0
-    const v3, 0x7f07008a
+    const v3, 0x7f0700a6
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -115,7 +111,7 @@
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 67
-    const v3, 0x7f070089
+    const v3, 0x7f0700a5
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

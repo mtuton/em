@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 609
+    .line 613
     iput-object p1, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 609
+    .line 613
     invoke-direct {p0, p1}, Lcom/android/email/activity/MailboxList$ControllerResults;-><init>(Lcom/android/email/activity/MailboxList;)V
 
     return-void
@@ -53,22 +53,22 @@
     .parameter "progress"
 
     .prologue
-    .line 679
+    .line 683
     if-eqz p1, :cond_3
 
-    .line 680
-    const v0, 0x7f080033
+    .line 684
+    const v0, 0x7f08003a
 
-    .line 681
+    .line 685
     .local v0, id:I
     instance-of v1, p1, Lcom/android/email/mail/AuthenticationFailedException;
 
     if-eqz v1, :cond_1
 
-    .line 682
-    const v0, 0x7f0800c7
+    .line 686
+    const v0, 0x7f0800d1
 
-    .line 701
+    .line 705
     :goto_0
     const-string v1, "MailboxList"
 
@@ -76,7 +76,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 702
+    .line 706
     iget-object v1, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
     invoke-static {v1}, Lcom/android/email/activity/MailboxList;->access$200(Lcom/android/email/activity/MailboxList;)Lcom/android/email/activity/MailboxList$MailboxListHandler;
@@ -91,25 +91,25 @@
 
     invoke-virtual {v1, v2}, Lcom/android/email/activity/MailboxList$MailboxListHandler;->showErrorBanner(Ljava/lang/String;)V
 
-    .line 706
+    .line 710
     .end local v0           #id:I
     :cond_0
     :goto_1
     return-void
 
-    .line 683
+    .line 687
     .restart local v0       #id:I
     :cond_1
     instance-of v1, p1, Lcom/android/email/mail/CertificateValidationException;
 
     if-eqz v1, :cond_2
 
-    .line 684
-    const v0, 0x7f0800c9
+    .line 688
+    const v0, 0x7f0800d4
 
     goto :goto_0
 
-    .line 686
+    .line 690
     :cond_2
     invoke-virtual {p1}, Lcom/android/email/mail/MessagingException;->getExceptionType()I
 
@@ -119,39 +119,39 @@
 
     goto :goto_0
 
-    .line 688
-    :pswitch_0
-    const v0, 0x7f0800d0
-
-    .line 689
-    goto :goto_0
-
-    .line 691
-    :pswitch_1
-    const v0, 0x7f0800cd
-
     .line 692
-    goto :goto_0
+    :pswitch_0
+    const v0, 0x7f0800db
 
-    .line 694
-    :pswitch_2
-    const v0, 0x7f0800ce
+    .line 693
+    goto :goto_0
 
     .line 695
+    :pswitch_1
+    const v0, 0x7f0800d8
+
+    .line 696
     goto :goto_0
 
-    .line 697
+    .line 698
+    :pswitch_2
+    const v0, 0x7f0800d9
+
+    .line 699
+    goto :goto_0
+
+    .line 701
     :pswitch_3
-    const v0, 0x7f0800cf
+    const v0, 0x7f0800da
 
     goto :goto_0
 
-    .line 703
+    .line 707
     .end local v0           #id:I
     :cond_3
     if-lez p2, :cond_0
 
-    .line 704
+    .line 708
     iget-object v1, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
     invoke-static {v1}, Lcom/android/email/activity/MailboxList;->access$200(Lcom/android/email/activity/MailboxList;)Lcom/android/email/activity/MailboxList$MailboxListHandler;
@@ -164,7 +164,7 @@
 
     goto :goto_1
 
-    .line 686
+    .line 690
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -180,14 +180,14 @@
     .parameter "progress"
 
     .prologue
-    .line 662
+    .line 666
     if-nez p1, :cond_0
 
     const/16 v0, 0x64
 
     if-ne p2, v0, :cond_2
 
-    .line 663
+    .line 667
     :cond_0
     iget-object v0, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
@@ -199,16 +199,16 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/MailboxList$MailboxListHandler;->progress(Z)V
 
-    .line 667
+    .line 671
     :cond_1
     :goto_0
     return-void
 
-    .line 664
+    .line 668
     :cond_2
     if-nez p2, :cond_1
 
-    .line 665
+    .line 669
     iget-object v0, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
     invoke-static {v0}, Lcom/android/email/activity/MailboxList;->access$200(Lcom/android/email/activity/MailboxList;)Lcom/android/email/activity/MailboxList$MailboxListHandler;
@@ -224,18 +224,6 @@
 
 
 # virtual methods
-.method public GALSearchCallback(Lcom/android/email/mail/MessagingException;JILandroid/os/Bundle;)V
-    .locals 0
-    .parameter "result"
-    .parameter "accountId"
-    .parameter "progress"
-    .parameter "searchResults"
-
-    .prologue
-    .line 800
-    return-void
-.end method
-
 .method public OoOCallback(Lcom/android/email/mail/MessagingException;JILandroid/os/Bundle;)V
     .locals 0
     .parameter "result"
@@ -244,7 +232,7 @@
     .parameter "oooResults"
 
     .prologue
-    .line 712
+    .line 725
     return-void
 .end method
 
@@ -252,7 +240,18 @@
     .locals 0
 
     .prologue
-    .line 721
+    .line 740
+    return-void
+.end method
+
+.method public deviceInformationCallback(Lcom/android/email/mail/MessagingException;JI)V
+    .locals 0
+    .parameter "result"
+    .parameter "accountId"
+    .parameter "progress"
+
+    .prologue
+    .line 731
     return-void
 .end method
 
@@ -263,7 +262,7 @@
     .parameter "progress"
 
     .prologue
-    .line 646
+    .line 650
     return-void
 .end method
 
@@ -278,13 +277,13 @@
 
     const/4 v3, 0x2
 
-    .line 725
+    .line 744
     if-eqz p2, :cond_4
 
-    .line 726
+    .line 745
     const/4 v0, 0x0
 
-    .line 728
+    .line 747
     .local v0, message:Ljava/lang/String;
     :try_start_0
     invoke-virtual {p2}, Lcom/android/email/mail/MessagingException;->getMessage()Ljava/lang/String;
@@ -299,7 +298,7 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 776
+    .line 795
     :cond_0
     :goto_0
     :pswitch_0
@@ -311,49 +310,49 @@
 
     invoke-virtual {v2, v0}, Lcom/android/email/activity/MailboxList$MailboxListHandler;->showErrorBanner(Ljava/lang/String;)V
 
-    .line 792
+    .line 811
     :goto_1
     return-void
 
-    .line 730
+    .line 749
     :pswitch_1
     packed-switch p1, :pswitch_data_1
 
     :pswitch_2
     goto :goto_0
 
-    .line 735
+    .line 754
     :pswitch_3
     :try_start_1
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v3, 0x7f0801ab
+    const v3, 0x7f0801cf
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 736
+    .line 755
     goto :goto_0
 
-    .line 732
+    .line 751
     :pswitch_4
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v3, 0x7f0801aa
+    const v3, 0x7f0801ce
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 733
+    .line 752
     goto :goto_0
 
-    .line 738
+    .line 757
     :pswitch_5
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v3, 0x7f0801ac
+    const v3, 0x7f0801d0
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 
@@ -361,33 +360,33 @@
 
     goto :goto_0
 
-    .line 743
+    .line 762
     :pswitch_6
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v3, 0x7f08021c
+    const v3, 0x7f080248
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 744
+    .line 763
     goto :goto_0
 
-    .line 746
+    .line 765
     :pswitch_7
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v3, 0x7f08021d
+    const v3, 0x7f080249
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 747
+    .line 766
     goto :goto_0
 
-    .line 749
+    .line 768
     :pswitch_8
     const/4 v2, 0x1
 
@@ -395,11 +394,11 @@
 
     if-ne p1, v3, :cond_0
 
-    .line 751
+    .line 770
     :cond_1
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v3, 0x7f08021e
+    const v3, 0x7f08024a
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 
@@ -407,17 +406,17 @@
 
     goto :goto_0
 
-    .line 755
+    .line 774
     :pswitch_9
     if-eq p1, v4, :cond_2
 
     if-ne p1, v3, :cond_0
 
-    .line 757
+    .line 776
     :cond_2
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v3, 0x7f08021f
+    const v3, 0x7f08024b
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 
@@ -425,17 +424,17 @@
 
     goto :goto_0
 
-    .line 761
+    .line 780
     :pswitch_a
     if-eq p1, v4, :cond_3
 
     if-ne p1, v3, :cond_0
 
-    .line 763
+    .line 782
     :cond_3
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v3, 0x7f080220
+    const v3, 0x7f08024c
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 
@@ -443,24 +442,24 @@
 
     goto :goto_0
 
-    .line 767
+    .line 786
     :pswitch_b
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v3, 0x7f0800c7
+    const v3, 0x7f0800d1
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 768
+    .line 787
     goto :goto_0
 
-    .line 770
+    .line 789
     :pswitch_c
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v3, 0x7f0800d0
+    const v3, 0x7f0800db
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
     :try_end_1
@@ -470,13 +469,13 @@
 
     goto :goto_0
 
-    .line 773
+    .line 792
     :catch_0
     move-exception v2
 
     move-object v1, v2
 
-    .line 774
+    .line 793
     .local v1, nfe:Ljava/lang/NumberFormatException;
     invoke-virtual {p2}, Lcom/android/email/mail/MessagingException;->getMessage()Ljava/lang/String;
 
@@ -484,17 +483,17 @@
 
     goto/16 :goto_0
 
-    .line 778
+    .line 797
     .end local v0           #message:Ljava/lang/String;
     .end local v1           #nfe:Ljava/lang/NumberFormatException;
     :cond_4
     const/4 v0, 0x0
 
-    .line 779
+    .line 798
     .restart local v0       #message:Ljava/lang/String;
     packed-switch p1, :pswitch_data_2
 
-    .line 790
+    .line 809
     :goto_2
     :pswitch_d
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
@@ -507,37 +506,37 @@
 
     goto/16 :goto_1
 
-    .line 781
+    .line 800
     :pswitch_e
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v3, 0x7f0801a7
+    const v3, 0x7f0801cb
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 782
+    .line 801
     goto :goto_2
 
-    .line 784
+    .line 803
     :pswitch_f
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v3, 0x7f0801a8
+    const v3, 0x7f0801cc
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 785
+    .line 804
     goto :goto_2
 
-    .line 787
+    .line 806
     :pswitch_10
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v3, 0x7f0801a9
+    const v3, 0x7f0801cd
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 
@@ -545,7 +544,7 @@
 
     goto :goto_2
 
-    .line 728
+    .line 747
     :pswitch_data_0
     .packed-switch 0x16
         :pswitch_b
@@ -567,7 +566,7 @@
         :pswitch_a
     .end packed-switch
 
-    .line 730
+    .line 749
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_3
@@ -576,7 +575,7 @@
         :pswitch_5
     .end packed-switch
 
-    .line 779
+    .line 798
     :pswitch_data_2
     .packed-switch 0x1
         :pswitch_f
@@ -594,7 +593,7 @@
     .parameter "progress"
 
     .prologue
-    .line 635
+    .line 639
     return-void
 .end method
 
@@ -605,7 +604,7 @@
     .parameter "progress"
 
     .prologue
-    .line 631
+    .line 635
     return-void
 .end method
 
@@ -616,7 +615,19 @@
     .parameter "progress"
 
     .prologue
-    .line 640
+    .line 644
+    return-void
+.end method
+
+.method public moveConvAlwaysCallback(Lcom/android/email/mail/MessagingException;[BII)V
+    .locals 0
+    .parameter "result"
+    .parameter "convId"
+    .parameter "progress"
+    .parameter "ignore"
+
+    .prologue
+    .line 718
     return-void
 .end method
 
@@ -626,7 +637,7 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 717
+    .line 736
     return-void
 .end method
 
@@ -638,7 +649,7 @@
     .parameter "progress"
 
     .prologue
-    .line 655
+    .line 659
     iget-object v0, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
     invoke-static {v0}, Lcom/android/email/activity/MailboxList;->access$100(Lcom/android/email/activity/MailboxList;)J
@@ -649,13 +660,13 @@
 
     if-nez v0, :cond_0
 
-    .line 656
+    .line 660
     invoke-direct {p0, p1, p6}, Lcom/android/email/activity/MailboxList$ControllerResults;->updateBanner(Lcom/android/email/mail/MessagingException;I)V
 
-    .line 657
+    .line 661
     invoke-direct {p0, p1, p6}, Lcom/android/email/activity/MailboxList$ControllerResults;->updateProgress(Lcom/android/email/mail/MessagingException;I)V
 
-    .line 659
+    .line 663
     :cond_0
     return-void
 .end method
@@ -669,7 +680,7 @@
     .parameter "tag"
 
     .prologue
-    .line 651
+    .line 655
     return-void
 .end method
 
@@ -682,7 +693,7 @@
     .parameter "numNewMessages"
 
     .prologue
-    .line 623
+    .line 627
     iget-object v0, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
     invoke-static {v0}, Lcom/android/email/activity/MailboxList;->access$100(Lcom/android/email/activity/MailboxList;)J
@@ -693,13 +704,13 @@
 
     if-nez v0, :cond_0
 
-    .line 624
+    .line 628
     invoke-direct {p0, p1, p6}, Lcom/android/email/activity/MailboxList$ControllerResults;->updateBanner(Lcom/android/email/mail/MessagingException;I)V
 
-    .line 625
+    .line 629
     invoke-direct {p0, p1, p6}, Lcom/android/email/activity/MailboxList$ControllerResults;->updateProgress(Lcom/android/email/mail/MessagingException;I)V
 
-    .line 627
+    .line 631
     :cond_0
     return-void
 .end method
@@ -711,7 +722,7 @@
     .parameter "progress"
 
     .prologue
-    .line 614
+    .line 618
     iget-object v0, p0, Lcom/android/email/activity/MailboxList$ControllerResults;->this$0:Lcom/android/email/activity/MailboxList;
 
     invoke-static {v0}, Lcom/android/email/activity/MailboxList;->access$100(Lcom/android/email/activity/MailboxList;)J
@@ -722,13 +733,13 @@
 
     if-nez v0, :cond_0
 
-    .line 615
+    .line 619
     invoke-direct {p0, p1, p4}, Lcom/android/email/activity/MailboxList$ControllerResults;->updateBanner(Lcom/android/email/mail/MessagingException;I)V
 
-    .line 616
+    .line 620
     invoke-direct {p0, p1, p4}, Lcom/android/email/activity/MailboxList$ControllerResults;->updateProgress(Lcom/android/email/mail/MessagingException;I)V
 
-    .line 618
+    .line 622
     :cond_0
     return-void
 .end method

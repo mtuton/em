@@ -89,85 +89,12 @@
     return-void
 .end method
 
-.method closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;I)V
-    .locals 4
-    .parameter "n"
-    .parameter "num"
-
-    .prologue
-    const/4 v3, 0x1
-
-    .line 89
-    iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->marks:Ljava/util/Stack;
-
-    invoke-virtual {v2}, Ljava/util/Stack;->pop()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    iput v2, p0, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->mk:I
-
-    move v1, p2
-
-    .line 90
-    .end local p2
-    .local v1, num:I
-    :goto_0
-    sub-int p2, v1, v3
-
-    .end local v1           #num:I
-    .restart local p2
-    if-lez v1, :cond_0
-
-    .line 91
-    invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->popNode()Lorg/apache/james/mime4j/field/address/parser/Node;
-
-    move-result-object v0
-
-    .line 92
-    .local v0, c:Lorg/apache/james/mime4j/field/address/parser/Node;
-    invoke-interface {v0, p1}, Lorg/apache/james/mime4j/field/address/parser/Node;->jjtSetParent(Lorg/apache/james/mime4j/field/address/parser/Node;)V
-
-    .line 93
-    invoke-interface {p1, v0, p2}, Lorg/apache/james/mime4j/field/address/parser/Node;->jjtAddChild(Lorg/apache/james/mime4j/field/address/parser/Node;I)V
-
-    move v1, p2
-
-    .line 94
-    .end local p2
-    .restart local v1       #num:I
-    goto :goto_0
-
-    .line 95
-    .end local v0           #c:Lorg/apache/james/mime4j/field/address/parser/Node;
-    .end local v1           #num:I
-    .restart local p2
-    :cond_0
-    invoke-interface {p1}, Lorg/apache/james/mime4j/field/address/parser/Node;->jjtClose()V
-
-    .line 96
-    invoke-virtual {p0, p1}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->pushNode(Lorg/apache/james/mime4j/field/address/parser/Node;)V
-
-    .line 97
-    iput-boolean v3, p0, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->node_created:Z
-
-    .line 98
-    return-void
-.end method
-
 .method closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
-    .locals 5
+    .locals 4
     .parameter "n"
     .parameter "condition"
 
     .prologue
-    const/4 v4, 0x1
-
     .line 107
     if-eqz p2, :cond_1
 
@@ -198,7 +125,7 @@
     .end local v0           #a:I
     .local v1, a:I
     :goto_0
-    sub-int v0, v1, v4
+    add-int/lit8 v0, v1, -0x1
 
     .end local v1           #a:I
     .restart local v0       #a:I
@@ -234,7 +161,9 @@
     invoke-virtual {p0, p1}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->pushNode(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
     .line 117
-    iput-boolean v4, p0, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->node_created:Z
+    const/4 v3, 0x1
+
+    iput-boolean v3, p0, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->node_created:Z
 
     .line 122
     .end local v0           #a:I
@@ -279,16 +208,6 @@
     return v0
 .end method
 
-.method nodeCreated()Z
-    .locals 1
-
-    .prologue
-    .line 24
-    iget-boolean v0, p0, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->node_created:Z
-
-    return v0
-.end method
-
 .method openNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
     .locals 3
     .parameter "n"
@@ -315,23 +234,6 @@
 
     .line 81
     return-void
-.end method
-
-.method peekNode()Lorg/apache/james/mime4j/field/address/parser/Node;
-    .locals 1
-
-    .prologue
-    .line 59
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->nodes:Ljava/util/Stack;
-
-    invoke-virtual {v0}, Ljava/util/Stack;->peek()Ljava/lang/Object;
-
-    move-result-object p0
-
-    .end local p0
-    check-cast p0, Lorg/apache/james/mime4j/field/address/parser/Node;
-
-    return-object p0
 .end method
 
 .method popNode()Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -398,32 +300,6 @@
     iput v0, p0, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->sp:I
 
     .line 46
-    return-void
-.end method
-
-.method reset()V
-    .locals 2
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 30
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->nodes:Ljava/util/Stack;
-
-    invoke-virtual {v0}, Ljava/util/Stack;->removeAllElements()V
-
-    .line 31
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->marks:Ljava/util/Stack;
-
-    invoke-virtual {v0}, Ljava/util/Stack;->removeAllElements()V
-
-    .line 32
-    iput v1, p0, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->sp:I
-
-    .line 33
-    iput v1, p0, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->mk:I
-
-    .line 34
     return-void
 .end method
 

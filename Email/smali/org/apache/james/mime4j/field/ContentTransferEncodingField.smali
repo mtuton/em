@@ -11,18 +11,6 @@
 .end annotation
 
 
-# static fields
-.field public static final ENC_7BIT:Ljava/lang/String; = "7bit"
-
-.field public static final ENC_8BIT:Ljava/lang/String; = "8bit"
-
-.field public static final ENC_BASE64:Ljava/lang/String; = "base64"
-
-.field public static final ENC_BINARY:Ljava/lang/String; = "binary"
-
-.field public static final ENC_QUOTED_PRINTABLE:Ljava/lang/String; = "quoted-printable"
-
-
 # instance fields
 .field private encoding:Ljava/lang/String;
 

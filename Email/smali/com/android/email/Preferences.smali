@@ -4,26 +4,6 @@
 
 
 # static fields
-.field private static final ACCOUNT_UUIDS:Ljava/lang/String; = "accountUuids"
-
-.field private static final ACTIVATION_LICENSE:Ljava/lang/String; = "activationLicense"
-
-.field private static final DEFAULT_ACCOUNT_UUID:Ljava/lang/String; = "defaultAccountUuid"
-
-.field private static final DEVICE_UID:Ljava/lang/String; = "deviceUID"
-
-.field private static final ENABLE_DEBUG_LOGGING:Ljava/lang/String; = "enableDebugLogging"
-
-.field private static final ENABLE_EXCHANGE_FILE_LOGGING:Ljava/lang/String; = "enableExchangeFileLogging"
-
-.field private static final ENABLE_EXCHANGE_LOGGING:Ljava/lang/String; = "enableExchangeLogging"
-
-.field private static final ENABLE_SENSITIVE_LOGGING:Ljava/lang/String; = "enableSensitiveLogging"
-
-.field private static final ONE_TIME_INITIALIZATION_PROGRESS:Ljava/lang/String; = "oneTimeInitializationProgress"
-
-.field private static final PREFERENCES_FILE:Ljava/lang/String; = "AndroidMail.Main"
-
 .field private static preferences:Lcom/android/email/Preferences;
 
 
@@ -98,27 +78,6 @@
 
 
 # virtual methods
-.method public clear()V
-    .locals 1
-
-    .prologue
-    .line 225
-    iget-object v0, p0, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    .line 226
-    return-void
-.end method
-
 .method public dump()V
     .locals 0
 
@@ -361,247 +320,123 @@
 .end method
 
 .method public getCarrierAccount()Lcom/android/email/Account;
-    .locals 12
+    .locals 8
 
     .prologue
-    .line 65
-    const-class v8, Lcom/android/email/Preferences;
+    const/4 v7, 0x0
 
-    monitor-enter v8
+    .line 65
+    const-class v0, Lcom/android/email/Preferences;
+
+    monitor-enter v0
 
     .line 66
     :try_start_0
-    iget-object v9, p0, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
+    iget-object v1, p0, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
-    const-string v10, "carrierAccount"
+    const-string v2, "carrierAccount"
 
-    const/4 v11, 0x0
+    const/4 v3, 0x0
 
-    invoke-interface {v9, v10, v11}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
     .line 67
-    .local v5, carrierAccountId:Ljava/lang/String;
-    const-string v9, ">>> Preference"
+    const-string v2, ">>> Preference"
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "fixed account >> "
+    const-string v4, "fixed account >> "
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 69
-    const/4 v0, 0x0
-
-    .line 70
-    .local v0, ac:Lcom/android/email/Account;
-    if-nez v5, :cond_0
-
-    .line 71
-    monitor-exit v8
-
-    move-object v1, v0
-
-    .line 83
-    .end local v0           #ac:Lcom/android/email/Account;
-    .local v1, ac:Lcom/android/email/Account;
-    :goto_0
-    return-object v1
-
-    .line 74
-    .end local v1           #ac:Lcom/android/email/Account;
-    .restart local v0       #ac:Lcom/android/email/Account;
-    :cond_0
-    invoke-virtual {p0}, Lcom/android/email/Preferences;->getAccounts()[Lcom/android/email/Account;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    .line 75
-    .local v3, accounts:[Lcom/android/email/Account;
-    if-eqz v5, :cond_1
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 76
-    move-object v4, v3
+    move-result-object v3
 
-    .local v4, arr$:[Lcom/android/email/Account;
-    array-length v7, v4
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .local v7, len$:I
-    const/4 v6, 0x0
+    move-result-object v3
 
-    .local v6, i$:I
-    :goto_1
-    if-ge v6, v7, :cond_1
+    invoke-static {v2, v3}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    aget-object v2, v4, v6
+    .line 70
+    if-nez v1, :cond_0
 
-    .line 77
-    .local v2, account:Lcom/android/email/Account;
-    invoke-virtual {v2}, Lcom/android/email/Account;->getUuid()Ljava/lang/String;
+    .line 71
+    monitor-exit v0
 
-    move-result-object v9
-
-    invoke-virtual {v9, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_2
-
-    .line 78
-    move-object v0, v2
+    move-object v0, v7
 
     .line 83
-    .end local v2           #account:Lcom/android/email/Account;
-    .end local v4           #arr$:[Lcom/android/email/Account;
-    .end local v6           #i$:I
-    .end local v7           #len$:I
-    :cond_1
-    monitor-exit v8
+    :goto_0
+    return-object v0
 
-    move-object v1, v0
+    .line 74
+    :cond_0
+    invoke-virtual {p0}, Lcom/android/email/Preferences;->getAccounts()[Lcom/android/email/Account;
 
-    .end local v0           #ac:Lcom/android/email/Account;
-    .restart local v1       #ac:Lcom/android/email/Account;
+    move-result-object v2
+
+    .line 75
+    if-eqz v1, :cond_2
+
+    .line 76
+    array-length v3, v2
+
+    const/4 v4, 0x0
+
+    :goto_1
+    if-ge v4, v3, :cond_2
+
+    aget-object v5, v2, v4
+
+    .line 77
+    invoke-virtual {v5}, Lcom/android/email/Account;->getUuid()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    move-object v1, v5
+
+    .line 83
+    :goto_2
+    monitor-exit v0
+
+    move-object v0, v1
+
     goto :goto_0
 
     .line 76
-    .end local v1           #ac:Lcom/android/email/Account;
-    .restart local v0       #ac:Lcom/android/email/Account;
-    .restart local v2       #account:Lcom/android/email/Account;
-    .restart local v4       #arr$:[Lcom/android/email/Account;
-    .restart local v6       #i$:I
-    .restart local v7       #len$:I
-    :cond_2
-    add-int/lit8 v6, v6, 0x1
+    :cond_1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
     .line 84
-    .end local v0           #ac:Lcom/android/email/Account;
-    .end local v2           #account:Lcom/android/email/Account;
-    .end local v3           #accounts:[Lcom/android/email/Account;
-    .end local v4           #arr$:[Lcom/android/email/Account;
-    .end local v5           #carrierAccountId:Ljava/lang/String;
-    .end local v6           #i$:I
-    .end local v7           #len$:I
     :catchall_0
-    move-exception v9
+    move-exception v1
 
-    monitor-exit v8
+    monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v9
-.end method
+    throw v1
 
-.method public getDefaultAccount()Lcom/android/email/Account;
-    .locals 10
-
-    .prologue
-    .line 135
-    iget-object v7, p0, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
-
-    const-string v8, "defaultAccountUuid"
-
-    const/4 v9, 0x0
-
-    invoke-interface {v7, v8, v9}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 136
-    .local v4, defaultAccountUuid:Ljava/lang/String;
-    const/4 v3, 0x0
-
-    .line 137
-    .local v3, defaultAccount:Lcom/android/email/Account;
-    invoke-virtual {p0}, Lcom/android/email/Preferences;->getAccounts()[Lcom/android/email/Account;
-
-    move-result-object v1
-
-    .line 138
-    .local v1, accounts:[Lcom/android/email/Account;
-    if-eqz v4, :cond_0
-
-    .line 139
-    move-object v2, v1
-
-    .local v2, arr$:[Lcom/android/email/Account;
-    array-length v6, v2
-
-    .local v6, len$:I
-    const/4 v5, 0x0
-
-    .local v5, i$:I
-    :goto_0
-    if-ge v5, v6, :cond_0
-
-    aget-object v0, v2, v5
-
-    .line 140
-    .local v0, account:Lcom/android/email/Account;
-    invoke-virtual {v0}, Lcom/android/email/Account;->getUuid()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_2
-
-    .line 141
-    move-object v3, v0
-
-    .line 147
-    .end local v0           #account:Lcom/android/email/Account;
-    .end local v2           #arr$:[Lcom/android/email/Account;
-    .end local v5           #i$:I
-    .end local v6           #len$:I
-    :cond_0
-    if-nez v3, :cond_1
-
-    .line 148
-    array-length v7, v1
-
-    if-lez v7, :cond_1
-
-    .line 149
-    const/4 v7, 0x0
-
-    aget-object v3, v1, v7
-
-    .line 150
-    invoke-virtual {p0, v3}, Lcom/android/email/Preferences;->setDefaultAccount(Lcom/android/email/Account;)V
-
-    .line 154
-    :cond_1
-    return-object v3
-
-    .line 139
-    .restart local v0       #account:Lcom/android/email/Account;
-    .restart local v2       #arr$:[Lcom/android/email/Account;
-    .restart local v5       #i$:I
-    .restart local v6       #len$:I
     :cond_2
-    add-int/lit8 v5, v5, 0x1
+    move-object v1, v7
 
-    goto :goto_0
+    goto :goto_2
 .end method
 
 .method public declared-synchronized getDeviceUID()Ljava/lang/String;
@@ -760,14 +595,6 @@
     return v0
 .end method
 
-.method public save()V
-    .locals 0
-
-    .prologue
-    .line 222
-    return-void
-.end method
-
 .method public setActivationLicense(Ljava/lang/String;)V
     .locals 2
     .parameter "value"
@@ -794,7 +621,7 @@
 
 .method public setCarrierAccountId(Ljava/lang/String;)V
     .locals 3
-    .parameter "Uuid"
+    .parameter
 
     .prologue
     .line 166
@@ -833,34 +660,6 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
-.end method
-
-.method public setDefaultAccount(Lcom/android/email/Account;)V
-    .locals 3
-    .parameter "account"
-
-    .prologue
-    .line 158
-    iget-object v0, p0, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "defaultAccountUuid"
-
-    invoke-virtual {p1}, Lcom/android/email/Account;->getUuid()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    .line 159
-    return-void
 .end method
 
 .method public setEnableDebugLogging(Z)V

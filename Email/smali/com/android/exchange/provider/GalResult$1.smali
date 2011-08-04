@@ -1,4 +1,4 @@
-.class Lcom/android/exchange/provider/GalResult$1;
+.class synthetic Lcom/android/exchange/provider/GalResult$1;
 .super Ljava/lang/Object;
 .source "GalResult.java"
 

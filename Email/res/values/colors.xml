@@ -5,7 +5,10 @@
     <color name="message_list_item_background_read">#ff000000</color>
     <color name="message_list_item_background_thread_item">#ff1e1e1e</color>
     <color name="account_folder_list_item_separator">#ff303030</color>
-    <color name="connection_error_banner">#fffff1a8</color>
+    <color name="connection_error_banner">#ff323232</color>
+    <color name="red">#ffff0000</color>
+    <color name="text_color_valid">#ffffffff</color>
+    <color name="text_color_dim">#ffbebebe</color>
     <color name="original_mode_bg_color">#ffffffff</color>
     <color name="original_mode_text_color">#ff000000</color>
     <color name="economy1_mode_bg_color">#ff000000</color>
@@ -24,4 +27,5 @@
     <color name="from_text_color_read">#ff424242</color>
     <color name="datetime_text_color_unread">#ffa2a2a2</color>
     <color name="datetime_text_color_read">#ff3b3b3b</color>
+    <color name="composer_text_color_field_name">#ff7abee1</color>
 </resources>

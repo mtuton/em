@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/Controller;->deleteMessage(Ljava/util/HashSet;J)V
+    value = Lcom/android/email/Controller;->deleteMessage(Ljava/util/HashSet;JZ)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1220
+    .line 1293
     iput-object p1, p0, Lcom/android/email/Controller$13;->this$0:Lcom/android/email/Controller;
 
     iput-wide p2, p0, Lcom/android/email/Controller$13;->val$syncAccountId:J
@@ -43,7 +43,7 @@
     .locals 4
 
     .prologue
-    .line 1221
+    .line 1296
     iget-object v0, p0, Lcom/android/email/Controller$13;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v0}, Lcom/android/email/Controller;->access$300(Lcom/android/email/Controller;)Lcom/android/email/MessagingController;
@@ -56,6 +56,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/email/MessagingController;->processPendingActions(JZ)V
 
-    .line 1222
+    .line 1297
     return-void
 .end method

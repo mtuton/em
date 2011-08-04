@@ -12,6 +12,8 @@
 
 
 # instance fields
+.field public final CODE_FOLDER_CREATE_ACCESS_DENIED:I
+
 .field public final CODE_FOLDER_CREATE_INVALID_SYNC_KEY:I
 
 .field public final CODE_FOLDER_CREATE_MALFORMED_REQUEST:I
@@ -50,84 +52,89 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 53
+    .line 63
     invoke-direct {p0, p1, p2}, Lcom/android/exchange/adapter/AbstractCommandAdapter;-><init>(Lcom/android/email/provider/EmailContent$Mailbox;Lcom/android/exchange/EasSyncService;)V
 
-    .line 35
+    .line 41
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->CODE_FOLDER_CREATE_SUCCESS:I
 
-    .line 36
+    .line 42
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->CODE_FOLDER_CREATE_NAME_EXISTS:I
 
-    .line 37
+    .line 43
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->CODE_FOLDER_CREATE_SYSTEM_FOLDER:I
 
-    .line 38
+    .line 44
     const/4 v0, 0x5
 
     iput v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->CODE_FOLDER_CREATE_PARENT_FOLDER_NOT_FOUND:I
 
-    .line 39
+    .line 45
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->CODE_FOLDER_CREATE_SERVER_ERROR:I
 
-    .line 40
+    .line 48
+    const/4 v0, 0x7
+
+    iput v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->CODE_FOLDER_CREATE_ACCESS_DENIED:I
+
+    .line 50
     const/16 v0, 0x8
 
     iput v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->CODE_FOLDER_CREATE_TIME_OUT:I
 
-    .line 41
+    .line 51
     const/16 v0, 0x9
 
     iput v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->CODE_FOLDER_CREATE_INVALID_SYNC_KEY:I
 
-    .line 42
+    .line 52
     const/16 v0, 0xa
 
     iput v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->CODE_FOLDER_CREATE_MALFORMED_REQUEST:I
 
-    .line 43
+    .line 53
     const/16 v0, 0xb
 
     iput v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->CODE_FOLDER_CREATE_UNKNOWN_ERROR:I
 
-    .line 44
+    .line 54
     const/16 v0, 0xc
 
     iput v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->CODE_FOLDER_CREATE_UNKNOWN_CODE:I
 
-    .line 46
+    .line 56
     iput-object v1, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mResponse:Lcom/android/exchange/adapter/AbstractCommandAdapter$FolderCommandResponse;
 
-    .line 48
+    .line 58
     iput-object v1, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mNewFolderName:Ljava/lang/String;
 
-    .line 49
+    .line 59
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mParentFolderId:J
 
-    .line 54
+    .line 64
     const-string v0, "Mahskyript"
 
     const-string v1, "FolderCreateAdapter.FolderCreateAdapter"
 
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 55
+    .line 65
     iput-object p3, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mNewFolderName:Ljava/lang/String;
 
-    .line 56
+    .line 66
     iput-wide p4, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mParentFolderId:J
 
-    .line 57
+    .line 67
     return-void
 .end method
 
@@ -136,7 +143,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 39
     iget-wide v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mParentFolderId:J
 
     return-wide v0
@@ -148,7 +155,7 @@
     .parameter "x1"
 
     .prologue
-    .line 33
+    .line 39
     iput-wide p1, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mParentFolderId:J
 
     return-wide p1
@@ -159,7 +166,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 39
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mNewFolderName:Ljava/lang/String;
 
     return-object v0
@@ -171,7 +178,7 @@
     .parameter "x1"
 
     .prologue
-    .line 33
+    .line 39
     iput-object p1, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mNewFolderName:Ljava/lang/String;
 
     return-object p1
@@ -184,14 +191,14 @@
     .parameter "status"
 
     .prologue
-    .line 117
+    .line 127
     const-string v0, "Mahskyript"
 
     const-string v1, "FolderCreateAdapter.callback"
 
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 119
+    .line 129
     :try_start_0
     invoke-static {}, Lcom/android/exchange/SyncManager;->callback()Lcom/android/email/service/IEmailServiceCallback;
 
@@ -207,11 +214,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 123
+    .line 133
     :goto_0
     return-void
 
-    .line 121
+    .line 131
     :catch_0
     move-exception v0
 
@@ -222,51 +229,29 @@
     .locals 2
 
     .prologue
-    .line 102
+    .line 112
     const-string v0, "Mahskyript"
 
     const-string v1, "FolderCreateAdapter.cleanup"
 
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 104
+    .line 114
     return-void
-.end method
-
-.method public commit()Z
-    .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 107
-    const-string v0, "Mahskyript"
-
-    const-string v1, "FolderCreateAdapter.commit"
-
-    invoke-static {v0, v1}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 108
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public getCollectionName()Ljava/lang/String;
     .locals 2
 
     .prologue
-    .line 95
+    .line 105
     const-string v0, "Mahskyript"
 
     const-string v1, "FolderCreateAdapter.getCollectionName"
 
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 96
+    .line 106
     const/4 v0, 0x0
 
     return-object v0
@@ -276,14 +261,14 @@
     .locals 2
 
     .prologue
-    .line 126
+    .line 136
     const-string v0, "Mahskyript"
 
     const-string v1, "FolderCreateAdapter.getCommandName"
 
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 127
+    .line 137
     const-string v0, "FolderCreate"
 
     return-object v0
@@ -293,14 +278,14 @@
     .locals 4
 
     .prologue
-    .line 112
+    .line 122
     const-string v0, "Mahskyript"
 
     const-string v1, "FolderCreateAdapter.hasChangedItems"
 
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 113
+    .line 123
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mNewFolderName:Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -328,14 +313,14 @@
     .locals 2
 
     .prologue
-    .line 60
+    .line 70
     const-string v0, "Mahskyript"
 
     const-string v1, "FolderCreateAdapter.isSyncable"
 
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 61
+    .line 71
     const/4 v0, 0x0
 
     return v0
@@ -346,24 +331,25 @@
     .parameter "is"
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;
+            Ljava/io/IOException;,
+            Lcom/android/email/mail/DeviceAccessException;
         }
     .end annotation
 
     .prologue
-    .line 87
+    .line 97
     const-string v1, "Mahskyript"
 
     const-string v2, "FolderCreateAdapter.parse"
 
     invoke-static {v1, v2}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 88
+    .line 98
     new-instance v0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;
 
     invoke-direct {v0, p0, p1, p0}, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;-><init>(Lcom/android/exchange/adapter/FolderCreateAdapter;Ljava/io/InputStream;Lcom/android/exchange/adapter/AbstractCommandAdapter;)V
 
-    .line 89
+    .line 99
     .local v0, parser:Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;
     invoke-virtual {v0}, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->parse()Z
 
@@ -384,14 +370,14 @@
     .prologue
     const-string v5, "Mahskyript"
 
-    .line 66
+    .line 76
     const-string v2, "Mahskyript"
 
     const-string v2, "FolderCreateAdapter.sendLocalChanges"
 
     invoke-static {v5, v2}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 67
+    .line 77
     iget-object v2, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mContext:Landroid/content/Context;
 
     iget-wide v3, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mParentFolderId:J
@@ -400,7 +386,7 @@
 
     move-result-object v0
 
-    .line 68
+    .line 78
     .local v0, mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     iget v2, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mType:I
 
@@ -412,7 +398,7 @@
 
     move-object v1, v2
 
-    .line 71
+    .line 81
     .local v1, parentFolderKey:Ljava/lang/String;
     :goto_0
     if-eqz v0, :cond_1
@@ -425,7 +411,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 72
+    .line 82
     const/16 v2, 0x1d3
 
     invoke-virtual {p1, v2}, Lcom/android/exchange/adapter/Serializer;->start(I)Lcom/android/exchange/adapter/Serializer;
@@ -466,21 +452,21 @@
 
     invoke-virtual {v2}, Lcom/android/exchange/adapter/Serializer;->end()Lcom/android/exchange/adapter/Serializer;
 
-    .line 78
+    .line 88
     const-string v2, "Mahskyript"
 
     const-string v2, "FolderCreateAdapter.sendLocalChanges exit 1"
 
     invoke-static {v5, v2}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 79
+    .line 89
     const/4 v2, 0x1
 
-    .line 82
+    .line 92
     :goto_1
     return v2
 
-    .line 68
+    .line 78
     .end local v1           #parentFolderKey:Ljava/lang/String;
     :cond_0
     const-string v2, "0"
@@ -489,7 +475,7 @@
 
     goto :goto_0
 
-    .line 81
+    .line 91
     .restart local v1       #parentFolderKey:Ljava/lang/String;
     :cond_1
     const-string v2, "Mahskyript"
@@ -498,7 +484,7 @@
 
     invoke-static {v5, v2}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 82
+    .line 92
     const/4 v2, 0x0
 
     goto :goto_1

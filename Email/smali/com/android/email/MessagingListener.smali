@@ -140,18 +140,6 @@
     return-void
 .end method
 
-.method public messageUidChanged(JJLjava/lang/String;Ljava/lang/String;)V
-    .locals 0
-    .parameter "accountId"
-    .parameter "mailboxId"
-    .parameter "oldUid"
-    .parameter "newUid"
-
-    .prologue
-    .line 78
-    return-void
-.end method
-
 .method public movemessageToOtherAccountCallback(ZJJJJJJII)V
     .locals 0
     .parameter "result"

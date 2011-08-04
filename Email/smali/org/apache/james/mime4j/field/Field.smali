@@ -4,40 +4,6 @@
 
 
 # static fields
-.field public static final BCC:Ljava/lang/String; = "Bcc"
-
-.field public static final CC:Ljava/lang/String; = "Cc"
-
-.field public static final CONTENT_TRANSFER_ENCODING:Ljava/lang/String; = "Content-Transfer-Encoding"
-
-.field public static final CONTENT_TYPE:Ljava/lang/String; = "Content-Type"
-
-.field public static final DATE:Ljava/lang/String; = "Date"
-
-.field private static final FIELD_NAME_PATTERN:Ljava/lang/String; = "^([\\x21-\\x39\\x3b-\\x7e]+)[ \t]*:"
-
-.field public static final FROM:Ljava/lang/String; = "From"
-
-.field public static final REPLY_TO:Ljava/lang/String; = "Reply-To"
-
-.field public static final RESENT_BCC:Ljava/lang/String; = "Resent-Bcc"
-
-.field public static final RESENT_CC:Ljava/lang/String; = "Resent-Cc"
-
-.field public static final RESENT_DATE:Ljava/lang/String; = "Resent-Date"
-
-.field public static final RESENT_FROM:Ljava/lang/String; = "Resent-From"
-
-.field public static final RESENT_SENDER:Ljava/lang/String; = "Resent-Sender"
-
-.field public static final RESENT_TO:Ljava/lang/String; = "Resent-To"
-
-.field public static final SENDER:Ljava/lang/String; = "Sender"
-
-.field public static final SUBJECT:Ljava/lang/String; = "Subject"
-
-.field public static final TO:Ljava/lang/String; = "To"
-
 .field private static final fieldNamePattern:Ljava/util/regex/Pattern;
 
 .field private static final parser:Lorg/apache/james/mime4j/field/DefaultFieldParser;
@@ -96,16 +62,6 @@
 
     .line 67
     return-void
-.end method
-
-.method public static getParser()Lorg/apache/james/mime4j/field/DefaultFieldParser;
-    .locals 1
-
-    .prologue
-    .line 114
-    sget-object v0, Lorg/apache/james/mime4j/field/Field;->parser:Lorg/apache/james/mime4j/field/DefaultFieldParser;
-
-    return-object v0
 .end method
 
 .method public static parse(Ljava/lang/String;)Lorg/apache/james/mime4j/field/Field;
@@ -219,80 +175,6 @@
     iget-object v0, p0, Lorg/apache/james/mime4j/field/Field;->name:Ljava/lang/String;
 
     return-object v0
-.end method
-
-.method public getRaw()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 133
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/Field;->raw:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public isContentType()Z
-    .locals 2
-
-    .prologue
-    .line 153
-    const-string v0, "Content-Type"
-
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/Field;->name:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isFrom()Z
-    .locals 2
-
-    .prologue
-    .line 173
-    const-string v0, "From"
-
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/Field;->name:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isSubject()Z
-    .locals 2
-
-    .prologue
-    .line 163
-    const-string v0, "Subject"
-
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/Field;->name:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isTo()Z
-    .locals 2
-
-    .prologue
-    .line 183
-    const-string v0, "To"
-
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/Field;->name:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public toString()Ljava/lang/String;

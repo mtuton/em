@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 726
+    .line 796
     iput-object p1, p0, Lcom/android/email/activity/MessageList$1;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +42,14 @@
     .parameter "s"
 
     .prologue
-    .line 727
+    .line 808
     const-string v0, "MessageList >>"
 
     const-string v1, "-------------------------afterTextChanged"
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 728
+    .line 809
     return-void
 .end method
 
@@ -61,14 +61,14 @@
     .parameter "after"
 
     .prologue
-    .line 718
+    .line 799
     const-string v0, "MessageList >>"
 
     const-string v1, "-------------------------beforeTextChanged"
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 719
+    .line 800
     return-void
 .end method
 
@@ -80,18 +80,18 @@
     .parameter "after"
 
     .prologue
-    .line 722
+    .line 803
     const-string v0, "MessageList >>"
 
     const-string v1, "-------------------------onTextChanged"
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 723
+    .line 804
     iget-object v0, p0, Lcom/android/email/activity/MessageList$1;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-virtual {v0}, Lcom/android/email/activity/MessageList;->onResultSearchRequested()Z
 
-    .line 724
+    .line 805
     return-void
 .end method

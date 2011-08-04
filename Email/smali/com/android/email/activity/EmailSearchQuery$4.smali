@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 302
+    .line 332
     iput-object p1, p0, Lcom/android/email/activity/EmailSearchQuery$4;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,6 +42,6 @@
     .parameter "dialog"
 
     .prologue
-    .line 306
+    .line 338
     return-void
 .end method

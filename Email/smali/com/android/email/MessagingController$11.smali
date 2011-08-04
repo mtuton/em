@@ -27,31 +27,10 @@
     .parameter
 
     .prologue
-    .line 2419
+    .line 2467
     iput-object p1, p0, Lcom/android/email/MessagingController$11;->this$0:Lcom/android/email/MessagingController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public onMessageNotFound(Lcom/android/email/mail/Message;)V
-    .locals 0
-    .parameter "message"
-
-    .prologue
-    .line 2421
-    return-void
-.end method
-
-.method public onMessageUidChange(Lcom/android/email/mail/Message;Ljava/lang/String;)V
-    .locals 0
-    .parameter "message"
-    .parameter "newUid"
-
-    .prologue
-    .line 2417
     return-void
 .end method

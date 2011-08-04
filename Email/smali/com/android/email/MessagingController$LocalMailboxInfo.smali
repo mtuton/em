@@ -15,14 +15,6 @@
 
 
 # static fields
-.field private static final COLUMN_ACCOUNT_KEY:I = 0x2
-
-.field private static final COLUMN_DISPLAY_NAME:I = 0x1
-
-.field private static final COLUMN_ID:I = 0x0
-
-.field private static final COLUMN_TYPE:I = 0x3
-
 .field private static final PROJECTION:[Ljava/lang/String;
 
 
@@ -41,7 +33,7 @@
     .locals 3
 
     .prologue
-    .line 258
+    .line 259
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/String;
@@ -80,10 +72,10 @@
     .parameter "c"
 
     .prologue
-    .line 268
+    .line 269
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 269
+    .line 270
     const/4 v0, 0x0
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -92,7 +84,7 @@
 
     iput-wide v0, p0, Lcom/android/email/MessagingController$LocalMailboxInfo;->mId:J
 
-    .line 270
+    .line 271
     const/4 v0, 0x1
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -101,7 +93,7 @@
 
     iput-object v0, p0, Lcom/android/email/MessagingController$LocalMailboxInfo;->mDisplayName:Ljava/lang/String;
 
-    .line 271
+    .line 272
     const/4 v0, 0x2
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -110,7 +102,7 @@
 
     iput-wide v0, p0, Lcom/android/email/MessagingController$LocalMailboxInfo;->mAccountKey:J
 
-    .line 272
+    .line 273
     const/4 v0, 0x3
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -119,7 +111,7 @@
 
     iput v0, p0, Lcom/android/email/MessagingController$LocalMailboxInfo;->mType:I
 
-    .line 273
+    .line 274
     return-void
 .end method
 
@@ -127,7 +119,7 @@
     .locals 1
 
     .prologue
-    .line 252
+    .line 253
     sget-object v0, Lcom/android/email/MessagingController$LocalMailboxInfo;->PROJECTION:[Ljava/lang/String;
 
     return-object v0

@@ -7,56 +7,10 @@
 
 
 # static fields
-.field public static final BACKUP_FLAGS_IS_BACKUP:I = 0x1
-
-.field public static final BACKUP_FLAGS_IS_DEFAULT:I = 0x4
-
-.field public static final BACKUP_FLAGS_SYNC_CALENDAR:I = 0x8
-
-.field public static final BACKUP_FLAGS_SYNC_CONTACTS:I = 0x2
-
-.field public static final CHECK_INTERVAL_NEVER:I = -0x1
-
-.field public static final CHECK_INTERVAL_PUSH:I = -0x2
-
-.field public static final DELETE_POLICY_7DAYS:I = 0x1
-
-.field public static final DELETE_POLICY_NEVER:I = 0x0
-
-.field public static final DELETE_POLICY_ON_DELETE:I = 0x2
-
-.field public static final SYNC_WINDOW_1_DAY:I = 0x1
-
-.field public static final SYNC_WINDOW_1_MONTH:I = 0x5
-
-.field public static final SYNC_WINDOW_1_WEEK:I = 0x3
-
-.field public static final SYNC_WINDOW_2_WEEKS:I = 0x4
-
-.field public static final SYNC_WINDOW_3_DAYS:I = 0x2
-
-.field public static final SYNC_WINDOW_ALL:I = 0x6
-
-.field public static final SYNC_WINDOW_USER:I = -0x1
-
 .field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field private final KEY_BACKUP_FLAGS:Ljava/lang/String;
-
-.field private final KEY_PROTOCOL_VERSION:Ljava/lang/String;
-
-.field private final KEY_SECURITY_AUTH:Ljava/lang/String;
-
-.field private final KEY_SECURITY_FLAGS:Ljava/lang/String;
-
-.field private final KEY_SIGNATURE:Ljava/lang/String;
-
-.field private final KEY_SYNC_WINDOW:Ljava/lang/String;
-
-.field private final KEY_VIBRATE_WHEN_SILENT:Ljava/lang/String;
-
 .field mAccountNumber:I
 
 .field mAutomaticCheckIntervalMinutes:I
@@ -97,6 +51,8 @@
 
 .field mSendPort:I
 
+.field mSendSecurityFlags:I
+
 .field mSenderUri:Ljava/lang/String;
 
 .field mSentFolderName:Ljava/lang/String;
@@ -128,45 +84,10 @@
 
     const/4 v3, 0x0
 
-    .line 112
+    .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 104
-    const-string v0, ".syncWindow"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_SYNC_WINDOW:Ljava/lang/String;
-
-    .line 105
-    const-string v0, ".backupFlags"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_BACKUP_FLAGS:Ljava/lang/String;
-
-    .line 106
-    const-string v0, ".protocolVersion"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_PROTOCOL_VERSION:Ljava/lang/String;
-
-    .line 107
-    const-string v0, ".securityFlags"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_SECURITY_FLAGS:Ljava/lang/String;
-
-    .line 108
-    const-string v0, ".securityAuth"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_SECURITY_AUTH:Ljava/lang/String;
-
-    .line 109
-    const-string v0, ".signature"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_SIGNATURE:Ljava/lang/String;
-
-    .line 110
-    const-string v0, ".vibrateWhenSilent"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_VIBRATE_WHEN_SILENT:Ljava/lang/String;
-
-    .line 114
+    .line 120
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
     move-result-object v0
@@ -177,7 +98,7 @@
 
     iput-object v0, p0, Lcom/android/email/Account;->mUuid:Ljava/lang/String;
 
-    .line 115
+    .line 121
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -222,101 +143,69 @@
 
     iput-object v0, p0, Lcom/android/email/Account;->mLocalStoreUri:Ljava/lang/String;
 
-    .line 116
+    .line 122
     iput v4, p0, Lcom/android/email/Account;->mAutomaticCheckIntervalMinutes:I
 
-    .line 117
+    .line 123
     iput v4, p0, Lcom/android/email/Account;->mAccountNumber:I
 
-    .line 118
+    .line 124
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/Account;->mNotifyNewMail:Z
 
-    .line 119
+    .line 125
     iput-boolean v3, p0, Lcom/android/email/Account;->mVibrate:Z
 
-    .line 120
+    .line 126
     iput-boolean v3, p0, Lcom/android/email/Account;->mVibrateWhenSilent:Z
 
-    .line 123
+    .line 129
     const-string v0, "content://settings/system/notification_sound"
 
     iput-object v0, p0, Lcom/android/email/Account;->mRingtoneUri:Ljava/lang/String;
 
-    .line 127
+    .line 133
     iput v4, p0, Lcom/android/email/Account;->mSyncWindow:I
 
-    .line 128
+    .line 134
     iput v3, p0, Lcom/android/email/Account;->mBackupFlags:I
 
-    .line 129
+    .line 135
     iput-object v5, p0, Lcom/android/email/Account;->mProtocolVersion:Ljava/lang/String;
 
-    .line 130
+    .line 136
     iput v3, p0, Lcom/android/email/Account;->mSecurityFlags:I
 
-    .line 131
+    .line 137
+    iput v3, p0, Lcom/android/email/Account;->mSendSecurityFlags:I
+
+    .line 138
     iput-object v5, p0, Lcom/android/email/Account;->mSecurityAuth:Ljava/lang/String;
 
-    .line 132
+    .line 139
     iput-object v5, p0, Lcom/android/email/Account;->mSignature:Ljava/lang/String;
 
-    .line 133
+    .line 140
     return-void
 .end method
 
 .method constructor <init>(Lcom/android/email/Preferences;Ljava/lang/String;)V
-    .locals 1
+    .locals 0
     .parameter "preferences"
     .parameter "uuid"
 
     .prologue
-    .line 135
+    .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 104
-    const-string v0, ".syncWindow"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_SYNC_WINDOW:Ljava/lang/String;
-
-    .line 105
-    const-string v0, ".backupFlags"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_BACKUP_FLAGS:Ljava/lang/String;
-
-    .line 106
-    const-string v0, ".protocolVersion"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_PROTOCOL_VERSION:Ljava/lang/String;
-
-    .line 107
-    const-string v0, ".securityFlags"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_SECURITY_FLAGS:Ljava/lang/String;
-
-    .line 108
-    const-string v0, ".securityAuth"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_SECURITY_AUTH:Ljava/lang/String;
-
-    .line 109
-    const-string v0, ".signature"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_SIGNATURE:Ljava/lang/String;
-
-    .line 110
-    const-string v0, ".vibrateWhenSilent"
-
-    iput-object v0, p0, Lcom/android/email/Account;->KEY_VIBRATE_WHEN_SILENT:Ljava/lang/String;
-
-    .line 136
+    .line 143
     iput-object p2, p0, Lcom/android/email/Account;->mUuid:Ljava/lang/String;
 
-    .line 137
+    .line 144
     invoke-virtual {p0, p1}, Lcom/android/email/Account;->refresh(Lcom/android/email/Preferences;)V
 
-    .line 138
+    .line 145
     return-void
 .end method
 
@@ -329,7 +218,7 @@
     .prologue
     const-string v8, "accountUuids"
 
-    .line 321
+    .line 337
     iget-object v6, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     const-string v7, "accountUuids"
@@ -346,13 +235,13 @@
 
     move-result-object v5
 
-    .line 322
+    .line 338
     .local v5, uuids:[Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuffer;
 
     invoke-direct {v4}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 323
+    .line 339
     .local v4, sb:Ljava/lang/StringBuffer;
     const/4 v2, 0x0
 
@@ -363,7 +252,7 @@
     :goto_0
     if-ge v2, v3, :cond_2
 
-    .line 324
+    .line 340
     aget-object v6, v5, v2
 
     iget-object v7, p0, Lcom/android/email/Account;->mUuid:Ljava/lang/String;
@@ -374,37 +263,37 @@
 
     if-nez v6, :cond_1
 
-    .line 325
+    .line 341
     invoke-virtual {v4}, Ljava/lang/StringBuffer;->length()I
 
     move-result v6
 
     if-lez v6, :cond_0
 
-    .line 326
+    .line 342
     const/16 v6, 0x2c
 
     invoke-virtual {v4, v6}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 328
+    .line 344
     :cond_0
     aget-object v6, v5, v2
 
     invoke-virtual {v4, v6}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 323
+    .line 339
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 331
+    .line 347
     :cond_2
     invoke-virtual {v4}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 332
+    .line 348
     .local v0, accountUuids:Ljava/lang/String;
     iget-object v6, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
@@ -412,13 +301,13 @@
 
     move-result-object v1
 
-    .line 333
+    .line 349
     .local v1, editor:Landroid/content/SharedPreferences$Editor;
     const-string v6, "accountUuids"
 
     invoke-interface {v1, v8, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 335
+    .line 351
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -441,7 +330,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 336
+    .line 352
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -464,7 +353,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 337
+    .line 353
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -487,7 +376,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 338
+    .line 354
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -510,7 +399,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 339
+    .line 355
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -533,7 +422,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 340
+    .line 356
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -556,7 +445,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 341
+    .line 357
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -579,7 +468,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 342
+    .line 358
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -602,7 +491,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 343
+    .line 359
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -625,7 +514,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 344
+    .line 360
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -648,7 +537,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 345
+    .line 361
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -671,7 +560,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 346
+    .line 362
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -694,7 +583,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 347
+    .line 363
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -717,7 +606,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 348
+    .line 364
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -740,7 +629,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 349
+    .line 365
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -763,7 +652,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 350
+    .line 366
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -786,7 +675,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 351
+    .line 367
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -809,7 +698,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 352
+    .line 368
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -832,7 +721,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 353
+    .line 369
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -855,7 +744,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 354
+    .line 370
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -878,7 +767,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 355
+    .line 371
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -901,7 +790,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 356
+    .line 372
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -924,7 +813,30 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 357
+    .line 373
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v7, p0, Lcom/android/email/Account;->mUuid:Ljava/lang/String;
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, ".sendSecurityFlags"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 374
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -947,7 +859,7 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 360
+    .line 377
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -970,10 +882,10 @@
 
     invoke-interface {v1, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 362
+    .line 379
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 363
+    .line 380
     return-void
 .end method
 
@@ -982,12 +894,12 @@
     .parameter "o"
 
     .prologue
-    .line 550
+    .line 579
     instance-of v0, p1, Lcom/android/email/Account;
 
     if-eqz v0, :cond_0
 
-    .line 551
+    .line 580
     check-cast p1, Lcom/android/email/Account;
 
     .end local p1
@@ -999,7 +911,7 @@
 
     move-result v0
 
-    .line 553
+    .line 582
     :goto_0
     return v0
 
@@ -1016,7 +928,7 @@
     .locals 1
 
     .prologue
-    .line 530
+    .line 559
     iget v0, p0, Lcom/android/email/Account;->mAccountNumber:I
 
     return v0
@@ -1026,7 +938,7 @@
     .locals 1
 
     .prologue
-    .line 463
+    .line 492
     iget v0, p0, Lcom/android/email/Account;->mAutomaticCheckIntervalMinutes:I
 
     return v0
@@ -1036,7 +948,7 @@
     .locals 1
 
     .prologue
-    .line 542
+    .line 571
     iget v0, p0, Lcom/android/email/Account;->mBackupFlags:I
 
     return v0
@@ -1046,7 +958,7 @@
     .locals 2
 
     .prologue
-    .line 448
+    .line 477
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1080,7 +992,7 @@
     .locals 1
 
     .prologue
-    .line 490
+    .line 519
     iget v0, p0, Lcom/android/email/Account;->mDeletePolicy:I
 
     return v0
@@ -1090,18 +1002,8 @@
     .locals 1
 
     .prologue
-    .line 233
+    .line 241
     iget-object v0, p0, Lcom/android/email/Account;->mDescription:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public getDraftsFolderName()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 498
-    iget-object v0, p0, Lcom/android/email/Account;->mDraftsFolderName:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -1110,27 +1012,17 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 305
     iget-object v0, p0, Lcom/android/email/Account;->mEmail:Ljava/lang/String;
 
     return-object v0
-.end method
-
-.method public getLastAutomaticCheckTime()J
-    .locals 2
-
-    .prologue
-    .line 474
-    iget-wide v0, p0, Lcom/android/email/Account;->mLastAutomaticCheckTime:J
-
-    return-wide v0
 .end method
 
 .method public getLocalStoreUri()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 452
+    .line 481
     iget-object v0, p0, Lcom/android/email/Account;->mLocalStoreUri:Ljava/lang/String;
 
     return-object v0
@@ -1140,18 +1032,8 @@
     .locals 1
 
     .prologue
-    .line 241
+    .line 249
     iget-object v0, p0, Lcom/android/email/Account;->mName:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public getOutboxFolderName()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 522
-    iget-object v0, p0, Lcom/android/email/Account;->mOutboxFolderName:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -1160,7 +1042,7 @@
     .locals 1
 
     .prologue
-    .line 249
+    .line 257
     iget-object v0, p0, Lcom/android/email/Account;->mPasswd:Ljava/lang/String;
 
     return-object v0
@@ -1170,7 +1052,7 @@
     .locals 1
 
     .prologue
-    .line 313
+    .line 329
     iget-object v0, p0, Lcom/android/email/Account;->mRingtoneUri:Ljava/lang/String;
 
     return-object v0
@@ -1180,7 +1062,7 @@
     .locals 1
 
     .prologue
-    .line 273
+    .line 281
     iget-object v0, p0, Lcom/android/email/Account;->mSecurityAuth:Ljava/lang/String;
 
     return-object v0
@@ -1190,7 +1072,7 @@
     .locals 1
 
     .prologue
-    .line 281
+    .line 289
     iget v0, p0, Lcom/android/email/Account;->mSecurityFlags:I
 
     return v0
@@ -1200,7 +1082,7 @@
     .locals 1
 
     .prologue
-    .line 257
+    .line 265
     iget-object v0, p0, Lcom/android/email/Account;->mSendAddr:Ljava/lang/String;
 
     return-object v0
@@ -1210,8 +1092,18 @@
     .locals 1
 
     .prologue
-    .line 265
+    .line 273
     iget v0, p0, Lcom/android/email/Account;->mSendPort:I
+
+    return v0
+.end method
+
+.method public getSendSecurityFlags()I
+    .locals 1
+
+    .prologue
+    .line 297
+    iget v0, p0, Lcom/android/email/Account;->mSendSecurityFlags:I
 
     return v0
 .end method
@@ -1220,18 +1112,8 @@
     .locals 1
 
     .prologue
-    .line 225
+    .line 233
     iget-object v0, p0, Lcom/android/email/Account;->mSenderUri:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public getSentFolderName()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 506
-    iget-object v0, p0, Lcom/android/email/Account;->mSentFolderName:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -1240,7 +1122,7 @@
     .locals 1
 
     .prologue
-    .line 217
+    .line 225
     iget-object v0, p0, Lcom/android/email/Account;->mStoreUri:Ljava/lang/String;
 
     return-object v0
@@ -1250,27 +1132,17 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 563
     iget v0, p0, Lcom/android/email/Account;->mSyncWindow:I
 
     return v0
-.end method
-
-.method public getTrashFolderName()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 514
-    iget-object v0, p0, Lcom/android/email/Account;->mTrashFolderName:Ljava/lang/String;
-
-    return-object v0
 .end method
 
 .method public getUuid()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 213
+    .line 221
     iget-object v0, p0, Lcom/android/email/Account;->mUuid:Ljava/lang/String;
 
     return-object v0
@@ -1280,7 +1152,7 @@
     .locals 1
 
     .prologue
-    .line 482
+    .line 511
     iget-boolean v0, p0, Lcom/android/email/Account;->mNotifyNewMail:Z
 
     return v0
@@ -1290,7 +1162,7 @@
     .locals 1
 
     .prologue
-    .line 297
+    .line 313
     iget-boolean v0, p0, Lcom/android/email/Account;->mVibrate:Z
 
     return v0
@@ -1300,7 +1172,7 @@
     .locals 1
 
     .prologue
-    .line 305
+    .line 321
     iget-boolean v0, p0, Lcom/android/email/Account;->mVibrateWhenSilent:Z
 
     return v0
@@ -1317,10 +1189,10 @@
 
     const/4 v5, 0x0
 
-    .line 144
+    .line 151
     iput-object p1, p0, Lcom/android/email/Account;->mPreferences:Lcom/android/email/Preferences;
 
-    .line 146
+    .line 153
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1343,7 +1215,7 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1353,7 +1225,7 @@
 
     iput-object v1, p0, Lcom/android/email/Account;->mStoreUri:Ljava/lang/String;
 
-    .line 148
+    .line 155
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1376,13 +1248,13 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/email/Account;->mLocalStoreUri:Ljava/lang/String;
 
-    .line 150
+    .line 157
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1405,15 +1277,15 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 151
+    .line 158
     .local v0, senderText:Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 154
+    .line 161
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1436,11 +1308,11 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 156
+    .line 163
     :cond_0
     invoke-static {v0}, Lcom/android/email/Utility;->base64Decode(Ljava/lang/String;)Ljava/lang/String;
 
@@ -1448,7 +1320,7 @@
 
     iput-object v1, p0, Lcom/android/email/Account;->mSenderUri:Ljava/lang/String;
 
-    .line 158
+    .line 165
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1471,13 +1343,13 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/email/Account;->mDescription:Ljava/lang/String;
 
-    .line 159
+    .line 166
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1508,7 +1380,7 @@
 
     iput-object v1, p0, Lcom/android/email/Account;->mName:Ljava/lang/String;
 
-    .line 160
+    .line 167
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1539,7 +1411,7 @@
 
     iput-object v1, p0, Lcom/android/email/Account;->mPasswd:Ljava/lang/String;
 
-    .line 161
+    .line 168
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1570,7 +1442,7 @@
 
     iput-object v1, p0, Lcom/android/email/Account;->mSendAddr:Ljava/lang/String;
 
-    .line 162
+    .line 169
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1601,7 +1473,7 @@
 
     iput v1, p0, Lcom/android/email/Account;->mSendPort:I
 
-    .line 164
+    .line 171
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1632,7 +1504,7 @@
 
     iput-object v1, p0, Lcom/android/email/Account;->mEmail:Ljava/lang/String;
 
-    .line 165
+    .line 172
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1661,7 +1533,7 @@
 
     iput v1, p0, Lcom/android/email/Account;->mAutomaticCheckIntervalMinutes:I
 
-    .line 167
+    .line 174
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1692,7 +1564,7 @@
 
     iput-wide v1, p0, Lcom/android/email/Account;->mLastAutomaticCheckTime:J
 
-    .line 169
+    .line 176
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1715,13 +1587,13 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/android/email/Account;->mNotifyNewMail:Z
 
-    .line 174
+    .line 181
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1744,13 +1616,13 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/Account;->mDeletePolicy:I
 
-    .line 176
+    .line 183
     iget v1, p0, Lcom/android/email/Account;->mDeletePolicy:I
 
     if-nez v1, :cond_1
@@ -1769,12 +1641,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 178
+    .line 185
     const/4 v1, 0x2
 
     iput v1, p0, Lcom/android/email/Account;->mDeletePolicy:I
 
-    .line 181
+    .line 188
     :cond_1
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
@@ -1806,7 +1678,7 @@
 
     iput-object v1, p0, Lcom/android/email/Account;->mDraftsFolderName:Ljava/lang/String;
 
-    .line 183
+    .line 190
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1837,7 +1709,7 @@
 
     iput-object v1, p0, Lcom/android/email/Account;->mSentFolderName:Ljava/lang/String;
 
-    .line 185
+    .line 192
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1868,7 +1740,7 @@
 
     iput-object v1, p0, Lcom/android/email/Account;->mTrashFolderName:Ljava/lang/String;
 
-    .line 187
+    .line 194
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1899,7 +1771,7 @@
 
     iput-object v1, p0, Lcom/android/email/Account;->mOutboxFolderName:Ljava/lang/String;
 
-    .line 189
+    .line 196
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1922,13 +1794,13 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/Account;->mAccountNumber:I
 
-    .line 190
+    .line 197
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1951,13 +1823,13 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/android/email/Account;->mVibrate:Z
 
-    .line 191
+    .line 198
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1980,13 +1852,13 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/android/email/Account;->mVibrateWhenSilent:Z
 
-    .line 196
+    .line 203
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2017,7 +1889,7 @@
 
     iput-object v1, p0, Lcom/android/email/Account;->mRingtoneUri:Ljava/lang/String;
 
-    .line 201
+    .line 208
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2046,7 +1918,7 @@
 
     iput v1, p0, Lcom/android/email/Account;->mSyncWindow:I
 
-    .line 204
+    .line 211
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2069,13 +1941,13 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/Account;->mBackupFlags:I
 
-    .line 205
+    .line 212
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2098,13 +1970,13 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/email/Account;->mProtocolVersion:Ljava/lang/String;
 
-    .line 207
+    .line 214
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2127,13 +1999,42 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/Account;->mSecurityFlags:I
 
-    .line 208
+    .line 215
+    iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v3, p0, Lcom/android/email/Account;->mUuid:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ".sendSecurityFlags"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/email/Account;->mSendSecurityFlags:I
+
+    .line 216
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2156,13 +2057,13 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/email/Account;->mSecurityAuth:Ljava/lang/String;
 
-    .line 209
+    .line 217
     iget-object v1, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2185,13 +2086,13 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/email/Account;->mSignature:Ljava/lang/String;
 
-    .line 210
+    .line 218
     return-void
 .end method
 
@@ -2204,10 +2105,10 @@
 
     const-string v11, ""
 
-    .line 366
+    .line 383
     iput-object p1, p0, Lcom/android/email/Account;->mPreferences:Lcom/android/email/Preferences;
 
-    .line 368
+    .line 385
     iget-object v9, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     const-string v10, "accountUuids"
@@ -2226,18 +2127,18 @@
 
     if-nez v9, :cond_2
 
-    .line 380
+    .line 397
     invoke-virtual {p1}, Lcom/android/email/Preferences;->getAccounts()[Lcom/android/email/Account;
 
     move-result-object v3
 
-    .line 381
+    .line 398
     .local v3, accounts:[Lcom/android/email/Account;
     array-length v9, v3
 
     new-array v1, v9, [I
 
-    .line 382
+    .line 399
     .local v1, accountNumbers:[I
     const/4 v6, 0x0
 
@@ -2247,7 +2148,7 @@
 
     if-ge v6, v9, :cond_0
 
-    .line 383
+    .line 400
     aget-object v9, v3, v6
 
     invoke-virtual {v9}, Lcom/android/email/Account;->getAccountNumber()I
@@ -2256,16 +2157,16 @@
 
     aput v9, v1, v6
 
-    .line 382
+    .line 399
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 385
+    .line 402
     :cond_0
     invoke-static {v1}, Ljava/util/Arrays;->sort([I)V
 
-    .line 386
+    .line 403
     move-object v4, v1
 
     .local v4, arr$:[I
@@ -2280,7 +2181,7 @@
 
     aget v0, v4, v7
 
-    .line 387
+    .line 404
     .local v0, accountNumber:I
     iget v9, p0, Lcom/android/email/Account;->mAccountNumber:I
 
@@ -2288,7 +2189,7 @@
 
     if-le v0, v9, :cond_3
 
-    .line 392
+    .line 409
     .end local v0           #accountNumber:I
     :cond_1
     iget v9, p0, Lcom/android/email/Account;->mAccountNumber:I
@@ -2297,7 +2198,13 @@
 
     iput v9, p0, Lcom/android/email/Account;->mAccountNumber:I
 
-    .line 394
+    .line 418
+    new-instance v2, Ljava/lang/StringBuffer;
+
+    invoke-direct {v2}, Ljava/lang/StringBuffer;-><init>()V
+
+    .line 419
+    .local v2, accountUuids:Ljava/lang/StringBuffer;
     iget-object v9, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     const-string v10, "accountUuids"
@@ -2306,60 +2213,51 @@
 
     invoke-interface {v9, v12, v11}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
-
-    .line 395
-    .local v2, accountUuids:Ljava/lang/String;
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v9
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    move-result v10
+    .line 421
+    invoke-virtual {v2}, Ljava/lang/StringBuffer;->length()I
 
-    if-eqz v10, :cond_4
+    move-result v9
 
-    const-string v10, ","
+    if-eqz v9, :cond_4
+
+    const-string v9, ","
 
     :goto_2
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     move-result-object v9
 
     iget-object v10, p0, Lcom/android/email/Account;->mUuid:Ljava/lang/String;
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 396
+    .line 422
     iget-object v9, p1, Lcom/android/email/Preferences;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     invoke-interface {v9}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v5
 
-    .line 397
+    .line 423
     .local v5, editor:Landroid/content/SharedPreferences$Editor;
     const-string v9, "accountUuids"
 
-    invoke-interface {v5, v12, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
-    .line 398
+    move-result-object v9
+
+    invoke-interface {v5, v12, v9}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 425
     invoke-interface {v5}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 401
+    .line 428
     .end local v1           #accountNumbers:[I
-    .end local v2           #accountUuids:Ljava/lang/String;
+    .end local v2           #accountUuids:Ljava/lang/StringBuffer;
     .end local v3           #accounts:[Lcom/android/email/Account;
     .end local v4           #arr$:[I
     .end local v5           #editor:Landroid/content/SharedPreferences$Editor;
@@ -2373,7 +2271,7 @@
 
     move-result-object v5
 
-    .line 403
+    .line 430
     .restart local v5       #editor:Landroid/content/SharedPreferences$Editor;
     new-instance v9, Ljava/lang/StringBuilder;
 
@@ -2403,7 +2301,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 404
+    .line 431
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2428,7 +2326,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 405
+    .line 432
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2457,7 +2355,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 406
+    .line 433
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2482,7 +2380,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 407
+    .line 434
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2507,7 +2405,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 408
+    .line 435
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2532,7 +2430,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 409
+    .line 436
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2557,7 +2455,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 410
+    .line 437
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2582,7 +2480,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 411
+    .line 438
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2607,7 +2505,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 412
+    .line 439
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2632,7 +2530,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 413
+    .line 440
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2657,7 +2555,7 @@
 
     invoke-interface {v5, v9, v10, v11}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    .line 414
+    .line 441
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2682,7 +2580,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 415
+    .line 442
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2707,7 +2605,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 416
+    .line 443
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2732,7 +2630,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 417
+    .line 444
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2757,7 +2655,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 418
+    .line 445
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2782,7 +2680,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 419
+    .line 446
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2807,7 +2705,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 420
+    .line 447
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2832,7 +2730,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 421
+    .line 448
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2857,7 +2755,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 422
+    .line 449
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2882,7 +2780,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 423
+    .line 450
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2907,7 +2805,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 424
+    .line 451
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2932,7 +2830,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 425
+    .line 452
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2957,7 +2855,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 426
+    .line 453
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2982,7 +2880,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 427
+    .line 454
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -3007,7 +2905,32 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 428
+    .line 455
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v10, p0, Lcom/android/email/Account;->mUuid:Ljava/lang/String;
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string v10, ".sendSecurityFlags"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    iget v10, p0, Lcom/android/email/Account;->mSendSecurityFlags:I
+
+    invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    .line 457
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -3032,7 +2955,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 430
+    .line 459
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -3057,7 +2980,7 @@
 
     invoke-interface {v5, v9, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 437
+    .line 466
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -3080,13 +3003,13 @@
 
     invoke-interface {v5, v9}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 439
+    .line 468
     invoke-interface {v5}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 440
+    .line 469
     return-void
 
-    .line 390
+    .line 407
     .end local v5           #editor:Landroid/content/SharedPreferences$Editor;
     .restart local v0       #accountNumber:I
     .restart local v1       #accountNumbers:[I
@@ -3098,18 +3021,18 @@
     :cond_3
     iput v0, p0, Lcom/android/email/Account;->mAccountNumber:I
 
-    .line 386
+    .line 403
     add-int/lit8 v7, v7, 0x1
 
     goto/16 :goto_1
 
-    .line 395
+    .line 421
     .end local v0           #accountNumber:I
-    .restart local v2       #accountUuids:Ljava/lang/String;
+    .restart local v2       #accountUuids:Ljava/lang/StringBuffer;
     :cond_4
-    const-string v10, ""
+    const-string v9, ""
 
-    move-object v10, v11
+    move-object v9, v11
 
     goto/16 :goto_2
 .end method
@@ -3119,22 +3042,10 @@
     .parameter "automaticCheckIntervalMinutes"
 
     .prologue
-    .line 470
+    .line 499
     iput p1, p0, Lcom/android/email/Account;->mAutomaticCheckIntervalMinutes:I
 
-    .line 471
-    return-void
-.end method
-
-.method public setBackupFlags(I)V
-    .locals 0
-    .parameter "flags"
-
-    .prologue
-    .line 546
-    iput p1, p0, Lcom/android/email/Account;->mBackupFlags:I
-
-    .line 547
+    .line 500
     return-void
 .end method
 
@@ -3143,10 +3054,10 @@
     .parameter "deletePolicy"
 
     .prologue
-    .line 494
+    .line 523
     iput p1, p0, Lcom/android/email/Account;->mDeletePolicy:I
 
-    .line 495
+    .line 524
     return-void
 .end method
 
@@ -3155,10 +3066,10 @@
     .parameter "description"
 
     .prologue
-    .line 237
+    .line 245
     iput-object p1, p0, Lcom/android/email/Account;->mDescription:Ljava/lang/String;
 
-    .line 238
+    .line 246
     return-void
 .end method
 
@@ -3167,10 +3078,10 @@
     .parameter "draftsFolderName"
 
     .prologue
-    .line 502
+    .line 531
     iput-object p1, p0, Lcom/android/email/Account;->mDraftsFolderName:Ljava/lang/String;
 
-    .line 503
+    .line 532
     return-void
 .end method
 
@@ -3179,34 +3090,10 @@
     .parameter "email"
 
     .prologue
-    .line 293
+    .line 309
     iput-object p1, p0, Lcom/android/email/Account;->mEmail:Ljava/lang/String;
 
-    .line 294
-    return-void
-.end method
-
-.method public setLastAutomaticCheckTime(J)V
-    .locals 0
-    .parameter "lastAutomaticCheckTime"
-
-    .prologue
-    .line 478
-    iput-wide p1, p0, Lcom/android/email/Account;->mLastAutomaticCheckTime:J
-
-    .line 479
-    return-void
-.end method
-
-.method public setLocalStoreUri(Ljava/lang/String;)V
-    .locals 0
-    .parameter "localStoreUri"
-
-    .prologue
-    .line 456
-    iput-object p1, p0, Lcom/android/email/Account;->mLocalStoreUri:Ljava/lang/String;
-
-    .line 457
+    .line 310
     return-void
 .end method
 
@@ -3215,10 +3102,10 @@
     .parameter "name"
 
     .prologue
-    .line 245
+    .line 253
     iput-object p1, p0, Lcom/android/email/Account;->mName:Ljava/lang/String;
 
-    .line 246
+    .line 254
     return-void
 .end method
 
@@ -3227,10 +3114,10 @@
     .parameter "notifyNewMail"
 
     .prologue
-    .line 486
+    .line 515
     iput-boolean p1, p0, Lcom/android/email/Account;->mNotifyNewMail:Z
 
-    .line 487
+    .line 516
     return-void
 .end method
 
@@ -3239,10 +3126,10 @@
     .parameter "outboxFolderName"
 
     .prologue
-    .line 526
+    .line 555
     iput-object p1, p0, Lcom/android/email/Account;->mOutboxFolderName:Ljava/lang/String;
 
-    .line 527
+    .line 556
     return-void
 .end method
 
@@ -3251,10 +3138,10 @@
     .parameter "passwd"
 
     .prologue
-    .line 253
+    .line 261
     iput-object p1, p0, Lcom/android/email/Account;->mPasswd:Ljava/lang/String;
 
-    .line 254
+    .line 262
     return-void
 .end method
 
@@ -3263,10 +3150,10 @@
     .parameter "ringtoneUri"
 
     .prologue
-    .line 317
+    .line 333
     iput-object p1, p0, Lcom/android/email/Account;->mRingtoneUri:Ljava/lang/String;
 
-    .line 318
+    .line 334
     return-void
 .end method
 
@@ -3275,10 +3162,10 @@
     .parameter "flags"
 
     .prologue
-    .line 277
+    .line 285
     iput-object p1, p0, Lcom/android/email/Account;->mSecurityAuth:Ljava/lang/String;
 
-    .line 278
+    .line 286
     return-void
 .end method
 
@@ -3287,10 +3174,10 @@
     .parameter "flags"
 
     .prologue
-    .line 285
+    .line 293
     iput p1, p0, Lcom/android/email/Account;->mSecurityFlags:I
 
-    .line 286
+    .line 294
     return-void
 .end method
 
@@ -3299,10 +3186,10 @@
     .parameter "sendAddr"
 
     .prologue
-    .line 261
+    .line 269
     iput-object p1, p0, Lcom/android/email/Account;->mSendAddr:Ljava/lang/String;
 
-    .line 262
+    .line 270
     return-void
 .end method
 
@@ -3311,10 +3198,22 @@
     .parameter "sendPort"
 
     .prologue
-    .line 269
+    .line 277
     iput p1, p0, Lcom/android/email/Account;->mSendPort:I
 
-    .line 270
+    .line 278
+    return-void
+.end method
+
+.method public setSendSecurityFlags(I)V
+    .locals 0
+    .parameter "flags"
+
+    .prologue
+    .line 301
+    iput p1, p0, Lcom/android/email/Account;->mSendSecurityFlags:I
+
+    .line 302
     return-void
 .end method
 
@@ -3323,10 +3222,10 @@
     .parameter "senderUri"
 
     .prologue
-    .line 229
+    .line 237
     iput-object p1, p0, Lcom/android/email/Account;->mSenderUri:Ljava/lang/String;
 
-    .line 230
+    .line 238
     return-void
 .end method
 
@@ -3335,10 +3234,10 @@
     .parameter "sentFolderName"
 
     .prologue
-    .line 510
+    .line 539
     iput-object p1, p0, Lcom/android/email/Account;->mSentFolderName:Ljava/lang/String;
 
-    .line 511
+    .line 540
     return-void
 .end method
 
@@ -3347,10 +3246,10 @@
     .parameter "storeUri"
 
     .prologue
-    .line 221
+    .line 229
     iput-object p1, p0, Lcom/android/email/Account;->mStoreUri:Ljava/lang/String;
 
-    .line 222
+    .line 230
     return-void
 .end method
 
@@ -3359,10 +3258,10 @@
     .parameter "window"
 
     .prologue
-    .line 538
+    .line 567
     iput p1, p0, Lcom/android/email/Account;->mSyncWindow:I
 
-    .line 539
+    .line 568
     return-void
 .end method
 
@@ -3371,10 +3270,10 @@
     .parameter "trashFolderName"
 
     .prologue
-    .line 518
+    .line 547
     iput-object p1, p0, Lcom/android/email/Account;->mTrashFolderName:Ljava/lang/String;
 
-    .line 519
+    .line 548
     return-void
 .end method
 
@@ -3383,10 +3282,10 @@
     .parameter "vibrate"
 
     .prologue
-    .line 301
+    .line 317
     iput-boolean p1, p0, Lcom/android/email/Account;->mVibrate:Z
 
-    .line 302
+    .line 318
     return-void
 .end method
 
@@ -3395,10 +3294,10 @@
     .parameter "vibrateWhenSilent"
 
     .prologue
-    .line 309
+    .line 325
     iput-boolean p1, p0, Lcom/android/email/Account;->mVibrateWhenSilent:Z
 
-    .line 310
+    .line 326
     return-void
 .end method
 
@@ -3406,7 +3305,7 @@
     .locals 1
 
     .prologue
-    .line 444
+    .line 473
     iget-object v0, p0, Lcom/android/email/Account;->mDescription:Ljava/lang/String;
 
     return-object v0

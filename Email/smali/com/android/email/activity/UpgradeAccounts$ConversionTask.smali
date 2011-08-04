@@ -42,18 +42,18 @@
     .parameter "accountInfo"
 
     .prologue
-    .line 353
+    .line 354
     iput-object p1, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->this$0:Lcom/android/email/activity/UpgradeAccounts;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 355
+    .line 356
     iput-object p2, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mAccountInfo:[Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
 
-    .line 356
+    .line 357
     iput-object p1, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mContext:Landroid/content/Context;
 
-    .line 357
+    .line 358
     iget-object v0, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/email/Preferences;->getPreferences(Landroid/content/Context;)Lcom/android/email/Preferences;
@@ -62,7 +62,7 @@
 
     iput-object v0, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mPreferences:Lcom/android/email/Preferences;
 
-    .line 358
+    .line 359
     return-void
 .end method
 
@@ -76,10 +76,10 @@
     .prologue
     const-string v6, "Email"
 
-    .line 419
+    .line 420
     if-eqz p4, :cond_0
 
-    .line 420
+    .line 421
     :try_start_0
     iget-object v3, p1, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->account:Lcom/android/email/Account;
 
@@ -87,29 +87,29 @@
 
     move-result-object v2
 
-    .line 421
+    .line 422
     .local v2, storeUri:Ljava/lang/String;
     invoke-virtual {v2, p4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    .line 422
+    .line 423
     .local v1, isType:Z
     if-nez v1, :cond_0
 
-    .line 445
+    .line 446
     .end local v1           #isType:Z
     .end local v2           #storeUri:Ljava/lang/String;
     :goto_0
     return-void
 
-    .line 427
+    .line 428
     :cond_0
     iget-boolean v3, p1, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->isError:Z
 
     if-nez v3, :cond_1
 
-    .line 428
+    .line 429
     iget-object v3, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mContext:Landroid/content/Context;
 
     iget-object v4, p1, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->account:Lcom/android/email/Account;
@@ -118,7 +118,7 @@
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 437
+    .line 438
     :cond_1
     :goto_1
     :try_start_1
@@ -128,7 +128,7 @@
 
     invoke-static {v3, v4, p2, p3}, Lcom/android/email/activity/UpgradeAccounts;->deleteAccountStore(Landroid/content/Context;Lcom/android/email/Account;ILcom/android/email/activity/UpgradeAccounts$UIHandler;)V
 
-    .line 438
+    .line 439
     iget-object v3, p1, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->account:Lcom/android/email/Account;
 
     iget-object v4, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mPreferences:Lcom/android/email/Preferences;
@@ -137,7 +137,7 @@
     :try_end_1
     .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 444
+    .line 445
     :goto_2
     const v3, 0x7fffffff
 
@@ -145,13 +145,13 @@
 
     goto :goto_0
 
-    .line 430
+    .line 431
     :catch_0
     move-exception v3
 
     move-object v0, v3
 
-    .line 431
+    .line 432
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v3, "Email"
 
@@ -175,7 +175,7 @@
 
     invoke-static {v6, v3}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 432
+    .line 433
     iget-object v3, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->this$0:Lcom/android/email/activity/UpgradeAccounts;
 
     invoke-static {v3}, Lcom/android/email/activity/UpgradeAccounts;->access$600(Lcom/android/email/activity/UpgradeAccounts;)Lcom/android/email/activity/UpgradeAccounts$UIHandler;
@@ -184,7 +184,7 @@
 
     iget-object v4, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f080174
+    const v5, 0x7f08018d
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -192,21 +192,21 @@
 
     invoke-virtual {v3, p2, v4}, Lcom/android/email/activity/UpgradeAccounts$UIHandler;->error(ILjava/lang/String;)V
 
-    .line 433
+    .line 434
     const/4 v3, 0x1
 
     iput-boolean v3, p1, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->isError:Z
 
     goto :goto_1
 
-    .line 439
+    .line 440
     .end local v0           #e:Ljava/lang/RuntimeException;
     :catch_1
     move-exception v3
 
     move-object v0, v3
 
-    .line 440
+    .line 441
     .restart local v0       #e:Ljava/lang/RuntimeException;
     const-string v3, "Email"
 
@@ -240,7 +240,7 @@
     .parameter "x0"
 
     .prologue
-    .line 348
+    .line 349
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -258,14 +258,14 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 366
+    .line 367
     invoke-static {}, Lcom/android/email/activity/UpgradeAccounts;->access$400()Ljava/lang/Object;
 
     move-result-object v5
 
     monitor-enter v5
 
-    .line 367
+    .line 368
     :try_start_0
     invoke-static {}, Lcom/android/email/activity/UpgradeAccounts;->access$500()Z
 
@@ -273,29 +273,29 @@
 
     if-eqz v6, :cond_0
 
-    .line 368
+    .line 369
     monitor-exit v5
 
     move-object v5, v9
 
-    .line 410
+    .line 411
     :goto_0
     return-object v5
 
-    .line 370
+    .line 371
     :cond_0
     const/4 v6, 0x1
 
     invoke-static {v6}, Lcom/android/email/activity/UpgradeAccounts;->access$502(Z)Z
 
-    .line 372
+    .line 373
     iget-object v6, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->this$0:Lcom/android/email/activity/UpgradeAccounts;
 
     invoke-static {v6}, Lcom/android/email/activity/UpgradeAccounts;->access$600(Lcom/android/email/activity/UpgradeAccounts;)Lcom/android/email/activity/UpgradeAccounts$UIHandler;
 
     move-result-object v1
 
-    .line 374
+    .line 375
     .local v1, handler:Lcom/android/email/activity/UpgradeAccounts$UIHandler;
     const/4 v2, 0x0
 
@@ -307,7 +307,7 @@
 
     if-ge v2, v6, :cond_2
 
-    .line 375
+    .line 376
     iget-object v6, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mContext:Landroid/content/Context;
 
     iget-object v7, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mAccountInfo:[Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
@@ -320,13 +320,13 @@
 
     move-result v0
 
-    .line 376
+    .line 377
     .local v0, estimate:I
     const/4 v6, -0x1
 
     if-ne v0, v6, :cond_1
 
-    .line 377
+    .line 378
     iget-object v6, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mAccountInfo:[Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
 
     aget-object v6, v6, v2
@@ -335,7 +335,7 @@
 
     iput-boolean v7, v6, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->isError:Z
 
-    .line 378
+    .line 379
     iget-object v6, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->this$0:Lcom/android/email/activity/UpgradeAccounts;
 
     invoke-static {v6}, Lcom/android/email/activity/UpgradeAccounts;->access$600(Lcom/android/email/activity/UpgradeAccounts;)Lcom/android/email/activity/UpgradeAccounts$UIHandler;
@@ -344,7 +344,7 @@
 
     iget-object v7, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f080174
+    const v8, 0x7f08018d
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -352,7 +352,7 @@
 
     invoke-virtual {v6, v2, v7}, Lcom/android/email/activity/UpgradeAccounts$UIHandler;->error(ILjava/lang/String;)V
 
-    .line 380
+    .line 381
     :cond_1
     iget-object v6, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->this$0:Lcom/android/email/activity/UpgradeAccounts;
 
@@ -362,12 +362,12 @@
 
     invoke-virtual {v6, v2, v0}, Lcom/android/email/activity/UpgradeAccounts$UIHandler;->setMaxProgress(II)V
 
-    .line 374
+    .line 375
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 384
+    .line 385
     .end local v0           #estimate:I
     :cond_2
     const/4 v2, 0x0
@@ -379,7 +379,7 @@
 
     if-ge v2, v6, :cond_4
 
-    .line 385
+    .line 386
     iget-object v6, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mAccountInfo:[Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
 
     aget-object v6, v6, v2
@@ -388,7 +388,7 @@
 
     if-nez v6, :cond_3
 
-    .line 386
+    .line 387
     iget-object v6, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mContext:Landroid/content/Context;
 
     iget-object v7, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mAccountInfo:[Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
@@ -401,11 +401,11 @@
 
     move-result v4
 
-    .line 387
+    .line 388
     .local v4, ok:Z
     if-nez v4, :cond_3
 
-    .line 388
+    .line 389
     iget-object v6, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mAccountInfo:[Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
 
     aget-object v6, v6, v2
@@ -414,7 +414,7 @@
 
     iput-boolean v7, v6, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->isError:Z
 
-    .line 389
+    .line 390
     iget-object v6, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->this$0:Lcom/android/email/activity/UpgradeAccounts;
 
     invoke-static {v6}, Lcom/android/email/activity/UpgradeAccounts;->access$600(Lcom/android/email/activity/UpgradeAccounts;)Lcom/android/email/activity/UpgradeAccounts$UIHandler;
@@ -423,7 +423,7 @@
 
     iget-object v7, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f080174
+    const v8, 0x7f08018d
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -431,14 +431,14 @@
 
     invoke-virtual {v6, v2, v7}, Lcom/android/email/activity/UpgradeAccounts$UIHandler;->error(ILjava/lang/String;)V
 
-    .line 384
+    .line 385
     .end local v4           #ok:Z
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
-    .line 397
+    .line 398
     :cond_4
     const/4 v2, 0x0
 
@@ -449,23 +449,23 @@
 
     if-ge v2, v6, :cond_5
 
-    .line 398
+    .line 399
     iget-object v6, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mAccountInfo:[Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
 
     aget-object v3, v6, v2
 
-    .line 399
+    .line 400
     .local v3, info:Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
     const-string v6, "pop3"
 
     invoke-direct {p0, v3, v2, v1, v6}, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->copyAndDeleteAccount(Lcom/android/email/activity/UpgradeAccounts$AccountInfo;ILcom/android/email/activity/UpgradeAccounts$UIHandler;Ljava/lang/String;)V
 
-    .line 397
+    .line 398
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    .line 402
+    .line 403
     .end local v3           #info:Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
     :cond_5
     const/4 v2, 0x0
@@ -477,38 +477,38 @@
 
     if-ge v2, v6, :cond_6
 
-    .line 403
+    .line 404
     iget-object v6, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mAccountInfo:[Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
 
     aget-object v3, v6, v2
 
-    .line 404
+    .line 405
     .restart local v3       #info:Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
     const-string v6, "imap"
 
     invoke-direct {p0, v3, v2, v1, v6}, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->copyAndDeleteAccount(Lcom/android/email/activity/UpgradeAccounts$AccountInfo;ILcom/android/email/activity/UpgradeAccounts$UIHandler;Ljava/lang/String;)V
 
-    .line 402
+    .line 403
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_4
 
-    .line 408
+    .line 409
     .end local v3           #info:Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
     :cond_6
     iget-object v6, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->mContext:Landroid/content/Context;
 
     invoke-static {v6}, Lcom/android/email/Email;->setServicesEnabled(Landroid/content/Context;)Z
 
-    .line 409
+    .line 410
     monitor-exit v5
 
     move-object v5, v9
 
-    .line 410
+    .line 411
     goto/16 :goto_0
 
-    .line 409
+    .line 410
     .end local v1           #handler:Lcom/android/email/activity/UpgradeAccounts$UIHandler;
     .end local v2           #i:I
     :catchall_0
@@ -526,7 +526,7 @@
     .parameter "x0"
 
     .prologue
-    .line 348
+    .line 349
     check-cast p1, Ljava/lang/Void;
 
     .end local p1
@@ -540,19 +540,19 @@
     .parameter "result"
 
     .prologue
-    .line 449
+    .line 450
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/email/activity/UpgradeAccounts;->access$502(Z)Z
 
-    .line 450
+    .line 451
     invoke-virtual {p0}, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->isCancelled()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 453
+    .line 454
     iget-object v0, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->this$0:Lcom/android/email/activity/UpgradeAccounts;
 
     invoke-static {v0}, Lcom/android/email/activity/UpgradeAccounts;->access$300(Lcom/android/email/activity/UpgradeAccounts;)Landroid/widget/Button;
@@ -565,12 +565,12 @@
 
     if-nez v0, :cond_0
 
-    .line 454
+    .line 455
     iget-object v0, p0, Lcom/android/email/activity/UpgradeAccounts$ConversionTask;->this$0:Lcom/android/email/activity/UpgradeAccounts;
 
     invoke-static {v0}, Lcom/android/email/activity/UpgradeAccounts;->access$700(Lcom/android/email/activity/UpgradeAccounts;)V
 
-    .line 457
+    .line 458
     :cond_0
     return-void
 .end method

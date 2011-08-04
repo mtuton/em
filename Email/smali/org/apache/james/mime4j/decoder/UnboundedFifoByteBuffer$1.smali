@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->iterator()Ljava/util/Iterator;
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -23,33 +23,6 @@
 .field private lastReturnedIndex:I
 
 .field final synthetic this$0:Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;
-
-
-# direct methods
-.method constructor <init>(Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;)V
-    .locals 1
-    .parameter
-
-    .prologue
-    .line 239
-    iput-object p1, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer$1;->this$0:Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 222
-    iget-object v0, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer$1;->this$0:Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;
-
-    iget v0, v0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->head:I
-
-    iput v0, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer$1;->index:I
-
-    .line 223
-    const/4 v0, -0x1
-
-    iput v0, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer$1;->lastReturnedIndex:I
-
-    return-void
-.end method
 
 
 # virtual methods

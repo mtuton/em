@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <plurals name="notification_new_one_account_fmt">
-        <item quantity="other">Neskaitytų %d (%s)</item>
-        <item quantity="one">Neskaitytų %d (%s)</item>
-        <item quantity="few">Neskaitytų %d (%s)</item>
+        <item quantity="other">Neskaitytų %1$d (%2$s)</item>
+        <item quantity="one">Neskaitytų %1$d (%2$s)</item>
+        <item quantity="few">Neskaitytų %1$d (%2$s)</item>
     </plurals>
     <plurals name="notification_new_multi_account_fmt">
         <item quantity="other">%d abonementuose</item>

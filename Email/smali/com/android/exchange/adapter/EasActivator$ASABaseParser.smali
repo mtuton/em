@@ -17,22 +17,6 @@
 .end annotation
 
 
-# static fields
-.field static final MEMBER:Ljava/lang/String; = "member"
-
-.field static final METHORDRESPONSE:Ljava/lang/String; = "methodResponse"
-
-.field static final NAME:Ljava/lang/String; = "name"
-
-.field static final PARAM:Ljava/lang/String; = "param"
-
-.field static final PARAMS:Ljava/lang/String; = "params"
-
-.field static final STRUCT:Ljava/lang/String; = "struct"
-
-.field static final VALUE:Ljava/lang/String; = "value"
-
-
 # instance fields
 .field final synthetic this$0:Lcom/android/exchange/adapter/EasActivator;
 
@@ -43,11 +27,11 @@
     .parameter
 
     .prologue
-    .line 418
+    .line 412
     iput-object p1, p0, Lcom/android/exchange/adapter/EasActivator$ASABaseParser;->this$0:Lcom/android/exchange/adapter/EasActivator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 419
+    .line 413
     return-void
 .end method

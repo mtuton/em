@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageView;->onTextSize()V
+    value = Lcom/android/email/activity/MessageView;->onDisplayMode()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3468
+    .line 4558
     iput-object p1, p0, Lcom/android/email/activity/MessageView$16;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,14 +43,14 @@
     .parameter "which"
 
     .prologue
-    .line 3469
+    .line 4560
     iget-object v0, p0, Lcom/android/email/activity/MessageView$16;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v0, p2}, Lcom/android/email/activity/MessageView;->access$2700(Lcom/android/email/activity/MessageView;I)V
+    invoke-static {v0, p2}, Lcom/android/email/activity/MessageView;->access$3300(Lcom/android/email/activity/MessageView;I)V
 
-    .line 3470
+    .line 4561
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 3471
+    .line 4562
     return-void
 .end method

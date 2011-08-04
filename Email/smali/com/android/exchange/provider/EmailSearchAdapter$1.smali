@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 113
+    .line 126
     iput-object p1, p0, Lcom/android/exchange/provider/EmailSearchAdapter$1;->this$0:Lcom/android/exchange/provider/EmailSearchAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,14 +43,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 117
+    .line 133
     new-instance v7, Ljava/text/SimpleDateFormat;
 
     const-string v0, "dd/MM/yyyy"
 
     invoke-direct {v7, v0}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 120
+    .line 136
     .local v7, formatter:Ljava/text/SimpleDateFormat;
     sget-object v0, Lcom/android/exchange/provider/ExchangeProvider;->EMAIL_SEARCH_URI:Landroid/net/Uri;
 
@@ -60,13 +60,23 @@
 
     iget-object v3, p0, Lcom/android/exchange/provider/EmailSearchAdapter$1;->this$0:Lcom/android/exchange/provider/EmailSearchAdapter;
 
-    invoke-static {v3}, Lcom/android/exchange/provider/EmailSearchAdapter;->access$600(Lcom/android/exchange/provider/EmailSearchAdapter;)Lcom/android/email/provider/EmailContent$Account;
+    invoke-static {v3}, Lcom/android/exchange/provider/EmailSearchAdapter;->access$700(Lcom/android/exchange/provider/EmailSearchAdapter;)Lcom/android/email/provider/EmailContent$Account;
 
     move-result-object v3
 
     iget-wide v3, v3, Lcom/android/email/provider/EmailContent$Account;->mId:J
 
     invoke-static {v3, v4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    iget-object v3, p0, Lcom/android/exchange/provider/EmailSearchAdapter$1;->this$0:Lcom/android/exchange/provider/EmailSearchAdapter;
+
+    invoke-static {v3}, Lcom/android/exchange/provider/EmailSearchAdapter;->access$600(Lcom/android/exchange/provider/EmailSearchAdapter;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -138,7 +148,7 @@
 
     move-result-object v1
 
-    .line 132
+    .line 156
     .local v1, emailSearchUri:Landroid/net/Uri;
     const-string v0, "Email"
 
@@ -162,10 +172,10 @@
 
     invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 136
+    .line 160
     iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter$1;->this$0:Lcom/android/exchange/provider/EmailSearchAdapter;
 
-    invoke-static {v0}, Lcom/android/exchange/provider/EmailSearchAdapter;->access$700(Lcom/android/exchange/provider/EmailSearchAdapter;)Landroid/content/ContentResolver;
+    invoke-static {v0}, Lcom/android/exchange/provider/EmailSearchAdapter;->access$800(Lcom/android/exchange/provider/EmailSearchAdapter;)Landroid/content/ContentResolver;
 
     move-result-object v0
 
@@ -179,7 +189,7 @@
 
     move-result-object v6
 
-    .line 139
+    .line 163
     .local v6, emailSearchCursor:Landroid/database/Cursor;
     return-void
 .end method

@@ -1,4 +1,4 @@
-.class Lcom/android/exchange/adapter/ContactsSyncAdapter$1;
+.class synthetic Lcom/android/exchange/adapter/ContactsSyncAdapter$1;
 .super Ljava/lang/Object;
 .source "ContactsSyncAdapter.java"
 

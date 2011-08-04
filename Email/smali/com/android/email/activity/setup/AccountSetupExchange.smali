@@ -7,26 +7,6 @@
 .implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
 
-# static fields
-.field private static final DIALOG_DUPLICATE_ACCOUNT:I = 0x1
-
-.field private static final DIALOG_EXCHANGE_ACCOUNT_WARNNING:I = 0x2
-
-.field private static final DISPLAY_DIALOG:I = 0x64
-
-.field static final EXTRA_ACCOUNT:Ljava/lang/String; = "account"
-
-.field private static final EXTRA_ACCOUNT_EDIT:Ljava/lang/String; = "accountEdit"
-
-.field static final EXTRA_DISABLE_AUTO_DISCOVER:Ljava/lang/String; = "disableAutoDiscover"
-
-.field private static final EXTRA_EAS_FLOW:Ljava/lang/String; = "easFlow"
-
-.field private static final EXTRA_MAKE_DEFAULT:Ljava/lang/String; = "makeDefault"
-
-.field public static final EXTRA_SETWIZ_FLOW:Ljava/lang/String; = "com.android.email.extra.setwiz_flow"
-
-
 # instance fields
 .field private AccountHandler:Landroid/os/Handler;
 
@@ -40,7 +20,7 @@
 
 .field private mMakeDefault:Z
 
-.field private mNextTwSoftkeyItem:Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+.field private mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
 
 .field private mPasswordView:Landroid/widget/EditText;
 
@@ -58,10 +38,10 @@
     .locals 1
 
     .prologue
-    .line 104
+    .line 103
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 138
+    .line 137
     new-instance v0, Lcom/android/email/activity/setup/AccountSetupExchange$1;
 
     invoke-direct {v0, p0}, Lcom/android/email/activity/setup/AccountSetupExchange$1;-><init>(Lcom/android/email/activity/setup/AccountSetupExchange;)V
@@ -71,13 +51,13 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/android/email/activity/setup/AccountSetupExchange;)Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+.method static synthetic access$000(Lcom/android/email/activity/setup/AccountSetupExchange;)Lcom/android/email/EmailTwSoftkeyItem;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 104
-    iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mNextTwSoftkeyItem:Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+    .line 103
+    iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
 
     return-object v0
 .end method
@@ -87,7 +67,7 @@
     .parameter "x0"
 
     .prologue
-    .line 104
+    .line 103
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->validateFields()Z
 
     move-result v0
@@ -100,7 +80,7 @@
     .parameter "x0"
 
     .prologue
-    .line 104
+    .line 103
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->doNextAction()V
 
     return-void
@@ -111,7 +91,7 @@
     .parameter "x0"
 
     .prologue
-    .line 104
+    .line 103
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->onNext()V
 
     return-void
@@ -119,206 +99,201 @@
 
 .method public static actionEditIncomingSettings(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;)V
     .locals 2
-    .parameter "fromActivity"
-    .parameter "account"
+    .parameter
+    .parameter
 
     .prologue
-    .line 187
+    .line 186
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/email/activity/setup/AccountSetupExchange;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 188
-    .local v0, i:Landroid/content/Intent;
+    .line 187
     const-string v1, "android.intent.action.EDIT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 189
+    .line 188
     const-string v1, "account"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 190
+    .line 189
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 191
+    .line 190
     return-void
 .end method
 
 .method public static actionEditIncomingSettings(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;Z)V
     .locals 2
-    .parameter "fromActivity"
-    .parameter "account"
-    .parameter "edit"
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
-    .line 196
+    .line 195
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/email/activity/setup/AccountSetupExchange;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 197
-    .local v0, i:Landroid/content/Intent;
+    .line 196
     const-string v1, "android.intent.action.EDIT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 198
+    .line 197
     const-string v1, "account"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 199
+    .line 198
     const-string v1, "accountEdit"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 200
+    .line 199
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 201
+    .line 200
     return-void
 .end method
 
 .method public static actionEditOutgoingSettings(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;)V
     .locals 2
-    .parameter "fromActivity"
-    .parameter "account"
+    .parameter
+    .parameter
 
     .prologue
-    .line 210
+    .line 209
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/email/activity/setup/AccountSetupExchange;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 211
-    .local v0, i:Landroid/content/Intent;
+    .line 210
     const-string v1, "android.intent.action.EDIT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 212
+    .line 211
     const-string v1, "account"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 213
+    .line 212
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 214
+    .line 213
     return-void
 .end method
 
 .method public static actionIncomingSettings(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;ZZZ)V
     .locals 3
-    .parameter "fromActivity"
-    .parameter "account"
-    .parameter "makeDefault"
-    .parameter "easFlowMode"
-    .parameter "allowAutoDiscover"
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
-    .line 160
+    .line 159
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/email/activity/setup/AccountSetupExchange;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 161
-    .local v0, i:Landroid/content/Intent;
+    .line 160
     const-string v1, "account"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 162
+    .line 161
     const-string v1, "makeDefault"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 163
+    .line 162
     const-string v1, "easFlow"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 164
+    .line 163
     if-nez p4, :cond_0
 
-    .line 165
+    .line 164
     const-string v1, "disableAutoDiscover"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 167
+    .line 166
     :cond_0
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 168
+    .line 167
     return-void
 .end method
 
 .method public static actionIncomingSettings(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;ZZZZ)V
     .locals 3
-    .parameter "fromActivity"
-    .parameter "account"
-    .parameter "makeDefault"
-    .parameter "easFlowMode"
-    .parameter "allowAutoDiscover"
-    .parameter "setWizMode"
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
-    .line 174
+    .line 173
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/email/activity/setup/AccountSetupExchange;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 175
-    .local v0, i:Landroid/content/Intent;
+    .line 174
     const-string v1, "account"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 176
+    .line 175
     const-string v1, "makeDefault"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 177
+    .line 176
     const-string v1, "easFlow"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 178
+    .line 177
     if-nez p4, :cond_0
 
-    .line 179
+    .line 178
     const-string v1, "disableAutoDiscover"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 181
+    .line 180
     :cond_0
     const-string v1, "com.android.email.extra.setwiz_flow"
 
     invoke-virtual {v0, v1, p5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 182
+    .line 181
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 183
+    .line 182
     return-void
 .end method
 
@@ -330,88 +305,88 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 709
+    .line 708
     const/4 v3, 0x2
 
     if-ne p1, v3, :cond_1
 
-    .line 710
+    .line 709
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-boolean v4, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mMakeDefault:Z
 
     invoke-static {p0, v3, v4, v5}, Lcom/android/email/activity/setup/AutoDiscoverSetupExchange;->actionAutoDiscoverSetupExchangeIntent(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;ZZ)V
 
-    .line 739
+    .line 738
     :cond_0
     :goto_0
     return-void
 
-    .line 712
+    .line 711
     :cond_1
     if-eq p1, v5, :cond_0
 
-    .line 714
+    .line 713
     const/4 v3, 0x5
 
     if-ne p1, v3, :cond_2
 
-    .line 715
+    .line 714
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->finish()V
 
     goto :goto_0
 
-    .line 717
+    .line 716
     :cond_2
     const/4 v3, 0x4
 
     if-eq p1, v3, :cond_0
 
-    .line 725
+    .line 724
     if-eqz p2, :cond_0
 
-    .line 726
+    .line 725
     const-string v3, "HostAuth"
 
     invoke-virtual {p2, v3}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v2
 
-    .line 727
+    .line 726
     .local v2, p:Landroid/os/Parcelable;
     if-eqz v2, :cond_0
 
-    .line 728
+    .line 727
     move-object v0, v2
 
     check-cast v0, Lcom/android/email/provider/EmailContent$HostAuth;
 
     move-object v1, v0
 
-    .line 729
+    .line 728
     .local v1, hostAuth:Lcom/android/email/provider/EmailContent$HostAuth;
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iput-object v1, v3, Lcom/android/email/provider/EmailContent$Account;->mHostAuthSend:Lcom/android/email/provider/EmailContent$HostAuth;
 
-    .line 730
+    .line 729
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iput-object v1, v3, Lcom/android/email/provider/EmailContent$Account;->mHostAuthRecv:Lcom/android/email/provider/EmailContent$HostAuth;
 
-    .line 731
+    .line 730
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     invoke-virtual {p0, v3}, Lcom/android/email/activity/setup/AccountSetupExchange;->loadFields(Lcom/android/email/provider/EmailContent$Account;)V
 
-    .line 732
+    .line 731
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->validateFields()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 734
+    .line 733
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->onNext()V
 
     goto :goto_0
@@ -423,12 +398,12 @@
     .parameter "data"
 
     .prologue
-    .line 660
+    .line 659
     const/4 v0, -0x1
 
     if-ne p1, v0, :cond_1
 
-    .line 661
+    .line 660
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     invoke-virtual {v0}, Lcom/android/email/provider/EmailContent$Account;->isSaved()Z
@@ -437,7 +412,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 663
+    .line 662
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
@@ -448,7 +423,7 @@
 
     invoke-virtual {v0, p0, v1}, Lcom/android/email/provider/EmailContent$Account;->update(Landroid/content/Context;Landroid/content/ContentValues;)I
 
-    .line 664
+    .line 663
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v0, v0, Lcom/android/email/provider/EmailContent$Account;->mHostAuthRecv:Lcom/android/email/provider/EmailContent$HostAuth;
@@ -463,7 +438,7 @@
 
     invoke-virtual {v0, p0, v1}, Lcom/android/email/provider/EmailContent$HostAuth;->update(Landroid/content/Context;Landroid/content/ContentValues;)I
 
-    .line 666
+    .line 665
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v0, v0, Lcom/android/email/provider/EmailContent$Account;->mHostAuthSend:Lcom/android/email/provider/EmailContent$HostAuth;
@@ -478,7 +453,7 @@
 
     invoke-virtual {v0, p0, v1}, Lcom/android/email/provider/EmailContent$HostAuth;->update(Landroid/content/Context;Landroid/content/ContentValues;)I
 
-    .line 668
+    .line 667
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v0, v0, Lcom/android/email/provider/EmailContent$Account;->mHostAuthRecv:Lcom/android/email/provider/EmailContent$HostAuth;
@@ -493,7 +468,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 671
+    .line 670
     const/4 v0, 0x0
 
     :try_start_0
@@ -509,16 +484,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 683
+    .line 682
     :cond_0
     :goto_0
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->finish()V
 
-    .line 686
+    .line 685
     :cond_1
     return-void
 
-    .line 679
+    .line 678
     :cond_2
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
@@ -526,7 +501,7 @@
 
     goto :goto_0
 
-    .line 673
+    .line 672
     :catch_0
     move-exception v0
 
@@ -539,20 +514,20 @@
     .parameter "data"
 
     .prologue
-    .line 692
+    .line 691
     const/4 v0, -0x1
 
     if-ne p1, v0, :cond_1
 
-    .line 694
+    .line 693
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->doOptions()V
 
-    .line 700
+    .line 699
     :cond_0
     :goto_0
     return-void
 
-    .line 695
+    .line 694
     :cond_1
     const/4 v0, 0x4
 
@@ -562,7 +537,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 697
+    .line 696
     :cond_2
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->finish()V
 
@@ -575,7 +550,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 810
+    .line 809
     const-string v2, "input_method"
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/setup/AccountSetupExchange;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -584,22 +559,22 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 811
+    .line 810
     .local v0, im:Landroid/view/inputmethod/InputMethodManager;
-    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mNextTwSoftkeyItem:Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
 
-    .line 812
+    .line 811
     .local v1, mView:Landroid/view/View;
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mNextTwSoftkeyItem:Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
 
-    invoke-virtual {v2}, Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;->getWindowToken()Landroid/os/IBinder;
+    invoke-virtual {v2}, Lcom/android/email/EmailTwSoftkeyItem;->getWindowToken()Landroid/os/IBinder;
 
     move-result-object v2
 
     invoke-virtual {v0, v2, v3}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 813
-    const v2, 0x7f07001f
+    .line 812
+    const v2, 0x7f070022
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/setup/AccountSetupExchange;->findViewById(I)Landroid/view/View;
 
@@ -607,7 +582,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setClickable(Z)V
 
-    .line 814
+    .line 813
     new-instance v2, Ljava/lang/Thread;
 
     new-instance v3, Lcom/android/email/activity/setup/AccountSetupExchange$7;
@@ -618,7 +593,7 @@
 
     invoke-virtual {v2}, Ljava/lang/Thread;->start()V
 
-    .line 828
+    .line 827
     return-void
 .end method
 
@@ -628,7 +603,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 624
+    .line 623
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->getIntent()Landroid/content/Intent;
 
     move-result-object v2
@@ -639,7 +614,7 @@
 
     move-result v0
 
-    .line 628
+    .line 627
     .local v0, easFlowMode:Z
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->getIntent()Landroid/content/Intent;
 
@@ -651,7 +626,7 @@
 
     move-result v1
 
-    .line 629
+    .line 628
     .local v1, mSetWizMode:Z
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
@@ -659,10 +634,10 @@
 
     invoke-static {p0, v2, v3, v0, v1}, Lcom/android/email/activity/setup/AccountSetupOptions;->actionOptions(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;ZZZ)V
 
-    .line 630
+    .line 629
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->finish()V
 
-    .line 631
+    .line 630
     return-void
 .end method
 
@@ -671,7 +646,7 @@
     .parameter "intent"
 
     .prologue
-    .line 398
+    .line 397
     const-string v7, "com.android.email.EMAIL"
 
     move-object/from16 v0, p1
@@ -682,7 +657,7 @@
 
     move-result-object v14
 
-    .line 399
+    .line 398
     .local v14, email:Ljava/lang/String;
     const-string v7, "com.android.email.DOMAIN"
 
@@ -694,7 +669,7 @@
 
     move-result-object v12
 
-    .line 400
+    .line 399
     .local v12, domain:Ljava/lang/String;
     const-string v7, "com.android.email.USER"
 
@@ -706,7 +681,7 @@
 
     move-result-object v18
 
-    .line 401
+    .line 400
     .local v18, userName:Ljava/lang/String;
     const-string v7, "com.android.email.PASSWORD"
 
@@ -718,7 +693,7 @@
 
     move-result-object v15
 
-    .line 402
+    .line 401
     .local v15, password:Ljava/lang/String;
     const-string v7, "com.android.email.TRUSTCERT"
 
@@ -734,7 +709,7 @@
 
     move-result v16
 
-    .line 403
+    .line 402
     .local v16, trustCertificates:Z
     if-eqz v16, :cond_2
 
@@ -742,7 +717,7 @@
 
     move-object v4, v7
 
-    .line 404
+    .line 403
     .local v4, scheme:Ljava/lang/String;
     :goto_0
     const/16 v7, 0x40
@@ -751,7 +726,7 @@
 
     move-result v11
 
-    .line 405
+    .line 404
     .local v11, amp:I
     add-int/lit8 v7, v11, 0x1
 
@@ -759,7 +734,7 @@
 
     move-result-object v6
 
-    .line 409
+    .line 408
     .local v6, host:Ljava/lang/String;
     const-string v7, "\\"
 
@@ -773,7 +748,7 @@
 
     if-eqz v7, :cond_0
 
-    .line 410
+    .line 409
     const/4 v7, 0x1
 
     move-object/from16 v0, v18
@@ -784,7 +759,7 @@
 
     move-result-object v18
 
-    .line 414
+    .line 413
     :cond_0
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -812,11 +787,11 @@
 
     move-result-object v5
 
-    .line 416
+    .line 415
     .local v5, userInfo:Ljava/lang/String;
     if-eqz v12, :cond_1
 
-    .line 417
+    .line 416
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -839,11 +814,11 @@
 
     move-result-object v5
 
-    .line 420
+    .line 419
     :cond_1
     const/16 v17, 0x0
 
-    .line 423
+    .line 422
     .local v17, uri:Ljava/net/URI;
     :try_start_0
     new-instance v3, Ljava/net/URI;
@@ -860,14 +835,14 @@
     :try_end_0
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 449
+    .line 448
     .end local v17           #uri:Ljava/net/URI;
     .end local p0
     .local v3, uri:Ljava/net/URI;
     :goto_1
     return-object v3
 
-    .line 403
+    .line 402
     .end local v3           #uri:Ljava/net/URI;
     .end local v4           #scheme:Ljava/lang/String;
     .end local v5           #userInfo:Ljava/lang/String;
@@ -881,7 +856,7 @@
 
     goto :goto_0
 
-    .line 431
+    .line 430
     .restart local v4       #scheme:Ljava/lang/String;
     .restart local v5       #userInfo:Ljava/lang/String;
     .restart local v6       #host:Ljava/lang/String;
@@ -892,12 +867,12 @@
 
     move-object v13, v7
 
-    .line 433
+    .line 432
     .local v13, e:Ljava/net/URISyntaxException;
     invoke-virtual {v13}, Ljava/net/URISyntaxException;->printStackTrace()V
 
-    .line 438
-    const v7, 0x7f070027
+    .line 437
+    const v7, 0x7f07002a
 
     move-object/from16 v0, p0
 
@@ -937,14 +912,14 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 749
+    .line 748
     iget-object v4, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mSslSecurityView:Landroid/widget/CheckBox;
 
     invoke-virtual {v4}, Landroid/widget/CheckBox;->isChecked()Z
 
     move-result v8
 
-    .line 750
+    .line 749
     .local v8, sslRequired:Z
     iget-object v4, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mTrustCertificatesView:Landroid/widget/CheckBox;
 
@@ -952,7 +927,7 @@
 
     move-result v9
 
-    .line 751
+    .line 750
     .local v9, trustCertificates:Z
     if-eqz v8, :cond_2
 
@@ -962,7 +937,7 @@
 
     move-object v1, v4
 
-    .line 754
+    .line 753
     .local v1, scheme:Ljava/lang/String;
     :goto_0
     iget-object v4, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mUsernameView:Landroid/widget/EditText;
@@ -979,7 +954,7 @@
 
     move-result-object v10
 
-    .line 757
+    .line 756
     .local v10, userName:Ljava/lang/String;
     const-string v4, "\\"
 
@@ -989,18 +964,18 @@
 
     if-eqz v4, :cond_0
 
-    .line 758
+    .line 757
     const/4 v4, 0x1
 
     invoke-virtual {v10, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 760
+    .line 759
     :cond_0
     iput-object v10, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mCacheLoginCredential:Ljava/lang/String;
 
-    .line 761
+    .line 760
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1037,7 +1012,7 @@
 
     move-result-object v2
 
-    .line 762
+    .line 761
     .local v2, userInfo:Ljava/lang/String;
     iget-object v4, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mServerView:Landroid/widget/EditText;
 
@@ -1053,11 +1028,11 @@
 
     move-result-object v3
 
-    .line 763
+    .line 762
     .local v3, host:Ljava/lang/String;
     const/4 v5, 0x0
 
-    .line 765
+    .line 764
     .local v5, path:Ljava/lang/String;
     new-instance v0, Ljava/net/URI;
 
@@ -1067,11 +1042,11 @@
 
     invoke-direct/range {v0 .. v7}, Ljava/net/URI;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 774
+    .line 773
     .local v0, uri:Ljava/net/URI;
     return-object v0
 
-    .line 751
+    .line 750
     .end local v0           #uri:Ljava/net/URI;
     .end local v1           #scheme:Ljava/lang/String;
     .end local v2           #userInfo:Ljava/lang/String;
@@ -1097,13 +1072,13 @@
     .locals 6
 
     .prologue
-    .line 782
+    .line 781
     :try_start_0
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->getUri()Ljava/net/URI;
 
     move-result-object v0
 
-    .line 783
+    .line 782
     .local v0, uri:Ljava/net/URI;
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
@@ -1113,7 +1088,7 @@
 
     invoke-virtual {v2, p0, v3}, Lcom/android/email/provider/EmailContent$Account;->setStoreUri(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 784
+    .line 783
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     invoke-virtual {v0}, Ljava/net/URI;->toString()Ljava/lang/String;
@@ -1122,7 +1097,7 @@
 
     invoke-virtual {v2, p0, v3}, Lcom/android/email/provider/EmailContent$Account;->setSenderUri(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 788
+    .line 787
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-wide v2, v2, Lcom/android/email/provider/EmailContent$Account;->mId:J
@@ -1139,12 +1114,12 @@
 
     iput-object v2, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mDuplicateAccountName:Ljava/lang/String;
 
-    .line 790
+    .line 789
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mDuplicateAccountName:Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 793
+    .line 792
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->AccountHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->AccountHandler:Landroid/os/Handler;
@@ -1159,18 +1134,18 @@
     :try_end_0
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 806
+    .line 805
     :goto_0
     return-void
 
-    .line 797
+    .line 796
     .end local v0           #uri:Ljava/net/URI;
     :catch_0
     move-exception v2
 
     move-object v1, v2
 
-    .line 802
+    .line 801
     .local v1, use:Ljava/net/URISyntaxException;
     new-instance v2, Ljava/lang/Error;
 
@@ -1178,7 +1153,7 @@
 
     throw v2
 
-    .line 805
+    .line 804
     .end local v1           #use:Ljava/net/URISyntaxException;
     .restart local v0       #uri:Ljava/net/URI;
     :cond_0
@@ -1198,7 +1173,7 @@
     .parameter "usernameView"
 
     .prologue
-    .line 467
+    .line 466
     invoke-static {p1}, Lcom/android/email/Utility;->requiredFieldValid(Landroid/widget/TextView;)Z
 
     move-result v0
@@ -1236,7 +1211,7 @@
     .locals 4
 
     .prologue
-    .line 598
+    .line 597
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mUsernameView:Landroid/widget/EditText;
 
     invoke-direct {p0, v3}, Lcom/android/email/activity/setup/AccountSetupExchange;->usernameFieldValid(Landroid/widget/EditText;)Z
@@ -1265,29 +1240,29 @@
 
     move v0, v3
 
-    .line 601
+    .line 600
     .local v0, enabled:Z
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 603
+    .line 602
     :try_start_0
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->getUri()Ljava/net/URI;
     :try_end_0
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 617
+    .line 616
     :cond_0
     :goto_1
-    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mNextTwSoftkeyItem:Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
 
-    invoke-virtual {v3, v0}, Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;->setEnabled(Z)V
+    invoke-virtual {v3, v0}, Lcom/android/email/EmailTwSoftkeyItem;->setEnabled(Z)V
 
-    .line 620
+    .line 619
     return v0
 
-    .line 598
+    .line 597
     .end local v0           #enabled:Z
     :cond_1
     const/4 v3, 0x0
@@ -1296,24 +1271,24 @@
 
     goto :goto_0
 
-    .line 604
+    .line 603
     .restart local v0       #enabled:Z
     :catch_0
     move-exception v2
 
-    .line 605
+    .line 604
     .local v2, use:Ljava/net/URISyntaxException;
     const/4 v0, 0x0
 
-    .line 610
+    .line 609
     goto :goto_1
 
-    .line 608
+    .line 607
     .end local v2           #use:Ljava/net/URISyntaxException;
     :catch_1
     move-exception v1
 
-    .line 609
+    .line 608
     .local v1, npe:Ljava/lang/NullPointerException;
     const/4 v0, 0x0
 
@@ -1331,18 +1306,18 @@
 
     const/4 v7, 0x0
 
-    .line 557
+    .line 556
     iget-object v0, p1, Lcom/android/email/provider/EmailContent$Account;->mHostAuthRecv:Lcom/android/email/provider/EmailContent$HostAuth;
 
-    .line 559
+    .line 558
     .local v0, hostAuth:Lcom/android/email/provider/EmailContent$HostAuth;
     iget-object v4, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mLogin:Ljava/lang/String;
 
-    .line 560
+    .line 559
     .local v4, userName:Ljava/lang/String;
     if-eqz v4, :cond_1
 
-    .line 563
+    .line 562
     const/16 v5, 0x5c
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->indexOf(I)I
@@ -1351,7 +1326,7 @@
 
     if-gez v5, :cond_0
 
-    .line 564
+    .line 563
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1370,44 +1345,44 @@
 
     move-result-object v4
 
-    .line 566
+    .line 565
     :cond_0
     iget-object v5, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mUsernameView:Landroid/widget/EditText;
 
-    const v6, 0x7f0800ae
+    const v6, 0x7f0800b8
 
     invoke-virtual {v5, v6}, Landroid/widget/EditText;->setHint(I)V
 
-    .line 567
+    .line 566
     iget-object v5, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mUsernameView:Landroid/widget/EditText;
 
     invoke-virtual {v5, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 570
+    .line 569
     :cond_1
     iget-object v5, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mPassword:Ljava/lang/String;
 
     if-eqz v5, :cond_2
 
-    .line 571
+    .line 570
     iget-object v5, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mPasswordView:Landroid/widget/EditText;
 
-    const v6, 0x7f080096
+    const v6, 0x7f0800a0
 
     invoke-virtual {v5, v6}, Landroid/widget/EditText;->setHint(I)V
 
-    .line 572
+    .line 571
     iget-object v5, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mPasswordView:Landroid/widget/EditText;
 
     iget-object v6, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mPassword:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 575
+    .line 574
     :cond_2
     iget-object v1, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mProtocol:Ljava/lang/String;
 
-    .line 576
+    .line 575
     .local v1, protocol:Ljava/lang/String;
     if-eqz v1, :cond_3
 
@@ -1419,7 +1394,7 @@
 
     if-nez v5, :cond_4
 
-    .line 577
+    .line 576
     :cond_3
     new-instance v5, Ljava/lang/Error;
 
@@ -1449,27 +1424,27 @@
 
     throw v5
 
-    .line 580
+    .line 579
     :cond_4
     iget-object v5, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mAddress:Ljava/lang/String;
 
     if-eqz v5, :cond_5
 
-    .line 581
+    .line 580
     iget-object v5, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mServerView:Landroid/widget/EditText;
 
-    const v6, 0x7f0800ad
+    const v6, 0x7f0800b7
 
     invoke-virtual {v5, v6}, Landroid/widget/EditText;->setHint(I)V
 
-    .line 582
+    .line 581
     iget-object v5, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mServerView:Landroid/widget/EditText;
 
     iget-object v6, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mAddress:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 585
+    .line 584
     :cond_5
     iget v5, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
 
@@ -1479,7 +1454,7 @@
 
     move v2, v8
 
-    .line 586
+    .line 585
     .local v2, ssl:Z
     :goto_0
     iget v5, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mFlags:I
@@ -1490,19 +1465,19 @@
 
     move v3, v8
 
-    .line 587
+    .line 586
     .local v3, trustCertificates:Z
     :goto_1
     iget-object v5, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mSslSecurityView:Landroid/widget/CheckBox;
 
     invoke-virtual {v5, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 588
+    .line 587
     iget-object v5, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mTrustCertificatesView:Landroid/widget/CheckBox;
 
     invoke-virtual {v5, v3}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 589
+    .line 588
     iget-object v5, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mTrustCertificatesView:Landroid/widget/CheckBox;
 
     if-eqz v2, :cond_8
@@ -1512,7 +1487,7 @@
     :goto_2
     invoke-virtual {v5, v6}, Landroid/widget/CheckBox;->setVisibility(I)V
 
-    .line 590
+    .line 589
     return-void
 
     .end local v2           #ssl:Z
@@ -1520,17 +1495,17 @@
     :cond_6
     move v2, v7
 
-    .line 585
+    .line 584
     goto :goto_0
 
     .restart local v2       #ssl:Z
     :cond_7
     move v3, v7
 
-    .line 586
+    .line 585
     goto :goto_1
 
-    .line 589
+    .line 588
     .restart local v3       #trustCertificates:Z
     :cond_8
     const/16 v6, 0x8
@@ -1545,12 +1520,12 @@
     .parameter "data"
 
     .prologue
-    .line 643
+    .line 642
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_2
 
-    .line 644
+    .line 643
     const-string v0, "android.intent.action.EDIT"
 
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->getIntent()Landroid/content/Intent;
@@ -1567,38 +1542,38 @@
 
     if-eqz v0, :cond_1
 
-    .line 645
+    .line 644
     invoke-direct {p0, p2, p3}, Lcom/android/email/activity/setup/AccountSetupExchange;->doActivityResultValidateExistingAccount(ILandroid/content/Intent;)V
 
-    .line 654
+    .line 653
     :cond_0
     :goto_0
     return-void
 
-    .line 647
+    .line 646
     :cond_1
     invoke-direct {p0, p2, p3}, Lcom/android/email/activity/setup/AccountSetupExchange;->doActivityResultValidateNewAccount(ILandroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 649
+    .line 648
     :cond_2
     const/4 v0, 0x2
 
     if-ne p1, v0, :cond_3
 
-    .line 650
+    .line 649
     invoke-direct {p0, p2, p3}, Lcom/android/email/activity/setup/AccountSetupExchange;->doActivityResultAutoDiscoverNewAccount(ILandroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 651
+    .line 650
     :cond_3
     const/4 v0, 0x3
 
     if-ne p1, v0, :cond_0
 
-    .line 652
+    .line 651
     invoke-virtual {p0, p3}, Lcom/android/email/activity/setup/AccountSetupExchange;->performAutoDiscoverAgain(Landroid/content/Intent;)V
 
     goto :goto_0
@@ -1610,16 +1585,16 @@
     .parameter "isChecked"
 
     .prologue
-    .line 874
+    .line 873
     invoke-virtual {p1}, Landroid/widget/CompoundButton;->getId()I
 
     move-result v0
 
-    const v1, 0x7f070025
+    const v1, 0x7f070028
 
     if-ne v0, v1, :cond_0
 
-    .line 875
+    .line 874
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mTrustCertificatesView:Landroid/widget/CheckBox;
 
     if-eqz p2, :cond_1
@@ -1629,16 +1604,16 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setVisibility(I)V
 
-    .line 880
+    .line 879
     :cond_0
     const/16 v0, 0x9
 
     invoke-virtual {p1, v0}, Landroid/widget/CompoundButton;->playSoundEffect(I)V
 
-    .line 883
+    .line 882
     return-void
 
-    .line 875
+    .line 874
     :cond_1
     const/16 v1, 0x8
 
@@ -1652,18 +1627,18 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 832
+    .line 831
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v5
 
     packed-switch v5, :pswitch_data_0
 
-    .line 871
+    .line 870
     :goto_0
     return-void
 
-    .line 837
+    .line 836
     :pswitch_0
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -1687,7 +1662,7 @@
 
     invoke-static {v5}, Lcom/android/email/Email;->log(Ljava/lang/String;)V
 
-    .line 838
+    .line 837
     iget-boolean v5, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mEASFlowMode:Z
 
     if-nez v5, :cond_1
@@ -1702,20 +1677,20 @@
 
     if-ne v5, v6, :cond_1
 
-    .line 841
+    .line 840
     const-string v1, "AndroidMail.Main"
 
-    .line 842
+    .line 841
     .local v1, PREFERENCES_FILE:Ljava/lang/String;
     const-string v0, "activationLicense"
 
-    .line 843
+    .line 842
     .local v0, ACTIVATION_LICENSE:Ljava/lang/String;
     invoke-virtual {p0, v1, v7}, Lcom/android/email/activity/setup/AccountSetupExchange;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v4
 
-    .line 844
+    .line 843
     .local v4, mSharedPreferences:Landroid/content/SharedPreferences;
     const/4 v5, 0x0
 
@@ -1723,7 +1698,7 @@
 
     move-result-object v3
 
-    .line 846
+    .line 845
     .local v3, license:Ljava/lang/String;
     const-string v5, "isCheckIMEI"
 
@@ -1731,7 +1706,7 @@
 
     move-result v2
 
-    .line 847
+    .line 846
     .local v2, checkIMEI:Z
     const-string v5, "VINS"
 
@@ -1755,27 +1730,27 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 854
+    .line 853
     sget-boolean v5, Lcom/android/email/activity/setup/AccountSetupBasics;->mShowAlertImei:Z
 
     if-eqz v5, :cond_0
 
     if-eqz v2, :cond_0
 
-    .line 855
+    .line 854
     const/4 v5, 0x2
 
     invoke-virtual {p0, v5}, Lcom/android/email/activity/setup/AccountSetupExchange;->showDialog(I)V
 
     goto :goto_0
 
-    .line 857
+    .line 856
     :cond_0
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->doNextAction()V
 
     goto :goto_0
 
-    .line 865
+    .line 864
     .end local v0           #ACTIVATION_LICENSE:Ljava/lang/String;
     .end local v1           #PREFERENCES_FILE:Ljava/lang/String;
     .end local v2           #checkIMEI:Z
@@ -1786,9 +1761,9 @@
 
     goto :goto_0
 
-    .line 832
+    .line 831
     :pswitch_data_0
-    .packed-switch 0x7f07001f
+    .packed-switch 0x7f070022
         :pswitch_0
     .end packed-switch
 .end method
@@ -1798,16 +1773,16 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 218
+    .line 217
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 219
+    .line 218
     const v8, 0x7f030006
 
     invoke-virtual {p0, v8}, Lcom/android/email/activity/setup/AccountSetupExchange;->setContentView(I)V
 
-    .line 221
-    const v8, 0x7f070023
+    .line 220
+    const v8, 0x7f070026
 
     invoke-virtual {p0, v8}, Lcom/android/email/activity/setup/AccountSetupExchange;->findViewById(I)Landroid/view/View;
 
@@ -1817,8 +1792,8 @@
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mUsernameView:Landroid/widget/EditText;
 
-    .line 222
-    const v8, 0x7f07001a
+    .line 221
+    const v8, 0x7f07001e
 
     invoke-virtual {p0, v8}, Lcom/android/email/activity/setup/AccountSetupExchange;->findViewById(I)Landroid/view/View;
 
@@ -1828,8 +1803,8 @@
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mPasswordView:Landroid/widget/EditText;
 
-    .line 223
-    const v8, 0x7f070024
+    .line 222
+    const v8, 0x7f070027
 
     invoke-virtual {p0, v8}, Lcom/android/email/activity/setup/AccountSetupExchange;->findViewById(I)Landroid/view/View;
 
@@ -1839,8 +1814,8 @@
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mServerView:Landroid/widget/EditText;
 
-    .line 224
-    const v8, 0x7f070025
+    .line 223
+    const v8, 0x7f070028
 
     invoke-virtual {p0, v8}, Lcom/android/email/activity/setup/AccountSetupExchange;->findViewById(I)Landroid/view/View;
 
@@ -1850,13 +1825,13 @@
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mSslSecurityView:Landroid/widget/CheckBox;
 
-    .line 225
+    .line 224
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mSslSecurityView:Landroid/widget/CheckBox;
 
     invoke-virtual {v8, p0}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 226
-    const v8, 0x7f070026
+    .line 225
+    const v8, 0x7f070029
 
     invoke-virtual {p0, v8}, Lcom/android/email/activity/setup/AccountSetupExchange;->findViewById(I)Landroid/view/View;
 
@@ -1866,33 +1841,33 @@
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mTrustCertificatesView:Landroid/widget/CheckBox;
 
-    .line 228
+    .line 227
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mTrustCertificatesView:Landroid/widget/CheckBox;
 
     invoke-virtual {v8, p0}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 233
-    const v8, 0x7f07001f
+    .line 232
+    const v8, 0x7f070022
 
     invoke-virtual {p0, v8}, Lcom/android/email/activity/setup/AccountSetupExchange;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+    check-cast v0, Lcom/android/email/EmailTwSoftkeyItem;
 
-    iput-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mNextTwSoftkeyItem:Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+    iput-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
 
-    .line 235
-    iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mNextTwSoftkeyItem:Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+    .line 234
+    iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
 
-    invoke-virtual {v8, p0}, Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v8, p0}, Lcom/android/email/EmailTwSoftkeyItem;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 241
+    .line 240
     new-instance v7, Lcom/android/email/activity/setup/AccountSetupExchange$2;
 
     invoke-direct {v7, p0}, Lcom/android/email/activity/setup/AccountSetupExchange$2;-><init>(Lcom/android/email/activity/setup/AccountSetupExchange;)V
 
-    .line 255
+    .line 254
     .local v7, validationTextWatcher:Landroid/text/TextWatcher;
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mPasswordView:Landroid/widget/EditText;
 
@@ -1900,14 +1875,14 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 256
+    .line 255
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mUsernameView:Landroid/widget/EditText;
 
     const/4 v9, 0x5
 
     invoke-virtual {v8, v9}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 260
+    .line 259
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->getIntent()Landroid/content/Intent;
 
     move-result-object v8
@@ -1920,41 +1895,41 @@
 
     move-result v3
 
-    .line 261
+    .line 260
     .local v3, editing:Z
     if-eqz v3, :cond_2
 
-    .line 262
+    .line 261
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mPasswordView:Landroid/widget/EditText;
 
     invoke-virtual {v8, v7}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 263
+    .line 262
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mServerView:Landroid/widget/EditText;
 
     invoke-virtual {v8, v7}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 264
+    .line 263
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mUsernameView:Landroid/widget/EditText;
 
     const/4 v9, 0x0
 
     invoke-virtual {v8, v9}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    .line 265
+    .line 264
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mUsernameView:Landroid/widget/EditText;
 
     const/4 v9, 0x0
 
     invoke-virtual {v8, v9}, Landroid/widget/EditText;->setFocusable(Z)V
 
-    .line 275
+    .line 274
     :goto_0
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->getIntent()Landroid/content/Intent;
 
     move-result-object v4
 
-    .line 276
+    .line 275
     .local v4, intent:Landroid/content/Intent;
     const-string v8, "account"
 
@@ -1966,7 +1941,7 @@
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    .line 277
+    .line 276
     const-string v8, "makeDefault"
 
     const/4 v9, 0x0
@@ -1977,7 +1952,7 @@
 
     iput-boolean v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mMakeDefault:Z
 
-    .line 280
+    .line 279
     const-string v8, "easFlow"
 
     const/4 v9, 0x0
@@ -1988,7 +1963,7 @@
 
     iput-boolean v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mEASFlowMode:Z
 
-    .line 281
+    .line 280
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -2011,7 +1986,7 @@
 
     invoke-static {v8}, Lcom/android/email/Email;->log(Ljava/lang/String;)V
 
-    .line 287
+    .line 286
     if-eqz p1, :cond_0
 
     const-string v8, "account"
@@ -2022,7 +1997,7 @@
 
     if-eqz v8, :cond_0
 
-    .line 288
+    .line 287
     const-string v8, "account"
 
     invoke-virtual {p1, v8}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -2034,31 +2009,31 @@
 
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    .line 291
+    .line 290
     :cond_0
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     invoke-virtual {p0, v8}, Lcom/android/email/activity/setup/AccountSetupExchange;->loadFields(Lcom/android/email/provider/EmailContent$Account;)V
 
-    .line 292
+    .line 291
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->validateFields()Z
 
-    .line 295
+    .line 294
     invoke-virtual {p0, v4}, Lcom/android/email/activity/setup/AccountSetupExchange;->performAutoDiscover(Landroid/content/Intent;)V
 
-    .line 310
+    .line 309
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mUsernameView:Landroid/widget/EditText;
 
     const/4 v9, 0x1
 
     invoke-virtual {v8, v9}, Landroid/widget/EditText;->setFocusable(Z)V
 
-    .line 311
+    .line 310
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mUsernameView:Landroid/widget/EditText;
 
     invoke-virtual {v8}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 312
+    .line 311
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->getWindow()Landroid/view/Window;
 
     move-result-object v8
@@ -2067,7 +2042,7 @@
 
     invoke-virtual {v8, v9}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    .line 313
+    .line 312
     const-string v8, "input_method"
 
     invoke-virtual {p0, v8}, Lcom/android/email/activity/setup/AccountSetupExchange;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2076,7 +2051,7 @@
 
     check-cast v6, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 314
+    .line 313
     .local v6, mgr:Landroid/view/inputmethod/InputMethodManager;
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mUsernameView:Landroid/widget/EditText;
 
@@ -2084,14 +2059,14 @@
 
     invoke-virtual {v6, v8, v9}, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View;I)Z
 
-    .line 317
+    .line 316
     const-string v1, "AndroidMail.Main"
 
-    .line 318
+    .line 317
     .local v1, PREFERENCES_FILE:Ljava/lang/String;
     const-string v0, "activationLicense"
 
-    .line 319
+    .line 318
     .local v0, ACTIVATION_LICENSE:Ljava/lang/String;
     const/4 v8, 0x0
 
@@ -2099,7 +2074,7 @@
 
     move-result-object v5
 
-    .line 320
+    .line 319
     .local v5, mSharedPreferences:Landroid/content/SharedPreferences;
     const-string v8, "VINS"
 
@@ -2107,7 +2082,7 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 321
+    .line 320
     const-string v8, "isSet"
 
     const/4 v9, 0x0
@@ -2118,12 +2093,12 @@
 
     if-nez v8, :cond_1
 
-    .line 323
+    .line 322
     invoke-interface {v5}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v2
 
-    .line 324
+    .line 323
     .local v2, editPref:Landroid/content/SharedPreferences$Editor;
     const-string v8, "isSet"
 
@@ -2131,29 +2106,29 @@
 
     invoke-interface {v2, v8, v9}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 325
+    .line 324
     const-string v8, "isCheckIMEI"
 
     const/4 v9, 0x1
 
     invoke-interface {v2, v8, v9}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 326
+    .line 325
     const-string v8, "VINS"
 
     const-string v9, "AccountSetupExchange2"
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 327
+    .line 326
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 332
+    .line 331
     .end local v2           #editPref:Landroid/content/SharedPreferences$Editor;
     :cond_1
     return-void
 
-    .line 269
+    .line 268
     .end local v0           #ACTIVATION_LICENSE:Ljava/lang/String;
     .end local v1           #PREFERENCES_FILE:Ljava/lang/String;
     .end local v4           #intent:Landroid/content/Intent;
@@ -2165,12 +2140,12 @@
 
     invoke-virtual {v8, v7}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 270
+    .line 269
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mPasswordView:Landroid/widget/EditText;
 
     invoke-virtual {v8, v7}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 271
+    .line 270
     iget-object v8, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mServerView:Landroid/widget/EditText;
 
     invoke-virtual {v8, v7}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
@@ -2185,17 +2160,17 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 478
+    .line 477
     packed-switch p1, :pswitch_data_0
 
     :goto_0
     move-object v7, v10
 
-    .line 534
+    .line 533
     :goto_1
     return-object v7
 
-    .line 480
+    .line 479
     :pswitch_0
     :try_start_0
     new-instance v7, Landroid/app/AlertDialog$Builder;
@@ -2208,13 +2183,13 @@
 
     move-result-object v7
 
-    const v8, 0x7f080084
+    const v8, 0x7f08008e
 
     invoke-virtual {v7, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v7
 
-    const v8, 0x7f080185
+    const v8, 0x7f0801a0
 
     invoke-virtual {p0, v8}, Lcom/android/email/activity/setup/AccountSetupExchange;->getString(I)Ljava/lang/String;
 
@@ -2240,15 +2215,15 @@
 
     goto :goto_1
 
-    .line 494
+    .line 493
     :pswitch_1
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v3
 
-    .line 495
+    .line 494
     .local v3, factory:Landroid/view/LayoutInflater;
-    const v7, 0x7f030016
+    const v7, 0x7f03001a
 
     const/4 v8, 0x0
 
@@ -2256,9 +2231,9 @@
 
     move-result-object v6
 
-    .line 497
+    .line 496
     .local v6, textEntryView:Landroid/view/View;
-    const v7, 0x7f07007b
+    const v7, 0x7f070096
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2266,7 +2241,7 @@
 
     check-cast v2, Landroid/widget/CheckBox;
 
-    .line 498
+    .line 497
     .local v2, checkboxImei:Landroid/widget/CheckBox;
     const-string v7, "VINS"
 
@@ -2274,14 +2249,14 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 499
+    .line 498
     const-string v1, "AndroidMail.Main"
 
-    .line 500
+    .line 499
     .local v1, PREFERENCES_FILE:Ljava/lang/String;
     const-string v0, "activationLicense"
 
-    .line 501
+    .line 500
     .local v0, ACTIVATION_LICENSE:Ljava/lang/String;
     const/4 v7, 0x0
 
@@ -2289,7 +2264,7 @@
 
     move-result-object v4
 
-    .line 505
+    .line 504
     .local v4, mSharedPreferences:Landroid/content/SharedPreferences;
     new-instance v7, Landroid/app/AlertDialog$Builder;
 
@@ -2299,7 +2274,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f080186
+    const v8, 0x7f0801a1
 
     invoke-virtual {p0, v8}, Lcom/android/email/activity/setup/AccountSetupExchange;->getString(I)Ljava/lang/String;
 
@@ -2309,7 +2284,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f080011
+    const v8, 0x7f080113
 
     new-instance v9, Lcom/android/email/activity/setup/AccountSetupExchange$6;
 
@@ -2319,7 +2294,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f080012
+    const v8, 0x7f080114
 
     new-instance v9, Lcom/android/email/activity/setup/AccountSetupExchange$5;
 
@@ -2345,7 +2320,7 @@
 
     goto/16 :goto_1
 
-    .line 530
+    .line 529
     .end local v0           #ACTIVATION_LICENSE:Ljava/lang/String;
     .end local v1           #PREFERENCES_FILE:Ljava/lang/String;
     .end local v2           #checkboxImei:Landroid/widget/CheckBox;
@@ -2357,13 +2332,13 @@
 
     move-object v5, v7
 
-    .line 531
+    .line 530
     .local v5, rte:Ljava/lang/RuntimeException;
     invoke-virtual {v5}, Ljava/lang/RuntimeException;->printStackTrace()V
 
     goto/16 :goto_0
 
-    .line 478
+    .line 477
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -2377,30 +2352,30 @@
     .parameter "dialog"
 
     .prologue
-    .line 542
+    .line 541
     packed-switch p1, :pswitch_data_0
 
-    .line 551
+    .line 550
     :cond_0
     :goto_0
     return-void
 
-    .line 544
+    .line 543
     :pswitch_0
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mDuplicateAccountName:Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 545
+    .line 544
     move-object v0, p2
 
     check-cast v0, Landroid/app/AlertDialog;
 
     move-object v1, v0
 
-    .line 547
+    .line 546
     .local v1, alert:Landroid/app/AlertDialog;
-    const v2, 0x7f080185
+    const v2, 0x7f0801a0
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/setup/AccountSetupExchange;->getString(I)Ljava/lang/String;
 
@@ -2410,7 +2385,7 @@
 
     goto :goto_0
 
-    .line 542
+    .line 541
     nop
 
     :pswitch_data_0
@@ -2423,11 +2398,11 @@
     .locals 2
 
     .prologue
-    .line 456
+    .line 455
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
-    .line 457
-    const v0, 0x7f07001f
+    .line 456
+    const v0, 0x7f070022
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/AccountSetupExchange;->findViewById(I)Landroid/view/View;
 
@@ -2437,7 +2412,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setClickable(Z)V
 
-    .line 458
+    .line 457
     return-void
 .end method
 
@@ -2446,17 +2421,17 @@
     .parameter "outState"
 
     .prologue
-    .line 462
+    .line 461
     invoke-super {p0, p1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 463
+    .line 462
     const-string v0, "account"
 
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 464
+    .line 463
     return-void
 .end method
 
@@ -2467,14 +2442,14 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 337
+    .line 336
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v0, v0, Lcom/android/email/provider/EmailContent$Account;->mHostAuthRecv:Lcom/android/email/provider/EmailContent$HostAuth;
 
     iget-object v8, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mLogin:Ljava/lang/String;
 
-    .line 338
+    .line 337
     .local v8, username:Ljava/lang/String;
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
@@ -2482,7 +2457,7 @@
 
     iget-object v3, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mPassword:Ljava/lang/String;
 
-    .line 339
+    .line 338
     .local v3, password:Ljava/lang/String;
     if-eqz v8, :cond_0
 
@@ -2500,18 +2475,18 @@
 
     if-nez v0, :cond_0
 
-    .line 342
+    .line 341
     const-string v0, "disableAutoDiscover"
 
     invoke-virtual {p1, v0, v5}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v7
 
-    .line 345
+    .line 344
     .local v7, disableAutoDiscover:Z
     if-nez v7, :cond_0
 
-    .line 346
+    .line 345
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
@@ -2526,7 +2501,7 @@
 
     invoke-static/range {v0 .. v6}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->actionAutoDiscover(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)V
 
-    .line 350
+    .line 349
     .end local v7           #disableAutoDiscover:Z
     :cond_0
     return-void
@@ -2539,18 +2514,18 @@
     .prologue
     const-string v6, "com.android.email.EMAIL"
 
-    .line 358
+    .line 357
     if-nez p1, :cond_1
 
-    .line 359
+    .line 358
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupExchange;->finish()V
 
-    .line 391
+    .line 390
     :cond_0
     :goto_0
     return-void
 
-    .line 362
+    .line 361
     :cond_1
     const-string v0, "com.android.email.USER"
 
@@ -2558,7 +2533,7 @@
 
     move-result-object v10
 
-    .line 363
+    .line 362
     .local v10, username:Ljava/lang/String;
     const-string v0, "com.android.email.PASSWORD"
 
@@ -2566,7 +2541,7 @@
 
     move-result-object v3
 
-    .line 364
+    .line 363
     .local v3, password:Ljava/lang/String;
     const-string v0, "com.android.email.DOMAIN"
 
@@ -2574,7 +2549,7 @@
 
     move-result-object v4
 
-    .line 365
+    .line 364
     .local v4, domain:Ljava/lang/String;
     const-string v0, "com.android.email.EMAIL"
 
@@ -2582,7 +2557,7 @@
 
     move-result-object v8
 
-    .line 366
+    .line 365
     .local v8, email:Ljava/lang/String;
     const-string v0, "com.android.email.TRUSTCERT"
 
@@ -2592,11 +2567,11 @@
 
     move-result v5
 
-    .line 369
+    .line 368
     .local v5, bTrustCert:Z
     if-eqz v4, :cond_2
 
-    .line 370
+    .line 369
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mUsernameView:Landroid/widget/EditText;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2623,20 +2598,20 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 372
+    .line 371
     :cond_2
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mPasswordView:Landroid/widget/EditText;
 
     invoke-virtual {v0, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 374
+    .line 373
     const/16 v0, 0x40
 
     invoke-virtual {v8, v0}, Ljava/lang/String;->indexOf(I)I
 
     move-result v7
 
-    .line 375
+    .line 374
     .local v7, amp:I
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mServerView:Landroid/widget/EditText;
 
@@ -2648,17 +2623,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 377
+    .line 376
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mTrustCertificatesView:Landroid/widget/CheckBox;
 
     invoke-virtual {v0, v5}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 379
+    .line 378
     invoke-direct {p0, p1}, Lcom/android/email/activity/setup/AccountSetupExchange;->getAutDiscoverUri(Landroid/content/Intent;)Ljava/net/URI;
 
     move-result-object v9
 
-    .line 381
+    .line 380
     .local v9, uri:Ljava/net/URI;
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
@@ -2670,7 +2645,7 @@
 
     iput-object v1, v0, Lcom/android/email/provider/EmailContent$Account;->mEmailAddress:Ljava/lang/String;
 
-    .line 382
+    .line 381
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     invoke-virtual {v9}, Ljava/net/URI;->toString()Ljava/lang/String;
@@ -2679,7 +2654,7 @@
 
     invoke-virtual {v0, p0, v1}, Lcom/android/email/provider/EmailContent$Account;->setStoreUri(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 383
+    .line 382
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     invoke-virtual {v9}, Ljava/net/URI;->toString()Ljava/lang/String;
@@ -2688,12 +2663,12 @@
 
     invoke-virtual {v0, p0, v1}, Lcom/android/email/provider/EmailContent$Account;->setSenderUri(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 386
+    .line 385
     if-eqz v10, :cond_0
 
     if-eqz v3, :cond_0
 
-    .line 387
+    .line 386
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange;->mAccount:Lcom/android/email/provider/EmailContent$Account;

@@ -4,38 +4,6 @@
 
 
 # static fields
-.field public static final ALPHA:I = 0xb
-
-.field public static final ANY:I = 0x21
-
-.field public static final ATEXT:I = 0xd
-
-.field public static final COMMENT:I = 0x14
-
-.field public static final DEFAULT:I = 0x0
-
-.field public static final DIGIT:I = 0xc
-
-.field public static final DOMAINLITERAL:I = 0x12
-
-.field public static final DOTATOM:I = 0xe
-
-.field public static final EOF:I = 0x0
-
-.field public static final INCOMMENT:I = 0x2
-
-.field public static final INDOMAINLITERAL:I = 0x1
-
-.field public static final INQUOTEDSTRING:I = 0x4
-
-.field public static final NESTED_COMMENT:I = 0x3
-
-.field public static final QUOTEDPAIR:I = 0x20
-
-.field public static final QUOTEDSTRING:I = 0x1f
-
-.field public static final WS:I = 0xa
-
 .field public static final tokenImage:[Ljava/lang/String;
 
 

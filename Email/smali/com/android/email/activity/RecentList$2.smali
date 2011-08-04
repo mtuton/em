@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 300
+    .line 298
     iput-object p1, p0, Lcom/android/email/activity/RecentList$2;->this$0:Lcom/android/email/activity/RecentList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,11 +43,11 @@
     .parameter "id"
 
     .prologue
-    .line 301
+    .line 300
     iget-object v0, p0, Lcom/android/email/activity/RecentList$2;->this$0:Lcom/android/email/activity/RecentList;
 
     invoke-virtual {v0}, Lcom/android/email/activity/RecentList;->finish()V
 
-    .line 302
+    .line 301
     return-void
 .end method

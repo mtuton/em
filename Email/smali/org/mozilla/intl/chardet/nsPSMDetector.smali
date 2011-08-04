@@ -3,24 +3,6 @@
 .source "nsPSMDetector.java"
 
 
-# static fields
-.field public static final ALL:I = 0x0
-
-.field public static final CHINESE:I = 0x2
-
-.field public static final JAPANESE:I = 0x1
-
-.field public static final KOREAN:I = 0x5
-
-.field public static final MAX_VERIFIERS:I = 0x10
-
-.field public static final NO_OF_LANGUAGES:I = 0x6
-
-.field public static final SIMPLIFIED_CHINESE:I = 0x3
-
-.field public static final TRADITIONAL_CHINESE:I = 0x4
-
-
 # instance fields
 .field mClassItems:I
 
@@ -117,65 +99,6 @@
 
     .line 173
     return-void
-.end method
-
-.method public constructor <init>(I[Lorg/mozilla/intl/chardet/nsVerifier;[Lorg/mozilla/intl/chardet/nsEUCStatistics;)V
-    .locals 2
-    .parameter "aItems"
-    .parameter "aVerifierSet"
-    .parameter "aStatisticsSet"
-
-    .prologue
-    const/16 v1, 0x10
-
-    .line 179
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 135
-    new-instance v0, Lorg/mozilla/intl/chardet/nsEUCSampler;
-
-    invoke-direct {v0}, Lorg/mozilla/intl/chardet/nsEUCSampler;-><init>()V
-
-    iput-object v0, p0, Lorg/mozilla/intl/chardet/nsPSMDetector;->mSampler:Lorg/mozilla/intl/chardet/nsEUCSampler;
-
-    .line 137
-    new-array v0, v1, [B
-
-    iput-object v0, p0, Lorg/mozilla/intl/chardet/nsPSMDetector;->mState:[B
-
-    .line 139
-    new-array v0, v1, [I
-
-    iput-object v0, p0, Lorg/mozilla/intl/chardet/nsPSMDetector;->mItemIdx:[I
-
-    .line 181
-    if-eqz p3, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    iput-boolean v0, p0, Lorg/mozilla/intl/chardet/nsPSMDetector;->mClassRunSampler:Z
-
-    .line 183
-    iput-object p3, p0, Lorg/mozilla/intl/chardet/nsPSMDetector;->mStatisticsData:[Lorg/mozilla/intl/chardet/nsEUCStatistics;
-
-    .line 185
-    iput-object p2, p0, Lorg/mozilla/intl/chardet/nsPSMDetector;->mVerifier:[Lorg/mozilla/intl/chardet/nsVerifier;
-
-    .line 189
-    iput p1, p0, Lorg/mozilla/intl/chardet/nsPSMDetector;->mClassItems:I
-
-    .line 191
-    invoke-virtual {p0}, Lorg/mozilla/intl/chardet/nsPSMDetector;->Reset()V
-
-    .line 193
-    return-void
-
-    .line 181
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 

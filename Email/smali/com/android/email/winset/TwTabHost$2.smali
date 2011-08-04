@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 206
+    .line 223
     iput-object p1, p0, Lcom/android/email/winset/TwTabHost$2;->this$0:Lcom/android/email/winset/TwTabHost;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,15 +43,15 @@
     .parameter "clicked"
 
     .prologue
-    .line 207
+    .line 225
     iget-object v0, p0, Lcom/android/email/winset/TwTabHost$2;->this$0:Lcom/android/email/winset/TwTabHost;
 
     invoke-virtual {v0, p1}, Lcom/android/email/winset/TwTabHost;->setCurrentTab(I)V
 
-    .line 208
+    .line 226
     if-eqz p2, :cond_0
 
-    .line 209
+    .line 227
     iget-object v0, p0, Lcom/android/email/winset/TwTabHost$2;->this$0:Lcom/android/email/winset/TwTabHost;
 
     invoke-static {v0}, Lcom/android/email/winset/TwTabHost;->access$100(Lcom/android/email/winset/TwTabHost;)Landroid/widget/FrameLayout;
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->requestFocus(I)Z
 
-    .line 211
+    .line 229
     :cond_0
     return-void
 .end method

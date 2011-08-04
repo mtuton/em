@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 4268
+    .line 5514
     iput-object p1, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -53,7 +53,7 @@
     .parameter "x1"
 
     .prologue
-    .line 4268
+    .line 5514
     invoke-direct {p0, p1}, Lcom/android/email/activity/MessageList$SetFooterTask;-><init>(Lcom/android/email/activity/MessageList;)V
 
     return-void
@@ -66,7 +66,7 @@
     .parameter "params"
 
     .prologue
-    .line 4279
+    .line 5525
     const/4 v0, 0x0
 
     aget-object v0, p1, v0
@@ -79,7 +79,7 @@
 
     iput-wide v2, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->mMailboxId:J
 
-    .line 4280
+    .line 5526
     const/4 v0, 0x1
 
     aget-object v0, p1, v0
@@ -90,7 +90,7 @@
 
     move-result-wide v7
 
-    .line 4281
+    .line 5527
     .local v7, accountId:J
     const/4 v0, 0x2
 
@@ -105,10 +105,10 @@
 
     iput-boolean v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->bRefreshPosition:Z
 
-    .line 4282
+    .line 5528
     const/4 v11, -0x1
 
-    .line 4283
+    .line 5529
     .local v11, mailboxType:I
     iget-wide v2, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->mMailboxId:J
 
@@ -118,7 +118,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 4285
+    .line 5531
     :try_start_0
     sget-object v0, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
@@ -128,15 +128,15 @@
 
     move-result-object v1
 
-    .line 4286
+    .line 5532
     .local v1, uri:Landroid/net/Uri;
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$3400(Lcom/android/email/activity/MessageList;)Landroid/content/ContentResolver;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$3700(Lcom/android/email/activity/MessageList;)Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    invoke-static {}, Lcom/android/email/activity/MessageList;->access$4300()[Ljava/lang/String;
+    invoke-static {}, Lcom/android/email/activity/MessageList;->access$4700()[Ljava/lang/String;
 
     move-result-object v2
 
@@ -152,7 +152,7 @@
 
     move-result-object v9
 
-    .line 4289
+    .line 5535
     .local v9, c:Landroid/database/Cursor;
     :try_start_1
     invoke-interface {v9}, Landroid/database/Cursor;->moveToFirst()Z
@@ -161,14 +161,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 4290
+    .line 5536
     const/4 v0, 0x0
 
     invoke-interface {v9, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v7
 
-    .line 4291
+    .line 5537
     const/4 v0, 0x1
 
     invoke-interface {v9, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -177,14 +177,14 @@
 
     move-result v11
 
-    .line 4294
+    .line 5540
     :cond_0
     :try_start_2
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
     :try_end_2
     .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 4302
+    .line 5548
     .end local v1           #uri:Landroid/net/Uri;
     .end local v9           #c:Landroid/database/Cursor;
     :cond_1
@@ -222,12 +222,12 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4303
+    .line 5549
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0, v11}, Lcom/android/email/activity/MessageList;->access$4402(Lcom/android/email/activity/MessageList;I)I
+    invoke-static {v0, v11}, Lcom/android/email/activity/MessageList;->access$4802(Lcom/android/email/activity/MessageList;I)I
 
-    .line 4306
+    .line 5552
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -242,7 +242,7 @@
 
     iget-object v2, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$4500(Lcom/android/email/activity/MessageList;)I
+    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$4900(Lcom/android/email/activity/MessageList;)I
 
     move-result v2
 
@@ -256,10 +256,10 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 4308
+    .line 5554
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$4500(Lcom/android/email/activity/MessageList;)I
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$4900(Lcom/android/email/activity/MessageList;)I
 
     move-result v0
 
@@ -267,16 +267,24 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 4309
+    .line 5555
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2200(Lcom/android/email/activity/MessageList;)I
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2500(Lcom/android/email/activity/MessageList;)I
 
-    .line 4311
+    .line 5558
     :cond_2
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$4600(Lcom/android/email/activity/MessageList;)I
+    invoke-static {v0, v7, v8}, Lcom/android/email/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Account;
+
+    move-result-object v6
+
+    .line 5560
+    .local v6, account:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$5000(Lcom/android/email/activity/MessageList;)I
 
     move-result v0
 
@@ -286,13 +294,13 @@
 
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2000(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2200(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$4700(Lcom/android/email/activity/MessageList;)J
+    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$5100(Lcom/android/email/activity/MessageList;)J
 
     move-result-wide v2
 
@@ -302,7 +310,7 @@
 
     iget-object v1, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$2000(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
+    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$2200(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
 
     const/4 v1, 0x1
 
@@ -310,7 +318,7 @@
 
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$4500(Lcom/android/email/activity/MessageList;)I
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$4900(Lcom/android/email/activity/MessageList;)I
 
     move-result v0
 
@@ -318,7 +326,7 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 4312
+    .line 5561
     :cond_3
     const/4 v0, 0x4
 
@@ -326,11 +334,12 @@
 
     move-result-object v0
 
-    .line 4346
+    .line 5594
+    .end local v6           #account:Lcom/android/email/provider/EmailContent$Account;
     :goto_0
     return-object v0
 
-    .line 4294
+    .line 5540
     .restart local v1       #uri:Landroid/net/Uri;
     .restart local v9       #c:Landroid/database/Cursor;
     :catchall_0
@@ -343,7 +352,7 @@
     :try_end_3
     .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_0
 
-    .line 4296
+    .line 5542
     .end local v1           #uri:Landroid/net/Uri;
     .end local v9           #c:Landroid/database/Cursor;
     :catch_0
@@ -351,7 +360,7 @@
 
     move-object v10, v0
 
-    .line 4298
+    .line 5544
     .local v10, iae:Ljava/lang/IllegalArgumentException;
     const/4 v0, 0x0
 
@@ -361,33 +370,26 @@
 
     goto :goto_0
 
-    .line 4315
+    .line 5565
     .end local v10           #iae:Ljava/lang/IllegalArgumentException;
+    .restart local v6       #account:Lcom/android/email/provider/EmailContent$Account;
     :cond_4
-    iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
-
-    invoke-static {v0, v7, v8}, Lcom/android/email/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Account;
-
-    move-result-object v6
-
-    .line 4317
-    .local v6, account:Lcom/android/email/provider/EmailContent$Account;
     packed-switch v11, :pswitch_data_0
 
-    .line 4327
+    .line 5575
     const-wide/16 v2, -0x1
 
     cmp-long v0, v7, v2
 
     if-eqz v0, :cond_9
 
-    .line 4329
+    .line 5577
     if-eqz v6, :cond_9
 
-    .line 4332
+    .line 5580
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$4500(Lcom/android/email/activity/MessageList;)I
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$4900(Lcom/android/email/activity/MessageList;)I
 
     move-result v0
 
@@ -395,16 +397,16 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 4333
+    .line 5581
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2200(Lcom/android/email/activity/MessageList;)I
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2500(Lcom/android/email/activity/MessageList;)I
 
-    .line 4336
+    .line 5584
     :cond_5
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$4600(Lcom/android/email/activity/MessageList;)I
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$5000(Lcom/android/email/activity/MessageList;)I
 
     move-result v0
 
@@ -414,13 +416,13 @@
 
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2000(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2200(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$4700(Lcom/android/email/activity/MessageList;)J
+    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$5100(Lcom/android/email/activity/MessageList;)J
 
     move-result-wide v2
 
@@ -430,7 +432,7 @@
 
     iget-object v1, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$2000(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
+    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$2200(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
 
     const/4 v1, 0x1
 
@@ -438,7 +440,7 @@
 
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$4500(Lcom/android/email/activity/MessageList;)I
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$4900(Lcom/android/email/activity/MessageList;)I
 
     move-result v0
 
@@ -446,7 +448,7 @@
 
     if-ne v0, v1, :cond_7
 
-    .line 4337
+    .line 5585
     :cond_6
     const/4 v0, 0x4
 
@@ -456,7 +458,7 @@
 
     goto :goto_0
 
-    .line 4323
+    .line 5571
     :pswitch_0
     const/4 v0, 0x3
 
@@ -466,7 +468,7 @@
 
     goto :goto_0
 
-    .line 4325
+    .line 5573
     :pswitch_1
     const/4 v0, 0x0
 
@@ -476,11 +478,11 @@
 
     goto :goto_0
 
-    .line 4339
+    .line 5587
     :cond_7
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2000(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2200(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
 
     move-result-object v0
 
@@ -490,7 +492,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 4340
+    .line 5588
     const/4 v0, 0x2
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -499,7 +501,7 @@
 
     goto :goto_0
 
-    .line 4342
+    .line 5590
     :cond_8
     const/4 v0, 0x0
 
@@ -509,7 +511,7 @@
 
     goto :goto_0
 
-    .line 4346
+    .line 5594
     :cond_9
     const/4 v0, 0x0
 
@@ -517,9 +519,11 @@
 
     move-result-object v0
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 4317
+    .line 5565
+    nop
+
     :pswitch_data_0
     .packed-switch 0x3
         :pswitch_1
@@ -532,7 +536,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4268
+    .line 5514
     invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageList$SetFooterTask;->doInBackground([Ljava/lang/Object;)Ljava/lang/Integer;
 
     move-result-object v0
@@ -545,14 +549,14 @@
     .parameter "listFooterMode"
 
     .prologue
-    .line 4351
+    .line 5599
     if-nez p1, :cond_0
 
-    .line 4355
+    .line 5603
     :goto_0
     return-void
 
-    .line 4354
+    .line 5602
     :cond_0
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->this$0:Lcom/android/email/activity/MessageList;
 
@@ -564,7 +568,7 @@
 
     iget-boolean v4, p0, Lcom/android/email/activity/MessageList$SetFooterTask;->bRefreshPosition:Z
 
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/android/email/activity/MessageList;->access$4800(Lcom/android/email/activity/MessageList;IJZ)V
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/android/email/activity/MessageList;->access$5200(Lcom/android/email/activity/MessageList;IJZ)V
 
     goto :goto_0
 .end method
@@ -574,7 +578,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4268
+    .line 5514
     check-cast p1, Ljava/lang/Integer;
 
     .end local p1

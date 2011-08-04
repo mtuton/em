@@ -12,10 +12,6 @@
 
 
 # static fields
-.field private static final DELIMITER_ELEMENT:C = '\u0001'
-
-.field private static final DELIMITER_TAG:C = '\u0002'
-
 .field private static final EMPTY_MAP:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -276,43 +272,4 @@
     check-cast p0, Ljava/lang/String;
 
     return-object p0
-.end method
-
-.method public unpack()Ljava/util/Map;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 71
-    iget-object v0, p0, Lcom/android/email/mail/PackedString;->mExploded:Ljava/util/HashMap;
-
-    if-nez v0, :cond_0
-
-    .line 72
-    iget-object v0, p0, Lcom/android/email/mail/PackedString;->mString:Ljava/lang/String;
-
-    invoke-static {v0}, Lcom/android/email/mail/PackedString;->explode(Ljava/lang/String;)Ljava/util/HashMap;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/email/mail/PackedString;->mExploded:Ljava/util/HashMap;
-
-    .line 74
-    :cond_0
-    new-instance v0, Ljava/util/HashMap;
-
-    iget-object v1, p0, Lcom/android/email/mail/PackedString;->mExploded:Ljava/util/HashMap;
-
-    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
-
-    return-object v0
 .end method

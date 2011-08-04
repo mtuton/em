@@ -3,7 +3,7 @@
 .source "AccountSettings.java"
 
 # interfaces
-.implements Landroid/preference/Preference$OnPreferenceChangeListener;
+.implements Landroid/preference/Preference$OnPreferenceClickListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 524
+    .line 677
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSettings$3;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,46 +37,32 @@
 
 
 # virtual methods
-.method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
-    .locals 3
+.method public onPreferenceClick(Landroid/preference/Preference;)Z
+    .locals 2
     .parameter "preference"
-    .parameter "newValue"
 
     .prologue
-    .line 525
-    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 679
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettings$3;->this$0:Lcom/android/email/activity/setup/AccountSettings;
+
+    invoke-static {v1}, Lcom/android/email/activity/setup/AccountSettings;->access$1000(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/EditTextPreference;
 
     move-result-object v1
 
-    .line 527
-    .local v1, summary:Ljava/lang/String;
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$3;->this$0:Lcom/android/email/activity/setup/AccountSettings;
-
-    invoke-static {v2, v1}, Lcom/android/email/activity/setup/AccountSettings;->access$600(Lcom/android/email/activity/setup/AccountSettings;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1}, Landroid/preference/EditTextPreference;->getEditText()Landroid/widget/EditText;
 
     move-result-object v0
 
-    .line 529
-    .local v0, checkedSummary2:Ljava/lang/String;
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$3;->this$0:Lcom/android/email/activity/setup/AccountSettings;
+    .line 680
+    .local v0, editText:Landroid/widget/EditText;
+    invoke-virtual {v0}, Landroid/widget/EditText;->length()I
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettings;->access$800(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/EditTextPreference;
+    move-result v1
 
-    move-result-object v2
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setSelection(I)V
 
-    invoke-virtual {v2, v0}, Landroid/preference/EditTextPreference;->setSummary(Ljava/lang/CharSequence;)V
+    .line 681
+    const/4 v1, 0x1
 
-    .line 530
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$3;->this$0:Lcom/android/email/activity/setup/AccountSettings;
-
-    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettings;->access$800(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/EditTextPreference;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Landroid/preference/EditTextPreference;->setText(Ljava/lang/String;)V
-
-    .line 531
-    const/4 v2, 0x0
-
-    return v2
+    return v1
 .end method

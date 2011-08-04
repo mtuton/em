@@ -75,37 +75,37 @@
     .prologue
     const-string v2, "INBOX"
 
-    .line 210
+    .line 214
     iput-object p1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
-    .line 211
+    .line 215
     invoke-direct {p0}, Lcom/android/email/mail/Folder;-><init>()V
 
-    .line 203
+    .line 207
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mUidToMsgMap:Ljava/util/HashMap;
 
-    .line 204
+    .line 208
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mMsgNumToMsgMap:Ljava/util/HashMap;
 
-    .line 205
+    .line 209
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mUidToMsgNumMap:Ljava/util/HashMap;
 
-    .line 212
+    .line 216
     iput-object p2, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mName:Ljava/lang/String;
 
-    .line 213
+    .line 217
     iget-object v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mName:Ljava/lang/String;
 
     const-string v1, "INBOX"
@@ -116,12 +116,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 214
+    .line 218
     const-string v0, "INBOX"
 
     iput-object v2, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mName:Ljava/lang/String;
 
-    .line 216
+    .line 220
     :cond_0
     return-void
 .end method
@@ -138,17 +138,17 @@
     .end annotation
 
     .prologue
-    .line 968
+    .line 962
     sget-object v1, Lcom/android/email/mail/Folder$OpenMode;->READ_WRITE:Lcom/android/email/mail/Folder$OpenMode;
 
     const/4 v2, 0x0
 
     invoke-virtual {p0, v1, v2}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->open(Lcom/android/email/mail/Folder$OpenMode;Lcom/android/email/mail/Folder$PersistentDataCallbacks;)V
 
-    .line 970
+    .line 964
     if-eqz p1, :cond_0
 
-    .line 971
+    .line 965
     iget-object v1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
     invoke-static {v1}, Lcom/android/email/mail/store/Pop3Store;->access$000(Lcom/android/email/mail/store/Pop3Store;)Lcom/android/email/mail/Transport;
@@ -157,7 +157,7 @@
 
     invoke-interface {v1, p1, p2}, Lcom/android/email/mail/Transport;->writeLine(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 974
+    .line 968
     :cond_0
     iget-object v1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
@@ -169,8 +169,10 @@
 
     move-result-object v0
 
-    .line 976
+    .line 970
     .local v0, response:Ljava/lang/String;
+    if-eqz v0, :cond_1
+
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -189,14 +191,14 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 977
+    .line 971
     new-instance v1, Lcom/android/email/mail/MessagingException;
 
     invoke-direct {v1, v0}, Lcom/android/email/mail/MessagingException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 980
+    .line 974
     :cond_1
     return-object v0
 .end method
@@ -212,7 +214,7 @@
     .end annotation
 
     .prologue
-    .line 954
+    .line 948
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->executeSensitiveCommand(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -234,10 +236,10 @@
     .end annotation
 
     .prologue
-    .line 812
+    .line 806
     const/4 v5, 0x0
 
-    .line 818
+    .line 812
     .local v5, response:Ljava/lang/String;
     :try_start_0
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mUidToMsgNumMap:Ljava/util/HashMap;
@@ -258,13 +260,13 @@
 
     move-result v4
 
-    .line 824
+    .line 818
     .local v4, messageId:I
     const/4 v6, -0x1
 
     if-ne p2, v6, :cond_2
 
-    .line 826
+    .line 820
     const-string v6, "RETR %d"
 
     const/4 v7, 0x1
@@ -287,11 +289,11 @@
 
     move-result-object v5
 
-    .line 835
+    .line 829
     :goto_0
     if-eqz v5, :cond_1
 
-    .line 837
+    .line 831
     :try_start_1
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
@@ -303,7 +305,7 @@
 
     move-result-object v1
 
-    .line 838
+    .line 832
     .local v1, in:Ljava/io/InputStream;
     invoke-static {}, Lcom/android/email/mail/store/Pop3Store;->access$400()Z
 
@@ -315,7 +317,7 @@
 
     if-eqz v6, :cond_0
 
-    .line 839
+    .line 833
     new-instance v2, Lcom/android/email/mail/transport/LoggingInputStream;
 
     invoke-direct {v2, v1}, Lcom/android/email/mail/transport/LoggingInputStream;-><init>(Ljava/io/InputStream;)V
@@ -324,7 +326,7 @@
     .local v2, in:Ljava/io/InputStream;
     move-object v1, v2
 
-    .line 841
+    .line 835
     .end local v2           #in:Ljava/io/InputStream;
     .restart local v1       #in:Ljava/io/InputStream;
     :cond_0
@@ -338,19 +340,19 @@
     :try_end_1
     .catch Lcom/android/email/mail/MessagingException; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 855
+    .line 849
     .end local v1           #in:Ljava/io/InputStream;
     :cond_1
     return-void
 
-    .line 819
+    .line 813
     .end local v4           #messageId:I
     :catch_0
     move-exception v6
 
     move-object v0, v6
 
-    .line 821
+    .line 815
     .local v0, e:Ljava/lang/Exception;
     new-instance v6, Lcom/android/email/mail/MessagingException;
 
@@ -362,7 +364,7 @@
 
     throw v6
 
-    .line 830
+    .line 824
     .end local v0           #e:Ljava/lang/Exception;
     .restart local v4       #messageId:I
     :cond_2
@@ -401,13 +403,13 @@
 
     goto :goto_0
 
-    .line 831
+    .line 825
     :catch_1
     move-exception v6
 
     move-object v3, v6
 
-    .line 832
+    .line 826
     .local v3, me:Lcom/android/email/mail/MessagingException;
     const-string v6, "RETR %d"
 
@@ -433,25 +435,25 @@
 
     goto :goto_0
 
-    .line 843
+    .line 837
     .end local v3           #me:Lcom/android/email/mail/MessagingException;
     :catch_2
     move-exception v6
 
     move-object v3, v6
 
-    .line 850
+    .line 844
     .restart local v3       #me:Lcom/android/email/mail/MessagingException;
     const/4 v6, -0x1
 
     if-ne p2, v6, :cond_1
 
-    .line 851
+    .line 845
     throw v3
 .end method
 
-.method private fetchEnvelope([Lcom/android/email/mail/Message;Lcom/android/email/mail/MessageRetrievalListener;)V
-    .locals 23
+.method private fetchEnvelope([Lcom/android/email/mail/Message;Lcom/android/email/mail/Folder$MessageRetrievalListener;)V
+    .locals 21
     .parameter "messages"
     .parameter "listener"
     .annotation system Ldalvik/annotation/Throws;
@@ -463,496 +465,450 @@
 
     .prologue
     .line 724
-    const/16 v17, 0x0
+    const/4 v15, 0x0
 
     .line 725
-    .local v17, unsizedMessages:I
-    move-object/from16 v4, p1
+    .local v15, unsizedMessages:I
+    move-object/from16 v2, p1
 
-    .local v4, arr$:[Lcom/android/email/mail/Message;
-    array-length v8, v4
+    .local v2, arr$:[Lcom/android/email/mail/Message;
+    array-length v6, v2
 
-    .local v8, len$:I
-    const/4 v7, 0x0
+    .local v6, len$:I
+    const/4 v5, 0x0
 
-    .local v7, i$:I
+    .local v5, i$:I
     :goto_0
-    if-ge v7, v8, :cond_1
+    if-ge v5, v6, :cond_1
 
-    aget-object v10, v4, v7
+    aget-object v8, v2, v5
 
     .line 726
-    .local v10, message:Lcom/android/email/mail/Message;
-    invoke-virtual {v10}, Lcom/android/email/mail/Message;->getSize()I
+    .local v8, message:Lcom/android/email/mail/Message;
+    invoke-virtual {v8}, Lcom/android/email/mail/Message;->getSize()I
 
-    move-result v18
+    move-result v16
 
-    const/16 v19, -0x1
+    const/16 v17, -0x1
 
-    move/from16 v0, v18
+    move/from16 v0, v16
 
-    move/from16 v1, v19
+    move/from16 v1, v17
 
     if-ne v0, v1, :cond_0
 
     .line 727
-    add-int/lit8 v17, v17, 0x1
+    add-int/lit8 v15, v15, 0x1
 
     .line 725
     :cond_0
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
     .line 730
-    .end local v10           #message:Lcom/android/email/mail/Message;
+    .end local v8           #message:Lcom/android/email/mail/Message;
     :cond_1
-    if-nez v17, :cond_3
+    if-nez v15, :cond_3
 
-    .line 794
+    .line 788
     :cond_2
     return-void
 
     .line 733
     :cond_3
-    const/16 v18, 0x32
+    const/16 v16, 0x32
 
-    move/from16 v0, v17
+    move v0, v15
 
-    move/from16 v1, v18
+    move/from16 v1, v16
 
-    if-ge v0, v1, :cond_7
+    if-ge v0, v1, :cond_6
 
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mMessageCount:I
 
-    move/from16 v18, v0
+    move/from16 v16, v0
 
-    const/16 v19, 0x1388
+    const/16 v17, 0x1388
 
-    move/from16 v0, v18
+    move/from16 v0, v16
 
-    move/from16 v1, v19
+    move/from16 v1, v17
 
-    if-le v0, v1, :cond_7
+    if-le v0, v1, :cond_6
 
     .line 738
-    const/4 v6, 0x0
+    const/4 v4, 0x0
 
-    .local v6, i:I
+    .local v4, i:I
     move-object/from16 v0, p1
 
     array-length v0, v0
 
-    move v5, v0
+    move v3, v0
 
-    .local v5, count:I
+    .local v3, count:I
     :goto_1
-    if-ge v6, v5, :cond_2
+    if-ge v4, v3, :cond_2
 
     .line 739
-    aget-object v10, p1, v6
+    aget-object v8, p1, v4
 
     .line 740
-    .restart local v10       #message:Lcom/android/email/mail/Message;
-    move-object v0, v10
+    .restart local v8       #message:Lcom/android/email/mail/Message;
+    move-object v0, v8
 
     instance-of v0, v0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
 
-    move/from16 v18, v0
+    move/from16 v16, v0
 
-    if-nez v18, :cond_4
+    if-nez v16, :cond_4
 
     .line 741
-    new-instance v18, Lcom/android/email/mail/MessagingException;
+    new-instance v16, Lcom/android/email/mail/MessagingException;
 
-    const-string v19, "Pop3Store.fetch called with non-Pop3 Message"
+    const-string v17, "Pop3Store.fetch called with non-Pop3 Message"
 
-    invoke-direct/range {v18 .. v19}, Lcom/android/email/mail/MessagingException;-><init>(Ljava/lang/String;)V
+    invoke-direct/range {v16 .. v17}, Lcom/android/email/mail/MessagingException;-><init>(Ljava/lang/String;)V
 
-    throw v18
+    throw v16
 
     .line 743
     :cond_4
-    move-object v0, v10
+    move-object v0, v8
 
     check-cast v0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
 
-    move-object v15, v0
+    move-object v13, v0
 
     .line 744
-    .local v15, pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
-    if-eqz p2, :cond_5
+    .local v13, pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
+    const-string v16, "LIST %d"
 
-    .line 745
-    invoke-virtual {v15}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->getUid()Ljava/lang/String;
+    const/16 v17, 0x1
 
-    move-result-object v18
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v18
-
-    move v2, v6
-
-    move v3, v5
-
-    invoke-interface {v0, v1, v2, v3}, Lcom/android/email/mail/MessageRetrievalListener;->messageStarted(Ljava/lang/String;II)V
-
-    .line 747
-    :cond_5
-    const-string v18, "LIST %d"
-
-    const/16 v19, 0x1
-
-    move/from16 v0, v19
+    move/from16 v0, v17
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    move-object/from16 v19, v0
+    move-object/from16 v17, v0
 
-    const/16 v20, 0x0
+    const/16 v18, 0x0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mUidToMsgNumMap:Ljava/util/HashMap;
 
-    move-object/from16 v21, v0
+    move-object/from16 v19, v0
 
-    invoke-virtual {v15}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->getUid()Ljava/lang/String;
+    invoke-virtual {v13}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->getUid()Ljava/lang/String;
 
-    move-result-object v22
+    move-result-object v20
 
-    invoke-virtual/range {v21 .. v22}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual/range {v19 .. v20}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v21
+    move-result-object v19
 
-    aput-object v21, v19, v20
+    aput-object v19, v17, v18
 
-    invoke-static/range {v18 .. v19}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v18
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v18
-
-    invoke-direct {v0, v1}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->executeSimpleCommand(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static/range {v16 .. v17}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v16
 
-    .line 750
-    .local v16, response:Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v16
+
+    invoke-direct {v0, v1}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->executeSimpleCommand(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v14
+
+    .line 747
+    .local v14, response:Ljava/lang/String;
     :try_start_0
-    const-string v18, " "
+    const-string v16, " "
 
-    move-object/from16 v0, v16
+    move-object v0, v14
 
-    move-object/from16 v1, v18
+    move-object/from16 v1, v16
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    .line 751
-    .local v9, listParts:[Ljava/lang/String;
-    const/16 v18, 0x1
+    .line 748
+    .local v7, listParts:[Ljava/lang/String;
+    const/16 v16, 0x1
 
-    aget-object v18, v9, v18
+    aget-object v16, v7, v16
 
-    invoke-static/range {v18 .. v18}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v11
+    move-result v9
 
-    .line 752
-    .local v11, msgNum:I
-    const/16 v18, 0x2
+    .line 749
+    .local v9, msgNum:I
+    const/16 v16, 0x2
 
-    aget-object v18, v9, v18
+    aget-object v16, v7, v16
 
-    invoke-static/range {v18 .. v18}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v12
+    move-result v10
 
-    .line 753
-    .local v12, msgSize:I
-    invoke-virtual {v15, v12}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->setSize(I)V
+    .line 750
+    .local v10, msgSize:I
+    invoke-virtual {v13, v10}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->setSize(I)V
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 757
-    if-eqz p2, :cond_6
+    .line 754
+    if-eqz p2, :cond_5
 
-    .line 758
+    .line 755
     move-object/from16 v0, p2
 
-    move-object v1, v15
+    move-object v1, v13
 
-    move v2, v6
-
-    move v3, v5
-
-    invoke-interface {v0, v1, v2, v3}, Lcom/android/email/mail/MessageRetrievalListener;->messageFinished(Lcom/android/email/mail/Message;II)V
+    invoke-interface {v0, v1}, Lcom/android/email/mail/Folder$MessageRetrievalListener;->messageRetrieved(Lcom/android/email/mail/Message;)V
 
     .line 738
-    :cond_6
-    add-int/lit8 v6, v6, 0x1
+    :cond_5
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    .line 754
-    .end local v9           #listParts:[Ljava/lang/String;
-    .end local v11           #msgNum:I
-    .end local v12           #msgSize:I
+    .line 751
+    .end local v7           #listParts:[Ljava/lang/String;
+    .end local v9           #msgNum:I
+    .end local v10           #msgSize:I
     :catch_0
-    move-exception v18
+    move-exception v16
 
-    move-object/from16 v14, v18
+    move-object/from16 v12, v16
 
-    .line 755
-    .local v14, nfe:Ljava/lang/NumberFormatException;
-    new-instance v18, Ljava/io/IOException;
+    .line 752
+    .local v12, nfe:Ljava/lang/NumberFormatException;
+    new-instance v16, Ljava/io/IOException;
 
-    invoke-direct/range {v18 .. v18}, Ljava/io/IOException;-><init>()V
+    invoke-direct/range {v16 .. v16}, Ljava/io/IOException;-><init>()V
 
-    throw v18
+    throw v16
 
-    .line 762
-    .end local v5           #count:I
-    .end local v6           #i:I
-    .end local v10           #message:Lcom/android/email/mail/Message;
-    .end local v14           #nfe:Ljava/lang/NumberFormatException;
-    .end local v15           #pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
-    .end local v16           #response:Ljava/lang/String;
-    :cond_7
-    new-instance v13, Ljava/util/HashSet;
+    .line 759
+    .end local v3           #count:I
+    .end local v4           #i:I
+    .end local v8           #message:Lcom/android/email/mail/Message;
+    .end local v12           #nfe:Ljava/lang/NumberFormatException;
+    .end local v13           #pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
+    .end local v14           #response:Ljava/lang/String;
+    :cond_6
+    new-instance v11, Ljava/util/HashSet;
 
-    invoke-direct {v13}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v11}, Ljava/util/HashSet;-><init>()V
 
-    .line 763
-    .local v13, msgUidIndex:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
-    move-object/from16 v4, p1
+    .line 760
+    .local v11, msgUidIndex:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
+    move-object/from16 v2, p1
 
-    array-length v8, v4
+    array-length v6, v2
 
-    const/4 v7, 0x0
+    const/4 v5, 0x0
 
     :goto_2
-    if-ge v7, v8, :cond_8
+    if-ge v5, v6, :cond_7
 
-    aget-object v10, v4, v7
+    aget-object v8, v2, v5
 
-    .line 764
-    .restart local v10       #message:Lcom/android/email/mail/Message;
-    invoke-virtual {v10}, Lcom/android/email/mail/Message;->getUid()Ljava/lang/String;
+    .line 761
+    .restart local v8       #message:Lcom/android/email/mail/Message;
+    invoke-virtual {v8}, Lcom/android/email/mail/Message;->getUid()Ljava/lang/String;
 
-    move-result-object v18
+    move-result-object v16
 
-    move-object v0, v13
+    move-object v0, v11
 
-    move-object/from16 v1, v18
+    move-object/from16 v1, v16
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 763
-    add-int/lit8 v7, v7, 0x1
+    .line 760
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
 
-    .line 766
-    .end local v10           #message:Lcom/android/email/mail/Message;
-    :cond_8
-    const/4 v6, 0x0
+    .line 763
+    .end local v8           #message:Lcom/android/email/mail/Message;
+    :cond_7
+    const/4 v4, 0x0
 
-    .restart local v6       #i:I
+    .restart local v4       #i:I
     move-object/from16 v0, p1
 
     array-length v0, v0
 
-    move v5, v0
+    move v3, v0
 
-    .line 767
-    .restart local v5       #count:I
-    const-string v18, "LIST"
+    .line 764
+    .restart local v3       #count:I
+    const-string v16, "LIST"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v18
+    move-object/from16 v1, v16
 
     invoke-direct {v0, v1}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->executeSimpleCommand(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v14
 
-    .line 768
-    .restart local v16       #response:Ljava/lang/String;
-    :cond_9
+    .line 765
+    .restart local v14       #response:Ljava/lang/String;
+    :cond_8
     :goto_3
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
-    move-object/from16 v18, v0
+    move-object/from16 v16, v0
 
-    invoke-static/range {v18 .. v18}, Lcom/android/email/mail/store/Pop3Store;->access$000(Lcom/android/email/mail/store/Pop3Store;)Lcom/android/email/mail/Transport;
-
-    move-result-object v18
-
-    invoke-interface/range {v18 .. v18}, Lcom/android/email/mail/Transport;->readLine()Ljava/lang/String;
+    invoke-static/range {v16 .. v16}, Lcom/android/email/mail/store/Pop3Store;->access$000(Lcom/android/email/mail/store/Pop3Store;)Lcom/android/email/mail/Transport;
 
     move-result-object v16
 
-    if-eqz v16, :cond_2
+    invoke-interface/range {v16 .. v16}, Lcom/android/email/mail/Transport;->readLine()Ljava/lang/String;
 
-    .line 769
-    const-string v18, "."
+    move-result-object v14
+
+    if-eqz v14, :cond_2
+
+    .line 766
+    const-string v16, "."
 
     move-object/from16 v0, v16
 
-    move-object/from16 v1, v18
+    move-object v1, v14
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v18
+    move-result v16
 
-    if-nez v18, :cond_2
+    if-nez v16, :cond_2
+
+    .line 769
+    const/4 v13, 0x0
+
+    .line 770
+    .restart local v13       #pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
+    const/4 v10, 0x0
 
     .line 772
-    const/4 v15, 0x0
-
-    .line 773
-    .restart local v15       #pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
-    const/4 v12, 0x0
-
-    .line 775
-    .restart local v12       #msgSize:I
+    .restart local v10       #msgSize:I
     :try_start_1
-    const-string v18, " "
+    const-string v16, " "
 
-    move-object/from16 v0, v16
+    move-object v0, v14
 
-    move-object/from16 v1, v18
+    move-object/from16 v1, v16
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    .line 776
-    .restart local v9       #listParts:[Ljava/lang/String;
-    const/16 v18, 0x0
+    .line 773
+    .restart local v7       #listParts:[Ljava/lang/String;
+    const/16 v16, 0x0
 
-    aget-object v18, v9, v18
+    aget-object v16, v7, v16
 
-    invoke-static/range {v18 .. v18}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v11
+    move-result v9
 
-    .line 777
-    .restart local v11       #msgNum:I
-    const/16 v18, 0x1
+    .line 774
+    .restart local v9       #msgNum:I
+    const/16 v16, 0x1
 
-    aget-object v18, v9, v18
+    aget-object v16, v7, v16
 
-    invoke-static/range {v18 .. v18}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v12
+    move-result v10
 
-    .line 778
+    .line 775
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mMsgNumToMsgMap:Ljava/util/HashMap;
 
-    move-object/from16 v18, v0
+    move-object/from16 v16, v0
 
-    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v19
+    move-result-object v17
 
-    invoke-virtual/range {v18 .. v19}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual/range {v16 .. v17}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v15
+    move-result-object v13
 
-    .end local v15           #pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
-    check-cast v15, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
+    .end local v13           #pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
+    check-cast v13, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
     :try_end_1
     .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 782
-    .restart local v15       #pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
-    if-eqz v15, :cond_9
+    .line 779
+    .restart local v13       #pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
+    if-eqz v13, :cond_8
 
-    invoke-virtual {v15}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->getUid()Ljava/lang/String;
+    invoke-virtual {v13}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->getUid()Ljava/lang/String;
 
-    move-result-object v18
+    move-result-object v16
 
-    move-object v0, v13
+    move-object v0, v11
 
-    move-object/from16 v1, v18
+    move-object/from16 v1, v16
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
-    move-result v18
+    move-result v16
 
-    if-eqz v18, :cond_9
+    if-eqz v16, :cond_8
 
-    .line 783
-    if-eqz p2, :cond_a
+    .line 780
+    invoke-virtual {v13, v10}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->setSize(I)V
+
+    .line 781
+    if-eqz p2, :cond_9
+
+    .line 782
+    move-object/from16 v0, p2
+
+    move-object v1, v13
+
+    invoke-interface {v0, v1}, Lcom/android/email/mail/Folder$MessageRetrievalListener;->messageRetrieved(Lcom/android/email/mail/Message;)V
 
     .line 784
-    invoke-virtual {v15}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->getUid()Ljava/lang/String;
-
-    move-result-object v18
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v18
-
-    move v2, v6
-
-    move v3, v5
-
-    invoke-interface {v0, v1, v2, v3}, Lcom/android/email/mail/MessageRetrievalListener;->messageStarted(Ljava/lang/String;II)V
-
-    .line 786
-    :cond_a
-    invoke-virtual {v15, v12}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->setSize(I)V
-
-    .line 787
-    if-eqz p2, :cond_b
-
-    .line 788
-    move-object/from16 v0, p2
-
-    move-object v1, v15
-
-    move v2, v6
-
-    move v3, v5
-
-    invoke-interface {v0, v1, v2, v3}, Lcom/android/email/mail/MessageRetrievalListener;->messageFinished(Lcom/android/email/mail/Message;II)V
-
-    .line 790
-    :cond_b
-    add-int/lit8 v6, v6, 0x1
+    :cond_9
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_3
 
-    .line 779
-    .end local v9           #listParts:[Ljava/lang/String;
-    .end local v11           #msgNum:I
-    .end local v15           #pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
+    .line 776
+    .end local v7           #listParts:[Ljava/lang/String;
+    .end local v9           #msgNum:I
+    .end local v13           #pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
     :catch_1
-    move-exception v18
+    move-exception v16
 
-    move-object/from16 v14, v18
+    move-object/from16 v12, v16
 
-    .line 780
-    .restart local v14       #nfe:Ljava/lang/NumberFormatException;
-    new-instance v18, Ljava/io/IOException;
+    .line 777
+    .restart local v12       #nfe:Ljava/lang/NumberFormatException;
+    new-instance v16, Ljava/io/IOException;
 
-    invoke-direct/range {v18 .. v18}, Ljava/io/IOException;-><init>()V
+    invoke-direct/range {v16 .. v16}, Ljava/io/IOException;-><init>()V
 
-    throw v18
+    throw v16
 .end method
 
 .method private getCapabilities()Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;
@@ -965,14 +921,14 @@
     .end annotation
 
     .prologue
-    .line 909
+    .line 903
     new-instance v0, Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;
 
     iget-object v2, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
     invoke-direct {v0, v2}, Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;-><init>(Lcom/android/email/mail/store/Pop3Store;)V
 
-    .line 911
+    .line 905
     .local v0, capabilities:Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;
     :try_start_0
     const-string v2, "CAPA"
@@ -981,7 +937,7 @@
 
     move-result-object v1
 
-    .line 912
+    .line 906
     .local v1, response:Ljava/lang/String;
     :goto_0
     iget-object v2, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
@@ -996,22 +952,22 @@
 
     if-eqz v1, :cond_0
 
-    .line 913
+    .line 907
     const-string v2, "."
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 943
+    .line 937
     .end local v1           #response:Ljava/lang/String;
     :cond_0
     :goto_1
     return-object v0
 
-    .line 916
+    .line 910
     .restart local v1       #response:Ljava/lang/String;
     :cond_1
     const-string v2, "STLS"
@@ -1022,21 +978,21 @@
 
     if-eqz v2, :cond_2
 
-    .line 917
+    .line 911
     const/4 v2, 0x1
 
     iput-boolean v2, v0, Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;->stls:Z
 
     goto :goto_0
 
-    .line 937
+    .line 931
     .end local v1           #response:Ljava/lang/String;
     :catch_0
     move-exception v2
 
     goto :goto_1
 
-    .line 919
+    .line 913
     .restart local v1       #response:Ljava/lang/String;
     :cond_2
     const-string v2, "UIDL"
@@ -1047,14 +1003,14 @@
 
     if-eqz v2, :cond_3
 
-    .line 920
+    .line 914
     const/4 v2, 0x1
 
     iput-boolean v2, v0, Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;->uidl:Z
 
     goto :goto_0
 
-    .line 922
+    .line 916
     :cond_3
     const-string v2, "PIPELINING"
 
@@ -1064,14 +1020,14 @@
 
     if-eqz v2, :cond_4
 
-    .line 923
+    .line 917
     const/4 v2, 0x1
 
     iput-boolean v2, v0, Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;->pipelining:Z
 
     goto :goto_0
 
-    .line 925
+    .line 919
     :cond_4
     const-string v2, "USER"
 
@@ -1081,14 +1037,14 @@
 
     if-eqz v2, :cond_5
 
-    .line 926
+    .line 920
     const/4 v2, 0x1
 
     iput-boolean v2, v0, Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;->user:Z
 
     goto :goto_0
 
-    .line 928
+    .line 922
     :cond_5
     const-string v2, "TOP"
 
@@ -1098,14 +1054,14 @@
 
     if-eqz v2, :cond_6
 
-    .line 929
+    .line 923
     const/4 v2, 0x1
 
     iput-boolean v2, v0, Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;->top:Z
 
     goto :goto_0
 
-    .line 933
+    .line 927
     :cond_6
     const-string v2, "Email"
 
@@ -1124,7 +1080,7 @@
     .parameter "message"
 
     .prologue
-    .line 635
+    .line 638
     iget-object v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mMsgNumToMsgMap:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1133,7 +1089,7 @@
 
     invoke-virtual {v0, v1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 636
+    .line 639
     iget-object v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mUidToMsgMap:Ljava/util/HashMap;
 
     invoke-virtual {p2}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->getUid()Ljava/lang/String;
@@ -1142,7 +1098,7 @@
 
     invoke-virtual {v0, v1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 637
+    .line 640
     iget-object v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mUidToMsgNumMap:Ljava/util/HashMap;
 
     invoke-virtual {p2}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->getUid()Ljava/lang/String;
@@ -1155,7 +1111,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 638
+    .line 641
     return-void
 .end method
 
@@ -1171,10 +1127,10 @@
     .end annotation
 
     .prologue
-    .line 452
+    .line 455
     const/4 v5, 0x0
 
-    .line 453
+    .line 456
     .local v5, unindexedMessageCount:I
     move v1, p1
 
@@ -1182,7 +1138,7 @@
     :goto_0
     if-gt v1, p2, :cond_1
 
-    .line 454
+    .line 457
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mMsgNumToMsgMap:Ljava/util/HashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1195,30 +1151,30 @@
 
     if-nez v6, :cond_0
 
-    .line 455
+    .line 458
     add-int/lit8 v5, v5, 0x1
 
-    .line 453
+    .line 456
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 458
+    .line 461
     :cond_1
     if-nez v5, :cond_3
 
-    .line 500
+    .line 503
     :cond_2
     return-void
 
-    .line 461
+    .line 464
     :cond_3
     new-instance v2, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;
 
     invoke-direct {v2, p0}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;-><init>(Lcom/android/email/mail/store/Pop3Store$Pop3Folder;)V
 
-    .line 462
+    .line 465
     .local v2, parser:Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;
     invoke-static {}, Lcom/android/email/mail/store/Pop3Store;->access$300()Z
 
@@ -1236,14 +1192,14 @@
 
     if-le v6, v7, :cond_7
 
-    .line 468
+    .line 471
     :cond_4
     move v1, p1
 
     :goto_1
     if-gt v1, p2, :cond_2
 
-    .line 469
+    .line 472
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mMsgNumToMsgMap:Ljava/util/HashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1256,16 +1212,16 @@
 
     check-cast v0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
 
-    .line 470
+    .line 473
     .local v0, message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
     if-nez v0, :cond_6
 
-    .line 472
+    .line 475
     new-instance v4, Ljava/lang/StringBuffer;
 
     invoke-direct {v4}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 473
+    .line 476
     .local v4, sbuf:Ljava/lang/StringBuffer;
     const-string v6, "UIDL "
 
@@ -1285,7 +1241,7 @@
 
     move-result-object v3
 
-    .line 474
+    .line 477
     .local v3, response:Ljava/lang/String;
     invoke-virtual {v2, v3}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->parseSingleLine(Ljava/lang/String;)Z
 
@@ -1293,14 +1249,14 @@
 
     if-nez v6, :cond_5
 
-    .line 475
+    .line 478
     new-instance v6, Ljava/io/IOException;
 
     invoke-direct {v6}, Ljava/io/IOException;-><init>()V
 
     throw v6
 
-    .line 477
+    .line 480
     :cond_5
     new-instance v0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
 
@@ -1311,11 +1267,11 @@
 
     invoke-direct {v0, v6, v7, p0}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;-><init>(Lcom/android/email/mail/store/Pop3Store;Ljava/lang/String;Lcom/android/email/mail/store/Pop3Store$Pop3Folder;)V
 
-    .line 478
+    .line 481
     .restart local v0       #message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
     invoke-direct {p0, v1, v0}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->indexMessage(ILcom/android/email/mail/store/Pop3Store$Pop3Message;)V
 
-    .line 468
+    .line 471
     .end local v3           #response:Ljava/lang/String;
     .end local v4           #sbuf:Ljava/lang/StringBuffer;
     :cond_6
@@ -1323,7 +1279,7 @@
 
     goto :goto_1
 
-    .line 482
+    .line 485
     .end local v0           #message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
     :cond_7
     const-string v6, "UIDL"
@@ -1332,7 +1288,7 @@
 
     move-result-object v3
 
-    .line 483
+    .line 486
     .restart local v3       #response:Ljava/lang/String;
     :cond_8
     :goto_2
@@ -1348,35 +1304,35 @@
 
     if-eqz v3, :cond_2
 
-    .line 484
+    .line 487
     invoke-virtual {v2, v3}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->parseMultiLine(Ljava/lang/String;)Z
 
     move-result v6
 
     if-nez v6, :cond_9
 
-    .line 485
+    .line 488
     new-instance v6, Ljava/io/IOException;
 
     invoke-direct {v6}, Ljava/io/IOException;-><init>()V
 
     throw v6
 
-    .line 487
+    .line 490
     :cond_9
     iget-boolean v6, v2, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mEndOfMessage:Z
 
     if-nez v6, :cond_2
 
-    .line 490
+    .line 493
     iget v1, v2, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mMessageNumber:I
 
-    .line 491
+    .line 494
     if-lt v1, p1, :cond_8
 
     if-gt v1, p2, :cond_8
 
-    .line 492
+    .line 495
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mMsgNumToMsgMap:Ljava/util/HashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1389,11 +1345,11 @@
 
     check-cast v0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
 
-    .line 493
+    .line 496
     .restart local v0       #message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
     if-nez v0, :cond_8
 
-    .line 494
+    .line 497
     new-instance v0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
 
     .end local v0           #message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
@@ -1403,7 +1359,7 @@
 
     invoke-direct {v0, v6, v7, p0}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;-><init>(Lcom/android/email/mail/store/Pop3Store;Ljava/lang/String;Lcom/android/email/mail/store/Pop3Store$Pop3Folder;)V
 
-    .line 495
+    .line 498
     .restart local v0       #message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
     invoke-direct {p0, v1, v0}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->indexMessage(ILcom/android/email/mail/store/Pop3Store$Pop3Message;)V
 
@@ -1431,13 +1387,13 @@
     .end annotation
 
     .prologue
-    .line 504
+    .line 507
     .local p1, uids:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     new-instance v5, Ljava/util/HashSet;
 
     invoke-direct {v5}, Ljava/util/HashSet;-><init>()V
 
-    .line 505
+    .line 508
     .local v5, unindexedUids:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -1458,7 +1414,7 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 506
+    .line 509
     .local v4, uid:Ljava/lang/String;
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mUidToMsgMap:Ljava/util/HashMap;
 
@@ -1468,12 +1424,12 @@
 
     if-nez v6, :cond_0
 
-    .line 507
+    .line 510
     invoke-virtual {v5, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 510
+    .line 513
     .end local v4           #uid:Ljava/lang/String;
     :cond_1
     invoke-virtual {v5}, Ljava/util/HashSet;->size()I
@@ -1482,17 +1438,17 @@
 
     if-nez v6, :cond_3
 
-    .line 533
+    .line 536
     :cond_2
     return-void
 
-    .line 518
+    .line 521
     :cond_3
     new-instance v2, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;
 
     invoke-direct {v2, p0}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;-><init>(Lcom/android/email/mail/store/Pop3Store$Pop3Folder;)V
 
-    .line 519
+    .line 522
     .local v2, parser:Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;
     const-string v6, "UIDL"
 
@@ -1500,7 +1456,7 @@
 
     move-result-object v3
 
-    .line 520
+    .line 523
     .local v3, response:Ljava/lang/String;
     :cond_4
     :goto_1
@@ -1516,15 +1472,15 @@
 
     if-eqz v3, :cond_2
 
-    .line 521
+    .line 524
     invoke-virtual {v2, v3}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->parseMultiLine(Ljava/lang/String;)Z
 
-    .line 522
+    .line 525
     iget-boolean v6, v2, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mEndOfMessage:Z
 
     if-nez v6, :cond_2
 
-    .line 525
+    .line 528
     iget-object v6, v2, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mUniqueId:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -1533,7 +1489,7 @@
 
     if-eqz v6, :cond_4
 
-    .line 526
+    .line 529
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mUidToMsgMap:Ljava/util/HashMap;
 
     iget-object v7, v2, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mUniqueId:Ljava/lang/String;
@@ -1544,11 +1500,11 @@
 
     check-cast v1, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
 
-    .line 527
+    .line 530
     .local v1, message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
     if-nez v1, :cond_5
 
-    .line 528
+    .line 531
     new-instance v1, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
 
     .end local v1           #message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
@@ -1558,7 +1514,7 @@
 
     invoke-direct {v1, v6, v7, p0}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;-><init>(Lcom/android/email/mail/store/Pop3Store;Ljava/lang/String;Lcom/android/email/mail/store/Pop3Store$Pop3Folder;)V
 
-    .line 530
+    .line 533
     .restart local v1       #message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
     :cond_5
     iget v6, v2, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mMessageNumber:I
@@ -1580,7 +1536,7 @@
     .end annotation
 
     .prologue
-    .line 863
+    .line 857
     return-void
 .end method
 
@@ -1589,7 +1545,7 @@
     .parameter "type"
 
     .prologue
-    .line 364
+    .line 368
     const/4 v0, 0x0
 
     return v0
@@ -1606,19 +1562,19 @@
     .prologue
     const-string v6, "Email"
 
-    .line 226
+    .line 230
     iget-object v4, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mCapabilities:Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;
 
     if-nez v4, :cond_0
 
-    .line 228
+    .line 232
     const-string v4, "Email"
 
     const-string v4, "mCapabilities == null"
 
     invoke-static {v6, v4}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 230
+    .line 234
     :try_start_0
     invoke-direct {p0}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->getCapabilities()Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;
 
@@ -1628,7 +1584,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 237
+    .line 241
     :cond_0
     :goto_0
     :try_start_1
@@ -1640,19 +1596,19 @@
 
     if-nez v4, :cond_2
 
-    .line 239
+    .line 243
     :try_start_2
     new-instance v2, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;
 
     invoke-direct {v2, p0}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;-><init>(Lcom/android/email/mail/store/Pop3Store$Pop3Folder;)V
 
-    .line 240
+    .line 244
     .local v2, parser:Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;
     const-string v4, "UIDL"
 
     invoke-direct {p0, v4}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->executeSimpleCommand(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 243
+    .line 247
     :cond_1
     iget-object v4, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
@@ -1667,10 +1623,10 @@
     .local v3, response:Ljava/lang/String;
     if-eqz v3, :cond_2
 
-    .line 244
+    .line 248
     invoke-virtual {v2, v3}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->parseMultiLine(Ljava/lang/String;)Z
 
-    .line 245
+    .line 249
     iget-boolean v4, v2, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mEndOfMessage:Z
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
@@ -1678,20 +1634,20 @@
 
     if-eqz v4, :cond_1
 
-    .line 258
+    .line 262
     .end local v2           #parser:Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;
     .end local v3           #response:Ljava/lang/String;
     :cond_2
     :goto_1
     return-void
 
-    .line 231
+    .line 235
     :catch_0
     move-exception v4
 
     move-object v0, v4
 
-    .line 232
+    .line 236
     .local v0, e:Ljava/io/IOException;
     const-string v4, "Email"
 
@@ -1701,14 +1657,14 @@
 
     goto :goto_0
 
-    .line 249
+    .line 253
     .end local v0           #e:Ljava/io/IOException;
     :catch_1
     move-exception v4
 
     move-object v1, v4
 
-    .line 250
+    .line 254
     .local v1, ioe:Ljava/io/IOException;
     :try_start_3
     iget-object v4, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
@@ -1719,7 +1675,7 @@
 
     invoke-interface {v4}, Lcom/android/email/mail/Transport;->close()V
 
-    .line 251
+    .line 255
     new-instance v4, Lcom/android/email/mail/MessagingException;
 
     const/4 v5, 0x0
@@ -1730,14 +1686,14 @@
     :try_end_3
     .catch Ljava/lang/NullPointerException; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 255
+    .line 259
     .end local v1           #ioe:Ljava/io/IOException;
     :catch_2
     move-exception v4
 
     move-object v0, v4
 
-    .line 256
+    .line 260
     .local v0, e:Ljava/lang/NullPointerException;
     const-string v4, "Email"
 
@@ -1753,7 +1709,7 @@
     .parameter "expunge"
 
     .prologue
-    .line 349
+    .line 353
     :try_start_0
     const-string v0, "QUIT"
 
@@ -1761,7 +1717,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 354
+    .line 358
     :goto_0
     iget-object v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
@@ -1771,10 +1727,10 @@
 
     invoke-interface {v0}, Lcom/android/email/mail/Transport;->close()V
 
-    .line 355
+    .line 359
     return-void
 
-    .line 351
+    .line 355
     :catch_0
     move-exception v0
 
@@ -1793,7 +1749,7 @@
     .end annotation
 
     .prologue
-    .line 898
+    .line 892
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "copyMessages is not supported in POP3"
@@ -1813,7 +1769,7 @@
     .end annotation
 
     .prologue
-    .line 369
+    .line 373
     const/4 v0, 0x0
 
     return v0
@@ -1829,7 +1785,7 @@
     .end annotation
 
     .prologue
-    .line 999
+    .line 993
     new-instance v0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
 
     iget-object v1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
@@ -1849,7 +1805,7 @@
     .end annotation
 
     .prologue
-    .line 866
+    .line 860
     return-void
 .end method
 
@@ -1858,12 +1814,12 @@
     .parameter "o"
 
     .prologue
-    .line 985
+    .line 979
     instance-of v0, p1, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;
 
     if-eqz v0, :cond_0
 
-    .line 986
+    .line 980
     check-cast p1, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;
 
     .end local p1
@@ -1875,7 +1831,7 @@
 
     move-result v0
 
-    .line 988
+    .line 982
     :goto_0
     return v0
 
@@ -1897,7 +1853,7 @@
     .end annotation
 
     .prologue
-    .line 374
+    .line 378
     iget-object v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mName:Ljava/lang/String;
 
     const-string v1, "INBOX"
@@ -1918,13 +1874,13 @@
     .end annotation
 
     .prologue
-    .line 869
+    .line 863
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method public fetch([Lcom/android/email/mail/Message;Lcom/android/email/mail/FetchProfile;Lcom/android/email/mail/MessageRetrievalListener;)V
+.method public fetch([Lcom/android/email/mail/Message;Lcom/android/email/mail/FetchProfile;Lcom/android/email/mail/Folder$MessageRetrievalListener;)V
     .locals 12
     .parameter "messages"
     .parameter "fp"
@@ -1938,7 +1894,7 @@
     .prologue
     const-string v11, "Email"
 
-    .line 660
+    .line 663
     if-eqz p1, :cond_0
 
     array-length v10, p1
@@ -1949,13 +1905,13 @@
     :cond_0
     return-void
 
-    .line 663
+    .line 666
     :cond_1
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    .line 664
+    .line 667
     .local v9, uids:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     move-object v1, p1
 
@@ -1971,7 +1927,7 @@
 
     aget-object v7, v1, v4
 
-    .line 665
+    .line 668
     .local v7, message:Lcom/android/email/mail/Message;
     invoke-virtual {v7}, Lcom/android/email/mail/Message;->getUid()Ljava/lang/String;
 
@@ -1979,18 +1935,18 @@
 
     invoke-virtual {v9, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 664
+    .line 667
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 668
+    .line 671
     .end local v7           #message:Lcom/android/email/mail/Message;
     :cond_2
     :try_start_0
     invoke-direct {p0, v9}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->indexUids(Ljava/util/ArrayList;)V
 
-    .line 669
+    .line 672
     sget-object v10, Lcom/android/email/mail/FetchProfile$Item;->ENVELOPE:Lcom/android/email/mail/FetchProfile$Item;
 
     invoke-virtual {p2, v10}, Lcom/android/email/mail/FetchProfile;->contains(Ljava/lang/Object;)Z
@@ -1999,14 +1955,14 @@
 
     if-eqz v10, :cond_3
 
-    .line 672
+    .line 675
     const/4 v10, 0x0
 
-    invoke-direct {p0, p1, v10}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->fetchEnvelope([Lcom/android/email/mail/Message;Lcom/android/email/mail/MessageRetrievalListener;)V
+    invoke-direct {p0, p1, v10}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->fetchEnvelope([Lcom/android/email/mail/Message;Lcom/android/email/mail/Folder$MessageRetrievalListener;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 681
+    .line 684
     :cond_3
     const/4 v3, 0x0
 
@@ -2017,16 +1973,16 @@
     :goto_1
     if-ge v3, v2, :cond_0
 
-    .line 682
+    .line 685
     aget-object v7, p1, v3
 
-    .line 683
+    .line 686
     .restart local v7       #message:Lcom/android/email/mail/Message;
     instance-of v10, v7, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
 
     if-nez v10, :cond_5
 
-    .line 684
+    .line 687
     new-instance v10, Lcom/android/email/mail/MessagingException;
 
     const-string v11, "Pop3Store.fetch called with non-Pop3 Message"
@@ -2035,7 +1991,7 @@
 
     throw v10
 
-    .line 674
+    .line 677
     .end local v2           #count:I
     .end local v3           #i:I
     .end local v7           #message:Lcom/android/email/mail/Message;
@@ -2044,7 +2000,7 @@
 
     move-object v5, v10
 
-    .line 675
+    .line 678
     .local v5, ioe:Ljava/io/IOException;
     iget-object v10, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
@@ -2054,12 +2010,12 @@
 
     invoke-interface {v10}, Lcom/android/email/mail/Transport;->close()V
 
-    .line 676
+    .line 679
     sget-boolean v10, Lcom/android/email/Email;->DEBUG:Z
 
     if-eqz v10, :cond_4
 
-    .line 677
+    .line 680
     const-string v10, "Email"
 
     invoke-virtual {v5}, Ljava/io/IOException;->toString()Ljava/lang/String;
@@ -2068,7 +2024,7 @@
 
     invoke-static {v11, v10}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 679
+    .line 682
     :cond_4
     new-instance v10, Lcom/android/email/mail/MessagingException;
 
@@ -2078,7 +2034,7 @@
 
     throw v10
 
-    .line 686
+    .line 689
     .end local v5           #ioe:Ljava/io/IOException;
     .restart local v2       #count:I
     .restart local v3       #i:I
@@ -2090,27 +2046,16 @@
 
     move-object v8, v0
 
-    .line 688
-    .local v8, pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
-    if-eqz p3, :cond_6
-
-    .line 689
-    :try_start_1
-    invoke-virtual {v8}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->getUid()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-interface {p3, v10, v3, v2}, Lcom/android/email/mail/MessageRetrievalListener;->messageStarted(Ljava/lang/String;II)V
-
     .line 691
-    :cond_6
+    .local v8, pop3Message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
+    :try_start_1
     sget-object v10, Lcom/android/email/mail/FetchProfile$Item;->BODY:Lcom/android/email/mail/FetchProfile$Item;
 
     invoke-virtual {p2, v10}, Lcom/android/email/mail/FetchProfile;->contains(Ljava/lang/Object;)Z
 
     move-result v10
 
-    if-eqz v10, :cond_9
+    if-eqz v10, :cond_8
 
     .line 692
     const/4 v10, -0x1
@@ -2118,28 +2063,28 @@
     invoke-direct {p0, v8, v10}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->fetchBody(Lcom/android/email/mail/store/Pop3Store$Pop3Message;I)V
 
     .line 709
-    :cond_7
+    :cond_6
     :goto_2
-    if-eqz p3, :cond_8
+    if-eqz p3, :cond_7
 
     .line 710
-    invoke-interface {p3, v7, v3, v2}, Lcom/android/email/mail/MessageRetrievalListener;->messageFinished(Lcom/android/email/mail/Message;II)V
+    invoke-interface {p3, v7}, Lcom/android/email/mail/Folder$MessageRetrievalListener;->messageRetrieved(Lcom/android/email/mail/Message;)V
 
-    .line 681
-    :cond_8
+    .line 684
+    :cond_7
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
     .line 694
-    :cond_9
+    :cond_8
     sget-object v10, Lcom/android/email/mail/FetchProfile$Item;->BODY_SANE:Lcom/android/email/mail/FetchProfile$Item;
 
     invoke-virtual {p2, v10}, Lcom/android/email/mail/FetchProfile;->contains(Ljava/lang/Object;)Z
 
     move-result v10
 
-    if-eqz v10, :cond_b
+    if-eqz v10, :cond_a
 
     .line 699
     const/16 v10, 0x2a1
@@ -2169,7 +2114,7 @@
     .line 714
     sget-boolean v10, Lcom/android/email/Email;->DEBUG:Z
 
-    if-eqz v10, :cond_a
+    if-eqz v10, :cond_9
 
     .line 715
     const-string v10, "Email"
@@ -2181,7 +2126,7 @@
     invoke-static {v11, v10}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 717
-    :cond_a
+    :cond_9
     new-instance v10, Lcom/android/email/mail/MessagingException;
 
     const-string v11, "Unable to fetch message"
@@ -2192,7 +2137,7 @@
 
     .line 702
     .end local v5           #ioe:Ljava/io/IOException;
-    :cond_b
+    :cond_a
     :try_start_2
     sget-object v10, Lcom/android/email/mail/FetchProfile$Item;->STRUCTURE:Lcom/android/email/mail/FetchProfile$Item;
 
@@ -2200,7 +2145,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_7
+    if-eqz v10, :cond_6
 
     .line 707
     const/4 v10, 0x0
@@ -2222,7 +2167,7 @@
     .end annotation
 
     .prologue
-    .line 396
+    .line 400
     iget-object v2, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mUidToMsgNumMap:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->size()I
@@ -2231,7 +2176,7 @@
 
     if-nez v2, :cond_0
 
-    .line 398
+    .line 402
     const/4 v2, 0x1
 
     :try_start_0
@@ -2241,7 +2186,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 407
+    .line 411
     :cond_0
     iget-object v2, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mUidToMsgMap:Ljava/util/HashMap;
 
@@ -2251,18 +2196,18 @@
 
     check-cast v1, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
 
-    .line 408
+    .line 412
     .local v1, message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
     return-object v1
 
-    .line 399
+    .line 403
     .end local v1           #message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
     :catch_0
     move-exception v2
 
     move-object v0, v2
 
-    .line 400
+    .line 404
     .local v0, ioe:Ljava/io/IOException;
     iget-object v2, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
@@ -2272,12 +2217,12 @@
 
     invoke-interface {v2}, Lcom/android/email/mail/Transport;->close()V
 
-    .line 401
+    .line 405
     sget-boolean v2, Lcom/android/email/Email;->DEBUG:Z
 
     if-eqz v2, :cond_1
 
-    .line 402
+    .line 406
     const-string v2, "Email"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2300,7 +2245,7 @@
 
     invoke-static {v2, v3}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 404
+    .line 408
     :cond_1
     new-instance v2, Lcom/android/email/mail/MessagingException;
 
@@ -2315,14 +2260,14 @@
     .locals 1
 
     .prologue
-    .line 379
+    .line 383
     iget v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mMessageCount:I
 
     return v0
 .end method
 
-.method public getMessages(IILcom/android/email/mail/MessageRetrievalListener;)[Lcom/android/email/mail/Message;
-    .locals 12
+.method public getMessages(IILcom/android/email/mail/Folder$MessageRetrievalListener;)[Lcom/android/email/mail/Message;
+    .locals 11
     .parameter "start"
     .parameter "end"
     .parameter "listener"
@@ -2333,194 +2278,158 @@
     .end annotation
 
     .prologue
-    const/4 v11, 0x1
+    const/4 v10, 0x1
 
-    .line 414
-    if-lt p1, v11, :cond_0
+    .line 418
+    if-lt p1, v10, :cond_0
 
-    if-lt p2, v11, :cond_0
+    if-lt p2, v10, :cond_0
 
     if-ge p2, p1, :cond_1
 
-    .line 415
+    .line 419
     :cond_0
-    new-instance v6, Lcom/android/email/mail/MessagingException;
+    new-instance v5, Lcom/android/email/mail/MessagingException;
 
-    const-string v7, "Invalid message set %d %d"
+    const-string v6, "Invalid message set %d %d"
 
-    const/4 v8, 0x2
+    const/4 v7, 0x2
 
-    new-array v8, v8, [Ljava/lang/Object;
+    new-array v7, v7, [Ljava/lang/Object;
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v10
+    move-result-object v9
 
-    aput-object v10, v8, v9
+    aput-object v9, v7, v8
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v9
+    move-result-object v8
 
-    aput-object v9, v8, v11
+    aput-object v8, v7, v10
 
-    invoke-static {v7, v8}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-direct {v6, v7}, Lcom/android/email/mail/MessagingException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v6}, Lcom/android/email/mail/MessagingException;-><init>(Ljava/lang/String;)V
 
-    throw v6
+    throw v5
 
-    .line 419
+    .line 423
     :cond_1
     :try_start_0
     invoke-direct {p0, p1, p2}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->indexMsgNums(II)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 427
-    new-instance v4, Ljava/util/ArrayList;
-
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
-
-    .line 428
-    .local v4, messages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/Message;>;"
-    const/4 v0, 0x0
-
-    .line 429
-    .local v0, i:I
-    move v5, p1
-
-    .local v5, msgNum:I
-    move v1, v0
-
-    .end local v0           #i:I
-    .local v1, i:I
-    :goto_0
-    if-gt v5, p2, :cond_4
-
-    .line 430
-    iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mMsgNumToMsgMap:Ljava/util/HashMap;
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
-
     .line 431
-    .local v3, message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
-    if-eqz p3, :cond_5
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     .line 432
-    invoke-virtual {v3}, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->getUid()Ljava/lang/String;
+    .local v3, messages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/Message;>;"
+    const/4 v0, 0x0
 
-    move-result-object v6
+    .line 433
+    .local v0, i:I
+    move v4, p1
 
-    add-int/lit8 v0, v1, 0x1
-
-    .end local v1           #i:I
-    .restart local v0       #i:I
-    sub-int v7, p2, p1
-
-    add-int/lit8 v7, v7, 0x1
-
-    invoke-interface {p3, v6, v1, v7}, Lcom/android/email/mail/MessageRetrievalListener;->messageStarted(Ljava/lang/String;II)V
+    .local v4, msgNum:I
+    :goto_0
+    if-gt v4, p2, :cond_4
 
     .line 434
-    :goto_1
-    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    iget-object v5, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mMsgNumToMsgMap:Ljava/util/HashMap;
 
-    .line 435
-    if-eqz p3, :cond_2
-
-    .line 436
-    add-int/lit8 v1, v0, 0x1
-
-    .end local v0           #i:I
-    .restart local v1       #i:I
-    sub-int v6, p2, p1
-
-    add-int/lit8 v6, v6, 0x1
-
-    invoke-interface {p3, v3, v0, v6}, Lcom/android/email/mail/MessageRetrievalListener;->messageFinished(Lcom/android/email/mail/Message;II)V
-
-    move v0, v1
-
-    .line 429
-    .end local v1           #i:I
-    .restart local v0       #i:I
-    :cond_2
-    add-int/lit8 v5, v5, 0x1
-
-    move v1, v0
-
-    .end local v0           #i:I
-    .restart local v1       #i:I
-    goto :goto_0
-
-    .line 420
-    .end local v1           #i:I
-    .end local v3           #message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
-    .end local v4           #messages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/Message;>;"
-    .end local v5           #msgNum:I
-    :catch_0
-    move-exception v2
-
-    .line 421
-    .local v2, ioe:Ljava/io/IOException;
-    iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
-
-    invoke-static {v6}, Lcom/android/email/mail/store/Pop3Store;->access$000(Lcom/android/email/mail/store/Pop3Store;)Lcom/android/email/mail/Transport;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
-    invoke-interface {v6}, Lcom/android/email/mail/Transport;->close()V
+    invoke-virtual {v5, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 422
-    sget-boolean v6, Lcom/android/email/Email;->DEBUG:Z
+    move-result-object v2
 
-    if-eqz v6, :cond_3
+    check-cast v2, Lcom/android/email/mail/store/Pop3Store$Pop3Message;
 
-    .line 423
-    const-string v6, "Email"
+    .line 435
+    .local v2, message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
+    if-eqz v2, :cond_2
 
-    invoke-virtual {v2}, Ljava/io/IOException;->toString()Ljava/lang/String;
+    .line 436
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move-result-object v7
+    .line 437
+    if-eqz p3, :cond_2
 
-    invoke-static {v6, v7}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
+    .line 438
+    invoke-interface {p3, v2}, Lcom/android/email/mail/Folder$MessageRetrievalListener;->messageRetrieved(Lcom/android/email/mail/Message;)V
+
+    .line 433
+    :cond_2
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    .line 424
+    .end local v0           #i:I
+    .end local v2           #message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
+    .end local v3           #messages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/Message;>;"
+    .end local v4           #msgNum:I
+    :catch_0
+    move-exception v1
 
     .line 425
+    .local v1, ioe:Ljava/io/IOException;
+    iget-object v5, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
+
+    invoke-static {v5}, Lcom/android/email/mail/store/Pop3Store;->access$000(Lcom/android/email/mail/store/Pop3Store;)Lcom/android/email/mail/Transport;
+
+    move-result-object v5
+
+    invoke-interface {v5}, Lcom/android/email/mail/Transport;->close()V
+
+    .line 426
+    sget-boolean v5, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v5, :cond_3
+
+    .line 427
+    const-string v5, "Email"
+
+    invoke-virtual {v1}, Ljava/io/IOException;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 429
     :cond_3
-    new-instance v6, Lcom/android/email/mail/MessagingException;
+    new-instance v5, Lcom/android/email/mail/MessagingException;
 
-    const-string v7, "getMessages"
+    const-string v6, "getMessages"
 
-    invoke-direct {v6, v7, v2}, Lcom/android/email/mail/MessagingException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v5, v6, v1}, Lcom/android/email/mail/MessagingException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v6
+    throw v5
 
-    .line 439
-    .end local v2           #ioe:Ljava/io/IOException;
-    .restart local v1       #i:I
-    .restart local v4       #messages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/Message;>;"
-    .restart local v5       #msgNum:I
+    .line 442
+    .end local v1           #ioe:Ljava/io/IOException;
+    .restart local v0       #i:I
+    .restart local v3       #messages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/Message;>;"
+    .restart local v4       #msgNum:I
     :cond_4
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
-    move-result v6
+    move-result v5
 
-    new-array v6, v6, [Lcom/android/email/mail/Message;
+    new-array v5, v5, [Lcom/android/email/mail/Message;
 
-    invoke-virtual {v4, v6}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p0
 
@@ -2528,31 +2437,22 @@
     check-cast p0, [Lcom/android/email/mail/Message;
 
     return-object p0
-
-    .restart local v3       #message:Lcom/android/email/mail/store/Pop3Store$Pop3Message;
-    .restart local p0
-    :cond_5
-    move v0, v1
-
-    .end local v1           #i:I
-    .restart local v0       #i:I
-    goto :goto_1
 .end method
 
-.method public getMessages(ILjava/lang/String;Lcom/android/email/mail/MessageRetrievalListener;)[Lcom/android/email/mail/Message;
+.method public getMessages(ILjava/lang/String;Lcom/android/email/mail/Folder$MessageRetrievalListener;)[Lcom/android/email/mail/Message;
     .locals 1
     .parameter "start"
     .parameter "searchText"
     .parameter "listener"
 
     .prologue
-    .line 390
+    .line 394
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method public getMessages(Lcom/android/email/mail/MessageRetrievalListener;)[Lcom/android/email/mail/Message;
+.method public getMessages(Lcom/android/email/mail/Folder$MessageRetrievalListener;)[Lcom/android/email/mail/Message;
     .locals 2
     .parameter "listener"
     .annotation system Ldalvik/annotation/Throws;
@@ -2562,7 +2462,7 @@
     .end annotation
 
     .prologue
-    .line 642
+    .line 645
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Pop3Folder.getMessage(MessageRetrievalListener)"
@@ -2572,7 +2472,7 @@
     throw v0
 .end method
 
-.method public getMessages([Ljava/lang/String;Lcom/android/email/mail/MessageRetrievalListener;)[Lcom/android/email/mail/Message;
+.method public getMessages([Ljava/lang/String;Lcom/android/email/mail/Folder$MessageRetrievalListener;)[Lcom/android/email/mail/Message;
     .locals 2
     .parameter "uids"
     .parameter "listener"
@@ -2583,7 +2483,7 @@
     .end annotation
 
     .prologue
-    .line 648
+    .line 651
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Pop3Folder.getMessage(MessageRetrievalListener)"
@@ -2602,7 +2502,7 @@
     .end annotation
 
     .prologue
-    .line 336
+    .line 340
     sget-object v0, Lcom/android/email/mail/Folder$OpenMode;->READ_WRITE:Lcom/android/email/mail/Folder$OpenMode;
 
     return-object v0
@@ -2612,7 +2512,7 @@
     .locals 1
 
     .prologue
-    .line 359
+    .line 363
     iget-object v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mName:Ljava/lang/String;
 
     return-object v0
@@ -2627,7 +2527,7 @@
     .end annotation
 
     .prologue
-    .line 859
+    .line 853
     invoke-static {}, Lcom/android/email/mail/store/Pop3Store;->access$500()[Lcom/android/email/mail/Flag;
 
     move-result-object v0
@@ -2644,7 +2544,7 @@
     .end annotation
 
     .prologue
-    .line 384
+    .line 388
     const/4 v0, -0x1
 
     return v0
@@ -2654,7 +2554,7 @@
     .locals 1
 
     .prologue
-    .line 994
+    .line 988
     iget-object v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
     invoke-static {v0}, Lcom/android/email/mail/store/Pop3Store;->access$000(Lcom/android/email/mail/store/Pop3Store;)Lcom/android/email/mail/Transport;
@@ -2683,7 +2583,7 @@
 
     const-string v6, "Email"
 
-    .line 263
+    .line 267
     monitor-enter p0
 
     :try_start_0
@@ -2701,13 +2601,13 @@
 
     if-eqz v6, :cond_0
 
-    .line 332
+    .line 336
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 267
+    .line 271
     :cond_0
     :try_start_1
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mName:Ljava/lang/String;
@@ -2720,7 +2620,7 @@
 
     if-nez v6, :cond_1
 
-    .line 268
+    .line 272
     new-instance v6, Lcom/android/email/mail/MessagingException;
 
     const-string v7, "Folder does not exist"
@@ -2731,7 +2631,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 263
+    .line 267
     :catchall_0
     move-exception v6
 
@@ -2739,7 +2639,7 @@
 
     throw v6
 
-    .line 272
+    .line 276
     :cond_1
     :try_start_2
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
@@ -2750,19 +2650,19 @@
 
     invoke-interface {v6}, Lcom/android/email/mail/Transport;->open()V
 
-    .line 275
+    .line 279
     const/4 v6, 0x0
 
     invoke-direct {p0, v6}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->executeSimpleCommand(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 277
+    .line 281
     invoke-direct {p0}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->getCapabilities()Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;
 
     move-result-object v6
 
     iput-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mCapabilities:Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;
 
-    .line 279
+    .line 283
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
     invoke-static {v6}, Lcom/android/email/mail/store/Pop3Store;->access$000(Lcom/android/email/mail/store/Pop3Store;)Lcom/android/email/mail/Transport;
@@ -2775,19 +2675,19 @@
 
     if-eqz v6, :cond_2
 
-    .line 280
+    .line 284
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mCapabilities:Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;
 
     iget-boolean v6, v6, Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;->stls:Z
 
     if-eqz v6, :cond_4
 
-    .line 281
+    .line 285
     const-string v6, "STLS"
 
     invoke-direct {p0, v6}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->executeSimpleCommand(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 282
+    .line 286
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
     invoke-static {v6}, Lcom/android/email/mail/store/Pop3Store;->access$000(Lcom/android/email/mail/store/Pop3Store;)Lcom/android/email/mail/Transport;
@@ -2799,7 +2699,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 292
+    .line 296
     :cond_2
     :try_start_3
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2830,7 +2730,7 @@
 
     invoke-direct {p0, v6, v7}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->executeSensitiveCommand(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 293
+    .line 297
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -2863,10 +2763,10 @@
     .catch Lcom/android/email/mail/MessagingException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
-    .line 308
+    .line 312
     const/4 v5, 0x0
 
-    .line 310
+    .line 314
     .local v5, statException:Ljava/lang/Exception;
     :try_start_4
     const-string v6, "STAT"
@@ -2875,7 +2775,7 @@
 
     move-result-object v4
 
-    .line 311
+    .line 315
     .local v4, response:Ljava/lang/String;
     const-string v6, " "
 
@@ -2883,13 +2783,13 @@
 
     move-result-object v3
 
-    .line 312
+    .line 316
     .local v3, parts:[Ljava/lang/String;
     array-length v6, v3
 
     if-ge v6, v8, :cond_8
 
-    .line 313
+    .line 317
     new-instance v5, Ljava/io/IOException;
 
     .end local v5           #statException:Ljava/lang/Exception;
@@ -2899,14 +2799,14 @@
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
     .catch Ljava/lang/NumberFormatException; {:try_start_4 .. :try_end_4} :catch_3
 
-    .line 322
+    .line 326
     .end local v3           #parts:[Ljava/lang/String;
     .end local v4           #response:Ljava/lang/String;
     .restart local v5       #statException:Ljava/lang/Exception;
     :goto_1
     if-eqz v5, :cond_9
 
-    .line 323
+    .line 327
     :try_start_5
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
@@ -2916,12 +2816,12 @@
 
     invoke-interface {v6}, Lcom/android/email/mail/Transport;->close()V
 
-    .line 324
+    .line 328
     sget-boolean v6, Lcom/android/email/Email;->DEBUG:Z
 
     if-eqz v6, :cond_3
 
-    .line 325
+    .line 329
     const-string v6, "Email"
 
     invoke-virtual {v5}, Ljava/lang/Exception;->toString()Ljava/lang/String;
@@ -2930,7 +2830,7 @@
 
     invoke-static {v6, v7}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 327
+    .line 331
     :cond_3
     new-instance v6, Lcom/android/email/mail/MessagingException;
 
@@ -2942,7 +2842,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 284
+    .line 288
     .end local v5           #statException:Ljava/lang/Exception;
     :cond_4
     :try_start_6
@@ -2950,14 +2850,14 @@
 
     if-eqz v6, :cond_5
 
-    .line 285
+    .line 289
     const-string v6, "Email"
 
     const-string v7, "TLS not supported but required"
 
     invoke-static {v6, v7}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 287
+    .line 291
     :cond_5
     new-instance v6, Lcom/android/email/mail/MessagingException;
 
@@ -2970,13 +2870,13 @@
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
 
-    .line 300
+    .line 304
     :catch_0
     move-exception v6
 
     move-object v0, v6
 
-    .line 301
+    .line 305
     .local v0, ioe:Ljava/io/IOException;
     :try_start_7
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
@@ -2987,12 +2887,12 @@
 
     invoke-interface {v6}, Lcom/android/email/mail/Transport;->close()V
 
-    .line 302
+    .line 306
     sget-boolean v6, Lcom/android/email/Email;->DEBUG:Z
 
     if-eqz v6, :cond_6
 
-    .line 303
+    .line 307
     const-string v6, "Email"
 
     invoke-virtual {v0}, Ljava/io/IOException;->toString()Ljava/lang/String;
@@ -3001,7 +2901,7 @@
 
     invoke-static {v6, v7}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 305
+    .line 309
     :cond_6
     new-instance v6, Lcom/android/email/mail/MessagingException;
 
@@ -3017,21 +2917,21 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    .line 294
+    .line 298
     .end local v0           #ioe:Ljava/io/IOException;
     :catch_1
     move-exception v6
 
     move-object v1, v6
 
-    .line 295
+    .line 299
     .local v1, me:Lcom/android/email/mail/MessagingException;
     :try_start_8
     sget-boolean v6, Lcom/android/email/Email;->DEBUG:Z
 
     if-eqz v6, :cond_7
 
-    .line 296
+    .line 300
     const-string v6, "Email"
 
     invoke-virtual {v1}, Lcom/android/email/mail/MessagingException;->toString()Ljava/lang/String;
@@ -3040,7 +2940,7 @@
 
     invoke-static {v6, v7}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 298
+    .line 302
     :cond_7
     new-instance v6, Lcom/android/email/mail/AuthenticationFailedException;
 
@@ -3053,7 +2953,7 @@
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
     .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_0
 
-    .line 315
+    .line 319
     .end local v1           #me:Lcom/android/email/mail/MessagingException;
     .restart local v3       #parts:[Ljava/lang/String;
     .restart local v4       #response:Ljava/lang/String;
@@ -3076,7 +2976,7 @@
 
     goto :goto_1
 
-    .line 317
+    .line 321
     .end local v3           #parts:[Ljava/lang/String;
     .end local v4           #response:Ljava/lang/String;
     .end local v5           #statException:Ljava/lang/Exception;
@@ -3085,15 +2985,15 @@
 
     move-object v0, v6
 
-    .line 318
+    .line 322
     .restart local v0       #ioe:Ljava/io/IOException;
     move-object v5, v0
 
-    .line 321
+    .line 325
     .restart local v5       #statException:Ljava/lang/Exception;
     goto :goto_1
 
-    .line 319
+    .line 323
     .end local v0           #ioe:Ljava/io/IOException;
     .end local v5           #statException:Ljava/lang/Exception;
     :catch_3
@@ -3101,14 +3001,14 @@
 
     move-object v2, v6
 
-    .line 320
+    .line 324
     .local v2, nfe:Ljava/lang/NumberFormatException;
     move-object v5, v2
 
     .restart local v5       #statException:Ljava/lang/Exception;
     goto :goto_1
 
-    .line 329
+    .line 333
     .end local v2           #nfe:Ljava/lang/NumberFormatException;
     :cond_9
     :try_start_a
@@ -3116,12 +3016,12 @@
 
     invoke-virtual {v6}, Ljava/util/HashMap;->clear()V
 
-    .line 330
+    .line 334
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mMsgNumToMsgMap:Ljava/util/HashMap;
 
     invoke-virtual {v6}, Ljava/util/HashMap;->clear()V
 
-    .line 331
+    .line 335
     iget-object v6, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->mUidToMsgNumMap:Ljava/util/HashMap;
 
     invoke-virtual {v6}, Ljava/util/HashMap;->clear()V
@@ -3143,7 +3043,7 @@
     .end annotation
 
     .prologue
-    .line 874
+    .line 868
     if-eqz p3, :cond_0
 
     sget-object v5, Lcom/android/email/mail/Flag;->DELETED:Lcom/android/email/mail/Flag;
@@ -3154,11 +3054,11 @@
 
     if-nez v5, :cond_1
 
-    .line 893
+    .line 887
     :cond_0
     return-void
 
-    .line 881
+    .line 875
     :cond_1
     move-object v0, p1
 
@@ -3175,7 +3075,7 @@
 
     aget-object v4, v0, v1
 
-    .line 882
+    .line 876
     .local v4, message:Lcom/android/email/mail/Message;
     const-string v5, "DELE %s"
 
@@ -3205,12 +3105,12 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 881
+    .line 875
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 886
+    .line 880
     .end local v1           #i$:I
     .end local v3           #len$:I
     .end local v4           #message:Lcom/android/email/mail/Message;
@@ -3219,7 +3119,7 @@
 
     move-object v2, v5
 
-    .line 887
+    .line 881
     .local v2, ioe:Ljava/io/IOException;
     iget-object v5, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
@@ -3229,12 +3129,12 @@
 
     invoke-interface {v5}, Lcom/android/email/mail/Transport;->close()V
 
-    .line 888
+    .line 882
     sget-boolean v5, Lcom/android/email/Email;->DEBUG:Z
 
     if-eqz v5, :cond_2
 
-    .line 889
+    .line 883
     const-string v5, "Email"
 
     invoke-virtual {v2}, Ljava/io/IOException;->toString()Ljava/lang/String;
@@ -3243,7 +3143,7 @@
 
     invoke-static {v5, v6}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 891
+    .line 885
     :cond_2
     new-instance v5, Lcom/android/email/mail/MessagingException;
 

@@ -36,17 +36,17 @@
     .parameter "context"
 
     .prologue
-    .line 337
+    .line 379
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 331
+    .line 373
     const/4 v1, 0x0
 
     new-array v1, v1, [Ljava/lang/String;
 
     iput-object v1, p0, Lcom/android/email/Utility$FolderProperties;->mSpecialMailbox:[Ljava/lang/String;
 
-    .line 338
+    .line 380
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -59,7 +59,7 @@
 
     iput-object v1, p0, Lcom/android/email/Utility$FolderProperties;->mSpecialMailbox:[Ljava/lang/String;
 
-    .line 339
+    .line 381
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -70,7 +70,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 341
+    .line 383
     iget-object v1, p0, Lcom/android/email/Utility$FolderProperties;->mSpecialMailbox:[Ljava/lang/String;
 
     aget-object v1, v1, v0
@@ -81,20 +81,20 @@
 
     if-nez v1, :cond_0
 
-    .line 343
+    .line 385
     iget-object v1, p0, Lcom/android/email/Utility$FolderProperties;->mSpecialMailbox:[Ljava/lang/String;
 
     const/4 v2, 0x0
 
     aput-object v2, v1, v0
 
-    .line 339
+    .line 381
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 346
+    .line 388
     :cond_1
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -108,33 +108,7 @@
 
     iput-object v1, p0, Lcom/android/email/Utility$FolderProperties;->mSpecialMailboxDrawable:Landroid/content/res/TypedArray;
 
-    .line 348
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f020090
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/email/Utility$FolderProperties;->mDefaultMailboxDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 350
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f020095
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/email/Utility$FolderProperties;->mSummaryStarredMailboxDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 352
+    .line 390
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -145,9 +119,35 @@
 
     move-result-object v1
 
+    iput-object v1, p0, Lcom/android/email/Utility$FolderProperties;->mDefaultMailboxDrawable:Landroid/graphics/drawable/Drawable;
+
+    .line 392
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f020093
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/email/Utility$FolderProperties;->mSummaryStarredMailboxDrawable:Landroid/graphics/drawable/Drawable;
+
+    .line 394
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f02008c
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
     iput-object v1, p0, Lcom/android/email/Utility$FolderProperties;->mSummaryCombinedInboxDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 354
+    .line 396
     return-void
 .end method
 
@@ -156,30 +156,17 @@
     .parameter "context"
 
     .prologue
-    .line 364
+    .line 406
     new-instance v0, Lcom/android/email/Utility$FolderProperties;
 
     invoke-direct {v0, p0}, Lcom/android/email/Utility$FolderProperties;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/android/email/Utility$FolderProperties;->sInstance:Lcom/android/email/Utility$FolderProperties;
 
-    .line 365
+    .line 407
     sget-object v0, Lcom/android/email/Utility$FolderProperties;->sInstance:Lcom/android/email/Utility$FolderProperties;
 
     return-object v0
-.end method
-
-.method public static setInitInstance()V
-    .locals 1
-
-    .prologue
-    .line 369
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/android/email/Utility$FolderProperties;->sInstance:Lcom/android/email/Utility$FolderProperties;
-
-    .line 370
-    return-void
 .end method
 
 
@@ -189,19 +176,19 @@
     .parameter "type"
 
     .prologue
-    .line 378
+    .line 420
     iget-object v0, p0, Lcom/android/email/Utility$FolderProperties;->mSpecialMailbox:[Ljava/lang/String;
 
     array-length v0, v0
 
     if-ge p1, v0, :cond_0
 
-    .line 379
+    .line 421
     iget-object v0, p0, Lcom/android/email/Utility$FolderProperties;->mSpecialMailbox:[Ljava/lang/String;
 
     aget-object v0, v0, p1
 
-    .line 381
+    .line 423
     :goto_0
     return-object v0
 
@@ -216,7 +203,7 @@
     .parameter "type"
 
     .prologue
-    .line 390
+    .line 432
     iget-object v0, p0, Lcom/android/email/Utility$FolderProperties;->mSpecialMailboxDrawable:Landroid/content/res/TypedArray;
 
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->length()I
@@ -225,95 +212,18 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 391
+    .line 433
     iget-object v0, p0, Lcom/android/email/Utility$FolderProperties;->mSpecialMailboxDrawable:Landroid/content/res/TypedArray;
 
     invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 393
+    .line 435
     :goto_0
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/android/email/Utility$FolderProperties;->mDefaultMailboxDrawable:Landroid/graphics/drawable/Drawable;
-
-    goto :goto_0
-.end method
-
-.method public getSummaryMailboxIconIds(J)Landroid/graphics/drawable/Drawable;
-    .locals 2
-    .parameter "mailboxKey"
-
-    .prologue
-    .line 397
-    const-wide/16 v0, -0x2
-
-    cmp-long v0, p1, v0
-
-    if-nez v0, :cond_0
-
-    .line 398
-    iget-object v0, p0, Lcom/android/email/Utility$FolderProperties;->mSummaryCombinedInboxDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 406
-    :goto_0
-    return-object v0
-
-    .line 399
-    :cond_0
-    const-wide/16 v0, -0x4
-
-    cmp-long v0, p1, v0
-
-    if-nez v0, :cond_1
-
-    .line 400
-    iget-object v0, p0, Lcom/android/email/Utility$FolderProperties;->mSummaryStarredMailboxDrawable:Landroid/graphics/drawable/Drawable;
-
-    goto :goto_0
-
-    .line 401
-    :cond_1
-    const-wide/16 v0, -0x5
-
-    cmp-long v0, p1, v0
-
-    if-nez v0, :cond_2
-
-    .line 402
-    iget-object v0, p0, Lcom/android/email/Utility$FolderProperties;->mSpecialMailboxDrawable:Landroid/content/res/TypedArray;
-
-    const/4 v1, 0x3
-
-    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 403
-    :cond_2
-    const-wide/16 v0, -0x6
-
-    cmp-long v0, p1, v0
-
-    if-nez v0, :cond_3
-
-    .line 404
-    iget-object v0, p0, Lcom/android/email/Utility$FolderProperties;->mSpecialMailboxDrawable:Landroid/content/res/TypedArray;
-
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 406
-    :cond_3
     iget-object v0, p0, Lcom/android/email/Utility$FolderProperties;->mDefaultMailboxDrawable:Landroid/graphics/drawable/Drawable;
 
     goto :goto_0

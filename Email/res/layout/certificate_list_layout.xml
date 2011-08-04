@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:id="@id/mainLayout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@id/CertificatesList" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ImageView android:id="@id/noCertificateImg" android:background="@drawable/email_img_nodata" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    <TextView android:id="@id/noCertificateText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/account_settings_smime_no_certificate" android:layout_below="@id/noCertificateImg" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    <LinearLayout android:gravity="center" android:background="@android:drawable/bottom_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <Button android:id="@id/importButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/account_settings_smime_import_certificate" />
+    </LinearLayout>
+</RelativeLayout>

@@ -3,36 +3,17 @@
 .source "Welcome.java"
 
 
-# static fields
-.field public static final BADGE_APPS_CLASS:Ljava/lang/String; = "class"
-
-.field public static final BADGE_APPS_COUNT:Ljava/lang/String; = "badgecount"
-
-.field public static final BADGE_APPS_PACKAGE:Ljava/lang/String; = "package"
-
-.field public static final BADGE_AUTHORITY:Ljava/lang/String; = "com.sec.badge"
-
-.field public static final BADGE_TABLE_APPS:Ljava/lang/String; = "apps"
-
-
 # instance fields
-.field public final TAG:Ljava/lang/String;
-
 .field private db:Landroid/database/sqlite/SQLiteDatabase;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     .prologue
     .line 56
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
-
-    .line 63
-    const-string v0, "Email/Welcome"
-
-    iput-object v0, p0, Lcom/android/email/activity/Welcome;->TAG:Ljava/lang/String;
 
     return-void
 .end method
@@ -62,26 +43,25 @@
 
 .method public static actionStart(Landroid/app/Activity;)V
     .locals 2
-    .parameter "fromActivity"
+    .parameter
 
     .prologue
-    .line 103
+    .line 108
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/email/activity/Welcome;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 104
-    .local v0, i:Landroid/content/Intent;
+    .line 109
     const/high16 v1, 0x400
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 105
+    .line 110
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 106
+    .line 111
     return-void
 .end method
 
@@ -91,16 +71,16 @@
     .locals 4
 
     .prologue
-    .line 75
+    .line 79
     invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 76
+    .line 80
     .local v1, cr:Landroid/content/ContentResolver;
     const/4 v0, 0x0
 
-    .line 86
+    .line 90
     .local v0, cnt:I
     const-string v2, "com.android.email"
 
@@ -108,7 +88,7 @@
 
     invoke-static {v1, v2, v3, v0}, Lcom/sec/android/touchwiz/app/BadgeNotification$Apps;->setBadgeCount(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 88
+    .line 92
     return-void
 .end method
 
@@ -121,31 +101,31 @@
 
     const-string v1, "BADGE"
 
-    .line 111
+    .line 116
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 114
+    .line 119
     invoke-static {v0}, Lcom/android/email/Email;->setNotifyUiAccountsChanged(Z)V
 
-    .line 118
+    .line 123
     invoke-static {p0}, Lcom/android/email/activity/UpgradeAccounts;->doBulkUpgradeIfNecessary(Landroid/content/Context;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 119
+    .line 124
     invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->finish()V
 
-    .line 213
+    .line 268
     :goto_0
     return-void
 
-    .line 131
+    .line 136
     :cond_0
     const/4 v8, 0x0
 
-    .line 133
+    .line 138
     .local v8, c:Landroid/database/Cursor;
     :try_start_0
     invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getContentResolver()Landroid/content/ContentResolver;
@@ -166,7 +146,7 @@
 
     move-result-object v8
 
-    .line 137
+    .line 142
     invoke-interface {v8}, Landroid/database/Cursor;->getCount()I
 
     move-result v0
@@ -179,32 +159,32 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 138
+    .line 143
     const-string v0, "BADGE"
 
     const-string v1, "Upgrade\tBadge ENTER"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 139
+    .line 144
     invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->insertBadgeProvider()V
 
-    .line 140
+    .line 145
     invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->updateBadgeProvider()V
 
-    .line 141
+    .line 146
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/email/provider/EmailProvider;->FIRST_ENTER:Z
 
-    .line 142
+    .line 147
     const-string v0, "BADGE"
 
     const-string v1, "Upgrade\tBadge EXIT"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 146
+    .line 151
     :cond_1
     invoke-interface {v8}, Landroid/database/Cursor;->getCount()I
 
@@ -212,71 +192,71 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 196
+    .line 251
     invoke-static {p0}, Lcom/android/email/activity/AccountFolderList;->actionShowAccounts(Landroid/content/Context;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 200
+    .line 255
     :goto_1
     if-eqz v8, :cond_2
 
-    .line 201
+    .line 256
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 206
+    .line 261
     :cond_2
     invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->finish()V
 
-    .line 212
+    .line 267
     invoke-static {p0}, Lcom/android/email/ExchangeUtils;->startExchangeService(Landroid/content/Context;)V
 
     goto :goto_0
 
-    .line 148
+    .line 153
     :pswitch_0
     :try_start_1
     invoke-static {p0}, Lcom/android/email/activity/setup/AccountSetupBasics;->actionNewAccount(Landroid/app/Activity;)V
 
-    .line 151
+    .line 194
     new-instance v0, Lcom/android/email/activity/Welcome$1;
 
     invoke-direct {v0, p0}, Lcom/android/email/activity/Welcome$1;-><init>(Lcom/android/email/activity/Welcome;)V
 
     invoke-virtual {v0}, Lcom/android/email/activity/Welcome$1;->start()V
 
-    .line 187
+    .line 242
     invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->insertBadgeProvider()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_1
 
-    .line 200
+    .line 255
     :catchall_0
     move-exception v0
 
     if-eqz v8, :cond_3
 
-    .line 201
+    .line 256
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
     :cond_3
     throw v0
 
-    .line 191
+    .line 246
     :pswitch_1
     :try_start_2
     invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 192
+    .line 247
     const/4 v0, 0x0
 
     invoke-interface {v8, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v6
 
-    .line 193
+    .line 248
     .local v6, accountId:J
     const/4 v0, 0x0
 
@@ -286,7 +266,7 @@
 
     goto :goto_1
 
-    .line 146
+    .line 151
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -295,86 +275,122 @@
 .end method
 
 .method public updateBadgeProvider()V
-    .locals 7
+    .locals 9
 
     .prologue
-    .line 91
+    const-string v8, "package"
+
+    const-string v7, "class"
+
+    .line 95
     invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 92
-    .local v1, cr:Landroid/content/ContentResolver;
-    const/4 v0, 0x0
+    .line 96
+    .local v2, cr:Landroid/content/ContentResolver;
+    const/4 v1, 0x0
 
-    .line 93
-    .local v0, cnt:I
-    new-instance v2, Landroid/content/ContentValues;
+    .line 97
+    .local v1, cnt:I
+    new-instance v3, Landroid/content/ContentValues;
 
-    invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
+    invoke-direct {v3}, Landroid/content/ContentValues;-><init>()V
 
-    .line 94
-    .local v2, newValues:Landroid/content/ContentValues;
-    const-string v4, "package"
+    .line 98
+    .local v3, newValues:Landroid/content/ContentValues;
+    const-string v5, "package"
 
     const-string v5, "com.android.email"
 
-    invoke-virtual {v2, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v3, v8, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 95
-    const-string v4, "class"
+    .line 99
+    const-string v5, "class"
 
     const-string v5, "com.android.email.activity.Welcome"
 
-    invoke-virtual {v2, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v3, v7, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 96
-    const-string v4, "badgecount"
+    .line 100
+    const-string v5, "badgecount"
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v3, v5, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    .line 101
+    new-instance v0, Ljava/lang/StringBuffer;
+
+    invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
+
+    .line 102
+    .local v0, buf:Ljava/lang/StringBuffer;
+    const-string v5, "package"
+
+    invoke-virtual {v0, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     move-result-object v5
 
-    invoke-virtual {v2, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    const-string v6, "=\'com.android.email\' AND "
 
-    .line 97
-    const-string v3, "package=\'com.android.email\' AND class=\'com.android.email.activity.Welcome\'"
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 98
-    .local v3, where:Ljava/lang/String;
-    const-string v4, "content://com.sec.badge/apps"
+    move-result-object v5
 
-    invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    const-string v6, "class"
+
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    move-result-object v5
+
+    const-string v6, "=\'com.android.email.activity.Welcome\'"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v4
 
-    const/4 v5, 0x0
+    .line 103
+    .local v4, where:Ljava/lang/String;
+    const-string v5, "content://com.sec.badge/apps"
 
-    invoke-virtual {v1, v4, v2, v3, v5}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    .line 99
-    const-string v4, "Email/Welcome"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "[updateBadgeProvider] - cnt : "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v5}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v5
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/4 v6, 0x0
 
-    move-result-object v5
+    invoke-virtual {v2, v5, v3, v4, v6}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 104
+    const-string v5, "Email/Welcome"
 
-    move-result-object v5
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-static {v4, v5}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 100
+    const-string v7, "[updateBadgeProvider] - cnt : "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 105
     return-void
 .end method

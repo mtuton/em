@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <plurals name="notification_new_one_account_fmt">
-        <item quantity="other">Neprečítané: %d (%s)</item>
-        <item quantity="one">Neprečítané: %d (%s)</item>
-        <item quantity="few">Neprečítané: %d (%s)</item>
+        <item quantity="other">Neprečítané: %1$d (%2$s)</item>
+        <item quantity="one">Neprečítané: %1$d (%2$s)</item>
+        <item quantity="few">Neprečítané: %1$d (%2$s)</item>
     </plurals>
     <plurals name="notification_new_multi_account_fmt">
         <item quantity="other">v %d kontách</item>

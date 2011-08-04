@@ -24,15 +24,15 @@
     .parameter "columnNames"
 
     .prologue
-    .line 261
+    .line 821
     invoke-direct {p0, p1}, Landroid/database/MatrixCursor;-><init>([Ljava/lang/String;)V
 
-    .line 262
+    .line 822
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/exchange/provider/ExchangeProvider$MatrixCursorExtras;->mExtras:Landroid/os/Bundle;
 
-    .line 263
+    .line 823
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .locals 1
 
     .prologue
-    .line 270
+    .line 830
     iget-object v0, p0, Lcom/android/exchange/provider/ExchangeProvider$MatrixCursorExtras;->mExtras:Landroid/os/Bundle;
 
     return-object v0
@@ -53,9 +53,9 @@
     .parameter "extras"
 
     .prologue
-    .line 266
+    .line 826
     iput-object p1, p0, Lcom/android/exchange/provider/ExchangeProvider$MatrixCursorExtras;->mExtras:Landroid/os/Bundle;
 
-    .line 267
+    .line 827
     return-void
 .end method

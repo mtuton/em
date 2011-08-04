@@ -7,24 +7,6 @@
 .field protected branch:Ljava/io/OutputStream;
 
 
-# direct methods
-.method public constructor <init>(Ljava/io/OutputStream;Ljava/io/OutputStream;)V
-    .locals 0
-    .parameter "out"
-    .parameter "branch"
-
-    .prologue
-    .line 40
-    invoke-direct {p0, p1}, Lorg/apache/commons/io/output/ProxyOutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    .line 41
-    iput-object p2, p0, Lorg/apache/commons/io/output/TeeOutputStream;->branch:Ljava/io/OutputStream;
-
-    .line 42
-    return-void
-.end method
-
-
 # virtual methods
 .method public close()V
     .locals 1

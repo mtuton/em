@@ -27,6 +27,6 @@
     </plurals>
     <plurals name="message_delete_text">
         <item quantity="other">Liczba elementów, które zostaną usunięte: %1$d</item>
-        <item quantity="one">Ten widget zostanie usunięty</item>
+        <item quantity="one">Ten element zostanie usunięty</item>
     </plurals>
 </resources>

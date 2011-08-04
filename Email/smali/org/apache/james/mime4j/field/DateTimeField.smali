@@ -51,13 +51,3 @@
 
     return-object v0
 .end method
-
-.method public getParseException()Lorg/apache/james/mime4j/field/datetime/parser/ParseException;
-    .locals 1
-
-    .prologue
-    .line 46
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/DateTimeField;->parseException:Lorg/apache/james/mime4j/field/datetime/parser/ParseException;
-
-    return-object v0
-.end method

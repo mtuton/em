@@ -35,53 +35,6 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/io/InputStream;)V
-    .locals 2
-    .parameter "is"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 61
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 47
-    new-instance v1, Ljava/util/LinkedList;
-
-    invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v1, p0, Lorg/apache/james/mime4j/message/Header;->fields:Ljava/util/List;
-
-    .line 48
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v1, p0, Lorg/apache/james/mime4j/message/Header;->fieldMap:Ljava/util/HashMap;
-
-    .line 62
-    new-instance v0, Lorg/apache/james/mime4j/MimeStreamParser;
-
-    invoke-direct {v0}, Lorg/apache/james/mime4j/MimeStreamParser;-><init>()V
-
-    .line 63
-    .local v0, parser:Lorg/apache/james/mime4j/MimeStreamParser;
-    new-instance v1, Lorg/apache/james/mime4j/message/Header$1;
-
-    invoke-direct {v1, p0, v0}, Lorg/apache/james/mime4j/message/Header$1;-><init>(Lorg/apache/james/mime4j/message/Header;Lorg/apache/james/mime4j/MimeStreamParser;)V
-
-    invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/MimeStreamParser;->setContentHandler(Lorg/apache/james/mime4j/ContentHandler;)V
-
-    .line 71
-    invoke-virtual {v0, p1}, Lorg/apache/james/mime4j/MimeStreamParser;->parse(Ljava/io/InputStream;)V
-
-    .line 72
-    return-void
-.end method
-
 
 # virtual methods
 .method public addField(Lorg/apache/james/mime4j/field/Field;)V
@@ -192,47 +145,6 @@
     const/4 v1, 0x0
 
     goto :goto_0
-.end method
-
-.method public getFields()Ljava/util/List;
-    .locals 1
-
-    .prologue
-    .line 96
-    iget-object v0, p0, Lorg/apache/james/mime4j/message/Header;->fields:Ljava/util/List;
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getFields(Ljava/lang/String;)Ljava/util/List;
-    .locals 3
-    .parameter "name"
-
-    .prologue
-    .line 121
-    iget-object v1, p0, Lorg/apache/james/mime4j/message/Header;->fieldMap:Ljava/util/HashMap;
-
-    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/List;
-
-    .line 122
-    .local v0, l:Ljava/util/List;
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v1
-
-    return-object v1
 .end method
 
 .method public toString()Ljava/lang/String;

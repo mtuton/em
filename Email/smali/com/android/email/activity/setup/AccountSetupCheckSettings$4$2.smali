@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 478
+    .line 490
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$4$2;->this$1:Lcom/android/email/activity/setup/AccountSetupCheckSettings$4;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "which"
 
     .prologue
-    .line 479
+    .line 492
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$4$2;->this$1:Lcom/android/email/activity/setup/AccountSetupCheckSettings$4;
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$4;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -52,13 +52,13 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->setResult(I)V
 
-    .line 480
+    .line 493
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$4$2;->this$1:Lcom/android/email/activity/setup/AccountSetupCheckSettings$4;
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$4;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     invoke-virtual {v0}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->finish()V
 
-    .line 481
+    .line 494
     return-void
 .end method

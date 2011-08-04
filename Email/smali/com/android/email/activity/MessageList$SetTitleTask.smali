@@ -39,15 +39,15 @@
     .parameter "mailboxKey"
 
     .prologue
-    .line 5253
+    .line 6822
     iput-object p1, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 5254
+    .line 6823
     iput-wide p2, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->mMailboxKey:J
 
-    .line 5255
+    .line 6824
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 5249
+    .line 6818
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -74,7 +74,7 @@
     .parameter "params"
 
     .prologue
-    .line 5260
+    .line 6829
     iget-wide v0, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->mMailboxKey:J
 
     const-wide/16 v2, -0x2
@@ -83,7 +83,7 @@
 
     if-nez v0, :cond_0
 
-    .line 5261
+    .line 6830
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -98,7 +98,7 @@
 
     iget-object v2, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    const v3, 0x7f08004a
+    const v3, 0x7f080054
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MessageList;->getString(I)Ljava/lang/String;
 
@@ -116,11 +116,11 @@
 
     aput-object v2, v0, v1
 
-    .line 5306
+    .line 6875
     :goto_0
     return-object v0
 
-    .line 5262
+    .line 6831
     :cond_0
     iget-wide v0, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->mMailboxKey:J
 
@@ -130,7 +130,7 @@
 
     if-nez v0, :cond_1
 
-    .line 5263
+    .line 6832
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -145,7 +145,7 @@
 
     iget-object v2, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    const v3, 0x7f08004c
+    const v3, 0x7f080056
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MessageList;->getString(I)Ljava/lang/String;
 
@@ -165,7 +165,7 @@
 
     goto :goto_0
 
-    .line 5264
+    .line 6833
     :cond_1
     iget-wide v0, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->mMailboxKey:J
 
@@ -175,7 +175,7 @@
 
     if-nez v0, :cond_2
 
-    .line 5265
+    .line 6834
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -190,7 +190,7 @@
 
     iget-object v2, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    const v3, 0x7f08004d
+    const v3, 0x7f080057
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MessageList;->getString(I)Ljava/lang/String;
 
@@ -210,7 +210,7 @@
 
     goto :goto_0
 
-    .line 5266
+    .line 6835
     :cond_2
     iget-wide v0, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->mMailboxKey:J
 
@@ -220,7 +220,7 @@
 
     if-nez v0, :cond_3
 
-    .line 5267
+    .line 6836
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -235,7 +235,7 @@
 
     iget-object v2, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    const v3, 0x7f08004e
+    const v3, 0x7f080058
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MessageList;->getString(I)Ljava/lang/String;
 
@@ -255,33 +255,33 @@
 
     goto :goto_0
 
-    .line 5269
+    .line 6838
     :cond_3
     const/4 v7, 0x0
 
-    .line 5270
+    .line 6839
     .local v7, accountName:Ljava/lang/String;
     const/4 v10, 0x0
 
-    .line 5271
+    .line 6840
     .local v10, mailboxName:Ljava/lang/String;
     const/4 v6, 0x0
 
-    .line 5275
+    .line 6844
     .local v6, accountKey:Ljava/lang/String;
     const/4 v9, 0x0
 
-    .line 5277
+    .line 6846
     .local v9, emailAddress:Ljava/lang/String;
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$3400(Lcom/android/email/activity/MessageList;)Landroid/content/ContentResolver;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$3700(Lcom/android/email/activity/MessageList;)Landroid/content/ContentResolver;
 
     move-result-object v0
 
     sget-object v1, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
-    invoke-static {}, Lcom/android/email/activity/MessageList;->access$7200()[Ljava/lang/String;
+    invoke-static {}, Lcom/android/email/activity/MessageList;->access$8000()[Ljava/lang/String;
 
     move-result-object v2
 
@@ -307,7 +307,7 @@
 
     move-result-object v8
 
-    .line 5281
+    .line 6850
     .local v8, c:Landroid/database/Cursor;
     :try_start_0
     invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
@@ -316,7 +316,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 5282
+    .line 6851
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-static {v0}, Lcom/android/email/Utility$FolderProperties;->getInstance(Landroid/content/Context;)Lcom/android/email/Utility$FolderProperties;
@@ -333,17 +333,17 @@
 
     move-result-object v10
 
-    .line 5284
+    .line 6853
     if-nez v10, :cond_4
 
-    .line 5285
+    .line 6854
     const/4 v0, 0x0
 
     invoke-interface {v8, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 5287
+    .line 6856
     :cond_4
     const/4 v0, 0x1
 
@@ -353,23 +353,23 @@
 
     move-result-object v6
 
-    .line 5290
+    .line 6859
     :cond_5
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 5292
+    .line 6861
     if-eqz v6, :cond_7
 
-    .line 5293
+    .line 6862
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$3400(Lcom/android/email/activity/MessageList;)Landroid/content/ContentResolver;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$3700(Lcom/android/email/activity/MessageList;)Landroid/content/ContentResolver;
 
     move-result-object v0
 
     sget-object v1, Lcom/android/email/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
 
-    invoke-static {}, Lcom/android/email/activity/MessageList;->access$7400()[Ljava/lang/String;
+    invoke-static {}, Lcom/android/email/activity/MessageList;->access$8200()[Ljava/lang/String;
 
     move-result-object v2
 
@@ -389,7 +389,7 @@
 
     move-result-object v8
 
-    .line 5297
+    .line 6866
     :try_start_1
     invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -397,14 +397,14 @@
 
     if-eqz v0, :cond_6
 
-    .line 5298
+    .line 6867
     const/4 v0, 0x0
 
     invoke-interface {v8, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 5299
+    .line 6868
     const/4 v0, 0x1
 
     invoke-interface {v8, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -413,11 +413,11 @@
 
     move-result-object v9
 
-    .line 5302
+    .line 6871
     :cond_6
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 5305
+    .line 6874
     :cond_7
     iget-object v0, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->this$0:Lcom/android/email/activity/MessageList;
 
@@ -431,7 +431,7 @@
 
     move-result v11
 
-    .line 5306
+    .line 6875
     .local v11, nAccounts:I
     const/4 v0, 0x3
 
@@ -455,7 +455,7 @@
 
     goto/16 :goto_0
 
-    .line 5290
+    .line 6859
     .end local v11           #nAccounts:I
     :catchall_0
     move-exception v0
@@ -464,7 +464,7 @@
 
     throw v0
 
-    .line 5302
+    .line 6871
     :catchall_1
     move-exception v0
 
@@ -478,7 +478,7 @@
     .parameter "x0"
 
     .prologue
-    .line 5249
+    .line 6818
     check-cast p1, [Ljava/lang/Object;
 
     .end local p1
@@ -496,16 +496,16 @@
 
     const/4 v4, 0x1
 
-    .line 5311
+    .line 6880
     if-nez p1, :cond_1
 
-    .line 5328
+    .line 6897
     .end local p0
     :cond_0
     :goto_0
     return-void
 
-    .line 5315
+    .line 6884
     .restart local p0
     :cond_1
     const/4 v1, 0x2
@@ -518,13 +518,13 @@
 
     move-result v0
 
-    .line 5317
+    .line 6886
     .local v0, nAccounts:I
     aget-object v1, p1, v3
 
     if-eqz v1, :cond_3
 
-    .line 5318
+    .line 6887
     iget-object v2, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->this$0:Lcom/android/email/activity/MessageList;
 
     aget-object v1, p1, v3
@@ -536,18 +536,18 @@
     move v3, v4
 
     :cond_2
-    invoke-static {v2, v1, v3}, Lcom/android/email/activity/MessageList;->access$7500(Lcom/android/email/activity/MessageList;Ljava/lang/String;Z)V
+    invoke-static {v2, v1, v3}, Lcom/android/email/activity/MessageList;->access$8300(Lcom/android/email/activity/MessageList;Ljava/lang/String;Z)V
 
-    .line 5324
+    .line 6893
     :goto_1
     aget-object v1, p1, v4
 
     if-eqz v1, :cond_0
 
-    .line 5326
+    .line 6895
     iget-object v1, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$7700(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
+    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$8500(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -560,12 +560,12 @@
 
     goto :goto_0
 
-    .line 5322
+    .line 6891
     .restart local p0
     :cond_3
     iget-object v1, p0, Lcom/android/email/activity/MessageList$SetTitleTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$7600(Lcom/android/email/activity/MessageList;)Landroid/widget/LinearLayout;
+    invoke-static {v1}, Lcom/android/email/activity/MessageList;->access$8400(Lcom/android/email/activity/MessageList;)Landroid/widget/LinearLayout;
 
     move-result-object v1
 
@@ -575,7 +575,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0200e3
+    const v3, 0x7f020110
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

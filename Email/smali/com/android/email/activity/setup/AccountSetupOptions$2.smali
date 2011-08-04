@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 240
+    .line 342
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupOptions$2;->this$0:Lcom/android/email/activity/setup/AccountSetupOptions;
 
     iput p2, p0, Lcom/android/email/activity/setup/AccountSetupOptions$2;->val$msgResId:I
@@ -51,7 +51,7 @@
     .locals 4
 
     .prologue
-    .line 241
+    .line 344
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupOptions$2;->this$0:Lcom/android/email/activity/setup/AccountSetupOptions;
@@ -66,7 +66,7 @@
 
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupOptions$2;->this$0:Lcom/android/email/activity/setup/AccountSetupOptions;
 
-    const v2, 0x7f0800bf
+    const v2, 0x7f0800c9
 
     invoke-virtual {v1, v2}, Lcom/android/email/activity/setup/AccountSetupOptions;->getString(I)Ljava/lang/String;
 
@@ -114,6 +114,6 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 255
+    .line 358
     return-void
 .end method

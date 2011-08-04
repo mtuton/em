@@ -44,21 +44,21 @@
     .parameter "okToRecurse"
 
     .prologue
-    .line 4519
+    .line 5766
     iput-object p1, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 4520
+    .line 5767
     iput-wide p2, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->mAccountId:J
 
-    .line 4521
+    .line 5768
     iput p4, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->mMailboxType:I
 
-    .line 4522
+    .line 5769
     iput-boolean p5, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->mOkToRecurse:Z
 
-    .line 4523
+    .line 5770
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .parameter "params"
 
     .prologue
-    .line 4528
+    .line 5775
     iget-object v2, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
     iget-wide v3, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->mAccountId:J
@@ -80,7 +80,7 @@
 
     move-result-wide v0
 
-    .line 4529
+    .line 5776
     .local v0, mailboxId:J
     const-wide/16 v2, -0x1
 
@@ -92,10 +92,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 4531
+    .line 5778
     iget-object v2, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$5000(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$ControllerResults;
+    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$300(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$ControllerResults;
 
     move-result-object v2
 
@@ -103,10 +103,10 @@
 
     iput v3, v2, Lcom/android/email/activity/MessageList$ControllerResults;->mWaitForMailboxType:I
 
-    .line 4532
+    .line 5779
     iget-object v2, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$2000(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
+    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$2200(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
 
     move-result-object v2
 
@@ -114,13 +114,13 @@
 
     iget-object v5, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v5}, Lcom/android/email/activity/MessageList;->access$5000(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$ControllerResults;
+    invoke-static {v5}, Lcom/android/email/activity/MessageList;->access$300(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$ControllerResults;
 
     move-result-object v5
 
     invoke-virtual {v2, v3, v4, v5}, Lcom/android/email/Controller;->updateMailboxList(JLcom/android/email/Controller$Result;)V
 
-    .line 4534
+    .line 5781
     :cond_0
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -134,7 +134,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4510
+    .line 5757
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -152,15 +152,15 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 4539
+    .line 5786
     if-nez p1, :cond_1
 
-    .line 4554
+    .line 5801
     :cond_0
     :goto_0
     return-void
 
-    .line 4542
+    .line 5789
     :cond_1
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
@@ -172,16 +172,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 4543
+    .line 5790
     iget-object v0, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v1
 
-    invoke-static {v0, v1, v2}, Lcom/android/email/activity/MessageList;->access$302(Lcom/android/email/activity/MessageList;J)J
+    invoke-static {v0, v1, v2}, Lcom/android/email/activity/MessageList;->access$202(Lcom/android/email/activity/MessageList;J)J
 
-    .line 4544
+    .line 5791
     iget-object v0, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
     new-instance v1, Lcom/android/email/activity/MessageList$RefreshFolderListTask;
@@ -192,12 +192,12 @@
 
     invoke-direct {v1, v2, v3}, Lcom/android/email/activity/MessageList$RefreshFolderListTask;-><init>(Lcom/android/email/activity/MessageList;Lcom/android/email/activity/MessageList$1;)V
 
-    invoke-static {v0, v1}, Lcom/android/email/activity/MessageList;->access$5102(Lcom/android/email/activity/MessageList;Lcom/android/email/activity/MessageList$RefreshFolderListTask;)Lcom/android/email/activity/MessageList$RefreshFolderListTask;
+    invoke-static {v0, v1}, Lcom/android/email/activity/MessageList;->access$5402(Lcom/android/email/activity/MessageList;Lcom/android/email/activity/MessageList$RefreshFolderListTask;)Lcom/android/email/activity/MessageList$RefreshFolderListTask;
 
-    .line 4545
+    .line 5792
     iget-object v0, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$5100(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$RefreshFolderListTask;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$5400(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$RefreshFolderListTask;
 
     move-result-object v0
 
@@ -205,7 +205,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageList$RefreshFolderListTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 4546
+    .line 5793
     iget-object v0, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
     new-instance v1, Lcom/android/email/activity/MessageList$SetTitleTask;
@@ -214,18 +214,18 @@
 
     iget-object v3, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v3}, Lcom/android/email/activity/MessageList;->access$300(Lcom/android/email/activity/MessageList;)J
+    invoke-static {v3}, Lcom/android/email/activity/MessageList;->access$200(Lcom/android/email/activity/MessageList;)J
 
     move-result-wide v3
 
     invoke-direct {v1, v2, v3, v4}, Lcom/android/email/activity/MessageList$SetTitleTask;-><init>(Lcom/android/email/activity/MessageList;J)V
 
-    invoke-static {v0, v1}, Lcom/android/email/activity/MessageList;->access$5202(Lcom/android/email/activity/MessageList;Lcom/android/email/activity/MessageList$SetTitleTask;)Lcom/android/email/activity/MessageList$SetTitleTask;
+    invoke-static {v0, v1}, Lcom/android/email/activity/MessageList;->access$5502(Lcom/android/email/activity/MessageList;Lcom/android/email/activity/MessageList$SetTitleTask;)Lcom/android/email/activity/MessageList$SetTitleTask;
 
-    .line 4547
+    .line 5794
     iget-object v0, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$5200(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$SetTitleTask;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$5500(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$SetTitleTask;
 
     move-result-object v0
 
@@ -233,12 +233,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageList$SetTitleTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 4549
+    .line 5796
     iget-object v0, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$5300(Lcom/android/email/activity/MessageList;)V
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$5600(Lcom/android/email/activity/MessageList;)V
 
-    .line 4551
+    .line 5798
     iget-object v7, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
     new-instance v0, Lcom/android/email/activity/MessageList$LoadMessagesTask;
@@ -247,7 +247,7 @@
 
     iget-object v2, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$300(Lcom/android/email/activity/MessageList;)J
+    invoke-static {v2}, Lcom/android/email/activity/MessageList;->access$200(Lcom/android/email/activity/MessageList;)J
 
     move-result-wide v2
 
@@ -257,12 +257,12 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/email/activity/MessageList$LoadMessagesTask;-><init>(Lcom/android/email/activity/MessageList;JJZ)V
 
-    invoke-static {v7, v0}, Lcom/android/email/activity/MessageList;->access$202(Lcom/android/email/activity/MessageList;Lcom/android/email/activity/MessageList$LoadMessagesTask;)Lcom/android/email/activity/MessageList$LoadMessagesTask;
+    invoke-static {v7, v0}, Lcom/android/email/activity/MessageList;->access$502(Lcom/android/email/activity/MessageList;Lcom/android/email/activity/MessageList$LoadMessagesTask;)Lcom/android/email/activity/MessageList$LoadMessagesTask;
 
-    .line 4552
+    .line 5799
     iget-object v0, p0, Lcom/android/email/activity/MessageList$FindMailboxTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$200(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$LoadMessagesTask;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$500(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$LoadMessagesTask;
 
     move-result-object v0
 
@@ -278,7 +278,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4510
+    .line 5757
     check-cast p1, Ljava/lang/Long;
 
     .end local p1

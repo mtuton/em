@@ -15,10 +15,6 @@
 
 
 # static fields
-.field public static final CONTENT_ITEM_TYPE:Ljava/lang/String; = "vnd.android.cursor.item/eas_children"
-
-.field public static final MAX_CHILDREN:I = 0x8
-
 .field public static final ROWS:[Ljava/lang/String;
 
 
@@ -27,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 220
+    .line 222
     const/16 v0, 0x8
 
     new-array v0, v0, [Ljava/lang/String;
@@ -89,7 +85,7 @@
     .locals 0
 
     .prologue
-    .line 215
+    .line 217
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

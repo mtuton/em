@@ -14,34 +14,6 @@
 .field private mark:I
 
 
-# direct methods
-.method public constructor <init>(Ljava/lang/CharSequence;)V
-    .locals 1
-    .parameter "charSequence"
-
-    .prologue
-    .line 42
-    invoke-direct {p0}, Ljava/io/Reader;-><init>()V
-
-    .line 43
-    if-eqz p1, :cond_0
-
-    move-object v0, p1
-
-    :goto_0
-    iput-object v0, p0, Lorg/apache/commons/io/input/CharSequenceReader;->charSequence:Ljava/lang/CharSequence;
-
-    .line 44
-    return-void
-
-    .line 43
-    :cond_0
-    const-string v0, ""
-
-    goto :goto_0
-.end method
-
-
 # virtual methods
 .method public close()V
     .locals 1

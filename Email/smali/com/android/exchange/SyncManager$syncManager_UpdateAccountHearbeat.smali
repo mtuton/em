@@ -32,20 +32,20 @@
     .parameter "heatbeat"
 
     .prologue
-    .line 3543
+    .line 3888
     iput-object p1, p0, Lcom/android/exchange/SyncManager$syncManager_UpdateAccountHearbeat;->this$0:Lcom/android/exchange/SyncManager;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 3544
+    .line 3889
     iput-wide p2, p0, Lcom/android/exchange/SyncManager$syncManager_UpdateAccountHearbeat;->lHeatbeat:J
 
-    .line 3545
+    .line 3890
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/exchange/SyncManager$syncManager_UpdateAccountHearbeat;->lFlag:J
 
-    .line 3546
+    .line 3891
     return-void
 .end method
 
@@ -57,12 +57,12 @@
     .prologue
     const-string v5, "James"
 
-    .line 3553
+    .line 3898
     sget-boolean v0, Lcom/android/exchange/Eas;->USER_LOG:Z
 
     if-eqz v0, :cond_0
 
-    .line 3554
+    .line 3899
     const-string v0, "James"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -91,7 +91,7 @@
 
     invoke-static {v5, v0}, Lcom/android/exchange/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3557
+    .line 3902
     :cond_0
     :try_start_0
     monitor-enter p0
@@ -99,13 +99,13 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3558
+    .line 3903
     :try_start_1
     iget-wide v0, p0, Lcom/android/exchange/SyncManager$syncManager_UpdateAccountHearbeat;->lHeatbeat:J
 
     invoke-virtual {p0, v0, v1}, Ljava/lang/Object;->wait(J)V
 
-    .line 3559
+    .line 3904
     iget-wide v0, p0, Lcom/android/exchange/SyncManager$syncManager_UpdateAccountHearbeat;->lFlag:J
 
     const-wide/16 v2, 0x0
@@ -114,7 +114,7 @@
 
     if-nez v0, :cond_3
 
-    .line 3560
+    .line 3905
     sget-boolean v0, Lcom/android/exchange/Eas;->USER_LOG:Z
 
     if-eqz v0, :cond_1
@@ -125,22 +125,22 @@
 
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3561
+    .line 3906
     :cond_1
     const-string v0, "PeakOffPeak"
 
     invoke-static {v0}, Lcom/android/exchange/SyncManager;->kick(Ljava/lang/String;)V
 
-    .line 3566
+    .line 3911
     :cond_2
     :goto_0
     monitor-exit p0
 
-    .line 3571
+    .line 3916
     :goto_1
     return-void
 
-    .line 3564
+    .line 3909
     :cond_3
     sget-boolean v0, Lcom/android/exchange/Eas;->USER_LOG:Z
 
@@ -154,7 +154,7 @@
 
     goto :goto_0
 
-    .line 3566
+    .line 3911
     :catchall_0
     move-exception v0
 
@@ -168,13 +168,13 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 3567
+    .line 3912
     :catch_0
     move-exception v0
 
     goto :goto_1
 
-    .line 3569
+    .line 3914
     :catchall_1
     move-exception v0
 
@@ -185,11 +185,11 @@
     .locals 2
 
     .prologue
-    .line 3549
+    .line 3894
     const-wide/16 v0, 0x1
 
     iput-wide v0, p0, Lcom/android/exchange/SyncManager$syncManager_UpdateAccountHearbeat;->lFlag:J
 
-    .line 3550
+    .line 3895
     return-void
 .end method

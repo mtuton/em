@@ -3,7 +3,7 @@
 .source "AccountSettings.java"
 
 # interfaces
-.implements Landroid/preference/Preference$OnPreferenceClickListener;
+.implements Landroid/preference/Preference$OnPreferenceChangeListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 662
+    .line 763
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSettings$7;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,69 +37,100 @@
 
 
 # virtual methods
-.method public onPreferenceClick(Landroid/preference/Preference;)Z
+.method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 4
     .parameter "preference"
+    .parameter "newValue"
 
     .prologue
-    .line 663
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$7;->this$0:Lcom/android/email/activity/setup/AccountSettings;
+    const v2, 0x7f0801ee
 
-    iget-object v2, v2, Lcom/android/email/activity/setup/AccountSettings;->mDevicePolicyManager:Landroid/app/admin/DevicePolicyManager;
+    .line 765
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    const/4 v3, 0x0
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Landroid/app/admin/DevicePolicyManager;->getMaxEmailAge(Landroid/content/ComponentName;)I
+    .line 766
+    .local v0, summary:Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    move-result v0
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    .line 664
-    .local v0, emailAge:I
-    if-lez v0, :cond_0
+    move-result v1
 
-    const/4 v2, 0x5
+    if-nez v1, :cond_1
 
-    if-ge v0, v2, :cond_0
+    .line 767
+    :cond_0
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettings$7;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
-    .line 665
-    new-instance v1, Landroid/os/Message;
+    invoke-static {v1}, Lcom/android/email/activity/setup/AccountSettings;->access$1300(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/EditTextPreference;
 
-    invoke-direct {v1}, Landroid/os/Message;-><init>()V
+    move-result-object v1
 
-    .line 666
-    .local v1, msg:Landroid/os/Message;
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$7;->this$0:Lcom/android/email/activity/setup/AccountSettings;
+    invoke-virtual {v1, v2}, Landroid/preference/EditTextPreference;->setSummary(I)V
 
-    invoke-static {v2, v0}, Lcom/android/email/activity/setup/AccountSettings;->access$1300(Lcom/android/email/activity/setup/AccountSettings;I)[Ljava/lang/String;
+    .line 768
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettings$7;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
-    move-result-object v2
+    invoke-virtual {v1, v2}, Lcom/android/email/activity/setup/AccountSettings;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 777
+    :goto_0
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettings$7;->this$0:Lcom/android/email/activity/setup/AccountSettings;
+
+    invoke-static {v1}, Lcom/android/email/activity/setup/AccountSettings;->access$1300(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/EditTextPreference;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/preference/EditTextPreference;->setText(Ljava/lang/String;)V
+
+    .line 778
+    const/4 v1, 0x0
+
+    return v1
+
+    .line 770
+    :cond_1
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v1
+
+    const/16 v2, 0xff
+
+    if-le v1, v2, :cond_2
+
+    .line 771
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettings$7;->this$0:Lcom/android/email/activity/setup/AccountSettings;
+
+    invoke-virtual {v1}, Lcom/android/email/activity/setup/AccountSettings;->getBaseContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f0801ef
 
     const/4 v3, 0x1
 
-    sub-int v3, v0, v3
+    invoke-static {v1, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
-    aget-object v2, v2, v3
+    move-result-object v1
 
-    iput-object v2, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 667
-    const/16 v2, 0x64
+    .line 773
+    const-string v0, "255"
 
-    iput v2, v1, Landroid/os/Message;->what:I
+    .line 775
+    :cond_2
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettings$7;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
-    .line 668
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$7;->this$0:Lcom/android/email/activity/setup/AccountSettings;
+    invoke-static {v1}, Lcom/android/email/activity/setup/AccountSettings;->access$1300(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/EditTextPreference;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettings;->access$200(Lcom/android/email/activity/setup/AccountSettings;)Landroid/os/Handler;
+    move-result-object v1
 
-    move-result-object v2
+    invoke-virtual {v1, v0}, Landroid/preference/EditTextPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v2, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    .line 670
-    .end local v1           #msg:Landroid/os/Message;
-    :cond_0
-    const/4 v2, 0x0
-
-    return v2
+    goto :goto_0
 .end method

@@ -3,12 +3,6 @@
 .source "Serializer.java"
 
 
-# static fields
-.field private static final NOT_PENDING:I = -0x1
-
-.field private static final TAG:Ljava/lang/String; = "Serializer"
-
-
 # instance fields
 .field buf:Ljava/io/ByteArrayOutputStream;
 
@@ -16,13 +10,9 @@
 
 .field private logging:Z
 
-.field name:Ljava/lang/String;
-
 .field nameStack:[Ljava/lang/String;
 
 .field out:Ljava/io/ByteArrayOutputStream;
-
-.field pending:Ljava/lang/String;
 
 .field pendingTag:I
 
@@ -330,6 +320,57 @@
     return-object p0
 .end method
 
+.method public dataOpaque(I[B)Lcom/android/exchange/adapter/Serializer;
+    .locals 3
+    .parameter "tag"
+    .parameter "value"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 166
+    if-nez p2, :cond_0
+
+    .line 167
+    const-string v0, "Serializer"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Writing null data for tag: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 169
+    :cond_0
+    invoke-virtual {p0, p1}, Lcom/android/exchange/adapter/Serializer;->start(I)Lcom/android/exchange/adapter/Serializer;
+
+    .line 170
+    invoke-virtual {p0, p2}, Lcom/android/exchange/adapter/Serializer;->textOpaque([B)Lcom/android/exchange/adapter/Serializer;
+
+    .line 171
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/Serializer;->end()Lcom/android/exchange/adapter/Serializer;
+
+    .line 172
+    return-object p0
+.end method
+
 .method public done()V
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
@@ -598,10 +639,10 @@
     .end annotation
 
     .prologue
-    .line 175
+    .line 186
     if-nez p1, :cond_0
 
-    .line 176
+    .line 187
     const-string v0, "Serializer"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -626,33 +667,109 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 178
+    .line 189
     :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/Serializer;->checkPendingTag(Z)V
 
-    .line 179
+    .line 190
     iget-object v0, p0, Lcom/android/exchange/adapter/Serializer;->buf:Ljava/io/ByteArrayOutputStream;
 
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 180
+    .line 191
     iget-object v0, p0, Lcom/android/exchange/adapter/Serializer;->buf:Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {p0, v0, p1}, Lcom/android/exchange/adapter/Serializer;->writeLiteralString(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 181
+    .line 192
     iget-boolean v0, p0, Lcom/android/exchange/adapter/Serializer;->logging:Z
 
     if-eqz v0, :cond_1
 
-    .line 182
+    .line 193
     invoke-virtual {p0, p1}, Lcom/android/exchange/adapter/Serializer;->log(Ljava/lang/String;)V
 
-    .line 184
+    .line 195
+    :cond_1
+    return-object p0
+.end method
+
+.method public textOpaque([B)Lcom/android/exchange/adapter/Serializer;
+    .locals 4
+    .parameter "text"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 199
+    if-nez p1, :cond_0
+
+    .line 200
+    const-string v1, "Serializer"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Writing null text for pending tag: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, p0, Lcom/android/exchange/adapter/Serializer;->pendingTag:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 202
+    :cond_0
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v1}, Lcom/android/exchange/adapter/Serializer;->checkPendingTag(Z)V
+
+    .line 203
+    iget-object v1, p0, Lcom/android/exchange/adapter/Serializer;->buf:Ljava/io/ByteArrayOutputStream;
+
+    const/16 v2, 0xc3
+
+    invoke-virtual {v1, v2}, Ljava/io/ByteArrayOutputStream;->write(I)V
+
+    .line 205
+    iget-object v1, p0, Lcom/android/exchange/adapter/Serializer;->buf:Ljava/io/ByteArrayOutputStream;
+
+    invoke-virtual {p0, v1, p1}, Lcom/android/exchange/adapter/Serializer;->writeLiteralOpaque(Ljava/io/OutputStream;[B)V
+
+    .line 210
+    iget-boolean v1, p0, Lcom/android/exchange/adapter/Serializer;->logging:Z
+
+    if-eqz v1, :cond_1
+
+    .line 211
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, p1}, Ljava/lang/String;-><init>([B)V
+
+    .line 212
+    .local v0, text1:Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/Serializer;->log(Ljava/lang/String;)V
+
+    .line 214
+    .end local v0           #text1:Ljava/lang/String;
     :cond_1
     return-object p0
 .end method
@@ -661,7 +778,7 @@
     .locals 1
 
     .prologue
-    .line 171
+    .line 182
     iget-object v0, p0, Lcom/android/exchange/adapter/Serializer;->out:Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
@@ -675,7 +792,7 @@
     .locals 1
 
     .prologue
-    .line 167
+    .line 178
     iget-object v0, p0, Lcom/android/exchange/adapter/Serializer;->out:Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toString()Ljava/lang/String;
@@ -696,16 +813,16 @@
     .end annotation
 
     .prologue
-    .line 188
+    .line 226
     const/4 v3, 0x5
 
     new-array v0, v3, [B
 
-    .line 189
+    .line 227
     .local v0, buf:[B
     const/4 v1, 0x0
 
-    .line 192
+    .line 230
     .local v1, idx:I
     :goto_0
     add-int/lit8 v2, v1, 0x1
@@ -718,15 +835,15 @@
 
     aput-byte v3, v0, v1
 
-    .line 193
+    .line 231
     shr-int/lit8 p2, p2, 0x7
 
-    .line 194
+    .line 232
     if-nez p2, :cond_2
 
     move v1, v2
 
-    .line 196
+    .line 234
     .end local v2           #idx:I
     .restart local v1       #idx:I
     :goto_1
@@ -734,7 +851,7 @@
 
     if-le v1, v3, :cond_0
 
-    .line 197
+    .line 235
     add-int/lit8 v1, v1, -0x1
 
     aget-byte v3, v0, v1
@@ -745,7 +862,7 @@
 
     goto :goto_1
 
-    .line 199
+    .line 237
     :cond_0
     const/4 v3, 0x0
 
@@ -753,19 +870,19 @@
 
     invoke-virtual {p1, v3}, Ljava/io/OutputStream;->write(I)V
 
-    .line 200
+    .line 238
     iget-boolean v3, p0, Lcom/android/exchange/adapter/Serializer;->logging:Z
 
     if-eqz v3, :cond_1
 
-    .line 201
+    .line 239
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {p0, v3}, Lcom/android/exchange/adapter/Serializer;->log(Ljava/lang/String;)V
 
-    .line 203
+    .line 241
     :cond_1
     return-void
 
@@ -779,6 +896,33 @@
     goto :goto_0
 .end method
 
+.method writeLiteralOpaque(Ljava/io/OutputStream;[B)V
+    .locals 2
+    .parameter "out"
+    .parameter "s"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 218
+    move-object v0, p2
+
+    .line 219
+    .local v0, data:[B
+    array-length v1, v0
+
+    invoke-virtual {p1, v1}, Ljava/io/OutputStream;->write(I)V
+
+    .line 220
+    invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write([B)V
+
+    .line 221
+    return-void
+.end method
+
 .method writeLiteralString(Ljava/io/OutputStream;Ljava/lang/String;)V
     .locals 2
     .parameter "out"
@@ -790,23 +934,23 @@
     .end annotation
 
     .prologue
-    .line 206
+    .line 244
     const-string v1, "UTF-8"
 
     invoke-virtual {p2, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 207
+    .line 245
     .local v0, data:[B
     invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write([B)V
 
-    .line 208
+    .line 246
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Ljava/io/OutputStream;->write(I)V
 
-    .line 209
+    .line 247
     return-void
 .end method
 
@@ -822,12 +966,12 @@
     .end annotation
 
     .prologue
-    .line 212
+    .line 250
     invoke-virtual {p1, p2}, Landroid/content/ContentValues;->getAsString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 213
+    .line 251
     .local v0, value:Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -837,10 +981,10 @@
 
     if-lez v1, :cond_0
 
-    .line 214
+    .line 252
     invoke-virtual {p0, p3, v0}, Lcom/android/exchange/adapter/Serializer;->data(ILjava/lang/String;)Lcom/android/exchange/adapter/Serializer;
 
-    .line 216
+    .line 254
     :cond_0
     return-void
 .end method

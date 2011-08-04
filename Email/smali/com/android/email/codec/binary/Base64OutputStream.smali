@@ -56,38 +56,6 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/io/OutputStream;ZI[B)V
-    .locals 1
-    .parameter "out"
-    .parameter "doEncode"
-    .parameter "lineLength"
-    .parameter "lineSeparator"
-
-    .prologue
-    .line 89
-    invoke-direct {p0, p1}, Ljava/io/FilterOutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    .line 46
-    const/4 v0, 0x1
-
-    new-array v0, v0, [B
-
-    iput-object v0, p0, Lcom/android/email/codec/binary/Base64OutputStream;->singleByte:[B
-
-    .line 90
-    iput-boolean p2, p0, Lcom/android/email/codec/binary/Base64OutputStream;->doEncode:Z
-
-    .line 91
-    new-instance v0, Lcom/android/email/codec/binary/Base64;
-
-    invoke-direct {v0, p3, p4}, Lcom/android/email/codec/binary/Base64;-><init>(I[B)V
-
-    iput-object v0, p0, Lcom/android/email/codec/binary/Base64OutputStream;->base64:Lcom/android/email/codec/binary/Base64;
-
-    .line 92
-    return-void
-.end method
-
 .method private flush(Z)V
     .locals 5
     .parameter "propogate"

@@ -4,11 +4,7 @@
 
 
 # static fields
-.field private static final EMPTY_ADDRESS_ARRAY:[Lcom/android/email/mail/Address; = null
-
-.field private static final LIST_DELIMITER_EMAIL:C = '\u0001'
-
-.field private static final LIST_DELIMITER_PERSONAL:C = '\u0002'
+.field private static final EMPTY_ADDRESS_ARRAY:[Lcom/android/email/mail/Address;
 
 .field private static final REMOVE_OPTIONAL_BRACKET:Ljava/util/regex/Pattern;
 
@@ -20,6 +16,8 @@
 # instance fields
 .field mAddress:Ljava/lang/String;
 
+.field private mContext:Landroid/content/Context;
+
 .field mPersonal:Ljava/lang/String;
 
 
@@ -28,7 +26,7 @@
     .locals 1
 
     .prologue
-    .line 57
+    .line 59
     const-string v0, "^<?([^>]+)>?$"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -37,7 +35,7 @@
 
     sput-object v0, Lcom/android/email/mail/Address;->REMOVE_OPTIONAL_BRACKET:Ljava/util/regex/Pattern;
 
-    .line 59
+    .line 61
     const-string v0, "^\"?([^\"]*)\"?$"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -46,7 +44,7 @@
 
     sput-object v0, Lcom/android/email/mail/Address;->REMOVE_OPTIONAL_DQUOTE:Ljava/util/regex/Pattern;
 
-    .line 61
+    .line 63
     const-string v0, "\\\\([\\\\\"])"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -55,7 +53,7 @@
 
     sput-object v0, Lcom/android/email/mail/Address;->UNQUOTE:Ljava/util/regex/Pattern;
 
-    .line 63
+    .line 65
     const/4 v0, 0x0
 
     new-array v0, v0, [Lcom/android/email/mail/Address;
@@ -65,18 +63,38 @@
     return-void
 .end method
 
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
+    .parameter "_context"
+    .parameter "address"
+    .parameter "personal"
+
+    .prologue
+    .line 77
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 78
+    iput-object p1, p0, Lcom/android/email/mail/Address;->mContext:Landroid/content/Context;
+
+    .line 79
+    invoke-direct {p0, p2, p3}, Lcom/android/email/mail/Address;->setAddressAndPersonal(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 80
+    return-void
+.end method
+
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
     .parameter "address"
 
     .prologue
-    .line 74
+    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
+    .line 88
     invoke-virtual {p0, p1}, Lcom/android/email/mail/Address;->setAddress(Ljava/lang/String;)V
 
-    .line 76
+    .line 89
     return-void
 .end method
 
@@ -86,16 +104,13 @@
     .parameter "personal"
 
     .prologue
-    .line 69
+    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 70
-    invoke-virtual {p0, p1}, Lcom/android/email/mail/Address;->setAddress(Ljava/lang/String;)V
+    .line 74
+    invoke-direct {p0, p1, p2}, Lcom/android/email/mail/Address;->setAddressAndPersonal(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 71
-    invoke-virtual {p0, p2}, Lcom/android/email/mail/Address;->setPersonal(Ljava/lang/String;)V
-
-    .line 72
+    .line 75
     return-void
 .end method
 
@@ -104,7 +119,7 @@
     .parameter "addressList"
 
     .prologue
-    .line 120
+    .line 133
     if-eqz p0, :cond_1
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -113,12 +128,12 @@
 
     if-lez v5, :cond_1
 
-    .line 121
+    .line 134
     invoke-static {p0}, Landroid/text/util/Rfc822Tokenizer;->tokenize(Ljava/lang/CharSequence;)[Landroid/text/util/Rfc822Token;
 
     move-result-object v4
 
-    .line 122
+    .line 135
     .local v4, tokens:[Landroid/text/util/Rfc822Token;
     const/4 v1, 0x0
 
@@ -129,16 +144,16 @@
     :goto_0
     if-ge v1, v2, :cond_1
 
-    .line 123
+    .line 136
     aget-object v3, v4, v1
 
-    .line 124
+    .line 137
     .local v3, token:Landroid/text/util/Rfc822Token;
     invoke-virtual {v3}, Landroid/text/util/Rfc822Token;->getAddress()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 125
+    .line 138
     .local v0, address:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -152,10 +167,10 @@
 
     if-nez v5, :cond_0
 
-    .line 126
+    .line 139
     const/4 v5, 0x0
 
-    .line 130
+    .line 143
     .end local v0           #address:Ljava/lang/String;
     .end local v1           #i:I
     .end local v2           #length:I
@@ -164,7 +179,7 @@
     :goto_1
     return v5
 
-    .line 122
+    .line 135
     .restart local v0       #address:Ljava/lang/String;
     .restart local v1       #i:I
     .restart local v2       #length:I
@@ -175,7 +190,7 @@
 
     goto :goto_0
 
-    .line 130
+    .line 143
     .end local v0           #address:Ljava/lang/String;
     .end local v1           #i:I
     .end local v2           #length:I
@@ -198,24 +213,24 @@
 
     const/4 v6, 0x1
 
-    .line 210
+    .line 223
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v4
 
-    .line 211
+    .line 224
     .local v4, len:I
     invoke-virtual {p0, v5}, Ljava/lang/String;->indexOf(I)I
 
     move-result v0
 
-    .line 212
+    .line 225
     .local v0, firstAt:I
     invoke-virtual {p0, v5}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v2
 
-    .line 213
+    .line 226
     .local v2, lastAt:I
     add-int/lit8 v5, v2, 0x1
 
@@ -223,13 +238,13 @@
 
     move-result v1
 
-    .line 214
+    .line 227
     .local v1, firstDot:I
     invoke-virtual {p0, v7}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v3
 
-    .line 215
+    .line 228
     .local v3, lastDot:I
     if-lez v0, :cond_0
 
@@ -265,33 +280,33 @@
 
     const-string v5, "UTF-8"
 
-    .line 542
+    .line 559
     if-nez p0, :cond_0
 
     move-object v5, v7
 
-    .line 564
+    .line 581
     :goto_0
     return-object v5
 
-    .line 544
+    .line 561
     :cond_0
     array-length v5, p0
 
     if-nez v5, :cond_1
 
-    .line 545
+    .line 562
     const-string v5, ""
 
     goto :goto_0
 
-    .line 547
+    .line 564
     :cond_1
     new-instance v3, Ljava/lang/StringBuffer;
 
     invoke-direct {v3}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 548
+    .line 565
     .local v3, sb:Ljava/lang/StringBuffer;
     const/4 v2, 0x0
 
@@ -302,10 +317,10 @@
     :goto_1
     if-ge v2, v1, :cond_4
 
-    .line 549
+    .line 566
     aget-object v0, p0, v2
 
-    .line 551
+    .line 568
     .local v0, address:Lcom/android/email/mail/Address;
     :try_start_0
     invoke-virtual {v0}, Lcom/android/email/mail/Address;->getAddress()Ljava/lang/String;
@@ -320,19 +335,19 @@
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 552
+    .line 569
     invoke-virtual {v0}, Lcom/android/email/mail/Address;->getPersonal()Ljava/lang/String;
 
     move-result-object v5
 
     if-eqz v5, :cond_2
 
-    .line 553
+    .line 570
     const/16 v5, 0x3b
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 554
+    .line 571
     invoke-virtual {v0}, Lcom/android/email/mail/Address;->getPersonal()Ljava/lang/String;
 
     move-result-object v5
@@ -345,7 +360,7 @@
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 556
+    .line 573
     :cond_2
     const/4 v5, 0x1
 
@@ -353,20 +368,20 @@
 
     if-ge v2, v5, :cond_3
 
-    .line 557
+    .line 574
     const/16 v5, 0x2c
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
     :try_end_0
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 548
+    .line 565
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 560
+    .line 577
     :catch_0
     move-exception v5
 
@@ -375,10 +390,10 @@
     .local v4, uee:Ljava/io/UnsupportedEncodingException;
     move-object v5, v7
 
-    .line 561
+    .line 578
     goto :goto_0
 
-    .line 564
+    .line 581
     .end local v0           #address:Lcom/android/email/mail/Address;
     .end local v4           #uee:Ljava/io/UnsupportedEncodingException;
     :cond_4
@@ -398,7 +413,7 @@
 
     const/4 v8, -0x1
 
-    .line 504
+    .line 521
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -407,59 +422,59 @@
 
     if-nez v7, :cond_1
 
-    .line 505
+    .line 522
     :cond_0
     new-array v7, v9, [Lcom/android/email/mail/Address;
 
-    .line 533
+    .line 550
     .end local p0
     :goto_0
     return-object v7
 
-    .line 507
+    .line 524
     .restart local p0
     :cond_1
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 508
+    .line 525
     .local v2, addresses:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/Address;>;"
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    .line 509
+    .line 526
     .local v3, length:I
     const/4 v5, 0x0
 
-    .line 510
+    .line 527
     .local v5, pairStartIndex:I
     const/4 v4, 0x0
 
-    .line 511
+    .line 528
     .local v4, pairEndIndex:I
     const/4 v1, 0x0
 
-    .line 512
+    .line 529
     .local v1, addressEndIndex:I
     :goto_1
     if-ge v5, v3, :cond_5
 
-    .line 513
+    .line 530
     const/16 v7, 0x2c
 
     invoke-virtual {p0, v7, v5}, Ljava/lang/String;->indexOf(II)I
 
     move-result v4
 
-    .line 514
+    .line 531
     if-ne v4, v8, :cond_2
 
-    .line 515
+    .line 532
     move v4, v3
 
-    .line 517
+    .line 534
     :cond_2
     const/16 v7, 0x3b
 
@@ -467,20 +482,20 @@
 
     move-result v1
 
-    .line 518
+    .line 535
     const/4 v0, 0x0
 
-    .line 519
+    .line 536
     .local v0, address:Ljava/lang/String;
     const/4 v6, 0x0
 
-    .line 520
+    .line 537
     .local v6, personal:Ljava/lang/String;
     if-eq v1, v8, :cond_3
 
     if-le v1, v4, :cond_4
 
-    .line 521
+    .line 538
     :cond_3
     invoke-virtual {p0, v5, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
@@ -490,7 +505,7 @@
 
     move-result-object v0
 
-    .line 530
+    .line 547
     :goto_2
     new-instance v7, Lcom/android/email/mail/Address;
 
@@ -498,13 +513,13 @@
 
     invoke-virtual {v2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 531
+    .line 548
     add-int/lit8 v5, v4, 0x1
 
-    .line 532
+    .line 549
     goto :goto_1
 
-    .line 525
+    .line 542
     :cond_4
     invoke-virtual {p0, v5, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
@@ -514,7 +529,7 @@
 
     move-result-object v0
 
-    .line 527
+    .line 544
     add-int/lit8 v7, v1, 0x1
 
     invoke-virtual {p0, v7, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
@@ -527,7 +542,7 @@
 
     goto :goto_2
 
-    .line 533
+    .line 550
     .end local v0           #address:Ljava/lang/String;
     .end local v6           #personal:Ljava/lang/String;
     :cond_5
@@ -554,30 +569,30 @@
 
     const/4 v6, 0x0
 
-    .line 456
+    .line 473
     if-nez p0, :cond_0
 
-    .line 457
+    .line 474
     const/4 v5, 0x0
 
-    .line 482
+    .line 499
     :goto_0
     return-object v5
 
-    .line 459
+    .line 476
     :cond_0
     array-length v3, p0
 
-    .line 460
+    .line 477
     .local v3, nAddr:I
     if-nez v3, :cond_1
 
-    .line 461
+    .line 478
     const-string v5, ""
 
     goto :goto_0
 
-    .line 465
+    .line 482
     :cond_1
     if-ne v3, v7, :cond_2
 
@@ -589,7 +604,7 @@
 
     if-nez v5, :cond_2
 
-    .line 466
+    .line 483
     aget-object v5, p0, v6
 
     invoke-virtual {v5}, Lcom/android/email/mail/Address;->getAddress()Ljava/lang/String;
@@ -598,13 +613,13 @@
 
     goto :goto_0
 
-    .line 469
+    .line 486
     :cond_2
     new-instance v4, Ljava/lang/StringBuffer;
 
     invoke-direct {v4}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 470
+    .line 487
     .local v4, sb:Ljava/lang/StringBuffer;
     const/4 v2, 0x0
 
@@ -612,17 +627,17 @@
     :goto_1
     if-ge v2, v3, :cond_5
 
-    .line 471
+    .line 488
     if-eqz v2, :cond_3
 
-    .line 472
+    .line 489
     invoke-virtual {v4, v7}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 474
+    .line 491
     :cond_3
     aget-object v0, p0, v2
 
-    .line 475
+    .line 492
     .local v0, address:Lcom/android/email/mail/Address;
     invoke-virtual {v0}, Lcom/android/email/mail/Address;->getAddress()Ljava/lang/String;
 
@@ -630,30 +645,30 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 476
+    .line 493
     invoke-virtual {v0}, Lcom/android/email/mail/Address;->getPersonal()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 477
+    .line 494
     .local v1, displayName:Ljava/lang/String;
     if-eqz v1, :cond_4
 
-    .line 478
+    .line 495
     const/4 v5, 0x2
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 479
+    .line 496
     invoke-virtual {v4, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 470
+    .line 487
     :cond_4
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 482
+    .line 499
     .end local v0           #address:Lcom/android/email/mail/Address;
     .end local v1           #displayName:Ljava/lang/String;
     :cond_5
@@ -669,7 +684,7 @@
     .parameter "packedList"
 
     .prologue
-    .line 397
+    .line 414
     invoke-static {p0}, Lcom/android/email/mail/Address;->unpack(Ljava/lang/String;)[Lcom/android/email/mail/Address;
 
     move-result-object v0
@@ -686,7 +701,7 @@
     .parameter "addressList"
 
     .prologue
-    .line 141
+    .line 154
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -695,21 +710,21 @@
 
     if-nez v7, :cond_1
 
-    .line 142
+    .line 155
     :cond_0
     sget-object v7, Lcom/android/email/mail/Address;->EMPTY_ADDRESS_ARRAY:[Lcom/android/email/mail/Address;
 
-    .line 172
+    .line 185
     .end local p0
     :goto_0
     return-object v7
 
-    .line 145
+    .line 158
     .restart local p0
     :cond_1
     const/4 v6, 0x0
 
-    .line 147
+    .line 160
     .local v6, tokens:[Landroid/text/util/Rfc822Token;
     :try_start_0
     invoke-static {p0}, Landroid/text/util/Rfc822Tokenizer;->tokenize(Ljava/lang/CharSequence;)[Landroid/text/util/Rfc822Token;
@@ -718,13 +733,13 @@
 
     move-result-object v6
 
-    .line 151
+    .line 164
     :goto_1
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 152
+    .line 165
     .local v1, addresses:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/Address;>;"
     const/4 v2, 0x0
 
@@ -735,16 +750,16 @@
     :goto_2
     if-ge v2, v3, :cond_4
 
-    .line 153
+    .line 166
     aget-object v5, v6, v2
 
-    .line 154
+    .line 167
     .local v5, token:Landroid/text/util/Rfc822Token;
     invoke-virtual {v5}, Landroid/text/util/Rfc822Token;->getAddress()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 155
+    .line 168
     .local v0, address:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -752,19 +767,19 @@
 
     if-nez v7, :cond_3
 
-    .line 156
+    .line 169
     invoke-static {v0}, Lcom/android/email/mail/Address;->isValidAddress(Ljava/lang/String;)Z
 
     move-result v7
 
     if-eqz v7, :cond_3
 
-    .line 157
+    .line 170
     invoke-virtual {v5}, Landroid/text/util/Rfc822Token;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 158
+    .line 171
     .local v4, name:Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -772,30 +787,30 @@
 
     if-eqz v7, :cond_2
 
-    .line 159
+    .line 172
     const/4 v4, 0x0
 
-    .line 165
+    .line 178
     :cond_2
     invoke-static {v4}, Lorg/apache/james/mime4j/decoder/DecoderUtil;->decodeGeneric(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 168
+    .line 181
     new-instance v7, Lcom/android/email/mail/Address;
 
     invoke-direct {v7, v0, v4}, Lcom/android/email/mail/Address;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v1, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 152
+    .line 165
     .end local v4           #name:Ljava/lang/String;
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
-    .line 172
+    .line 185
     .end local v0           #address:Ljava/lang/String;
     .end local v5           #token:Landroid/text/util/Rfc822Token;
     :cond_4
@@ -814,7 +829,7 @@
 
     goto :goto_0
 
-    .line 148
+    .line 161
     .end local v1           #addresses:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/Address;>;"
     .end local v2           #i:I
     .end local v3           #length:I
@@ -830,7 +845,7 @@
     .parameter "addressList"
 
     .prologue
-    .line 179
+    .line 192
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -839,29 +854,29 @@
 
     if-nez v7, :cond_1
 
-    .line 180
+    .line 193
     :cond_0
     sget-object v7, Lcom/android/email/mail/Address;->EMPTY_ADDRESS_ARRAY:[Lcom/android/email/mail/Address;
 
-    .line 198
+    .line 211
     .end local p0
     :goto_0
     return-object v7
 
-    .line 182
+    .line 195
     .restart local p0
     :cond_1
     invoke-static {p0}, Landroid/text/util/Rfc822Tokenizer;->tokenize(Ljava/lang/CharSequence;)[Landroid/text/util/Rfc822Token;
 
     move-result-object v6
 
-    .line 183
+    .line 196
     .local v6, tokens:[Landroid/text/util/Rfc822Token;
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 184
+    .line 197
     .local v1, addresses:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/Address;>;"
     const/4 v2, 0x0
 
@@ -872,16 +887,16 @@
     :goto_1
     if-ge v2, v3, :cond_4
 
-    .line 185
+    .line 198
     aget-object v5, v6, v2
 
-    .line 186
+    .line 199
     .local v5, token:Landroid/text/util/Rfc822Token;
     invoke-virtual {v5}, Landroid/text/util/Rfc822Token;->getAddress()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 187
+    .line 200
     .local v0, address:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -889,19 +904,19 @@
 
     if-nez v7, :cond_3
 
-    .line 188
+    .line 201
     invoke-static {v0}, Lcom/android/email/mail/Address;->isValidAddress(Ljava/lang/String;)Z
 
     move-result v7
 
     if-eqz v7, :cond_3
 
-    .line 189
+    .line 202
     invoke-virtual {v5}, Landroid/text/util/Rfc822Token;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 190
+    .line 203
     .local v4, name:Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -909,10 +924,10 @@
 
     if-eqz v7, :cond_2
 
-    .line 191
+    .line 204
     const/4 v4, 0x0
 
-    .line 194
+    .line 207
     :cond_2
     new-instance v7, Lcom/android/email/mail/Address;
 
@@ -920,14 +935,14 @@
 
     invoke-virtual {v1, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 184
+    .line 197
     .end local v4           #name:Ljava/lang/String;
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 198
+    .line 211
     .end local v0           #address:Ljava/lang/String;
     .end local v5           #token:Landroid/text/util/Rfc822Token;
     :cond_4
@@ -952,7 +967,7 @@
     .parameter "textList"
 
     .prologue
-    .line 378
+    .line 395
     invoke-static {p0}, Lcom/android/email/mail/Address;->parse(Ljava/lang/String;)[Lcom/android/email/mail/Address;
 
     move-result-object v0
@@ -964,6 +979,22 @@
     return-object v0
 .end method
 
+.method private setAddressAndPersonal(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
+    .parameter "address"
+    .parameter "personal"
+
+    .prologue
+    .line 83
+    invoke-virtual {p0, p1}, Lcom/android/email/mail/Address;->setAddress(Ljava/lang/String;)V
+
+    .line 84
+    invoke-virtual {p0, p2}, Lcom/android/email/mail/Address;->setPersonal(Ljava/lang/String;)V
+
+    .line 85
+    return-void
+.end method
+
 .method public static toFriendly([Lcom/android/email/mail/Address;)Ljava/lang/String;
     .locals 5
     .parameter "addresses"
@@ -971,22 +1002,22 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 337
+    .line 354
     if-eqz p0, :cond_0
 
     array-length v2, p0
 
     if-nez v2, :cond_1
 
-    .line 338
+    .line 355
     :cond_0
     const/4 v2, 0x0
 
-    .line 348
+    .line 365
     :goto_0
     return-object v2
 
-    .line 340
+    .line 357
     :cond_1
     array-length v2, p0
 
@@ -994,7 +1025,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 341
+    .line 358
     aget-object v2, p0, v4
 
     invoke-virtual {v2}, Lcom/android/email/mail/Address;->toFriendly()Ljava/lang/String;
@@ -1003,7 +1034,7 @@
 
     goto :goto_0
 
-    .line 343
+    .line 360
     :cond_2
     new-instance v1, Ljava/lang/StringBuffer;
 
@@ -1015,7 +1046,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
-    .line 344
+    .line 361
     .local v1, sb:Ljava/lang/StringBuffer;
     const/4 v0, 0x1
 
@@ -1025,12 +1056,12 @@
 
     if-ge v0, v2, :cond_3
 
-    .line 345
+    .line 362
     const/16 v2, 0x2c
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 346
+    .line 363
     aget-object v2, p0, v0
 
     invoke-virtual {v2}, Lcom/android/email/mail/Address;->toFriendly()Ljava/lang/String;
@@ -1039,12 +1070,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 344
+    .line 361
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 348
+    .line 365
     :cond_3
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
@@ -1058,99 +1089,10 @@
     .parameter "addresses"
 
     .prologue
-    .line 365
+    .line 382
     array-length v0, p0
 
     return v0
-.end method
-
-.method public static toFriendlyAddress([Lcom/android/email/mail/Address;)Ljava/lang/String;
-    .locals 5
-    .parameter "addresses"
-
-    .prologue
-    const/4 v4, 0x0
-
-    .line 351
-    if-eqz p0, :cond_0
-
-    array-length v2, p0
-
-    if-nez v2, :cond_1
-
-    .line 352
-    :cond_0
-    const/4 v2, 0x0
-
-    .line 362
-    :goto_0
-    return-object v2
-
-    .line 354
-    :cond_1
-    array-length v2, p0
-
-    const/4 v3, 0x1
-
-    if-ne v2, v3, :cond_2
-
-    .line 355
-    aget-object v2, p0, v4
-
-    invoke-virtual {v2}, Lcom/android/email/mail/Address;->toFriendlyAddress()Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    .line 357
-    :cond_2
-    new-instance v1, Ljava/lang/StringBuffer;
-
-    aget-object v2, p0, v4
-
-    invoke-virtual {v2}, Lcom/android/email/mail/Address;->toFriendlyAddress()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
-
-    .line 358
-    .local v1, sb:Ljava/lang/StringBuffer;
-    const/4 v0, 0x1
-
-    .local v0, i:I
-    :goto_1
-    array-length v2, p0
-
-    if-ge v0, v2, :cond_3
-
-    .line 359
-    const/16 v2, 0x2c
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    .line 360
-    aget-object v2, p0, v0
-
-    invoke-virtual {v2}, Lcom/android/email/mail/Address;->toFriendlyAddress()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    .line 358
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    .line 362
-    :cond_3
-    invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_0
 .end method
 
 .method public static toHeader([Lcom/android/email/mail/Address;)Ljava/lang/String;
@@ -1160,22 +1102,22 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 296
+    .line 313
     if-eqz p0, :cond_0
 
     array-length v2, p0
 
     if-nez v2, :cond_1
 
-    .line 297
+    .line 314
     :cond_0
     const/4 v2, 0x0
 
-    .line 308
+    .line 325
     :goto_0
     return-object v2
 
-    .line 299
+    .line 316
     :cond_1
     array-length v2, p0
 
@@ -1183,7 +1125,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 300
+    .line 317
     aget-object v2, p0, v4
 
     invoke-virtual {v2}, Lcom/android/email/mail/Address;->toHeader()Ljava/lang/String;
@@ -1192,7 +1134,7 @@
 
     goto :goto_0
 
-    .line 302
+    .line 319
     :cond_2
     new-instance v1, Ljava/lang/StringBuffer;
 
@@ -1204,7 +1146,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
-    .line 303
+    .line 320
     .local v1, sb:Ljava/lang/StringBuffer;
     const/4 v0, 0x1
 
@@ -1214,12 +1156,12 @@
 
     if-ge v0, v2, :cond_3
 
-    .line 305
+    .line 322
     const-string v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 306
+    .line 323
     aget-object v2, p0, v0
 
     invoke-virtual {v2}, Lcom/android/email/mail/Address;->toHeader()Ljava/lang/String;
@@ -1228,12 +1170,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 303
+    .line 320
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 308
+    .line 325
     :cond_3
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
@@ -1249,22 +1191,22 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 260
+    .line 277
     if-eqz p0, :cond_0
 
     array-length v2, p0
 
     if-nez v2, :cond_1
 
-    .line 261
+    .line 278
     :cond_0
     const/4 v2, 0x0
 
-    .line 271
+    .line 288
     :goto_0
     return-object v2
 
-    .line 263
+    .line 280
     :cond_1
     array-length v2, p0
 
@@ -1272,7 +1214,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 264
+    .line 281
     aget-object v2, p0, v4
 
     invoke-virtual {v2}, Lcom/android/email/mail/Address;->toString()Ljava/lang/String;
@@ -1281,7 +1223,7 @@
 
     goto :goto_0
 
-    .line 266
+    .line 283
     :cond_2
     new-instance v1, Ljava/lang/StringBuffer;
 
@@ -1293,7 +1235,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
-    .line 267
+    .line 284
     .local v1, sb:Ljava/lang/StringBuffer;
     const/4 v0, 0x1
 
@@ -1303,12 +1245,12 @@
 
     if-ge v0, v2, :cond_3
 
-    .line 268
+    .line 285
     const/16 v2, 0x2c
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 269
+    .line 286
     aget-object v2, p0, v0
 
     invoke-virtual {v2}, Lcom/android/email/mail/Address;->toString()Ljava/lang/String;
@@ -1317,12 +1259,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 267
+    .line 284
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 271
+    .line 288
     :cond_3
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
@@ -1340,7 +1282,7 @@
 
     const/4 v8, -0x1
 
-    .line 406
+    .line 423
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -1349,67 +1291,67 @@
 
     if-nez v6, :cond_1
 
-    .line 407
+    .line 424
     :cond_0
     sget-object v6, Lcom/android/email/mail/Address;->EMPTY_ADDRESS_ARRAY:[Lcom/android/email/mail/Address;
 
-    .line 440
+    .line 457
     .end local p0
     :goto_0
     return-object v6
 
-    .line 409
+    .line 426
     .restart local p0
     :cond_1
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 410
+    .line 427
     .local v2, addresses:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/email/mail/Address;>;"
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    .line 411
+    .line 428
     .local v3, length:I
     const/4 v5, 0x0
 
-    .line 412
+    .line 429
     .local v5, pairStartIndex:I
     const/4 v4, 0x0
 
-    .line 419
+    .line 436
     .local v4, pairEndIndex:I
     invoke-virtual {p0, v9}, Ljava/lang/String;->indexOf(I)I
 
     move-result v1
 
-    .line 421
+    .line 438
     .local v1, addressEndIndex:I
     :goto_1
     if-ge v5, v3, :cond_5
 
-    .line 422
+    .line 439
     const/4 v6, 0x1
 
     invoke-virtual {p0, v6, v5}, Ljava/lang/String;->indexOf(II)I
 
     move-result v4
 
-    .line 423
+    .line 440
     if-ne v4, v8, :cond_2
 
-    .line 424
+    .line 441
     move v4, v3
 
-    .line 427
+    .line 444
     :cond_2
     if-eq v1, v8, :cond_3
 
     if-gt v4, v1, :cond_4
 
-    .line 430
+    .line 447
     :cond_3
     new-instance v0, Lcom/android/email/mail/Address;
 
@@ -1421,18 +1363,18 @@
 
     invoke-direct {v0, v6, v7}, Lcom/android/email/mail/Address;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 437
+    .line 454
     .local v0, address:Lcom/android/email/mail/Address;
     :goto_2
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 438
+    .line 455
     add-int/lit8 v5, v4, 0x1
 
-    .line 439
+    .line 456
     goto :goto_1
 
-    .line 432
+    .line 449
     .end local v0           #address:Lcom/android/email/mail/Address;
     :cond_4
     new-instance v0, Lcom/android/email/mail/Address;
@@ -1449,7 +1391,7 @@
 
     invoke-direct {v0, v6, v7}, Lcom/android/email/mail/Address;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 435
+    .line 452
     .restart local v0       #address:Lcom/android/email/mail/Address;
     add-int/lit8 v6, v4, 0x1
 
@@ -1459,7 +1401,7 @@
 
     goto :goto_2
 
-    .line 440
+    .line 457
     .end local v0           #address:Lcom/android/email/mail/Address;
     :cond_5
     sget-object v6, Lcom/android/email/mail/Address;->EMPTY_ADDRESS_ARRAY:[Lcom/android/email/mail/Address;
@@ -1481,12 +1423,12 @@
     .parameter "packedList"
 
     .prologue
-    .line 387
+    .line 404
     invoke-static {p0}, Lcom/android/email/mail/Address;->unpack(Ljava/lang/String;)[Lcom/android/email/mail/Address;
 
     move-result-object v0
 
-    .line 388
+    .line 405
     .local v0, array:[Lcom/android/email/mail/Address;
     array-length v1, v0
 
@@ -1510,7 +1452,7 @@
     .parameter "packedList"
 
     .prologue
-    .line 371
+    .line 388
     invoke-static {p0}, Lcom/android/email/mail/Address;->unpack(Ljava/lang/String;)[Lcom/android/email/mail/Address;
 
     move-result-object v0
@@ -1529,12 +1471,12 @@
     .parameter "o"
 
     .prologue
-    .line 221
+    .line 234
     instance-of v0, p1, Lcom/android/email/mail/Address;
 
     if-eqz v0, :cond_0
 
-    .line 230
+    .line 243
     invoke-virtual {p0}, Lcom/android/email/mail/Address;->getAddress()Ljava/lang/String;
 
     move-result-object v0
@@ -1550,7 +1492,7 @@
 
     move-result v0
 
-    .line 232
+    .line 245
     :goto_0
     return v0
 
@@ -1567,7 +1509,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 92
     iget-object v0, p0, Lcom/android/email/mail/Address;->mAddress:Ljava/lang/String;
 
     return-object v0
@@ -1577,7 +1519,7 @@
     .locals 1
 
     .prologue
-    .line 92
+    .line 105
     iget-object v0, p0, Lcom/android/email/mail/Address;->mPersonal:Ljava/lang/String;
 
     return-object v0
@@ -1587,24 +1529,24 @@
     .locals 4
 
     .prologue
-    .line 489
+    .line 506
     invoke-virtual {p0}, Lcom/android/email/mail/Address;->getAddress()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 490
+    .line 507
     .local v0, address:Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/email/mail/Address;->getPersonal()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 491
+    .line 508
     .local v1, personal:Ljava/lang/String;
     if-nez v1, :cond_0
 
     move-object v2, v0
 
-    .line 494
+    .line 511
     :goto_0
     return-object v2
 
@@ -1639,7 +1581,7 @@
     .parameter "address"
 
     .prologue
-    .line 83
+    .line 96
     sget-object v0, Lcom/android/email/mail/Address;->REMOVE_OPTIONAL_BRACKET:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -1654,7 +1596,7 @@
 
     iput-object v0, p0, Lcom/android/email/mail/Address;->mAddress:Ljava/lang/String;
 
-    .line 84
+    .line 97
     return-void
 .end method
 
@@ -1665,10 +1607,10 @@
     .prologue
     const-string v2, "$1"
 
-    .line 102
+    .line 115
     if-eqz p1, :cond_0
 
-    .line 103
+    .line 116
     sget-object v0, Lcom/android/email/mail/Address;->REMOVE_OPTIONAL_DQUOTE:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -1681,7 +1623,7 @@
 
     move-result-object p1
 
-    .line 104
+    .line 117
     sget-object v0, Lcom/android/email/mail/Address;->UNQUOTE:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -1694,26 +1636,26 @@
 
     move-result-object p1
 
-    .line 105
+    .line 118
     invoke-static {p1}, Lorg/apache/james/mime4j/decoder/DecoderUtil;->decodeEncodedWords(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 106
+    .line 119
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 107
+    .line 120
     const/4 p1, 0x0
 
-    .line 110
+    .line 123
     :cond_0
     iput-object p1, p0, Lcom/android/email/mail/Address;->mPersonal:Ljava/lang/String;
 
-    .line 111
+    .line 124
     return-void
 .end method
 
@@ -1721,7 +1663,7 @@
     .locals 1
 
     .prologue
-    .line 318
+    .line 335
     iget-object v0, p0, Lcom/android/email/mail/Address;->mPersonal:Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -1734,10 +1676,10 @@
 
     if-lez v0, :cond_0
 
-    .line 319
+    .line 336
     iget-object v0, p0, Lcom/android/email/mail/Address;->mPersonal:Ljava/lang/String;
 
-    .line 321
+    .line 338
     :goto_0
     return-object v0
 
@@ -1747,26 +1689,16 @@
     goto :goto_0
 .end method
 
-.method public toFriendlyAddress()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 326
-    iget-object v0, p0, Lcom/android/email/mail/Address;->mAddress:Ljava/lang/String;
-
-    return-object v0
-.end method
-
 .method public toHeader()Ljava/lang/String;
     .locals 2
 
     .prologue
-    .line 281
+    .line 298
     iget-object v0, p0, Lcom/android/email/mail/Address;->mPersonal:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 282
+    .line 299
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1803,7 +1735,7 @@
 
     move-result-object v0
 
-    .line 284
+    .line 301
     :goto_0
     return-object v0
 
@@ -1814,19 +1746,52 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 4
+    .locals 5
 
     .prologue
-    const-string v3, ">"
+    const-string v4, ">"
 
-    const-string v2, " <"
+    const-string v3, " <"
 
-    .line 242
+    .line 255
     iget-object v0, p0, Lcom/android/email/mail/Address;->mPersonal:Ljava/lang/String;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    .line 243
+    .line 257
+    iget-object v0, p0, Lcom/android/email/mail/Address;->mContext:Landroid/content/Context;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/email/mail/Address;->mPersonal:Ljava/lang/String;
+
+    iget-object v1, p0, Lcom/android/email/mail/Address;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f0802ce
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 258
+    iget-object v0, p0, Lcom/android/email/mail/Address;->mPersonal:Ljava/lang/String;
+
+    .line 266
+    :goto_0
+    return-object v0
+
+    .line 260
+    :cond_0
     iget-object v0, p0, Lcom/android/email/mail/Address;->mPersonal:Ljava/lang/String;
 
     const-string v1, ".*[\\(\\)<>@,;:\\\\\".\\[\\]].*"
@@ -1835,9 +1800,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 244
+    .line 261
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1854,7 +1819,7 @@
 
     const-string v1, " <"
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -1866,7 +1831,7 @@
 
     const-string v1, ">"
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -1874,12 +1839,10 @@
 
     move-result-object v0
 
-    .line 249
-    :goto_0
-    return-object v0
+    goto :goto_0
 
-    .line 246
-    :cond_0
+    .line 263
+    :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1892,7 +1855,7 @@
 
     const-string v1, " <"
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -1904,7 +1867,7 @@
 
     const-string v1, ">"
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -1914,8 +1877,8 @@
 
     goto :goto_0
 
-    .line 249
-    :cond_1
+    .line 266
+    :cond_2
     iget-object v0, p0, Lcom/android/email/mail/Address;->mAddress:Ljava/lang/String;
 
     goto :goto_0

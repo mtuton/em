@@ -3,16 +3,6 @@
 .source "TokenMgrError.java"
 
 
-# static fields
-.field static final INVALID_LEXICAL_STATE:I = 0x2
-
-.field static final LEXICAL_ERROR:I = 0x0
-
-.field static final LOOP_DETECTED:I = 0x3
-
-.field static final STATIC_LEXER_ERROR:I = 0x1
-
-
 # instance fields
 .field errorCode:I
 

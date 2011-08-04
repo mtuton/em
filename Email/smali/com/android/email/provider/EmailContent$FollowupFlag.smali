@@ -25,59 +25,17 @@
 
 
 # static fields
-.field public static final CONTENT_COMPLETE_TIME_COLUMN:I = 0x8
+.field public static final CONTENT_PROJECTION:[Ljava/lang/String;
 
-.field public static final CONTENT_DATE_COMPLETED_COLUMN:I = 0x9
+.field public static final CONTENT_URI:Landroid/net/Uri;
 
-.field public static final CONTENT_DUE_DATE_COLUMN:I = 0xb
+.field public static final DELETED_CONTENT_URI:Landroid/net/Uri;
 
-.field public static final CONTENT_FLAG_TYPE_COLUMN:I = 0x7
+.field public static final MESSAGE_CONTENT_URI:Landroid/net/Uri;
 
-.field public static final CONTENT_ID_COLUMN:I = 0x0
+.field public static final SYNCED_CONTENT_URI:Landroid/net/Uri;
 
-.field public static final CONTENT_MESSAGE_KEY_COLUMN:I = 0x1
-
-.field public static final CONTENT_MESSAGE_SYNC_SERVER_ID:I = 0x2
-
-.field public static final CONTENT_ORDINAL_DATE_COLUMN:I = 0x10
-
-.field public static final CONTENT_PROJECTION:[Ljava/lang/String; = null
-
-.field public static final CONTENT_REMINDER_SET_COLUMN:I = 0xe
-
-.field public static final CONTENT_REMINDER_TIME_COLUMN:I = 0xf
-
-.field public static final CONTENT_RINGTONE_URI_COLUMN:I = 0x5
-
-.field public static final CONTENT_START_DATE_COLUMN:I = 0xa
-
-.field public static final CONTENT_STATUS_COLUMN:I = 0x6
-
-.field public static final CONTENT_SUB_ORDINAL_DATE_COLUMN:I = 0x11
-
-.field public static final CONTENT_TASK_KEY_COLUMN:I = 0x3
-
-.field public static final CONTENT_TASK_SYNC_SERVER_ID:I = 0x4
-
-.field public static final CONTENT_URI:Landroid/net/Uri; = null
-
-.field public static final CONTENT_UTC_DUE_DATE_COLUMN:I = 0xd
-
-.field public static final CONTENT_UTC_START_DATE_COLUMN:I = 0xc
-
-.field public static final DELETED_CONTENT_URI:Landroid/net/Uri; = null
-
-.field public static final DELETED_TABLE_NAME:Ljava/lang/String; = "FollowupFlag_Deletes"
-
-.field public static final MESSAGE_CONTENT_URI:Landroid/net/Uri; = null
-
-.field public static final SYNCED_CONTENT_URI:Landroid/net/Uri; = null
-
-.field public static final TABLE_NAME:Ljava/lang/String; = "FollowupFlag"
-
-.field public static final UPDATED_CONTENT_URI:Landroid/net/Uri; = null
-
-.field public static final UPDATED_TABLE_NAME:Ljava/lang/String; = "FollowupFlag_Updates"
+.field public static final UPDATED_CONTENT_URI:Landroid/net/Uri;
 
 .field private static defaultFollowup:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagDefaultState;
 
@@ -123,7 +81,7 @@
     .locals 3
 
     .prologue
-    .line 1119
+    .line 1428
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -150,7 +108,7 @@
 
     sput-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 1120
+    .line 1429
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -177,7 +135,7 @@
 
     sput-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag;->MESSAGE_CONTENT_URI:Landroid/net/Uri;
 
-    .line 1122
+    .line 1431
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -204,7 +162,7 @@
 
     sput-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag;->SYNCED_CONTENT_URI:Landroid/net/Uri;
 
-    .line 1123
+    .line 1432
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -231,7 +189,7 @@
 
     sput-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag;->UPDATED_CONTENT_URI:Landroid/net/Uri;
 
-    .line 1124
+    .line 1433
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -258,7 +216,7 @@
 
     sput-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DELETED_CONTENT_URI:Landroid/net/Uri;
 
-    .line 1145
+    .line 1454
     const/16 v0, 0x12
 
     new-array v0, v0, [Ljava/lang/String;
@@ -373,7 +331,7 @@
 
     sput-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CONTENT_PROJECTION:[Ljava/lang/String;
 
-    .line 1204
+    .line 1513
     sget-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagDefaultState;->THIS_WEEK:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagDefaultState;
 
     sput-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag;->defaultFollowup:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagDefaultState;
@@ -389,36 +347,36 @@
 
     const-wide/16 v1, 0x0
 
-    .line 1207
+    .line 1516
     invoke-direct {p0, v3}, Lcom/android/email/provider/EmailContent;-><init>(Lcom/android/email/provider/EmailContent$1;)V
 
-    .line 1183
+    .line 1492
     sget-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_CLEARED:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->Status:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
-    .line 1184
+    .line 1493
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->FlagType:Ljava/lang/String;
 
-    .line 1185
+    .line 1494
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DateCompleted:J
 
-    .line 1186
+    .line 1495
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CompleteTime:J
 
-    .line 1187
+    .line 1496
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->StartDate:J
 
-    .line 1188
+    .line 1497
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DueDate:J
 
-    .line 1189
+    .line 1498
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->UTCStartDate:J
 
-    .line 1190
+    .line 1499
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->UTCDueDate:J
 
-    .line 1191
+    .line 1500
     const/4 v0, 0x0
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -427,53 +385,53 @@
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderSet:Ljava/lang/Boolean;
 
-    .line 1192
+    .line 1501
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderTime:J
 
-    .line 1193
+    .line 1502
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->OrdinalDate:J
 
-    .line 1194
+    .line 1503
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->SubOrdinalDate:Ljava/lang/String;
 
-    .line 1197
+    .line 1506
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->MsgId:J
 
-    .line 1198
+    .line 1507
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->MsgSyncServerId:Ljava/lang/String;
 
-    .line 1199
+    .line 1508
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->TaskId:J
 
-    .line 1200
+    .line 1509
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->TaskSyncServerId:Ljava/lang/String;
 
-    .line 1201
+    .line 1510
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->RingtoneUri:Landroid/net/Uri;
 
-    .line 1208
+    .line 1517
     sget-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CONTENT_URI:Landroid/net/Uri;
 
     iput-object v0, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->mBaseUri:Landroid/net/Uri;
 
-    .line 1209
+    .line 1518
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->mId:J
 
-    .line 1210
+    .line 1519
     return-void
 .end method
 
 .method public static restoreFollowupFlagWithEmailId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$FollowupFlag;
-    .locals 7
-    .parameter "context"
-    .parameter "MsgId"
+    .locals 6
+    .parameter
+    .parameter
 
     .prologue
     const/4 v4, 0x0
 
-    .line 1295
+    .line 1604
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -510,242 +468,52 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    move-result-object v6
+    move-result-object v0
 
-    .line 1300
-    .local v6, c:Landroid/database/Cursor;
+    .line 1609
     :try_start_0
-    invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
+    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    .line 1301
-    const-class v0, Lcom/android/email/provider/EmailContent$FollowupFlag;
+    .line 1610
+    const-class v1, Lcom/android/email/provider/EmailContent$FollowupFlag;
 
-    invoke-static {v6, v0}, Lcom/android/email/provider/EmailContent$FollowupFlag;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/email/provider/EmailContent;
+    invoke-static {v0, v1}, Lcom/android/email/provider/EmailContent$FollowupFlag;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/email/provider/EmailContent;
 
     move-result-object p0
 
-    .end local p0
     check-cast p0, Lcom/android/email/provider/EmailContent$FollowupFlag;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1306
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    .line 1615
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     move-object v0, p0
 
     :goto_0
     return-object v0
 
-    .restart local p0
     :cond_0
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     move-object v0, v4
 
     goto :goto_0
 
-    .end local p0
     :catchall_0
-    move-exception v0
+    move-exception v1
 
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    throw v0
-.end method
-
-.method public static restoreFollowupFlagWithEmailSyncId(Landroid/content/Context;Ljava/lang/String;)Lcom/android/email/provider/EmailContent$FollowupFlag;
-    .locals 7
-    .parameter "context"
-    .parameter "MsgSyncId"
-
-    .prologue
-    const/4 v4, 0x0
-
-    .line 1317
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/android/email/provider/EmailContent$FollowupFlag;->CONTENT_URI:Landroid/net/Uri;
-
-    sget-object v2, Lcom/android/email/provider/EmailContent$FollowupFlag;->CONTENT_PROJECTION:[Ljava/lang/String;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "messageSyncServerId=\'"
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v5, "\'"
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    move-object v5, v4
-
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v6
-
-    .line 1322
-    .local v6, c:Landroid/database/Cursor;
-    :try_start_0
-    invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 1323
-    const-class v0, Lcom/android/email/provider/EmailContent$FollowupFlag;
-
-    invoke-static {v6, v0}, Lcom/android/email/provider/EmailContent$FollowupFlag;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/email/provider/EmailContent;
-
-    move-result-object p0
-
-    .end local p0
-    check-cast p0, Lcom/android/email/provider/EmailContent$FollowupFlag;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 1328
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    move-object v0, p0
-
-    :goto_0
-    return-object v0
-
-    .restart local p0
-    :cond_0
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    move-object v0, v4
-
-    goto :goto_0
-
-    .end local p0
-    :catchall_0
-    move-exception v0
-
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    throw v0
-.end method
-
-.method public static restoreFollowupFlagWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$FollowupFlag;
-    .locals 7
-    .parameter "context"
-    .parameter "id"
-
-    .prologue
-    const/4 v3, 0x0
-
-    .line 1273
-    sget-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v0, p1, p2}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v1
-
-    .line 1274
-    .local v1, u:Landroid/net/Uri;
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    sget-object v2, Lcom/android/email/provider/EmailContent$FollowupFlag;->CONTENT_PROJECTION:[Ljava/lang/String;
-
-    move-object v4, v3
-
-    move-object v5, v3
-
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v6
-
-    .line 1278
-    .local v6, c:Landroid/database/Cursor;
-    :try_start_0
-    invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 1279
-    const-class v0, Lcom/android/email/provider/EmailContent$FollowupFlag;
-
-    invoke-static {v6, v0}, Lcom/android/email/provider/EmailContent$FollowupFlag;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/email/provider/EmailContent;
-
-    move-result-object p0
-
-    .end local p0
-    check-cast p0, Lcom/android/email/provider/EmailContent$FollowupFlag;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 1284
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    move-object v0, p0
-
-    :goto_0
-    return-object v0
-
-    .restart local p0
-    :cond_0
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    move-object v0, v3
-
-    goto :goto_0
-
-    .end local p0
-    :catchall_0
-    move-exception v0
-
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    throw v0
+    throw v1
 .end method
 
 
 # virtual methods
-.method public changeDefaultState(Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagDefaultState;)Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagDefaultState;
-    .locals 1
-    .parameter "state"
-
-    .prologue
-    .line 1395
-    sget-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag;->defaultFollowup:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagDefaultState;
-
-    .line 1397
-    .local v0, prev:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagDefaultState;
-    sput-object p1, Lcom/android/email/provider/EmailContent$FollowupFlag;->defaultFollowup:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagDefaultState;
-
-    .line 1398
-    return-object v0
-.end method
-
 .method public restore(Landroid/database/Cursor;)Lcom/android/email/provider/EmailContent$FollowupFlag;
     .locals 5
     .parameter "c"
@@ -755,19 +523,19 @@
 
     const/4 v3, 0x1
 
-    .line 1335
+    .line 1644
     sget-object v1, Lcom/android/email/provider/EmailContent$FollowupFlag;->CONTENT_URI:Landroid/net/Uri;
 
     iput-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->mBaseUri:Landroid/net/Uri;
 
-    .line 1336
+    .line 1645
     invoke-interface {p1, v4}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v1
 
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->mId:J
 
-    .line 1339
+    .line 1648
     const/4 v1, 0x6
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getInt(I)I
@@ -776,12 +544,12 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 1343
+    .line 1652
     sget-object v1, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_CLEARED:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     iput-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->Status:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
-    .line 1352
+    .line 1661
     :goto_0
     const/4 v1, 0x7
 
@@ -791,7 +559,7 @@
 
     iput-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->FlagType:Ljava/lang/String;
 
-    .line 1353
+    .line 1662
     const/16 v1, 0x9
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -800,7 +568,7 @@
 
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DateCompleted:J
 
-    .line 1354
+    .line 1663
     const/16 v1, 0x8
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -809,7 +577,7 @@
 
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CompleteTime:J
 
-    .line 1355
+    .line 1664
     const/16 v1, 0xa
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -818,7 +586,7 @@
 
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->StartDate:J
 
-    .line 1356
+    .line 1665
     const/16 v1, 0xb
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -827,7 +595,7 @@
 
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DueDate:J
 
-    .line 1357
+    .line 1666
     const/16 v1, 0xc
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -836,7 +604,7 @@
 
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->UTCStartDate:J
 
-    .line 1358
+    .line 1667
     const/16 v1, 0xd
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -845,7 +613,7 @@
 
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->UTCDueDate:J
 
-    .line 1359
+    .line 1668
     const/16 v1, 0xe
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getInt(I)I
@@ -863,7 +631,7 @@
 
     iput-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderSet:Ljava/lang/Boolean;
 
-    .line 1360
+    .line 1669
     const/16 v1, 0xf
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -872,7 +640,7 @@
 
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderTime:J
 
-    .line 1361
+    .line 1670
     const/16 v1, 0x10
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -881,7 +649,7 @@
 
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->OrdinalDate:J
 
-    .line 1362
+    .line 1671
     const/16 v1, 0x11
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -890,14 +658,14 @@
 
     iput-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->SubOrdinalDate:Ljava/lang/String;
 
-    .line 1365
+    .line 1674
     invoke-interface {p1, v3}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v1
 
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->MsgId:J
 
-    .line 1366
+    .line 1675
     const/4 v1, 0x2
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -906,7 +674,7 @@
 
     iput-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->MsgSyncServerId:Ljava/lang/String;
 
-    .line 1367
+    .line 1676
     const/4 v1, 0x3
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -915,7 +683,7 @@
 
     iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->TaskId:J
 
-    .line 1368
+    .line 1677
     const/4 v1, 0x4
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -924,29 +692,29 @@
 
     iput-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->TaskSyncServerId:Ljava/lang/String;
 
-    .line 1369
+    .line 1678
     const/4 v1, 0x5
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1370
+    .line 1679
     .local v0, ringtone:Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 1371
+    .line 1680
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->RingtoneUri:Landroid/net/Uri;
 
-    .line 1373
+    .line 1682
     :cond_0
     return-object p0
 
-    .line 1346
+    .line 1655
     .end local v0           #ringtone:Ljava/lang/String;
     :pswitch_0
     sget-object v1, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_COMPLETE:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
@@ -955,7 +723,7 @@
 
     goto/16 :goto_0
 
-    .line 1349
+    .line 1658
     :pswitch_1
     sget-object v1, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_ACTIVE:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
@@ -966,10 +734,10 @@
     :cond_1
     move v1, v4
 
-    .line 1359
+    .line 1668
     goto :goto_1
 
-    .line 1339
+    .line 1648
     nop
 
     :pswitch_data_0
@@ -984,7 +752,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1113
+    .line 1422
     invoke-virtual {p0, p1}, Lcom/android/email/provider/EmailContent$FollowupFlag;->restore(Landroid/database/Cursor;)Lcom/android/email/provider/EmailContent$FollowupFlag;
 
     move-result-object v0
@@ -1008,7 +776,7 @@
 
     const-wide/16 v6, 0x0
 
-    .line 1409
+    .line 1718
     const-string v3, "GMT"
 
     invoke-static {v3}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
@@ -1019,7 +787,7 @@
 
     move-result-object v1
 
-    .line 1412
+    .line 1721
     .local v1, now:Ljava/util/Calendar;
     new-instance v3, Ljava/lang/String;
 
@@ -1029,7 +797,7 @@
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->FlagType:Ljava/lang/String;
 
-    .line 1414
+    .line 1723
     sget-object v3, Lcom/android/email/provider/EmailContent$1;->$SwitchMap$com$android$email$provider$EmailContent$FollowupFlag$FollowupFlagDefaultState:[I
 
     invoke-virtual {p1}, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagDefaultState;->ordinal()I
@@ -1040,12 +808,12 @@
 
     packed-switch v3, :pswitch_data_0
 
-    .line 1418
+    .line 1727
     sget-object v3, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_ACTIVE:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->Status:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
-    .line 1419
+    .line 1728
     invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
@@ -1054,7 +822,7 @@
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->StartDate:J
 
-    .line 1420
+    .line 1729
     invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
@@ -1063,21 +831,21 @@
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DueDate:J
 
-    .line 1421
+    .line 1730
     invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderSet:Ljava/lang/Boolean;
 
-    .line 1422
+    .line 1731
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DateCompleted:J
 
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CompleteTime:J
 
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderTime:J
 
-    .line 1475
+    .line 1784
     :goto_0
     iget-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderSet:Ljava/lang/Boolean;
 
@@ -1087,7 +855,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 1476
+    .line 1785
     const-string v3, "GMT"
 
     invoke-static {v3}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
@@ -1098,29 +866,29 @@
 
     move-result-object v2
 
-    .line 1477
+    .line 1786
     .local v2, rem:Ljava/util/Calendar;
     invoke-static {}, Ljava/util/GregorianCalendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 1479
+    .line 1788
     .local v0, c:Ljava/util/Calendar;
     const/16 v3, 0xe
 
     invoke-virtual {v2, v3, v5}, Ljava/util/Calendar;->set(II)V
 
-    .line 1480
+    .line 1789
     const/16 v3, 0xd
 
     invoke-virtual {v2, v3, v5}, Ljava/util/Calendar;->set(II)V
 
-    .line 1481
+    .line 1790
     const/16 v3, 0xc
 
     invoke-virtual {v2, v3, v5}, Ljava/util/Calendar;->set(II)V
 
-    .line 1485
+    .line 1794
     const/16 v3, 0xb
 
     const/16 v4, 0x11
@@ -1151,14 +919,14 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/util/Calendar;->set(II)V
 
-    .line 1488
+    .line 1797
     invoke-virtual {v2}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderTime:J
 
-    .line 1492
+    .line 1801
     .end local v0           #c:Ljava/util/Calendar;
     .end local v2           #rem:Ljava/util/Calendar;
     :cond_0
@@ -1168,14 +936,14 @@
 
     if-nez v3, :cond_1
 
-    .line 1493
+    .line 1802
     invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->OrdinalDate:J
 
-    .line 1495
+    .line 1804
     :cond_1
     invoke-virtual {p0, p2}, Lcom/android/email/provider/EmailContent$FollowupFlag;->storeFollowupFlag(Landroid/content/Context;)Ljava/lang/Boolean;
 
@@ -1183,16 +951,16 @@
 
     return-object v3
 
-    .line 1425
+    .line 1734
     :pswitch_0
     sget-object v3, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_ACTIVE:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->Status:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
-    .line 1426
+    .line 1735
     invoke-virtual {v1, v9, v8}, Ljava/util/Calendar;->add(II)V
 
-    .line 1427
+    .line 1736
     invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
@@ -1201,7 +969,7 @@
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->StartDate:J
 
-    .line 1428
+    .line 1737
     invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
@@ -1210,14 +978,14 @@
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DueDate:J
 
-    .line 1429
+    .line 1738
     invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderSet:Ljava/lang/Boolean;
 
-    .line 1430
+    .line 1739
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DateCompleted:J
 
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CompleteTime:J
@@ -1226,13 +994,13 @@
 
     goto :goto_0
 
-    .line 1433
+    .line 1742
     :pswitch_1
     sget-object v3, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_ACTIVE:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->Status:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
-    .line 1434
+    .line 1743
     invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
@@ -1241,10 +1009,10 @@
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->StartDate:J
 
-    .line 1435
+    .line 1744
     invoke-virtual {v1, v9, v10}, Ljava/util/Calendar;->set(II)V
 
-    .line 1436
+    .line 1745
     invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
@@ -1253,14 +1021,14 @@
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DueDate:J
 
-    .line 1437
+    .line 1746
     invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderSet:Ljava/lang/Boolean;
 
-    .line 1438
+    .line 1747
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DateCompleted:J
 
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CompleteTime:J
@@ -1269,23 +1037,23 @@
 
     goto/16 :goto_0
 
-    .line 1441
+    .line 1750
     :pswitch_2
     sget-object v3, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_ACTIVE:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->Status:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
-    .line 1442
+    .line 1751
     const/4 v3, 0x3
 
     invoke-virtual {v1, v3, v8}, Ljava/util/Calendar;->add(II)V
 
-    .line 1443
+    .line 1752
     const/4 v3, 0x2
 
     invoke-virtual {v1, v9, v3}, Ljava/util/Calendar;->set(II)V
 
-    .line 1444
+    .line 1753
     invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
@@ -1294,10 +1062,10 @@
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->StartDate:J
 
-    .line 1445
+    .line 1754
     invoke-virtual {v1, v9, v10}, Ljava/util/Calendar;->set(II)V
 
-    .line 1446
+    .line 1755
     invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
@@ -1306,14 +1074,14 @@
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DueDate:J
 
-    .line 1447
+    .line 1756
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderSet:Ljava/lang/Boolean;
 
-    .line 1448
+    .line 1757
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DateCompleted:J
 
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CompleteTime:J
@@ -1322,30 +1090,30 @@
 
     goto/16 :goto_0
 
-    .line 1451
+    .line 1760
     :pswitch_3
     sget-object v3, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_ACTIVE:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->Status:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
-    .line 1452
+    .line 1761
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DueDate:J
 
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->StartDate:J
 
-    .line 1453
+    .line 1762
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->UTCDueDate:J
 
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->UTCStartDate:J
 
-    .line 1454
+    .line 1763
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderSet:Ljava/lang/Boolean;
 
-    .line 1455
+    .line 1764
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DateCompleted:J
 
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CompleteTime:J
@@ -1354,13 +1122,13 @@
 
     goto/16 :goto_0
 
-    .line 1458
+    .line 1767
     :pswitch_4
     sget-object v3, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_COMPLETE:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->Status:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
-    .line 1459
+    .line 1768
     invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
@@ -1369,7 +1137,7 @@
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->StartDate:J
 
-    .line 1460
+    .line 1769
     invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
@@ -1378,14 +1146,14 @@
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DueDate:J
 
-    .line 1461
+    .line 1770
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderSet:Ljava/lang/Boolean;
 
-    .line 1462
+    .line 1771
     const/16 v3, 0xb
 
     invoke-virtual {v1, v3}, Ljava/util/Calendar;->get(I)I
@@ -1396,42 +1164,42 @@
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CompleteTime:J
 
-    .line 1463
+    .line 1772
     invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DateCompleted:J
 
-    .line 1464
+    .line 1773
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderTime:J
 
     goto/16 :goto_0
 
-    .line 1467
+    .line 1776
     :pswitch_5
     sget-object v3, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_CLEARED:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->Status:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
-    .line 1468
+    .line 1777
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DueDate:J
 
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->StartDate:J
 
-    .line 1469
+    .line 1778
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->UTCDueDate:J
 
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->UTCStartDate:J
 
-    .line 1470
+    .line 1779
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderSet:Ljava/lang/Boolean;
 
-    .line 1471
+    .line 1780
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DateCompleted:J
 
     iput-wide v6, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CompleteTime:J
@@ -1440,7 +1208,7 @@
 
     goto/16 :goto_0
 
-    .line 1414
+    .line 1723
     :pswitch_data_0
     .packed-switch 0x2
         :pswitch_0
@@ -1459,14 +1227,14 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 1377
+    .line 1686
     const/4 v3, 0x0
 
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    .line 1379
+    .line 1688
     .local v0, retval:Ljava/lang/Boolean;
     invoke-virtual {p0}, Lcom/android/email/provider/EmailContent$FollowupFlag;->isSaved()Z
 
@@ -1474,7 +1242,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 1380
+    .line 1689
     sget-object v3, Lcom/android/email/provider/EmailContent$FollowupFlag;->SYNCED_CONTENT_URI:Landroid/net/Uri;
 
     iget-wide v4, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->mId:J
@@ -1487,32 +1255,32 @@
 
     move-result v1
 
-    .line 1381
+    .line 1690
     .local v1, tmp:I
     if-eqz v1, :cond_0
 
-    .line 1382
+    .line 1691
     invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    .line 1389
+    .line 1698
     .end local v1           #tmp:I
     :cond_0
     :goto_0
     return-object v0
 
-    .line 1384
+    .line 1693
     :cond_1
     invoke-virtual {p0, p1}, Lcom/android/email/provider/EmailContent$FollowupFlag;->save(Landroid/content/Context;)Landroid/net/Uri;
 
     move-result-object v2
 
-    .line 1385
+    .line 1694
     .local v2, uri:Landroid/net/Uri;
     if-eqz v2, :cond_0
 
-    .line 1386
+    .line 1695
     invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -1534,12 +1302,12 @@
 
     const-string v3, "status"
 
-    .line 1214
+    .line 1523
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1217
+    .line 1526
     .local v0, values:Landroid/content/ContentValues;
     sget-object v1, Lcom/android/email/provider/EmailContent$1;->$SwitchMap$com$android$email$provider$EmailContent$FollowupFlag$FollowupFlagStatus:[I
 
@@ -1553,7 +1321,7 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 1222
+    .line 1531
     const-string v1, "status"
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1562,49 +1330,49 @@
 
     invoke-virtual {v0, v3, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1223
+    .line 1532
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->FlagType:Ljava/lang/String;
 
-    .line 1224
+    .line 1533
     iput-wide v5, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->UTCStartDate:J
 
     iput-wide v5, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->StartDate:J
 
-    .line 1225
+    .line 1534
     iput-wide v5, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->UTCDueDate:J
 
     iput-wide v5, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DueDate:J
 
-    .line 1226
+    .line 1535
     invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderSet:Ljava/lang/Boolean;
 
-    .line 1227
+    .line 1536
     iput-wide v5, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DateCompleted:J
 
     iput-wide v5, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CompleteTime:J
 
     iput-wide v5, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderTime:J
 
-    .line 1236
+    .line 1545
     :goto_0
     iget-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->FlagType:Ljava/lang/String;
 
     if-eqz v1, :cond_2
 
-    .line 1237
+    .line 1546
     const-string v1, "flagType"
 
     iget-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->FlagType:Ljava/lang/String;
 
     invoke-virtual {v0, v8, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1240
+    .line 1549
     :goto_1
     const-string v1, "dateCompleted"
 
@@ -1616,7 +1384,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1241
+    .line 1550
     const-string v1, "completeTime"
 
     iget-wide v2, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CompleteTime:J
@@ -1627,7 +1395,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1242
+    .line 1551
     const-string v1, "startDate"
 
     iget-wide v2, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->StartDate:J
@@ -1638,7 +1406,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1243
+    .line 1552
     const-string v1, "dueDate"
 
     iget-wide v2, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->DueDate:J
@@ -1649,7 +1417,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1244
+    .line 1553
     const-string v1, "UTCStartDate"
 
     iget-wide v2, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->UTCStartDate:J
@@ -1660,7 +1428,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1245
+    .line 1554
     const-string v1, "UTCDueDate"
 
     iget-wide v2, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->UTCDueDate:J
@@ -1671,7 +1439,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1246
+    .line 1555
     const-string v1, "reminderSet"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderSet:Ljava/lang/Boolean;
@@ -1691,7 +1459,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1247
+    .line 1556
     const-string v1, "reminderTime"
 
     iget-wide v2, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->ReminderTime:J
@@ -1702,7 +1470,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1248
+    .line 1557
     const-string v1, "ordinalDate"
 
     iget-wide v2, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->OrdinalDate:J
@@ -1713,14 +1481,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1249
+    .line 1558
     const-string v1, "sub_ordinaldate"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->SubOrdinalDate:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1252
+    .line 1561
     const-string v1, "messageKey"
 
     iget-wide v2, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->MsgId:J
@@ -1731,19 +1499,19 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1253
+    .line 1562
     iget-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->MsgSyncServerId:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 1254
+    .line 1563
     const-string v1, "messageSyncServerId"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->MsgSyncServerId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1255
+    .line 1564
     :cond_0
     const-string v1, "taskKey"
 
@@ -1755,25 +1523,25 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1256
+    .line 1565
     iget-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->TaskSyncServerId:Ljava/lang/String;
 
     if-eqz v1, :cond_1
 
-    .line 1257
+    .line 1566
     const-string v1, "taskSyncServerId"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->TaskSyncServerId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1258
+    .line 1567
     :cond_1
     iget-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->RingtoneUri:Landroid/net/Uri;
 
     if-eqz v1, :cond_4
 
-    .line 1259
+    .line 1568
     const-string v1, "ringtoneUri"
 
     iget-object v2, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->RingtoneUri:Landroid/net/Uri;
@@ -1784,11 +1552,11 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1263
+    .line 1572
     :goto_3
     return-object v0
 
-    .line 1230
+    .line 1539
     :pswitch_0
     const-string v1, "status"
 
@@ -1800,7 +1568,7 @@
 
     goto/16 :goto_0
 
-    .line 1233
+    .line 1542
     :pswitch_1
     const-string v1, "status"
 
@@ -1814,7 +1582,7 @@
 
     goto/16 :goto_0
 
-    .line 1239
+    .line 1548
     :cond_2
     const-string v1, "flagType"
 
@@ -1825,10 +1593,10 @@
     :cond_3
     move v2, v7
 
-    .line 1246
+    .line 1555
     goto :goto_2
 
-    .line 1261
+    .line 1570
     :cond_4
     const-string v1, "ringtoneUri"
 
@@ -1836,7 +1604,7 @@
 
     goto :goto_3
 
-    .line 1217
+    .line 1526
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

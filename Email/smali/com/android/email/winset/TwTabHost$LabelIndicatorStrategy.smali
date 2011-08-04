@@ -32,15 +32,15 @@
     .parameter "label"
 
     .prologue
-    .line 667
+    .line 751
     iput-object p1, p0, Lcom/android/email/winset/TwTabHost$LabelIndicatorStrategy;->this$0:Lcom/android/email/winset/TwTabHost;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 668
+    .line 752
     iput-object p2, p0, Lcom/android/email/winset/TwTabHost$LabelIndicatorStrategy;->mLabel:Ljava/lang/CharSequence;
 
-    .line 669
+    .line 753
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .parameter "x2"
 
     .prologue
-    .line 661
+    .line 745
     invoke-direct {p0, p1, p2}, Lcom/android/email/winset/TwTabHost$LabelIndicatorStrategy;-><init>(Lcom/android/email/winset/TwTabHost;Ljava/lang/CharSequence;)V
 
     return-void
@@ -65,7 +65,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 672
+    .line 756
     iget-object v3, p0, Lcom/android/email/winset/TwTabHost$LabelIndicatorStrategy;->this$0:Lcom/android/email/winset/TwTabHost;
 
     invoke-virtual {v3}, Lcom/android/email/winset/TwTabHost;->getContext()Landroid/content/Context;
@@ -80,17 +80,17 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    .line 674
+    .line 758
     .local v0, inflater:Landroid/view/LayoutInflater;
     const/4 v1, 0x0
 
-    .line 675
+    .line 759
     .local v1, tabIndicator:Landroid/view/View;
     sget v3, Lcom/android/email/winset/TwTabHost;->mTabIndicatorType:I
 
     if-nez v3, :cond_0
 
-    .line 676
+    .line 760
     const v3, 0x2030011
 
     iget-object v4, p0, Lcom/android/email/winset/TwTabHost$LabelIndicatorStrategy;->this$0:Lcom/android/email/winset/TwTabHost;
@@ -103,7 +103,7 @@
 
     move-result-object v1
 
-    .line 685
+    .line 769
     :goto_0
     const v3, 0x2040029
 
@@ -113,19 +113,19 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 686
+    .line 770
     .local v2, tv:Landroid/widget/TextView;
     iget-object v3, p0, Lcom/android/email/winset/TwTabHost$LabelIndicatorStrategy;->mLabel:Ljava/lang/CharSequence;
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 688
+    .line 772
     iput-object v2, p0, Lcom/android/email/winset/TwTabHost$LabelIndicatorStrategy;->mTextView:Landroid/widget/TextView;
 
-    .line 690
+    .line 774
     return-object v1
 
-    .line 680
+    .line 764
     .end local v2           #tv:Landroid/widget/TextView;
     :cond_0
     const v3, 0x2030009
@@ -148,11 +148,11 @@
     .parameter "str"
 
     .prologue
-    .line 695
+    .line 779
     iget-object v0, p0, Lcom/android/email/winset/TwTabHost$LabelIndicatorStrategy;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 696
+    .line 780
     return-void
 .end method

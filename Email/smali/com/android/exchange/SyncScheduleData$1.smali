@@ -1,4 +1,4 @@
-.class Lcom/android/exchange/SyncScheduleData$1;
+.class final Lcom/android/exchange/SyncScheduleData$1;
 .super Ljava/lang/Object;
 .source "SyncScheduleData.java"
 
@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 124
+    .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 124
+    .line 119
     invoke-virtual {p0, p1}, Lcom/android/exchange/SyncScheduleData$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/exchange/SyncScheduleData;
 
     move-result-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 124
+    .line 119
     invoke-virtual {p0, p1}, Lcom/android/exchange/SyncScheduleData$1;->newArray(I)[Lcom/android/exchange/SyncScheduleData;
 
     move-result-object v0

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1599
+    .line 1752
     iput-object p1, p0, Lcom/android/exchange/SyncManager$4;->this$0:Lcom/android/exchange/SyncManager;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -39,27 +39,27 @@
     .parameter "state"
 
     .prologue
-    .line 1600
+    .line 1754
     const-string v2, "onServiceStateChanged"
 
     invoke-static {v2}, Lcom/android/exchange/SyncManager;->log(Ljava/lang/String;)V
 
-    .line 1601
+    .line 1755
     iget-object v2, p0, Lcom/android/exchange/SyncManager$4;->this$0:Lcom/android/exchange/SyncManager;
 
-    invoke-static {v2}, Lcom/android/exchange/SyncManager;->access$1500(Lcom/android/exchange/SyncManager;)Z
+    invoke-static {v2}, Lcom/android/exchange/SyncManager;->access$1700(Lcom/android/exchange/SyncManager;)Z
 
     move-result v0
 
-    .line 1602
+    .line 1756
     .local v0, oldRoamingType:Z
     iget-object v2, p0, Lcom/android/exchange/SyncManager$4;->this$0:Lcom/android/exchange/SyncManager;
 
-    invoke-static {v2}, Lcom/android/exchange/SyncManager;->access$1600(Lcom/android/exchange/SyncManager;)I
+    invoke-static {v2}, Lcom/android/exchange/SyncManager;->access$1800(Lcom/android/exchange/SyncManager;)I
 
     move-result v1
 
-    .line 1604
+    .line 1758
     .local v1, oldServiceState:I
     iget-object v2, p0, Lcom/android/exchange/SyncManager$4;->this$0:Lcom/android/exchange/SyncManager;
 
@@ -67,29 +67,29 @@
 
     move-result v3
 
-    invoke-static {v2, v3}, Lcom/android/exchange/SyncManager;->access$1602(Lcom/android/exchange/SyncManager;I)I
+    invoke-static {v2, v3}, Lcom/android/exchange/SyncManager;->access$1802(Lcom/android/exchange/SyncManager;I)I
 
-    .line 1605
+    .line 1759
     invoke-virtual {p1}, Landroid/telephony/ServiceState;->getState()I
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1606
+    .line 1760
     iget-object v2, p0, Lcom/android/exchange/SyncManager$4;->this$0:Lcom/android/exchange/SyncManager;
 
     invoke-virtual {p1}, Landroid/telephony/ServiceState;->getRoaming()Z
 
     move-result v3
 
-    invoke-static {v2, v3}, Lcom/android/exchange/SyncManager;->access$1502(Lcom/android/exchange/SyncManager;Z)Z
+    invoke-static {v2, v3}, Lcom/android/exchange/SyncManager;->access$1702(Lcom/android/exchange/SyncManager;Z)Z
 
-    .line 1608
+    .line 1762
     :cond_0
     iget-object v2, p0, Lcom/android/exchange/SyncManager$4;->this$0:Lcom/android/exchange/SyncManager;
 
-    invoke-static {v2}, Lcom/android/exchange/SyncManager;->access$1600(Lcom/android/exchange/SyncManager;)I
+    invoke-static {v2}, Lcom/android/exchange/SyncManager;->access$1800(Lcom/android/exchange/SyncManager;)I
 
     move-result v2
 
@@ -97,7 +97,7 @@
 
     iget-object v2, p0, Lcom/android/exchange/SyncManager$4;->this$0:Lcom/android/exchange/SyncManager;
 
-    invoke-static {v2}, Lcom/android/exchange/SyncManager;->access$1600(Lcom/android/exchange/SyncManager;)I
+    invoke-static {v2}, Lcom/android/exchange/SyncManager;->access$1800(Lcom/android/exchange/SyncManager;)I
 
     move-result v2
 
@@ -105,13 +105,13 @@
 
     iget-object v2, p0, Lcom/android/exchange/SyncManager$4;->this$0:Lcom/android/exchange/SyncManager;
 
-    invoke-static {v2}, Lcom/android/exchange/SyncManager;->access$1500(Lcom/android/exchange/SyncManager;)Z
+    invoke-static {v2}, Lcom/android/exchange/SyncManager;->access$1700(Lcom/android/exchange/SyncManager;)Z
 
     move-result v2
 
     if-eq v0, v2, :cond_2
 
-    .line 1611
+    .line 1765
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -125,7 +125,7 @@
 
     iget-object v3, p0, Lcom/android/exchange/SyncManager$4;->this$0:Lcom/android/exchange/SyncManager;
 
-    invoke-static {v3}, Lcom/android/exchange/SyncManager;->access$1500(Lcom/android/exchange/SyncManager;)Z
+    invoke-static {v3}, Lcom/android/exchange/SyncManager;->access$1700(Lcom/android/exchange/SyncManager;)Z
 
     move-result v3
 
@@ -139,14 +139,14 @@
 
     invoke-static {v2}, Lcom/android/exchange/SyncManager;->log(Ljava/lang/String;)V
 
-    .line 1613
+    .line 1767
     iget-object v2, p0, Lcom/android/exchange/SyncManager$4;->this$0:Lcom/android/exchange/SyncManager;
 
     const/4 v3, 0x1
 
-    invoke-static {v2, v3}, Lcom/android/exchange/SyncManager;->access$1700(Lcom/android/exchange/SyncManager;Z)V
+    invoke-static {v2, v3}, Lcom/android/exchange/SyncManager;->access$1900(Lcom/android/exchange/SyncManager;Z)V
 
-    .line 1615
+    .line 1769
     :cond_2
     return-void
 .end method

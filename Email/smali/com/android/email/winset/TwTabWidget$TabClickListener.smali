@@ -30,15 +30,15 @@
     .parameter "tabIndex"
 
     .prologue
-    .line 491
+    .line 572
     iput-object p1, p0, Lcom/android/email/winset/TwTabWidget$TabClickListener;->this$0:Lcom/android/email/winset/TwTabWidget;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 492
+    .line 573
     iput p2, p0, Lcom/android/email/winset/TwTabWidget$TabClickListener;->mTabIndex:I
 
-    .line 493
+    .line 574
     return-void
 .end method
 
@@ -49,7 +49,7 @@
     .parameter "x2"
 
     .prologue
-    .line 487
+    .line 568
     invoke-direct {p0, p1, p2}, Lcom/android/email/winset/TwTabWidget$TabClickListener;-><init>(Lcom/android/email/winset/TwTabWidget;I)V
 
     return-void
@@ -62,7 +62,7 @@
     .parameter "v"
 
     .prologue
-    .line 496
+    .line 577
     iget-object v0, p0, Lcom/android/email/winset/TwTabWidget$TabClickListener;->this$0:Lcom/android/email/winset/TwTabWidget;
 
     invoke-static {v0}, Lcom/android/email/winset/TwTabWidget;->access$100(Lcom/android/email/winset/TwTabWidget;)Lcom/android/email/winset/TwTabWidget$OnTabSelectionChanged;
@@ -75,6 +75,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/email/winset/TwTabWidget$OnTabSelectionChanged;->onTabSelectionChanged(IZ)V
 
-    .line 497
+    .line 578
     return-void
 .end method

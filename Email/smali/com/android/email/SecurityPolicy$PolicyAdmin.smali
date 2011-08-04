@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 1943
+    .line 2228
     invoke-direct {p0}, Landroid/app/admin/DeviceAdminReceiver;-><init>()V
 
     return-void
@@ -33,7 +33,7 @@
     .parameter "intent"
 
     .prologue
-    .line 1958
+    .line 2243
     invoke-static {p1}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
 
     move-result-object v0
@@ -42,7 +42,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/SecurityPolicy;->onAdminEnabled(Z)V
 
-    .line 1959
+    .line 2244
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .parameter "intent"
 
     .prologue
-    .line 1950
+    .line 2235
     invoke-static {p1}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
 
     move-result-object v0
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/SecurityPolicy;->onAdminEnabled(Z)V
 
-    .line 1951
+    .line 2236
     return-void
 .end method
 
@@ -71,14 +71,14 @@
     .parameter "intent"
 
     .prologue
-    .line 1966
+    .line 2252
     invoke-static {p1}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/email/SecurityPolicy;->clearAccountHoldFlags()V
+    invoke-virtual {v0, p1}, Lcom/android/email/SecurityPolicy;->checkDeviceEnryptionOnPasswordChanged(Landroid/content/Context;)V
 
-    .line 1967
+    .line 2253
     return-void
 .end method
 
@@ -88,13 +88,13 @@
     .parameter "intent"
 
     .prologue
-    .line 1974
+    .line 2260
     invoke-static {p1}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/email/SecurityPolicy;->sendRecoveryPassword()V
 
-    .line 1975
+    .line 2261
     return-void
 .end method

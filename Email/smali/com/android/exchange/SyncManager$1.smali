@@ -1,4 +1,4 @@
-.class Lcom/android/exchange/SyncManager$1;
+.class final Lcom/android/exchange/SyncManager$1;
 .super Lcom/android/email/service/IEmailServiceCallback$Stub;
 .source "SyncManager.java"
 
@@ -17,14 +17,9 @@
 # direct methods
 .method constructor <init>()V
     .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 424
+    .line 391
     invoke-direct {p0}, Lcom/android/email/service/IEmailServiceCallback$Stub;-><init>()V
 
     return-void
@@ -44,7 +39,7 @@
     .end annotation
 
     .prologue
-    .line 415
+    .line 463
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     if-nez v1, :cond_1
@@ -53,19 +48,19 @@
 
     move-object v0, v1
 
-    .line 416
+    .line 464
     .local v0, cb:Lcom/android/email/service/IEmailServiceCallback;
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 417
+    .line 465
     invoke-interface {v0, p1, p2, p3, p4}, Lcom/android/email/service/IEmailServiceCallback;->emptyTrashStatus(JII)V
 
-    .line 419
+    .line 467
     :cond_0
     return-void
 
-    .line 415
+    .line 463
     .end local v0           #cb:Lcom/android/email/service/IEmailServiceCallback;
     :cond_1
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
@@ -91,7 +86,7 @@
     .end annotation
 
     .prologue
-    .line 402
+    .line 443
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     if-nez v1, :cond_1
@@ -100,19 +95,19 @@
 
     move-object v0, v1
 
-    .line 403
+    .line 444
     .local v0, cb:Lcom/android/email/service/IEmailServiceCallback;
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 404
+    .line 445
     invoke-interface {v0, p1, p2, p3, p4}, Lcom/android/email/service/IEmailServiceCallback;->folderCommandStatus(IJI)V
 
-    .line 406
+    .line 447
     :cond_0
     return-void
 
-    .line 402
+    .line 443
     .end local v0           #cb:Lcom/android/email/service/IEmailServiceCallback;
     :cond_1
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
@@ -139,7 +134,7 @@
     .end annotation
 
     .prologue
-    .line 354
+    .line 395
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     if-nez v1, :cond_1
@@ -148,7 +143,7 @@
 
     move-object v0, v1
 
-    .line 355
+    .line 396
     .local v0, cb:Lcom/android/email/service/IEmailServiceCallback;
     :goto_0
     if-eqz v0, :cond_0
@@ -161,14 +156,14 @@
 
     move v6, p6
 
-    .line 356
+    .line 397
     invoke-interface/range {v0 .. v6}, Lcom/android/email/service/IEmailServiceCallback;->loadAttachmentStatus(JJII)V
 
-    .line 358
+    .line 399
     :cond_0
     return-void
 
-    .line 354
+    .line 395
     .end local v0           #cb:Lcom/android/email/service/IEmailServiceCallback;
     :cond_1
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
@@ -183,7 +178,7 @@
 .end method
 
 .method public loadMoreStatus(JII)V
-    .locals 2
+    .locals 4
     .parameter "messageId"
     .parameter "statusCode"
     .parameter "progress"
@@ -194,7 +189,7 @@
     .end annotation
 
     .prologue
-    .line 426
+    .line 474
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     if-nez v1, :cond_1
@@ -203,19 +198,90 @@
 
     move-object v0, v1
 
-    .line 427
+    .line 475
     .local v0, cb:Lcom/android/email/service/IEmailServiceCallback;
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 428
+    .line 476
+    const-string v1, "Email"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "SyncManager.sCallbackProxy.loadMoreStatus"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/android/exchange/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 477
     invoke-interface {v0, p1, p2, p3, p4}, Lcom/android/email/service/IEmailServiceCallback;->loadMoreStatus(JII)V
 
-    .line 430
+    .line 479
     :cond_0
     return-void
 
-    .line 426
+    .line 474
+    .end local v0           #cb:Lcom/android/email/service/IEmailServiceCallback;
+    :cond_1
+    sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
+
+    invoke-static {v1}, Lcom/android/exchange/SyncManager;->access$000(Lcom/android/exchange/SyncManager;)Lcom/android/email/service/IEmailServiceCallback;
+
+    move-result-object v1
+
+    move-object v0, v1
+
+    goto :goto_0
+.end method
+
+.method public moveConvAlwaysStatus([BIII)V
+    .locals 2
+    .parameter "convId"
+    .parameter "statusCode"
+    .parameter "progress"
+    .parameter "ignore"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 452
+    sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
+
+    if-nez v1, :cond_1
+
+    const/4 v1, 0x0
+
+    move-object v0, v1
+
+    .line 453
+    .local v0, cb:Lcom/android/email/service/IEmailServiceCallback;
+    :goto_0
+    if-eqz v0, :cond_0
+
+    .line 454
+    invoke-interface {v0, p1, p2, p3, p4}, Lcom/android/email/service/IEmailServiceCallback;->moveConvAlwaysStatus([BIII)V
+
+    .line 456
+    :cond_0
+    return-void
+
+    .line 452
     .end local v0           #cb:Lcom/android/email/service/IEmailServiceCallback;
     :cond_1
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
@@ -240,7 +306,7 @@
     .end annotation
 
     .prologue
-    .line 393
+    .line 434
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     if-nez v1, :cond_1
@@ -249,19 +315,19 @@
 
     move-object v0, v1
 
-    .line 394
+    .line 435
     .local v0, cb:Lcom/android/email/service/IEmailServiceCallback;
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 395
+    .line 436
     invoke-interface {v0, p1, p2, p3}, Lcom/android/email/service/IEmailServiceCallback;->moveItemStatus(JI)V
 
-    .line 397
+    .line 438
     :cond_0
     return-void
 
-    .line 393
+    .line 434
     .end local v0           #cb:Lcom/android/email/service/IEmailServiceCallback;
     :cond_1
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
@@ -288,7 +354,7 @@
     .end annotation
 
     .prologue
-    .line 370
+    .line 411
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     if-nez v1, :cond_1
@@ -297,7 +363,7 @@
 
     move-object v0, v1
 
-    .line 371
+    .line 412
     .local v0, cb:Lcom/android/email/service/IEmailServiceCallback;
     :goto_0
     if-eqz v0, :cond_0
@@ -310,14 +376,14 @@
 
     move-object v5, p5
 
-    .line 372
+    .line 413
     invoke-interface/range {v0 .. v5}, Lcom/android/email/service/IEmailServiceCallback;->oOOfStatus(JIILandroid/os/Bundle;)V
 
-    .line 374
+    .line 415
     :cond_0
     return-void
 
-    .line 370
+    .line 411
     .end local v0           #cb:Lcom/android/email/service/IEmailServiceCallback;
     :cond_1
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
@@ -344,7 +410,7 @@
     .end annotation
 
     .prologue
-    .line 362
+    .line 403
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     if-nez v1, :cond_1
@@ -353,7 +419,7 @@
 
     move-object v0, v1
 
-    .line 363
+    .line 404
     .local v0, cb:Lcom/android/email/service/IEmailServiceCallback;
     :goto_0
     if-eqz v0, :cond_0
@@ -366,14 +432,61 @@
 
     move v5, p5
 
-    .line 364
+    .line 405
     invoke-interface/range {v0 .. v5}, Lcom/android/email/service/IEmailServiceCallback;->sendMessageStatus(JLjava/lang/String;II)V
 
-    .line 366
+    .line 407
     :cond_0
     return-void
 
-    .line 362
+    .line 403
+    .end local v0           #cb:Lcom/android/email/service/IEmailServiceCallback;
+    :cond_1
+    sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
+
+    invoke-static {v1}, Lcom/android/exchange/SyncManager;->access$000(Lcom/android/exchange/SyncManager;)Lcom/android/email/service/IEmailServiceCallback;
+
+    move-result-object v1
+
+    move-object v0, v1
+
+    goto :goto_0
+.end method
+
+.method public setDeviceInfoStatus(JII)V
+    .locals 2
+    .parameter "accountId"
+    .parameter "statusCode"
+    .parameter "progress"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 484
+    sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
+
+    if-nez v1, :cond_1
+
+    const/4 v1, 0x0
+
+    move-object v0, v1
+
+    .line 485
+    .local v0, cb:Lcom/android/email/service/IEmailServiceCallback;
+    :goto_0
+    if-eqz v0, :cond_0
+
+    .line 486
+    invoke-interface {v0, p1, p2, p3, p4}, Lcom/android/email/service/IEmailServiceCallback;->setDeviceInfoStatus(JII)V
+
+    .line 488
+    :cond_0
+    return-void
+
+    .line 484
     .end local v0           #cb:Lcom/android/email/service/IEmailServiceCallback;
     :cond_1
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
@@ -399,7 +512,7 @@
     .end annotation
 
     .prologue
-    .line 377
+    .line 418
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     if-nez v1, :cond_1
@@ -408,19 +521,19 @@
 
     move-object v0, v1
 
-    .line 378
+    .line 419
     .local v0, cb:Lcom/android/email/service/IEmailServiceCallback;
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 379
+    .line 420
     invoke-interface {v0, p1, p2, p3, p4}, Lcom/android/email/service/IEmailServiceCallback;->syncMailboxListStatus(JII)V
 
-    .line 381
+    .line 422
     :cond_0
     return-void
 
-    .line 377
+    .line 418
     .end local v0           #cb:Lcom/android/email/service/IEmailServiceCallback;
     :cond_1
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
@@ -446,7 +559,7 @@
     .end annotation
 
     .prologue
-    .line 385
+    .line 426
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     if-nez v1, :cond_1
@@ -455,19 +568,19 @@
 
     move-object v0, v1
 
-    .line 386
+    .line 427
     .local v0, cb:Lcom/android/email/service/IEmailServiceCallback;
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 387
+    .line 428
     invoke-interface {v0, p1, p2, p3, p4}, Lcom/android/email/service/IEmailServiceCallback;->syncMailboxStatus(JII)V
 
-    .line 389
+    .line 430
     :cond_0
     return-void
 
-    .line 385
+    .line 426
     .end local v0           #cb:Lcom/android/email/service/IEmailServiceCallback;
     :cond_1
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;

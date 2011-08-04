@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="search_list">
+        <item>Google</item>
+        <item>Google þýðingar</item>
+        <item>Wikipedia</item>
+        <item>Orðabók</item>
+    </string-array>
+    <string-array name="share_list">
+        <item>Samnýta sem texta</item>
+        <item>Samnýta sem mynd</item>
+    </string-array>
+</resources>

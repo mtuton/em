@@ -3,7 +3,7 @@
 .source "MessageCompose.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/text/InputFilter;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1045
+    .line 1524
     iput-object p1, p0, Lcom/android/email/activity/MessageCompose$6;->this$0:Lcom/android/email/activity/MessageCompose;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,47 +37,131 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 2
-    .parameter "arg0"
+.method public filter(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;
+    .locals 7
+    .parameter "source"
+    .parameter "start"
+    .parameter "end"
+    .parameter "dest"
+    .parameter "dstart"
+    .parameter "dend"
 
     .prologue
-    .line 1047
-    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$6;->this$0:Lcom/android/email/activity/MessageCompose;
+    const/4 v6, 0x0
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$1300(Lcom/android/email/activity/MessageCompose;)Landroid/widget/LinearLayout;
+    .line 1530
+    sub-int v4, p3, p2
 
-    move-result-object v0
+    const/4 v5, 0x1
 
-    invoke-virtual {v0}, Landroid/widget/LinearLayout;->isShown()Z
+    if-ne v4, v5, :cond_0
+
+    invoke-interface {p1, p2}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v4
+
+    const/16 v5, 0x20
+
+    if-eq v4, v5, :cond_1
+
+    :cond_0
+    move-object v4, v6
+
+    .line 1566
+    :goto_0
+    return-object v4
+
+    .line 1536
+    :cond_1
+    move v3, p5
+
+    .line 1537
+    .local v3, scanBack:I
+    const/4 v1, 0x0
+
+    .line 1538
+    .local v1, dotFound:Z
+    :goto_1
+    if-lez v3, :cond_4
+
+    .line 1539
+    add-int/lit8 v3, v3, -0x1
+
+    invoke-interface {p4, v3}, Landroid/text/Spanned;->charAt(I)C
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    .line 1540
+    .local v0, c:C
+    sparse-switch v0, :sswitch_data_0
 
-    .line 1048
-    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$6;->this$0:Lcom/android/email/activity/MessageCompose;
+    goto :goto_1
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$1300(Lcom/android/email/activity/MessageCompose;)Landroid/widget/LinearLayout;
+    :sswitch_0
+    move-object v4, v6
 
-    move-result-object v0
+    .line 1545
+    goto :goto_0
 
-    const/16 v1, 0x8
+    .line 1542
+    :sswitch_1
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    .line 1543
+    goto :goto_1
 
-    .line 1049
-    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$6;->this$0:Lcom/android/email/activity/MessageCompose;
+    .line 1547
+    :sswitch_2
+    if-nez v1, :cond_2
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$1400(Lcom/android/email/activity/MessageCompose;)Landroid/widget/LinearLayout;
+    move-object v4, v6
 
-    move-result-object v0
+    .line 1548
+    goto :goto_0
 
-    const/4 v1, 0x0
+    .line 1553
+    :cond_2
+    instance-of v4, p1, Landroid/text/Spanned;
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    if-eqz v4, :cond_3
 
-    .line 1051
-    :cond_0
-    return-void
+    .line 1554
+    new-instance v2, Landroid/text/SpannableStringBuilder;
+
+    const-string v4, ","
+
+    invoke-direct {v2, v4}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+
+    .line 1555
+    .local v2, sb:Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v2, p1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    move-object v4, v2
+
+    .line 1556
+    goto :goto_0
+
+    .line 1558
+    .end local v2           #sb:Landroid/text/SpannableStringBuilder;
+    :cond_3
+    const-string v4, ", "
+
+    goto :goto_0
+
+    .end local v0           #c:C
+    :cond_4
+    move-object v4, v6
+
+    .line 1566
+    goto :goto_0
+
+    .line 1540
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x2c -> :sswitch_0
+        0x2e -> :sswitch_1
+        0x40 -> :sswitch_2
+    .end sparse-switch
 .end method

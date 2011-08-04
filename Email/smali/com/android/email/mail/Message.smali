@@ -3,8 +3,8 @@
 .source "Message.java"
 
 # interfaces
-.implements Lcom/android/email/mail/Part;
 .implements Lcom/android/email/mail/Body;
+.implements Lcom/android/email/mail/Part;
 
 
 # annotations
@@ -13,6 +13,10 @@
         Lcom/android/email/mail/Message$RecipientType;
     }
 .end annotation
+
+
+# static fields
+.field public static final EMPTY_ARRAY:[Lcom/android/email/mail/Message;
 
 
 # instance fields
@@ -37,6 +41,20 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 27
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Lcom/android/email/mail/Message;
+
+    sput-object v0, Lcom/android/email/mail/Message;->EMPTY_ARRAY:[Lcom/android/email/mail/Message;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 1
 
@@ -44,7 +62,7 @@
     .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
+    .line 35
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/email/mail/Message;->mFlags:Ljava/util/HashSet;
@@ -65,19 +83,19 @@
     .end annotation
 
     .prologue
-    .line 126
+    .line 128
     iget-object v0, p0, Lcom/android/email/mail/Message;->mFlags:Ljava/util/HashSet;
 
     if-nez v0, :cond_0
 
-    .line 127
+    .line 129
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/email/mail/Message;->mFlags:Ljava/util/HashSet;
 
-    .line 129
+    .line 131
     :cond_0
     iget-object v0, p0, Lcom/android/email/mail/Message;->mFlags:Ljava/util/HashSet;
 
@@ -86,23 +104,7 @@
 
 
 # virtual methods
-.method public abstract addHeader(Ljava/lang/String;Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getBody()Lcom/android/email/mail/Body;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getContentType()Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/email/mail/MessagingException;
@@ -114,7 +116,7 @@
     .locals 2
 
     .prologue
-    .line 136
+    .line 138
     invoke-direct {p0}, Lcom/android/email/mail/Message;->getFlagSet()Ljava/util/HashSet;
 
     move-result-object v0
@@ -133,25 +135,7 @@
     return-object p0
 .end method
 
-.method public getFolder()Lcom/android/email/mail/Folder;
-    .locals 1
-
-    .prologue
-    .line 60
-    iget-object v0, p0, Lcom/android/email/mail/Message;->mFolder:Lcom/android/email/mail/Folder;
-
-    return-object v0
-.end method
-
 .method public abstract getFrom()[Lcom/android/email/mail/Address;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getHeader(Ljava/lang/String;)[Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/email/mail/MessagingException;
@@ -163,31 +147,13 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 70
     iget-object v0, p0, Lcom/android/email/mail/Message;->mInternalDate:Ljava/util/Date;
 
     return-object v0
 .end method
 
 .method public abstract getMessageId()Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
-.method public getMessageId_original()J
-    .locals 2
-
-    .prologue
-    .line 47
-    iget-wide v0, p0, Lcom/android/email/mail/Message;->mMessageId_original:J
-
-    return-wide v0
-.end method
-
-.method public abstract getReceivedDate()Ljava/util/Date;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/email/mail/MessagingException;
@@ -231,32 +197,10 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 54
     iget-object v0, p0, Lcom/android/email/mail/Message;->mUid:Ljava/lang/String;
 
     return-object v0
-.end method
-
-.method public isMimeType(Ljava/lang/String;)Z
-    .locals 1
-    .parameter "mimeType"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 122
-    invoke-virtual {p0}, Lcom/android/email/mail/Message;->getContentType()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public isSet(Lcom/android/email/mail/Flag;)Z
@@ -264,7 +208,7 @@
     .parameter "flag"
 
     .prologue
-    .line 167
+    .line 169
     invoke-direct {p0}, Lcom/android/email/mail/Message;->getFlagSet()Ljava/util/HashSet;
 
     move-result-object v0
@@ -274,22 +218,6 @@
     move-result v0
 
     return v0
-.end method
-
-.method public abstract removeHeader(Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
-.method public abstract saveChanges()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
 .end method
 
 .method public abstract setBody(Lcom/android/email/mail/Body;)V
@@ -311,10 +239,10 @@
     .end annotation
 
     .prologue
-    .line 152
+    .line 154
     invoke-virtual {p0, p1, p2}, Lcom/android/email/mail/Message;->setFlagDirectlyForTest(Lcom/android/email/mail/Flag;Z)V
 
-    .line 153
+    .line 155
     return-void
 .end method
 
@@ -329,21 +257,21 @@
     .end annotation
 
     .prologue
-    .line 144
+    .line 146
     if-eqz p2, :cond_0
 
-    .line 145
+    .line 147
     invoke-direct {p0}, Lcom/android/email/mail/Message;->getFlagSet()Ljava/util/HashSet;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 149
+    .line 151
     :goto_0
     return-void
 
-    .line 147
+    .line 149
     :cond_0
     invoke-direct {p0}, Lcom/android/email/mail/Message;->getFlagSet()Ljava/util/HashSet;
 
@@ -365,7 +293,7 @@
     .end annotation
 
     .prologue
-    .line 161
+    .line 163
     move-object v0, p1
 
     .local v0, arr$:[Lcom/android/email/mail/Flag;
@@ -380,27 +308,19 @@
 
     aget-object v1, v0, v2
 
-    .line 162
+    .line 164
     .local v1, flag:Lcom/android/email/mail/Flag;
     invoke-virtual {p0, v1, p2}, Lcom/android/email/mail/Message;->setFlag(Lcom/android/email/mail/Flag;Z)V
 
-    .line 161
+    .line 163
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 164
+    .line 166
     .end local v1           #flag:Lcom/android/email/mail/Flag;
     :cond_0
     return-void
-.end method
-
-.method public abstract setFrom(Lcom/android/email/mail/Address;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
 .end method
 
 .method public abstract setHeader(Ljava/lang/String;Ljava/lang/String;)V
@@ -416,19 +336,11 @@
     .parameter "internalDate"
 
     .prologue
-    .line 72
+    .line 74
     iput-object p1, p0, Lcom/android/email/mail/Message;->mInternalDate:Ljava/util/Date;
 
-    .line 73
+    .line 75
     return-void
-.end method
-
-.method public abstract setMessageId(Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
 .end method
 
 .method public setMessageId_original(J)V
@@ -436,10 +348,10 @@
     .parameter "set"
 
     .prologue
-    .line 43
+    .line 45
     iput-wide p1, p0, Lcom/android/email/mail/Message;->mMessageId_original:J
 
-    .line 44
+    .line 46
     return-void
 .end method
 
@@ -454,7 +366,7 @@
     .end annotation
 
     .prologue
-    .line 87
+    .line 89
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/android/email/mail/Address;
@@ -465,35 +377,11 @@
 
     invoke-virtual {p0, p1, v0}, Lcom/android/email/mail/Message;->setRecipients(Lcom/android/email/mail/Message$RecipientType;[Lcom/android/email/mail/Address;)V
 
-    .line 90
+    .line 92
     return-void
 .end method
 
 .method public abstract setRecipients(Lcom/android/email/mail/Message$RecipientType;[Lcom/android/email/mail/Address;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setReplyTo([Lcom/android/email/mail/Address;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setSentDate(Ljava/util/Date;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setSubject(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/email/mail/MessagingException;
@@ -506,10 +394,10 @@
     .parameter "uid"
 
     .prologue
-    .line 56
+    .line 58
     iput-object p1, p0, Lcom/android/email/mail/Message;->mUid:Ljava/lang/String;
 
-    .line 57
+    .line 59
     return-void
 .end method
 
@@ -517,7 +405,7 @@
     .locals 2
 
     .prologue
-    .line 174
+    .line 176
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -551,13 +439,4 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public abstract writeTo(Landroid/content/Context;JLjava/io/OutputStream;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
 .end method

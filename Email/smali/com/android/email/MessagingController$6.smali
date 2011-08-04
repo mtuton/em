@@ -3,7 +3,7 @@
 .source "MessagingController.java"
 
 # interfaces
-.implements Lcom/android/email/mail/MessageRetrievalListener;
+.implements Lcom/android/email/mail/Folder$MessageRetrievalListener;
 
 
 # annotations
@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 1113
+    .line 1078
     iput-object p1, p0, Lcom/android/email/MessagingController$6;->this$0:Lcom/android/email/MessagingController;
 
     iput-object p2, p0, Lcom/android/email/MessagingController$6;->val$localMapCopy:Ljava/util/HashMap;
@@ -57,16 +57,14 @@
 
 
 # virtual methods
-.method public messageFinished(Lcom/android/email/mail/Message;II)V
+.method public messageRetrieved(Lcom/android/email/mail/Message;)V
     .locals 10
     .parameter "message"
-    .parameter "number"
-    .parameter "ofTotal"
 
     .prologue
     const-string v9, "Email"
 
-    .line 1073
+    .line 1082
     iget-object v1, p0, Lcom/android/email/MessagingController$6;->this$0:Lcom/android/email/MessagingController;
 
     invoke-static {v1}, Lcom/android/email/MessagingController;->access$600(Lcom/android/email/MessagingController;)Z
@@ -75,12 +73,12 @@
 
     if-nez v1, :cond_1
 
-    .line 1111
+    .line 1120
     :cond_0
     :goto_0
     return-void
 
-    .line 1079
+    .line 1088
     :cond_1
     :try_start_0
     iget-object v1, p0, Lcom/android/email/MessagingController$6;->val$localMapCopy:Ljava/util/HashMap;
@@ -95,15 +93,15 @@
 
     check-cast v7, Lcom/android/email/MessagingController$LocalMessageInfo;
 
-    .line 1081
+    .line 1090
     .local v7, localMessageInfo:Lcom/android/email/MessagingController$LocalMessageInfo;
     const/4 v0, 0x0
 
-    .line 1082
+    .line 1091
     .local v0, localMessage:Lcom/android/email/provider/EmailContent$Message;
     if-nez v7, :cond_2
 
-    .line 1083
+    .line 1092
     new-instance v0, Lcom/android/email/provider/EmailContent$Message;
 
     .end local v0           #localMessage:Lcom/android/email/provider/EmailContent$Message;
@@ -111,12 +109,12 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 1089
+    .line 1098
     .restart local v0       #localMessage:Lcom/android/email/provider/EmailContent$Message;
     :goto_1
     if-eqz v0, :cond_0
 
-    .line 1092
+    .line 1101
     :try_start_1
     iget-object v1, p0, Lcom/android/email/MessagingController$6;->val$account:Lcom/android/email/provider/EmailContent$Account;
 
@@ -130,12 +128,12 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/email/LegacyConversions;->updateMessageFields(Lcom/android/email/provider/EmailContent$Message;Lcom/android/email/mail/Message;JJ)Z
 
-    .line 1095
+    .line 1104
     iget-object v1, p0, Lcom/android/email/MessagingController$6;->this$0:Lcom/android/email/MessagingController;
 
     invoke-static {v1, v0}, Lcom/android/email/MessagingController;->access$700(Lcom/android/email/MessagingController;Lcom/android/email/provider/EmailContent;)V
 
-    .line 1097
+    .line 1106
     sget-object v1, Lcom/android/email/mail/Flag;->SEEN:Lcom/android/email/mail/Flag;
 
     invoke-virtual {p1, v1}, Lcom/android/email/mail/Message;->isSet(Lcom/android/email/mail/Flag;)Z
@@ -144,7 +142,7 @@
 
     if-nez v1, :cond_0
 
-    .line 1098
+    .line 1107
     iget-object v1, p0, Lcom/android/email/MessagingController$6;->val$newMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -154,13 +152,13 @@
 
     goto :goto_0
 
-    .line 1100
+    .line 1109
     :catch_0
     move-exception v1
 
     move-object v8, v1
 
-    .line 1101
+    .line 1110
     .local v8, me:Lcom/android/email/mail/MessagingException;
     :try_start_2
     const-string v1, "Email"
@@ -189,7 +187,7 @@
 
     goto :goto_0
 
-    .line 1107
+    .line 1116
     .end local v0           #localMessage:Lcom/android/email/provider/EmailContent$Message;
     .end local v7           #localMessageInfo:Lcom/android/email/MessagingController$LocalMessageInfo;
     .end local v8           #me:Lcom/android/email/mail/MessagingException;
@@ -198,7 +196,7 @@
 
     move-object v6, v1
 
-    .line 1108
+    .line 1117
     .local v6, e:Ljava/lang/Exception;
     const-string v1, "Email"
 
@@ -228,7 +226,7 @@
 
     goto :goto_0
 
-    .line 1085
+    .line 1094
     .end local v6           #e:Ljava/lang/Exception;
     .restart local v0       #localMessage:Lcom/android/email/provider/EmailContent$Message;
     .restart local v7       #localMessageInfo:Lcom/android/email/MessagingController$LocalMessageInfo;
@@ -249,15 +247,4 @@
     move-result-object v0
 
     goto :goto_1
-.end method
-
-.method public messageStarted(Ljava/lang/String;II)V
-    .locals 0
-    .parameter "uid"
-    .parameter "number"
-    .parameter "ofTotal"
-
-    .prologue
-    .line 1114
-    return-void
 .end method

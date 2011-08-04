@@ -26,12 +26,12 @@
     .parameter
 
     .prologue
-    .line 6530
+    .line 8286
     iput-object p1, p0, Lcom/android/email/activity/MessageList$MessageListAdapter$RefreshTimer;->this$1:Lcom/android/email/activity/MessageList$MessageListAdapter;
 
     invoke-direct {p0}, Ljava/util/Timer;-><init>()V
 
-    .line 6531
+    .line 8287
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/email/activity/MessageList$MessageListAdapter$RefreshTimer;->timerTask:Ljava/util/TimerTask;
@@ -45,12 +45,12 @@
     .locals 1
 
     .prologue
-    .line 6534
+    .line 8290
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/email/activity/MessageList$MessageListAdapter$RefreshTimer;->timerTask:Ljava/util/TimerTask;
 
-    .line 6535
+    .line 8291
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .parameter "delay"
 
     .prologue
-    .line 6538
+    .line 8294
     monitor-enter p0
 
     :try_start_0
@@ -69,13 +69,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 6545
+    .line 8301
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 6539
+    .line 8295
     :cond_0
     const-wide/16 v0, 0x0
 
@@ -83,17 +83,17 @@
 
     if-gez v0, :cond_1
 
-    .line 6540
+    .line 8296
     :try_start_1
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListAdapter$RefreshTimer;->this$1:Lcom/android/email/activity/MessageList$MessageListAdapter;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList$MessageListAdapter;->access$4900(Lcom/android/email/activity/MessageList$MessageListAdapter;)V
+    invoke-static {v0}, Lcom/android/email/activity/MessageList$MessageListAdapter;->access$5300(Lcom/android/email/activity/MessageList$MessageListAdapter;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    .line 6538
+    .line 8294
     :catchall_0
     move-exception v0
 
@@ -101,7 +101,7 @@
 
     throw v0
 
-    .line 6542
+    .line 8298
     :cond_1
     :try_start_2
     new-instance v0, Lcom/android/email/activity/MessageList$MessageListAdapter$RefreshTimerTask;
@@ -112,7 +112,7 @@
 
     iput-object v0, p0, Lcom/android/email/activity/MessageList$MessageListAdapter$RefreshTimer;->timerTask:Ljava/util/TimerTask;
 
-    .line 6543
+    .line 8299
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListAdapter$RefreshTimer;->timerTask:Ljava/util/TimerTask;
 
     invoke-virtual {p0, v0, p1, p2}, Lcom/android/email/activity/MessageList$MessageListAdapter$RefreshTimer;->schedule(Ljava/util/TimerTask;J)V

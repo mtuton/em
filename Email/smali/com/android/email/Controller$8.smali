@@ -19,28 +19,23 @@
 
 .field final synthetic val$account:Lcom/android/email/provider/EmailContent$Account;
 
-.field final synthetic val$outboxId:J
-
 .field final synthetic val$sentboxId:J
 
 
 # direct methods
-.method constructor <init>(Lcom/android/email/Controller;Lcom/android/email/provider/EmailContent$Account;JJ)V
+.method constructor <init>(Lcom/android/email/Controller;Lcom/android/email/provider/EmailContent$Account;J)V
     .locals 0
-    .parameter
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 796
+    .line 825
     iput-object p1, p0, Lcom/android/email/Controller$8;->this$0:Lcom/android/email/Controller;
 
     iput-object p2, p0, Lcom/android/email/Controller$8;->val$account:Lcom/android/email/provider/EmailContent$Account;
 
     iput-wide p3, p0, Lcom/android/email/Controller$8;->val$sentboxId:J
-
-    iput-wide p5, p0, Lcom/android/email/Controller$8;->val$outboxId:J
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
@@ -50,10 +45,10 @@
 
 # virtual methods
 .method public run()V
-    .locals 7
+    .locals 5
 
     .prologue
-    .line 797
+    .line 828
     iget-object v0, p0, Lcom/android/email/Controller$8;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v0}, Lcom/android/email/Controller;->access$300(Lcom/android/email/Controller;)Lcom/android/email/MessagingController;
@@ -64,16 +59,14 @@
 
     iget-wide v2, p0, Lcom/android/email/Controller$8;->val$sentboxId:J
 
-    iget-wide v4, p0, Lcom/android/email/Controller$8;->val$outboxId:J
+    iget-object v4, p0, Lcom/android/email/Controller$8;->this$0:Lcom/android/email/Controller;
 
-    iget-object v6, p0, Lcom/android/email/Controller$8;->this$0:Lcom/android/email/Controller;
+    invoke-static {v4}, Lcom/android/email/Controller;->access$200(Lcom/android/email/Controller;)Lcom/android/email/Controller$LegacyListener;
 
-    invoke-static {v6}, Lcom/android/email/Controller;->access$200(Lcom/android/email/Controller;)Lcom/android/email/Controller$LegacyListener;
+    move-result-object v4
 
-    move-result-object v6
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/email/MessagingController;->sendPendingMessages(Lcom/android/email/provider/EmailContent$Account;JLcom/android/email/MessagingListener;)V
 
-    invoke-virtual/range {v0 .. v6}, Lcom/android/email/MessagingController;->sendPendingMessages(Lcom/android/email/provider/EmailContent$Account;JJLcom/android/email/MessagingListener;)V
-
-    .line 798
+    .line 829
     return-void
 .end method

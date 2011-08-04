@@ -11,10 +11,6 @@
 .end annotation
 
 
-# static fields
-.field public static final LOG_TAG:Ljava/lang/String; = "ExchangeStore"
-
-
 # instance fields
 .field private final mTransport:Lcom/android/email/mail/store/ExchangeStore$ExchangeTransport;
 
@@ -34,10 +30,10 @@
     .end annotation
 
     .prologue
-    .line 70
+    .line 73
     invoke-direct {p0}, Lcom/android/email/mail/Store;-><init>()V
 
-    .line 72
+    .line 75
     :try_start_0
     new-instance v1, Ljava/net/URI;
 
@@ -47,7 +43,7 @@
     :try_end_0
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 77
+    .line 80
     iget-object v1, p0, Lcom/android/email/mail/store/ExchangeStore;->mUri:Ljava/net/URI;
 
     invoke-static {v1, p2}, Lcom/android/email/mail/store/ExchangeStore$ExchangeTransport;->getInstance(Ljava/net/URI;Landroid/content/Context;)Lcom/android/email/mail/store/ExchangeStore$ExchangeTransport;
@@ -56,16 +52,16 @@
 
     iput-object v1, p0, Lcom/android/email/mail/store/ExchangeStore;->mTransport:Lcom/android/email/mail/store/ExchangeStore$ExchangeTransport;
 
-    .line 78
+    .line 81
     return-void
 
-    .line 73
+    .line 76
     :catch_0
     move-exception v1
 
     move-object v0, v1
 
-    .line 74
+    .line 77
     .local v0, e:Ljava/net/URISyntaxException;
     new-instance v1, Lcom/android/email/mail/MessagingException;
 
@@ -76,19 +72,21 @@
     throw v1
 .end method
 
-.method public static addSystemAccount(Landroid/content/Context;Lcom/android/email/provider/EmailContent$Account;ZZLandroid/accounts/AccountManagerCallback;)Landroid/accounts/AccountManagerFuture;
+.method public static addSystemAccount(Landroid/content/Context;Lcom/android/email/provider/EmailContent$Account;ZZZZLandroid/accounts/AccountManagerCallback;)Landroid/accounts/AccountManagerFuture;
     .locals 8
     .parameter "context"
     .parameter "acct"
     .parameter "syncContacts"
     .parameter "syncCalendar"
+    .parameter "syncTasks"
+    .parameter "syncNotes"
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/content/Context;",
             "Lcom/android/email/provider/EmailContent$Account;",
-            "ZZ",
+            "ZZZZ",
             "Landroid/accounts/AccountManagerCallback",
             "<",
             "Landroid/os/Bundle;",
@@ -101,15 +99,15 @@
     .end annotation
 
     .prologue
-    .local p4, callback:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
+    .local p6, callback:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     const/4 v2, 0x0
 
-    .line 88
+    .line 93
     new-instance v4, Landroid/os/Bundle;
 
     invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
 
-    .line 89
+    .line 94
     .local v4, options:Landroid/os/Bundle;
     const-string v0, "username"
 
@@ -117,7 +115,7 @@
 
     invoke-virtual {v4, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 90
+    .line 95
     const-string v0, "password"
 
     iget-object v1, p1, Lcom/android/email/provider/EmailContent$Account;->mHostAuthRecv:Lcom/android/email/provider/EmailContent$HostAuth;
@@ -126,17 +124,27 @@
 
     invoke-virtual {v4, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 91
+    .line 96
     const-string v0, "contacts"
 
     invoke-virtual {v4, v0, p2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 92
+    .line 97
     const-string v0, "calendar"
 
     invoke-virtual {v4, v0, p3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 97
+    .line 98
+    const-string v0, "tasks"
+
+    invoke-virtual {v4, v0, p4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 99
+    const-string v0, "notes"
+
+    invoke-virtual {v4, v0, p5}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 104
     invoke-static {p0}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
 
     move-result-object v0
@@ -147,7 +155,7 @@
 
     move-object v5, v2
 
-    move-object v6, p4
+    move-object v6, p6
 
     move-object v7, v2
 
@@ -170,59 +178,12 @@
     .end annotation
 
     .prologue
-    .line 60
+    .line 63
     new-instance v0, Lcom/android/email/mail/store/ExchangeStore;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/android/email/mail/store/ExchangeStore;-><init>(Ljava/lang/String;Landroid/content/Context;Lcom/android/email/mail/Store$PersistentDataCallbacks;)V
 
     return-object v0
-.end method
-
-.method public static removeSystemAccount(Landroid/content/Context;Lcom/android/email/provider/EmailContent$Account;Landroid/accounts/AccountManagerCallback;)Landroid/accounts/AccountManagerFuture;
-    .locals 4
-    .parameter "context"
-    .parameter "acct"
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Lcom/android/email/provider/EmailContent$Account;",
-            "Landroid/accounts/AccountManagerCallback",
-            "<",
-            "Landroid/os/Bundle;",
-            ">;)",
-            "Landroid/accounts/AccountManagerFuture",
-            "<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .local p2, callback:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
-    const/4 v3, 0x0
-
-    .line 111
-    new-instance v0, Landroid/accounts/Account;
-
-    iget-object v1, p1, Lcom/android/email/provider/EmailContent$Account;->mEmailAddress:Ljava/lang/String;
-
-    const-string v2, "com.android.exchange"
-
-    invoke-direct {v0, v1, v2}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 113
-    .local v0, systemAccount:Landroid/accounts/Account;
-    invoke-static {p0}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0, v3, v3}, Landroid/accounts/AccountManager;->removeAccount(Landroid/accounts/Account;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
-
-    move-result-object v1
-
-    return-object v1
 .end method
 
 
@@ -243,7 +204,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 283
+    .line 298
     const/4 v1, 0x0
 
     :try_start_0
@@ -257,11 +218,11 @@
 
     move-result-object v1
 
-    .line 286
+    .line 301
     :goto_0
     return-object v1
 
-    .line 285
+    .line 300
     :catch_0
     move-exception v1
 
@@ -270,7 +231,7 @@
     .local v0, e:Landroid/os/RemoteException;
     move-object v1, v2
 
-    .line 286
+    .line 301
     goto :goto_0
 .end method
 
@@ -283,14 +244,14 @@
     .end annotation
 
     .prologue
-    .line 82
+    .line 85
     iget-object v0, p0, Lcom/android/email/mail/store/ExchangeStore;->mTransport:Lcom/android/email/mail/store/ExchangeStore$ExchangeTransport;
 
     iget-object v1, p0, Lcom/android/email/mail/store/ExchangeStore;->mUri:Ljava/net/URI;
 
     invoke-virtual {v0, v1}, Lcom/android/email/mail/store/ExchangeStore$ExchangeTransport;->checkSettings(Ljava/net/URI;)V
 
-    .line 83
+    .line 86
     return-void
 .end method
 
@@ -305,10 +266,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 268
+    .line 283
     invoke-super {p0}, Lcom/android/email/mail/Store;->delete()V
 
-    .line 270
+    .line 285
     iget-object v0, p0, Lcom/android/email/mail/store/ExchangeStore;->mTransport:Lcom/android/email/mail/store/ExchangeStore$ExchangeTransport;
 
     invoke-static {v0}, Lcom/android/email/mail/store/ExchangeStore$ExchangeTransport;->access$000(Lcom/android/email/mail/store/ExchangeStore$ExchangeTransport;)Landroid/content/Context;
@@ -327,7 +288,7 @@
 
     invoke-virtual {v0, v1, v2, v2}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 271
+    .line 286
     return-void
 .end method
 
@@ -336,7 +297,7 @@
     .parameter "name"
 
     .prologue
-    .line 118
+    .line 125
     const/4 v0, 0x0
 
     return-object v0
@@ -346,7 +307,7 @@
     .locals 1
 
     .prologue
-    .line 144
+    .line 151
     const/4 v0, 0x0
 
     return-object v0
@@ -356,7 +317,7 @@
     .locals 1
 
     .prologue
-    .line 123
+    .line 130
     const/4 v0, 0x0
 
     return-object v0
@@ -375,7 +336,7 @@
     .end annotation
 
     .prologue
-    .line 132
+    .line 139
     const-class v0, Lcom/android/email/activity/setup/AccountSetupExchange;
 
     return-object v0
@@ -385,7 +346,7 @@
     .locals 1
 
     .prologue
-    .line 164
+    .line 171
     const/4 v0, 0x0
 
     return v0
@@ -395,7 +356,7 @@
     .locals 1
 
     .prologue
-    .line 154
+    .line 161
     const/4 v0, 0x1
 
     return v0

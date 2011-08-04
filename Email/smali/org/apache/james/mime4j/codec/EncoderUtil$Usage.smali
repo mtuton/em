@@ -95,7 +95,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
     .locals 1
-    .parameter "name"
+    .parameter
 
     .prologue
     .line 93
@@ -105,13 +105,12 @@
 
     move-result-object p0
 
-    .end local p0
     check-cast p0, Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
 
     return-object p0
 .end method
 
-.method public static final values()[Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
+.method public static values()[Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
     .locals 1
 
     .prologue

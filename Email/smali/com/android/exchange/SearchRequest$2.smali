@@ -1,4 +1,4 @@
-.class Lcom/android/exchange/SearchRequest$2;
+.class synthetic Lcom/android/exchange/SearchRequest$2;
 .super Ljava/lang/Object;
 .source "SearchRequest.java"
 
@@ -27,7 +27,7 @@
     .locals 3
 
     .prologue
-    .line 189
+    .line 206
     invoke-static {}, Lcom/android/exchange/SearchRequest$BodyPreferenceType;->values()[Lcom/android/exchange/SearchRequest$BodyPreferenceType;
 
     move-result-object v0
@@ -101,7 +101,7 @@
     :try_end_3
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 143
+    .line 160
     :goto_3
     invoke-static {}, Lcom/android/exchange/SearchRequest$QueryClass;->values()[Lcom/android/exchange/SearchRequest$QueryClass;
 
@@ -128,7 +128,7 @@
     :try_end_4
     .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 126
+    .line 137
     :goto_4
     invoke-static {}, Lcom/android/exchange/SearchRequest$StoreName;->values()[Lcom/android/exchange/SearchRequest$StoreName;
 
@@ -163,13 +163,13 @@
 
     goto :goto_5
 
-    .line 143
+    .line 160
     :catch_1
     move-exception v0
 
     goto :goto_4
 
-    .line 189
+    .line 206
     :catch_2
     move-exception v0
 

@@ -3,10 +3,6 @@
 .source "ModifiedUTF7Charset.java"
 
 
-# static fields
-.field private static final MODIFIED_BASE64_ALPHABET:Ljava/lang/String; = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+,"
-
-
 # direct methods
 .method constructor <init>(Ljava/lang/String;[Ljava/lang/String;)V
     .locals 2

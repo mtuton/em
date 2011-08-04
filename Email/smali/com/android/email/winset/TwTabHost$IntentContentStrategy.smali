@@ -27,57 +27,19 @@
 .field final synthetic this$0:Lcom/android/email/winset/TwTabHost;
 
 
-# direct methods
-.method private constructor <init>(Lcom/android/email/winset/TwTabHost;Ljava/lang/String;Landroid/content/Intent;)V
-    .locals 0
-    .parameter
-    .parameter "tag"
-    .parameter "intent"
-
-    .prologue
-    .line 831
-    iput-object p1, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->this$0:Lcom/android/email/winset/TwTabHost;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 832
-    iput-object p2, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->mTag:Ljava/lang/String;
-
-    .line 833
-    iput-object p3, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->mIntent:Landroid/content/Intent;
-
-    .line 834
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/android/email/winset/TwTabHost;Ljava/lang/String;Landroid/content/Intent;Lcom/android/email/winset/TwTabHost$1;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-
-    .prologue
-    .line 824
-    invoke-direct {p0, p1, p2, p3}, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;-><init>(Lcom/android/email/winset/TwTabHost;Ljava/lang/String;Landroid/content/Intent;)V
-
-    return-void
-.end method
-
-
 # virtual methods
 .method public getContentView()Landroid/view/View;
     .locals 5
 
     .prologue
-    .line 838
+    .line 922
     iget-object v2, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->this$0:Lcom/android/email/winset/TwTabHost;
 
     iget-object v2, v2, Lcom/android/email/winset/TwTabHost;->mLocalActivityManager:Landroid/app/LocalActivityManager;
 
     if-nez v2, :cond_0
 
-    .line 839
+    .line 923
     new-instance v2, Ljava/lang/IllegalStateException;
 
     const-string v3, "Did you forget to call \'public void setup(LocalActivityManager activityGroup)\'?"
@@ -86,7 +48,7 @@
 
     throw v2
 
-    .line 841
+    .line 925
     :cond_0
     iget-object v2, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->this$0:Lcom/android/email/winset/TwTabHost;
 
@@ -100,7 +62,7 @@
 
     move-result-object v0
 
-    .line 843
+    .line 927
     .local v0, w:Landroid/view/Window;
     if-eqz v0, :cond_3
 
@@ -110,7 +72,7 @@
 
     move-object v1, v2
 
-    .line 844
+    .line 928
     .local v1, wd:Landroid/view/View;
     :goto_0
     iget-object v2, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
@@ -121,7 +83,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 845
+    .line 929
     iget-object v2, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -130,7 +92,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 846
+    .line 930
     iget-object v2, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->this$0:Lcom/android/email/winset/TwTabHost;
 
     invoke-static {v2}, Lcom/android/email/winset/TwTabHost;->access$100(Lcom/android/email/winset/TwTabHost;)Landroid/widget/FrameLayout;
@@ -141,30 +103,30 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 849
+    .line 933
     :cond_1
     iput-object v1, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
-    .line 857
+    .line 941
     iget-object v2, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     if-eqz v2, :cond_2
 
-    .line 858
+    .line 942
     iget-object v2, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 859
+    .line 943
     iget-object v2, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setFocusableInTouchMode(Z)V
 
-    .line 860
+    .line 944
     iget-object v2, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     check-cast v2, Landroid/view/ViewGroup;
@@ -173,13 +135,13 @@
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->setDescendantFocusability(I)V
 
-    .line 863
+    .line 947
     :cond_2
     iget-object v2, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     return-object v2
 
-    .line 843
+    .line 927
     .end local v1           #wd:Landroid/view/View;
     :cond_3
     const/4 v2, 0x0
@@ -193,19 +155,19 @@
     .locals 2
 
     .prologue
-    .line 867
+    .line 951
     iget-object v0, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 868
+    .line 952
     iget-object v0, p0, Lcom/android/email/winset/TwTabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 870
+    .line 954
     :cond_0
     return-void
 .end method

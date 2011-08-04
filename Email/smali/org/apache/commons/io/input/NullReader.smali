@@ -20,50 +20,6 @@
 
 
 # direct methods
-.method public constructor <init>(J)V
-    .locals 2
-    .parameter "size"
-
-    .prologue
-    .line 80
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, p1, p2, v0, v1}, Lorg/apache/commons/io/input/NullReader;-><init>(JZZ)V
-
-    .line 81
-    return-void
-.end method
-
-.method public constructor <init>(JZZ)V
-    .locals 2
-    .parameter "size"
-    .parameter "markSupported"
-    .parameter "throwEofException"
-
-    .prologue
-    .line 94
-    invoke-direct {p0}, Ljava/io/Reader;-><init>()V
-
-    .line 67
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Lorg/apache/commons/io/input/NullReader;->mark:J
-
-    .line 95
-    iput-wide p1, p0, Lorg/apache/commons/io/input/NullReader;->size:J
-
-    .line 96
-    iput-boolean p3, p0, Lorg/apache/commons/io/input/NullReader;->markSupported:Z
-
-    .line 97
-    iput-boolean p4, p0, Lorg/apache/commons/io/input/NullReader;->throwEofException:Z
-
-    .line 98
-    return-void
-.end method
-
 .method private doEndOfFile()I
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
@@ -125,26 +81,6 @@
 
     .line 128
     return-void
-.end method
-
-.method public getPosition()J
-    .locals 2
-
-    .prologue
-    .line 106
-    iget-wide v0, p0, Lorg/apache/commons/io/input/NullReader;->position:J
-
-    return-wide v0
-.end method
-
-.method public getSize()J
-    .locals 2
-
-    .prologue
-    .line 115
-    iget-wide v0, p0, Lorg/apache/commons/io/input/NullReader;->size:J
-
-    return-wide v0
 .end method
 
 .method public declared-synchronized mark(I)V

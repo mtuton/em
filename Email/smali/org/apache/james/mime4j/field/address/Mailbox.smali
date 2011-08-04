@@ -12,21 +12,6 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
-    .parameter "localPart"
-    .parameter "domain"
-
-    .prologue
-    .line 40
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0, p1, p2}, Lorg/apache/james/mime4j/field/address/Mailbox;-><init>(Lorg/apache/james/mime4j/field/address/DomainList;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 41
-    return-void
-.end method
-
 .method public constructor <init>(Lorg/apache/james/mime4j/field/address/DomainList;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
     .parameter "route"

@@ -44,26 +44,6 @@
 
 
 # virtual methods
-.method public bindStream(Ljava/io/InputStream;)Ljava/io/InputStream;
-    .locals 2
-    .parameter "input"
-
-    .prologue
-    .line 42
-    invoke-direct {p0}, Lorg/apache/commons/io/input/DemuxInputStream;->getStream()Ljava/io/InputStream;
-
-    move-result-object v0
-
-    .line 43
-    .local v0, oldValue:Ljava/io/InputStream;
-    iget-object v1, p0, Lorg/apache/commons/io/input/DemuxInputStream;->m_streams:Ljava/lang/InheritableThreadLocal;
-
-    invoke-virtual {v1, p1}, Ljava/lang/InheritableThreadLocal;->set(Ljava/lang/Object;)V
-
-    .line 44
-    return-object v0
-.end method
-
 .method public close()V
     .locals 1
     .annotation system Ldalvik/annotation/Throws;

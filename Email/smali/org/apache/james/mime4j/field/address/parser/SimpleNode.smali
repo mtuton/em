@@ -13,8 +13,6 @@
 
 .field protected parent:Lorg/apache/james/mime4j/field/address/parser/Node;
 
-.field protected parser:Lorg/apache/james/mime4j/field/address/parser/AddressListParser;
-
 
 # direct methods
 .method public constructor <init>(I)V
@@ -32,153 +30,8 @@
     return-void
 .end method
 
-.method public constructor <init>(Lorg/apache/james/mime4j/field/address/parser/AddressListParser;I)V
-    .locals 0
-    .parameter "p"
-    .parameter "i"
-
-    .prologue
-    .line 16
-    invoke-direct {p0, p2}, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;-><init>(I)V
-
-    .line 17
-    iput-object p1, p0, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->parser:Lorg/apache/james/mime4j/field/address/parser/AddressListParser;
-
-    .line 18
-    return-void
-.end method
-
 
 # virtual methods
-.method public childrenAccept(Lorg/apache/james/mime4j/field/address/parser/AddressListParserVisitor;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-    .parameter "visitor"
-    .parameter "data"
-
-    .prologue
-    .line 55
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->children:[Lorg/apache/james/mime4j/field/address/parser/Node;
-
-    if-eqz v1, :cond_0
-
-    .line 56
-    const/4 v0, 0x0
-
-    .local v0, i:I
-    :goto_0
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->children:[Lorg/apache/james/mime4j/field/address/parser/Node;
-
-    array-length v1, v1
-
-    if-ge v0, v1, :cond_0
-
-    .line 57
-    iget-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->children:[Lorg/apache/james/mime4j/field/address/parser/Node;
-
-    aget-object v1, v1, v0
-
-    invoke-interface {v1, p1, p2}, Lorg/apache/james/mime4j/field/address/parser/Node;->jjtAccept(Lorg/apache/james/mime4j/field/address/parser/AddressListParserVisitor;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 56
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 60
-    .end local v0           #i:I
-    :cond_0
-    return-object p2
-.end method
-
-.method public dump(Ljava/lang/String;)V
-    .locals 4
-    .parameter "prefix"
-
-    .prologue
-    .line 76
-    sget-object v2, Ljava/lang/System;->out:Ljava/io/PrintStream;
-
-    invoke-virtual {p0, p1}, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->toString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-
-    .line 77
-    iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->children:[Lorg/apache/james/mime4j/field/address/parser/Node;
-
-    if-eqz v2, :cond_1
-
-    .line 78
-    const/4 v0, 0x0
-
-    .local v0, i:I
-    :goto_0
-    iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->children:[Lorg/apache/james/mime4j/field/address/parser/Node;
-
-    array-length v2, v2
-
-    if-ge v0, v2, :cond_1
-
-    .line 79
-    iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->children:[Lorg/apache/james/mime4j/field/address/parser/Node;
-
-    aget-object v1, v2, v0
-
-    check-cast v1, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;
-
-    .line 80
-    .local v1, n:Lorg/apache/james/mime4j/field/address/parser/SimpleNode;
-    if-eqz v1, :cond_0
-
-    .line 81
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->dump(Ljava/lang/String;)V
-
-    .line 78
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 85
-    .end local v0           #i:I
-    .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/SimpleNode;
-    :cond_1
-    return-void
-.end method
-
-.method public jjtAccept(Lorg/apache/james/mime4j/field/address/parser/AddressListParserVisitor;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter "visitor"
-    .parameter "data"
-
-    .prologue
-    .line 50
-    invoke-interface {p1, p0, p2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParserVisitor;->visit(Lorg/apache/james/mime4j/field/address/parser/SimpleNode;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public jjtAddChild(Lorg/apache/james/mime4j/field/address/parser/Node;I)V
     .locals 4
     .parameter "n"
@@ -281,16 +134,6 @@
     goto :goto_0
 .end method
 
-.method public jjtGetParent()Lorg/apache/james/mime4j/field/address/parser/Node;
-    .locals 1
-
-    .prologue
-    .line 27
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->parent:Lorg/apache/james/mime4j/field/address/parser/Node;
-
-    return-object v0
-.end method
-
 .method public jjtOpen()V
     .locals 0
 
@@ -320,35 +163,6 @@
     iget v1, p0, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->id:I
 
     aget-object v0, v0, v1
-
-    return-object v0
-.end method
-
-.method public toString(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
-    .parameter "prefix"
-
-    .prologue
-    .line 70
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
 
     return-object v0
 .end method

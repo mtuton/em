@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1104
+    .line 1215
     iput-object p1, p0, Lcom/android/exchange/SyncManager$CalendarObserver$1;->this$1:Lcom/android/exchange/SyncManager$CalendarObserver;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 14
 
     .prologue
-    .line 1105
+    .line 1217
     iget-object v0, p0, Lcom/android/exchange/SyncManager$CalendarObserver$1;->this$1:Lcom/android/exchange/SyncManager$CalendarObserver;
 
     iget-object v0, v0, Lcom/android/exchange/SyncManager$CalendarObserver;->this$0:Lcom/android/exchange/SyncManager;
@@ -86,15 +86,15 @@
 
     move-result-object v7
 
-    .line 1108
+    .line 1220
     .local v7, c:Landroid/database/Cursor;
     if-nez v7, :cond_0
 
-    .line 1164
+    .line 1276
     :goto_0
     return-void
 
-    .line 1111
+    .line 1223
     :cond_0
     :try_start_0
     invoke-interface {v7}, Landroid/database/Cursor;->moveToFirst()Z
@@ -103,14 +103,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 1112
+    .line 1224
     const/4 v0, 0x0
 
     invoke-interface {v7, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v11
 
-    .line 1113
+    .line 1225
     .local v11, newSyncEvents:J
     iget-object v0, p0, Lcom/android/exchange/SyncManager$CalendarObserver$1;->this$1:Lcom/android/exchange/SyncManager$CalendarObserver;
 
@@ -120,7 +120,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1114
+    .line 1226
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -145,7 +145,7 @@
 
     invoke-static {v0}, Lcom/android/exchange/SyncManager;->log(Ljava/lang/String;)V
 
-    .line 1115
+    .line 1227
     sget-object v0, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     iget-object v1, p0, Lcom/android/exchange/SyncManager$CalendarObserver$1;->this$1:Lcom/android/exchange/SyncManager$CalendarObserver;
@@ -160,11 +160,11 @@
 
     move-result-object v10
 
-    .line 1118
+    .line 1230
     .local v10, mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     if-nez v10, :cond_2
 
-    .line 1162
+    .line 1274
     .end local v10           #mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     .end local v11           #newSyncEvents:J
     :cond_1
@@ -173,7 +173,7 @@
 
     goto :goto_0
 
-    .line 1119
+    .line 1231
     .restart local v10       #mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     .restart local v11       #newSyncEvents:J
     :cond_2
@@ -183,7 +183,7 @@
 
     if-nez v0, :cond_3
 
-    .line 1122
+    .line 1234
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -209,19 +209,19 @@
 
     invoke-static {v0}, Lcom/android/exchange/SyncManager;->log(Ljava/lang/String;)V
 
-    .line 1125
+    .line 1237
     iget-wide v0, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
 
     invoke-static {v0, v1}, Lcom/android/exchange/SyncManager;->access$300(J)V
 
-    .line 1127
+    .line 1239
     new-instance v13, Lcom/android/exchange/EasSyncService;
 
     sget-object v0, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     invoke-direct {v13, v0, v10}, Lcom/android/exchange/EasSyncService;-><init>(Landroid/content/Context;Lcom/android/email/provider/EmailContent$Mailbox;)V
 
-    .line 1129
+    .line 1241
     .local v13, service:Lcom/android/exchange/EasSyncService;
     new-instance v6, Lcom/android/exchange/adapter/CalendarSyncAdapter;
 
@@ -229,7 +229,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1132
+    .line 1244
     .local v6, adapter:Lcom/android/exchange/adapter/CalendarSyncAdapter;
     :try_start_2
     const-string v0, "0"
@@ -241,14 +241,14 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 1137
+    .line 1249
     :goto_2
     :try_start_3
     new-instance v8, Landroid/content/ContentValues;
 
     invoke-direct {v8}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1138
+    .line 1250
     .local v8, cv:Landroid/content/ContentValues;
     const-string v0, "syncKey"
 
@@ -256,7 +256,7 @@
 
     invoke-virtual {v8, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1139
+    .line 1251
     iget-object v0, p0, Lcom/android/exchange/SyncManager$CalendarObserver$1;->this$1:Lcom/android/exchange/SyncManager$CalendarObserver;
 
     iget-object v0, v0, Lcom/android/exchange/SyncManager$CalendarObserver;->this$0:Lcom/android/exchange/SyncManager;
@@ -279,7 +279,7 @@
 
     invoke-virtual {v0, v1, v8, v2, v3}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 1143
+    .line 1255
     sget-object v0, Landroid/provider/Calendar$Events;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -298,7 +298,7 @@
 
     move-result-object v9
 
-    .line 1148
+    .line 1260
     .local v9, eventsAsSyncAdapter:Landroid/net/Uri;
     iget-object v0, p0, Lcom/android/exchange/SyncManager$CalendarObserver$1;->this$1:Lcom/android/exchange/SyncManager$CalendarObserver;
 
@@ -328,7 +328,7 @@
 
     invoke-virtual {v0, v9, v1, v2}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 1158
+    .line 1270
     .end local v6           #adapter:Lcom/android/exchange/adapter/CalendarSyncAdapter;
     .end local v8           #cv:Landroid/content/ContentValues;
     .end local v9           #eventsAsSyncAdapter:Landroid/net/Uri;
@@ -342,7 +342,7 @@
 
     goto/16 :goto_1
 
-    .line 1162
+    .line 1274
     .end local v10           #mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     .end local v11           #newSyncEvents:J
     :catchall_0
@@ -352,7 +352,7 @@
 
     throw v0
 
-    .line 1153
+    .line 1265
     .restart local v10       #mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     .restart local v11       #newSyncEvents:J
     :cond_3
@@ -367,7 +367,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/exchange/SyncManager;->access$1100(Lcom/android/exchange/SyncManager;J)V
 
-    .line 1154
+    .line 1266
     const-string v0, "calendar sync changed"
 
     invoke-static {v0}, Lcom/android/exchange/SyncManager;->kick(Ljava/lang/String;)V
@@ -376,7 +376,7 @@
 
     goto :goto_3
 
-    .line 1133
+    .line 1245
     .restart local v6       #adapter:Lcom/android/exchange/adapter/CalendarSyncAdapter;
     .restart local v13       #service:Lcom/android/exchange/EasSyncService;
     :catch_0

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 30
+    .line 28
     iput-object p1, p0, Lcom/android/email/activity/setup/OoOSetMessage$1;->this$0:Lcom/android/email/activity/setup/OoOSetMessage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
     .line 31
     iget-object v4, p0, Lcom/android/email/activity/setup/OoOSetMessage$1;->this$0:Lcom/android/email/activity/setup/OoOSetMessage;
 
-    const v5, 0x7f0700f6
+    const v5, 0x7f070149
 
     invoke-virtual {v4, v5}, Lcom/android/email/activity/setup/OoOSetMessage;->findViewById(I)Landroid/view/View;
 
@@ -115,7 +115,7 @@
     :cond_1
     iget-object v4, p0, Lcom/android/email/activity/setup/OoOSetMessage$1;->this$0:Lcom/android/email/activity/setup/OoOSetMessage;
 
-    const v5, 0x7f0700f4
+    const v5, 0x7f070147
 
     invoke-virtual {v4, v5}, Lcom/android/email/activity/setup/OoOSetMessage;->findViewById(I)Landroid/view/View;
 
@@ -143,7 +143,7 @@
     :cond_2
     iget-object v4, p0, Lcom/android/email/activity/setup/OoOSetMessage$1;->this$0:Lcom/android/email/activity/setup/OoOSetMessage;
 
-    const v5, 0x7f0700f5
+    const v5, 0x7f070148
 
     invoke-virtual {v4, v5}, Lcom/android/email/activity/setup/OoOSetMessage;->findViewById(I)Landroid/view/View;
 

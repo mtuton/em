@@ -221,7 +221,7 @@
 
     .prologue
     .line 108
-    const v1, 0x7f05000b
+    const v1, 0x7f05000c
 
     invoke-static {v1, p0, p1}, Lcom/android/email/mail/Store$StoreInfo;->getStoreInfoEx(ILjava/lang/String;Landroid/content/Context;)Lcom/android/email/mail/Store$StoreInfo;
 
@@ -232,7 +232,7 @@
     if-nez v0, :cond_0
 
     .line 110
-    const v1, 0x7f05000a
+    const v1, 0x7f05000b
 
     invoke-static {v1, p0, p1}, Lcom/android/email/mail/Store$StoreInfo;->getStoreInfo(ILjava/lang/String;Landroid/content/Context;)Lcom/android/email/mail/Store$StoreInfo;
 

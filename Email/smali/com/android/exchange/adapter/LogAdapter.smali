@@ -35,21 +35,6 @@
     return-void
 .end method
 
-.method public commit()Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 35
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public getCollectionName()Ljava/lang/String;
     .locals 1
 

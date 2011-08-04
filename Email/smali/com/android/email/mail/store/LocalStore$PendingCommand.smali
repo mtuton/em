@@ -19,8 +19,6 @@
 
 .field public command:Ljava/lang/String;
 
-.field private mId:J
-
 
 # direct methods
 .method public constructor <init>()V
@@ -31,29 +29,6 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method static synthetic access$000(Lcom/android/email/mail/store/LocalStore$PendingCommand;)J
-    .locals 2
-    .parameter "x0"
-
-    .prologue
-    .line 516
-    iget-wide v0, p0, Lcom/android/email/mail/store/LocalStore$PendingCommand;->mId:J
-
-    return-wide v0
-.end method
-
-.method static synthetic access$002(Lcom/android/email/mail/store/LocalStore$PendingCommand;J)J
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 516
-    iput-wide p1, p0, Lcom/android/email/mail/store/LocalStore$PendingCommand;->mId:J
-
-    return-wide p1
 .end method
 
 

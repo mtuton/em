@@ -62,26 +62,6 @@
     return-void
 .end method
 
-.method public addBodyPart(Lcom/android/email/mail/BodyPart;I)V
-    .locals 1
-    .parameter "part"
-    .parameter "index"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 46
-    iget-object v0, p0, Lcom/android/email/mail/Multipart;->mParts:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p2, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
-
-    .line 47
-    return-void
-.end method
-
 .method public getBodyPart(I)Lcom/android/email/mail/BodyPart;
     .locals 1
     .parameter "index"
@@ -139,60 +119,6 @@
     return v0
 .end method
 
-.method public getParent()Lcom/android/email/mail/Part;
-    .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 70
-    iget-object v0, p0, Lcom/android/email/mail/Multipart;->mParent:Lcom/android/email/mail/Part;
-
-    return-object v0
-.end method
-
-.method public removeBodyPart(I)V
-    .locals 1
-    .parameter "index"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 66
-    iget-object v0, p0, Lcom/android/email/mail/Multipart;->mParts:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
-
-    .line 67
-    return-void
-.end method
-
-.method public removeBodyPart(Lcom/android/email/mail/BodyPart;)Z
-    .locals 1
-    .parameter "part"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 62
-    iget-object v0, p0, Lcom/android/email/mail/Multipart;->mParts:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public setParent(Lcom/android/email/mail/Part;)V
     .locals 0
     .parameter "parent"
@@ -207,22 +133,5 @@
     iput-object p1, p0, Lcom/android/email/mail/Multipart;->mParent:Lcom/android/email/mail/Part;
 
     .line 75
-    return-void
-.end method
-
-.method public writeTo(Landroid/content/Context;JLjava/io/OutputStream;)V
-    .locals 0
-    .parameter "context"
-    .parameter "messageId"
-    .parameter "out"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 39
     return-void
 .end method

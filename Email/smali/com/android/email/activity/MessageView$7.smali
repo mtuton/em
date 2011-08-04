@@ -1,11 +1,14 @@
 .class Lcom/android/email/activity/MessageView$7;
-.super Ljava/lang/Thread;
+.super Ljava/lang/Object;
 .source "MessageView.java"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageView;->onRestore()V
+    value = Lcom/android/email/activity/MessageView;->onDeletePopup()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,45 +20,32 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/activity/MessageView;
 
-.field final synthetic val$syncAccountId:J
-
 
 # direct methods
-.method constructor <init>(Lcom/android/email/activity/MessageView;J)V
+.method constructor <init>(Lcom/android/email/activity/MessageView;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 1644
+    .line 2122
     iput-object p1, p0, Lcom/android/email/activity/MessageView$7;->this$0:Lcom/android/email/activity/MessageView;
 
-    iput-wide p2, p0, Lcom/android/email/activity/MessageView$7;->val$syncAccountId:J
-
-    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 4
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 0
+    .parameter "dialog"
+    .parameter "whichButton"
 
     .prologue
-    .line 1645
-    iget-object v0, p0, Lcom/android/email/activity/MessageView$7;->this$0:Lcom/android/email/activity/MessageView;
+    .line 2124
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$1200(Lcom/android/email/activity/MessageView;)Lcom/android/email/MessagingController;
-
-    move-result-object v0
-
-    iget-wide v1, p0, Lcom/android/email/activity/MessageView$7;->val$syncAccountId:J
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/email/MessagingController;->processPendingActions(JZ)V
-
-    .line 1646
+    .line 2125
     return-void
 .end method

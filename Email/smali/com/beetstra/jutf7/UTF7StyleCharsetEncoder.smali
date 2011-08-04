@@ -4,10 +4,6 @@
 
 
 # static fields
-.field private static final AVG_BYTES_PER_CHAR:F = 1.5f
-
-.field private static final MAX_BYTES_PER_CHAR:F = 5.0f
-
 .field static useUglyHackToForceCallToFlushInJava5:Z
 
 

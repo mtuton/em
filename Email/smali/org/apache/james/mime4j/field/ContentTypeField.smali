@@ -11,20 +11,6 @@
 .end annotation
 
 
-# static fields
-.field public static final PARAM_BOUNDARY:Ljava/lang/String; = "boundary"
-
-.field public static final PARAM_CHARSET:Ljava/lang/String; = "charset"
-
-.field public static final TYPE_MESSAGE_RFC822:Ljava/lang/String; = "message/rfc822"
-
-.field public static final TYPE_MULTIPART_DIGEST:Ljava/lang/String; = "multipart/digest"
-
-.field public static final TYPE_MULTIPART_PREFIX:Ljava/lang/String; = "multipart/"
-
-.field public static final TYPE_TEXT_PLAIN:Ljava/lang/String; = "text/plain"
-
-
 # instance fields
 .field private mimeType:Ljava/lang/String;
 
@@ -248,40 +234,6 @@
     const/4 v0, 0x0
 
     goto :goto_0
-.end method
-
-.method public getParameters()Ljava/util/Map;
-    .locals 1
-
-    .prologue
-    .line 145
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/ContentTypeField;->parameters:Ljava/util/Map;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/ContentTypeField;->parameters:Ljava/util/Map;
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    sget-object v0, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
-
-    goto :goto_0
-.end method
-
-.method public getParseException()Lorg/apache/james/mime4j/field/contenttype/parser/ParseException;
-    .locals 1
-
-    .prologue
-    .line 87
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/ContentTypeField;->parseException:Lorg/apache/james/mime4j/field/contenttype/parser/ParseException;
-
-    return-object v0
 .end method
 
 .method public isMimeType(Ljava/lang/String;)Z

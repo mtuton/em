@@ -42,18 +42,18 @@
     .parameter "loadAttachment"
 
     .prologue
-    .line 4421
+    .line 6422
     iput-object p1, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 4422
+    .line 6423
     iput-wide p2, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mId:J
 
-    .line 4423
+    .line 6424
     iput-boolean p4, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mLoadAttach:Z
 
-    .line 4424
+    .line 6425
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4413
+    .line 6414
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -76,371 +76,342 @@
 .end method
 
 .method protected varargs doInBackground([Ljava/lang/Void;)[Ljava/lang/String;
-    .locals 12
+    .locals 14
     .parameter "params"
 
     .prologue
-    .line 4430
-    const/4 v7, 0x0
-
-    .line 4431
-    .local v7, text:Ljava/lang/String;
+    .line 6430
     :try_start_0
-    iget-object v9, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
+    new-instance v9, Ljava/lang/StringBuffer;
 
-    iget-wide v10, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mId:J
+    invoke-direct {v9}, Ljava/lang/StringBuffer;-><init>()V
 
-    invoke-static {v9, v10, v11}, Lcom/android/email/provider/EmailContent$Body;->restoreBodyHtmlWithMessageId(Landroid/content/Context;J)Ljava/lang/String;
+    .line 6431
+    .local v9, textBuf:Ljava/lang/StringBuffer;
+    new-instance v4, Ljava/lang/StringBuffer;
+
+    invoke-direct {v4}, Ljava/lang/StringBuffer;-><init>()V
+
+    .line 6433
+    .local v4, htmlBuf:Ljava/lang/StringBuffer;
+    const/4 v8, 0x0
+
+    .line 6434
+    .local v8, text:Ljava/lang/String;
+    iget-object v11, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
+
+    iget-wide v12, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mId:J
+
+    invoke-static {v11, v12, v13}, Lcom/android/email/provider/EmailContent$Body;->restoreBodyHtmlWithMessageId(Landroid/content/Context;J)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 4432
+    .line 6435
     .local v3, html:Ljava/lang/String;
     if-nez v3, :cond_0
 
-    .line 4433
-    iget-object v9, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
+    .line 6436
+    iget-object v11, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
 
-    iget-wide v10, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mId:J
+    iget-wide v12, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mId:J
 
-    invoke-static {v9, v10, v11}, Lcom/android/email/provider/EmailContent$Body;->restoreBodyTextWithMessageId(Landroid/content/Context;J)Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 4437
-    :cond_0
-    iget-object v9, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
-
-    iget-wide v10, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mId:J
-
-    invoke-static {v9, v10, v11}, Lcom/android/email/provider/EmailContent$Body;->restoreReplyTextWithMessageId(Landroid/content/Context;J)Ljava/lang/String;
+    invoke-static {v11, v12, v13}, Lcom/android/email/provider/EmailContent$Body;->restoreBodyTextWithMessageId(Landroid/content/Context;J)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 4438
-    .local v8, textReply:Ljava/lang/String;
-    iget-object v9, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
+    .line 6438
+    :cond_0
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    iget-wide v10, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mId:J
+    .line 6439
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    invoke-static {v9, v10, v11}, Lcom/android/email/provider/EmailContent$Body;->restoreReplyHtmlWithMessageId(Landroid/content/Context;J)Ljava/lang/String;
+    .line 6442
+    iget-object v11, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
 
-    move-result-object v4
+    iget-wide v12, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mId:J
 
-    .line 4440
-    .local v4, htmlReply:Ljava/lang/String;
-    if-nez v8, :cond_1
+    invoke-static {v11, v12, v13}, Lcom/android/email/provider/EmailContent$Body;->restoreReplyTextWithMessageId(Landroid/content/Context;J)Ljava/lang/String;
 
-    if-eqz v4, :cond_2
+    move-result-object v10
 
-    .line 4441
-    :cond_1
-    iget-object v9, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
+    .line 6443
+    .local v10, textReply:Ljava/lang/String;
+    iget-object v11, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
 
-    iget-wide v10, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mId:J
+    iget-wide v12, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mId:J
 
-    invoke-static {v9, v10, v11}, Lcom/android/email/provider/EmailContent$Message;->restoreMessageWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Message;
+    invoke-static {v11, v12, v13}, Lcom/android/email/provider/EmailContent$Body;->restoreReplyHtmlWithMessageId(Landroid/content/Context;J)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 4442
-    .local v5, message:Lcom/android/email/provider/EmailContent$Message;
+    .line 6445
+    .local v5, htmlReply:Ljava/lang/String;
+    if-nez v10, :cond_1
+
+    if-eqz v5, :cond_2
+
+    .line 6446
+    :cond_1
+    iget-object v11, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
+
+    iget-wide v12, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mId:J
+
+    invoke-static {v11, v12, v13}, Lcom/android/email/provider/EmailContent$Message;->restoreMessageWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Message;
+
+    move-result-object v6
+
+    .line 6447
+    .local v6, message:Lcom/android/email/provider/EmailContent$Message;
     new-instance v2, Ljava/lang/StringBuffer;
 
     invoke-direct {v2}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 4444
+    .line 6449
     .local v2, buff:Ljava/lang/StringBuffer;
-    iget-object v9, v5, Lcom/android/email/provider/EmailContent$Message;->mFrom:Ljava/lang/String;
+    if-eqz v6, :cond_2
 
-    invoke-static {v9}, Lcom/android/email/mail/Address;->unpack(Ljava/lang/String;)[Lcom/android/email/mail/Address;
+    .line 6450
+    iget-object v11, v6, Lcom/android/email/provider/EmailContent$Message;->mFrom:Ljava/lang/String;
+
+    invoke-static {v11}, Lcom/android/email/mail/Address;->unpack(Ljava/lang/String;)[Lcom/android/email/mail/Address;
 
     move-result-object v1
 
-    .line 4447
+    .line 6453
     .local v1, address:[Lcom/android/email/mail/Address;
-    const-string v9, "\r\n\n"
+    const-string v11, "\r\n\n"
 
-    invoke-virtual {v2, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    move-result-object v9
+    move-result-object v11
 
     invoke-static {v1}, Lcom/android/email/mail/Address;->toString([Lcom/android/email/mail/Address;)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v12
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    move-result-object v9
+    move-result-object v11
 
-    const-string v10, " wrote: "
+    const-string v12, " wrote: "
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v9}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4450
+    .line 6456
     .local v0, addrStr:Ljava/lang/String;
-    if-eqz v8, :cond_4
+    if-eqz v10, :cond_4
 
-    .line 4451
+    .line 6457
     if-nez v3, :cond_3
 
-    .line 4452
-    new-instance v9, Ljava/lang/StringBuilder;
+    .line 6460
+    invoke-virtual {v9, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v11
 
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    move-result-object v9
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 4453
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 4471
+    .line 6482
     .end local v0           #addrStr:Ljava/lang/String;
     .end local v1           #address:[Lcom/android/email/mail/Address;
     .end local v2           #buff:Ljava/lang/StringBuffer;
-    .end local v5           #message:Lcom/android/email/provider/EmailContent$Message;
+    .end local v6           #message:Lcom/android/email/provider/EmailContent$Message;
     :cond_2
     :goto_0
-    const/4 v9, 0x2
+    if-nez v3, :cond_6
 
-    new-array v9, v9, [Ljava/lang/String;
+    .line 6483
+    const/4 v11, 0x2
 
-    const/4 v10, 0x0
+    new-array v11, v11, [Ljava/lang/String;
 
-    aput-object v7, v9, v10
+    const/4 v12, 0x0
 
-    const/4 v10, 0x1
+    invoke-virtual {v9}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
-    aput-object v3, v9, v10
+    move-result-object v13
 
-    .line 4477
+    aput-object v13, v11, v12
+
+    const/4 v12, 0x1
+
+    const/4 v13, 0x0
+
+    aput-object v13, v11, v12
+
+    .line 6493
     .end local v3           #html:Ljava/lang/String;
-    .end local v4           #htmlReply:Ljava/lang/String;
-    .end local v8           #textReply:Ljava/lang/String;
+    .end local v4           #htmlBuf:Ljava/lang/StringBuffer;
+    .end local v5           #htmlReply:Ljava/lang/String;
+    .end local v8           #text:Ljava/lang/String;
+    .end local v9           #textBuf:Ljava/lang/StringBuffer;
+    .end local v10           #textReply:Ljava/lang/String;
     :goto_1
-    return-object v9
+    return-object v11
 
-    .line 4456
+    .line 6465
     .restart local v0       #addrStr:Ljava/lang/String;
     .restart local v1       #address:[Lcom/android/email/mail/Address;
     .restart local v2       #buff:Ljava/lang/StringBuffer;
     .restart local v3       #html:Ljava/lang/String;
-    .restart local v4       #htmlReply:Ljava/lang/String;
-    .restart local v5       #message:Lcom/android/email/provider/EmailContent$Message;
-    .restart local v8       #textReply:Ljava/lang/String;
+    .restart local v4       #htmlBuf:Ljava/lang/StringBuffer;
+    .restart local v5       #htmlReply:Ljava/lang/String;
+    .restart local v6       #message:Lcom/android/email/provider/EmailContent$Message;
+    .restart local v8       #text:Ljava/lang/String;
+    .restart local v9       #textBuf:Ljava/lang/StringBuffer;
+    .restart local v10       #textReply:Ljava/lang/String;
     :cond_3
-    new-instance v9, Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v11
 
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 4457
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    goto :goto_0
-
-    .line 4460
-    :cond_4
-    if-nez v3, :cond_5
-
-    .line 4461
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 4462
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    goto :goto_0
-
-    .line 4465
-    :cond_5
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 4466
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v11, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v3
-
     goto :goto_0
 
-    .line 4472
+    .line 6488
     .end local v0           #addrStr:Ljava/lang/String;
     .end local v1           #address:[Lcom/android/email/mail/Address;
     .end local v2           #buff:Ljava/lang/StringBuffer;
     .end local v3           #html:Ljava/lang/String;
-    .end local v4           #htmlReply:Ljava/lang/String;
-    .end local v5           #message:Lcom/android/email/provider/EmailContent$Message;
-    .end local v8           #textReply:Ljava/lang/String;
+    .end local v4           #htmlBuf:Ljava/lang/StringBuffer;
+    .end local v5           #htmlReply:Ljava/lang/String;
+    .end local v6           #message:Lcom/android/email/provider/EmailContent$Message;
+    .end local v8           #text:Ljava/lang/String;
+    .end local v9           #textBuf:Ljava/lang/StringBuffer;
+    .end local v10           #textReply:Ljava/lang/String;
     :catch_0
-    move-exception v9
+    move-exception v11
 
-    move-object v6, v9
+    move-object v7, v11
 
-    .line 4475
-    .local v6, re:Ljava/lang/RuntimeException;
-    const-string v9, "Email"
+    .line 6491
+    .local v7, re:Ljava/lang/RuntimeException;
+    const-string v11, "Email"
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    new-instance v12, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "Exception while loading message body: "
+    const-string v13, "Exception while loading message body: "
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v12
 
-    invoke-virtual {v6}, Ljava/lang/RuntimeException;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/RuntimeException;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v11, v12}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 6492
+    iget-object v11, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v11}, Lcom/android/email/activity/MessageView;->access$5300(Lcom/android/email/activity/MessageView;)Lcom/android/email/activity/MessageView$MessageViewHandler;
 
     move-result-object v11
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11}, Lcom/android/email/activity/MessageView$MessageViewHandler;->loadBodyError()V
 
-    move-result-object v10
+    .line 6493
+    const/4 v11, 0x2
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    new-array v11, v11, [Ljava/lang/String;
 
-    move-result-object v10
+    const/4 v12, 0x0
 
-    invoke-static {v9, v10}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
+    const/4 v13, 0x0
 
-    .line 4476
-    iget-object v9, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
+    aput-object v13, v11, v12
 
-    invoke-static {v9}, Lcom/android/email/activity/MessageView;->access$4800(Lcom/android/email/activity/MessageView;)Lcom/android/email/activity/MessageView$MessageViewHandler;
+    const/4 v12, 0x1
 
-    move-result-object v9
+    const/4 v13, 0x0
 
-    invoke-virtual {v9}, Lcom/android/email/activity/MessageView$MessageViewHandler;->loadBodyError()V
+    aput-object v13, v11, v12
 
-    .line 4477
-    const/4 v9, 0x2
+    goto :goto_1
 
-    new-array v9, v9, [Ljava/lang/String;
+    .line 6468
+    .end local v7           #re:Ljava/lang/RuntimeException;
+    .restart local v0       #addrStr:Ljava/lang/String;
+    .restart local v1       #address:[Lcom/android/email/mail/Address;
+    .restart local v2       #buff:Ljava/lang/StringBuffer;
+    .restart local v3       #html:Ljava/lang/String;
+    .restart local v4       #htmlBuf:Ljava/lang/StringBuffer;
+    .restart local v5       #htmlReply:Ljava/lang/String;
+    .restart local v6       #message:Lcom/android/email/provider/EmailContent$Message;
+    .restart local v8       #text:Ljava/lang/String;
+    .restart local v9       #textBuf:Ljava/lang/StringBuffer;
+    .restart local v10       #textReply:Ljava/lang/String;
+    :cond_4
+    if-nez v3, :cond_5
 
-    const/4 v10, 0x0
+    .line 6471
+    :try_start_1
+    invoke-virtual {v9, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    const/4 v11, 0x0
+    move-result-object v11
 
-    aput-object v11, v9, v10
+    invoke-virtual {v11, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    const/4 v10, 0x1
+    goto :goto_0
 
-    const/4 v11, 0x0
+    .line 6476
+    :cond_5
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    aput-object v11, v9, v10
+    move-result-object v11
 
-    goto/16 :goto_1
+    invoke-virtual {v11, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    goto :goto_0
+
+    .line 6486
+    .end local v0           #addrStr:Ljava/lang/String;
+    .end local v1           #address:[Lcom/android/email/mail/Address;
+    .end local v2           #buff:Ljava/lang/StringBuffer;
+    .end local v6           #message:Lcom/android/email/provider/EmailContent$Message;
+    :cond_6
+    const/4 v11, 0x2
+
+    new-array v11, v11, [Ljava/lang/String;
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    aput-object v13, v11, v12
+
+    const/4 v12, 0x1
+
+    invoke-virtual {v4}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    aput-object v13, v11, v12
+    :try_end_1
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_1
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
@@ -448,7 +419,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4413
+    .line 6414
     check-cast p1, [Ljava/lang/String;
 
     .end local p1
@@ -458,54 +429,92 @@
 .end method
 
 .method protected onPostExecute([Ljava/lang/String;)V
-    .locals 5
+    .locals 6
     .parameter "results"
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    .line 4483
+    .line 6499
     if-nez p1, :cond_1
 
-    .line 4497
+    .line 6516
     :cond_0
     :goto_0
     return-void
 
-    .line 4486
+    .line 6503
     :cond_1
-    iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
+    :try_start_0
+    iget-object v1, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    aget-object v1, p1, v1
+    aget-object v2, p1, v2
 
-    aget-object v2, p1, v4
+    const/4 v3, 0x1
 
-    iget-boolean v3, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mLoadAttach:Z
+    aget-object v3, p1, v3
 
-    invoke-static {v0, v1, v2, v3}, Lcom/android/email/activity/MessageView;->access$4900(Lcom/android/email/activity/MessageView;Ljava/lang/String;Ljava/lang/String;Z)V
+    iget-boolean v4, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->mLoadAttach:Z
 
-    .line 4490
-    iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
+    invoke-static {v1, v2, v3, v4}, Lcom/android/email/activity/MessageView;->access$5400(Lcom/android/email/activity/MessageView;Ljava/lang/String;Ljava/lang/String;Z)V
+    :try_end_0
+    .catch Lcom/android/email/mail/MessagingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$5000(Lcom/android/email/activity/MessageView;)Z
+    .line 6509
+    :goto_1
+    iget-object v1, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
 
-    move-result v0
+    invoke-static {v1}, Lcom/android/email/activity/MessageView;->access$5500(Lcom/android/email/activity/MessageView;)Z
 
-    if-eqz v0, :cond_0
+    move-result v1
 
-    .line 4494
-    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
+    if-eqz v1, :cond_0
 
-    const-string v1, "11111 MessageView.java >>>>> onPostExecute()  >>>>> 3877"
+    .line 6513
+    sget-object v1, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+    const-string v2, "11111 MessageView.java >>>>> onPostExecute()  >>>>> 3877"
 
-    .line 4495
-    iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
+    invoke-virtual {v1, v2}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    invoke-static {v0, v4}, Lcom/android/email/activity/MessageView;->access$5100(Lcom/android/email/activity/MessageView;Z)V
+    .line 6514
+    iget-object v1, p0, Lcom/android/email/activity/MessageView$LoadBodyTask;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-static {v1, v5}, Lcom/android/email/activity/MessageView;->access$5600(Lcom/android/email/activity/MessageView;Z)V
 
     goto :goto_0
+
+    .line 6504
+    :catch_0
+    move-exception v1
+
+    move-object v0, v1
+
+    .line 6505
+    .local v0, me:Lcom/android/email/mail/MessagingException;
+    const-string v1, "Email"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Error while loading body at background task."
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
 .end method

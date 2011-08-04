@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator; = null
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator",
@@ -17,24 +17,6 @@
         }
     .end annotation
 .end field
-
-.field private static final OOO_CONST_BASE:I = 0x0
-
-.field public static final OOO_STATE_DISABLE:I = 0x0
-
-.field public static final OOO_STATE_GLOBAL:I = 0x1
-
-.field public static final OOO_STATE_TIME_BASED:I = 0x2
-
-.field public static final OOO_TYPE_EXTERNAL_KNOWN:I = 0x5
-
-.field public static final OOO_TYPE_EXTERNAL_UNKNOWN:I = 0x6
-
-.field public static final OOO_TYPE_GENERIC:I = 0x3
-
-.field public static final OOO_TYPE_INTERNAL:I = 0x4
-
-.field private static final TAG:Ljava/lang/String; = "OoOData"
 
 
 # instance fields
@@ -112,49 +94,6 @@
     return-void
 .end method
 
-.method public constructor <init>(IIILjava/lang/String;JJ)V
-    .locals 1
-    .parameter "atype"
-    .parameter "astate"
-    .parameter "aenabled"
-    .parameter "amsg"
-    .parameter "astart"
-    .parameter "aend"
-
-    .prologue
-    .line 61
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 62
-    iput p1, p0, Lcom/android/exchange/OoOData;->type:I
-
-    .line 63
-    iput p2, p0, Lcom/android/exchange/OoOData;->state:I
-
-    .line 64
-    iput p3, p0, Lcom/android/exchange/OoOData;->enabled:I
-
-    .line 65
-    new-instance v0, Ljava/util/Date;
-
-    invoke-direct {v0, p5, p6}, Ljava/util/Date;-><init>(J)V
-
-    iput-object v0, p0, Lcom/android/exchange/OoOData;->start:Ljava/util/Date;
-
-    .line 66
-    new-instance v0, Ljava/util/Date;
-
-    invoke-direct {v0, p7, p8}, Ljava/util/Date;-><init>(J)V
-
-    iput-object v0, p0, Lcom/android/exchange/OoOData;->end:Ljava/util/Date;
-
-    .line 67
-    iput-object p4, p0, Lcom/android/exchange/OoOData;->msg:Ljava/lang/String;
-
-    .line 69
-    return-void
-.end method
-
 .method public constructor <init>(IIILjava/lang/String;Ljava/util/Date;Ljava/util/Date;)V
     .locals 0
     .parameter "atype"
@@ -227,124 +166,6 @@
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public getEnd()J
-    .locals 2
-
-    .prologue
-    .line 87
-    iget-object v0, p0, Lcom/android/exchange/OoOData;->end:Ljava/util/Date;
-
-    if-eqz v0, :cond_0
-
-    .line 88
-    iget-object v0, p0, Lcom/android/exchange/OoOData;->end:Ljava/util/Date;
-
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v0
-
-    .line 89
-    :goto_0
-    return-wide v0
-
-    :cond_0
-    const-wide/16 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public getStart()J
-    .locals 2
-
-    .prologue
-    .line 82
-    iget-object v0, p0, Lcom/android/exchange/OoOData;->start:Ljava/util/Date;
-
-    if-eqz v0, :cond_0
-
-    .line 83
-    iget-object v0, p0, Lcom/android/exchange/OoOData;->start:Ljava/util/Date;
-
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v0
-
-    .line 84
-    :goto_0
-    return-wide v0
-
-    :cond_0
-    const-wide/16 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public isEndDST()Z
-    .locals 2
-
-    .prologue
-    .line 100
-    iget-object v1, p0, Lcom/android/exchange/OoOData;->end:Ljava/util/Date;
-
-    if-eqz v1, :cond_0
-
-    .line 101
-    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
-
-    move-result-object v0
-
-    .line 102
-    .local v0, tz:Ljava/util/TimeZone;
-    iget-object v1, p0, Lcom/android/exchange/OoOData;->end:Ljava/util/Date;
-
-    invoke-virtual {v0, v1}, Ljava/util/TimeZone;->inDaylightTime(Ljava/util/Date;)Z
-
-    move-result v1
-
-    .line 104
-    .end local v0           #tz:Ljava/util/TimeZone;
-    :goto_0
-    return v1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
-.method public isStartDST()Z
-    .locals 2
-
-    .prologue
-    .line 93
-    iget-object v1, p0, Lcom/android/exchange/OoOData;->start:Ljava/util/Date;
-
-    if-eqz v1, :cond_0
-
-    .line 94
-    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
-
-    move-result-object v0
-
-    .line 95
-    .local v0, tz:Ljava/util/TimeZone;
-    iget-object v1, p0, Lcom/android/exchange/OoOData;->start:Ljava/util/Date;
-
-    invoke-virtual {v0, v1}, Ljava/util/TimeZone;->inDaylightTime(Ljava/util/Date;)Z
-
-    move-result v1
-
-    .line 97
-    .end local v0           #tz:Ljava/util/TimeZone;
-    :goto_0
-    return v1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
 .end method
 
 .method public readFromParcel(Landroid/os/Parcel;)V

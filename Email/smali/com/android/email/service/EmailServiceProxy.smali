@@ -14,16 +14,6 @@
 .end annotation
 
 
-# static fields
-.field public static final AUTO_DISCOVER_BUNDLE_ERROR_CODE:Ljava/lang/String; = "autodiscover_error_code"
-
-.field public static final AUTO_DISCOVER_BUNDLE_HOST_AUTH:Ljava/lang/String; = "autodiscover_host_auth"
-
-.field private static final DEBUG_PROXY:Z = false
-
-.field private static final TAG:Ljava/lang/String; = "EmailServiceProxy"
-
-
 # instance fields
 .field private final mCallback:Lcom/android/email/service/IEmailServiceCallback;
 
@@ -52,30 +42,6 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/Class;)V
-    .locals 1
-    .parameter "_context"
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Ljava/lang/Class",
-            "<*>;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 70
-    .local p2, _class:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/android/email/service/EmailServiceProxy;-><init>(Landroid/content/Context;Ljava/lang/Class;Lcom/android/email/service/IEmailServiceCallback;)V
-
-    .line 71
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/Class;Lcom/android/email/service/IEmailServiceCallback;)V
     .locals 2
     .parameter "_context"
@@ -357,9 +323,9 @@
     .end annotation
 
     .prologue
-    .line 388
+    .line 401
     .local p1, messageId:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
-    new-instance v0, Lcom/android/email/service/EmailServiceProxy$15;
+    new-instance v0, Lcom/android/email/service/EmailServiceProxy$16;
 
     move-object v1, p0
 
@@ -371,11 +337,11 @@
 
     move-wide v7, p6
 
-    invoke-direct/range {v0 .. v8}, Lcom/android/email/service/EmailServiceProxy$15;-><init>(Lcom/android/email/service/EmailServiceProxy;Ljava/util/List;JJJ)V
+    invoke-direct/range {v0 .. v8}, Lcom/android/email/service/EmailServiceProxy$16;-><init>(Lcom/android/email/service/EmailServiceProxy;Ljava/util/List;JJJ)V
 
     invoke-direct {p0, v0}, Lcom/android/email/service/EmailServiceProxy;->setTask(Ljava/lang/Runnable;)V
 
-    .line 397
+    .line 410
     return-void
 .end method
 
@@ -405,7 +371,7 @@
     .locals 1
 
     .prologue
-    .line 415
+    .line 428
     const/4 v0, 0x0
 
     return-object v0
@@ -509,7 +475,7 @@
     .end annotation
 
     .prologue
-    .line 376
+    .line 389
     const/4 v0, 0x0
 
     return v0
@@ -526,7 +492,7 @@
     .end annotation
 
     .prologue
-    .line 380
+    .line 393
     const/4 v0, 0x0
 
     return v0
@@ -542,14 +508,14 @@
     .end annotation
 
     .prologue
-    .line 362
-    new-instance v0, Lcom/android/email/service/EmailServiceProxy$14;
+    .line 375
+    new-instance v0, Lcom/android/email/service/EmailServiceProxy$15;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/android/email/service/EmailServiceProxy$14;-><init>(Lcom/android/email/service/EmailServiceProxy;J)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/android/email/service/EmailServiceProxy$15;-><init>(Lcom/android/email/service/EmailServiceProxy;J)V
 
     invoke-direct {p0, v0}, Lcom/android/email/service/EmailServiceProxy;->setTask(Ljava/lang/Runnable;)V
 
-    .line 372
+    .line 385
     return-void
 .end method
 
@@ -565,8 +531,8 @@
     .end annotation
 
     .prologue
-    .line 347
-    new-instance v0, Lcom/android/email/service/EmailServiceProxy$13;
+    .line 360
+    new-instance v0, Lcom/android/email/service/EmailServiceProxy$14;
 
     move-object v1, p0
 
@@ -576,11 +542,11 @@
 
     move-wide v5, p4
 
-    invoke-direct/range {v0 .. v6}, Lcom/android/email/service/EmailServiceProxy$13;-><init>(Lcom/android/email/service/EmailServiceProxy;JLjava/lang/String;J)V
+    invoke-direct/range {v0 .. v6}, Lcom/android/email/service/EmailServiceProxy$14;-><init>(Lcom/android/email/service/EmailServiceProxy;JLjava/lang/String;J)V
 
     invoke-direct {p0, v0}, Lcom/android/email/service/EmailServiceProxy;->setTask(Ljava/lang/Runnable;)V
 
-    .line 357
+    .line 370
     return-void
 .end method
 
@@ -646,14 +612,48 @@
     .end annotation
 
     .prologue
-    .line 332
-    new-instance v0, Lcom/android/email/service/EmailServiceProxy$12;
+    .line 345
+    new-instance v0, Lcom/android/email/service/EmailServiceProxy$13;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/android/email/service/EmailServiceProxy$12;-><init>(Lcom/android/email/service/EmailServiceProxy;J)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/android/email/service/EmailServiceProxy$13;-><init>(Lcom/android/email/service/EmailServiceProxy;J)V
 
     invoke-direct {p0, v0}, Lcom/android/email/service/EmailServiceProxy;->setTask(Ljava/lang/Runnable;)V
 
-    .line 343
+    .line 356
+    return-void
+.end method
+
+.method public moveConversationAlways(JJ[BI)V
+    .locals 8
+    .parameter "messageId"
+    .parameter "toMailboxId"
+    .parameter "conversationId"
+    .parameter "ignore"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 305
+    new-instance v0, Lcom/android/email/service/EmailServiceProxy$11;
+
+    move-object v1, p0
+
+    move-wide v2, p1
+
+    move-wide v4, p3
+
+    move-object v6, p5
+
+    move v7, p6
+
+    invoke-direct/range {v0 .. v7}, Lcom/android/email/service/EmailServiceProxy$11;-><init>(Lcom/android/email/service/EmailServiceProxy;JJ[BI)V
+
+    invoke-direct {p0, v0}, Lcom/android/email/service/EmailServiceProxy;->setTask(Ljava/lang/Runnable;)V
+
+    .line 313
     return-void
 .end method
 
@@ -669,27 +669,10 @@
     .end annotation
 
     .prologue
-    .line 385
+    .line 398
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public searchGAL(JLjava/lang/String;II)V
-    .locals 0
-    .parameter "accountId"
-    .parameter "ss"
-    .parameter "start"
-    .parameter "end"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 326
-    return-void
 .end method
 
 .method public sendMeetingResponse(JI)V
@@ -703,14 +686,14 @@
     .end annotation
 
     .prologue
-    .line 304
-    new-instance v0, Lcom/android/email/service/EmailServiceProxy$11;
+    .line 317
+    new-instance v0, Lcom/android/email/service/EmailServiceProxy$12;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/email/service/EmailServiceProxy$11;-><init>(Lcom/android/email/service/EmailServiceProxy;JI)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/email/service/EmailServiceProxy$12;-><init>(Lcom/android/email/service/EmailServiceProxy;JI)V
 
     invoke-direct {p0, v0}, Lcom/android/email/service/EmailServiceProxy;->setTask(Ljava/lang/Runnable;)V
 
-    .line 313
+    .line 326
     return-void
 .end method
 
@@ -725,21 +708,21 @@
     .end annotation
 
     .prologue
-    .line 402
+    .line 415
     const-string v0, "Email"
 
     const-string v1, "EmailServiceProxy.sendRecoveryPassword"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 403
-    new-instance v0, Lcom/android/email/service/EmailServiceProxy$16;
+    .line 416
+    new-instance v0, Lcom/android/email/service/EmailServiceProxy$17;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/email/service/EmailServiceProxy$16;-><init>(Lcom/android/email/service/EmailServiceProxy;JLjava/lang/String;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/email/service/EmailServiceProxy$17;-><init>(Lcom/android/email/service/EmailServiceProxy;JLjava/lang/String;)V
 
     invoke-direct {p0, v0}, Lcom/android/email/service/EmailServiceProxy;->setTask(Ljava/lang/Runnable;)V
 
-    .line 411
+    .line 424
     return-void
 .end method
 
@@ -761,6 +744,27 @@
     invoke-direct {p0, v0}, Lcom/android/email/service/EmailServiceProxy;->setTask(Ljava/lang/Runnable;)V
 
     .line 278
+    return-void
+.end method
+
+.method public setDeviceInfo(J)V
+    .locals 1
+    .parameter "accountId"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 432
+    new-instance v0, Lcom/android/email/service/EmailServiceProxy$18;
+
+    invoke-direct {v0, p0, p1, p2}, Lcom/android/email/service/EmailServiceProxy$18;-><init>(Lcom/android/email/service/EmailServiceProxy;J)V
+
+    invoke-direct {p0, v0}, Lcom/android/email/service/EmailServiceProxy;->setTask(Ljava/lang/Runnable;)V
+
+    .line 442
     return-void
 .end method
 

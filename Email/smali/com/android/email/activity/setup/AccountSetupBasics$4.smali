@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 458
+    .line 501
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$4;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,13 +42,13 @@
     .parameter "dialog"
 
     .prologue
-    .line 459
+    .line 503
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupBasics$4;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/setup/AccountSetupBasics;->dismissDialog(I)V
 
-    .line 460
+    .line 504
     return-void
 .end method

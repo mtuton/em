@@ -15,8 +15,6 @@
     .end annotation
 .end field
 
-.field public mResponse:I
-
 
 # direct methods
 .method constructor <init>(Ljava/util/List;JJJ)V

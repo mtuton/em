@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 127
+    .line 132
     iput-object p1, p0, Lcom/android/exchange/provider/GalEmailAddressAdapter$1;->this$0:Lcom/android/exchange/provider/GalEmailAddressAdapter;
 
     iput-object p2, p0, Lcom/android/exchange/provider/GalEmailAddressAdapter$1;->val$constraintString:Ljava/lang/String;
@@ -58,7 +58,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 129
+    .line 135
     sget-object v0, Lcom/android/exchange/provider/ExchangeProvider;->GAL_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -87,11 +87,21 @@
 
     move-result-object v0
 
+    const/4 v2, 0x0
+
+    invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 137
+    .line 146
     .local v1, galUri:Landroid/net/Uri;
     iget-object v0, p0, Lcom/android/exchange/provider/GalEmailAddressAdapter$1;->this$0:Lcom/android/exchange/provider/GalEmailAddressAdapter;
 
@@ -101,15 +111,15 @@
 
     sget-object v2, Lcom/android/exchange/provider/ExchangeProvider;->GAL_PROJECTION:[Ljava/lang/String;
 
-    move-object v4, v3
+    const-string v5, "Emails"
 
-    move-object v5, v3
+    move-object v4, v3
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v6
 
-    .line 146
+    .line 155
     .local v6, galCursor:Landroid/database/Cursor;
     iget-object v0, p0, Lcom/android/exchange/provider/GalEmailAddressAdapter$1;->val$mergedResultCursor:Lcom/android/exchange/provider/GalEmailAddressAdapter$MyMergeCursor;
 
@@ -119,11 +129,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 194
+    .line 203
     :goto_0
     return-void
 
-    .line 154
+    .line 163
     :cond_0
     iget-object v0, p0, Lcom/android/exchange/provider/GalEmailAddressAdapter$1;->this$0:Lcom/android/exchange/provider/GalEmailAddressAdapter;
 

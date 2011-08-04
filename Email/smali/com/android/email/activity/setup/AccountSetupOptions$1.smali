@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 216
+    .line 318
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupOptions$1;->this$0:Lcom/android/email/activity/setup/AccountSetupOptions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
     const-string v4, "Email"
 
-    .line 218
+    .line 321
     :try_start_0
     invoke-interface {p1}, Landroid/accounts/AccountManagerFuture;->getResult()Ljava/lang/Object;
 
@@ -74,11 +74,11 @@
 
     check-cast v0, Landroid/os/Bundle;
 
-    .line 219
+    .line 322
     .local v0, bundle:Landroid/os/Bundle;
     invoke-virtual {v0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
-    .line 220
+    .line 323
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupOptions$1;->this$0:Lcom/android/email/activity/setup/AccountSetupOptions;
 
     invoke-static {v2}, Lcom/android/email/activity/setup/AccountSetupOptions;->access$100(Lcom/android/email/activity/setup/AccountSetupOptions;)Landroid/os/Handler;
@@ -95,18 +95,18 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/accounts/AuthenticatorException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 235
+    .line 338
     .end local v0           #bundle:Landroid/os/Bundle;
     :goto_0
     return-void
 
-    .line 226
+    .line 329
     :catch_0
     move-exception v2
 
     move-object v1, v2
 
-    .line 227
+    .line 330
     .local v1, e:Landroid/accounts/OperationCanceledException;
     const-string v2, "Email"
 
@@ -114,12 +114,12 @@
 
     invoke-static {v4, v2}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 233
+    .line 336
     .end local v1           #e:Landroid/accounts/OperationCanceledException;
     :goto_1
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupOptions$1;->this$0:Lcom/android/email/activity/setup/AccountSetupOptions;
 
-    const v3, 0x7f0800c7
+    const v3, 0x7f0800d1
 
     const/4 v4, 0x1
 
@@ -127,7 +127,7 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x7f0800ee
+    const v6, 0x7f080104
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -139,13 +139,13 @@
 
     goto :goto_0
 
-    .line 228
+    .line 331
     :catch_1
     move-exception v2
 
     move-object v1, v2
 
-    .line 229
+    .line 332
     .local v1, e:Ljava/io/IOException;
     const-string v2, "Email"
 
@@ -171,14 +171,14 @@
 
     goto :goto_1
 
-    .line 230
+    .line 333
     .end local v1           #e:Ljava/io/IOException;
     :catch_2
     move-exception v2
 
     move-object v1, v2
 
-    .line 231
+    .line 334
     .local v1, e:Landroid/accounts/AuthenticatorException;
     const-string v2, "Email"
 

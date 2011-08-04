@@ -40,26 +40,26 @@
 
     const/4 v7, 0x0
 
-    .line 1069
+    .line 1181
     iput-object p1, p0, Lcom/android/exchange/SyncManager$CalendarObserver;->this$0:Lcom/android/exchange/SyncManager;
 
-    .line 1070
+    .line 1182
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 1071
+    .line 1183
     iget-wide v0, p3, Lcom/android/email/provider/EmailContent$Account;->mId:J
 
     iput-wide v0, p0, Lcom/android/exchange/SyncManager$CalendarObserver;->mAccountId:J
 
-    .line 1072
+    .line 1184
     iget-object v0, p3, Lcom/android/email/provider/EmailContent$Account;->mEmailAddress:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/exchange/SyncManager$CalendarObserver;->mAccountName:Ljava/lang/String;
 
-    .line 1077
+    .line 1189
     const/4 v6, 0x0
 
-    .line 1078
+    .line 1190
     .local v6, c:Landroid/database/Cursor;
     invoke-static {p1}, Lcom/android/exchange/SyncManager;->access$1000(Lcom/android/exchange/SyncManager;)Landroid/content/ContentResolver;
 
@@ -67,7 +67,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1079
+    .line 1191
     invoke-static {p1}, Lcom/android/exchange/SyncManager;->access$1000(Lcom/android/exchange/SyncManager;)Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -102,11 +102,11 @@
 
     move-result-object v6
 
-    .line 1086
+    .line 1198
     :cond_0
     if-eqz v6, :cond_2
 
-    .line 1089
+    .line 1201
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -114,7 +114,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1090
+    .line 1202
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -123,7 +123,7 @@
 
     iput-wide v0, p0, Lcom/android/exchange/SyncManager$CalendarObserver;->mCalendarId:J
 
-    .line 1091
+    .line 1203
     const/4 v0, 0x1
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -134,15 +134,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1094
+    .line 1206
     :cond_1
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 1097
+    .line 1209
     :cond_2
     return-void
 
-    .line 1094
+    .line 1206
     :catchall_0
     move-exception v0
 
@@ -158,12 +158,12 @@
     .parameter "selfChange"
 
     .prologue
-    .line 1102
+    .line 1214
     monitor-enter p0
 
     if-nez p1, :cond_0
 
-    .line 1103
+    .line 1215
     :try_start_0
     new-instance v0, Ljava/lang/Thread;
 
@@ -177,13 +177,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1166
+    .line 1278
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1102
+    .line 1214
     :catchall_0
     move-exception v0
 

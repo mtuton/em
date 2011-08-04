@@ -11,25 +11,15 @@
 .end annotation
 
 
-# static fields
-.field public static final OPTIONS_CALENDAR_SYNC_ENABLED:Ljava/lang/String; = "calendar"
-
-.field public static final OPTIONS_CONTACTS_SYNC_ENABLED:Ljava/lang/String; = "contacts"
-
-.field public static final OPTIONS_PASSWORD:Ljava/lang/String; = "password"
-
-.field public static final OPTIONS_USERNAME:Ljava/lang/String; = "username"
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 41
+    .line 44
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 47
+    .line 54
     return-void
 .end method
 
@@ -40,10 +30,10 @@
     .parameter "intent"
 
     .prologue
-    .line 148
+    .line 195
     const-string v0, "android.accounts.AccountAuthenticator"
 
-    .line 150
+    .line 197
     .local v0, authenticatorIntent:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -55,7 +45,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 151
+    .line 198
     new-instance v1, Lcom/android/email/service/EasAuthenticatorService$EasAuthenticator;
 
     invoke-direct {v1, p0, p0}, Lcom/android/email/service/EasAuthenticatorService$EasAuthenticator;-><init>(Lcom/android/email/service/EasAuthenticatorService;Landroid/content/Context;)V
@@ -64,7 +54,7 @@
 
     move-result-object v1
 
-    .line 153
+    .line 200
     :goto_0
     return-object v1
 

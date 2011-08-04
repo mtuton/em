@@ -1,4 +1,4 @@
-.class Lorg/apache/james/mime4j/decoder/DecoderUtil$1;
+.class final Lorg/apache/james/mime4j/decoder/DecoderUtil$1;
 .super Ljava/lang/Object;
 .source "DecoderUtil.java"
 
@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 62
+    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

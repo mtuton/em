@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="search_list">
+        <item>Google</item>
+        <item>Traducere Google</item>
+        <item>Wikipedia</item>
+        <item>Dicţionar</item>
+    </string-array>
+    <string-array name="share_list">
+        <item>Partajare ca text</item>
+        <item>Partajare ca imagine</item>
+    </string-array>
+</resources>

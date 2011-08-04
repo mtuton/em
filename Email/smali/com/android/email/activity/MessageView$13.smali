@@ -3,12 +3,12 @@
 .source "MessageView.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/content/DialogInterface$OnCancelListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageView;->handleMenuItem(I)Z
+    value = Lcom/android/email/activity/MessageView;->onForwardOld()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3123
+    .line 3230
     iput-object p1, p0, Lcom/android/email/activity/MessageView$13;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,32 +37,16 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
+.method public onCancel(Landroid/content/DialogInterface;)V
     .locals 1
-    .parameter "dialog"
-    .parameter "whichButton"
+    .parameter "arg0"
 
     .prologue
-    .line 3124
-    if-nez p2, :cond_0
-
-    .line 3125
+    .line 3233
     iget-object v0, p0, Lcom/android/email/activity/MessageView$13;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$2000(Lcom/android/email/activity/MessageView;)V
+    invoke-virtual {v0}, Lcom/android/email/activity/MessageView;->finish()V
 
-    .line 3128
-    :goto_0
-    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
-
-    .line 3129
+    .line 3235
     return-void
-
-    .line 3127
-    :cond_0
-    iget-object v0, p0, Lcom/android/email/activity/MessageView$13;->this$0:Lcom/android/email/activity/MessageView;
-
-    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$2100(Lcom/android/email/activity/MessageView;)V
-
-    goto :goto_0
 .end method

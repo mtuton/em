@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 3667
+    .line 4979
     iput-object p1, p0, Lcom/android/email/activity/MessageView$NextPrevObserver;->this$0:Lcom/android/email/activity/MessageView;
 
-    .line 3668
+    .line 4980
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 3669
+    .line 4981
     return-void
 .end method
 
@@ -42,10 +42,10 @@
     .parameter "selfChange"
 
     .prologue
-    .line 3675
+    .line 4987
     iget-object v0, p0, Lcom/android/email/activity/MessageView$NextPrevObserver;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$3000(Lcom/android/email/activity/MessageView;)Lcom/android/email/activity/MessageView$LoadPrevNextTask;
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$3900(Lcom/android/email/activity/MessageView;)Lcom/android/email/activity/MessageView$LoadPrevNextTask;
 
     move-result-object v0
 
@@ -53,13 +53,13 @@
 
     iget-object v0, p0, Lcom/android/email/activity/MessageView$NextPrevObserver;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$3100(Lcom/android/email/activity/MessageView;)Landroid/database/Cursor;
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$4000(Lcom/android/email/activity/MessageView;)Landroid/database/Cursor;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 3676
+    .line 4988
     iget-object v0, p0, Lcom/android/email/activity/MessageView$NextPrevObserver;->this$0:Lcom/android/email/activity/MessageView;
 
     new-instance v1, Lcom/android/email/activity/MessageView$LoadPrevNextTask;
@@ -68,18 +68,18 @@
 
     iget-object v3, p0, Lcom/android/email/activity/MessageView$NextPrevObserver;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v3}, Lcom/android/email/activity/MessageView;->access$3200(Lcom/android/email/activity/MessageView;)J
+    invoke-static {v3}, Lcom/android/email/activity/MessageView;->access$4100(Lcom/android/email/activity/MessageView;)J
 
     move-result-wide v3
 
     invoke-direct {v1, v2, v3, v4}, Lcom/android/email/activity/MessageView$LoadPrevNextTask;-><init>(Lcom/android/email/activity/MessageView;J)V
 
-    invoke-static {v0, v1}, Lcom/android/email/activity/MessageView;->access$3002(Lcom/android/email/activity/MessageView;Lcom/android/email/activity/MessageView$LoadPrevNextTask;)Lcom/android/email/activity/MessageView$LoadPrevNextTask;
+    invoke-static {v0, v1}, Lcom/android/email/activity/MessageView;->access$3902(Lcom/android/email/activity/MessageView;Lcom/android/email/activity/MessageView$LoadPrevNextTask;)Lcom/android/email/activity/MessageView$LoadPrevNextTask;
 
-    .line 3677
+    .line 4989
     iget-object v0, p0, Lcom/android/email/activity/MessageView$NextPrevObserver;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$3000(Lcom/android/email/activity/MessageView;)Lcom/android/email/activity/MessageView$LoadPrevNextTask;
+    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$3900(Lcom/android/email/activity/MessageView;)Lcom/android/email/activity/MessageView$LoadPrevNextTask;
 
     move-result-object v0
 
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageView$LoadPrevNextTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 3679
+    .line 4991
     :cond_0
     return-void
 .end method

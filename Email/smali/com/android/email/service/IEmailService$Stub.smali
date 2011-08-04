@@ -23,48 +23,6 @@
 .end annotation
 
 
-# static fields
-.field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.email.service.IEmailService"
-
-.field static final TRANSACTION_MoveMessage:I = 0x12
-
-.field static final TRANSACTION_OoOffice:I = 0x11
-
-.field static final TRANSACTION_autoDiscover:I = 0xe
-
-.field static final TRANSACTION_createFolder:I = 0x8
-
-.field static final TRANSACTION_deleteFolder:I = 0x9
-
-.field static final TRANSACTION_emptyTrash:I = 0x6
-
-.field static final TRANSACTION_folderCreate:I = 0x13
-
-.field static final TRANSACTION_hostChanged:I = 0xd
-
-.field static final TRANSACTION_loadAttachment:I = 0x5
-
-.field static final TRANSACTION_loadMore:I = 0x4
-
-.field static final TRANSACTION_renameFolder:I = 0xa
-
-.field static final TRANSACTION_sendMeetingResponse:I = 0xf
-
-.field static final TRANSACTION_sendRecoveryPassword:I = 0x10
-
-.field static final TRANSACTION_setCallback:I = 0xb
-
-.field static final TRANSACTION_setLogging:I = 0xc
-
-.field static final TRANSACTION_startSync:I = 0x2
-
-.field static final TRANSACTION_stopSync:I = 0x3
-
-.field static final TRANSACTION_updateFolderList:I = 0x7
-
-.field static final TRANSACTION_validate:I = 0x1
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 1
@@ -142,7 +100,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 28
+    .locals 29
     .parameter "code"
     .parameter "data"
     .parameter "reply"
@@ -157,7 +115,7 @@
     .line 40
     sparse-switch p1, :sswitch_data_0
 
-    .line 281
+    .line 305
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v5
@@ -251,16 +209,16 @@
     .line 64
     invoke-virtual/range {v5 .. v12}, Lcom/android/email/service/IEmailService$Stub;->validate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZZ)I
 
-    move-result v27
+    move-result v28
 
     .line 65
-    .local v27, _result:I
+    .local v28, _result:I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 66
     move-object/from16 v0, p3
 
-    move/from16 v1, v27
+    move/from16 v1, v28
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
@@ -272,7 +230,7 @@
     .line 61
     .end local v11           #_arg5:Z
     .end local v12           #_arg6:Z
-    .end local v27           #_result:I
+    .end local v28           #_result:I
     :cond_0
     const/4 v5, 0x0
 
@@ -536,14 +494,14 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/email/service/IEmailService$Stub;->createFolder(JLjava/lang/String;)Z
 
-    move-result v27
+    move-result v28
 
     .line 135
-    .local v27, _result:Z
+    .local v28, _result:Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 136
-    if-eqz v27, :cond_2
+    if-eqz v28, :cond_2
 
     const/4 v5, 0x1
 
@@ -568,7 +526,7 @@
     .line 141
     .end local v7           #_arg1:Ljava/lang/String;
     .end local v22           #_arg0:J
-    .end local v27           #_result:Z
+    .end local v28           #_result:Z
     :sswitch_9
     const-string v5, "com.android.email.service.IEmailService"
 
@@ -599,14 +557,14 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/email/service/IEmailService$Stub;->deleteFolder(JLjava/lang/String;)Z
 
-    move-result v27
+    move-result v28
 
     .line 147
-    .restart local v27       #_result:Z
+    .restart local v28       #_result:Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 148
-    if-eqz v27, :cond_3
+    if-eqz v28, :cond_3
 
     const/4 v5, 0x1
 
@@ -631,7 +589,7 @@
     .line 153
     .end local v7           #_arg1:Ljava/lang/String;
     .end local v22           #_arg0:J
-    .end local v27           #_result:Z
+    .end local v28           #_result:Z
     :sswitch_a
     const-string v5, "com.android.email.service.IEmailService"
 
@@ -670,14 +628,14 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/email/service/IEmailService$Stub;->renameFolder(JLjava/lang/String;Ljava/lang/String;)Z
 
-    move-result v27
+    move-result v28
 
     .line 161
-    .restart local v27       #_result:Z
+    .restart local v28       #_result:Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 162
-    if-eqz v27, :cond_4
+    if-eqz v28, :cond_4
 
     const/4 v5, 0x1
 
@@ -703,7 +661,7 @@
     .end local v7           #_arg1:Ljava/lang/String;
     .end local v8           #_arg2:Ljava/lang/String;
     .end local v22           #_arg0:J
-    .end local v27           #_result:Z
+    .end local v28           #_result:Z
     :sswitch_b
     const-string v5, "com.android.email.service.IEmailService"
 
@@ -857,14 +815,14 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/email/service/IEmailService$Stub;->autoDiscover(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/os/Bundle;
 
-    move-result-object v27
+    move-result-object v28
 
     .line 204
-    .local v27, _result:Landroid/os/Bundle;
+    .local v28, _result:Landroid/os/Bundle;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 205
-    if-eqz v27, :cond_6
+    if-eqz v28, :cond_6
 
     .line 206
     const/4 v5, 0x1
@@ -878,7 +836,7 @@
     .line 207
     const/4 v5, 0x1
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v28
 
     move-object/from16 v1, p3
 
@@ -894,7 +852,7 @@
 
     .line 202
     .end local v9           #_arg3:Z
-    .end local v27           #_result:Landroid/os/Bundle;
+    .end local v28           #_result:Landroid/os/Bundle;
     :cond_5
     const/4 v5, 0x0
 
@@ -904,7 +862,7 @@
 
     .line 210
     .restart local v9       #_arg3:Z
-    .restart local v27       #_result:Landroid/os/Bundle;
+    .restart local v28       #_result:Landroid/os/Bundle;
     :cond_6
     const/4 v5, 0x0
 
@@ -921,7 +879,7 @@
     .end local v7           #_arg1:Ljava/lang/String;
     .end local v8           #_arg2:Ljava/lang/String;
     .end local v9           #_arg3:Z
-    .end local v27           #_result:Landroid/os/Bundle;
+    .end local v28           #_result:Landroid/os/Bundle;
     :sswitch_f
     const-string v5, "com.android.email.service.IEmailService"
 
@@ -1164,6 +1122,94 @@
 
     goto/16 :goto_0
 
+    .line 282
+    .end local v7           #_arg1:Ljava/lang/String;
+    .end local v17           #_arg2:J
+    .end local v22           #_arg0:J
+    :sswitch_14
+    const-string v5, "com.android.email.service.IEmailService"
+
+    move-object/from16 v0, p2
+
+    move-object v1, v5
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 284
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v22
+
+    .line 285
+    .restart local v22       #_arg0:J
+    move-object/from16 v0, p0
+
+    move-wide/from16 v1, v22
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/email/service/IEmailService$Stub;->setDeviceInfo(J)V
+
+    .line 286
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 287
+    const/4 v5, 0x1
+
+    goto/16 :goto_0
+
+    .line 291
+    .end local v22           #_arg0:J
+    :sswitch_15
+    const-string v5, "com.android.email.service.IEmailService"
+
+    move-object/from16 v0, p2
+
+    move-object v1, v5
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 293
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v22
+
+    .line 295
+    .restart local v22       #_arg0:J
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v15
+
+    .line 297
+    .restart local v15       #_arg1:J
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createByteArray()[B
+
+    move-result-object v8
+
+    .line 299
+    .local v8, _arg2:[B
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v9
+
+    .local v9, _arg3:I
+    move-object/from16 v21, p0
+
+    move-wide/from16 v24, v15
+
+    move-object/from16 v26, v8
+
+    move/from16 v27, v9
+
+    .line 300
+    invoke-virtual/range {v21 .. v27}, Lcom/android/email/service/IEmailService$Stub;->moveConversationAlways(JJ[BI)V
+
+    .line 301
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 302
+    const/4 v5, 0x1
+
+    goto/16 :goto_0
+
     .line 40
     :sswitch_data_0
     .sparse-switch
@@ -1186,6 +1232,8 @@
         0x11 -> :sswitch_11
         0x12 -> :sswitch_12
         0x13 -> :sswitch_13
+        0x14 -> :sswitch_14
+        0x15 -> :sswitch_15
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

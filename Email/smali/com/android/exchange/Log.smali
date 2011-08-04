@@ -38,31 +38,6 @@
     return v1
 .end method
 
-.method public static d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    .locals 2
-    .parameter "tag"
-    .parameter "msg"
-    .parameter "tr"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 67
-    invoke-static {p0, p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 68
-    sget-boolean v0, Lcom/android/exchange/Eas;->FILE_LOG:Z
-
-    if-eqz v0, :cond_0
-
-    .line 69
-    invoke-static {p0, p1, v1}, Lcom/android/exchange/utility/FileLogger;->log(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    .line 71
-    :cond_0
-    return v1
-.end method
-
 .method public static e(Ljava/lang/String;Ljava/lang/String;)I
     .locals 2
     .parameter "tag"
@@ -136,31 +111,6 @@
     return v1
 .end method
 
-.method public static i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    .locals 2
-    .parameter "tag"
-    .parameter "msg"
-    .parameter "tr"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 105
-    invoke-static {p0, p1, p2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 106
-    sget-boolean v0, Lcom/android/exchange/Eas;->FILE_LOG:Z
-
-    if-eqz v0, :cond_0
-
-    .line 107
-    invoke-static {p0, p1, v1}, Lcom/android/exchange/utility/FileLogger;->log(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    .line 109
-    :cond_0
-    return v1
-.end method
-
 .method public static v(Ljava/lang/String;Ljava/lang/String;)I
     .locals 2
     .parameter "tag"
@@ -181,31 +131,6 @@
     invoke-static {p0, p1, v1}, Lcom/android/exchange/utility/FileLogger;->log(Ljava/lang/String;Ljava/lang/String;Z)V
 
     .line 12
-    :cond_0
-    return v1
-.end method
-
-.method public static v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    .locals 2
-    .parameter "tag"
-    .parameter "msg"
-    .parameter "tr"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 28
-    invoke-static {p0, p1, p2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 29
-    sget-boolean v0, Lcom/android/exchange/Eas;->FILE_LOG:Z
-
-    if-eqz v0, :cond_0
-
-    .line 30
-    invoke-static {p0, p1, v1}, Lcom/android/exchange/utility/FileLogger;->log(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    .line 32
     :cond_0
     return v1
 .end method
@@ -232,43 +157,4 @@
     .line 127
     :cond_0
     return v1
-.end method
-
-.method public static w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    .locals 2
-    .parameter "tag"
-    .parameter "msg"
-    .parameter "tr"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 143
-    invoke-static {p0, p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 144
-    sget-boolean v0, Lcom/android/exchange/Eas;->FILE_LOG:Z
-
-    if-eqz v0, :cond_0
-
-    .line 145
-    invoke-static {p0, p1, v1}, Lcom/android/exchange/utility/FileLogger;->log(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    .line 147
-    :cond_0
-    return v1
-.end method
-
-.method public static w(Ljava/lang/String;Ljava/lang/Throwable;)I
-    .locals 1
-    .parameter "tag"
-    .parameter "tr"
-
-    .prologue
-    .line 159
-    invoke-static {p0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    move-result v0
-
-    return v0
 .end method

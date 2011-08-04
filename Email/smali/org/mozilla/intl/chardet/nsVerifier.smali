@@ -3,22 +3,6 @@
 .source "nsVerifier.java"
 
 
-# static fields
-.field static final eBitSft4bits:I = 0x2
-
-.field static final eError:B = 0x1t
-
-.field static final eItsMe:B = 0x2t
-
-.field static final eSftMsk4bits:I = 0x7
-
-.field static final eStart:B = 0x0t
-
-.field static final eUnitMsk4bits:I = 0xf
-
-.field static final eidxSft4bits:I = 0x3
-
-
 # direct methods
 .method constructor <init>()V
     .locals 0

@@ -14,14 +14,6 @@
 .end annotation
 
 
-# static fields
-.field public static final ANNIVERSARY:Ljava/lang/String; = "data2"
-
-.field public static final CONTENT_ITEM_TYPE:Ljava/lang/String; = "vnd.android.cursor.item/eas_personal"
-
-.field public static final FILE_AS:Ljava/lang/String; = "data4"
-
-
 # instance fields
 .field anniversary:Ljava/lang/String;
 
@@ -33,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 224
+    .line 226
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +37,7 @@
     .locals 1
 
     .prologue
-    .line 234
+    .line 236
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasPersonal;->anniversary:Ljava/lang/String;
 
     if-nez v0, :cond_0

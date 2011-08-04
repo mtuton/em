@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="search_list">
+        <item>„Google“</item>
+        <item>Versti naudojantis „Google“</item>
+        <item>Vikipedija</item>
+        <item>Žodynas</item>
+    </string-array>
+    <string-array name="share_list">
+        <item>Bendrinti kaip tekstą</item>
+        <item>Bendrinti kaip vaizdą</item>
+    </string-array>
+</resources>

@@ -28,7 +28,7 @@
     .parameter
 
     .prologue
-    .line 5418
+    .line 7000
     iput-object p1, p0, Lcom/android/email/activity/MessageList$MoveMessageTask$1TempList;->this$1:Lcom/android/email/activity/MessageList$MoveMessageTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

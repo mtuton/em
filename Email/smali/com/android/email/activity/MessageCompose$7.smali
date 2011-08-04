@@ -1,9 +1,6 @@
 .class Lcom/android/email/activity/MessageCompose$7;
-.super Ljava/lang/Object;
+.super Landroid/webkit/WebViewClient;
 .source "MessageCompose.java"
-
-# interfaces
-.implements Landroid/text/TextWatcher;
 
 
 # annotations
@@ -27,57 +24,113 @@
     .parameter
 
     .prologue
-    .line 1065
+    .line 1682
     iput-object p1, p0, Lcom/android/email/activity/MessageCompose$7;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public afterTextChanged(Landroid/text/Editable;)V
-    .locals 0
-    .parameter "s"
+.method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+    .locals 6
+    .parameter "view"
+    .parameter "url"
 
     .prologue
-    .line 1065
+    const/4 v5, 0x0
+
+    .line 1686
+    invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+
+    .line 1687
+    const-string v1, "com.android.email.intent.action.EDIT_DRAFT"
+
+    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$7;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$2100(Lcom/android/email/activity/MessageCompose;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 1689
+    move-object v0, p1
+
+    check-cast v0, Landroid/webkit/HtmlComposerView;
+
+    move-object v1, v0
+
+    iget-object v2, p0, Lcom/android/email/activity/MessageCompose$7;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v2}, Lcom/android/email/activity/MessageCompose;->access$2200(Lcom/android/email/activity/MessageCompose;)Ljava/lang/StringBuffer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "-small_fontsize_start-"
+
+    const-string v4, "<font size=2>"
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "-small_fontsize_end-"
+
+    const-string v4, "</font>"
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "\n"
+
+    const-string v4, "<br>"
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/webkit/HtmlComposerView;->append(Ljava/lang/CharSequence;)V
+
+    .line 1693
+    move-object v0, p1
+
+    check-cast v0, Landroid/webkit/HtmlComposerView;
+
+    move-object v1, v0
+
+    invoke-virtual {v1}, Landroid/webkit/HtmlComposerView;->undoRedoStateReset()V
+
+    .line 1694
+    check-cast p1, Landroid/webkit/HtmlComposerView;
+
+    .end local p1
+    invoke-virtual {p1, v5, v5}, Landroid/webkit/HtmlComposerView;->setEditableSelection(II)V
+
+    .line 1696
+    :cond_0
     return-void
 .end method
 
-.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
-    .parameter "s"
-    .parameter "start"
-    .parameter "before"
-    .parameter "after"
+.method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
+    .locals 1
+    .parameter "view"
+    .parameter "url"
 
     .prologue
-    .line 1057
-    return-void
-.end method
+    .line 1701
+    const/4 v0, 0x1
 
-.method public onTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 2
-    .parameter "s"
-    .parameter "start"
-    .parameter "before"
-    .parameter "count"
-
-    .prologue
-    const/4 v1, 0x1
-
-    .line 1061
-    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$7;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v0, v1}, Lcom/android/email/activity/MessageCompose;->access$902(Lcom/android/email/activity/MessageCompose;Z)Z
-
-    .line 1062
-    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$7;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    invoke-static {v0, v1}, Lcom/android/email/activity/MessageCompose;->access$1502(Lcom/android/email/activity/MessageCompose;Z)Z
-
-    .line 1063
-    return-void
+    return v0
 .end method

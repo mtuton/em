@@ -14,10 +14,6 @@
 .end annotation
 
 
-# static fields
-.field private static final MESSAGE_MEDIA_CHECK:I
-
-
 # instance fields
 .field final synthetic this$0:Lcom/android/email/service/BootReceiver;
 
@@ -33,7 +29,6 @@
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 49
     return-void
 .end method
 

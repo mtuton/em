@@ -44,29 +44,29 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 204
+    .line 206
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$4;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-static {v0, v1}, Lcom/android/email/activity/setup/OoOSettings;->access$1002(Lcom/android/email/activity/setup/OoOSettings;Z)Z
 
-    .line 205
+    .line 207
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$4;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     iget-boolean v0, v0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
     if-nez v0, :cond_0
 
-    .line 206
+    .line 208
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$4;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     iput-boolean v1, v0, Lcom/android/email/activity/setup/OoOSettings;->mIsUIOn:Z
 
-    .line 207
+    .line 209
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$4;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-static {v0}, Lcom/android/email/activity/setup/OoOSettings;->access$1100(Lcom/android/email/activity/setup/OoOSettings;)V
 
-    .line 209
+    .line 211
     :cond_0
     return-void
 .end method

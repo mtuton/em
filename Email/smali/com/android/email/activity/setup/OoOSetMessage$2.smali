@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 63
+    .line 61
     iput-object p1, p0, Lcom/android/email/activity/setup/OoOSetMessage$2;->this$0:Lcom/android/email/activity/setup/OoOSetMessage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

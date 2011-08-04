@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/service/EmailServiceProxy;->MoveMessage(Ljava/util/List;JJJ)V
+    value = Lcom/android/email/service/EmailServiceProxy;->emptyTrash(J)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,33 +22,18 @@
 
 .field final synthetic val$accountId:J
 
-.field final synthetic val$curBoxKey:J
-
-.field final synthetic val$mailboxKey:J
-
-.field final synthetic val$messageId:Ljava/util/List;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/email/service/EmailServiceProxy;Ljava/util/List;JJJ)V
+.method constructor <init>(Lcom/android/email/service/EmailServiceProxy;J)V
     .locals 0
-    .parameter
-    .parameter
-    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 389
+    .line 375
     iput-object p1, p0, Lcom/android/email/service/EmailServiceProxy$15;->this$0:Lcom/android/email/service/EmailServiceProxy;
 
-    iput-object p2, p0, Lcom/android/email/service/EmailServiceProxy$15;->val$messageId:Ljava/util/List;
-
-    iput-wide p3, p0, Lcom/android/email/service/EmailServiceProxy$15;->val$accountId:J
-
-    iput-wide p5, p0, Lcom/android/email/service/EmailServiceProxy$15;->val$mailboxKey:J
-
-    iput-wide p7, p0, Lcom/android/email/service/EmailServiceProxy$15;->val$curBoxKey:J
+    iput-wide p2, p0, Lcom/android/email/service/EmailServiceProxy$15;->val$accountId:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -58,10 +43,10 @@
 
 # virtual methods
 .method public run()V
-    .locals 8
+    .locals 3
 
     .prologue
-    .line 391
+    .line 378
     :try_start_0
     iget-object v0, p0, Lcom/android/email/service/EmailServiceProxy$15;->this$0:Lcom/android/email/service/EmailServiceProxy;
 
@@ -85,7 +70,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/email/service/IEmailService;->setCallback(Lcom/android/email/service/IEmailServiceCallback;)V
 
-    .line 392
+    .line 379
     :cond_0
     iget-object v0, p0, Lcom/android/email/service/EmailServiceProxy$15;->this$0:Lcom/android/email/service/EmailServiceProxy;
 
@@ -93,23 +78,17 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/email/service/EmailServiceProxy$15;->val$messageId:Ljava/util/List;
+    iget-wide v1, p0, Lcom/android/email/service/EmailServiceProxy$15;->val$accountId:J
 
-    iget-wide v2, p0, Lcom/android/email/service/EmailServiceProxy$15;->val$accountId:J
-
-    iget-wide v4, p0, Lcom/android/email/service/EmailServiceProxy$15;->val$mailboxKey:J
-
-    iget-wide v6, p0, Lcom/android/email/service/EmailServiceProxy$15;->val$curBoxKey:J
-
-    invoke-interface/range {v0 .. v7}, Lcom/android/email/service/IEmailService;->MoveMessage(Ljava/util/List;JJJ)V
+    invoke-interface {v0, v1, v2}, Lcom/android/email/service/IEmailService;->emptyTrash(J)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 395
+    .line 383
     :goto_0
     return-void
 
-    .line 393
+    .line 380
     :catch_0
     move-exception v0
 

@@ -27,14 +27,14 @@
     .parameter "rPos"
 
     .prologue
-    .line 418
+    .line 455
     iput-object p1, p0, Lcom/android/email/activity/MessageList$ListItem;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 419
+    .line 456
     iput p2, p0, Lcom/android/email/activity/MessageList$ListItem;->rPos:I
 
-    .line 420
+    .line 457
     return-void
 .end method

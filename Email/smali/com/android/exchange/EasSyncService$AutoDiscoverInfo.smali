@@ -19,8 +19,6 @@
 
 .field bundle:Landroid/os/Bundle;
 
-.field hostAuth:Lcom/android/email/provider/EmailContent$HostAuth;
-
 .field isErrorTagPresent:Z
 
 .field isRedirectTagPresent:Z
@@ -36,7 +34,7 @@
     .parameter
 
     .prologue
-    .line 669
+    .line 829
     iput-object p1, p0, Lcom/android/exchange/EasSyncService$AutoDiscoverInfo;->this$0:Lcom/android/exchange/EasSyncService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +48,7 @@
     .parameter "x1"
 
     .prologue
-    .line 669
+    .line 829
     invoke-direct {p0, p1}, Lcom/android/exchange/EasSyncService$AutoDiscoverInfo;-><init>(Lcom/android/exchange/EasSyncService;)V
 
     return-void
@@ -61,7 +59,7 @@
     .parameter "x0"
 
     .prologue
-    .line 669
+    .line 829
     iget v0, p0, Lcom/android/exchange/EasSyncService$AutoDiscoverInfo;->mAutoDiscoverRetryCount:I
 
     return v0
@@ -73,7 +71,7 @@
     .parameter "x1"
 
     .prologue
-    .line 669
+    .line 829
     iput p1, p0, Lcom/android/exchange/EasSyncService$AutoDiscoverInfo;->mAutoDiscoverRetryCount:I
 
     return p1
@@ -84,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 669
+    .line 829
     iget v0, p0, Lcom/android/exchange/EasSyncService$AutoDiscoverInfo;->mAutoDiscoverRetryCount:I
 
     add-int/lit8 v1, v0, 0x1

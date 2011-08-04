@@ -129,7 +129,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
     .locals 1
-    .parameter "name"
+    .parameter
 
     .prologue
     .line 47
@@ -139,13 +139,12 @@
 
     move-result-object p0
 
-    .end local p0
     check-cast p0, Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
 
     return-object p0
 .end method
 
-.method public static final values()[Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
+.method public static values()[Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
     .locals 1
 
     .prologue

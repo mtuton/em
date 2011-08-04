@@ -31,20 +31,20 @@
     .end annotation
 
     .prologue
-    .line 172
+    .line 180
     iput-object p1, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
-    .line 173
+    .line 181
     invoke-direct {p0, p2, p3}, Lcom/android/exchange/adapter/AbstractSyncParser;-><init>(Ljava/io/InputStream;Lcom/android/exchange/adapter/AbstractSyncAdapter;)V
 
-    .line 174
+    .line 182
     const-string v0, "Mahskyript"
 
     const-string v1, "FolderDeleteAdapter.FolderDeleteParser.FolderDeleteParser"
 
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 175
+    .line 183
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .end annotation
 
     .prologue
-    .line 179
+    .line 187
     return-void
 .end method
 
@@ -82,19 +82,19 @@
 
     const-string v11, ""
 
-    .line 191
+    .line 199
     const-string v0, "Mahskyript"
 
     const-string v1, "FolderDeleteAdapter.FolderDeleteParser.commit"
 
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 192
+    .line 200
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
-    .line 194
+    .line 202
     .local v8, ops:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentProviderOperation;>;"
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
@@ -104,7 +104,7 @@
 
     if-ne v0, v13, :cond_6
 
-    .line 197
+    .line 205
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v1, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
@@ -151,7 +151,7 @@
 
     move-result-object v6
 
-    .line 202
+    .line 210
     .local v6, c:Landroid/database/Cursor;
     if-eqz v6, :cond_3
 
@@ -162,7 +162,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 203
+    .line 211
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
@@ -185,7 +185,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->userLog([Ljava/lang/String;)V
 
-    .line 206
+    .line 214
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v1, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
@@ -242,11 +242,11 @@
 
     move-result-object v7
 
-    .line 210
+    .line 218
     .local v7, cursor:Landroid/database/Cursor;
     if-eqz v7, :cond_2
 
-    .line 212
+    .line 220
     :goto_0
     :try_start_1
     invoke-interface {v7}, Landroid/database/Cursor;->moveToNext()Z
@@ -255,7 +255,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 213
+    .line 221
     sget-object v0, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v1, 0x0
@@ -282,7 +282,7 @@
 
     goto :goto_0
 
-    .line 220
+    .line 228
     :catchall_0
     move-exception v0
 
@@ -293,27 +293,27 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 232
+    .line 240
     .end local v7           #cursor:Landroid/database/Cursor;
     :catchall_1
     move-exception v0
 
     if-eqz v6, :cond_0
 
-    .line 233
+    .line 241
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 232
+    .line 240
     :cond_0
     throw v0
 
-    .line 220
+    .line 228
     .restart local v7       #cursor:Landroid/database/Cursor;
     :cond_1
     :try_start_3
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 224
+    .line 232
     :cond_2
     sget-object v0, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
@@ -337,7 +337,7 @@
 
     invoke-virtual {v8, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 228
+    .line 236
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
@@ -352,15 +352,15 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 232
+    .line 240
     .end local v7           #cursor:Landroid/database/Cursor;
     :cond_3
     if-eqz v6, :cond_4
 
-    .line 233
+    .line 241
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 236
+    .line 244
     :cond_4
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->mService:Lcom/android/exchange/EasSyncService;
 
@@ -370,7 +370,7 @@
 
     monitor-enter v0
 
-    .line 242
+    .line 250
     :try_start_4
     invoke-virtual {v8}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -378,7 +378,7 @@
 
     if-nez v1, :cond_5
 
-    .line 243
+    .line 251
     const-string v1, "Applying "
 
     invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
@@ -389,7 +389,7 @@
 
     invoke-virtual {p0, v1, v2, v3}, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->userLog(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 245
+    .line 253
     iget-object v1, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v2, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
@@ -400,7 +400,7 @@
 
     iput-object v2, v1, Lcom/android/email/provider/EmailContent$Account;->mSyncKey:Ljava/lang/String;
 
-    .line 246
+    .line 254
     sget-object v1, Lcom/android/email/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
 
     iget-object v2, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
@@ -433,7 +433,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    .line 252
+    .line 260
     :try_start_5
     iget-object v1, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -441,7 +441,7 @@
 
     invoke-virtual {v1, v2, v8}, Landroid/content/ContentResolver;->applyBatch(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;
 
-    .line 254
+    .line 262
     const/4 v1, 0x2
 
     new-array v1, v1, [Ljava/lang/String;
@@ -466,7 +466,7 @@
     .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_5} :catch_1
     .catch Landroid/content/OperationApplicationException; {:try_start_5 .. :try_end_5} :catch_0
 
-    .line 261
+    .line 269
     :cond_5
     :goto_1
     :try_start_6
@@ -474,24 +474,24 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    .line 263
+    .line 271
     .end local v6           #c:Landroid/database/Cursor;
     :cond_6
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
     invoke-virtual {v0, v12}, Lcom/android/exchange/adapter/FolderDeleteAdapter;->callback(I)V
 
-    .line 264
+    .line 272
     const-string v0, "Mahskyript"
 
     const-string v1, "FolderDeleteAdapter.FolderDeleteParser.commit after callback"
 
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 265
+    .line 273
     return-void
 
-    .line 261
+    .line 269
     .restart local v6       #c:Landroid/database/Cursor;
     :catchall_2
     move-exception v1
@@ -503,53 +503,43 @@
 
     throw v1
 
-    .line 257
+    .line 265
     :catch_0
     move-exception v1
 
     goto :goto_1
 
-    .line 255
+    .line 263
     :catch_1
     move-exception v1
 
     goto :goto_1
 .end method
 
-.method public itemOperationsResponsesParser()V
-    .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 187
-    return-void
-.end method
-
 .method public parse()Z
     .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;
+            Ljava/io/IOException;,
+            Lcom/android/email/mail/DeviceAccessException;
         }
     .end annotation
 
     .prologue
+    const/4 v3, 0x3
+
     const/4 v5, 0x0
 
     const-string v6, "Mahskyript"
 
-    .line 284
+    .line 292
     const-string v0, "Mahskyript"
 
     const-string v0, "FolderDeleteAdapter.FolderDeleteParser.parse "
 
     invoke-static {v6, v0}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 285
+    .line 293
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
     new-instance v1, Lcom/android/exchange/adapter/AbstractCommandAdapter$FolderCommandResponse;
@@ -560,7 +550,7 @@
 
     iput-object v1, v0, Lcom/android/exchange/adapter/FolderDeleteAdapter;->mResponse:Lcom/android/exchange/adapter/AbstractCommandAdapter$FolderCommandResponse;
 
-    .line 286
+    .line 294
     invoke-virtual {p0, v5}, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->nextTag(I)I
 
     move-result v0
@@ -569,33 +559,31 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 287
+    .line 295
     new-instance v0, Lcom/android/exchange/adapter/Parser$EasParserException;
 
     invoke-direct {v0, p0}, Lcom/android/exchange/adapter/Parser$EasParserException;-><init>(Lcom/android/exchange/adapter/Parser;)V
 
     throw v0
 
-    .line 289
+    .line 297
     :cond_0
     :goto_0
-    :pswitch_0
+    :sswitch_0
     invoke-virtual {p0, v5}, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->nextTag(I)I
 
     move-result v0
 
-    const/4 v1, 0x3
+    if-eq v0, v3, :cond_2
 
-    if-eq v0, v1, :cond_2
-
-    .line 291
+    .line 299
     iget v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->tag:I
 
     const/16 v1, 0x1d2
 
     if-ne v0, v1, :cond_1
 
-    .line 292
+    .line 300
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
     iget-object v0, v0, Lcom/android/exchange/adapter/FolderDeleteAdapter;->mResponse:Lcom/android/exchange/adapter/AbstractCommandAdapter$FolderCommandResponse;
@@ -608,7 +596,7 @@
 
     goto :goto_0
 
-    .line 293
+    .line 301
     :cond_1
     iget v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->tag:I
 
@@ -616,7 +604,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 294
+    .line 302
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
     iget-object v0, v0, Lcom/android/exchange/adapter/FolderDeleteAdapter;->mResponse:Lcom/android/exchange/adapter/AbstractCommandAdapter$FolderCommandResponse;
@@ -627,17 +615,16 @@
 
     iput v1, v0, Lcom/android/exchange/adapter/AbstractCommandAdapter$FolderCommandResponse;->mStatus:I
 
-    .line 295
+    .line 303
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
     iget-object v0, v0, Lcom/android/exchange/adapter/FolderDeleteAdapter;->mResponse:Lcom/android/exchange/adapter/AbstractCommandAdapter$FolderCommandResponse;
 
     iget v0, v0, Lcom/android/exchange/adapter/AbstractCommandAdapter$FolderCommandResponse;->mStatus:I
 
-    packed-switch v0, :pswitch_data_0
+    sparse-switch v0, :sswitch_data_0
 
-    .line 312
-    :pswitch_1
+    .line 329
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "Unknown error."
@@ -646,8 +633,8 @@
 
     throw v0
 
-    .line 299
-    :pswitch_2
+    .line 307
+    :sswitch_1
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
     const/16 v1, 0x23
@@ -656,8 +643,8 @@
 
     goto :goto_0
 
-    .line 302
-    :pswitch_3
+    .line 310
+    :sswitch_2
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
     const/16 v1, 0x24
@@ -666,8 +653,8 @@
 
     goto :goto_0
 
-    .line 308
-    :pswitch_4
+    .line 319
+    :sswitch_3
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
     const/16 v1, 0x22
@@ -676,7 +663,24 @@
 
     goto :goto_0
 
-    .line 317
+    .line 324
+    :sswitch_4
+    iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
+
+    invoke-virtual {v0, v3}, Lcom/android/exchange/adapter/FolderDeleteAdapter;->callback(I)V
+
+    .line 325
+    new-instance v0, Lcom/android/email/mail/DeviceAccessException;
+
+    const v1, 0x40001
+
+    const v2, 0x7f0802cb
+
+    invoke-direct {v0, v1, v2}, Lcom/android/email/mail/DeviceAccessException;-><init>(II)V
+
+    throw v0
+
+    .line 334
     :cond_2
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
@@ -688,10 +692,10 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 318
+    .line 335
     invoke-virtual {p0}, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->commit()V
 
-    .line 330
+    .line 347
     :cond_3
     :goto_1
     const-string v0, "Mahskyript"
@@ -700,10 +704,10 @@
 
     invoke-static {v6, v0}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 331
+    .line 348
     return v5
 
-    .line 320
+    .line 337
     :cond_4
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
@@ -715,7 +719,7 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 322
+    .line 339
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
     invoke-static {v0}, Lcom/android/exchange/adapter/FolderDeleteAdapter;->access$000(Lcom/android/exchange/adapter/FolderDeleteAdapter;)Ljava/lang/String;
@@ -724,7 +728,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 323
+    .line 340
     const-string v0, "FolderDeleteAdapter"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -753,7 +757,7 @@
 
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 324
+    .line 341
     iget-object v0, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v1, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
@@ -814,28 +818,25 @@
 
     goto :goto_1
 
-    .line 328
+    .line 345
     :cond_5
     invoke-virtual {p0}, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->wipe()V
 
     goto :goto_1
 
-    .line 295
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_1
-        :pswitch_4
-        :pswitch_1
-        :pswitch_4
-        :pswitch_4
-        :pswitch_4
-    .end packed-switch
+    .line 303
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_0
+        0x3 -> :sswitch_1
+        0x4 -> :sswitch_2
+        0x6 -> :sswitch_3
+        0x7 -> :sswitch_3
+        0x8 -> :sswitch_3
+        0x9 -> :sswitch_3
+        0xa -> :sswitch_3
+        0x81 -> :sswitch_4
+    .end sparse-switch
 .end method
 
 .method public responsesParser()V
@@ -847,7 +848,7 @@
     .end annotation
 
     .prologue
-    .line 183
+    .line 191
     return-void
 .end method
 
@@ -855,7 +856,7 @@
     .locals 6
 
     .prologue
-    .line 272
+    .line 280
     iget-object v1, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
     invoke-static {v1}, Lcom/android/exchange/adapter/FolderDeleteAdapter;->access$100(Lcom/android/exchange/adapter/FolderDeleteAdapter;)J
@@ -872,7 +873,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 273
+    .line 281
     const-string v1, "FolderDeleteAdapter"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -907,19 +908,19 @@
 
     invoke-static {v1, v2}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 274
+    .line 282
     iget-object v1, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->this$0:Lcom/android/exchange/adapter/FolderDeleteAdapter;
 
     const/4 v2, -0x2
 
     invoke-static {v1, v2}, Lcom/android/exchange/adapter/FolderDeleteAdapter;->access$272(Lcom/android/exchange/adapter/FolderDeleteAdapter;I)I
 
-    .line 275
+    .line 283
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 276
+    .line 284
     .local v0, cv:Landroid/content/ContentValues;
     const-string v1, "flagChanged"
 
@@ -935,7 +936,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 277
+    .line 285
     iget-object v1, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter$FolderDeleteParser;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v2, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
@@ -968,7 +969,7 @@
 
     invoke-virtual {v1, v2, v0, v3, v4}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 280
+    .line 288
     .end local v0           #cv:Landroid/content/ContentValues;
     :cond_0
     return-void

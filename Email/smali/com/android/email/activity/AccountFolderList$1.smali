@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 837
+    .line 838
     iput-object p1, p0, Lcom/android/email/activity/AccountFolderList$1;->this$0:Lcom/android/email/activity/AccountFolderList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,13 +43,13 @@
     .parameter "whichButton"
 
     .prologue
-    .line 838
+    .line 840
     iget-object v0, p0, Lcom/android/email/activity/AccountFolderList$1;->this$0:Lcom/android/email/activity/AccountFolderList;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/AccountFolderList;->dismissDialog(I)V
 
-    .line 839
+    .line 841
     return-void
 .end method

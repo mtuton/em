@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 4282
+    .line 6774
     iput-object p1, p0, Lcom/android/email/activity/MessageCompose$Listener;->this$0:Lcom/android/email/activity/MessageCompose;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,18 +37,6 @@
 
 
 # virtual methods
-.method public GALSearchCallback(Lcom/android/email/mail/MessagingException;JILandroid/os/Bundle;)V
-    .locals 0
-    .parameter "result"
-    .parameter "accountId"
-    .parameter "progress"
-    .parameter "searchResults"
-
-    .prologue
-    .line 4340
-    return-void
-.end method
-
 .method public OoOCallback(Lcom/android/email/mail/MessagingException;JILandroid/os/Bundle;)V
     .locals 0
     .parameter "result"
@@ -57,7 +45,7 @@
     .parameter "oooResults"
 
     .prologue
-    .line 4318
+    .line 6844
     return-void
 .end method
 
@@ -65,7 +53,18 @@
     .locals 0
 
     .prologue
-    .line 4344
+    .line 6878
+    return-void
+.end method
+
+.method public deviceInformationCallback(Lcom/android/email/mail/MessagingException;JI)V
+    .locals 0
+    .parameter "result"
+    .parameter "accountId"
+    .parameter "progress"
+
+    .prologue
+    .line 6884
     return-void
 .end method
 
@@ -76,7 +75,7 @@
     .parameter "progress"
 
     .prologue
-    .line 4305
+    .line 6831
     return-void
 .end method
 
@@ -87,20 +86,93 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 4334
+    .line 6869
     return-void
 .end method
 
 .method public loadAttachmentCallback(Lcom/android/email/mail/MessagingException;JJI)V
-    .locals 0
+    .locals 2
     .parameter "result"
     .parameter "messageId"
     .parameter "attachmentId"
     .parameter "progress"
 
     .prologue
-    .line 4300
+    .line 6792
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$Listener;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$4900(Lcom/android/email/activity/MessageCompose;)J
+
+    move-result-wide v0
+
+    cmp-long v0, p2, v0
+
+    if-nez v0, :cond_0
+
+    .line 6793
+    if-nez p1, :cond_0
+
+    .line 6794
+    sparse-switch p6, :sswitch_data_0
+
+    .line 6826
+    :cond_0
+    :goto_0
     return-void
+
+    .line 6797
+    :sswitch_0
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$Listener;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$100(Lcom/android/email/activity/MessageCompose;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 6802
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$Listener;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$5000(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/activity/MessageCompose$MessageComposeHandler;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageCompose$MessageComposeHandler;->attachmentProgress(Z)V
+
+    goto :goto_0
+
+    .line 6808
+    :sswitch_1
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$Listener;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$100(Lcom/android/email/activity/MessageCompose;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 6813
+    :cond_1
+    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$Listener;->this$0:Lcom/android/email/activity/MessageCompose;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$5000(Lcom/android/email/activity/MessageCompose;)Lcom/android/email/activity/MessageCompose$MessageComposeHandler;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p4, p5}, Lcom/android/email/activity/MessageCompose$MessageComposeHandler;->finishLoadAttachment(J)V
+
+    goto :goto_0
+
+    .line 6794
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_0
+        0x64 -> :sswitch_1
+    .end sparse-switch
 .end method
 
 .method public loadMessageForViewCallback(Lcom/android/email/mail/MessagingException;JI)V
@@ -110,7 +182,7 @@
     .parameter "progress"
 
     .prologue
-    .line 4296
+    .line 6788
     return-void
 .end method
 
@@ -121,7 +193,19 @@
     .parameter "progress"
 
     .prologue
-    .line 4311
+    .line 6837
+    return-void
+.end method
+
+.method public moveConvAlwaysCallback(Lcom/android/email/mail/MessagingException;[BII)V
+    .locals 0
+    .parameter "result"
+    .parameter "convId"
+    .parameter "progress"
+    .parameter "ignore"
+
+    .prologue
+    .line 6863
     return-void
 .end method
 
@@ -131,7 +215,7 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 4329
+    .line 6855
     return-void
 .end method
 
@@ -143,7 +227,7 @@
     .parameter "progress"
 
     .prologue
-    .line 4326
+    .line 6852
     return-void
 .end method
 
@@ -156,7 +240,7 @@
     .parameter "tag"
 
     .prologue
-    .line 4322
+    .line 6848
     return-void
 .end method
 
@@ -169,18 +253,18 @@
     .parameter "numNewMessages"
 
     .prologue
-    .line 4289
+    .line 6781
     if-nez p1, :cond_0
 
     const/16 v0, 0x64
 
     if-ne p6, v0, :cond_1
 
-    .line 4290
+    .line 6782
     :cond_0
     invoke-static {p4, p5}, Lcom/android/email/Email;->updateMailboxRefreshTime(J)V
 
-    .line 4292
+    .line 6784
     :cond_1
     return-void
 .end method
@@ -192,6 +276,6 @@
     .parameter "progress"
 
     .prologue
-    .line 4285
+    .line 6777
     return-void
 .end method

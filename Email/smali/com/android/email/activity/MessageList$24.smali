@@ -1,11 +1,14 @@
 .class Lcom/android/email/activity/MessageList$24;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "MessageList.java"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/email/activity/MessageList;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/email/activity/MessageList;->onDeleteSmsPopup(JJ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,61 +27,25 @@
     .parameter
 
     .prologue
-    .line 6030
+    .line 3940
     iput-object p1, p0, Lcom/android/email/activity/MessageList$24;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
-    .parameter "context"
-    .parameter "intent"
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 0
+    .parameter "dialog"
+    .parameter "whichButton"
 
     .prologue
-    const-string v3, "Email"
+    .line 3942
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 6031
-    const-string v1, "Email"
-
-    const-string v1, "DPMReceiver()"
-
-    invoke-static {v3, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 6032
-    sget-object v1, Ljava/lang/System;->out:Ljava/io/PrintStream;
-
-    const-string v2, "11111 MessageList.java >>>>> BroadcastReceiver()  >>>>> 4722"
-
-    invoke-virtual {v1, v2}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-
-    .line 6033
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 6034
-    .local v0, action:Ljava/lang/String;
-    const-string v1, "android.app.action.DEVICE_POLICY_MANAGER_STATE_CHANGED"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 6035
-    const-string v1, "Email"
-
-    const-string v1, "DPMReceiver() 2"
-
-    invoke-static {v3, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 6037
-    :cond_0
+    .line 3943
     return-void
 .end method

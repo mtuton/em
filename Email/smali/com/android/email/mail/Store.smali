@@ -13,22 +13,6 @@
 
 
 # static fields
-.field public static final FETCH_BODY_SANE_SUGGESTED_SIZE:I = 0xc800
-
-.field public static final STORE_SCHEME_EAS:Ljava/lang/String; = "eas"
-
-.field public static final STORE_SCHEME_IMAP:Ljava/lang/String; = "imap"
-
-.field public static final STORE_SCHEME_LOCAL:Ljava/lang/String; = "local"
-
-.field public static final STORE_SCHEME_POP3:Ljava/lang/String; = "pop3"
-
-.field public static final STORE_SECURITY_SSL:Ljava/lang/String; = "+ssl"
-
-.field public static final STORE_SECURITY_TLS:Ljava/lang/String; = "+tls"
-
-.field public static final STORE_SECURITY_TRUST_CERTIFICATES:Ljava/lang/String; = "+trustallcerts"
-
 .field private static mStores:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -183,11 +167,11 @@
 .end method
 
 .method private static instantiateStore(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Lcom/android/email/mail/Store$PersistentDataCallbacks;)Lcom/android/email/mail/Store;
-    .locals 12
-    .parameter "className"
-    .parameter "uri"
-    .parameter "context"
-    .parameter "callbacks"
+    .locals 10
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/email/mail/MessagingException;
@@ -195,186 +179,176 @@
     .end annotation
 
     .prologue
-    const/4 v11, 0x3
+    const/4 v9, 0x3
 
-    const/4 v10, 0x2
+    const/4 v8, 0x2
 
-    const/4 v9, 0x1
+    const/4 v7, 0x1
 
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
     .line 74
-    const/4 v3, 0x0
-
     .line 76
-    .local v3, o:Ljava/lang/Object;
     :try_start_0
     invoke-static {p0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 78
-    .local v0, c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
-    const-string v4, "newInstance"
+    const-string v2, "newInstance"
 
-    const/4 v5, 0x3
+    const/4 v3, 0x3
 
-    new-array v5, v5, [Ljava/lang/Class;
+    new-array v3, v3, [Ljava/lang/Class;
 
-    const/4 v6, 0x0
-
-    const-class v7, Ljava/lang/String;
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    const-class v7, Landroid/content/Context;
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-class v7, Lcom/android/email/mail/Store$PersistentDataCallbacks;
-
-    aput-object v7, v5, v6
-
-    invoke-virtual {v0, v4, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v2
-
-    .line 81
-    .local v2, m:Ljava/lang/reflect/Method;
     const/4 v4, 0x0
 
-    const/4 v5, 0x3
+    const-class v5, Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/Object;
+    aput-object v5, v3, v4
 
-    const/4 v6, 0x0
+    const/4 v4, 0x1
 
-    aput-object p1, v5, v6
+    const-class v5, Landroid/content/Context;
 
-    const/4 v6, 0x1
+    aput-object v5, v3, v4
 
-    aput-object p2, v5, v6
+    const/4 v4, 0x2
 
-    const/4 v6, 0x2
+    const-class v5, Lcom/android/email/mail/Store$PersistentDataCallbacks;
 
-    aput-object p3, v5, v6
+    aput-object v5, v3, v4
 
-    invoke-virtual {v2, v4, v5}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v1
+
+    .line 81
+    const/4 v2, 0x0
+
+    const/4 v3, 0x3
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    aput-object p1, v3, v4
+
+    const/4 v4, 0x1
+
+    aput-object p2, v3, v4
+
+    const/4 v4, 0x2
+
+    aput-object p3, v3, v4
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v3
+    move-result-object v1
 
     .line 88
-    instance-of v4, v3, Lcom/android/email/mail/Store;
+    instance-of v2, v1, Lcom/android/email/mail/Store;
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     .line 89
-    new-instance v4, Lcom/android/email/mail/MessagingException;
+    new-instance v1, Lcom/android/email/mail/MessagingException;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v2
 
-    const-string v6, ": "
+    const-string v3, ": "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v2
 
-    const-string v6, " create incompatible object"
+    const-string v3, " create incompatible object"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-direct {v4, v5}, Lcom/android/email/mail/MessagingException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Lcom/android/email/mail/MessagingException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v1
 
     .line 82
-    .end local v0           #c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
-    .end local v2           #m:Ljava/lang/reflect/Method;
     :catch_0
-    move-exception v4
-
-    move-object v1, v4
+    move-exception v1
 
     .line 83
-    .local v1, e:Ljava/lang/Exception;
-    const-string v4, "Email"
+    const-string v2, "Email"
 
-    const-string v5, "exception %s invoking %s.newInstance.(String, Context) method for %s"
+    const-string v3, "exception %s invoking %s.newInstance.(String, Context) method for %s"
 
-    new-array v6, v11, [Ljava/lang/Object;
+    new-array v4, v9, [Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    aput-object v7, v6, v8
+    aput-object v1, v4, v6
 
-    aput-object p0, v6, v9
+    aput-object p0, v4, v7
 
-    aput-object p1, v6, v10
+    aput-object p1, v4, v8
 
-    invoke-static {v5, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-static {v4, v5}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 86
-    new-instance v4, Lcom/android/email/mail/MessagingException;
+    new-instance v1, Lcom/android/email/mail/MessagingException;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "can not instantiate Store object for "
+    const-string v3, "can not instantiate Store object for "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-direct {v4, v5}, Lcom/android/email/mail/MessagingException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Lcom/android/email/mail/MessagingException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v1
 
     .line 92
-    .end local v1           #e:Ljava/lang/Exception;
-    .restart local v0       #c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
-    .restart local v2       #m:Ljava/lang/reflect/Method;
     :cond_0
-    check-cast v3, Lcom/android/email/mail/Store;
+    move-object v0, v1
 
-    .end local v3           #o:Ljava/lang/Object;
-    return-object v3
+    check-cast v0, Lcom/android/email/mail/Store;
+
+    move-object p0, v0
+
+    return-object p0
 .end method
 
 .method public static newInstance(Ljava/lang/String;Landroid/content/Context;Lcom/android/email/mail/Store$PersistentDataCallbacks;)Lcom/android/email/mail/Store;

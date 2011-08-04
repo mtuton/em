@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageList;->onViewMode()V
+    value = Lcom/android/email/activity/MessageList;->onDeleteConversation(JJ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2304
+    .line 2716
     iput-object p1, p0, Lcom/android/email/activity/MessageList$9;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,19 +38,11 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 1
+    .locals 0
     .parameter "dialog"
-    .parameter "which"
+    .parameter "whichButton"
 
     .prologue
-    .line 2305
-    iget-object v0, p0, Lcom/android/email/activity/MessageList$9;->this$0:Lcom/android/email/activity/MessageList;
-
-    invoke-static {v0, p2}, Lcom/android/email/activity/MessageList;->access$2100(Lcom/android/email/activity/MessageList;I)V
-
-    .line 2306
-    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
-
-    .line 2307
+    .line 2718
     return-void
 .end method

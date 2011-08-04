@@ -4,28 +4,6 @@
 
 
 # static fields
-.field public static final ANY:I = 0x30
-
-.field public static final COMMENT:I = 0x26
-
-.field public static final DEFAULT:I = 0x0
-
-.field public static final DIGITS:I = 0x2e
-
-.field public static final EOF:I = 0x0
-
-.field public static final INCOMMENT:I = 0x1
-
-.field public static final MILITARY_ZONE:I = 0x23
-
-.field public static final NESTED_COMMENT:I = 0x2
-
-.field public static final OFFSETDIR:I = 0x18
-
-.field public static final QUOTEDPAIR:I = 0x2f
-
-.field public static final WS:I = 0x24
-
 .field public static final tokenImage:[Ljava/lang/String;
 
 

@@ -15,7 +15,17 @@
 
 
 # instance fields
+.field accountInfo:Landroid/widget/LinearLayout;
+
+.field accountName:Landroid/widget/TextView;
+
+.field chip:Landroid/view/View;
+
+.field emailAddress:Landroid/widget/TextView;
+
 .field mailBoxName:Landroid/widget/TextView;
+
+.field mailboxInfo:Landroid/widget/LinearLayout;
 
 
 # direct methods
@@ -23,7 +33,7 @@
     .locals 0
 
     .prologue
-    .line 3748
+    .line 4860
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

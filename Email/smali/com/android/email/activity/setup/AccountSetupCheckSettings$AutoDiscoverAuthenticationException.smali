@@ -29,12 +29,12 @@
     .parameter "message"
 
     .prologue
-    .line 149
+    .line 150
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$AutoDiscoverAuthenticationException;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
-    .line 150
+    .line 151
     invoke-direct {p0, p2}, Lcom/android/email/mail/AuthenticationFailedException;-><init>(Ljava/lang/String;)V
 
-    .line 151
+    .line 152
     return-void
 .end method

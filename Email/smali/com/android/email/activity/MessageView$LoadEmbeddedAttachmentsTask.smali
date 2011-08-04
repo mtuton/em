@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 4620
+    .line 6682
     iput-object p1, p0, Lcom/android/email/activity/MessageView$LoadEmbeddedAttachmentsTask;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -50,7 +50,7 @@
     .parameter "x1"
 
     .prologue
-    .line 4620
+    .line 6682
     invoke-direct {p0, p1}, Lcom/android/email/activity/MessageView$LoadEmbeddedAttachmentsTask;-><init>(Lcom/android/email/activity/MessageView;)V
 
     return-void
@@ -63,7 +63,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4620
+    .line 6682
     check-cast p1, [Ljava/lang/Long;
 
     .end local p1
@@ -79,7 +79,7 @@
     .parameter "arg0"
 
     .prologue
-    .line 4623
+    .line 6685
     iget-object v0, p0, Lcom/android/email/activity/MessageView$LoadEmbeddedAttachmentsTask;->this$0:Lcom/android/email/activity/MessageView;
 
     const/4 v1, 0x0
@@ -102,7 +102,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4620
+    .line 6682
     check-cast p1, [Lcom/android/email/provider/EmailContent$Attachment;
 
     .end local p1
@@ -116,21 +116,21 @@
     .parameter "result"
 
     .prologue
-    .line 4629
+    .line 6691
     if-nez p1, :cond_1
 
-    .line 4631
+    .line 6693
     const-string v2, "Email"
 
     const-string v3, "LoadEmbeddedAttachmentsTask embedded attachments is null"
 
     invoke-static {v2, v3}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4654
+    .line 6716
     :cond_0
     return-void
 
-    .line 4635
+    .line 6697
     :cond_1
     const-string v2, "Email"
 
@@ -160,7 +160,7 @@
 
     invoke-static {v2, v3}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4639
+    .line 6701
     move-object/from16 v13, p1
 
     .local v13, arr$:[Lcom/android/email/provider/EmailContent$Attachment;
@@ -183,13 +183,13 @@
 
     aget-object v14, v13, v15
 
-    .line 4641
+    .line 6703
     .local v14, attachment:Lcom/android/email/provider/EmailContent$Attachment;
     new-instance v17, Ljava/lang/StringBuffer;
 
     invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 4642
+    .line 6704
     .local v17, logbuf:Ljava/lang/StringBuffer;
     const-string v2, "View >>"
 
@@ -227,7 +227,7 @@
 
     invoke-static {v2, v3}, Lcom/android/email/Email;->logv(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4647
+    .line 6709
     iget-object v2, v14, Lcom/android/email/provider/EmailContent$Attachment;->mContentId:Ljava/lang/String;
 
     if-eqz v2, :cond_2
@@ -236,14 +236,14 @@
 
     if-nez v2, :cond_2
 
-    .line 4648
+    .line 6710
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/MessageView$LoadEmbeddedAttachmentsTask;->this$0:Lcom/android/email/activity/MessageView;
 
     move-object v2, v0
 
-    invoke-static {v2}, Lcom/android/email/activity/MessageView;->access$6100(Lcom/android/email/activity/MessageView;)Lcom/android/email/Controller;
+    invoke-static {v2}, Lcom/android/email/activity/MessageView;->access$6700(Lcom/android/email/activity/MessageView;)Lcom/android/email/Controller;
 
     move-result-object v2
 
@@ -255,7 +255,7 @@
 
     move-object v5, v0
 
-    invoke-static {v5}, Lcom/android/email/activity/MessageView;->access$4300(Lcom/android/email/activity/MessageView;)J
+    invoke-static {v5}, Lcom/android/email/activity/MessageView;->access$6500(Lcom/android/email/activity/MessageView;)J
 
     move-result-wide v5
 
@@ -265,7 +265,7 @@
 
     move-object v7, v0
 
-    invoke-static {v7}, Lcom/android/email/activity/MessageView;->access$3700(Lcom/android/email/activity/MessageView;)Lcom/android/email/provider/EmailContent$Message;
+    invoke-static {v7}, Lcom/android/email/activity/MessageView;->access$500(Lcom/android/email/activity/MessageView;)Lcom/android/email/provider/EmailContent$Message;
 
     move-result-object v7
 
@@ -277,7 +277,7 @@
 
     move-object v9, v0
 
-    invoke-static {v9}, Lcom/android/email/activity/MessageView;->access$1800(Lcom/android/email/activity/MessageView;)J
+    invoke-static {v9}, Lcom/android/email/activity/MessageView;->access$2700(Lcom/android/email/activity/MessageView;)J
 
     move-result-wide v9
 
@@ -287,7 +287,7 @@
 
     move-object v11, v0
 
-    invoke-static {v11}, Lcom/android/email/activity/MessageView;->access$6000(Lcom/android/email/activity/MessageView;)Lcom/android/email/activity/MessageView$ControllerResults;
+    invoke-static {v11}, Lcom/android/email/activity/MessageView;->access$6600(Lcom/android/email/activity/MessageView;)Lcom/android/email/activity/MessageView$ControllerResults;
 
     move-result-object v11
 
@@ -295,7 +295,7 @@
 
     invoke-virtual/range {v2 .. v12}, Lcom/android/email/Controller;->loadAttachment(JJJJLcom/android/email/Controller$Result;Z)V
 
-    .line 4639
+    .line 6701
     :cond_2
     add-int/lit8 v15, v15, 0x1
 

@@ -41,24 +41,19 @@
 
 .method public static getExchangeEmailService(Landroid/content/Context;Lcom/android/email/service/IEmailServiceCallback;)Lcom/android/email/service/IEmailService;
     .locals 2
-    .parameter "context"
-    .parameter "callback"
+    .parameter
+    .parameter
 
     .prologue
     .line 58
-    const/4 v0, 0x0
-
     .line 60
-    .local v0, ret:Lcom/android/email/service/IEmailService;
     new-instance v0, Lcom/android/email/service/EmailServiceProxy;
 
-    .end local v0           #ret:Lcom/android/email/service/IEmailService;
     const-class v1, Lcom/android/exchange/SyncManager;
 
     invoke-direct {v0, p0, v1, p1}, Lcom/android/email/service/EmailServiceProxy;-><init>(Landroid/content/Context;Ljava/lang/Class;Lcom/android/email/service/IEmailServiceCallback;)V
 
     .line 62
-    .restart local v0       #ret:Lcom/android/email/service/IEmailService;
     if-nez v0, :cond_0
 
     .line 63
@@ -71,7 +66,7 @@
 
 .method public static startExchangeService(Landroid/content/Context;)V
     .locals 2
-    .parameter "context"
+    .parameter
 
     .prologue
     .line 45

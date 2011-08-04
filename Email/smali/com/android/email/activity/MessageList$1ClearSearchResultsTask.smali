@@ -40,15 +40,15 @@
     .parameter "accountId"
 
     .prologue
-    .line 3096
+    .line 4131
     iput-object p1, p0, Lcom/android/email/activity/MessageList$1ClearSearchResultsTask;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 3097
+    .line 4132
     iput-wide p2, p0, Lcom/android/email/activity/MessageList$1ClearSearchResultsTask;->mAccountId:J
 
-    .line 3098
+    .line 4133
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3091
+    .line 4126
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -75,20 +75,20 @@
     .parameter "ignore"
 
     .prologue
-    .line 3102
+    .line 4137
     iget-object v5, p0, Lcom/android/email/activity/MessageList$1ClearSearchResultsTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v5}, Lcom/android/email/activity/MessageList;->access$3100(Lcom/android/email/activity/MessageList;)Landroid/database/Cursor;
+    invoke-static {v5}, Lcom/android/email/activity/MessageList;->access$3400(Lcom/android/email/activity/MessageList;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 3103
+    .line 4138
     .local v0, c:Landroid/database/Cursor;
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3104
+    .line 4139
     .local v2, ids:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -96,7 +96,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 3106
+    .line 4141
     :cond_0
     const/4 v5, 0x0
 
@@ -110,14 +110,14 @@
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3107
+    .line 4142
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v5
 
     if-nez v5, :cond_0
 
-    .line 3110
+    .line 4145
     :cond_1
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -141,21 +141,21 @@
 
     move-result-wide v3
 
-    .line 3111
+    .line 4146
     .local v3, msgId:J
     iget-object v5, p0, Lcom/android/email/activity/MessageList$1ClearSearchResultsTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v5}, Lcom/android/email/activity/MessageList;->access$2000(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
+    invoke-static {v5}, Lcom/android/email/activity/MessageList;->access$2200(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
 
     move-result-object v5
 
     iget-wide v6, p0, Lcom/android/email/activity/MessageList$1ClearSearchResultsTask;->mAccountId:J
 
-    invoke-virtual {v5, v3, v4, v6, v7}, Lcom/android/email/Controller;->deleteMessage(JJ)V
+    invoke-virtual {v5, v3, v4, v6, v7}, Lcom/android/email/Controller;->deleteMessage(JJ)Z
 
     goto :goto_0
 
-    .line 3113
+    .line 4148
     .end local v3           #msgId:J
     :cond_2
     const/4 v5, 0x0
@@ -168,7 +168,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3091
+    .line 4126
     check-cast p1, Ljava/lang/Void;
 
     .end local p1
@@ -182,12 +182,12 @@
     .parameter "ignore"
 
     .prologue
-    .line 3127
+    .line 4162
     iget-object v0, p0, Lcom/android/email/activity/MessageList$1ClearSearchResultsTask;->mProgressDlg:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 3128
+    .line 4163
     return-void
 .end method
 
@@ -195,14 +195,14 @@
     .locals 5
 
     .prologue
-    .line 3118
+    .line 4153
     iget-object v0, p0, Lcom/android/email/activity/MessageList$1ClearSearchResultsTask;->this$0:Lcom/android/email/activity/MessageList;
 
     const/4 v1, 0x0
 
     iget-object v2, p0, Lcom/android/email/activity/MessageList$1ClearSearchResultsTask;->this$0:Lcom/android/email/activity/MessageList;
 
-    const v3, 0x7f08022b
+    const v3, 0x7f080257
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/MessageList;->getString(I)Ljava/lang/String;
 
@@ -218,6 +218,6 @@
 
     iput-object v0, p0, Lcom/android/email/activity/MessageList$1ClearSearchResultsTask;->mProgressDlg:Landroid/app/ProgressDialog;
 
-    .line 3123
+    .line 4158
     return-void
 .end method

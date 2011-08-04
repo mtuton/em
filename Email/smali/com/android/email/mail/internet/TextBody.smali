@@ -73,33 +73,6 @@
     goto :goto_0
 .end method
 
-.method public getText()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 48
-    iget-object v0, p0, Lcom/android/email/mail/internet/TextBody;->mBody:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public writeTo(Landroid/content/Context;JLjava/io/OutputStream;)V
-    .locals 0
-    .parameter "context"
-    .parameter "messageId"
-    .parameter "out"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 67
-    return-void
-.end method
-
 .method public writeTo(Ljava/io/OutputStream;)V
     .locals 3
     .parameter "out"

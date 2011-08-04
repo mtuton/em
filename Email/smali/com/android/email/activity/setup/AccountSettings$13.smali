@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 811
+    .line 972
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSettings$13;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .parameter "preference"
 
     .prologue
-    .line 812
+    .line 975
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSettings$13;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
-    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSettings;->access$1800(Lcom/android/email/activity/setup/AccountSettings;)V
+    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSettings;->access$2000(Lcom/android/email/activity/setup/AccountSettings;)V
 
-    .line 813
+    .line 976
     const/4 v0, 0x1
 
     return v0

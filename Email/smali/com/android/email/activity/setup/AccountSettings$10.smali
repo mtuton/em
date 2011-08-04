@@ -3,7 +3,7 @@
 .source "AccountSettings.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/preference/Preference$OnPreferenceChangeListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 754
+    .line 869
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSettings$10;->this$0:Lcom/android/email/activity/setup/AccountSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,12 +37,62 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
-    .parameter "dialog"
-    .parameter "id"
+.method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
+    .locals 4
+    .parameter "preference"
+    .parameter "newValue"
 
     .prologue
-    .line 756
-    return-void
+    .line 871
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 872
+    .local v1, summary:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$10;->this$0:Lcom/android/email/activity/setup/AccountSettings;
+
+    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettings;->access$1700(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/ListPreference;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Landroid/preference/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 873
+    .local v0, index:I
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$10;->this$0:Lcom/android/email/activity/setup/AccountSettings;
+
+    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettings;->access$1700(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/ListPreference;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSettings$10;->this$0:Lcom/android/email/activity/setup/AccountSettings;
+
+    invoke-static {v3}, Lcom/android/email/activity/setup/AccountSettings;->access$1700(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/ListPreference;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
+
+    move-result-object v3
+
+    aget-object v3, v3, v0
+
+    invoke-virtual {v2, v3}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
+
+    .line 874
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettings$10;->this$0:Lcom/android/email/activity/setup/AccountSettings;
+
+    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettings;->access$1700(Lcom/android/email/activity/setup/AccountSettings;)Landroid/preference/ListPreference;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
+
+    .line 875
+    const/4 v2, 0x0
+
+    return v2
 .end method

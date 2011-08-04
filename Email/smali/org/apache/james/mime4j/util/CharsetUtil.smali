@@ -13,19 +13,9 @@
 
 
 # static fields
-.field public static final CR:I = 0xd
+.field public static final ISO_8859_1:Ljava/nio/charset/Charset;
 
-.field public static final CRLF:Ljava/lang/String; = "\r\n"
-
-.field public static final HT:I = 0x9
-
-.field public static final ISO_8859_1:Ljava/nio/charset/Charset; = null
-
-.field private static JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset; = null
-
-.field public static final LF:I = 0xa
-
-.field public static final SP:I = 0x20
+.field private static JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
 .field public static final US_ASCII:Ljava/nio/charset/Charset;
 
@@ -42,9 +32,19 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 13
 
     .prologue
+    const/4 v12, 0x3
+
+    const/4 v11, 0x2
+
+    const/4 v10, 0x1
+
+    const/4 v9, 0x0
+
+    const/4 v8, 0x0
+
     .line 794
     const-class v0, Lorg/apache/james/mime4j/util/CharsetUtil;
 
@@ -59,287 +59,239 @@
 
     new-array v0, v0, [Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const/4 v1, 0x0
+    new-instance v1, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    new-instance v2, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
+    const-string v2, "ISO8859_1"
 
-    const-string v3, "ISO8859_1"
+    const-string v3, "ISO-8859-1"
 
-    const-string v4, "ISO-8859-1"
+    const/16 v4, 0xd
 
-    const/16 v5, 0xd
+    new-array v4, v4, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v5, "ISO_8859-1:1987"
 
-    const/4 v6, 0x0
+    aput-object v5, v4, v9
 
-    const-string v7, "ISO_8859-1:1987"
+    const-string v5, "iso-ir-100"
 
-    aput-object v7, v5, v6
+    aput-object v5, v4, v10
 
-    const/4 v6, 0x1
+    const-string v5, "ISO_8859-1"
 
-    const-string v7, "iso-ir-100"
+    aput-object v5, v4, v11
 
-    aput-object v7, v5, v6
+    const-string v5, "latin1"
 
-    const/4 v6, 0x2
+    aput-object v5, v4, v12
 
-    const-string v7, "ISO_8859-1"
+    const/4 v5, 0x4
 
-    aput-object v7, v5, v6
+    const-string v6, "l1"
 
-    const/4 v6, 0x3
+    aput-object v6, v4, v5
 
-    const-string v7, "latin1"
+    const/4 v5, 0x5
 
-    aput-object v7, v5, v6
+    const-string v6, "IBM819"
 
-    const/4 v6, 0x4
+    aput-object v6, v4, v5
 
-    const-string v7, "l1"
+    const/4 v5, 0x6
 
-    aput-object v7, v5, v6
+    const-string v6, "CP819"
 
-    const/4 v6, 0x5
+    aput-object v6, v4, v5
 
-    const-string v7, "IBM819"
+    const/4 v5, 0x7
 
-    aput-object v7, v5, v6
+    const-string v6, "csISOLatin1"
 
-    const/4 v6, 0x6
-
-    const-string v7, "CP819"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x7
-
-    const-string v7, "csISOLatin1"
-
-    aput-object v7, v5, v6
-
-    const/16 v6, 0x8
-
-    const-string v7, "8859_1"
-
-    aput-object v7, v5, v6
-
-    const/16 v6, 0x9
-
-    const-string v7, "819"
-
-    aput-object v7, v5, v6
-
-    const/16 v6, 0xa
-
-    const-string v7, "IBM-819"
-
-    aput-object v7, v5, v6
-
-    const/16 v6, 0xb
-
-    const-string v7, "ISO8859-1"
-
-    aput-object v7, v5, v6
-
-    const/16 v6, 0xc
-
-    const-string v7, "ISO_8859_1"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    new-instance v2, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
-
-    const-string v3, "ISO8859_2"
-
-    const-string v4, "ISO-8859-2"
+    aput-object v6, v4, v5
 
     const/16 v5, 0x8
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "8859_1"
 
-    const/4 v6, 0x0
+    aput-object v6, v4, v5
 
-    const-string v7, "ISO_8859-2:1987"
+    const/16 v5, 0x9
 
-    aput-object v7, v5, v6
+    const-string v6, "819"
 
-    const/4 v6, 0x1
+    aput-object v6, v4, v5
 
-    const-string v7, "iso-ir-101"
+    const/16 v5, 0xa
 
-    aput-object v7, v5, v6
+    const-string v6, "IBM-819"
 
-    const/4 v6, 0x2
+    aput-object v6, v4, v5
 
-    const-string v7, "ISO_8859-2"
+    const/16 v5, 0xb
 
-    aput-object v7, v5, v6
+    const-string v6, "ISO8859-1"
 
-    const/4 v6, 0x3
+    aput-object v6, v4, v5
 
-    const-string v7, "latin2"
+    const/16 v5, 0xc
 
-    aput-object v7, v5, v6
+    const-string v6, "ISO_8859_1"
 
-    const/4 v6, 0x4
+    aput-object v6, v4, v5
 
-    const-string v7, "l2"
+    invoke-direct {v1, v2, v3, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
-    aput-object v7, v5, v6
+    aput-object v1, v0, v9
 
-    const/4 v6, 0x5
+    new-instance v1, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v7, "csISOLatin2"
+    const-string v2, "ISO8859_2"
 
-    aput-object v7, v5, v6
+    const-string v3, "ISO-8859-2"
 
-    const/4 v6, 0x6
+    const/16 v4, 0x8
 
-    const-string v7, "8859_2"
+    new-array v4, v4, [Ljava/lang/String;
 
-    aput-object v7, v5, v6
+    const-string v5, "ISO_8859-2:1987"
 
-    const/4 v6, 0x7
+    aput-object v5, v4, v9
 
-    const-string v7, "iso8859_2"
+    const-string v5, "iso-ir-101"
 
-    aput-object v7, v5, v6
+    aput-object v5, v4, v10
 
-    const/4 v6, 0x0
+    const-string v5, "ISO_8859-2"
 
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    aput-object v5, v4, v11
 
-    aput-object v2, v0, v1
+    const-string v5, "latin2"
 
-    const/4 v1, 0x2
+    aput-object v5, v4, v12
 
-    new-instance v2, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
+    const/4 v5, 0x4
 
-    const-string v3, "ISO8859_3"
+    const-string v6, "l2"
 
-    const-string v4, "ISO-8859-3"
+    aput-object v6, v4, v5
 
-    const/4 v5, 0x7
+    const/4 v5, 0x5
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "csISOLatin2"
 
-    const/4 v6, 0x0
+    aput-object v6, v4, v5
 
-    const-string v7, "ISO_8859-3:1988"
+    const/4 v5, 0x6
 
-    aput-object v7, v5, v6
+    const-string v6, "8859_2"
 
-    const/4 v6, 0x1
-
-    const-string v7, "iso-ir-109"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "ISO_8859-3"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "latin3"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x4
-
-    const-string v7, "l3"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x5
-
-    const-string v7, "csISOLatin3"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x6
-
-    const-string v7, "8859_3"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x3
-
-    new-instance v2, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
-
-    const-string v3, "ISO8859_4"
-
-    const-string v4, "ISO-8859-4"
+    aput-object v6, v4, v5
 
     const/4 v5, 0x7
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "iso8859_2"
 
-    const/4 v6, 0x0
+    aput-object v6, v4, v5
 
-    const-string v7, "ISO_8859-4:1988"
+    invoke-direct {v1, v2, v3, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
-    aput-object v7, v5, v6
+    aput-object v1, v0, v10
 
-    const/4 v6, 0x1
+    new-instance v1, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v7, "iso-ir-110"
+    const-string v2, "ISO8859_3"
 
-    aput-object v7, v5, v6
+    const-string v3, "ISO-8859-3"
 
-    const/4 v6, 0x2
+    const/4 v4, 0x7
 
-    const-string v7, "ISO_8859-4"
+    new-array v4, v4, [Ljava/lang/String;
 
-    aput-object v7, v5, v6
+    const-string v5, "ISO_8859-3:1988"
 
-    const/4 v6, 0x3
+    aput-object v5, v4, v9
 
-    const-string v7, "latin4"
+    const-string v5, "iso-ir-109"
 
-    aput-object v7, v5, v6
+    aput-object v5, v4, v10
 
-    const/4 v6, 0x4
+    const-string v5, "ISO_8859-3"
 
-    const-string v7, "l4"
+    aput-object v5, v4, v11
 
-    aput-object v7, v5, v6
+    const-string v5, "latin3"
 
-    const/4 v6, 0x5
+    aput-object v5, v4, v12
 
-    const-string v7, "csISOLatin4"
+    const/4 v5, 0x4
 
-    aput-object v7, v5, v6
+    const-string v6, "l3"
 
-    const/4 v6, 0x6
+    aput-object v6, v4, v5
 
-    const-string v7, "8859_4"
+    const/4 v5, 0x5
 
-    aput-object v7, v5, v6
+    const-string v6, "csISOLatin3"
 
-    const/4 v6, 0x0
+    aput-object v6, v4, v5
 
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    const/4 v5, 0x6
 
-    aput-object v2, v0, v1
+    const-string v6, "8859_3"
+
+    aput-object v6, v4, v5
+
+    invoke-direct {v1, v2, v3, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+
+    aput-object v1, v0, v11
+
+    new-instance v1, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
+
+    const-string v2, "ISO8859_4"
+
+    const-string v3, "ISO-8859-4"
+
+    const/4 v4, 0x7
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    const-string v5, "ISO_8859-4:1988"
+
+    aput-object v5, v4, v9
+
+    const-string v5, "iso-ir-110"
+
+    aput-object v5, v4, v10
+
+    const-string v5, "ISO_8859-4"
+
+    aput-object v5, v4, v11
+
+    const-string v5, "latin4"
+
+    aput-object v5, v4, v12
+
+    const/4 v5, 0x4
+
+    const-string v6, "l4"
+
+    aput-object v6, v4, v5
+
+    const/4 v5, 0x5
+
+    const-string v6, "csISOLatin4"
+
+    aput-object v6, v4, v5
+
+    const/4 v5, 0x6
+
+    const-string v6, "8859_4"
+
+    aput-object v6, v4, v5
+
+    invoke-direct {v1, v2, v3, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+
+    aput-object v1, v0, v12
 
     const/4 v1, 0x4
 
@@ -353,29 +305,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "ISO_8859-5:1988"
 
-    const-string v7, "ISO_8859-5:1988"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "iso-ir-144"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "iso-ir-144"
+    const-string v6, "ISO_8859-5"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "cyrillic"
 
-    const-string v7, "ISO_8859-5"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "cyrillic"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -389,9 +333,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -407,29 +349,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "ISO_8859-6:1987"
 
-    const-string v7, "ISO_8859-6:1987"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "iso-ir-127"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "iso-ir-127"
+    const-string v6, "ISO_8859-6"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "ECMA-114"
 
-    const-string v7, "ISO_8859-6"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "ECMA-114"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -455,9 +389,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -473,29 +405,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "ISO_8859-7:1987"
 
-    const-string v7, "ISO_8859-7:1987"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "iso-ir-126"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "iso-ir-126"
+    const-string v6, "ISO_8859-7"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "ELOT_928"
 
-    const-string v7, "ISO_8859-7"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "ELOT_928"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -533,9 +457,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -551,29 +473,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "ISO_8859-8:1988"
 
-    const-string v7, "ISO_8859-8:1988"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "iso-ir-138"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "iso-ir-138"
+    const-string v6, "ISO_8859-8"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "hebrew"
 
-    const-string v7, "ISO_8859-8"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "hebrew"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -587,9 +501,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -605,29 +517,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "ISO_8859-9:1989"
 
-    const-string v7, "ISO_8859-9:1989"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "iso-ir-148"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "iso-ir-148"
+    const-string v6, "ISO_8859-9"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "latin5"
 
-    const-string v7, "ISO_8859-9"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "latin5"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -647,9 +551,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -661,13 +563,9 @@
 
     const-string v4, "ISO-8859-13"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -683,29 +581,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "ISO_8859-15"
 
-    const-string v7, "ISO_8859-15"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "Latin-9"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "Latin-9"
+    const-string v6, "8859_15"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "csISOlatin9"
 
-    const-string v7, "8859_15"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "csISOlatin9"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -767,9 +657,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -781,25 +669,17 @@
 
     const-string v4, "KOI8-R"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "csKOI8R"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "csKOI8R"
+    const-string v6, "koi8"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "koi8"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -815,29 +695,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "ANSI_X3.4-1968"
 
-    const-string v7, "ANSI_X3.4-1968"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "iso-ir-6"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "iso-ir-6"
+    const-string v6, "ANSI_X3.4-1986"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "ISO_646.irv:1991"
 
-    const-string v7, "ANSI_X3.4-1986"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "ISO_646.irv:1991"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -887,9 +759,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -901,13 +771,9 @@
 
     const-string v4, "UTF-8"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -919,19 +785,13 @@
 
     const-string v4, "UTF-16"
 
-    const/4 v5, 0x1
+    new-array v5, v10, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "UTF_16"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "UTF_16"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -943,31 +803,21 @@
 
     const-string v4, "UTF-16BE"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "X-UTF-16BE"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "X-UTF-16BE"
+    const-string v6, "UTF_16BE"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "ISO-10646-UCS-2"
 
-    const-string v7, "UTF_16BE"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "ISO-10646-UCS-2"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -979,25 +829,17 @@
 
     const-string v4, "UTF-16LE"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "UTF_16LE"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "UTF_16LE"
+    const-string v6, "X-UTF-16LE"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "X-UTF-16LE"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1013,33 +855,23 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "csBig5"
 
-    const-string v7, "csBig5"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "CN-Big5"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "CN-Big5"
+    const-string v6, "BIG-FIVE"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "BIGFIVE"
 
-    const-string v7, "BIG-FIVE"
+    aput-object v6, v5, v12
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "BIGFIVE"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1051,19 +883,13 @@
 
     const-string v4, "Big5-HKSCS"
 
-    const/4 v5, 0x1
+    new-array v5, v10, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "big5hkscs"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "big5hkscs"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1079,29 +905,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "csEUCPkdFmtJapanese"
 
-    const-string v7, "csEUCPkdFmtJapanese"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "Extended_UNIX_Code_Packed_Format_for_Japanese"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "Extended_UNIX_Code_Packed_Format_for_Japanese"
+    const-string v6, "eucjis"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "x-eucjp"
 
-    const-string v7, "eucjis"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "x-eucjp"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -1115,9 +933,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1133,29 +949,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "csEUCKR"
 
-    const-string v7, "csEUCKR"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "ksc5601"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "ksc5601"
+    const-string v6, "5601"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "ksc5601_1987"
 
-    const-string v7, "5601"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "ksc5601_1987"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -1181,9 +989,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1195,19 +1001,13 @@
 
     const-string v4, "GB18030"
 
-    const/4 v5, 0x1
+    new-array v5, v10, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "gb18030-2000"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "gb18030-2000"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1223,29 +1023,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "x-EUC-CN"
 
-    const-string v7, "x-EUC-CN"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "csGB2312"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "csGB2312"
+    const-string v6, "euccn"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "euc-cn"
 
-    const-string v7, "euccn"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "euc-cn"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -1271,9 +1063,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1289,33 +1079,23 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "CP936"
 
-    const-string v7, "CP936"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "MS936"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "MS936"
+    const-string v6, "ms_936"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "x-mswin-936"
 
-    const-string v7, "ms_936"
+    aput-object v6, v5, v12
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "x-mswin-936"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1331,29 +1111,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "ebcdic-cp-us"
 
-    const-string v7, "ebcdic-cp-us"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "ebcdic-cp-ca"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "ebcdic-cp-ca"
+    const-string v6, "ebcdic-cp-wt"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "ebcdic-cp-nl"
 
-    const-string v7, "ebcdic-cp-wt"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "ebcdic-cp-nl"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -1361,9 +1133,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1375,19 +1145,13 @@
 
     const-string v4, "IBM273"
 
-    const/4 v5, 0x1
+    new-array v5, v10, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "csIBM273"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "csIBM273"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1399,31 +1163,21 @@
 
     const-string v4, "IBM277"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "EBCDIC-CP-DK"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "EBCDIC-CP-DK"
+    const-string v6, "EBCDIC-CP-NO"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "csIBM277"
 
-    const-string v7, "EBCDIC-CP-NO"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "csIBM277"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1439,33 +1193,23 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "CP278"
 
-    const-string v7, "CP278"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "ebcdic-cp-fi"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "ebcdic-cp-fi"
+    const-string v6, "ebcdic-cp-se"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "csIBM278"
 
-    const-string v7, "ebcdic-cp-se"
+    aput-object v6, v5, v12
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "csIBM278"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1477,25 +1221,17 @@
 
     const-string v4, "IBM280"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "ebcdic-cp-it"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "ebcdic-cp-it"
+    const-string v6, "csIBM280"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM280"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1507,25 +1243,17 @@
 
     const-string v4, "IBM284"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "ebcdic-cp-es"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "ebcdic-cp-es"
+    const-string v6, "csIBM284"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM284"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1537,25 +1265,17 @@
 
     const-string v4, "IBM285"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "ebcdic-cp-gb"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "ebcdic-cp-gb"
+    const-string v6, "csIBM285"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM285"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1567,25 +1287,17 @@
 
     const-string v4, "IBM297"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "ebcdic-cp-fr"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "ebcdic-cp-fr"
+    const-string v6, "csIBM297"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM297"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1597,25 +1309,17 @@
 
     const-string v4, "IBM420"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "ebcdic-cp-ar1"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "ebcdic-cp-ar1"
+    const-string v6, "csIBM420"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM420"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1627,25 +1331,17 @@
 
     const-string v4, "IBM424"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "ebcdic-cp-he"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "ebcdic-cp-he"
+    const-string v6, "csIBM424"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM424"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1657,25 +1353,17 @@
 
     const-string v4, "IBM437"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "437"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "437"
+    const-string v6, "csPC8CodePage437"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csPC8CodePage437"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1687,31 +1375,21 @@
 
     const-string v4, "IBM500"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "ebcdic-cp-be"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "ebcdic-cp-be"
+    const-string v6, "ebcdic-cp-ch"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "csIBM500"
 
-    const-string v7, "ebcdic-cp-ch"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "csIBM500"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1723,19 +1401,13 @@
 
     const-string v4, "IBM775"
 
-    const/4 v5, 0x1
+    new-array v5, v10, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "csPC775Baltic"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "csPC775Baltic"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1747,13 +1419,9 @@
 
     const-string v4, "IBM-Thai"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1765,25 +1433,17 @@
 
     const-string v4, "IBM850"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "850"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "850"
+    const-string v6, "csPC850Multilingual"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csPC850Multilingual"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1795,25 +1455,17 @@
 
     const-string v4, "IBM852"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "852"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "852"
+    const-string v6, "csPCp852"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csPCp852"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1825,25 +1477,17 @@
 
     const-string v4, "IBM855"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "855"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "855"
+    const-string v6, "csIBM855"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM855"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1855,25 +1499,17 @@
 
     const-string v4, "IBM857"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "857"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "857"
+    const-string v6, "csIBM857"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM857"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1885,31 +1521,21 @@
 
     const-string v4, "IBM00858"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "CCSID00858"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "CCSID00858"
+    const-string v6, "CP00858"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "PC-Multilingual-850+euro"
 
-    const-string v7, "CP00858"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "PC-Multilingual-850+euro"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1921,25 +1547,17 @@
 
     const-string v4, "IBM860"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "860"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "860"
+    const-string v6, "csIBM860"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM860"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1951,31 +1569,21 @@
 
     const-string v4, "IBM861"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "861"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "861"
+    const-string v6, "cp-is"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "csIBM861"
 
-    const-string v7, "cp-is"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "csIBM861"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -1987,25 +1595,17 @@
 
     const-string v4, "IBM862"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "862"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "862"
+    const-string v6, "csPC862LatinHebrew"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csPC862LatinHebrew"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2017,25 +1617,17 @@
 
     const-string v4, "IBM863"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "863"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "863"
+    const-string v6, "csIBM863"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM863"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2047,25 +1639,17 @@
 
     const-string v4, "IBM864"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "cp864"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "cp864"
+    const-string v6, "csIBM864"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM864"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2077,25 +1661,17 @@
 
     const-string v4, "IBM865"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "865"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "865"
+    const-string v6, "csIBM865"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM865"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2107,25 +1683,17 @@
 
     const-string v4, "IBM866"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "866"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "866"
+    const-string v6, "csIBM866"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM866"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2137,25 +1705,17 @@
 
     const-string v4, "IBM868"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "cp-ar"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "cp-ar"
+    const-string v6, "csIBM868"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM868"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2167,25 +1727,17 @@
 
     const-string v4, "IBM869"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "cp-gr"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "cp-gr"
+    const-string v6, "csIBM869"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM869"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2197,31 +1749,21 @@
 
     const-string v4, "IBM870"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "ebcdic-cp-roece"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "ebcdic-cp-roece"
+    const-string v6, "ebcdic-cp-yu"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "csIBM870"
 
-    const-string v7, "ebcdic-cp-yu"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "csIBM870"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2233,25 +1775,17 @@
 
     const-string v4, "IBM871"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "ebcdic-cp-is"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "ebcdic-cp-is"
+    const-string v6, "csIBM871"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM871"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2263,25 +1797,17 @@
 
     const-string v4, "IBM918"
 
-    const/4 v5, 0x2
+    new-array v5, v11, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "ebcdic-cp-ar2"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "ebcdic-cp-ar2"
+    const-string v6, "csIBM918"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
-
-    const-string v7, "csIBM918"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2293,19 +1819,13 @@
 
     const-string v4, "IBM1026"
 
-    const/4 v5, 0x1
+    new-array v5, v10, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "csIBM1026"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "csIBM1026"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2317,19 +1837,13 @@
 
     const-string v4, "IBM1047"
 
-    const/4 v5, 0x1
+    new-array v5, v10, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "IBM-1047"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "IBM-1047"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2341,31 +1855,21 @@
 
     const-string v4, "IBM01140"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "CCSID01140"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "CCSID01140"
+    const-string v6, "CP01140"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "ebcdic-us-37+euro"
 
-    const-string v7, "CP01140"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "ebcdic-us-37+euro"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2377,31 +1881,21 @@
 
     const-string v4, "IBM01141"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "CCSID01141"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "CCSID01141"
+    const-string v6, "CP01141"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "ebcdic-de-273+euro"
 
-    const-string v7, "CP01141"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "ebcdic-de-273+euro"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2417,33 +1911,23 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "CCSID01142"
 
-    const-string v7, "CCSID01142"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "CP01142"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "CP01142"
+    const-string v6, "ebcdic-dk-277+euro"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "ebcdic-no-277+euro"
 
-    const-string v7, "ebcdic-dk-277+euro"
+    aput-object v6, v5, v12
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "ebcdic-no-277+euro"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2459,33 +1943,23 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "CCSID01143"
 
-    const-string v7, "CCSID01143"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "CP01143"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "CP01143"
+    const-string v6, "ebcdic-fi-278+euro"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "ebcdic-se-278+euro"
 
-    const-string v7, "ebcdic-fi-278+euro"
+    aput-object v6, v5, v12
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "ebcdic-se-278+euro"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2497,31 +1971,21 @@
 
     const-string v4, "IBM01144"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "CCSID01144"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "CCSID01144"
+    const-string v6, "CP01144"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "ebcdic-it-280+euro"
 
-    const-string v7, "CP01144"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "ebcdic-it-280+euro"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2533,31 +1997,21 @@
 
     const-string v4, "IBM01145"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "CCSID01145"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "CCSID01145"
+    const-string v6, "CP01145"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "ebcdic-es-284+euro"
 
-    const-string v7, "CP01145"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "ebcdic-es-284+euro"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2569,31 +2023,21 @@
 
     const-string v4, "IBM01146"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "CCSID01146"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "CCSID01146"
+    const-string v6, "CP01146"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "ebcdic-gb-285+euro"
 
-    const-string v7, "CP01146"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "ebcdic-gb-285+euro"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2605,31 +2049,21 @@
 
     const-string v4, "IBM01147"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "CCSID01147"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "CCSID01147"
+    const-string v6, "CP01147"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "ebcdic-fr-297+euro"
 
-    const-string v7, "CP01147"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "ebcdic-fr-297+euro"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2641,31 +2075,21 @@
 
     const-string v4, "IBM01148"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "CCSID01148"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "CCSID01148"
+    const-string v6, "CP01148"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "ebcdic-international-500+euro"
 
-    const-string v7, "CP01148"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "ebcdic-international-500+euro"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2677,31 +2101,21 @@
 
     const-string v4, "IBM01149"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "CCSID01149"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "CCSID01149"
+    const-string v6, "CP01149"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "ebcdic-is-871+euro"
 
-    const-string v7, "CP01149"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "ebcdic-is-871+euro"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2713,13 +2127,9 @@
 
     const-string v4, "windows-1250"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2731,13 +2141,9 @@
 
     const-string v4, "windows-1251"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2749,13 +2155,9 @@
 
     const-string v4, "windows-1252"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2767,13 +2169,9 @@
 
     const-string v4, "windows-1253"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2785,13 +2183,9 @@
 
     const-string v4, "windows-1254"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2803,13 +2197,9 @@
 
     const-string v4, "windows-1255"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2821,13 +2211,9 @@
 
     const-string v4, "windows-1256"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2839,13 +2225,9 @@
 
     const-string v4, "windows-1257"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2857,13 +2239,9 @@
 
     const-string v4, "windows-1258"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2875,13 +2253,9 @@
 
     const-string v4, "ISO-2022-CN"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2897,33 +2271,23 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "csISO2022JP"
 
-    const-string v7, "csISO2022JP"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "JIS"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "JIS"
+    const-string v6, "jis_encoding"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "csjisencoding"
 
-    const-string v7, "jis_encoding"
+    aput-object v6, v5, v12
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "csjisencoding"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2935,19 +2299,13 @@
 
     const-string v4, "ISO-2022-KR"
 
-    const/4 v5, 0x1
+    new-array v5, v10, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "csISO2022KR"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "csISO2022KR"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2959,31 +2317,21 @@
 
     const-string v4, "JIS_X0201"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "X0201"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "X0201"
+    const-string v6, "JIS0201"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "csHalfWidthKatakana"
 
-    const-string v7, "JIS0201"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "csHalfWidthKatakana"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -2999,33 +2347,23 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "iso-ir-159"
 
-    const-string v7, "iso-ir-159"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "x0212"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "x0212"
+    const-string v6, "JIS0212"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "csISO159JISX02121990"
 
-    const-string v7, "JIS0212"
+    aput-object v6, v5, v12
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "csISO159JISX02121990"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3041,29 +2379,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "x-JIS0208"
 
-    const-string v7, "x-JIS0208"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "JIS0208"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "JIS0208"
+    const-string v6, "csISO87JISX0208"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "x0208"
 
-    const-string v7, "csISO87JISX0208"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "x0208"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -3077,9 +2407,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3095,29 +2423,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "MS_Kanji"
 
-    const-string v7, "MS_Kanji"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "csShiftJIS"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "csShiftJIS"
+    const-string v6, "shift-jis"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "x-sjis"
 
-    const-string v7, "shift-jis"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "x-sjis"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -3125,9 +2445,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3139,13 +2457,9 @@
 
     const-string v4, "TIS-620"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3157,31 +2471,21 @@
 
     const-string v4, "Windows-31J"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "windows-932"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "windows-932"
+    const-string v6, "csWindows31J"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "x-ms-cp932"
 
-    const-string v7, "csWindows31J"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "x-ms-cp932"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3193,31 +2497,21 @@
 
     const-string v4, "EUC-TW"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "x-EUC-TW"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "x-EUC-TW"
+    const-string v6, "cns11643"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "euctw"
 
-    const-string v7, "cns11643"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "euctw"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3233,29 +2527,21 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const-string v6, "johab"
 
-    const-string v7, "johab"
+    aput-object v6, v5, v9
 
-    aput-object v7, v5, v6
+    const-string v6, "cp1361"
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v10
 
-    const-string v7, "cp1361"
+    const-string v6, "ms1361"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v11
 
-    const/4 v6, 0x2
+    const-string v6, "ksc5601-1992"
 
-    const-string v7, "ms1361"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    const-string v7, "ksc5601-1992"
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v12
 
     const/4 v6, 0x4
 
@@ -3263,9 +2549,7 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3277,13 +2561,9 @@
 
     const-string v4, ""
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3295,19 +2575,13 @@
 
     const-string v4, "windows-874"
 
-    const/4 v5, 0x1
+    new-array v5, v10, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "cp874"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "cp874"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3319,31 +2593,21 @@
 
     const-string v4, "windows-949"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "windows949"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "windows949"
+    const-string v6, "ms_949"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "x-windows-949"
 
-    const-string v7, "ms_949"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "x-windows-949"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3355,19 +2619,13 @@
 
     const-string v4, "windows-950"
 
-    const/4 v5, 0x1
+    new-array v5, v10, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "x-windows-950"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "x-windows-950"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3377,15 +2635,9 @@
 
     const-string v3, "Cp737"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3395,15 +2647,9 @@
 
     const-string v3, "Cp856"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3413,15 +2659,9 @@
 
     const-string v3, "Cp875"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3431,15 +2671,9 @@
 
     const-string v3, "Cp921"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3449,15 +2683,9 @@
 
     const-string v3, "Cp922"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3467,15 +2695,9 @@
 
     const-string v3, "Cp930"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3485,15 +2707,9 @@
 
     const-string v3, "Cp933"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3503,15 +2719,9 @@
 
     const-string v3, "Cp935"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3521,15 +2731,9 @@
 
     const-string v3, "Cp937"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3539,15 +2743,9 @@
 
     const-string v3, "Cp939"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3557,15 +2755,9 @@
 
     const-string v3, "Cp942"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3575,15 +2767,9 @@
 
     const-string v3, "Cp942C"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3593,15 +2779,9 @@
 
     const-string v3, "Cp943"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3611,15 +2791,9 @@
 
     const-string v3, "Cp943C"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3629,15 +2803,9 @@
 
     const-string v3, "Cp948"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3649,13 +2817,9 @@
 
     const-string v4, "Cp949"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3665,15 +2829,9 @@
 
     const-string v3, "Cp949C"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3683,15 +2841,9 @@
 
     const-string v3, "Cp950"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3701,15 +2853,9 @@
 
     const-string v3, "Cp964"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3719,15 +2865,9 @@
 
     const-string v3, "Cp970"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3737,15 +2877,9 @@
 
     const-string v3, "Cp1006"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3755,15 +2889,9 @@
 
     const-string v3, "Cp1025"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3773,15 +2901,9 @@
 
     const-string v3, "Cp1046"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3791,15 +2913,9 @@
 
     const-string v3, "Cp1097"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3809,15 +2925,9 @@
 
     const-string v3, "Cp1098"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3827,15 +2937,9 @@
 
     const-string v3, "Cp1112"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3845,15 +2949,9 @@
 
     const-string v3, "Cp1122"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3863,15 +2961,9 @@
 
     const-string v3, "Cp1123"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3881,15 +2973,9 @@
 
     const-string v3, "Cp1124"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3899,15 +2985,9 @@
 
     const-string v3, "Cp1381"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3917,15 +2997,9 @@
 
     const-string v3, "Cp1383"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3935,15 +3009,9 @@
 
     const-string v3, "Cp33722"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3953,15 +3021,9 @@
 
     const-string v3, "Big5_Solaris"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3971,15 +3033,9 @@
 
     const-string v3, "EUC_JP_LINUX"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -3989,15 +3045,9 @@
 
     const-string v3, "EUC_JP_Solaris"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4007,27 +3057,17 @@
 
     const-string v3, "ISCII91"
 
-    const/4 v4, 0x0
+    new-array v4, v11, [Ljava/lang/String;
 
-    const/4 v5, 0x2
+    const-string v5, "x-ISCII91"
 
-    new-array v5, v5, [Ljava/lang/String;
+    aput-object v5, v4, v9
 
-    const/4 v6, 0x0
+    const-string v5, "iscii"
 
-    const-string v7, "x-ISCII91"
+    aput-object v5, v4, v10
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    const-string v7, "iscii"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4037,15 +3077,9 @@
 
     const-string v3, "ISO2022_CN_CNS"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4055,15 +3089,9 @@
 
     const-string v3, "ISO2022_CN_GB"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4073,15 +3101,9 @@
 
     const-string v3, "x-iso-8859-11"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4091,15 +3113,9 @@
 
     const-string v3, "JISAutoDetect"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4109,15 +3125,9 @@
 
     const-string v3, "MacArabic"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4127,15 +3137,9 @@
 
     const-string v3, "MacCentralEurope"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4145,15 +3149,9 @@
 
     const-string v3, "MacCroatian"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4163,15 +3161,9 @@
 
     const-string v3, "MacCyrillic"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4181,15 +3173,9 @@
 
     const-string v3, "MacDingbat"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4201,13 +3187,9 @@
 
     const-string v4, "MacGreek"
 
-    const/4 v5, 0x0
+    new-array v5, v9, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4217,15 +3199,9 @@
 
     const-string v3, "MacHebrew"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4235,15 +3211,9 @@
 
     const-string v3, "MacIceland"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4255,31 +3225,21 @@
 
     const-string v4, "MacRoman"
 
-    const/4 v5, 0x3
+    new-array v5, v12, [Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/String;
+    const-string v6, "Macintosh"
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v9
 
-    const-string v7, "Macintosh"
+    const-string v6, "MAC"
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v10
 
-    const/4 v6, 0x1
+    const-string v6, "csMacintosh"
 
-    const-string v7, "MAC"
+    aput-object v6, v5, v11
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    const-string v7, "csMacintosh"
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v4, v5, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4289,15 +3249,9 @@
 
     const-string v3, "MacRomania"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4307,15 +3261,9 @@
 
     const-string v3, "MacSymbol"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4325,15 +3273,9 @@
 
     const-string v3, "MacThai"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4343,15 +3285,9 @@
 
     const-string v3, "MacTurkish"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4361,15 +3297,9 @@
 
     const-string v3, "MacUkraine"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4379,15 +3309,9 @@
 
     const-string v3, "UnicodeBig"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
@@ -4397,34 +3321,22 @@
 
     const-string v3, "UnicodeLittle"
 
-    const/4 v4, 0x0
+    new-array v4, v9, [Ljava/lang/String;
 
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+    invoke-direct {v2, v3, v8, v4, v8}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
 
     aput-object v2, v0, v1
 
     sput-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
     .line 1009
-    const/4 v0, 0x0
-
-    sput-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->decodingSupported:Ljava/util/TreeSet;
+    sput-object v8, Lorg/apache/james/mime4j/util/CharsetUtil;->decodingSupported:Ljava/util/TreeSet;
 
     .line 1015
-    const/4 v0, 0x0
-
-    sput-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->encodingSupported:Ljava/util/TreeSet;
+    sput-object v8, Lorg/apache/james/mime4j/util/CharsetUtil;->encodingSupported:Ljava/util/TreeSet;
 
     .line 1021
-    const/4 v0, 0x0
-
-    sput-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->charsetMap:Ljava/util/HashMap;
+    sput-object v8, Lorg/apache/james/mime4j/util/CharsetUtil;->charsetMap:Ljava/util/HashMap;
 
     .line 1024
     new-instance v0, Ljava/util/TreeSet;
@@ -4447,11 +3359,9 @@
 
     fill-array-data v0, :array_0
 
-    .line 1027
-    .local v0, dummy:[B
-    const/4 v1, 0x0
+    move v1, v9
 
-    .local v1, i:I
+    .line 1027
     :goto_0
     sget-object v2, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -4474,10 +3384,8 @@
     invoke-direct {v2, v0, v3}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
 
     .line 1030
-    .local v2, s:Ljava/lang/String;
     sget-object v2, Lorg/apache/james/mime4j/util/CharsetUtil;->decodingSupported:Ljava/util/TreeSet;
 
-    .end local v2           #s:Ljava/lang/String;
     sget-object v3, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
     aget-object v3, v3, v1
@@ -4540,37 +3448,29 @@
     :cond_0
     new-instance v0, Ljava/util/HashMap;
 
-    .end local v0           #dummy:[B
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->charsetMap:Ljava/util/HashMap;
 
+    move v0, v9
+
     .line 1043
-    const/4 v0, 0x0
-
-    .end local v1           #i:I
-    .local v0, i:I
-    move v1, v0
-
-    .end local v0           #i:I
-    .restart local v1       #i:I
     :goto_3
-    sget-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
+    sget-object v1, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    array-length v0, v0
+    array-length v1, v1
 
-    if-ge v1, v0, :cond_3
+    if-ge v0, v1, :cond_3
 
     .line 1044
-    sget-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
+    sget-object v1, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    aget-object v0, v0, v1
+    aget-object v1, v1, v0
 
     .line 1045
-    .local v0, c:Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
     sget-object v2, Lorg/apache/james/mime4j/util/CharsetUtil;->charsetMap:Ljava/util/HashMap;
 
-    invoke-static {v0}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$100(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)Ljava/lang/String;
+    invoke-static {v1}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$100(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -4578,10 +3478,10 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1046
-    invoke-static {v0}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$200(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)Ljava/lang/String;
+    invoke-static {v1}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$200(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -4590,7 +3490,7 @@
     .line 1047
     sget-object v2, Lorg/apache/james/mime4j/util/CharsetUtil;->charsetMap:Ljava/util/HashMap;
 
-    invoke-static {v0}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$200(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)Ljava/lang/String;
+    invoke-static {v1}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$200(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -4598,22 +3498,21 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1049
     :cond_1
-    invoke-static {v0}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$300(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)[Ljava/lang/String;
+    invoke-static {v1}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$300(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)[Ljava/lang/String;
 
     move-result-object v2
 
     if-eqz v2, :cond_2
 
-    .line 1050
-    const/4 v2, 0x0
+    move v2, v9
 
-    .local v2, j:I
+    .line 1050
     :goto_4
-    invoke-static {v0}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$300(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)[Ljava/lang/String;
+    invoke-static {v1}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$300(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)[Ljava/lang/String;
 
     move-result-object v3
 
@@ -4624,7 +3523,7 @@
     .line 1051
     sget-object v3, Lorg/apache/james/mime4j/util/CharsetUtil;->charsetMap:Ljava/util/HashMap;
 
-    invoke-static {v0}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$300(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)[Ljava/lang/String;
+    invoke-static {v1}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$300(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)[Ljava/lang/String;
 
     move-result-object v4
 
@@ -4634,7 +3533,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v3, v4, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v4, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1050
     add-int/lit8 v2, v2, 0x1
@@ -4642,16 +3541,9 @@
     goto :goto_4
 
     .line 1043
-    .end local v2           #j:I
     :cond_2
-    add-int/lit8 v0, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    .end local v1           #i:I
-    .local v0, i:I
-    move v1, v0
-
-    .end local v0           #i:I
-    .restart local v1       #i:I
     goto :goto_3
 
     .line 1056
@@ -4669,7 +3561,6 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    .end local v1           #i:I
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "Character sets which support decoding: "
@@ -4746,8 +3637,6 @@
     return-void
 
     .line 1038
-    .local v0, dummy:[B
-    .restart local v1       #i:I
     :catch_0
     move-exception v2
 
@@ -4772,6 +3661,8 @@
     goto/16 :goto_1
 
     .line 1026
+    nop
+
     :array_0
     .array-data 0x1
         0x64t
@@ -4795,7 +3686,7 @@
 
 .method public static getCharset(Ljava/lang/String;)Ljava/nio/charset/Charset;
     .locals 8
-    .parameter "charsetName"
+    .parameter
 
     .prologue
     const-string v7, ": "
@@ -4806,31 +3697,29 @@
     const-string v0, "ISO-8859-1"
 
     .line 1199
-    .local v0, defaultCharset:Ljava/lang/String;
     if-nez p0, :cond_0
 
-    move-object p0, v0
+    move-object v1, v0
 
     .line 1202
-    :cond_0
+    :goto_0
     :try_start_0
-    invoke-static {p0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+    invoke-static {v1}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
     :try_end_0
     .catch Ljava/nio/charset/IllegalCharsetNameException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/nio/charset/UnsupportedCharsetException; {:try_start_0 .. :try_end_0} :catch_1
 
-    move-result-object v3
+    move-result-object v0
 
     .line 1210
-    :goto_0
-    return-object v3
+    :goto_1
+    return-object v0
 
     .line 1203
     :catch_0
-    move-exception v1
+    move-exception v2
 
     .line 1204
-    .local v1, e:Ljava/nio/charset/IllegalCharsetNameException;
     sget-object v3, Lorg/apache/james/mime4j/util/CharsetUtil;->log:Lorg/apache/james/mime4j/Log;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -4843,50 +3732,48 @@
 
     move-result-object v4
 
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string v5, ", fallback to "
+    const-string v4, ", fallback to "
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string v5, ": "
+    const-string v4, ": "
 
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v3, v4}, Lorg/apache/james/mime4j/Log;->info(Ljava/lang/Object;)V
+    invoke-virtual {v3, v1}, Lorg/apache/james/mime4j/Log;->info(Ljava/lang/Object;)V
 
     .line 1206
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
-    move-result-object v3
+    move-result-object v0
 
-    goto :goto_0
+    goto :goto_1
 
     .line 1207
-    .end local v1           #e:Ljava/nio/charset/IllegalCharsetNameException;
     :catch_1
     move-exception v2
 
     .line 1208
-    .local v2, ex:Ljava/nio/charset/UnsupportedCharsetException;
     sget-object v3, Lorg/apache/james/mime4j/util/CharsetUtil;->log:Lorg/apache/james/mime4j/Log;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -4899,40 +3786,45 @@
 
     move-result-object v4
 
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string v5, ", fallback to "
+    const-string v4, ", fallback to "
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string v5, ": "
+    const-string v4, ": "
 
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v3, v4}, Lorg/apache/james/mime4j/Log;->info(Ljava/lang/Object;)V
+    invoke-virtual {v3, v1}, Lorg/apache/james/mime4j/Log;->info(Ljava/lang/Object;)V
 
     .line 1210
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
-    move-result-object v3
+    move-result-object v0
+
+    goto :goto_1
+
+    :cond_0
+    move-object v1, p0
 
     goto :goto_0
 .end method
@@ -4944,25 +3836,6 @@
     .prologue
     .line 1158
     sget-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->decodingSupported:Ljava/util/TreeSet;
-
-    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/TreeSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static isEncodingSupported(Ljava/lang/String;)Z
-    .locals 2
-    .parameter "charsetName"
-
-    .prologue
-    .line 1143
-    sget-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->encodingSupported:Ljava/util/TreeSet;
 
     invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -5011,37 +3884,37 @@
 
 .method public static isWhitespace(Ljava/lang/String;)Z
     .locals 4
-    .parameter "s"
+    .parameter
 
     .prologue
+    const/4 v3, 0x0
+
     .line 1119
     if-nez p0, :cond_0
 
     .line 1120
-    new-instance v2, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v3, "String may not be null"
+    const-string v1, "String may not be null"
 
-    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
 
     .line 1122
     :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v0
+
+    move v1, v3
 
     .line 1123
-    .local v1, len:I
-    const/4 v0, 0x0
-
-    .local v0, i:I
     :goto_0
-    if-ge v0, v1, :cond_2
+    if-ge v1, v0, :cond_2
 
     .line 1124
-    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v2
 
@@ -5051,22 +3924,21 @@
 
     if-nez v2, :cond_1
 
-    .line 1125
-    const/4 v2, 0x0
+    move v0, v3
 
     .line 1128
     :goto_1
-    return v2
+    return v0
 
     .line 1123
     :cond_1
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     .line 1128
     :cond_2
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
     goto :goto_1
 .end method

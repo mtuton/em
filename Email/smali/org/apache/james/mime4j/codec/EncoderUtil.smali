@@ -13,19 +13,9 @@
 
 
 # static fields
-.field private static final ATEXT_CHARS:Ljava/util/BitSet; = null
+.field private static final ATEXT_CHARS:Ljava/util/BitSet;
 
-.field private static final BASE64_PAD:B = 0x3dt
-
-.field static final BASE64_TABLE:[B = null
-
-.field private static final ENCODED_WORD_MAX_LENGTH:I = 0x4b
-
-.field private static final ENC_WORD_PREFIX:Ljava/lang/String; = "=?"
-
-.field private static final ENC_WORD_SUFFIX:Ljava/lang/String; = "?="
-
-.field private static final MAX_USED_CHARACTERS:I = 0x32
+.field static final BASE64_TABLE:[B
 
 .field private static final Q_REGULAR_CHARS:Ljava/util/BitSet;
 
@@ -430,32 +420,6 @@
 
     .line 132
     :cond_1
-    invoke-static {p0}, Lorg/apache/james/mime4j/codec/EncoderUtil;->quote(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-.method public static encodeAddressLocalPart(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-    .parameter "localPart"
-
-    .prologue
-    .line 151
-    invoke-static {p0}, Lorg/apache/james/mime4j/codec/EncoderUtil;->isDotAtomText(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p0
-
-    .line 154
-    :goto_0
-    return-object v0
-
-    :cond_0
     invoke-static {p0}, Lorg/apache/james/mime4j/codec/EncoderUtil;->quote(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -1068,85 +1032,6 @@
     invoke-static/range {v0 .. v5}, Lorg/apache/james/mime4j/codec/EncoderUtil;->encodeQ(Ljava/lang/String;Ljava/lang/String;Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;ILjava/nio/charset/Charset;[B)Ljava/lang/String;
 
     move-result-object v1
-
-    goto :goto_0
-.end method
-
-.method public static encodeHeaderParameter(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
-    .parameter "name"
-    .parameter "value"
-
-    .prologue
-    const-string v2, "="
-
-    .line 170
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 173
-    invoke-static {p1}, Lorg/apache/james/mime4j/codec/EncoderUtil;->isToken(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 174
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "="
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 176
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "="
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-static {p1}, Lorg/apache/james/mime4j/codec/EncoderUtil;->quote(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
 
     goto :goto_0
 .end method
@@ -1786,162 +1671,6 @@
     move v4, v1
 
     goto :goto_1
-.end method
-
-.method private static isDotAtomText(Ljava/lang/String;)Z
-    .locals 8
-    .parameter "str"
-
-    .prologue
-    const/16 v7, 0x2e
-
-    const/4 v6, 0x1
-
-    const/4 v5, 0x0
-
-    .line 476
-    const/16 v3, 0x2e
-
-    .line 478
-    .local v3, prev:C
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    .line 479
-    .local v2, length:I
-    if-nez v2, :cond_0
-
-    move v4, v5
-
-    .line 496
-    :goto_0
-    return v4
-
-    .line 482
-    :cond_0
-    const/4 v1, 0x0
-
-    .local v1, idx:I
-    :goto_1
-    if-ge v1, v2, :cond_4
-
-    .line 483
-    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    .line 485
-    .local v0, ch:C
-    if-ne v0, v7, :cond_2
-
-    .line 486
-    if-eq v3, v7, :cond_1
-
-    sub-int v4, v2, v6
-
-    if-ne v1, v4, :cond_3
-
-    :cond_1
-    move v4, v5
-
-    .line 487
-    goto :goto_0
-
-    .line 489
-    :cond_2
-    sget-object v4, Lorg/apache/james/mime4j/codec/EncoderUtil;->ATEXT_CHARS:Ljava/util/BitSet;
-
-    invoke-virtual {v4, v0}, Ljava/util/BitSet;->get(I)Z
-
-    move-result v4
-
-    if-nez v4, :cond_3
-
-    move v4, v5
-
-    .line 490
-    goto :goto_0
-
-    .line 493
-    :cond_3
-    move v3, v0
-
-    .line 482
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    .end local v0           #ch:C
-    :cond_4
-    move v4, v6
-
-    .line 496
-    goto :goto_0
-.end method
-
-.method public static isToken(Ljava/lang/String;)Z
-    .locals 5
-    .parameter "str"
-
-    .prologue
-    const/4 v4, 0x0
-
-    .line 439
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    .line 440
-    .local v2, length:I
-    if-nez v2, :cond_0
-
-    move v3, v4
-
-    .line 449
-    :goto_0
-    return v3
-
-    .line 443
-    :cond_0
-    const/4 v1, 0x0
-
-    .local v1, idx:I
-    :goto_1
-    if-ge v1, v2, :cond_2
-
-    .line 444
-    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    .line 445
-    .local v0, ch:C
-    sget-object v3, Lorg/apache/james/mime4j/codec/EncoderUtil;->TOKEN_CHARS:Ljava/util/BitSet;
-
-    invoke-virtual {v3, v0}, Ljava/util/BitSet;->get(I)Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    move v3, v4
-
-    .line 446
-    goto :goto_0
-
-    .line 443
-    :cond_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    .line 449
-    .end local v0           #ch:C
-    :cond_2
-    const/4 v3, 0x1
-
-    goto :goto_0
 .end method
 
 .method private static qEncodedLength([BLorg/apache/james/mime4j/codec/EncoderUtil$Usage;)I

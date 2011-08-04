@@ -51,10 +51,10 @@
     .locals 29
 
     .prologue
-    .line 299
+    .line 300
     const/16 v16, 0x0
 
-    .line 304
+    .line 305
     .local v16, localFolderCursor:Landroid/database/Cursor;
     :try_start_0
     move-object/from16 v0, p0
@@ -93,23 +93,23 @@
 
     move-result-object v27
 
-    .line 306
+    .line 307
     .local v27, store:Lcom/android/email/mail/Store;
     invoke-virtual/range {v27 .. v27}, Lcom/android/email/mail/Store;->getPersonalNamespaces()[Lcom/android/email/mail/Folder;
 
     move-result-object v25
 
-    .line 308
+    .line 309
     .local v25, remoteFolders:[Lcom/android/email/mail/Folder;
     new-instance v24, Ljava/util/HashSet;
 
     invoke-direct/range {v24 .. v24}, Ljava/util/HashSet;-><init>()V
 
-    .line 309
+    .line 310
     .local v24, remoteFolderNames:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     if-eqz v25, :cond_0
 
-    .line 311
+    .line 312
     const/4 v13, 0x0
 
     .local v13, i:I
@@ -123,7 +123,7 @@
     :goto_0
     if-ge v13, v11, :cond_0
 
-    .line 312
+    .line 313
     aget-object v4, v25, v13
 
     invoke-virtual {v4}, Lcom/android/email/mail/Folder;->getName()Ljava/lang/String;
@@ -136,12 +136,12 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 311
+    .line 312
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_0
 
-    .line 315
+    .line 316
     .end local v11           #count:I
     .end local v13           #i:I
     :cond_0
@@ -149,13 +149,13 @@
 
     invoke-direct/range {v18 .. v18}, Ljava/util/HashMap;-><init>()V
 
-    .line 317
+    .line 318
     .local v18, localFolders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Lcom/android/email/MessagingController$LocalMailboxInfo;>;"
     new-instance v17, Ljava/util/HashSet;
 
     invoke-direct/range {v17 .. v17}, Ljava/util/HashSet;-><init>()V
 
-    .line 318
+    .line 319
     .local v17, localFolderNames:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     move-object/from16 v0, p0
 
@@ -205,7 +205,7 @@
 
     move-result-object v16
 
-    .line 324
+    .line 325
     :goto_1
     invoke-interface/range {v16 .. v16}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -213,12 +213,12 @@
 
     if-eqz v4, :cond_2
 
-    .line 325
+    .line 326
     new-instance v15, Lcom/android/email/MessagingController$LocalMailboxInfo;
 
     invoke-direct/range {v15 .. v16}, Lcom/android/email/MessagingController$LocalMailboxInfo;-><init>(Landroid/database/Cursor;)V
 
-    .line 326
+    .line 327
     .local v15, info:Lcom/android/email/MessagingController$LocalMailboxInfo;
     iget-object v4, v15, Lcom/android/email/MessagingController$LocalMailboxInfo;->mDisplayName:Ljava/lang/String;
 
@@ -230,7 +230,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 327
+    .line 328
     iget-object v4, v15, Lcom/android/email/MessagingController$LocalMailboxInfo;->mDisplayName:Ljava/lang/String;
 
     move-object/from16 v0, v17
@@ -244,7 +244,7 @@
 
     goto :goto_1
 
-    .line 397
+    .line 398
     .end local v15           #info:Lcom/android/email/MessagingController$LocalMailboxInfo;
     .end local v17           #localFolderNames:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     .end local v18           #localFolders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Lcom/android/email/MessagingController$LocalMailboxInfo;>;"
@@ -256,7 +256,7 @@
 
     move-object v12, v4
 
-    .line 398
+    .line 399
     .local v12, e:Ljava/lang/Exception;
     :try_start_1
     move-object/from16 v0, p0
@@ -281,19 +281,19 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 400
+    .line 401
     if-eqz v16, :cond_1
 
-    .line 401
+    .line 402
     invoke-interface/range {v16 .. v16}, Landroid/database/Cursor;->close()V
 
-    .line 404
+    .line 405
     .end local v12           #e:Ljava/lang/Exception;
     :cond_1
     :goto_2
     return-void
 
-    .line 331
+    .line 332
     .restart local v17       #localFolderNames:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     .restart local v18       #localFolders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Lcom/android/email/MessagingController$LocalMailboxInfo;>;"
     .restart local v24       #remoteFolderNames:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
@@ -311,7 +311,7 @@
 
     if-nez v4, :cond_5
 
-    .line 336
+    .line 337
     new-instance v21, Ljava/util/HashSet;
 
     move-object/from16 v0, v21
@@ -320,7 +320,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    .line 337
+    .line 338
     .local v21, localsToDrop:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     move-object/from16 v0, v21
 
@@ -328,7 +328,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->removeAll(Ljava/util/Collection;)Z
 
-    .line 338
+    .line 339
     invoke-virtual/range {v21 .. v21}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v14
@@ -348,7 +348,7 @@
 
     check-cast v20, Ljava/lang/String;
 
-    .line 339
+    .line 340
     .local v20, localNameToDrop:Ljava/lang/String;
     move-object/from16 v0, v18
 
@@ -360,7 +360,7 @@
 
     check-cast v19, Lcom/android/email/MessagingController$LocalMailboxInfo;
 
-    .line 342
+    .line 343
     .local v19, localInfo:Lcom/android/email/MessagingController$LocalMailboxInfo;
     move-object/from16 v0, v19
 
@@ -370,7 +370,7 @@
 
     packed-switch v4, :pswitch_data_0
 
-    .line 351
+    .line 352
     :pswitch_1
     move-object/from16 v0, p0
 
@@ -396,7 +396,7 @@
 
     invoke-static {v4, v5, v6, v7, v8}, Lcom/android/email/provider/AttachmentProvider;->deleteAllMailboxAttachmentFiles(Landroid/content/Context;JJ)V
 
-    .line 355
+    .line 356
     sget-object v4, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
     move-object/from16 v0, v19
@@ -409,7 +409,7 @@
 
     move-result-object v28
 
-    .line 357
+    .line 358
     .local v28, uri:Landroid/net/Uri;
     move-object/from16 v0, p0
 
@@ -444,7 +444,7 @@
 
     goto :goto_3
 
-    .line 400
+    .line 401
     .end local v14           #i$:Ljava/util/Iterator;
     .end local v17           #localFolderNames:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     .end local v18           #localFolders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Lcom/android/email/MessagingController$LocalMailboxInfo;>;"
@@ -460,13 +460,13 @@
 
     if-eqz v16, :cond_3
 
-    .line 401
+    .line 402
     invoke-interface/range {v16 .. v16}, Landroid/database/Cursor;->close()V
 
     :cond_3
     throw v4
 
-    .line 363
+    .line 364
     .restart local v14       #i$:Ljava/util/Iterator;
     .restart local v17       #localFolderNames:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     .restart local v18       #localFolders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Lcom/android/email/MessagingController$LocalMailboxInfo;>;"
@@ -482,7 +482,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->removeAll(Ljava/util/Collection;)Z
 
-    .line 364
+    .line 365
     invoke-virtual/range {v24 .. v24}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v14
@@ -500,13 +500,13 @@
 
     check-cast v26, Ljava/lang/String;
 
-    .line 365
+    .line 366
     .local v26, remoteNameToAdd:Ljava/lang/String;
     new-instance v10, Lcom/android/email/provider/EmailContent$Mailbox;
 
     invoke-direct {v10}, Lcom/android/email/provider/EmailContent$Mailbox;-><init>()V
 
-    .line 366
+    .line 367
     .local v10, box:Lcom/android/email/provider/EmailContent$Mailbox;
     move-object/from16 v0, v26
 
@@ -514,7 +514,7 @@
 
     iput-object v0, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
 
-    .line 369
+    .line 370
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/MessagingController$1;->val$account:Lcom/android/email/provider/EmailContent$Account;
@@ -525,7 +525,7 @@
 
     iput-wide v4, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
 
-    .line 370
+    .line 371
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/MessagingController$1;->this$0:Lcom/android/email/MessagingController;
@@ -546,17 +546,17 @@
 
     iput v4, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mType:I
 
-    .line 378
+    .line 379
     const/4 v4, 0x1
 
     iput-boolean v4, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mFlagVisible:Z
 
-    .line 380
+    .line 381
     const/16 v4, 0x19
 
     iput v4, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mVisibleLimit:I
 
-    .line 381
+    .line 382
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/MessagingController$1;->this$0:Lcom/android/email/MessagingController;
@@ -571,7 +571,7 @@
 
     goto :goto_4
 
-    .line 385
+    .line 386
     .end local v10           #box:Lcom/android/email/provider/EmailContent$Mailbox;
     .end local v14           #i$:Ljava/util/Iterator;
     .end local v21           #localsToDrop:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
@@ -599,7 +599,7 @@
 
     move-result-wide v22
 
-    .line 386
+    .line 387
     .local v22, mailboxId:J
     const-wide/16 v4, -0x1
 
@@ -607,12 +607,12 @@
 
     if-nez v4, :cond_6
 
-    .line 388
+    .line 389
     new-instance v10, Lcom/android/email/provider/EmailContent$Mailbox;
 
     invoke-direct {v10}, Lcom/android/email/provider/EmailContent$Mailbox;-><init>()V
 
-    .line 389
+    .line 390
     .restart local v10       #box:Lcom/android/email/provider/EmailContent$Mailbox;
     move-object/from16 v0, p0
 
@@ -624,39 +624,20 @@
 
     iput-wide v4, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
 
-    .line 390
+    .line 391
     const/4 v4, 0x6
 
     iput v4, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mType:I
 
-    .line 391
+    .line 392
     const/4 v4, -0x1
 
     iput v4, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncInterval:I
 
-    .line 392
+    .line 393
     const/4 v4, 0x1
 
     iput-boolean v4, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mFlagVisible:Z
-
-    .line 393
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/email/MessagingController$1;->this$0:Lcom/android/email/MessagingController;
-
-    move-object v4, v0
-
-    invoke-static {v4}, Lcom/android/email/MessagingController;->access$100(Lcom/android/email/MessagingController;)Landroid/content/Context;
-
-    move-result-object v4
-
-    const v5, 0x7f08003b
-
-    invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    iput-object v4, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
 
     .line 394
     move-object/from16 v0, p0
@@ -669,9 +650,28 @@
 
     move-result-object v4
 
+    const v5, 0x7f080045
+
+    invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    iput-object v4, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
+
+    .line 395
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/email/MessagingController$1;->this$0:Lcom/android/email/MessagingController;
+
+    move-object v4, v0
+
+    invoke-static {v4}, Lcom/android/email/MessagingController;->access$100(Lcom/android/email/MessagingController;)Landroid/content/Context;
+
+    move-result-object v4
+
     invoke-virtual {v10, v4}, Lcom/android/email/provider/EmailContent$Mailbox;->save(Landroid/content/Context;)Landroid/net/Uri;
 
-    .line 396
+    .line 397
     .end local v10           #box:Lcom/android/email/provider/EmailContent$Mailbox;
     :cond_6
     move-object/from16 v0, p0
@@ -695,15 +695,15 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
 
-    .line 400
+    .line 401
     if-eqz v16, :cond_1
 
-    .line 401
+    .line 402
     invoke-interface/range {v16 .. v16}, Landroid/database/Cursor;->close()V
 
     goto/16 :goto_2
 
-    .line 342
+    .line 343
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

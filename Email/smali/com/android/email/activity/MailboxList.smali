@@ -3,8 +3,8 @@
 .source "MailboxList.java"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
 .implements Landroid/view/View$OnClickListener;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # annotations
@@ -19,10 +19,6 @@
 
 
 # static fields
-.field private static final EXTRA_ACCOUNT_ID:Ljava/lang/String; = "com.android.email.activity._ACCOUNT_ID"
-
-.field private static final MAILBOX_SELECTION:Ljava/lang/String; = "accountKey=? AND type<64 AND flagVisible=1"
-
 .field private static final mColorChipResIds:[I
 
 
@@ -111,7 +107,7 @@
 
     iput-object v0, p0, Lcom/android/email/activity/MailboxList;->mControllerCallback:Lcom/android/email/activity/MailboxList$ControllerResults;
 
-    .line 807
+    .line 826
     return-void
 .end method
 
@@ -181,17 +177,17 @@
 .end method
 
 .method public static actionHandleAccount(Landroid/content/Context;J)V
-    .locals 3
-    .parameter "context"
-    .parameter "accountId"
+    .locals 2
+    .parameter
+    .parameter
 
     .prologue
     .line 128
-    const-string v1, "MailboxList"
+    const-string v0, "MailboxList"
 
-    const-string v2, "Jane Logging: actionHandleAccount start"
+    const-string v1, "Jane Logging: actionHandleAccount start"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 129
     new-instance v0, Landroid/content/Intent;
@@ -201,7 +197,6 @@
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     .line 130
-    .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x400
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
@@ -224,21 +219,21 @@
     .parameter "action"
 
     .prologue
-    .line 421
+    .line 425
     const-string v0, "MailboxList"
 
     const-string v1, "Jane Logging: enterFolderName"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 422
+    .line 426
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v7
 
-    .line 423
+    .line 427
     .local v7, inflater:Landroid/view/LayoutInflater;
-    const v0, 0x7f03001a
+    const v0, 0x7f03001e
 
     const/4 v1, 0x0
 
@@ -246,15 +241,15 @@
 
     move-result-object v9
 
-    .line 424
+    .line 428
     .local v9, view:Landroid/view/View;
     new-instance v6, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v6, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 425
+    .line 429
     .local v6, alert:Landroid/app/AlertDialog$Builder;
-    const v0, 0x7f08021b
+    const v0, 0x7f080247
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 
@@ -262,11 +257,11 @@
 
     invoke-virtual {v6, v0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 426
+    .line 430
     invoke-virtual {v6, v9}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    .line 428
-    const v0, 0x7f070081
+    .line 432
+    const v0, 0x7f07009d
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -274,27 +269,27 @@
 
     check-cast v2, Landroid/widget/EditText;
 
-    .line 429
+    .line 433
     .local v2, text:Landroid/widget/EditText;
-    const v0, 0x7f07012c
+    const v0, 0x7f070191
 
     if-ne p3, v0, :cond_0
 
-    .line 430
+    .line 434
     invoke-static {p0, p1, p2}, Lcom/android/email/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v8
 
-    .line 431
+    .line 435
     .local v8, mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     if-eqz v8, :cond_0
 
-    .line 432
+    .line 436
     iget-object v0, v8, Lcom/android/email/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
 
     invoke-virtual {v2, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 435
+    .line 439
     .end local v8           #mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     :cond_0
     const v10, 0x104000a
@@ -311,7 +306,7 @@
 
     invoke-virtual {v6, v10, v0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 454
+    .line 458
     const/high16 v0, 0x104
 
     new-instance v1, Lcom/android/email/activity/MailboxList$4;
@@ -320,14 +315,14 @@
 
     invoke-virtual {v6, v0, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 461
+    .line 465
     invoke-virtual {v6}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 462
+    .line 466
     return-void
 .end method
 
@@ -335,13 +330,13 @@
     .locals 0
 
     .prologue
-    .line 466
+    .line 470
     invoke-static {p0}, Lcom/android/email/activity/AccountFolderList;->actionShowAccounts(Landroid/content/Context;)V
 
-    .line 467
+    .line 471
     invoke-virtual {p0}, Lcom/android/email/activity/MailboxList;->finish()V
 
-    .line 468
+    .line 472
     return-void
 .end method
 
@@ -349,12 +344,12 @@
     .locals 2
 
     .prologue
-    .line 480
+    .line 484
     iget-wide v0, p0, Lcom/android/email/activity/MailboxList;->mAccountId:J
 
     invoke-static {p0, v0, v1}, Lcom/android/email/activity/MessageCompose;->actionCompose(Landroid/content/Context;J)V
 
-    .line 481
+    .line 485
     return-void
 .end method
 
@@ -363,19 +358,19 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 373
+    .line 376
     const-string v0, "MailboxList"
 
     const-string v1, "Jane Logging: onCreateMailbox"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 374
-    const v0, 0x7f07012b
+    .line 377
+    const v0, 0x7f070190
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/email/activity/MailboxList;->enterFolderName(JI)V
 
-    .line 375
+    .line 378
     return-void
 .end method
 
@@ -384,7 +379,7 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 368
+    .line 371
     invoke-virtual {p0}, Lcom/android/email/activity/MailboxList;->getApplication()Landroid/app/Application;
 
     move-result-object v1
@@ -393,11 +388,11 @@
 
     move-result-object v0
 
-    .line 369
+    .line 372
     .local v0, controller:Lcom/android/email/Controller;
     invoke-virtual {v0, p1, p2}, Lcom/android/email/Controller;->deleteFolder(J)V
 
-    .line 370
+    .line 373
     return-void
 .end method
 
@@ -405,21 +400,21 @@
     .locals 2
 
     .prologue
-    .line 471
+    .line 475
     iget-wide v0, p0, Lcom/android/email/activity/MailboxList;->mAccountId:J
 
     invoke-static {p0, v0, v1}, Lcom/android/email/activity/setup/AccountSettings;->actionSettings(Landroid/app/Activity;J)V
 
-    .line 472
+    .line 476
     return-void
 .end method
 
 .method private onMoveMailbox(J)V
-    .locals 10
+    .locals 11
     .parameter "mailboxId"
 
     .prologue
-    .line 383
+    .line 386
     const/4 v0, 0x3
 
     new-array v2, v0, [Ljava/lang/String;
@@ -442,29 +437,29 @@
 
     aput-object v1, v2, v0
 
-    .line 386
+    .line 389
     .local v2, MAILBOX_LIST_PROJECTION:[Ljava/lang/String;
     invoke-static {p0, p1, p2}, Lcom/android/email/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Mailbox;
 
-    move-result-object v9
+    move-result-object v10
 
-    .line 388
-    .local v9, mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
-    if-nez v9, :cond_0
+    .line 391
+    .local v10, mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    if-nez v10, :cond_0
 
-    .line 389
+    .line 392
     iget-object v0, p0, Lcom/android/email/activity/MailboxList;->mHandler:Lcom/android/email/activity/MailboxList$MailboxListHandler;
 
     const-string v1, "Cannot find mailbox"
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/MailboxList$MailboxListHandler;->showErrorBanner(Ljava/lang/String;)V
 
-    .line 418
+    .line 422
     .end local v2           #MAILBOX_LIST_PROJECTION:[Ljava/lang/String;
     :goto_0
     return-void
 
-    .line 393
+    .line 396
     .restart local v2       #MAILBOX_LIST_PROJECTION:[Ljava/lang/String;
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
@@ -477,7 +472,7 @@
 
     move-result-object v0
 
-    iget-object v1, v9, Lcom/android/email/provider/EmailContent$Mailbox;->mParentServerId:Ljava/lang/String;
+    iget-object v1, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mParentServerId:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -529,8 +524,14 @@
 
     move-result-object v6
 
-    .line 399
+    .line 402
     .local v6, MAILBOX_SELECTION:Ljava/lang/String;
+    new-instance v7, Ljava/lang/StringBuffer;
+
+    invoke-direct {v7}, Ljava/lang/StringBuffer;-><init>()V
+
+    .line 403
+    .local v7, buf:Ljava/lang/StringBuffer;
     invoke-virtual {p0}, Lcom/android/email/activity/MailboxList;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -539,16 +540,24 @@
 
     const-string v3, "serverId"
 
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    move-result-object v8
+    move-result-object v9
 
-    .line 403
-    .local v8, c1:Landroid/database/Cursor;
+    .line 407
+    .local v9, c1:Landroid/database/Cursor;
     invoke-virtual {p0}, Lcom/android/email/activity/MailboxList;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -561,8 +570,9 @@
 
     const/4 v3, 0x0
 
-    iget-wide v7, v9, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
+    iget-wide v7, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
 
+    .end local v7           #buf:Ljava/lang/StringBuffer;
     invoke-static {v7, v8}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v5
@@ -583,15 +593,15 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    move-result-object v7
+    move-result-object v8
 
-    .line 409
-    .local v7, c:Landroid/database/Cursor;
+    .line 413
+    .local v8, c:Landroid/database/Cursor;
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f080152
+    const v1, 0x7f08016a
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -599,12 +609,12 @@
 
     new-instance v1, Lcom/android/email/activity/MailboxList$2;
 
-    invoke-direct {v1, p0, p1, p2, v7}, Lcom/android/email/activity/MailboxList$2;-><init>(Lcom/android/email/activity/MailboxList;JLandroid/database/Cursor;)V
+    invoke-direct {v1, p0, p1, p2, v8}, Lcom/android/email/activity/MailboxList$2;-><init>(Lcom/android/email/activity/MailboxList;JLandroid/database/Cursor;)V
 
     const-string v2, "displayName"
 
     .end local v2           #MAILBOX_LIST_PROJECTION:[Ljava/lang/String;
-    invoke-virtual {v0, v7, v1, v2}, Landroid/app/AlertDialog$Builder;->setCursor(Landroid/database/Cursor;Landroid/content/DialogInterface$OnClickListener;Ljava/lang/String;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v0, v8, v1, v2}, Landroid/app/AlertDialog$Builder;->setCursor(Landroid/database/Cursor;Landroid/content/DialogInterface$OnClickListener;Ljava/lang/String;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
@@ -618,15 +628,15 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 475
+    .line 479
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/android/email/activity/MessageList;->isStartedFromMailboxList:Z
 
-    .line 476
+    .line 480
     invoke-static {p0, p1, p2}, Lcom/android/email/activity/MessageList;->actionHandleMailbox(Landroid/content/Context;J)V
 
-    .line 477
+    .line 481
     return-void
 .end method
 
@@ -635,7 +645,7 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 357
+    .line 360
     invoke-virtual {p0}, Lcom/android/email/activity/MailboxList;->getApplication()Landroid/app/Application;
 
     move-result-object v1
@@ -644,7 +654,7 @@
 
     move-result-object v0
 
-    .line 358
+    .line 361
     .local v0, controller:Lcom/android/email/Controller;
     iget-object v1, p0, Lcom/android/email/activity/MailboxList;->mHandler:Lcom/android/email/activity/MailboxList$MailboxListHandler;
 
@@ -652,14 +662,14 @@
 
     invoke-virtual {v1, v2}, Lcom/android/email/activity/MailboxList$MailboxListHandler;->progress(Z)V
 
-    .line 359
+    .line 362
     const-wide/16 v1, 0x0
 
     cmp-long v1, p1, v1
 
     if-ltz v1, :cond_0
 
-    .line 360
+    .line 363
     iget-wide v1, p0, Lcom/android/email/activity/MailboxList;->mAccountId:J
 
     iget-object v5, p0, Lcom/android/email/activity/MailboxList;->mControllerCallback:Lcom/android/email/activity/MailboxList$ControllerResults;
@@ -668,11 +678,11 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/email/Controller;->updateMailbox(JJLcom/android/email/Controller$Result;)V
 
-    .line 364
+    .line 367
     :goto_0
     return-void
 
-    .line 362
+    .line 365
     :cond_0
     iget-wide v1, p0, Lcom/android/email/activity/MailboxList;->mAccountId:J
 
@@ -688,12 +698,12 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 378
-    const v0, 0x7f07012c
+    .line 381
+    const v0, 0x7f070191
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/email/activity/MailboxList;->enterFolderName(JI)V
 
-    .line 379
+    .line 382
     return-void
 .end method
 
@@ -731,7 +741,7 @@
 
     .line 239
     :pswitch_data_0
-    .packed-switch 0x7f07008c
+    .packed-switch 0x7f0700b0
         :pswitch_0
         :pswitch_1
     .end packed-switch
@@ -742,14 +752,14 @@
     .parameter "item"
 
     .prologue
-    .line 324
+    .line 327
     invoke-interface {p1}, Landroid/view/MenuItem;->getMenuInfo()Landroid/view/ContextMenu$ContextMenuInfo;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/AdapterView$AdapterContextMenuInfo;
 
-    .line 327
+    .line 330
     .local v0, info:Landroid/widget/AdapterView$AdapterContextMenuInfo;
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -757,7 +767,7 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 349
+    .line 352
     :goto_0
     :pswitch_0
     invoke-super {p0, p1}, Landroid/app/ListActivity;->onContextItemSelected(Landroid/view/MenuItem;)Z
@@ -766,7 +776,7 @@
 
     return v1
 
-    .line 329
+    .line 332
     :pswitch_1
     iget-wide v1, v0, Landroid/widget/AdapterView$AdapterContextMenuInfo;->id:J
 
@@ -774,7 +784,7 @@
 
     goto :goto_0
 
-    .line 332
+    .line 335
     :pswitch_2
     iget-wide v1, v0, Landroid/widget/AdapterView$AdapterContextMenuInfo;->id:J
 
@@ -782,7 +792,7 @@
 
     goto :goto_0
 
-    .line 336
+    .line 339
     :pswitch_3
     iget-wide v1, v0, Landroid/widget/AdapterView$AdapterContextMenuInfo;->id:J
 
@@ -790,7 +800,7 @@
 
     goto :goto_0
 
-    .line 339
+    .line 342
     :pswitch_4
     iget-wide v1, v0, Landroid/widget/AdapterView$AdapterContextMenuInfo;->id:J
 
@@ -798,7 +808,7 @@
 
     goto :goto_0
 
-    .line 342
+    .line 345
     :pswitch_5
     iget-wide v1, v0, Landroid/widget/AdapterView$AdapterContextMenuInfo;->id:J
 
@@ -806,7 +816,7 @@
 
     goto :goto_0
 
-    .line 345
+    .line 348
     :pswitch_6
     iget-wide v1, v0, Landroid/widget/AdapterView$AdapterContextMenuInfo;->id:J
 
@@ -814,9 +824,9 @@
 
     goto :goto_0
 
-    .line 327
+    .line 330
     :pswitch_data_0
-    .packed-switch 0x7f070122
+    .packed-switch 0x7f070187
         :pswitch_2
         :pswitch_3
         :pswitch_0
@@ -861,7 +871,7 @@
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 141
-    const v0, 0x7f030022
+    const v0, 0x7f030029
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MailboxList;->setContentView(I)V
 
@@ -880,7 +890,7 @@
     iput-object v0, p0, Lcom/android/email/activity/MailboxList;->mListView:Landroid/widget/ListView;
 
     .line 147
-    const v0, 0x7f070092
+    const v0, 0x7f0700b6
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MailboxList;->findViewById(I)Landroid/view/View;
 
@@ -891,7 +901,7 @@
     iput-object v0, p0, Lcom/android/email/activity/MailboxList;->mProgressIcon:Landroid/widget/ProgressBar;
 
     .line 148
-    const v0, 0x7f070046
+    const v0, 0x7f070059
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MailboxList;->findViewById(I)Landroid/view/View;
 
@@ -1029,8 +1039,6 @@
 
     iget-object v8, p0, Lcom/android/email/activity/MailboxList;->mListAdapter:Lcom/android/email/activity/MailboxList$MailboxListAdapter;
 
-    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     invoke-interface {v2, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v8
@@ -1054,8 +1062,6 @@
     .line 299
     iget-object v7, p0, Lcom/android/email/activity/MailboxList;->mListAdapter:Lcom/android/email/activity/MailboxList$MailboxListAdapter;
 
-    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     invoke-interface {v2, v9}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v4
@@ -1069,14 +1075,12 @@
 
     move-result-object v7
 
-    const v8, 0x7f0d0006
+    const v8, 0x7f0d0009
 
     invoke-virtual {v7, v8, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
     .line 305
     iget-object v7, p0, Lcom/android/email/activity/MailboxList;->mListAdapter:Lcom/android/email/activity/MailboxList$MailboxListAdapter;
-
-    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-interface {v2, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -1127,7 +1131,7 @@
 
     .line 310
     :cond_1
-    const v7, 0x7f070123
+    const v7, 0x7f070188
 
     invoke-interface {p1, v7}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
 
@@ -1136,7 +1140,7 @@
     invoke-interface {v7, v9}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
     .line 311
-    const v7, 0x7f07012c
+    const v7, 0x7f070191
 
     invoke-interface {p1, v7}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
 
@@ -1145,7 +1149,7 @@
     invoke-interface {v7, v9}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
     .line 312
-    const v7, 0x7f07012d
+    const v7, 0x7f070192
 
     invoke-interface {p1, v7}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
 
@@ -1159,8 +1163,13 @@
 
     if-eq v5, v7, :cond_3
 
-    .line 316
-    const v7, 0x7f07012b
+    .line 317
+    const/16 v7, 0x61
+
+    if-eq v5, v7, :cond_3
+
+    .line 319
+    const v7, 0x7f070190
 
     invoke-interface {p1, v7}, Landroid/view/ContextMenu;->findItem(I)Landroid/view/MenuItem;
 
@@ -1168,7 +1177,7 @@
 
     invoke-interface {v7, v9}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 320
+    .line 323
     :cond_3
     return-void
 .end method
@@ -1188,7 +1197,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0007
+    const v3, 0x7f0d000a
 
     invoke-virtual {v2, v3, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
@@ -1220,7 +1229,7 @@
     if-nez v2, :cond_0
 
     .line 257
-    const v2, 0x7f07012e
+    const v2, 0x7f070193
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -1403,11 +1412,11 @@
     .line 266
     :sswitch_data_0
     .sparse-switch
-        0x7f07011d -> :sswitch_2
-        0x7f070128 -> :sswitch_0
-        0x7f070129 -> :sswitch_1
-        0x7f07012a -> :sswitch_3
-        0x7f07012e -> :sswitch_4
+        0x7f070178 -> :sswitch_2
+        0x7f07018d -> :sswitch_0
+        0x7f07018e -> :sswitch_1
+        0x7f07018f -> :sswitch_3
+        0x7f070193 -> :sswitch_4
     .end sparse-switch
 .end method
 

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final ARGS:[Ljava/lang/Class; = null
+.field private static final ARGS:[Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -13,34 +13,6 @@
         }
     .end annotation
 .end field
-
-.field private static final FIND_PROVIDER:Ljava/lang/String; = "findProvider"
-
-.field private static final FIND_PROVIDER_IN_URI:Ljava/lang/String; = "findProvider.inUri"
-
-.field private static final FIND_PROVIDER_IN_USER:Ljava/lang/String; = "findProvider.inUser"
-
-.field private static final FIND_PROVIDER_NOTE:Ljava/lang/String; = "findProvider.note"
-
-.field private static final FIND_PROVIDER_OUT_URI:Ljava/lang/String; = "findProvider.outUri"
-
-.field private static final FIND_PROVIDER_OUT_USER:Ljava/lang/String; = "findProvider.outUser"
-
-.field private static final GET_IMAP_ID:Ljava/lang/String; = "getImapId"
-
-.field private static final GET_IMAP_ID_CAPA:Ljava/lang/String; = "getImapId.capabilities"
-
-.field private static final GET_IMAP_ID_HOST:Ljava/lang/String; = "getImapId.host"
-
-.field private static final GET_IMAP_ID_USER:Ljava/lang/String; = "getImapId.user"
-
-.field private static final GET_POLICY_METHOD:Ljava/lang/String; = "getPolicy"
-
-.field private static final POLICY_CLASS:Ljava/lang/String; = "com.android.email.policy.EmailPolicy"
-
-.field private static final POLICY_PACKAGE:Ljava/lang/String; = "com.android.email.policy"
-
-.field private static final USE_ALTERNATE_EXCHANGE_STRINGS:Ljava/lang/String; = "useAlternateExchangeStrings"
 
 .field private static sInstance:Lcom/android/email/VendorPolicyLoader;
 

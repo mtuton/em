@@ -14,14 +14,6 @@
 .end annotation
 
 
-# static fields
-.field private static final EXTRA_MAILBOX_ID:Ljava/lang/String; = "com.android.email.activity.MAILBOX_ID"
-
-.field private static final EXTRA_MESSAGE_ID:Ljava/lang/String; = "com.android.email.MessageView_message_id"
-
-.field private static final LOG_VIEW_ACTION:Ljava/lang/String; = "com.android.email.LogProvider"
-
-
 # instance fields
 .field private mDateFormat:Ljava/text/DateFormat;
 
@@ -108,11 +100,11 @@
     .parameter "icicle"
 
     .prologue
-    .line 205
+    .line 212
     invoke-super/range {p0 .. p1}, Landroid/app/ListActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 206
-    const v4, 0x7f030039
+    .line 213
+    const v4, 0x7f030045
 
     move-object/from16 v0, p0
 
@@ -120,12 +112,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/SearchActivity;->setContentView(I)V
 
-    .line 209
+    .line 216
     invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/SearchActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v17
 
-    .line 210
+    .line 217
     .local v17, queryIntent:Landroid/content/Intent;
     const-string v4, "app_data"
 
@@ -137,11 +129,11 @@
 
     move-result-object v12
 
-    .line 211
+    .line 218
     .local v12, appData:Landroid/os/Bundle;
     if-eqz v12, :cond_0
 
-    .line 212
+    .line 219
     const-string v4, "com.android.email.activity.MAILBOX_ID"
 
     invoke-virtual {v12, v4}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
@@ -154,19 +146,19 @@
 
     iput-wide v0, v2, Lcom/android/email/activity/SearchActivity;->mMailboxId:J
 
-    .line 216
+    .line 223
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/SearchActivity;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v23
 
-    .line 217
+    .line 224
     .local v23, theme:Landroid/content/res/Resources$Theme;
     invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/SearchActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v18
 
-    .line 219
+    .line 226
     .local v18, resources:Landroid/content/res/Resources;
     const/4 v4, 0x1
 
@@ -186,7 +178,7 @@
 
     move-result-object v13
 
-    .line 220
+    .line 227
     .local v13, array:Landroid/content/res/TypedArray;
     const/4 v4, 0x0
 
@@ -210,7 +202,7 @@
 
     iput-object v0, v1, Lcom/android/email/activity/SearchActivity;->mTextColorPrimary:Landroid/content/res/ColorStateList;
 
-    .line 221
+    .line 228
     const/4 v4, 0x1
 
     new-array v4, v4, [I
@@ -229,7 +221,7 @@
 
     move-result-object v13
 
-    .line 222
+    .line 229
     const/4 v4, 0x0
 
     const/4 v5, 0x0
@@ -252,7 +244,7 @@
 
     iput-object v0, v1, Lcom/android/email/activity/SearchActivity;->mTextColorSecondary:Landroid/content/res/ColorStateList;
 
-    .line 226
+    .line 233
     invoke-static/range {p0 .. p0}, Landroid/text/format/DateFormat;->getDateFormat(Landroid/content/Context;)Ljava/text/DateFormat;
 
     move-result-object v4
@@ -263,7 +255,7 @@
 
     iput-object v0, v1, Lcom/android/email/activity/SearchActivity;->mDateFormat:Ljava/text/DateFormat;
 
-    .line 227
+    .line 234
     invoke-static/range {p0 .. p0}, Landroid/text/format/DateFormat;->getDateFormat(Landroid/content/Context;)Ljava/text/DateFormat;
 
     move-result-object v4
@@ -274,7 +266,7 @@
 
     iput-object v0, v1, Lcom/android/email/activity/SearchActivity;->mDayFormat:Ljava/text/DateFormat;
 
-    .line 228
+    .line 235
     invoke-static/range {p0 .. p0}, Landroid/text/format/DateFormat;->getTimeFormat(Landroid/content/Context;)Ljava/text/DateFormat;
 
     move-result-object v4
@@ -285,7 +277,7 @@
 
     iput-object v0, v1, Lcom/android/email/activity/SearchActivity;->mTimeFormat:Ljava/text/DateFormat;
 
-    .line 231
+    .line 238
     invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/SearchActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v4
@@ -300,7 +292,7 @@
 
     move-result-object v21
 
-    .line 232
+    .line 239
     .local v21, searchStringParameter:Ljava/lang/String;
     if-eqz v21, :cond_1
 
@@ -315,7 +307,7 @@
 
     iput-object v0, v1, Lcom/android/email/activity/SearchActivity;->searchString:Ljava/lang/String;
 
-    .line 235
+    .line 242
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/SearchActivity;->searchString:Ljava/lang/String;
@@ -326,7 +318,7 @@
 
     move-result-object v20
 
-    .line 236
+    .line 243
     .local v20, searchStringEsc:Ljava/lang/String;
     const-string v4, "\'"
 
@@ -338,7 +330,7 @@
 
     move-result v22
 
-    .line 237
+    .line 244
     .local v22, startIndex:I
     const-string v4, "\'"
 
@@ -350,7 +342,7 @@
 
     move-result v15
 
-    .line 238
+    .line 245
     .local v15, endIndex:I
     new-instance v19, Ljava/lang/StringBuilder;
 
@@ -366,7 +358,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 239
+    .line 246
     .local v19, sb:Ljava/lang/StringBuilder;
     const-string v4, "\'%"
 
@@ -376,7 +368,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 240
+    .line 247
     add-int/lit8 v4, v22, 0x1
 
     move-object/from16 v0, v20
@@ -395,7 +387,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 241
+    .line 248
     const-string v4, "%\'"
 
     move-object/from16 v0, v19
@@ -404,23 +396,23 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 242
+    .line 249
     invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v20
 
-    .line 244
+    .line 251
     invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/SearchActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v14
 
-    .line 246
+    .line 253
     .local v14, cr:Landroid/content/ContentResolver;
     invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/SearchActivity;->getListView()Landroid/widget/ListView;
 
     move-result-object v16
 
-    .line 248
+    .line 255
     .local v16, listView:Landroid/widget/ListView;
     const/4 v4, 0x1
 
@@ -430,7 +422,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setItemsCanFocus(Z)V
 
-    .line 249
+    .line 256
     const/4 v4, 0x1
 
     move-object/from16 v0, v16
@@ -439,7 +431,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setFocusable(Z)V
 
-    .line 250
+    .line 257
     const/4 v4, 0x1
 
     move-object/from16 v0, v16
@@ -448,14 +440,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setClickable(Z)V
 
-    .line 252
+    .line 259
     move-object/from16 v0, v16
 
     move-object/from16 v1, p0
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 258
+    .line 265
     const-string v4, ""
 
     move-object/from16 v0, p0
@@ -464,7 +456,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/SearchActivity;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 261
+    .line 268
     new-instance v4, Lcom/android/email/activity/SearchActivity$1;
 
     move-object v0, v4
@@ -483,10 +475,10 @@
 
     iput-object v0, v1, Lcom/android/email/activity/SearchActivity;->mQueryHandler:Landroid/content/AsyncQueryHandler;
 
-    .line 362
+    .line 369
     sget-object v7, Lcom/android/email/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 365
+    .line 372
     .local v7, uriContent:Landroid/net/Uri;
     move-object/from16 v0, p0
 
@@ -564,7 +556,7 @@
 
     invoke-virtual/range {v4 .. v11}, Landroid/content/AsyncQueryHandler;->startQuery(ILjava/lang/Object;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 370
+    .line 377
     return-void
 
     .end local v7           #uriContent:Landroid/net/Uri;
@@ -577,7 +569,7 @@
     :cond_1
     move-object/from16 v4, v21
 
-    .line 232
+    .line 239
     goto/16 :goto_0
 .end method
 
@@ -598,7 +590,7 @@
     .end annotation
 
     .prologue
-    .line 388
+    .line 395
     .local p1, arg0:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     return-void
 .end method
@@ -607,10 +599,10 @@
     .locals 6
 
     .prologue
-    .line 375
+    .line 382
     invoke-super {p0}, Landroid/app/ListActivity;->onResume()V
 
-    .line 377
+    .line 384
     iget-object v1, p0, Lcom/android/email/activity/SearchActivity;->searchString:Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -621,7 +613,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 378
+    .line 385
     invoke-virtual {p0}, Lcom/android/email/activity/SearchActivity;->getListAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v1
@@ -630,7 +622,7 @@
 
     move-result v0
 
-    .line 379
+    .line 386
     .local v0, cursorCount:I
     invoke-virtual {p0}, Lcom/android/email/activity/SearchActivity;->getResources()Landroid/content/res/Resources;
 
@@ -662,7 +654,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/SearchActivity;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 385
+    .line 392
     .end local v0           #cursorCount:I
     :cond_0
     return-void

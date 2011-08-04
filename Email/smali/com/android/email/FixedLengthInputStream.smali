@@ -6,9 +6,9 @@
 # instance fields
 .field private mCount:I
 
-.field private mIn:Ljava/io/InputStream;
+.field private final mIn:Ljava/io/InputStream;
 
-.field private mLength:I
+.field private final mLength:I
 
 
 # direct methods
@@ -48,6 +48,16 @@
     iget v1, p0, Lcom/android/email/FixedLengthInputStream;->mCount:I
 
     sub-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public getLength()I
+    .locals 1
+
+    .prologue
+    .line 73
+    iget v0, p0, Lcom/android/email/FixedLengthInputStream;->mLength:I
 
     return v0
 .end method
@@ -189,7 +199,7 @@
     .locals 4
 
     .prologue
-    .line 73
+    .line 78
     const-string v0, "FixedLengthInputStream(in=%s, length=%d)"
 
     const/4 v1, 0x2

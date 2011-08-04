@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 77
+    .line 87
     iput-object p1, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 77
+    .line 87
     invoke-direct {p0, p1}, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;-><init>(Lcom/android/email/activity/EmailSearchQuery;)V
 
     return-void
@@ -64,7 +64,7 @@
 
     const-string v10, " "
 
-    .line 81
+    .line 91
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$100(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/exchange/provider/EmailSearchAdapter;
@@ -87,7 +87,7 @@
 
     invoke-virtual {v6, v7}, Lcom/android/exchange/provider/EmailSearchAdapter;->setFreeText(Ljava/lang/String;)V
 
-    .line 82
+    .line 92
     sget-object v6, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -120,7 +120,7 @@
 
     invoke-virtual {v6, v7}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 83
+    .line 93
     sget-object v6, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -181,7 +181,7 @@
 
     invoke-virtual {v6, v7}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 84
+    .line 94
     sget-object v6, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -242,7 +242,7 @@
 
     invoke-virtual {v6, v7}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 85
+    .line 95
     sget-object v6, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -287,7 +287,7 @@
 
     invoke-virtual {v6, v7}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 86
+    .line 96
     sget-object v6, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -332,20 +332,20 @@
 
     invoke-virtual {v6, v7}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 88
+    .line 98
     new-instance v2, Ljava/text/SimpleDateFormat;
 
     const-string v6, "dd/MM/yyyy hh:mm:ss a"
 
     invoke-direct {v2, v6}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 89
+    .line 99
     .local v2, formatter:Ljava/text/SimpleDateFormat;
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 90
+    .line 100
     .local v0, c:Ljava/util/Calendar;
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
@@ -355,7 +355,7 @@
 
     invoke-virtual {v0, v11, v6}, Ljava/util/Calendar;->set(II)V
 
-    .line 91
+    .line 101
     const/4 v6, 0x2
 
     iget-object v7, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
@@ -366,7 +366,7 @@
 
     invoke-virtual {v0, v6, v7}, Ljava/util/Calendar;->set(II)V
 
-    .line 92
+    .line 102
     const/4 v6, 0x5
 
     iget-object v7, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
@@ -377,16 +377,16 @@
 
     invoke-virtual {v0, v6, v7}, Ljava/util/Calendar;->set(II)V
 
-    .line 93
+    .line 103
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$800(Lcom/android/email/activity/EmailSearchQuery;)I
 
     move-result v6
 
-    if-lt v6, v9, :cond_0
+    if-lt v6, v9, :cond_1
 
-    .line 94
+    .line 104
     const/16 v6, 0xa
 
     iget-object v7, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
@@ -399,7 +399,7 @@
 
     invoke-virtual {v0, v6, v7}, Ljava/util/Calendar;->set(II)V
 
-    .line 97
+    .line 107
     :goto_0
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
@@ -409,24 +409,24 @@
 
     invoke-virtual {v0, v9, v6}, Ljava/util/Calendar;->set(II)V
 
-    .line 98
+    .line 108
     const/16 v6, 0xd
 
     invoke-virtual {v0, v6, v12}, Ljava/util/Calendar;->set(II)V
 
-    .line 99
+    .line 109
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$800(Lcom/android/email/activity/EmailSearchQuery;)I
 
     move-result v6
 
-    if-ge v6, v9, :cond_1
+    if-ge v6, v9, :cond_2
 
-    .line 100
+    .line 110
     invoke-virtual {v0, v13, v12}, Ljava/util/Calendar;->set(II)V
 
-    .line 103
+    .line 113
     :goto_1
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
@@ -444,7 +444,7 @@
 
     invoke-virtual {v6, v7}, Lcom/android/exchange/provider/EmailSearchAdapter;->setGreaterThanDateStr(Ljava/lang/String;)V
 
-    .line 104
+    .line 114
     sget-object v6, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -475,20 +475,20 @@
 
     invoke-virtual {v6, v7}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 109
+    .line 119
     new-instance v5, Ljava/text/SimpleDateFormat;
 
     const-string v6, "dd/MM/yyyy hh:mm:ss a"
 
     invoke-direct {v5, v6}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 110
+    .line 120
     .local v5, to_formatter:Ljava/text/SimpleDateFormat;
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v1
 
-    .line 111
+    .line 121
     .local v1, cTo:Ljava/util/Calendar;
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
@@ -498,7 +498,7 @@
 
     invoke-virtual {v1, v11, v6}, Ljava/util/Calendar;->set(II)V
 
-    .line 112
+    .line 122
     const/4 v6, 0x2
 
     iget-object v7, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
@@ -509,7 +509,7 @@
 
     invoke-virtual {v1, v6, v7}, Ljava/util/Calendar;->set(II)V
 
-    .line 113
+    .line 123
     const/4 v6, 0x5
 
     iget-object v7, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
@@ -520,16 +520,16 @@
 
     invoke-virtual {v1, v6, v7}, Ljava/util/Calendar;->set(II)V
 
-    .line 114
+    .line 124
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$1000(Lcom/android/email/activity/EmailSearchQuery;)I
 
     move-result v6
 
-    if-lt v6, v9, :cond_2
+    if-lt v6, v9, :cond_3
 
-    .line 115
+    .line 125
     const/16 v6, 0xa
 
     iget-object v7, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
@@ -542,13 +542,13 @@
 
     invoke-virtual {v1, v6, v7}, Ljava/util/Calendar;->set(II)V
 
-    .line 118
+    .line 128
     :goto_2
     const/16 v6, 0xd
 
     invoke-virtual {v1, v6, v12}, Ljava/util/Calendar;->set(II)V
 
-    .line 119
+    .line 129
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$1100(Lcom/android/email/activity/EmailSearchQuery;)I
@@ -557,19 +557,19 @@
 
     invoke-virtual {v1, v9, v6}, Ljava/util/Calendar;->set(II)V
 
-    .line 120
+    .line 130
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$1000(Lcom/android/email/activity/EmailSearchQuery;)I
 
     move-result v6
 
-    if-ge v6, v9, :cond_3
+    if-ge v6, v9, :cond_4
 
-    .line 121
+    .line 131
     invoke-virtual {v1, v13, v12}, Ljava/util/Calendar;->set(II)V
 
-    .line 124
+    .line 134
     :goto_3
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
@@ -587,7 +587,7 @@
 
     invoke-virtual {v6, v7}, Lcom/android/exchange/provider/EmailSearchAdapter;->setLessThanDateStr(Ljava/lang/String;)V
 
-    .line 125
+    .line 135
     sget-object v6, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -618,16 +618,16 @@
 
     invoke-virtual {v6, v7}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 126
+    .line 136
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$1200(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v6
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_5
 
-    .line 127
+    .line 137
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$100(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/exchange/provider/EmailSearchAdapter;
@@ -648,7 +648,7 @@
 
     invoke-virtual {v6, v7}, Lcom/android/exchange/provider/EmailSearchAdapter;->setIdStr(Ljava/lang/String;)V
 
-    .line 132
+    .line 145
     :goto_4
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
@@ -656,9 +656,18 @@
 
     move-result-object v6
 
-    if-nez v6, :cond_5
+    if-eqz v6, :cond_0
 
-    .line 134
+    iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
+
+    invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$1300(Lcom/android/email/activity/EmailSearchQuery;)Ljava/lang/String;
+
+    move-result-object v6
+
+    if-eqz v6, :cond_6
+
+    .line 147
+    :cond_0
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$100(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/exchange/provider/EmailSearchAdapter;
@@ -669,17 +678,17 @@
 
     invoke-virtual {v6, v7}, Lcom/android/exchange/provider/EmailSearchAdapter;->setoptionsDeepTraversalStr(Ljava/lang/String;)V
 
-    .line 139
+    .line 152
     :goto_5
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
-    invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$1400(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/email/Controller;
+    invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$1500(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/email/Controller;
 
     move-result-object v6
 
     iget-object v7, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
-    invoke-static {v7}, Lcom/android/email/activity/EmailSearchQuery;->access$1300(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/email/provider/EmailContent$Account;
+    invoke-static {v7}, Lcom/android/email/activity/EmailSearchQuery;->access$1400(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/email/provider/EmailContent$Account;
 
     move-result-object v7
 
@@ -691,7 +700,7 @@
 
     move-result-wide v3
 
-    .line 142
+    .line 155
     .local v3, searchFolderId:J
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
@@ -705,68 +714,22 @@
 
     invoke-virtual {v6, v7}, Lcom/android/exchange/provider/EmailSearchAdapter;->setFoldIdStr(Ljava/lang/String;)V
 
-    .line 149
-    invoke-static {}, Lcom/android/email/activity/EmailSearchQuery;->access$1500()Ljava/lang/String;
+    .line 162
+    iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
+
+    invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$100(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/exchange/provider/EmailSearchAdapter;
 
     move-result-object v6
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    iget-object v7, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "fzhang email Search Adapter search is called mMailbox = "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v7}, Lcom/android/email/activity/EmailSearchQuery;->access$1300(Lcom/android/email/activity/EmailSearchQuery;)Ljava/lang/String;
 
     move-result-object v7
 
-    iget-object v8, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
+    invoke-virtual {v6, v7}, Lcom/android/exchange/provider/EmailSearchAdapter;->setConvIdStr(Ljava/lang/String;)V
 
-    invoke-static {v8}, Lcom/android/email/activity/EmailSearchQuery;->access$1200(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/email/provider/EmailContent$Mailbox;
-
-    move-result-object v8
-
-    iget-wide v8, v8, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
-
-    invoke-virtual {v7, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, " foldid ="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, "accoundid = "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
-
-    invoke-static {v8}, Lcom/android/email/activity/EmailSearchQuery;->access$1300(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/email/provider/EmailContent$Account;
-
-    move-result-object v8
-
-    iget-wide v8, v8, Lcom/android/email/provider/EmailContent$Account;->mId:J
-
-    invoke-virtual {v7, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 150
+    .line 166
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$100(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/exchange/provider/EmailSearchAdapter;
@@ -775,31 +738,31 @@
 
     invoke-virtual {v6}, Lcom/android/exchange/provider/EmailSearchAdapter;->search()I
 
-    .line 152
+    .line 168
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-static {v6, v3, v4, v11}, Lcom/android/email/activity/MessageList;->actionHandleMailbox(Landroid/content/Context;JZ)V
 
-    .line 158
+    .line 174
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     const/4 v7, -0x1
 
     invoke-virtual {v6, v7}, Lcom/android/email/activity/EmailSearchQuery;->setResult(I)V
 
-    .line 159
+    .line 175
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-virtual {v6}, Lcom/android/email/activity/EmailSearchQuery;->finish()V
 
-    .line 160
+    .line 176
     return-void
 
-    .line 96
+    .line 106
     .end local v1           #cTo:Ljava/util/Calendar;
     .end local v3           #searchFolderId:J
     .end local v5           #to_formatter:Ljava/text/SimpleDateFormat;
-    :cond_0
+    :cond_1
     const/16 v6, 0xa
 
     iget-object v7, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
@@ -812,16 +775,16 @@
 
     goto/16 :goto_0
 
-    .line 102
-    :cond_1
+    .line 112
+    :cond_2
     invoke-virtual {v0, v13, v11}, Ljava/util/Calendar;->set(II)V
 
     goto/16 :goto_1
 
-    .line 117
+    .line 127
     .restart local v1       #cTo:Ljava/util/Calendar;
     .restart local v5       #to_formatter:Ljava/text/SimpleDateFormat;
-    :cond_2
+    :cond_3
     const/16 v6, 0xa
 
     iget-object v7, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
@@ -834,14 +797,14 @@
 
     goto/16 :goto_2
 
-    .line 123
-    :cond_3
+    .line 133
+    :cond_4
     invoke-virtual {v1, v13, v11}, Ljava/util/Calendar;->set(II)V
 
     goto/16 :goto_3
 
-    .line 130
-    :cond_4
+    .line 140
+    :cond_5
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$100(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/exchange/provider/EmailSearchAdapter;
@@ -854,8 +817,8 @@
 
     goto/16 :goto_4
 
-    .line 136
-    :cond_5
+    .line 149
+    :cond_6
     iget-object v6, p0, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-static {v6}, Lcom/android/email/activity/EmailSearchQuery;->access$100(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/exchange/provider/EmailSearchAdapter;

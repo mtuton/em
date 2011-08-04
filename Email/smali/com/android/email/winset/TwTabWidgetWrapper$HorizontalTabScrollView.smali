@@ -17,14 +17,6 @@
 .end annotation
 
 
-# static fields
-.field private static final ANIMATED_SCROLL_GAP:I = 0xfa
-
-.field private static final MAX_SCROLL_FACTOR:F = 0.5f
-
-.field static final TAG:Ljava/lang/String; = "HorizontalTabScrollView"
-
-
 # instance fields
 .field private mChildToScrollTo:Landroid/view/View;
 
@@ -72,54 +64,54 @@
 
     const/4 v1, 0x1
 
-    .line 357
+    .line 230
     iput-object p1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
 
-    .line 359
+    .line 231
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 627
+    .line 374
     iput-boolean v2, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsFlinging:Z
 
-    .line 633
+    .line 377
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
-    .line 671
+    .line 396
     iput-boolean v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsLayoutDirty:Z
 
-    .line 685
+    .line 403
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mChildToScrollTo:Landroid/view/View;
 
-    .line 699
+    .line 410
     iput-boolean v2, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsBeingDragged:Z
 
-    .line 731
+    .line 426
     iput-boolean v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mSmoothScrollingEnabled:Z
 
-    .line 741
+    .line 432
     iput-boolean v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mMovingRight:Z
 
-    .line 361
+    .line 232
     invoke-direct {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->initScrollView()V
 
-    .line 363
+    .line 233
     const/high16 v0, 0x2
 
     invoke-virtual {p0, v0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->setDescendantFocusability(I)V
 
-    .line 365
+    .line 234
     invoke-virtual {p0, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->setFocusable(Z)V
 
-    .line 367
+    .line 235
     invoke-virtual {p0, p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    .line 369
+    .line 236
     return-void
 .end method
 
@@ -129,7 +121,7 @@
     .parameter "x1"
 
     .prologue
-    .line 349
+    .line 226
     invoke-direct {p0, p1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->scrollToChild(Landroid/view/View;)V
 
     return-void
@@ -141,21 +133,21 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 923
+    .line 524
     invoke-virtual {p0, v5}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 925
+    .line 525
     .local v0, child:Landroid/view/View;
     if-eqz v0, :cond_1
 
-    .line 927
+    .line 526
     invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
-    .line 929
+    .line 527
     .local v1, childWidth:I
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getWidth()I
 
@@ -173,7 +165,7 @@
 
     const/4 v2, 0x1
 
-    .line 933
+    .line 529
     .end local v1           #childWidth:I
     :goto_0
     return v2
@@ -182,14 +174,14 @@
     :cond_0
     move v2, v5
 
-    .line 929
+    .line 527
     goto :goto_0
 
     .end local v1           #childWidth:I
     :cond_1
     move v2, v5
 
-    .line 933
+    .line 529
     goto :goto_0
 .end method
 
@@ -200,26 +192,26 @@
     .parameter "child"
 
     .prologue
-    .line 2967
+    .line 1563
     if-ge p2, p3, :cond_0
 
     if-gez p1, :cond_1
 
-    .line 2969
+    .line 1564
     :cond_0
     const/4 v0, 0x0
 
-    .line 2979
+    .line 1569
     :goto_0
     return v0
 
-    .line 2973
+    .line 1566
     :cond_1
     add-int v0, p2, p1
 
     if-le v0, p3, :cond_2
 
-    .line 2975
+    .line 1567
     sub-int v0, p3, p2
 
     goto :goto_0
@@ -227,7 +219,7 @@
     :cond_2
     move v0, p1
 
-    .line 2979
+    .line 1569
     goto :goto_0
 .end method
 
@@ -238,23 +230,23 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2177
+    .line 1167
     if-eqz p1, :cond_0
 
-    .line 2179
+    .line 1168
     iget-boolean v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mSmoothScrollingEnabled:Z
 
     if-eqz v0, :cond_1
 
-    .line 2181
+    .line 1169
     invoke-virtual {p0, p1, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->smoothScrollBy(II)V
 
-    .line 2191
+    .line 1174
     :cond_0
     :goto_0
     return-void
 
-    .line 2185
+    .line 1171
     :cond_1
     invoke-virtual {p0, p1, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->scrollBy(II)V
 
@@ -262,33 +254,29 @@
 .end method
 
 .method private doSelectNewTab()V
-    .locals 13
+    .locals 15
 
     .prologue
-    const/4 v11, 0x1
+    .line 284
+    iget-object v12, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
 
-    const-string v12, "HorizontalTabScrollView"
+    invoke-static {v12}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$200(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabWidget;
 
-    .line 466
-    iget-object v9, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
+    move-result-object v12
 
-    invoke-static {v9}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$200(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabWidget;
+    iget-object v13, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
 
-    move-result-object v9
+    invoke-static {v13}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$100(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabHost;
 
-    iget-object v10, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
+    move-result-object v13
 
-    invoke-static {v10}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$100(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabHost;
+    iget v13, v13, Lcom/android/email/winset/TwTabHost;->mCurrentTab:I
 
-    move-result-object v10
-
-    iget v10, v10, Lcom/android/email/winset/TwTabHost;->mCurrentTab:I
-
-    invoke-virtual {v9, v10}, Lcom/android/email/winset/TwTabWidget;->getChildTabViewAt(I)Landroid/view/View;
+    invoke-virtual {v12, v13}, Lcom/android/email/winset/TwTabWidget;->getChildTabViewAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 468
+    .line 285
     .local v3, indicator:Landroid/view/View;
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -296,235 +284,282 @@
 
     check-cast v4, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 482
+    .line 286
     .local v4, lp:Landroid/view/ViewGroup$MarginLayoutParams;
+    invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getWidth()I
+
+    move-result v11
+
+    .line 287
+    .local v11, width:I
+    invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getScrollX()I
+
+    move-result v7
+
+    .line 288
+    .local v7, screenLeft:I
+    add-int v8, v7, v11
+
+    .line 295
+    .local v8, screenRight:I
     invoke-virtual {v3}, Landroid/view/View;->getWidth()I
 
-    move-result v9
+    move-result v12
 
-    iget v10, v4, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v13, v4, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    add-int/2addr v9, v10
+    add-int/2addr v12, v13
 
-    iget v10, v4, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v13, v4, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    add-int v0, v9, v10
+    add-int v0, v12, v13
 
-    .line 488
+    .line 298
     .local v0, MeasureIndicatorWidth:I
     new-instance v6, Landroid/graphics/Rect;
 
     invoke-direct {v6}, Landroid/graphics/Rect;-><init>()V
 
-    .line 490
+    .line 299
     .local v6, rc:Landroid/graphics/Rect;
     invoke-virtual {v3, v6}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 496
+    .line 302
     invoke-virtual {p0, v3, v6}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 500
+    .line 304
     invoke-virtual {p0, v6}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->computeScrollDeltaToGetChildRectOnScreen(Landroid/graphics/Rect;)I
-
-    move-result v7
-
-    .line 506
-    .local v7, scrollDelta:I
-    invoke-static {v7}, Ljava/lang/Math;->abs(I)I
 
     move-result v9
 
-    if-ge v9, v0, :cond_0
+    .line 306
+    .local v9, scrollDelta:I
+    invoke-static {v9}, Ljava/lang/Math;->abs(I)I
 
-    .line 510
-    iget-object v9, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
+    move-result v12
 
-    iget-object v10, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
+    iget v13, v4, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    invoke-static {v10}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$100(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabHost;
+    sub-int/2addr v12, v13
 
-    move-result-object v10
+    if-ge v12, v0, :cond_0
 
-    iget v10, v10, Lcom/android/email/winset/TwTabHost;->mCurrentTab:I
+    .line 308
+    iget-object v12, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
 
-    invoke-virtual {v9, v10}, Lcom/android/email/winset/TwTabWidgetWrapper;->scrollToTab(I)V
+    iget-object v13, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
 
-    .line 601
+    invoke-static {v13}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$100(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabHost;
+
+    move-result-object v13
+
+    iget v13, v13, Lcom/android/email/winset/TwTabHost;->mCurrentTab:I
+
+    invoke-virtual {v12, v13}, Lcom/android/email/winset/TwTabWidgetWrapper;->scrollToTab(I)V
+
+    .line 361
     :goto_0
     return-void
 
-    .line 518
+    .line 312
     :cond_0
     const/high16 v5, -0x8000
 
-    .line 522
+    .line 314
     .local v5, newSelectionIndex:I
-    if-lez v7, :cond_3
+    if-lez v9, :cond_4
 
-    .line 527
-    iget-object v9, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
+    .line 317
+    iget-object v12, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
 
-    invoke-static {v9}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$100(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabHost;
+    invoke-static {v12}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$100(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabHost;
 
-    move-result-object v9
+    move-result-object v12
 
-    iget v9, v9, Lcom/android/email/winset/TwTabHost;->mCurrentTab:I
+    iget v12, v12, Lcom/android/email/winset/TwTabHost;->mCurrentTab:I
 
-    sub-int v2, v9, v11
+    const/4 v13, 0x1
+
+    sub-int v2, v12, v13
 
     .local v2, i:I
     :goto_1
     if-ltz v2, :cond_1
 
-    .line 529
-    iget-object v9, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
+    .line 318
+    iget-object v12, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
 
-    invoke-static {v9}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$200(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabWidget;
+    invoke-static {v12}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$200(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabWidget;
 
-    move-result-object v9
+    move-result-object v12
 
-    invoke-virtual {v9, v2}, Lcom/android/email/winset/TwTabWidget;->getChildTabViewAt(I)Landroid/view/View;
+    invoke-virtual {v12, v2}, Lcom/android/email/winset/TwTabWidget;->getChildTabViewAt(I)Landroid/view/View;
 
-    move-result-object v8
+    move-result-object v10
 
-    .line 533
-    .local v8, v:Landroid/view/View;
-    invoke-virtual {v8, v6}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
+    .line 320
+    .local v10, v:Landroid/view/View;
+    invoke-virtual {v10, v6}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 535
-    invoke-virtual {p0, v8, v6}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
+    .line 321
+    invoke-virtual {p0, v10, v6}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 537
+    .line 322
     invoke-virtual {p0, v6}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->computeScrollDeltaToGetChildRectOnScreen(Landroid/graphics/Rect;)I
 
     move-result v1
 
-    .line 543
+    .line 325
     .local v1, delta:I
-    if-gtz v1, :cond_2
+    if-gtz v1, :cond_3
 
-    .line 545
-    add-int/lit8 v5, v2, 0x1
+    .line 326
+    iget v12, v6, Landroid/graphics/Rect;->right:I
 
-    .line 585
+    if-ne v12, v8, :cond_2
+
+    .line 327
+    move v5, v2
+
+    .line 353
     .end local v1           #delta:I
-    .end local v8           #v:Landroid/view/View;
+    .end local v10           #v:Landroid/view/View;
     :cond_1
     :goto_2
-    const/high16 v9, -0x8000
+    const/high16 v12, -0x8000
 
-    if-eq v5, v9, :cond_5
+    if-eq v5, v12, :cond_7
 
-    .line 587
-    const-string v9, "HorizontalTabScrollView"
+    .line 354
+    const-string v12, "HorizontalTabScrollView"
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "doSelectNewTab(). new selection:"
+    const-string v14, "doSelectNewTab(). new selection:"
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v13
 
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v13
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v13
 
-    invoke-static {v12, v9}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v12, v13}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 527
+    .line 329
     .restart local v1       #delta:I
-    .restart local v8       #v:Landroid/view/View;
+    .restart local v10       #v:Landroid/view/View;
     :cond_2
+    add-int/lit8 v5, v2, 0x1
+
+    .line 330
+    goto :goto_2
+
+    .line 317
+    :cond_3
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_1
 
-    .line 557
+    .line 336
     .end local v1           #delta:I
     .end local v2           #i:I
-    .end local v8           #v:Landroid/view/View;
-    :cond_3
-    iget-object v9, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
+    .end local v10           #v:Landroid/view/View;
+    :cond_4
+    iget-object v12, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
 
-    invoke-static {v9}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$100(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabHost;
+    invoke-static {v12}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$100(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabHost;
 
-    move-result-object v9
+    move-result-object v12
 
-    iget v9, v9, Lcom/android/email/winset/TwTabHost;->mCurrentTab:I
+    iget v12, v12, Lcom/android/email/winset/TwTabHost;->mCurrentTab:I
 
-    add-int/lit8 v2, v9, 0x1
+    add-int/lit8 v2, v12, 0x1
 
     .restart local v2       #i:I
     :goto_3
-    iget-object v9, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
+    iget-object v12, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
 
-    invoke-static {v9}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$100(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabHost;
+    invoke-static {v12}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$100(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabHost;
 
-    move-result-object v9
+    move-result-object v12
 
-    invoke-virtual {v9}, Lcom/android/email/winset/TwTabHost;->getTabCount()I
+    invoke-virtual {v12}, Lcom/android/email/winset/TwTabHost;->getTabCount()I
 
-    move-result v9
+    move-result v12
 
-    if-ge v2, v9, :cond_1
+    if-ge v2, v12, :cond_1
 
-    .line 559
-    iget-object v9, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
+    .line 337
+    iget-object v12, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
 
-    invoke-static {v9}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$200(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabWidget;
+    invoke-static {v12}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$200(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabWidget;
 
-    move-result-object v9
+    move-result-object v12
 
-    invoke-virtual {v9, v2}, Lcom/android/email/winset/TwTabWidget;->getChildTabViewAt(I)Landroid/view/View;
+    invoke-virtual {v12, v2}, Lcom/android/email/winset/TwTabWidget;->getChildTabViewAt(I)Landroid/view/View;
 
-    move-result-object v8
+    move-result-object v10
 
-    .line 563
-    .restart local v8       #v:Landroid/view/View;
-    invoke-virtual {v8, v6}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
+    .line 339
+    .restart local v10       #v:Landroid/view/View;
+    invoke-virtual {v10, v6}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 565
-    invoke-virtual {p0, v8, v6}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
+    .line 340
+    invoke-virtual {p0, v10, v6}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 567
+    .line 341
     invoke-virtual {p0, v6}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->computeScrollDeltaToGetChildRectOnScreen(Landroid/graphics/Rect;)I
 
     move-result v1
 
-    .line 571
+    .line 343
     .restart local v1       #delta:I
-    if-ltz v1, :cond_4
+    if-ltz v1, :cond_6
 
-    .line 573
-    sub-int v5, v2, v11
+    .line 344
+    iget v12, v6, Landroid/graphics/Rect;->left:I
 
-    .line 575
+    if-ne v12, v7, :cond_5
+
+    .line 345
+    move v5, v2
+
     goto :goto_2
 
-    .line 557
-    :cond_4
+    .line 347
+    :cond_5
+    const/4 v12, 0x1
+
+    sub-int v5, v2, v12
+
+    .line 348
+    goto :goto_2
+
+    .line 336
+    :cond_6
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    .line 595
+    .line 358
     .end local v1           #delta:I
-    .end local v8           #v:Landroid/view/View;
-    :cond_5
-    const-string v9, "HorizontalTabScrollView"
+    .end local v10           #v:Landroid/view/View;
+    :cond_7
+    const-string v12, "HorizontalTabScrollView"
 
-    const-string v9, "doSelectNewTab(). failed to find new selection"
+    const-string v13, "doSelectNewTab(). failed to find new selection"
 
-    invoke-static {v12, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v12, v13}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_0
 .end method
@@ -536,28 +571,28 @@
     .parameter "right"
 
     .prologue
-    .line 1663
+    .line 910
     const/4 v10, 0x2
 
     invoke-virtual {p0, v10}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getFocusables(I)Ljava/util/ArrayList;
 
     move-result-object v2
 
-    .line 1665
+    .line 911
     .local v2, focusables:Ljava/util/List;,"Ljava/util/List<Landroid/view/View;>;"
     const/4 v1, 0x0
 
-    .line 1683
+    .line 920
     .local v1, focusCandidate:Landroid/view/View;
     const/4 v3, 0x0
 
-    .line 1687
+    .line 922
     .local v3, foundFullyContainedFocusable:Z
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 1689
+    .line 923
     .local v0, count:I
     const/4 v4, 0x0
 
@@ -565,32 +600,32 @@
     :goto_0
     if-ge v4, v0, :cond_8
 
-    .line 1691
+    .line 924
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Landroid/view/View;
 
-    .line 1693
+    .line 925
     .local v5, view:Landroid/view/View;
     invoke-virtual {v5}, Landroid/view/View;->getLeft()I
 
     move-result v8
 
-    .line 1695
+    .line 926
     .local v8, viewLeft:I
     invoke-virtual {v5}, Landroid/view/View;->getRight()I
 
     move-result v9
 
-    .line 1699
+    .line 928
     .local v9, viewRight:I
     if-ge p2, v9, :cond_0
 
     if-ge v8, p3, :cond_0
 
-    .line 1711
+    .line 934
     if-ge p2, v8, :cond_1
 
     if-ge v9, p3, :cond_1
@@ -599,18 +634,18 @@
 
     move v7, v10
 
-    .line 1717
+    .line 937
     .local v7, viewIsFullyContained:Z
     :goto_1
     if-nez v1, :cond_2
 
-    .line 1721
+    .line 939
     move-object v1, v5
 
-    .line 1723
+    .line 940
     move v3, v7
 
-    .line 1689
+    .line 923
     .end local v7           #viewIsFullyContained:Z
     :cond_0
     :goto_2
@@ -618,7 +653,7 @@
 
     goto :goto_0
 
-    .line 1711
+    .line 934
     :cond_1
     const/4 v10, 0x0
 
@@ -626,7 +661,7 @@
 
     goto :goto_1
 
-    .line 1727
+    .line 942
     .restart local v7       #viewIsFullyContained:Z
     :cond_2
     if-eqz p1, :cond_3
@@ -651,22 +686,22 @@
 
     move v6, v10
 
-    .line 1735
+    .line 946
     .local v6, viewIsCloserToBoundary:Z
     :goto_3
     if-eqz v3, :cond_6
 
-    .line 1737
+    .line 947
     if-eqz v7, :cond_0
 
     if-eqz v6, :cond_0
 
-    .line 1749
+    .line 953
     move-object v1, v5
 
     goto :goto_2
 
-    .line 1727
+    .line 942
     .end local v6           #viewIsCloserToBoundary:Z
     :cond_5
     const/4 v10, 0x0
@@ -675,29 +710,29 @@
 
     goto :goto_3
 
-    .line 1755
+    .line 956
     .restart local v6       #viewIsCloserToBoundary:Z
     :cond_6
     if-eqz v7, :cond_7
 
-    .line 1759
+    .line 958
     move-object v1, v5
 
-    .line 1761
+    .line 959
     const/4 v3, 0x1
 
     goto :goto_2
 
-    .line 1763
+    .line 960
     :cond_7
     if-eqz v6, :cond_0
 
-    .line 1773
+    .line 965
     move-object v1, v5
 
     goto :goto_2
 
-    .line 1787
+    .line 972
     .end local v5           #view:Landroid/view/View;
     .end local v6           #viewIsCloserToBoundary:Z
     .end local v7           #viewIsFullyContained:Z
@@ -714,18 +749,18 @@
     .parameter "preferredFocusable"
 
     .prologue
-    .line 1601
+    .line 879
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getHorizontalFadingEdgeLength()I
 
     move-result v3
 
     div-int/lit8 v0, v3, 0x2
 
-    .line 1603
+    .line 880
     .local v0, fadingEdgeLength:I
     add-int v1, p2, v0
 
-    .line 1605
+    .line 881
     .local v1, leftWithoutFadingEdge:I
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getWidth()I
 
@@ -735,7 +770,7 @@
 
     sub-int v2, v3, v0
 
-    .line 1609
+    .line 883
     .local v2, rightWithoutFadingEdge:I
     if-eqz p3, :cond_0
 
@@ -753,7 +788,7 @@
 
     move-object v3, p3
 
-    .line 1621
+    .line 889
     :goto_0
     return-object v3
 
@@ -769,7 +804,7 @@
     .locals 3
 
     .prologue
-    .line 823
+    .line 474
     new-instance v1, Landroid/widget/Scroller;
 
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getContext()Landroid/content/Context;
@@ -780,29 +815,29 @@
 
     iput-object v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScroller:Landroid/widget/Scroller;
 
-    .line 825
+    .line 475
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->setFocusable(Z)V
 
-    .line 827
+    .line 476
     const/high16 v1, 0x4
 
     invoke-virtual {p0, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->setDescendantFocusability(I)V
 
-    .line 829
+    .line 477
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->setWillNotDraw(Z)V
 
-    .line 831
+    .line 478
     iget-object v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
 
-    .line 833
+    .line 479
     .local v0, configuration:Landroid/view/ViewConfiguration;
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
@@ -810,21 +845,21 @@
 
     iput v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTouchSlop:I
 
-    .line 835
+    .line 480
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mMinimumVelocity:I
 
-    .line 837
+    .line 481
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mMaximumVelocity:I
 
-    .line 839
+    .line 482
     return-void
 .end method
 
@@ -835,7 +870,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2135
+    .line 1146
     invoke-direct {p0, p1, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->isWithinDeltaOfScreen(Landroid/view/View;I)Z
 
     move-result v0
@@ -861,22 +896,22 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 2849
+    .line 1503
     if-ne p1, p2, :cond_0
 
     move v1, v2
 
-    .line 2859
+    .line 1508
     :goto_0
     return v1
 
-    .line 2857
+    .line 1507
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
-    .line 2859
+    .line 1508
     .local v0, theParent:Landroid/view/ViewParent;
     instance-of v1, v0, Landroid/view/ViewGroup;
 
@@ -907,17 +942,17 @@
     .parameter "delta"
 
     .prologue
-    .line 2151
+    .line 1154
     iget-object v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 2153
+    .line 1155
     iget-object v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, p1, v0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 2157
+    .line 1157
     iget-object v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->right:I
@@ -963,7 +998,7 @@
     .locals 6
 
     .prologue
-    .line 426
+    .line 264
     iget-object v4, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
 
     invoke-static {v4}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$200(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabWidget;
@@ -982,25 +1017,25 @@
 
     move-result-object v0
 
-    .line 432
+    .line 267
     .local v0, indicator:Landroid/view/View;
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    .line 434
+    .line 268
     .local v2, rc:Landroid/graphics/Rect;
     invoke-virtual {v0, v2}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 440
+    .line 271
     invoke-virtual {p0, v0, v2}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 444
+    .line 273
     invoke-virtual {p0, v2}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->computeScrollDeltaToGetChildRectOnScreen(Landroid/graphics/Rect;)I
 
     move-result v3
 
-    .line 448
+    .line 275
     .local v3, scrollDelta:I
     if-eqz v3, :cond_1
 
@@ -1008,19 +1043,19 @@
 
     move v1, v4
 
-    .line 452
+    .line 277
     .local v1, newSelectionNeeded:Z
     :goto_0
     if-eqz v1, :cond_0
 
-    .line 454
+    .line 278
     invoke-direct {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->doSelectNewTab()V
 
-    .line 458
+    .line 280
     :cond_0
     return-void
 
-    .line 448
+    .line 275
     .end local v1           #newSelectionNeeded:Z
     :cond_1
     const/4 v4, 0x0
@@ -1041,26 +1076,26 @@
 
     const/4 v8, 0x0
 
-    .line 1953
+    .line 1055
     const/4 v4, 0x1
 
-    .line 1957
+    .line 1057
     .local v4, handled:Z
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getWidth()I
 
     move-result v6
 
-    .line 1959
+    .line 1058
     .local v6, width:I
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getScrollX()I
 
     move-result v0
 
-    .line 1961
+    .line 1059
     .local v0, containerLeft:I
     add-int v1, v0, v6
 
-    .line 1963
+    .line 1060
     .local v1, containerRight:I
     const/16 v7, 0x11
 
@@ -1068,30 +1103,30 @@
 
     move v3, v9
 
-    .line 1967
+    .line 1062
     .local v3, goLeft:Z
     :goto_0
     invoke-direct {p0, v3, p2, p3}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->findFocusableViewInBounds(ZII)Landroid/view/View;
 
     move-result-object v5
 
-    .line 1969
+    .line 1063
     .local v5, newFocused:Landroid/view/View;
     if-nez v5, :cond_0
 
-    .line 1971
+    .line 1064
     move-object v5, p0
 
-    .line 1977
+    .line 1067
     :cond_0
     if-lt p2, v0, :cond_3
 
     if-gt p3, v1, :cond_3
 
-    .line 1979
+    .line 1068
     const/4 v4, 0x0
 
-    .line 1991
+    .line 1074
     :goto_1
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->findFocus()Landroid/view/View;
 
@@ -1105,13 +1140,13 @@
 
     if-eqz v7, :cond_1
 
-    .line 1993
+    .line 1075
     iput-boolean v9, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollViewMovedFocus:Z
 
-    .line 1995
+    .line 1076
     iput-boolean v8, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollViewMovedFocus:Z
 
-    .line 2001
+    .line 1079
     :cond_1
     return v4
 
@@ -1120,10 +1155,10 @@
     :cond_2
     move v3, v8
 
-    .line 1963
+    .line 1060
     goto :goto_0
 
-    .line 1983
+    .line 1070
     .restart local v3       #goLeft:Z
     .restart local v5       #newFocused:Landroid/view/View;
     :cond_3
@@ -1133,14 +1168,14 @@
 
     move v2, v7
 
-    .line 1985
+    .line 1071
     .local v2, delta:I
     :goto_2
     invoke-direct {p0, v2}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->doScrollX(I)V
 
     goto :goto_1
 
-    .line 1983
+    .line 1070
     .end local v2           #delta:I
     :cond_4
     sub-int v7, p3, v1
@@ -1155,37 +1190,37 @@
     .parameter "child"
 
     .prologue
-    .line 2437
+    .line 1297
     if-nez p1, :cond_1
 
-    .line 2463
+    .line 1310
     :cond_0
     :goto_0
     return-void
 
-    .line 2443
+    .line 1300
     :cond_1
     iget-object v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 2449
+    .line 1303
     iget-object v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, p1, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 2453
+    .line 1305
     iget-object v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->computeScrollDeltaToGetChildRectOnScreen(Landroid/graphics/Rect;)I
 
     move-result v0
 
-    .line 2457
+    .line 1307
     .local v0, scrollDelta:I
     if-eqz v0, :cond_0
 
-    .line 2459
+    .line 1308
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->scrollBy(II)V
@@ -1201,12 +1236,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2485
+    .line 1321
     invoke-virtual {p0, p1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->computeScrollDeltaToGetChildRectOnScreen(Landroid/graphics/Rect;)I
 
     move-result v0
 
-    .line 2487
+    .line 1322
     .local v0, delta:I
     if-eqz v0, :cond_1
 
@@ -1214,18 +1249,18 @@
 
     move v1, v2
 
-    .line 2489
+    .line 1323
     .local v1, scroll:Z
     :goto_0
     if-eqz v1, :cond_0
 
-    .line 2491
+    .line 1324
     if-eqz p2, :cond_2
 
-    .line 2493
+    .line 1325
     invoke-virtual {p0, v0, v3}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->scrollBy(II)V
 
-    .line 2503
+    .line 1330
     :cond_0
     :goto_1
     return v1
@@ -1234,10 +1269,10 @@
     :cond_1
     move v1, v3
 
-    .line 2487
+    .line 1322
     goto :goto_0
 
-    .line 2497
+    .line 1327
     .restart local v1       #scroll:Z
     :cond_2
     invoke-virtual {p0, v0, v3}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->smoothScrollBy(II)V
@@ -1252,14 +1287,14 @@
     .parameter "child"
 
     .prologue
-    .line 847
+    .line 486
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 849
+    .line 487
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "HorizontalScrollView can host only one direct child"
@@ -1268,11 +1303,11 @@
 
     throw v0
 
-    .line 855
+    .line 490
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 857
+    .line 491
     return-void
 .end method
 
@@ -1282,14 +1317,14 @@
     .parameter "index"
 
     .prologue
-    .line 865
+    .line 495
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 867
+    .line 496
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "HorizontalScrollView can host only one direct child"
@@ -1298,11 +1333,11 @@
 
     throw v0
 
-    .line 873
+    .line 499
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;I)V
 
-    .line 875
+    .line 500
     return-void
 .end method
 
@@ -1313,14 +1348,14 @@
     .parameter "params"
 
     .prologue
-    .line 901
+    .line 513
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 903
+    .line 514
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "HorizontalScrollView can host only one direct child"
@@ -1329,11 +1364,11 @@
 
     throw v0
 
-    .line 909
+    .line 517
     :cond_0
     invoke-super {p0, p1, p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 911
+    .line 518
     return-void
 .end method
 
@@ -1343,14 +1378,14 @@
     .parameter "params"
 
     .prologue
-    .line 883
+    .line 504
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 885
+    .line 505
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "HorizontalScrollView can host only one direct child"
@@ -1359,11 +1394,11 @@
 
     throw v0
 
-    .line 891
+    .line 508
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 893
+    .line 509
     return-void
 .end method
 
@@ -1376,18 +1411,18 @@
 
     const/4 v9, 0x0
 
-    .line 2025
+    .line 1091
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->findFocus()Landroid/view/View;
 
     move-result-object v0
 
-    .line 2027
+    .line 1092
     .local v0, currentFocused:Landroid/view/View;
     if-ne v0, p0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 2031
+    .line 1094
     :cond_0
     invoke-static {}, Landroid/view/FocusFinder;->getInstance()Landroid/view/FocusFinder;
 
@@ -1397,13 +1432,13 @@
 
     move-result-object v4
 
-    .line 2035
+    .line 1096
     .local v4, nextFocused:Landroid/view/View;
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getMaxScrollAmount()I
 
     move-result v3
 
-    .line 2039
+    .line 1098
     .local v3, maxJump:I
     if-eqz v4, :cond_2
 
@@ -1413,31 +1448,31 @@
 
     if-eqz v7, :cond_2
 
-    .line 2041
+    .line 1099
     iget-object v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {v4, v7}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 2043
+    .line 1100
     iget-object v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v4, v7}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 2045
+    .line 1101
     iget-object v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v7}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->computeScrollDeltaToGetChildRectOnScreen(Landroid/graphics/Rect;)I
 
     move-result v6
 
-    .line 2047
+    .line 1102
     .local v6, scrollDelta:I
     invoke-direct {p0, v6}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->doScrollX(I)V
 
-    .line 2049
+    .line 1103
     invoke-virtual {v4, p1}, Landroid/view/View;->requestFocus(I)Z
 
-    .line 2095
+    .line 1126
     :goto_0
     if-eqz v0, :cond_1
 
@@ -1453,24 +1488,24 @@
 
     if-eqz v7, :cond_1
 
-    .line 2109
+    .line 1133
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getDescendantFocusability()I
 
     move-result v2
 
-    .line 2111
+    .line 1134
     .local v2, descendantFocusability:I
     const/high16 v7, 0x2
 
     invoke-virtual {p0, v7}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->setDescendantFocusability(I)V
 
-    .line 2113
+    .line 1135
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->requestFocus()Z
 
-    .line 2115
+    .line 1136
     invoke-virtual {p0, v2}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->setDescendantFocusability(I)V
 
-    .line 2119
+    .line 1138
     .end local v2           #descendantFocusability:I
     :cond_1
     const/4 v7, 0x1
@@ -1478,12 +1513,12 @@
     :goto_1
     return v7
 
-    .line 2055
+    .line 1106
     .end local v6           #scrollDelta:I
     :cond_2
     move v6, v3
 
-    .line 2059
+    .line 1108
     .restart local v6       #scrollDelta:I
     const/16 v7, 0x11
 
@@ -1495,22 +1530,22 @@
 
     if-ge v7, v6, :cond_4
 
-    .line 2061
+    .line 1109
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getScrollX()I
 
     move-result v6
 
-    .line 2083
+    .line 1120
     :cond_3
     :goto_2
     if-nez v6, :cond_5
 
     move v7, v9
 
-    .line 2085
+    .line 1121
     goto :goto_1
 
-    .line 2063
+    .line 1110
     :cond_4
     if-ne p1, v10, :cond_3
 
@@ -1520,7 +1555,7 @@
 
     if-lez v7, :cond_3
 
-    .line 2067
+    .line 1112
     invoke-virtual {p0, v9}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
@@ -1529,7 +1564,7 @@
 
     move-result v1
 
-    .line 2071
+    .line 1114
     .local v1, daRight:I
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getScrollX()I
 
@@ -1541,18 +1576,18 @@
 
     add-int v5, v7, v8
 
-    .line 2075
+    .line 1116
     .local v5, screenRight:I
     sub-int v7, v1, v5
 
     if-ge v7, v3, :cond_3
 
-    .line 2077
+    .line 1117
     sub-int v6, v1, v5
 
     goto :goto_2
 
-    .line 2089
+    .line 1123
     .end local v1           #daRight:I
     .end local v5           #screenRight:I
     :cond_5
@@ -1575,12 +1610,12 @@
     .locals 2
 
     .prologue
-    .line 2267
+    .line 1212
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
     move-result v0
 
-    .line 2269
+    .line 1213
     .local v0, count:I
     if-nez v0, :cond_0
 
@@ -1611,7 +1646,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 2339
+    .line 1248
     iget-object v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v5}, Landroid/widget/Scroller;->computeScrollOffset()Z
@@ -1620,14 +1655,14 @@
 
     if-eqz v5, :cond_4
 
-    .line 2373
+    .line 1265
     iget v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollX:I
 
-    .line 2375
+    .line 1266
     .local v1, oldX:I
     iget v2, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollY:I
 
-    .line 2377
+    .line 1267
     .local v2, oldY:I
     iget-object v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScroller:Landroid/widget/Scroller;
 
@@ -1635,7 +1670,7 @@
 
     move-result v3
 
-    .line 2379
+    .line 1268
     .local v3, x:I
     iget-object v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScroller:Landroid/widget/Scroller;
 
@@ -1643,7 +1678,7 @@
 
     move-result v4
 
-    .line 2381
+    .line 1269
     .local v4, y:I
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
@@ -1651,12 +1686,12 @@
 
     if-lez v5, :cond_3
 
-    .line 2383
+    .line 1270
     invoke-virtual {p0, v6}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2385
+    .line 1271
     .local v0, child:Landroid/view/View;
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getWidth()I
 
@@ -1680,7 +1715,7 @@
 
     iput v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollX:I
 
-    .line 2387
+    .line 1272
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getHeight()I
 
     move-result v5
@@ -1703,7 +1738,7 @@
 
     iput v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollY:I
 
-    .line 2397
+    .line 1277
     .end local v0           #child:Landroid/view/View;
     :goto_0
     iget v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollX:I
@@ -1714,7 +1749,7 @@
 
     if-eq v2, v5, :cond_1
 
-    .line 2399
+    .line 1278
     :cond_0
     iget v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollX:I
 
@@ -1722,11 +1757,11 @@
 
     invoke-virtual {p0, v5, v6, v1, v2}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->onScrollChanged(IIII)V
 
-    .line 2407
+    .line 1282
     :cond_1
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->postInvalidate()V
 
-    .line 2421
+    .line 1289
     .end local v1           #oldX:I
     .end local v2           #oldY:I
     .end local v3           #x:I
@@ -1735,7 +1770,7 @@
     :goto_1
     return-void
 
-    .line 2391
+    .line 1274
     .restart local v1       #oldX:I
     .restart local v2       #oldY:I
     .restart local v3       #x:I
@@ -1743,12 +1778,12 @@
     :cond_3
     iput v3, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollX:I
 
-    .line 2393
+    .line 1275
     iput v4, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollY:I
 
     goto :goto_0
 
-    .line 2411
+    .line 1284
     .end local v1           #oldX:I
     .end local v2           #oldY:I
     .end local v3           #x:I
@@ -1758,10 +1793,10 @@
 
     if-eqz v5, :cond_2
 
-    .line 2413
+    .line 1285
     iput-boolean v6, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsFlinging:Z
 
-    .line 2415
+    .line 1286
     invoke-direct {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->onScrollEndDetected()V
 
     goto :goto_1
@@ -1774,7 +1809,7 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 2527
+    .line 1342
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
     move-result v6
@@ -1783,31 +1818,31 @@
 
     move v6, v7
 
-    .line 2641
+    .line 1399
     :goto_0
     return v6
 
-    .line 2531
+    .line 1344
     :cond_0
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getWidth()I
 
     move-result v5
 
-    .line 2533
+    .line 1345
     .local v5, width:I
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getScrollX()I
 
     move-result v2
 
-    .line 2535
+    .line 1346
     .local v2, screenLeft:I
     add-int v3, v2, v5
 
-    .line 2569
+    .line 1363
     .local v3, screenRight:I
     const/4 v4, 0x0
 
-    .line 2573
+    .line 1365
     .local v4, scrollXDelta:I
     iget v6, p1, Landroid/graphics/Rect;->right:I
 
@@ -1817,21 +1852,21 @@
 
     if-le v6, v2, :cond_3
 
-    .line 2583
+    .line 1370
     invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
 
     move-result v6
 
     if-le v6, v5, :cond_2
 
-    .line 2587
+    .line 1372
     iget v6, p1, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v6, v2
 
     add-int/2addr v4, v6
 
-    .line 2601
+    .line 1379
     :goto_1
     invoke-virtual {p0, v7}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildAt(I)Landroid/view/View;
 
@@ -1841,11 +1876,11 @@
 
     move-result v1
 
-    .line 2603
+    .line 1380
     .local v1, right:I
     sub-int v0, v1, v3
 
-    .line 2605
+    .line 1381
     .local v0, distanceToRight:I
     invoke-static {v4, v0}, Ljava/lang/Math;->min(II)I
 
@@ -1857,10 +1892,10 @@
     :goto_2
     move v6, v4
 
-    .line 2641
+    .line 1399
     goto :goto_0
 
-    .line 2593
+    .line 1375
     :cond_2
     iget v6, p1, Landroid/graphics/Rect;->right:I
 
@@ -1870,7 +1905,7 @@
 
     goto :goto_1
 
-    .line 2609
+    .line 1383
     :cond_3
     iget v6, p1, Landroid/graphics/Rect;->left:I
 
@@ -1880,21 +1915,21 @@
 
     if-ge v6, v3, :cond_1
 
-    .line 2619
+    .line 1388
     invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
 
     move-result v6
 
     if-le v6, v5, :cond_4
 
-    .line 2623
+    .line 1390
     iget v6, p1, Landroid/graphics/Rect;->right:I
 
     sub-int v6, v3, v6
 
     sub-int/2addr v4, v6
 
-    .line 2637
+    .line 1397
     :goto_3
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getScrollX()I
 
@@ -1908,7 +1943,7 @@
 
     goto :goto_2
 
-    .line 2629
+    .line 1393
     :cond_4
     iget v6, p1, Landroid/graphics/Rect;->left:I
 
@@ -1924,19 +1959,19 @@
     .parameter "event"
 
     .prologue
-    .line 1129
+    .line 628
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
-    .line 1131
+    .line 629
     .local v0, handled:Z
     if-eqz v0, :cond_0
 
-    .line 1133
+    .line 630
     const/4 v1, 0x1
 
-    .line 1137
+    .line 632
     :goto_0
     return v1
 
@@ -1959,37 +1994,37 @@
 
     const/16 v4, 0x42
 
-    .line 1161
+    .line 644
     iget-object v3, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {v3}, Landroid/graphics/Rect;->setEmpty()V
 
-    .line 1165
+    .line 646
     invoke-direct {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->canScroll()Z
 
     move-result v3
 
     if-nez v3, :cond_3
 
-    .line 1167
+    .line 647
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->isFocused()Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    .line 1169
+    .line 648
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->findFocus()Landroid/view/View;
 
     move-result-object v0
 
-    .line 1171
+    .line 649
     .local v0, currentFocused:Landroid/view/View;
     if-ne v0, p0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 1173
+    .line 650
     :cond_0
     invoke-static {}, Landroid/view/FocusFinder;->getInstance()Landroid/view/FocusFinder;
 
@@ -1999,7 +2034,7 @@
 
     move-result-object v2
 
-    .line 1177
+    .line 652
     .local v2, nextFocused:Landroid/view/View;
     if-eqz v2, :cond_1
 
@@ -2013,7 +2048,7 @@
 
     const/4 v3, 0x1
 
-    .line 1235
+    .line 681
     .end local v0           #currentFocused:Landroid/view/View;
     .end local v2           #nextFocused:Landroid/view/View;
     :goto_0
@@ -2024,7 +2059,7 @@
     :cond_1
     move v3, v6
 
-    .line 1177
+    .line 652
     goto :goto_0
 
     .end local v0           #currentFocused:Landroid/view/View;
@@ -2032,14 +2067,14 @@
     :cond_2
     move v3, v6
 
-    .line 1183
+    .line 655
     goto :goto_0
 
-    .line 1189
+    .line 658
     :cond_3
     const/4 v1, 0x0
 
-    .line 1191
+    .line 659
     .local v1, handled:Z
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
@@ -2047,7 +2082,7 @@
 
     if-nez v3, :cond_4
 
-    .line 1193
+    .line 660
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v3
@@ -2058,10 +2093,10 @@
     :goto_1
     move v3, v1
 
-    .line 1235
+    .line 681
     goto :goto_0
 
-    .line 1197
+    .line 662
     :sswitch_0
     invoke-virtual {p1}, Landroid/view/KeyEvent;->isAltPressed()Z
 
@@ -2069,23 +2104,23 @@
 
     if-nez v3, :cond_5
 
-    .line 1199
+    .line 663
     invoke-virtual {p0, v5}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->arrowScroll(I)Z
 
     move-result v1
 
     goto :goto_1
 
-    .line 1203
+    .line 665
     :cond_5
     invoke-virtual {p0, v5}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->fullScroll(I)Z
 
     move-result v1
 
-    .line 1207
+    .line 667
     goto :goto_1
 
-    .line 1211
+    .line 669
     :sswitch_1
     invoke-virtual {p1}, Landroid/view/KeyEvent;->isAltPressed()Z
 
@@ -2093,23 +2128,23 @@
 
     if-nez v3, :cond_6
 
-    .line 1213
+    .line 670
     invoke-virtual {p0, v4}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->arrowScroll(I)Z
 
     move-result v1
 
     goto :goto_1
 
-    .line 1217
+    .line 672
     :cond_6
     invoke-virtual {p0, v4}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->fullScroll(I)Z
 
     move-result v1
 
-    .line 1221
+    .line 674
     goto :goto_1
 
-    .line 1225
+    .line 676
     :sswitch_2
     invoke-virtual {p1}, Landroid/view/KeyEvent;->isShiftPressed()Z
 
@@ -2129,7 +2164,7 @@
 
     goto :goto_2
 
-    .line 1193
+    .line 660
     :sswitch_data_0
     .sparse-switch
         0x15 -> :sswitch_0
@@ -2147,14 +2182,14 @@
 
     const/4 v4, 0x0
 
-    .line 2881
+    .line 1519
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
     move-result v0
 
     if-lez v0, :cond_2
 
-    .line 2883
+    .line 1520
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getWidth()I
 
     move-result v0
@@ -2167,7 +2202,7 @@
 
     sub-int v12, v0, v1
 
-    .line 2885
+    .line 1521
     .local v12, width:I
     invoke-virtual {p0, v4}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildAt(I)Landroid/view/View;
 
@@ -2177,7 +2212,7 @@
 
     move-result v11
 
-    .line 2889
+    .line 1523
     .local v11, right:I
     iget-object v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScroller:Landroid/widget/Scroller;
 
@@ -2197,20 +2232,20 @@
 
     invoke-virtual/range {v0 .. v8}, Landroid/widget/Scroller;->fling(IIIIIIII)V
 
-    .line 2891
+    .line 1524
     iput-boolean v13, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsFlinging:Z
 
-    .line 2895
+    .line 1526
     if-lez p1, :cond_3
 
     move v9, v13
 
-    .line 2896
+    .line 1527
     .local v9, movingRight:Z
     :goto_0
     iput-boolean v9, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mMovingRight:Z
 
-    .line 2897
+    .line 1528
     iget-object v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->getFinalX()I
@@ -2225,14 +2260,14 @@
 
     move-result-object v10
 
-    .line 2903
+    .line 1531
     .local v10, newFocused:Landroid/view/View;
     if-nez v10, :cond_0
 
-    .line 2905
+    .line 1532
     move-object v10, p0
 
-    .line 2911
+    .line 1535
     :cond_0
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->findFocus()Landroid/view/View;
 
@@ -2251,17 +2286,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 2915
+    .line 1537
     iput-boolean v13, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollViewMovedFocus:Z
 
-    .line 2917
+    .line 1538
     iput-boolean v4, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollViewMovedFocus:Z
 
-    .line 2923
+    .line 1541
     :cond_1
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->invalidate()V
 
-    .line 2927
+    .line 1543
     .end local v9           #movingRight:Z
     .end local v10           #newFocused:Landroid/view/View;
     .end local v11           #right:I
@@ -2274,10 +2309,10 @@
     :cond_3
     move v9, v4
 
-    .line 2895
+    .line 1526
     goto :goto_0
 
-    .line 2911
+    .line 1535
     .restart local v9       #movingRight:Z
     .restart local v10       #newFocused:Landroid/view/View;
     :cond_4
@@ -2293,7 +2328,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1891
+    .line 1024
     const/16 v4, 0x42
 
     if-ne p1, v4, :cond_1
@@ -2302,42 +2337,42 @@
 
     move v1, v4
 
-    .line 1893
+    .line 1025
     .local v1, right:Z
     :goto_0
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getWidth()I
 
     move-result v3
 
-    .line 1897
+    .line 1027
     .local v3, width:I
     iget-object v4, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     iput v5, v4, Landroid/graphics/Rect;->left:I
 
-    .line 1899
+    .line 1028
     iget-object v4, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     iput v3, v4, Landroid/graphics/Rect;->right:I
 
-    .line 1903
+    .line 1030
     if-eqz v1, :cond_0
 
-    .line 1905
+    .line 1031
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
     move-result v0
 
-    .line 1907
+    .line 1032
     .local v0, count:I
     if-lez v0, :cond_0
 
-    .line 1909
+    .line 1033
     invoke-virtual {p0, v5}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 1911
+    .line 1034
     .local v2, view:Landroid/view/View;
     iget-object v4, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
@@ -2347,7 +2382,7 @@
 
     iput v5, v4, Landroid/graphics/Rect;->right:I
 
-    .line 1913
+    .line 1035
     iget-object v4, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     iget-object v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
@@ -2358,7 +2393,7 @@
 
     iput v5, v4, Landroid/graphics/Rect;->left:I
 
-    .line 1921
+    .line 1039
     .end local v0           #count:I
     .end local v2           #view:Landroid/view/View;
     :cond_0
@@ -2381,7 +2416,7 @@
     :cond_1
     move v1, v5
 
-    .line 1891
+    .line 1024
     goto :goto_0
 .end method
 
@@ -2389,33 +2424,33 @@
     .locals 3
 
     .prologue
-    .line 747
+    .line 436
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 749
+    .line 437
     const/4 v1, 0x0
 
-    .line 765
+    .line 445
     :goto_0
     return v1
 
-    .line 755
+    .line 440
     :cond_0
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getHorizontalFadingEdgeLength()I
 
     move-result v0
 
-    .line 757
+    .line 441
     .local v0, length:I
     iget v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollX:I
 
     if-ge v1, v0, :cond_1
 
-    .line 759
+    .line 442
     iget v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollX:I
 
     int-to-float v1, v1
@@ -2426,7 +2461,7 @@
 
     goto :goto_0
 
-    .line 765
+    .line 445
     :cond_1
     const/high16 v1, 0x3f80
 
@@ -2437,7 +2472,7 @@
     .locals 3
 
     .prologue
-    .line 813
+    .line 469
     const/high16 v0, 0x3f00
 
     iget v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mRight:I
@@ -2459,27 +2494,27 @@
     .locals 5
 
     .prologue
-    .line 775
+    .line 450
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 777
+    .line 451
     const/4 v3, 0x0
 
-    .line 797
+    .line 461
     :goto_0
     return v3
 
-    .line 783
+    .line 454
     :cond_0
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getHorizontalFadingEdgeLength()I
 
     move-result v0
 
-    .line 785
+    .line 455
     .local v0, length:I
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getWidth()I
 
@@ -2489,7 +2524,7 @@
 
     sub-int v1, v3, v4
 
-    .line 787
+    .line 456
     .local v1, rightEdge:I
     const/4 v3, 0x0
 
@@ -2507,11 +2542,11 @@
 
     sub-int v2, v3, v1
 
-    .line 789
+    .line 457
     .local v2, span:I
     if-ge v2, v0, :cond_1
 
-    .line 791
+    .line 458
     int-to-float v3, v2
 
     int-to-float v4, v0
@@ -2520,31 +2555,11 @@
 
     goto :goto_0
 
-    .line 797
+    .line 461
     :cond_1
     const/high16 v3, 0x3f80
 
     goto :goto_0
-.end method
-
-.method public isFillViewport()Z
-    .locals 1
-
-    .prologue
-    .line 951
-    iget-boolean v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mFillViewport:Z
-
-    return v0
-.end method
-
-.method public isSmoothScrollingEnabled()Z
-    .locals 1
-
-    .prologue
-    .line 993
-    iget-boolean v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mSmoothScrollingEnabled:Z
-
-    return v0
 .end method
 
 .method protected measureChild(Landroid/view/View;II)V
@@ -2556,12 +2571,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 2281
+    .line 1219
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
 
-    .line 2291
+    .line 1224
     .local v2, lp:Landroid/view/ViewGroup$LayoutParams;
     iget v3, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mPaddingTop:I
 
@@ -2575,17 +2590,17 @@
 
     move-result v0
 
-    .line 2297
+    .line 1227
     .local v0, childHeightMeasureSpec:I
     invoke-static {v5, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v1
 
-    .line 2301
+    .line 1229
     .local v1, childWidthMeasureSpec:I
     invoke-virtual {p1, v1, v0}, Landroid/view/View;->measure(II)V
 
-    .line 2303
+    .line 1230
     return-void
 .end method
 
@@ -2598,14 +2613,14 @@
     .parameter "heightUsed"
 
     .prologue
-    .line 2313
+    .line 1235
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
 
     check-cast v2, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 2317
+    .line 1237
     .local v2, lp:Landroid/view/ViewGroup$MarginLayoutParams;
     iget v3, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mPaddingTop:I
 
@@ -2629,7 +2644,7 @@
 
     move-result v0
 
-    .line 2323
+    .line 1240
     .local v0, childHeightMeasureSpec:I
     iget v3, v2, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
@@ -2643,11 +2658,11 @@
 
     move-result v1
 
-    .line 2329
+    .line 1243
     .local v1, childWidthMeasureSpec:I
     invoke-virtual {p1, v1, v0}, Landroid/view/View;->measure(II)V
 
-    .line 2331
+    .line 1244
     return-void
 .end method
 
@@ -2657,7 +2672,7 @@
     .parameter "hasFocus"
 
     .prologue
-    .line 607
+    .line 364
     const-string v0, "HorizontalScrollView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2696,12 +2711,12 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 609
+    .line 365
     if-ne p1, p0, :cond_0
 
     if-eqz p2, :cond_0
 
-    .line 611
+    .line 366
     iget-object v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->this$0:Lcom/android/email/winset/TwTabWidgetWrapper;
 
     invoke-static {v0}, Lcom/android/email/winset/TwTabWidgetWrapper;->access$200(Lcom/android/email/winset/TwTabWidgetWrapper;)Lcom/android/email/winset/TwTabWidget;
@@ -2710,7 +2725,7 @@
 
     invoke-virtual {v0}, Lcom/android/email/winset/TwTabWidget;->requestFocus()Z
 
-    .line 617
+    .line 369
     :cond_0
     return-void
 .end method
@@ -2724,12 +2739,12 @@
 
     const/4 v7, 0x0
 
-    .line 1267
+    .line 697
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 1269
+    .line 698
     .local v0, action:I
     const/4 v5, 0x2
 
@@ -2741,11 +2756,11 @@
 
     move v5, v8
 
-    .line 1401
+    .line 779
     :goto_0
     return v5
 
-    .line 1277
+    .line 702
     :cond_0
     invoke-direct {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->canScroll()Z
 
@@ -2753,31 +2768,31 @@
 
     if-nez v5, :cond_1
 
-    .line 1279
+    .line 703
     iput-boolean v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsBeingDragged:Z
 
     move v5, v7
 
-    .line 1281
+    .line 704
     goto :goto_0
 
-    .line 1287
+    .line 707
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v3
 
-    .line 1291
+    .line 709
     .local v3, x:F
     packed-switch v0, :pswitch_data_0
 
-    .line 1401
+    .line 779
     :goto_1
     iget-boolean v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsBeingDragged:Z
 
     goto :goto_0
 
-    .line 1313
+    .line 720
     :pswitch_0
     iget v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mLastMotionX:F
 
@@ -2789,16 +2804,16 @@
 
     float-to-int v4, v5
 
-    .line 1315
+    .line 721
     .local v4, xDiff:I
     iget v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTouchSlop:I
 
     if-le v4, v5, :cond_2
 
-    .line 1317
+    .line 722
     iput-boolean v8, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsBeingDragged:Z
 
-    .line 1319
+    .line 723
     iget-object v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mParent:Landroid/view/ViewParent;
 
     if-eqz v5, :cond_2
@@ -2807,18 +2822,18 @@
 
     invoke-interface {v5, v8}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1323
+    .line 725
     :cond_2
     iput-boolean v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsFlinging:Z
 
     goto :goto_1
 
-    .line 1333
+    .line 730
     .end local v4           #xDiff:I
     :pswitch_1
     iput v3, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mLastMotionX:F
 
-    .line 1347
+    .line 738
     iget-object v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v5}, Landroid/widget/Scroller;->isFinished()Z
@@ -2827,34 +2842,34 @@
 
     if-eqz v5, :cond_3
 
-    .line 1349
+    .line 740
     iput-boolean v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsBeingDragged:Z
 
     goto :goto_1
 
-    .line 1353
+    .line 744
     :cond_3
     iget-boolean v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mMovingRight:Z
 
     if-nez v5, :cond_5
 
-    .line 1354
+    .line 745
     iget v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollX:I
 
     if-lez v5, :cond_4
 
-    .line 1355
+    .line 746
     iput-boolean v8, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsBeingDragged:Z
 
     goto :goto_1
 
-    .line 1359
+    .line 750
     :cond_4
     iput-boolean v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsBeingDragged:Z
 
     goto :goto_1
 
-    .line 1364
+    .line 755
     :cond_5
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getWidth()I
 
@@ -2864,7 +2879,7 @@
 
     sub-int v2, v5, v6
 
-    .line 1365
+    .line 756
     .local v2, rightEdge:I
     invoke-virtual {p0, v7}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildAt(I)Landroid/view/View;
 
@@ -2880,22 +2895,22 @@
 
     sub-int v1, v5, v2
 
-    .line 1366
+    .line 757
     .local v1, availableToScroll:I
     if-lez v1, :cond_6
 
-    .line 1367
+    .line 758
     iput-boolean v8, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsBeingDragged:Z
 
     goto :goto_1
 
-    .line 1371
+    .line 762
     :cond_6
     iput-boolean v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsBeingDragged:Z
 
     goto :goto_1
 
-    .line 1385
+    .line 771
     .end local v1           #availableToScroll:I
     .end local v2           #rightEdge:I
     :pswitch_2
@@ -2903,7 +2918,7 @@
 
     goto :goto_1
 
-    .line 1291
+    .line 709
     nop
 
     :pswitch_data_0
@@ -2924,15 +2939,15 @@
     .parameter "b"
 
     .prologue
-    .line 2781
+    .line 1469
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 2783
+    .line 1470
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsLayoutDirty:Z
 
-    .line 2787
+    .line 1472
     iget-object v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mChildToScrollTo:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -2945,25 +2960,25 @@
 
     if-eqz v0, :cond_0
 
-    .line 2789
+    .line 1473
     iget-object v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mChildToScrollTo:Landroid/view/View;
 
     invoke-direct {p0, v0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->scrollToChild(Landroid/view/View;)V
 
-    .line 2793
+    .line 1475
     :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mChildToScrollTo:Landroid/view/View;
 
-    .line 2799
+    .line 1478
     iget v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollX:I
 
     iget v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollY:I
 
     invoke-virtual {p0, v0, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->scrollTo(II)V
 
-    .line 2801
+    .line 1479
     return-void
 .end method
 
@@ -2973,7 +2988,7 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 1023
+    .line 574
     const/4 v3, 0x0
 
     .local v3, i:I
@@ -2984,26 +2999,26 @@
 
     if-ge v3, v7, :cond_0
 
-    .line 1025
+    .line 575
     invoke-virtual {p0, v3}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1027
+    .line 576
     .local v0, child:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->forceLayout()V
 
-    .line 1023
+    .line 574
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1033
+    .line 579
     .end local v0           #child:Landroid/view/View;
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 1055
+    .line 590
     const/4 v3, 0x0
 
     :goto_1
@@ -3013,66 +3028,66 @@
 
     if-ge v3, v7, :cond_1
 
-    .line 1057
+    .line 591
     invoke-virtual {p0, v3}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1059
+    .line 592
     .restart local v0       #child:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->forceLayout()V
 
-    .line 1055
+    .line 590
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 1065
+    .line 595
     .end local v0           #child:Landroid/view/View;
     :cond_1
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 1069
+    .line 597
     iget-boolean v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mFillViewport:Z
 
     if-nez v7, :cond_3
 
-    .line 1119
+    .line 623
     :cond_2
     :goto_2
     return-void
 
-    .line 1077
+    .line 601
     :cond_3
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v6
 
-    .line 1079
+    .line 602
     .local v6, widthMode:I
     if-eqz v6, :cond_2
 
-    .line 1087
+    .line 606
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
     move-result v7
 
     if-lez v7, :cond_2
 
-    .line 1089
+    .line 607
     const/4 v7, 0x0
 
     invoke-virtual {p0, v7}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1091
+    .line 608
     .restart local v0       #child:Landroid/view/View;
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getMeasuredWidth()I
 
     move-result v5
 
-    .line 1093
+    .line 609
     .local v5, width:I
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -3080,14 +3095,14 @@
 
     if-ge v7, v5, :cond_2
 
-    .line 1095
+    .line 610
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
 
     check-cast v4, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1099
+    .line 612
     .local v4, lp:Landroid/widget/FrameLayout$LayoutParams;
     iget v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mPaddingTop:I
 
@@ -3101,25 +3116,25 @@
 
     move-result v1
 
-    .line 1103
+    .line 614
     .local v1, childHeightMeasureSpec:I
     iget v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mPaddingLeft:I
 
     sub-int/2addr v5, v7
 
-    .line 1105
+    .line 615
     iget v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mPaddingRight:I
 
     sub-int/2addr v5, v7
 
-    .line 1107
+    .line 616
     const/high16 v7, 0x4000
 
     invoke-static {v5, v7}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v2
 
-    .line 1111
+    .line 618
     .local v2, childWidthMeasureSpec:I
     invoke-virtual {v0, v2, v1}, Landroid/view/View;->measure(II)V
 
@@ -3134,15 +3149,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2701
+    .line 1429
     const/4 v1, 0x2
 
     if-ne p1, v1, :cond_1
 
-    .line 2703
+    .line 1430
     const/16 p1, 0x42
 
-    .line 2713
+    .line 1435
     :cond_0
     :goto_0
     if-nez p2, :cond_2
@@ -3159,30 +3174,30 @@
 
     move-object v0, v1
 
-    .line 2723
+    .line 1440
     .local v0, nextFocus:Landroid/view/View;
     :goto_1
     if-nez v0, :cond_3
 
     move v1, v3
 
-    .line 2739
+    .line 1448
     :goto_2
     return v1
 
-    .line 2705
+    .line 1431
     .end local v0           #nextFocus:Landroid/view/View;
     :cond_1
     const/4 v1, 0x1
 
     if-ne p1, v1, :cond_0
 
-    .line 2707
+    .line 1432
     const/16 p1, 0x11
 
     goto :goto_0
 
-    .line 2713
+    .line 1435
     :cond_2
     invoke-static {}, Landroid/view/FocusFinder;->getInstance()Landroid/view/FocusFinder;
 
@@ -3196,7 +3211,7 @@
 
     goto :goto_1
 
-    .line 2731
+    .line 1444
     .restart local v0       #nextFocus:Landroid/view/View;
     :cond_3
     invoke-direct {p0, v0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->isOffScreen(Landroid/view/View;)Z
@@ -3207,10 +3222,10 @@
 
     move v1, v3
 
-    .line 2733
+    .line 1445
     goto :goto_2
 
-    .line 2739
+    .line 1448
     :cond_4
     invoke-virtual {v0, p1, p2}, Landroid/view/View;->requestFocus(ILandroid/graphics/Rect;)Z
 
@@ -3227,26 +3242,26 @@
     .parameter "oldh"
 
     .prologue
-    .line 2809
+    .line 1483
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
 
-    .line 2813
+    .line 1485
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->findFocus()Landroid/view/View;
 
     move-result-object v0
 
-    .line 2815
+    .line 1486
     .local v0, currentFocused:Landroid/view/View;
     if-eqz v0, :cond_0
 
     if-ne p0, v0, :cond_1
 
-    .line 2837
+    .line 1497
     :cond_0
     :goto_0
     return-void
 
-    .line 2821
+    .line 1489
     :cond_1
     iget v3, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mRight:I
 
@@ -3254,7 +3269,7 @@
 
     sub-int v1, v3, v4
 
-    .line 2825
+    .line 1491
     .local v1, maxJump:I
     invoke-direct {p0, v0, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->isWithinDeltaOfScreen(Landroid/view/View;I)Z
 
@@ -3262,24 +3277,24 @@
 
     if-eqz v3, :cond_0
 
-    .line 2827
+    .line 1492
     iget-object v3, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 2829
+    .line 1493
     iget-object v3, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v0, v3}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 2831
+    .line 1494
     iget-object v3, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v3}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->computeScrollDeltaToGetChildRectOnScreen(Landroid/graphics/Rect;)I
 
     move-result v2
 
-    .line 2833
+    .line 1495
     .local v2, scrollDelta:I
     invoke-direct {p0, v2}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->doScrollX(I)V
 
@@ -3295,7 +3310,7 @@
 
     const/4 v9, 0x0
 
-    .line 1413
+    .line 785
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v7
@@ -3310,11 +3325,11 @@
 
     move v7, v9
 
-    .line 1549
+    .line 853
     :goto_0
     return v7
 
-    .line 1425
+    .line 791
     :cond_0
     invoke-direct {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->canScroll()Z
 
@@ -3324,40 +3339,40 @@
 
     move v7, v9
 
-    .line 1427
+    .line 792
     goto :goto_0
 
-    .line 1433
+    .line 795
     :cond_1
     iget-object v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v7, :cond_2
 
-    .line 1435
+    .line 796
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v7
 
     iput-object v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 1439
+    .line 798
     :cond_2
     iget-object v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v7, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 1443
+    .line 800
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 1445
+    .line 801
     .local v0, action:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v6
 
-    .line 1449
+    .line 803
     .local v6, x:F
     packed-switch v0, :pswitch_data_0
 
@@ -3365,10 +3380,10 @@
     :goto_1
     move v7, v10
 
-    .line 1549
+    .line 853
     goto :goto_0
 
-    .line 1461
+    .line 809
     :pswitch_0
     iget-object v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScroller:Landroid/widget/Scroller;
 
@@ -3378,21 +3393,21 @@
 
     if-nez v7, :cond_4
 
-    .line 1463
+    .line 810
     iget-object v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v7}, Landroid/widget/Scroller;->abortAnimation()V
 
-    .line 1469
+    .line 813
     :cond_4
     iput-boolean v9, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsFlinging:Z
 
-    .line 1475
+    .line 816
     iput v6, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mLastMotionX:F
 
     goto :goto_1
 
-    .line 1483
+    .line 820
     :pswitch_1
     iget v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mLastMotionX:F
 
@@ -3400,28 +3415,28 @@
 
     float-to-int v2, v7
 
-    .line 1485
+    .line 821
     .local v2, deltaX:I
     iput v6, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mLastMotionX:F
 
-    .line 1489
+    .line 823
     if-gez v2, :cond_5
 
-    .line 1491
+    .line 824
     iget v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollX:I
 
     if-lez v7, :cond_3
 
-    .line 1493
+    .line 825
     invoke-virtual {p0, v2, v9}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->scrollBy(II)V
 
     goto :goto_1
 
-    .line 1497
+    .line 827
     :cond_5
     if-lez v2, :cond_3
 
-    .line 1499
+    .line 828
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getWidth()I
 
     move-result v7
@@ -3430,7 +3445,7 @@
 
     sub-int v4, v7, v8
 
-    .line 1501
+    .line 829
     .local v4, rightEdge:I
     invoke-virtual {p0, v9}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildAt(I)Landroid/view/View;
 
@@ -3446,11 +3461,11 @@
 
     sub-int v1, v7, v4
 
-    .line 1503
+    .line 830
     .local v1, availableToScroll:I
     if-lez v1, :cond_3
 
-    .line 1505
+    .line 831
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v7
@@ -3459,14 +3474,14 @@
 
     goto :goto_1
 
-    .line 1515
+    .line 836
     .end local v1           #availableToScroll:I
     .end local v2           #deltaX:I
     .end local v4           #rightEdge:I
     :pswitch_2
     iget-object v5, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 1517
+    .line 837
     .local v5, velocityTracker:Landroid/view/VelocityTracker;
     const/16 v7, 0x3e8
 
@@ -3476,14 +3491,14 @@
 
     invoke-virtual {v5, v7, v8}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
-    .line 1519
+    .line 838
     invoke-virtual {v5}, Landroid/view/VelocityTracker;->getXVelocity()F
 
     move-result v7
 
     float-to-int v3, v7
 
-    .line 1523
+    .line 840
     .local v3, initialVelocity:I
     invoke-static {v3}, Ljava/lang/Math;->abs(I)I
 
@@ -3499,42 +3514,42 @@
 
     if-lez v7, :cond_6
 
-    .line 1525
+    .line 841
     neg-int v7, v3
 
     invoke-virtual {p0, v7}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->fling(I)V
 
-    .line 1527
+    .line 842
     iput-boolean v10, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsFlinging:Z
 
-    .line 1539
+    .line 848
     :goto_2
     iget-object v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v7, :cond_3
 
-    .line 1541
+    .line 849
     iget-object v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v7}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 1543
+    .line 850
     const/4 v7, 0x0
 
     iput-object v7, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     goto :goto_1
 
-    .line 1531
+    .line 844
     :cond_6
     iput-boolean v9, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsFlinging:Z
 
-    .line 1533
+    .line 845
     invoke-direct {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->onScrollEndDetected()V
 
     goto :goto_2
 
-    .line 1449
+    .line 803
     nop
 
     :pswitch_data_0
@@ -3552,7 +3567,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 1819
+    .line 988
     const/16 v4, 0x42
 
     if-ne p1, v4, :cond_1
@@ -3561,18 +3576,18 @@
 
     move v1, v4
 
-    .line 1821
+    .line 989
     .local v1, right:Z
     :goto_0
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getWidth()I
 
     move-result v3
 
-    .line 1825
+    .line 991
     .local v3, width:I
     if-eqz v1, :cond_2
 
-    .line 1827
+    .line 992
     iget-object v4, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getScrollX()I
@@ -3583,21 +3598,21 @@
 
     iput v5, v4, Landroid/graphics/Rect;->left:I
 
-    .line 1829
+    .line 993
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
     move-result v0
 
-    .line 1831
+    .line 994
     .local v0, count:I
     if-lez v0, :cond_0
 
-    .line 1833
+    .line 995
     invoke-virtual {p0, v6}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 1835
+    .line 996
     .local v2, view:Landroid/view/View;
     iget-object v4, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
@@ -3611,7 +3626,7 @@
 
     if-le v4, v5, :cond_0
 
-    .line 1837
+    .line 997
     iget-object v4, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2}, Landroid/view/View;->getRight()I
@@ -3622,7 +3637,7 @@
 
     iput v5, v4, Landroid/graphics/Rect;->left:I
 
-    .line 1855
+    .line 1006
     .end local v0           #count:I
     .end local v2           #view:Landroid/view/View;
     :cond_0
@@ -3637,7 +3652,7 @@
 
     iput v5, v4, Landroid/graphics/Rect;->right:I
 
-    .line 1859
+    .line 1008
     iget-object v4, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->left:I
@@ -3657,10 +3672,10 @@
     :cond_1
     move v1, v6
 
-    .line 1819
+    .line 988
     goto :goto_0
 
-    .line 1845
+    .line 1001
     .restart local v1       #right:Z
     .restart local v3       #width:I
     :cond_2
@@ -3674,14 +3689,14 @@
 
     iput v5, v4, Landroid/graphics/Rect;->left:I
 
-    .line 1847
+    .line 1002
     iget-object v4, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->left:I
 
     if-gez v4, :cond_0
 
-    .line 1849
+    .line 1003
     iget-object v4, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mTempRect:Landroid/graphics/Rect;
 
     iput v6, v4, Landroid/graphics/Rect;->left:I
@@ -3695,28 +3710,28 @@
     .parameter "focused"
 
     .prologue
-    .line 2651
+    .line 1404
     iget-boolean v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollViewMovedFocus:Z
 
     if-nez v0, :cond_0
 
-    .line 2653
+    .line 1405
     iget-boolean v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsLayoutDirty:Z
 
     if-nez v0, :cond_1
 
-    .line 2655
+    .line 1406
     invoke-direct {p0, p2}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->scrollToChild(Landroid/view/View;)V
 
-    .line 2667
+    .line 1412
     :cond_0
     :goto_0
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
 
-    .line 2669
+    .line 1413
     return-void
 
-    .line 2661
+    .line 1409
     :cond_1
     iput-object p2, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mChildToScrollTo:Landroid/view/View;
 
@@ -3730,7 +3745,7 @@
     .parameter "immediate"
 
     .prologue
-    .line 2753
+    .line 1455
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
     move-result v0
@@ -3753,7 +3768,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 2759
+    .line 1458
     invoke-direct {p0, p2, p3}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->scrollToChildRect(Landroid/graphics/Rect;Z)Z
 
     move-result v0
@@ -3765,15 +3780,15 @@
     .locals 1
 
     .prologue
-    .line 2769
+    .line 1463
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mIsLayoutDirty:Z
 
-    .line 2771
+    .line 1464
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 2773
+    .line 1465
     return-void
 .end method
 
@@ -3783,21 +3798,21 @@
     .parameter "y"
 
     .prologue
-    .line 2945
+    .line 1552
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildCount()I
 
     move-result v1
 
     if-lez v1, :cond_1
 
-    .line 2947
+    .line 1553
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2949
+    .line 1554
     .local v0, child:Landroid/view/View;
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getWidth()I
 
@@ -3819,7 +3834,7 @@
 
     move-result p1
 
-    .line 2951
+    .line 1555
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getHeight()I
 
     move-result v1
@@ -3840,7 +3855,7 @@
 
     move-result p2
 
-    .line 2953
+    .line 1556
     iget v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollX:I
 
     if-ne p1, v1, :cond_0
@@ -3849,11 +3864,11 @@
 
     if-eq p2, v1, :cond_1
 
-    .line 2955
+    .line 1557
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->scrollTo(II)V
 
-    .line 2961
+    .line 1560
     .end local v0           #child:Landroid/view/View;
     :cond_1
     return-void
@@ -3864,37 +3879,37 @@
     .parameter "v"
 
     .prologue
-    .line 377
+    .line 240
     if-nez p1, :cond_1
 
-    .line 411
+    .line 257
     :cond_0
     :goto_0
     return-void
 
-    .line 383
+    .line 243
     :cond_1
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 385
+    .line 244
     .local v0, rc:Landroid/graphics/Rect;
     invoke-virtual {p1, v0}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 391
+    .line 247
     invoke-virtual {p0, p1, v0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 395
+    .line 249
     invoke-virtual {p0, v0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->computeScrollDeltaToGetChildRectOnScreen(Landroid/graphics/Rect;)I
 
     move-result v1
 
-    .line 399
+    .line 251
     .local v1, scrollDelta:I
     if-eqz v1, :cond_0
 
-    .line 407
+    .line 255
     const/4 v2, 0x0
 
     invoke-virtual {p0, v1, v2}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->smoothScrollBy(II)V
@@ -3907,31 +3922,19 @@
     .parameter "fillViewport"
 
     .prologue
-    .line 973
+    .line 549
     iget-boolean v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mFillViewport:Z
 
     if-eq p1, v0, :cond_0
 
-    .line 975
+    .line 550
     iput-boolean p1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mFillViewport:Z
 
-    .line 977
+    .line 551
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->requestLayout()V
 
-    .line 981
+    .line 553
     :cond_0
-    return-void
-.end method
-
-.method public setSmoothScrollingEnabled(Z)V
-    .locals 0
-    .parameter "smoothScrollingEnabled"
-
-    .prologue
-    .line 1009
-    iput-boolean p1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mSmoothScrollingEnabled:Z
-
-    .line 1011
     return-void
 .end method
 
@@ -3941,7 +3944,7 @@
     .parameter "dy"
 
     .prologue
-    .line 2209
+    .line 1183
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v2
@@ -3950,7 +3953,7 @@
 
     sub-long v0, v2, v4
 
-    .line 2211
+    .line 1184
     .local v0, duration:J
     const-wide/16 v2, 0xfa
 
@@ -3958,7 +3961,7 @@
 
     if-lez v2, :cond_0
 
-    .line 2213
+    .line 1185
     iget-object v2, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScroller:Landroid/widget/Scroller;
 
     iget v3, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollX:I
@@ -3967,10 +3970,10 @@
 
     invoke-virtual {v2, v3, v4, p1, p2}, Landroid/widget/Scroller;->startScroll(IIII)V
 
-    .line 2215
+    .line 1186
     invoke-virtual {p0}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->invalidate()V
 
-    .line 2229
+    .line 1193
     :goto_0
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
@@ -3978,10 +3981,10 @@
 
     iput-wide v2, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mLastScroll:J
 
-    .line 2231
+    .line 1194
     return-void
 
-    .line 2219
+    .line 1188
     :cond_0
     iget-object v2, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScroller:Landroid/widget/Scroller;
 
@@ -3991,35 +3994,14 @@
 
     if-nez v2, :cond_1
 
-    .line 2221
+    .line 1189
     iget-object v2, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v2}, Landroid/widget/Scroller;->abortAnimation()V
 
-    .line 2225
+    .line 1191
     :cond_1
     invoke-virtual {p0, p1, p2}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->scrollBy(II)V
 
     goto :goto_0
-.end method
-
-.method public final smoothScrollTo(II)V
-    .locals 2
-    .parameter "x"
-    .parameter "y"
-
-    .prologue
-    .line 2249
-    iget v0, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollX:I
-
-    sub-int v0, p1, v0
-
-    iget v1, p0, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->mScrollY:I
-
-    sub-int v1, p2, v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->smoothScrollBy(II)V
-
-    .line 2251
-    return-void
 .end method

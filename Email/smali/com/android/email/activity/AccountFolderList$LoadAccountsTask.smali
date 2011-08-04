@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 617
+    .line 612
     iput-object p1, p0, Lcom/android/email/activity/AccountFolderList$LoadAccountsTask;->this$0:Lcom/android/email/activity/AccountFolderList;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -50,7 +50,7 @@
     .parameter "x1"
 
     .prologue
-    .line 617
+    .line 612
     invoke-direct {p0, p1}, Lcom/android/email/activity/AccountFolderList$LoadAccountsTask;-><init>(Lcom/android/email/activity/AccountFolderList;)V
 
     return-void
@@ -63,7 +63,7 @@
     .parameter "x0"
 
     .prologue
-    .line 617
+    .line 612
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -81,14 +81,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 622
+    .line 617
     iget-object v0, p0, Lcom/android/email/activity/AccountFolderList$LoadAccountsTask;->this$0:Lcom/android/email/activity/AccountFolderList;
 
     invoke-static {v0}, Lcom/android/email/activity/AccountFolderList;->access$300(Lcom/android/email/activity/AccountFolderList;)Landroid/database/MatrixCursor;
 
     move-result-object v6
 
-    .line 625
+    .line 620
     .local v6, c1:Landroid/database/Cursor;
     iget-object v0, p0, Lcom/android/email/activity/AccountFolderList$LoadAccountsTask;->this$0:Lcom/android/email/activity/AccountFolderList;
 
@@ -104,7 +104,7 @@
 
     move-result-object v7
 
-    .line 629
+    .line 624
     .local v7, c2:Landroid/database/Cursor;
     iget-object v0, p0, Lcom/android/email/activity/AccountFolderList$LoadAccountsTask;->this$0:Lcom/android/email/activity/AccountFolderList;
 
@@ -116,7 +116,7 @@
 
     move-result-object v9
 
-    .line 632
+    .line 627
     .local v9, defaultAccount:Ljava/lang/Long;
     iget-object v0, p0, Lcom/android/email/activity/AccountFolderList$LoadAccountsTask;->this$0:Lcom/android/email/activity/AccountFolderList;
 
@@ -124,7 +124,7 @@
 
     move-result-object v8
 
-    .line 633
+    .line 628
     .local v8, c3:Landroid/database/Cursor;
     const/4 v0, 0x4
 
@@ -154,7 +154,7 @@
     .parameter "x0"
 
     .prologue
-    .line 617
+    .line 612
     check-cast p1, [Ljava/lang/Object;
 
     .end local p1
@@ -170,7 +170,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 638
+    .line 633
     invoke-virtual {p0}, Lcom/android/email/activity/AccountFolderList$LoadAccountsTask;->isCancelled()Z
 
     move-result v0
@@ -189,24 +189,24 @@
 
     if-eqz v0, :cond_1
 
-    .line 652
+    .line 647
     :cond_0
     :goto_0
     return-void
 
-    .line 643
+    .line 638
     :cond_1
     iget-object v0, p0, Lcom/android/email/activity/AccountFolderList$LoadAccountsTask;->this$0:Lcom/android/email/activity/AccountFolderList;
 
-    invoke-static {v0}, Lcom/android/email/activity/AccountFolderList;->access$500(Lcom/android/email/activity/AccountFolderList;)Landroid/widget/ListView;
+    invoke-static {v0}, Lcom/android/email/activity/AccountFolderList;->access$500(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/winset/EmailListView;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
+    invoke-virtual {v0}, Lcom/android/email/winset/EmailListView;->getAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v6
 
-    .line 644
+    .line 639
     .local v6, oldAdapter:Landroid/widget/ListAdapter;
     if-eqz v6, :cond_2
 
@@ -214,7 +214,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 645
+    .line 640
     check-cast v6, Landroid/widget/CursorAdapter;
 
     .end local v6           #oldAdapter:Landroid/widget/ListAdapter;
@@ -222,7 +222,7 @@
 
     invoke-virtual {v6, v0}, Landroid/widget/CursorAdapter;->changeCursor(Landroid/database/Cursor;)V
 
-    .line 649
+    .line 644
     :cond_2
     iget-object v7, p0, Lcom/android/email/activity/AccountFolderList$LoadAccountsTask;->this$0:Lcom/android/email/activity/AccountFolderList;
 
@@ -260,10 +260,10 @@
 
     invoke-static {v7, v0}, Lcom/android/email/activity/AccountFolderList;->access$602(Lcom/android/email/activity/AccountFolderList;Lcom/android/email/activity/AccountFolderList$AccountsAdapter;)Lcom/android/email/activity/AccountFolderList$AccountsAdapter;
 
-    .line 651
+    .line 646
     iget-object v0, p0, Lcom/android/email/activity/AccountFolderList$LoadAccountsTask;->this$0:Lcom/android/email/activity/AccountFolderList;
 
-    invoke-static {v0}, Lcom/android/email/activity/AccountFolderList;->access$500(Lcom/android/email/activity/AccountFolderList;)Landroid/widget/ListView;
+    invoke-static {v0}, Lcom/android/email/activity/AccountFolderList;->access$500(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/winset/EmailListView;
 
     move-result-object v0
 
@@ -273,7 +273,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+    invoke-virtual {v0, v1}, Lcom/android/email/winset/EmailListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
     goto :goto_0
 .end method

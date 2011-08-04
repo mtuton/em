@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageList;->onMove(J)V
+    value = Lcom/android/email/activity/MessageList;->onTextSize()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,25 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/activity/MessageList;
 
-.field final synthetic val$c:Landroid/database/Cursor;
-
-.field final synthetic val$messageId:J
-
 
 # direct methods
-.method constructor <init>(Lcom/android/email/activity/MessageList;JLandroid/database/Cursor;)V
+.method constructor <init>(Lcom/android/email/activity/MessageList;)V
     .locals 0
-    .parameter
-    .parameter
     .parameter
 
     .prologue
-    .line 2242
+    .line 2184
     iput-object p1, p0, Lcom/android/email/activity/MessageList$8;->this$0:Lcom/android/email/activity/MessageList;
-
-    iput-wide p2, p0, Lcom/android/email/activity/MessageList$8;->val$messageId:J
-
-    iput-object p4, p0, Lcom/android/email/activity/MessageList$8;->val$c:Landroid/database/Cursor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,30 +38,19 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 5
+    .locals 1
     .parameter "dialog"
-    .parameter "item"
+    .parameter "which"
 
     .prologue
-    .line 2243
+    .line 2186
     iget-object v0, p0, Lcom/android/email/activity/MessageList$8;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2000(Lcom/android/email/activity/MessageList;)Lcom/android/email/Controller;
+    invoke-static {v0, p2}, Lcom/android/email/activity/MessageList;->access$2100(Lcom/android/email/activity/MessageList;I)V
 
-    move-result-object v0
+    .line 2187
+    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    iget-wide v1, p0, Lcom/android/email/activity/MessageList$8;->val$messageId:J
-
-    iget-object v3, p0, Lcom/android/email/activity/MessageList$8;->val$c:Landroid/database/Cursor;
-
-    const/4 v4, 0x0
-
-    invoke-interface {v3, v4}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v3
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/email/Controller;->moveMessage(JJ)V
-
-    .line 2244
+    .line 2188
     return-void
 .end method

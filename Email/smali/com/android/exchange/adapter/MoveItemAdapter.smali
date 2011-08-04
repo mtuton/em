@@ -30,7 +30,7 @@
 
 .field private MOVE_ITEMS_PROJECTION:[Ljava/lang/String;
 
-.field private mDstMailboxId:I
+.field private mDstMailboxId:J
 
 .field private parser:Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;
 
@@ -44,79 +44,81 @@
     .prologue
     const/4 v1, 0x2
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    .line 49
+    .line 55
     invoke-direct {p0, p1, p2}, Lcom/android/exchange/adapter/AbstractCommandAdapter;-><init>(Lcom/android/email/provider/EmailContent$Mailbox;Lcom/android/exchange/EasSyncService;)V
 
-    .line 31
-    iput v3, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->CODE_MOVE_ITEM_INVALID_COLLECTION_SRC:I
+    .line 34
+    iput v2, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->CODE_MOVE_ITEM_INVALID_COLLECTION_SRC:I
 
-    .line 32
+    .line 35
     iput v1, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->CODE_MOVE_ITEM_INVALID_COLLECTION_DST:I
 
-    .line 33
+    .line 36
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->CODE_MOVE_ITEM_SUCCESS:I
 
-    .line 34
+    .line 37
     const/4 v0, 0x4
 
     iput v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->CODE_MOVE_ITEM_SRC_DST_SAME:I
 
-    .line 35
+    .line 38
     const/4 v0, 0x5
 
     iput v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->CODE_MOVE_ITEM_SERVER_ERROR:I
 
-    .line 36
+    .line 39
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->CODE_MOVE_ITEM_ITEM_LOCKED:I
 
-    .line 38
+    .line 41
     new-array v0, v1, [Ljava/lang/String;
 
     const-string v1, "syncServerId"
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     const-string v1, "dstMailboxKey"
 
-    aput-object v1, v0, v3
+    aput-object v1, v0, v2
 
     iput-object v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->MOVE_ITEMS_PROJECTION:[Ljava/lang/String;
 
-    .line 41
-    iput v2, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->INDEX_SERVER_ID:I
-
-    .line 42
-    iput v3, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->INDEX_DST_MAILBOX:I
-
     .line 44
+    iput v3, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->INDEX_SERVER_ID:I
+
+    .line 45
+    iput v2, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->INDEX_DST_MAILBOX:I
+
+    .line 47
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->parser:Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;
 
-    .line 45
-    iput v2, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->mDstMailboxId:I
+    .line 48
+    const-wide/16 v0, 0x0
 
-    .line 50
+    iput-wide v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->mDstMailboxId:J
+
+    .line 56
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/android/exchange/adapter/MoveItemAdapter;)I
-    .locals 1
+.method static synthetic access$000(Lcom/android/exchange/adapter/MoveItemAdapter;)J
+    .locals 2
     .parameter "x0"
 
     .prologue
-    .line 29
-    iget v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->mDstMailboxId:I
+    .line 32
+    iget-wide v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->mDstMailboxId:J
 
-    return v0
+    return-wide v0
 .end method
 
 
@@ -126,7 +128,7 @@
     .parameter "status"
 
     .prologue
-    .line 90
+    .line 96
     :try_start_0
     invoke-static {}, Lcom/android/exchange/SyncManager;->callback()Lcom/android/email/service/IEmailServiceCallback;
 
@@ -140,11 +142,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 93
+    .line 99
     :goto_0
     return-void
 
-    .line 91
+    .line 97
     :catch_0
     move-exception v0
 
@@ -155,17 +157,17 @@
     .locals 1
 
     .prologue
-    .line 54
+    .line 60
     iget-object v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->parser:Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;
 
     if-eqz v0, :cond_0
 
-    .line 55
+    .line 61
     iget-object v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->parser:Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;
 
     invoke-virtual {v0}, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->wipe()V
 
-    .line 56
+    .line 62
     :cond_0
     return-void
 .end method
@@ -174,7 +176,7 @@
     .locals 1
 
     .prologue
-    .line 61
+    .line 67
     const/4 v0, 0x0
 
     return-object v0
@@ -184,7 +186,7 @@
     .locals 1
 
     .prologue
-    .line 96
+    .line 102
     const-string v0, "MoveItems"
 
     return-object v0
@@ -196,10 +198,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 73
+    .line 79
     const/4 v6, 0x0
 
-    .line 74
+    .line 80
     .local v6, count:I
     iget-object v1, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->mContext:Landroid/content/Context;
 
@@ -207,7 +209,7 @@
 
     move-result-object v0
 
-    .line 75
+    .line 81
     .local v0, resolver:Landroid/content/ContentResolver;
     sget-object v1, Lcom/android/email/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 
@@ -259,11 +261,11 @@
 
     move-result-object v7
 
-    .line 78
+    .line 84
     .local v7, cursor:Landroid/database/Cursor;
     if-eqz v7, :cond_0
 
-    .line 80
+    .line 86
     :try_start_0
     invoke-interface {v7}, Landroid/database/Cursor;->getCount()I
     :try_end_0
@@ -271,10 +273,10 @@
 
     move-result v6
 
-    .line 82
+    .line 88
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 85
+    .line 91
     :cond_0
     if-lez v6, :cond_1
 
@@ -283,7 +285,7 @@
     :goto_0
     return v1
 
-    .line 82
+    .line 88
     :catchall_0
     move-exception v1
 
@@ -291,7 +293,7 @@
 
     throw v1
 
-    .line 85
+    .line 91
     :cond_1
     const/4 v1, 0x0
 
@@ -302,7 +304,7 @@
     .locals 1
 
     .prologue
-    .line 258
+    .line 282
     const/4 v0, 0x1
 
     return v0
@@ -313,19 +315,20 @@
     .parameter "is"
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;
+            Ljava/io/IOException;,
+            Lcom/android/email/mail/DeviceAccessException;
         }
     .end annotation
 
     .prologue
-    .line 66
+    .line 72
     new-instance v0, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;
 
     invoke-direct {v0, p0, p1, p0}, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;-><init>(Lcom/android/exchange/adapter/MoveItemAdapter;Ljava/io/InputStream;Lcom/android/exchange/adapter/MoveItemAdapter;)V
 
     iput-object v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->parser:Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;
 
-    .line 67
+    .line 73
     iget-object v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->parser:Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;
 
     invoke-virtual {v0}, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->parse()Z
@@ -351,12 +354,12 @@
 
     const/4 v11, 0x0
 
-    .line 101
+    .line 107
     const/16 v0, 0x145
 
     invoke-virtual {p1, v0}, Lcom/android/exchange/adapter/Serializer;->start(I)Lcom/android/exchange/adapter/Serializer;
 
-    .line 103
+    .line 109
     iget-object v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget v0, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mType:I
@@ -381,7 +384,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 106
+    .line 112
     :cond_0
     new-instance v0, Ljava/io/IOException;
 
@@ -391,7 +394,7 @@
 
     throw v0
 
-    .line 108
+    .line 114
     :cond_1
     iget-object v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->mContext:Landroid/content/Context;
 
@@ -449,11 +452,11 @@
 
     move-result-object v6
 
-    .line 112
+    .line 118
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_4
 
-    .line 114
+    .line 120
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -461,14 +464,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 116
+    .line 122
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 118
+    .line 124
     .local v8, serverId:Ljava/lang/String;
     const/4 v0, 0x1
 
@@ -476,20 +479,20 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->mDstMailboxId:I
+    int-to-long v0, v0
 
-    .line 119
+    iput-wide v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->mDstMailboxId:J
+
+    .line 125
     iget-object v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->mContext:Landroid/content/Context;
 
-    iget v1, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->mDstMailboxId:I
-
-    int-to-long v1, v1
+    iget-wide v1, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->mDstMailboxId:J
 
     invoke-static {v0, v1, v2}, Lcom/android/email/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v7
 
-    .line 121
+    .line 127
     .local v7, dstMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     if-eqz v7, :cond_2
 
@@ -499,7 +502,7 @@
 
     if-eqz v8, :cond_2
 
-    .line 123
+    .line 129
     const/16 v0, 0x146
 
     invoke-virtual {p1, v0}, Lcom/android/exchange/adapter/Serializer;->start(I)Lcom/android/exchange/adapter/Serializer;
@@ -534,18 +537,18 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 136
+    .line 142
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     move v0, v12
 
-    .line 141
+    .line 147
     .end local v7           #dstMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     .end local v8           #serverId:Ljava/lang/String;
     :goto_0
     return v0
 
-    .line 130
+    .line 136
     .restart local v7       #dstMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     .restart local v8       #serverId:Ljava/lang/String;
     :cond_2
@@ -564,15 +567,15 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 136
+    .line 142
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     move v0, v11
 
-    .line 132
+    .line 138
     goto :goto_0
 
-    .line 136
+    .line 142
     .end local v7           #dstMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     .end local v8           #serverId:Ljava/lang/String;
     :catchall_0
@@ -585,12 +588,24 @@
     :cond_3
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 139
+    .line 145
     :cond_4
     invoke-virtual {p1}, Lcom/android/exchange/adapter/Serializer;->end()Lcom/android/exchange/adapter/Serializer;
 
     move v0, v11
 
-    .line 141
+    .line 147
     goto :goto_0
+.end method
+
+.method public setDestinationMailBox(J)V
+    .locals 0
+    .parameter "id"
+
+    .prologue
+    .line 51
+    iput-wide p1, p0, Lcom/android/exchange/adapter/MoveItemAdapter;->mDstMailboxId:J
+
+    .line 52
+    return-void
 .end method

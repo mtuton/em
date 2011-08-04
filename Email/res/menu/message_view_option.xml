@@ -8,7 +8,7 @@
     <item android:icon="@drawable/ic_menu_directions" android:id="@id/move" android:visibility="gone" android:title="@string/move_action" />
     <item android:icon="@drawable/ic_menu_gallery" android:id="@id/show_pictures" android:title="@string/message_view_show_pictures_action" />
     <item android:icon="@drawable/ic_menu_view" android:id="@id/display_mode" android:title="@string/display_mode" android:alphabeticShortcut="d" />
-    <item android:icon="@android:drawable/ic_menu_zoom" android:id="@id/text_size_action" android:title="@string/text_size_action" />
+    <item android:icon="@drawable/ic_menu_zoom" android:id="@id/text_size_action" android:title="@string/text_size_action" />
     <item android:icon="@drawable/ic_menu_add_to_phonebook" android:id="@id/add_to_contacts" android:title="@string/add_to_contacts_action" />
     <item android:icon="@drawable/ic_menu_save_to_calendar" android:enabled="false" android:id="@id/save_to_calendar" android:title="@string/save_to_calendar_action" android:alphabeticShortcut="c" />
 </menu>

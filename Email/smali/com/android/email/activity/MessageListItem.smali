@@ -1,14 +1,6 @@
 .class public Lcom/android/email/activity/MessageListItem;
-.super Landroid/widget/RelativeLayout;
+.super Landroid/widget/LinearLayout;
 .source "MessageListItem.java"
-
-
-# static fields
-.field private static final CHECKMARK_PAD:F = 10.0f
-
-.field private static final STAR_PAD:F = 10.0f
-
-.field private static final TAG:Ljava/lang/String; = "MessageListItem >>"
 
 
 # instance fields
@@ -24,6 +16,10 @@
 
 .field private mCheckedAccountId:J
 
+.field public mConvId:Ljava/lang/String;
+
+.field public mConvThreadId:I
+
 .field private mDownEvent:Z
 
 .field public mFFlagComplete:Z
@@ -32,7 +28,17 @@
 
 .field public mFavorite:Z
 
+.field public mFlagComFFConv:I
+
+.field public mFlagReadConv:I
+
+.field public mFlagSetFFConv:I
+
 .field private mIsEAS:Z
+
+.field public mLastVerb:I
+
+.field public mLastVerbConv:I
 
 .field public mMailboxId:J
 
@@ -41,6 +47,8 @@
 .field public mRead:Z
 
 .field public mSelected:Z
+
+.field public mSms:Z
 
 .field private mStarLeft:I
 
@@ -55,8 +63,8 @@
     .parameter "context"
 
     .prologue
-    .line 68
-    invoke-direct {p0, p1}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;)V
+    .line 77
+    invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     .line 42
     const-wide/16 v0, -0x1
@@ -68,7 +76,7 @@
 
     iput-boolean v0, p0, Lcom/android/email/activity/MessageListItem;->mIsEAS:Z
 
-    .line 69
+    .line 78
     return-void
 .end method
 
@@ -78,8 +86,8 @@
     .parameter "attrs"
 
     .prologue
-    .line 72
-    invoke-direct {p0, p1, p2}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .line 81
+    invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 42
     const-wide/16 v0, -0x1
@@ -91,31 +99,7 @@
 
     iput-boolean v0, p0, Lcom/android/email/activity/MessageListItem;->mIsEAS:Z
 
-    .line 73
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 2
-    .parameter "context"
-    .parameter "attrs"
-    .parameter "defStyle"
-
-    .prologue
-    .line 76
-    invoke-direct {p0, p1, p2, p3}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    .line 42
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Lcom/android/email/activity/MessageListItem;->mCheckedAccountId:J
-
-    .line 43
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/email/activity/MessageListItem;->mIsEAS:Z
-
-    .line 77
+    .line 82
     return-void
 .end method
 
@@ -127,12 +111,12 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 198
+    .line 203
     invoke-virtual {p0}, Lcom/android/email/activity/MessageListItem;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 200
+    .line 205
     .local v1, context:Landroid/content/Context;
     iget-wide v4, p0, Lcom/android/email/activity/MessageListItem;->mCheckedAccountId:J
 
@@ -142,12 +126,12 @@
 
     if-nez v4, :cond_0
 
-    .line 201
+    .line 206
     iget-wide v4, p0, Lcom/android/email/activity/MessageListItem;->mAccountId:J
 
     iput-wide v4, p0, Lcom/android/email/activity/MessageListItem;->mCheckedAccountId:J
 
-    .line 211
+    .line 216
     :goto_0
     iget-wide v4, p0, Lcom/android/email/activity/MessageListItem;->mAccountId:J
 
@@ -155,22 +139,22 @@
 
     move-result-object v0
 
-    .line 213
+    .line 218
     .local v0, account:Lcom/android/email/provider/EmailContent$Account;
     if-nez v0, :cond_2
 
-    .line 214
+    .line 219
     iput-boolean v8, p0, Lcom/android/email/activity/MessageListItem;->mIsEAS:Z
 
-    .line 216
+    .line 221
     iget-boolean v4, p0, Lcom/android/email/activity/MessageListItem;->mIsEAS:Z
 
-    .line 231
+    .line 236
     .end local v0           #account:Lcom/android/email/provider/EmailContent$Account;
     :goto_1
     return v4
 
-    .line 203
+    .line 208
     :cond_0
     iget-wide v4, p0, Lcom/android/email/activity/MessageListItem;->mCheckedAccountId:J
 
@@ -180,12 +164,12 @@
 
     if-nez v4, :cond_1
 
-    .line 205
+    .line 210
     iget-boolean v4, p0, Lcom/android/email/activity/MessageListItem;->mIsEAS:Z
 
     goto :goto_1
 
-    .line 208
+    .line 213
     :cond_1
     iget-wide v4, p0, Lcom/android/email/activity/MessageListItem;->mAccountId:J
 
@@ -193,7 +177,7 @@
 
     goto :goto_0
 
-    .line 219
+    .line 224
     .restart local v0       #account:Lcom/android/email/provider/EmailContent$Account;
     :cond_2
     invoke-virtual {v0, v1}, Lcom/android/email/provider/EmailContent$Account;->getStoreUri(Landroid/content/Context;)Ljava/lang/String;
@@ -204,23 +188,23 @@
 
     move-result-object v2
 
-    .line 222
+    .line 227
     .local v2, info:Lcom/android/email/mail/Store$StoreInfo;
     if-nez v2, :cond_3
 
-    .line 223
+    .line 228
     iput-boolean v8, p0, Lcom/android/email/activity/MessageListItem;->mIsEAS:Z
 
-    .line 225
+    .line 230
     iget-boolean v4, p0, Lcom/android/email/activity/MessageListItem;->mIsEAS:Z
 
     goto :goto_1
 
-    .line 228
+    .line 233
     :cond_3
     iget-object v3, v2, Lcom/android/email/mail/Store$StoreInfo;->mScheme:Ljava/lang/String;
 
-    .line 229
+    .line 234
     .local v3, scheme:Ljava/lang/String;
     const-string v4, "eas"
 
@@ -230,7 +214,7 @@
 
     iput-boolean v4, p0, Lcom/android/email/activity/MessageListItem;->mIsEAS:Z
 
-    .line 231
+    .line 236
     iget-boolean v4, p0, Lcom/android/email/activity/MessageListItem;->mIsEAS:Z
 
     goto :goto_1
@@ -242,18 +226,18 @@
     .parameter "allowBatch"
 
     .prologue
-    .line 86
+    .line 91
     iput-object p1, p0, Lcom/android/email/activity/MessageListItem;->mAdapter:Lcom/android/email/activity/MessageList$MessageListAdapter;
 
-    .line 87
+    .line 92
     iput-boolean p2, p0, Lcom/android/email/activity/MessageListItem;->mAllowBatch:Z
 
-    .line 88
+    .line 93
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/email/activity/MessageListItem;->mCachedViewPositions:Z
 
-    .line 89
+    .line 94
     return-void
 .end method
 
@@ -262,10 +246,10 @@
     .parameter "event"
 
     .prologue
-    .line 97
+    .line 102
     const/4 v1, 0x0
 
-    .line 98
+    .line 103
     .local v1, handled:Z
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -273,7 +257,7 @@
 
     float-to-int v4, v6
 
-    .line 99
+    .line 104
     .local v4, touchX:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -281,7 +265,7 @@
 
     float-to-int v5, v6
 
-    .line 102
+    .line 107
     .local v5, touchY:I
     iget-wide v6, p0, Lcom/android/email/activity/MessageListItem;->mMessageId:J
 
@@ -291,22 +275,22 @@
 
     if-nez v6, :cond_0
 
-    .line 103
-    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    .line 108
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v6
 
-    .line 173
+    .line 178
     :goto_0
     return v6
 
-    .line 107
+    .line 112
     :cond_0
     iget-boolean v6, p0, Lcom/android/email/activity/MessageListItem;->mCachedViewPositions:Z
 
     if-nez v6, :cond_1
 
-    .line 108
+    .line 113
     invoke-virtual {p0}, Lcom/android/email/activity/MessageListItem;->getContext()Landroid/content/Context;
 
     move-result-object v6
@@ -321,7 +305,7 @@
 
     iget v2, v6, Landroid/util/DisplayMetrics;->density:F
 
-    .line 109
+    .line 114
     .local v2, paddingScale:F
     const/high16 v6, 0x4120
 
@@ -335,7 +319,7 @@
 
     double-to-int v0, v6
 
-    .line 110
+    .line 115
     .local v0, checkPadding:I
     const/high16 v6, 0x4120
 
@@ -349,9 +333,9 @@
 
     double-to-int v3, v6
 
-    .line 111
+    .line 116
     .local v3, starPadding:I
-    const v6, 0x7f0700c1
+    const v6, 0x7f070102
 
     invoke-virtual {p0, v6}, Lcom/android/email/activity/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -365,12 +349,12 @@
 
     iput v6, p0, Lcom/android/email/activity/MessageListItem;->mCheckRight:I
 
-    .line 113
+    .line 118
     invoke-virtual {p0}, Lcom/android/email/activity/MessageListItem;->getWidth()I
 
     move-result v6
 
-    const v7, 0x7f0700c5
+    const v7, 0x7f070109
 
     invoke-virtual {p0, v7}, Lcom/android/email/activity/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -388,8 +372,8 @@
 
     iput v6, p0, Lcom/android/email/activity/MessageListItem;->mStarLeft:I
 
-    .line 114
-    const v6, 0x7f0700c5
+    .line 119
+    const v6, 0x7f070109
 
     invoke-virtual {p0, v6}, Lcom/android/email/activity/MessageListItem;->findViewById(I)Landroid/view/View;
 
@@ -401,12 +385,12 @@
 
     iput v6, p0, Lcom/android/email/activity/MessageListItem;->mStarTop:I
 
-    .line 115
+    .line 120
     const/4 v6, 0x1
 
     iput-boolean v6, p0, Lcom/android/email/activity/MessageListItem;->mCachedViewPositions:Z
 
-    .line 118
+    .line 123
     .end local v0           #checkPadding:I
     .end local v2           #paddingScale:F
     .end local v3           #starPadding:I
@@ -417,35 +401,35 @@
 
     packed-switch v6, :pswitch_data_0
 
-    .line 167
+    .line 172
     :cond_2
     :goto_1
     :pswitch_0
     if-eqz v1, :cond_9
 
-    .line 168
+    .line 173
     invoke-virtual {p0}, Lcom/android/email/activity/MessageListItem;->postInvalidate()V
 
     :goto_2
     move v6, v1
 
-    .line 173
+    .line 178
     goto :goto_0
 
-    .line 120
+    .line 125
     :pswitch_1
     const/4 v6, 0x1
 
     iput-boolean v6, p0, Lcom/android/email/activity/MessageListItem;->mDownEvent:Z
 
-    .line 122
+    .line 127
     invoke-virtual {p0}, Lcom/android/email/activity/MessageListItem;->IsEAS()Z
 
     move-result v6
 
     if-eqz v6, :cond_3
 
-    .line 123
+    .line 128
     iget-boolean v6, p0, Lcom/android/email/activity/MessageListItem;->mAllowBatch:Z
 
     if-eqz v6, :cond_2
@@ -454,12 +438,12 @@
 
     if-ge v4, v6, :cond_2
 
-    .line 124
+    .line 129
     const/4 v1, 0x1
 
     goto :goto_1
 
-    .line 128
+    .line 133
     :cond_3
     iget-boolean v6, p0, Lcom/android/email/activity/MessageListItem;->mAllowBatch:Z
 
@@ -474,13 +458,13 @@
 
     if-le v4, v6, :cond_2
 
-    .line 130
+    .line 135
     :cond_5
     const/4 v1, 0x1
 
     goto :goto_1
 
-    .line 136
+    .line 141
     :pswitch_2
     const/4 v6, 0x0
 
@@ -488,13 +472,13 @@
 
     goto :goto_1
 
-    .line 140
+    .line 145
     :pswitch_3
     iget-boolean v6, p0, Lcom/android/email/activity/MessageListItem;->mDownEvent:Z
 
     if-eqz v6, :cond_2
 
-    .line 141
+    .line 146
     iget-boolean v6, p0, Lcom/android/email/activity/MessageListItem;->mAllowBatch:Z
 
     if-eqz v6, :cond_7
@@ -503,12 +487,12 @@
 
     if-ge v4, v6, :cond_7
 
-    .line 145
+    .line 150
     const/16 v6, 0x9
 
     invoke-virtual {p0, v6}, Lcom/android/email/activity/MessageListItem;->playSoundEffect(I)V
 
-    .line 149
+    .line 154
     iget-boolean v6, p0, Lcom/android/email/activity/MessageListItem;->mSelected:Z
 
     if-nez v6, :cond_6
@@ -518,25 +502,25 @@
     :goto_3
     iput-boolean v6, p0, Lcom/android/email/activity/MessageListItem;->mSelected:Z
 
-    .line 150
+    .line 155
     iget-object v6, p0, Lcom/android/email/activity/MessageListItem;->mAdapter:Lcom/android/email/activity/MessageList$MessageListAdapter;
 
     iget-boolean v7, p0, Lcom/android/email/activity/MessageListItem;->mSelected:Z
 
     invoke-virtual {v6, p0, v7}, Lcom/android/email/activity/MessageList$MessageListAdapter;->updateSelected(Lcom/android/email/activity/MessageListItem;Z)V
 
-    .line 151
+    .line 156
     const/4 v1, 0x1
 
     goto :goto_1
 
-    .line 149
+    .line 154
     :cond_6
     const/4 v6, 0x0
 
     goto :goto_3
 
-    .line 154
+    .line 159
     :cond_7
     invoke-virtual {p0}, Lcom/android/email/activity/MessageListItem;->IsEAS()Z
 
@@ -552,12 +536,12 @@
 
     if-le v5, v6, :cond_2
 
-    .line 156
+    .line 161
     const/16 v6, 0x9
 
     invoke-virtual {p0, v6}, Lcom/android/email/activity/MessageListItem;->playSoundEffect(I)V
 
-    .line 158
+    .line 163
     iget-boolean v6, p0, Lcom/android/email/activity/MessageListItem;->mFavorite:Z
 
     if-nez v6, :cond_8
@@ -567,33 +551,33 @@
     :goto_4
     iput-boolean v6, p0, Lcom/android/email/activity/MessageListItem;->mFavorite:Z
 
-    .line 159
+    .line 164
     iget-object v6, p0, Lcom/android/email/activity/MessageListItem;->mAdapter:Lcom/android/email/activity/MessageList$MessageListAdapter;
 
     iget-boolean v7, p0, Lcom/android/email/activity/MessageListItem;->mFavorite:Z
 
     invoke-virtual {v6, p0, v7}, Lcom/android/email/activity/MessageList$MessageListAdapter;->updateFavorite(Lcom/android/email/activity/MessageListItem;Z)V
 
-    .line 160
+    .line 165
     const/4 v1, 0x1
 
     goto :goto_1
 
-    .line 158
+    .line 163
     :cond_8
     const/4 v6, 0x0
 
     goto :goto_4
 
-    .line 170
+    .line 175
     :cond_9
-    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v1
 
     goto :goto_2
 
-    .line 118
+    .line 123
     nop
 
     :pswitch_data_0

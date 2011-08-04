@@ -14,12 +14,6 @@
 .end annotation
 
 
-# static fields
-.field public static final ACCESS_PROVIDER:Ljava/lang/String; = "com.android.email.permission.ACCESS_PROVIDER"
-
-.field public static final READ_ATTACHMENT:Ljava/lang/String; = "com.android.email.permission.READ_ATTACHMENT"
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0

@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 781
+    .line 1016
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
     .parameter "x0"
 
     .prologue
-    .line 781
+    .line 1016
     invoke-direct {p0}, Lcom/android/email/activity/MessageView$BodyImageInfo;-><init>()V
 
     return-void

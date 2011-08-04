@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 93
+    .line 92
     iput-object p1, p0, Lcom/android/email/service/EmailServiceProxy$EmailServiceConnection$1;->this$1:Lcom/android/email/service/EmailServiceProxy$EmailServiceConnection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

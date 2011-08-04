@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 119
+    .line 122
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSecurity$1;->this$0:Lcom/android/email/activity/setup/AccountSecurity;
 
     iput-wide p2, p0, Lcom/android/email/activity/setup/AccountSecurity$1;->val$accountId:J
@@ -43,7 +43,7 @@
     .locals 3
 
     .prologue
-    .line 120
+    .line 125
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSecurity$1;->this$0:Lcom/android/email/activity/setup/AccountSecurity;
 
     invoke-static {v0}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
@@ -54,6 +54,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/email/SecurityPolicy;->policiesRequired(J)V
 
-    .line 122
+    .line 127
     return-void
 .end method

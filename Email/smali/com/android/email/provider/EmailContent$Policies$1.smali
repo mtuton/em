@@ -1,4 +1,4 @@
-.class Lcom/android/email/provider/EmailContent$Policies$1;
+.class final Lcom/android/email/provider/EmailContent$Policies$1;
 .super Ljava/lang/Object;
 .source "EmailContent.java"
 
@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 3738
+    .line 4389
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 3735
+    .line 4391
     new-instance v0, Lcom/android/email/provider/EmailContent$Policies;
 
     invoke-direct {v0, p1}, Lcom/android/email/provider/EmailContent$Policies;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3738
+    .line 4389
     invoke-virtual {p0, p1}, Lcom/android/email/provider/EmailContent$Policies$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/email/provider/EmailContent$Policies;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 3739
+    .line 4395
     new-array v0, p1, [Lcom/android/email/provider/EmailContent$Policies;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3738
+    .line 4389
     invoke-virtual {p0, p1}, Lcom/android/email/provider/EmailContent$Policies$1;->newArray(I)[Lcom/android/email/provider/EmailContent$Policies;
 
     move-result-object v0

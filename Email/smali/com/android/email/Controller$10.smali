@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 855
+    .line 884
     iput-object p1, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
 
     iput-wide p2, p0, Lcom/android/email/Controller$10;->val$mailboxId:J
@@ -48,7 +48,7 @@
     .locals 6
 
     .prologue
-    .line 856
+    .line 887
     iget-object v3, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v3}, Lcom/android/email/Controller;->access$400(Lcom/android/email/Controller;)Landroid/content/Context;
@@ -61,16 +61,16 @@
 
     move-result-object v2
 
-    .line 857
+    .line 888
     .local v2, mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
     if-nez v2, :cond_1
 
-    .line 878
+    .line 909
     :cond_0
     :goto_0
     return-void
 
-    .line 860
+    .line 891
     :cond_1
     iget-object v3, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
 
@@ -84,11 +84,11 @@
 
     move-result-object v0
 
-    .line 861
+    .line 892
     .local v0, account:Lcom/android/email/provider/EmailContent$Account;
     if-eqz v0, :cond_0
 
-    .line 864
+    .line 895
     iget-object v3, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v3}, Lcom/android/email/Controller;->access$400(Lcom/android/email/Controller;)Landroid/content/Context;
@@ -109,7 +109,7 @@
 
     move-result-object v1
 
-    .line 865
+    .line 896
     .local v1, info:Lcom/android/email/mail/Store$StoreInfo;
     if-eqz v1, :cond_0
 
@@ -117,7 +117,7 @@
 
     if-lez v3, :cond_0
 
-    .line 876
+    .line 907
     iget-object v3, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v3}, Lcom/android/email/Controller;->access$300(Lcom/android/email/Controller;)Lcom/android/email/MessagingController;

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="search_list">
+        <item>Google</item>
+        <item>Prekladač Google</item>
+        <item>Wikipedia</item>
+        <item>Slovník</item>
+    </string-array>
+    <string-array name="share_list">
+        <item>Zdieľať ako text</item>
+        <item>Zdieľať ako obrázok</item>
+    </string-array>
+</resources>

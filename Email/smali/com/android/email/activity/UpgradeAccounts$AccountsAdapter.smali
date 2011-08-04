@@ -26,12 +26,12 @@
     .parameter
 
     .prologue
-    .line 208
+    .line 209
     iput-object p1, p0, Lcom/android/email/activity/UpgradeAccounts$AccountsAdapter;->this$0:Lcom/android/email/activity/UpgradeAccounts;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 209
+    .line 210
     const-string v0, "layout_inflater"
 
     invoke-virtual {p1, v0}, Lcom/android/email/activity/UpgradeAccounts;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -42,7 +42,7 @@
 
     iput-object v0, p0, Lcom/android/email/activity/UpgradeAccounts$AccountsAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 210
+    .line 211
     return-void
 .end method
 
@@ -58,14 +58,14 @@
 
     const/4 v4, 0x0
 
-    .line 251
+    .line 252
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;
 
-    .line 252
+    .line 253
     .local v1, vh:Lcom/android/email/activity/UpgradeAccounts$ViewHolder;
     iget-object v2, p0, Lcom/android/email/activity/UpgradeAccounts$AccountsAdapter;->this$0:Lcom/android/email/activity/UpgradeAccounts;
 
@@ -75,7 +75,7 @@
 
     aget-object v0, v2, p2
 
-    .line 253
+    .line 254
     .local v0, ai:Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
     iget-object v2, v1, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;->displayName:Landroid/widget/TextView;
 
@@ -87,51 +87,51 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 254
+    .line 255
     iget-object v2, v0, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->errorMessage:Ljava/lang/String;
 
     if-nez v2, :cond_0
 
-    .line 255
+    .line 256
     iget-object v2, v1, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;->errorReport:Landroid/widget/TextView;
 
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 256
+    .line 257
     iget-object v2, v1, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;->progress:Landroid/widget/ProgressBar;
 
     invoke-virtual {v2, v4}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 257
+    .line 258
     iget-object v2, v1, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;->progress:Landroid/widget/ProgressBar;
 
     iget v3, v0, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->maxProgress:I
 
     invoke-virtual {v2, v3}, Landroid/widget/ProgressBar;->setMax(I)V
 
-    .line 258
+    .line 259
     iget-object v2, v1, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;->progress:Landroid/widget/ProgressBar;
 
     iget v3, v0, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->progress:I
 
     invoke-virtual {v2, v3}, Landroid/widget/ProgressBar;->setProgress(I)V
 
-    .line 264
+    .line 265
     :goto_0
     return-void
 
-    .line 260
+    .line 261
     :cond_0
     iget-object v2, v1, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;->progress:Landroid/widget/ProgressBar;
 
     invoke-virtual {v2, v5}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 261
+    .line 262
     iget-object v2, v1, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;->errorReport:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 262
+    .line 263
     iget-object v2, v1, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;->errorReport:Landroid/widget/TextView;
 
     iget-object v3, v0, Lcom/android/email/activity/UpgradeAccounts$AccountInfo;->errorMessage:Ljava/lang/String;
@@ -145,7 +145,7 @@
     .locals 1
 
     .prologue
-    .line 218
+    .line 219
     iget-object v0, p0, Lcom/android/email/activity/UpgradeAccounts$AccountsAdapter;->this$0:Lcom/android/email/activity/UpgradeAccounts;
 
     invoke-static {v0}, Lcom/android/email/activity/UpgradeAccounts;->access$000(Lcom/android/email/activity/UpgradeAccounts;)[Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
@@ -162,7 +162,7 @@
     .parameter "position"
 
     .prologue
-    .line 222
+    .line 223
     iget-object v0, p0, Lcom/android/email/activity/UpgradeAccounts$AccountsAdapter;->this$0:Lcom/android/email/activity/UpgradeAccounts;
 
     invoke-static {v0}, Lcom/android/email/activity/UpgradeAccounts;->access$000(Lcom/android/email/activity/UpgradeAccounts;)[Lcom/android/email/activity/UpgradeAccounts$AccountInfo;
@@ -179,7 +179,7 @@
     .parameter "position"
 
     .prologue
-    .line 226
+    .line 227
     int-to-long v0, p1
 
     return-wide v0
@@ -192,23 +192,23 @@
     .parameter "parent"
 
     .prologue
-    .line 231
+    .line 232
     if-nez p2, :cond_0
 
-    .line 232
+    .line 233
     invoke-virtual {p0, p3}, Lcom/android/email/activity/UpgradeAccounts$AccountsAdapter;->newView(Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 236
+    .line 237
     .local v0, v:Landroid/view/View;
     :goto_0
     invoke-virtual {p0, v0, p1}, Lcom/android/email/activity/UpgradeAccounts$AccountsAdapter;->bindView(Landroid/view/View;I)V
 
-    .line 237
+    .line 238
     return-object v0
 
-    .line 234
+    .line 235
     .end local v0           #v:Landroid/view/View;
     :cond_0
     move-object v0, p2
@@ -221,7 +221,7 @@
     .locals 1
 
     .prologue
-    .line 214
+    .line 215
     const/4 v0, 0x1
 
     return v0
@@ -232,10 +232,10 @@
     .parameter "parent"
 
     .prologue
-    .line 241
+    .line 242
     iget-object v2, p0, Lcom/android/email/activity/UpgradeAccounts$AccountsAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f030043
+    const v3, 0x7f030051
 
     const/4 v4, 0x0
 
@@ -243,7 +243,7 @@
 
     move-result-object v1
 
-    .line 242
+    .line 243
     .local v1, v:Landroid/view/View;
     new-instance v0, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;
 
@@ -251,9 +251,9 @@
 
     invoke-direct {v0, v2}, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;-><init>(Lcom/android/email/activity/UpgradeAccounts$1;)V
 
-    .line 243
+    .line 244
     .local v0, h:Lcom/android/email/activity/UpgradeAccounts$ViewHolder;
-    const v2, 0x7f07000b
+    const v2, 0x7f07000f
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -264,8 +264,8 @@
 
     iput-object p0, v0, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;->displayName:Landroid/widget/TextView;
 
-    .line 244
-    const v2, 0x7f070021
+    .line 245
+    const v2, 0x7f070024
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -275,8 +275,8 @@
 
     iput-object p0, v0, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;->progress:Landroid/widget/ProgressBar;
 
-    .line 245
-    const v2, 0x7f07011b
+    .line 246
+    const v2, 0x7f070161
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -286,9 +286,9 @@
 
     iput-object p0, v0, Lcom/android/email/activity/UpgradeAccounts$ViewHolder;->errorReport:Landroid/widget/TextView;
 
-    .line 246
+    .line 247
     invoke-virtual {v1, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 247
+    .line 248
     return-object v1
 .end method

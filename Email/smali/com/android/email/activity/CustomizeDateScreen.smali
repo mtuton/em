@@ -6,38 +6,6 @@
 .implements Landroid/view/View$OnClickListener;
 
 
-# static fields
-.field private static final DATE_DIALOG_FROM:I = 0x64
-
-.field private static final DATE_DIALOG_TO:I = 0xc8
-
-.field public static final SEARCH_FROM_DAY:Ljava/lang/String; = "FROM_DAY"
-
-.field public static final SEARCH_FROM_HOUR:Ljava/lang/String; = "FROM_HOUR"
-
-.field public static final SEARCH_FROM_MINUTE:Ljava/lang/String; = "FROM_MINUTE"
-
-.field public static final SEARCH_FROM_MONTH:Ljava/lang/String; = "FROM_MONTH"
-
-.field public static final SEARCH_FROM_YEAR:Ljava/lang/String; = "FROM_YEAR"
-
-.field public static final SEARCH_STRING:Ljava/lang/String; = "SEARCH_STRING"
-
-.field public static final SEARCH_TO_DAY:Ljava/lang/String; = "TO_DAY"
-
-.field public static final SEARCH_TO_HOUR:Ljava/lang/String; = "TO_HOUR"
-
-.field public static final SEARCH_TO_MINUTE:Ljava/lang/String; = "TO_MINUTE"
-
-.field public static final SEARCH_TO_MONTH:Ljava/lang/String; = "TO_MONTH"
-
-.field public static final SEARCH_TO_YEAR:Ljava/lang/String; = "TO_YEAR"
-
-.field private static final TIME_DIALOG_FROM:I = 0x12c
-
-.field private static final TIME_DIALOG_TO:I = 0x190
-
-
 # instance fields
 .field private cancelButton:Landroid/widget/Button;
 
@@ -46,6 +14,8 @@
 .field private customizeRadioButton:Landroid/widget/RadioButton;
 
 .field private dateFormatter:Ljava/text/SimpleDateFormat;
+
+.field private defaultDate:Ljava/lang/String;
 
 .field private fromDateButton:Landroid/widget/Button;
 
@@ -68,8 +38,6 @@
 .field private mFromDateStringBuffer:Ljava/lang/StringBuilder;
 
 .field private mFromDay:I
-
-.field private mFromDayOfWeek:I
 
 .field private mFromHourOfDay:I
 
@@ -110,8 +78,6 @@
 .field private mToDateStringBuffer:Ljava/lang/StringBuilder;
 
 .field private mToDay:I
-
-.field private mToDayOfWeek:I
 
 .field private mToHourOfDay:I
 
@@ -209,28 +175,28 @@
 
     iput-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
 
-    .line 343
+    .line 347
     new-instance v0, Lcom/android/email/activity/CustomizeDateScreen$1;
 
     invoke-direct {v0, p0}, Lcom/android/email/activity/CustomizeDateScreen$1;-><init>(Lcom/android/email/activity/CustomizeDateScreen;)V
 
     iput-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromDateSetListener:Landroid/app/DatePickerDialog$OnDateSetListener;
 
-    .line 365
+    .line 369
     new-instance v0, Lcom/android/email/activity/CustomizeDateScreen$2;
 
     invoke-direct {v0, p0}, Lcom/android/email/activity/CustomizeDateScreen$2;-><init>(Lcom/android/email/activity/CustomizeDateScreen;)V
 
     iput-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToDateSetListener:Landroid/app/DatePickerDialog$OnDateSetListener;
 
-    .line 386
+    .line 390
     new-instance v0, Lcom/android/email/activity/CustomizeDateScreen$3;
 
     invoke-direct {v0, p0}, Lcom/android/email/activity/CustomizeDateScreen$3;-><init>(Lcom/android/email/activity/CustomizeDateScreen;)V
 
     iput-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeSetListener:Landroid/app/TimePickerDialog$OnTimeSetListener;
 
-    .line 394
+    .line 398
     new-instance v0, Lcom/android/email/activity/CustomizeDateScreen$4;
 
     invoke-direct {v0, p0}, Lcom/android/email/activity/CustomizeDateScreen$4;-><init>(Lcom/android/email/activity/CustomizeDateScreen;)V
@@ -530,37 +496,37 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 547
+    .line 586
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 548
+    .line 587
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->toTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 549
+    .line 588
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromDateButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 550
+    .line 589
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromTimeButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 551
+    .line 590
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->toDateButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 552
+    .line 591
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->toTimeButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 553
+    .line 592
     return-void
 .end method
 
@@ -570,37 +536,37 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 538
+    .line 577
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 539
+    .line 578
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->toTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 540
+    .line 579
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromDateButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 541
+    .line 580
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromTimeButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 542
+    .line 581
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->toDateButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 543
+    .line 582
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->toTimeButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 544
+    .line 583
     return-void
 .end method
 
@@ -611,10 +577,10 @@
     .prologue
     const-string v1, "Sat"
 
-    .line 598
+    .line 637
     packed-switch p1, :pswitch_data_0
 
-    .line 614
+    .line 653
     const-string v0, "Sat"
 
     move-object v0, v1
@@ -622,43 +588,43 @@
     :goto_0
     return-object v0
 
-    .line 600
+    .line 639
     :pswitch_0
     const-string v0, "Sun"
 
     goto :goto_0
 
-    .line 602
+    .line 641
     :pswitch_1
     const-string v0, "Mon"
 
     goto :goto_0
 
-    .line 604
+    .line 643
     :pswitch_2
     const-string v0, "Tue"
 
     goto :goto_0
 
-    .line 606
+    .line 645
     :pswitch_3
     const-string v0, "Wed"
 
     goto :goto_0
 
-    .line 608
+    .line 647
     :pswitch_4
     const-string v0, "Thu"
 
     goto :goto_0
 
-    .line 610
+    .line 649
     :pswitch_5
     const-string v0, "Fri"
 
     goto :goto_0
 
-    .line 612
+    .line 651
     :pswitch_6
     const-string v0, "Sat"
 
@@ -666,7 +632,7 @@
 
     goto :goto_0
 
-    .line 598
+    .line 637
     nop
 
     :pswitch_data_0
@@ -686,88 +652,88 @@
     .parameter "month"
 
     .prologue
-    .line 566
+    .line 605
     packed-switch p1, :pswitch_data_0
 
-    .line 593
+    .line 632
     const-string v0, ""
 
     :goto_0
     return-object v0
 
-    .line 568
+    .line 607
     :pswitch_0
     const-string v0, "Jan"
 
     goto :goto_0
 
-    .line 570
+    .line 609
     :pswitch_1
     const-string v0, "Feb"
 
     goto :goto_0
 
-    .line 572
+    .line 611
     :pswitch_2
     const-string v0, "Mar"
 
     goto :goto_0
 
-    .line 574
+    .line 613
     :pswitch_3
     const-string v0, "Apr"
 
     goto :goto_0
 
-    .line 576
+    .line 615
     :pswitch_4
     const-string v0, "May"
 
     goto :goto_0
 
-    .line 578
+    .line 617
     :pswitch_5
     const-string v0, "June"
 
     goto :goto_0
 
-    .line 580
+    .line 619
     :pswitch_6
     const-string v0, "July"
 
     goto :goto_0
 
-    .line 582
+    .line 621
     :pswitch_7
     const-string v0, "Aug"
 
     goto :goto_0
 
-    .line 584
+    .line 623
     :pswitch_8
     const-string v0, "Sep"
 
     goto :goto_0
 
-    .line 586
+    .line 625
     :pswitch_9
     const-string v0, "Oct"
 
     goto :goto_0
 
-    .line 588
+    .line 627
     :pswitch_a
     const-string v0, "Nov"
 
     goto :goto_0
 
-    .line 590
+    .line 629
     :pswitch_b
     const-string v0, "Dec"
 
     goto :goto_0
 
-    .line 566
+    .line 605
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -786,410 +752,572 @@
 .end method
 
 .method private init()V
-    .locals 6
+    .locals 7
 
     .prologue
-    const/4 v5, 0x5
+    const/4 v6, 0x5
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    .line 403
-    new-instance v1, Ljava/text/SimpleDateFormat;
+    .line 407
+    new-instance v2, Ljava/text/SimpleDateFormat;
 
-    const-string v2, "EEE, d MMM, yyyy"
-
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v3
-
-    invoke-direct {v1, v2, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
-
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->dateFormatter:Ljava/text/SimpleDateFormat;
-
-    .line 404
-    new-instance v1, Ljava/text/SimpleDateFormat;
-
-    const-string v2, "h:mm a "
+    const-string v3, "EEE, d MMM, yyyy"
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-direct {v1, v2, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+    invoke-direct {v2, v3, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->timeFormatter:Ljava/text/SimpleDateFormat;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->dateFormatter:Ljava/text/SimpleDateFormat;
 
-    .line 406
+    .line 408
+    new-instance v2, Ljava/text/SimpleDateFormat;
+
+    const-string v3, "h:mm a "
+
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v4
+
+    invoke-direct {v2, v3, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->timeFormatter:Ljava/text/SimpleDateFormat;
+
+    .line 410
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 407
-    .local v0, c:Ljava/util/Calendar;
-    invoke-virtual {v0, v4}, Ljava/util/Calendar;->get(I)I
-
-    move-result v1
-
-    iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYear:I
-
-    .line 408
-    const/4 v1, 0x2
-
-    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
-
-    move-result v1
-
-    iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonth:I
-
-    .line 409
-    invoke-virtual {v0, v5}, Ljava/util/Calendar;->get(I)I
-
-    move-result v1
-
-    iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDay:I
-
-    .line 410
-    invoke-virtual {v0, v5}, Ljava/util/Calendar;->get(I)I
-
-    move-result v1
-
-    iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDayOfWeek:I
-
     .line 411
-    const/16 v1, 0xb
+    .local v0, c:Ljava/util/Calendar;
+    invoke-virtual {v0, v5}, Ljava/util/Calendar;->get(I)I
 
-    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
+    move-result v2
 
-    move-result v1
-
-    iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mHourOfDay:I
+    iput v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYear:I
 
     .line 412
-    const/16 v1, 0xc
+    const/4 v2, 0x2
 
-    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {v0, v2}, Ljava/util/Calendar;->get(I)I
 
-    move-result v1
+    move-result v2
 
-    iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMinute:I
+    iput v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonth:I
+
+    .line 413
+    invoke-virtual {v0, v6}, Ljava/util/Calendar;->get(I)I
+
+    move-result v2
+
+    iput v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDay:I
 
     .line 414
-    const v1, 0x7f070049
+    invoke-virtual {v0, v6}, Ljava/util/Calendar;->get(I)I
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    move-result v2
 
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/RelativeLayout;
-
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->todayLayout:Landroid/widget/RelativeLayout;
+    iput v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDayOfWeek:I
 
     .line 415
-    const v1, 0x7f07004c
+    const/16 v2, 0xb
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v2}, Ljava/util/Calendar;->get(I)I
 
-    move-result-object v1
+    move-result v2
 
-    check-cast v1, Landroid/widget/RelativeLayout;
-
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneDayLayout:Landroid/widget/RelativeLayout;
+    iput v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mHourOfDay:I
 
     .line 416
-    const v1, 0x7f07004f
+    const/16 v2, 0xc
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v2}, Ljava/util/Calendar;->get(I)I
 
-    move-result-object v1
+    move-result v2
 
-    check-cast v1, Landroid/widget/RelativeLayout;
-
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneWeekLayout:Landroid/widget/RelativeLayout;
-
-    .line 417
-    const v1, 0x7f070052
-
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/RelativeLayout;
-
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneMonthLayout:Landroid/widget/RelativeLayout;
+    iput v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMinute:I
 
     .line 418
-    const v1, 0x7f070055
+    const v2, 0x7f07005c
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/RelativeLayout;
+    check-cast v2, Landroid/widget/RelativeLayout;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->sixMonthLayout:Landroid/widget/RelativeLayout;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->todayLayout:Landroid/widget/RelativeLayout;
 
     .line 419
-    const v1, 0x7f070058
+    const v2, 0x7f07005f
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/RelativeLayout;
+    check-cast v2, Landroid/widget/RelativeLayout;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneYearLayout:Landroid/widget/RelativeLayout;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneDayLayout:Landroid/widget/RelativeLayout;
 
     .line 420
-    const v1, 0x7f07005b
+    const v2, 0x7f070062
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/RelativeLayout;
+    check-cast v2, Landroid/widget/RelativeLayout;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->customizeLayout:Landroid/widget/RelativeLayout;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneWeekLayout:Landroid/widget/RelativeLayout;
+
+    .line 421
+    const v2, 0x7f070065
+
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/RelativeLayout;
+
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneMonthLayout:Landroid/widget/RelativeLayout;
 
     .line 422
-    const v1, 0x7f07004b
+    const v2, 0x7f070068
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/RadioButton;
+    check-cast v2, Landroid/widget/RelativeLayout;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->todayRadioButton:Landroid/widget/RadioButton;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->sixMonthLayout:Landroid/widget/RelativeLayout;
 
     .line 423
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->todayRadioButton:Landroid/widget/RadioButton;
+    const v2, 0x7f07006b
 
-    invoke-virtual {v1, v4}, Landroid/widget/RadioButton;->setChecked(Z)V
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/RelativeLayout;
+
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneYearLayout:Landroid/widget/RelativeLayout;
 
     .line 424
-    const v1, 0x7f07004e
+    const v2, 0x7f07006e
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/RadioButton;
+    check-cast v2, Landroid/widget/RelativeLayout;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneDayRadioButton:Landroid/widget/RadioButton;
-
-    .line 425
-    const v1, 0x7f070051
-
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/RadioButton;
-
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneWeekRadioButton:Landroid/widget/RadioButton;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->customizeLayout:Landroid/widget/RelativeLayout;
 
     .line 426
-    const v1, 0x7f070054
+    const v2, 0x7f07005e
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/RadioButton;
+    check-cast v2, Landroid/widget/RadioButton;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneMonthRadioButton:Landroid/widget/RadioButton;
-
-    .line 427
-    const v1, 0x7f070057
-
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/RadioButton;
-
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->sixMonthRadioButton:Landroid/widget/RadioButton;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->todayRadioButton:Landroid/widget/RadioButton;
 
     .line 428
-    const v1, 0x7f07005a
+    const v2, 0x7f070061
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/RadioButton;
+    check-cast v2, Landroid/widget/RadioButton;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneYearRadioButton:Landroid/widget/RadioButton;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneDayRadioButton:Landroid/widget/RadioButton;
 
     .line 429
-    const v1, 0x7f07005d
+    const v2, 0x7f070064
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/RadioButton;
+    check-cast v2, Landroid/widget/RadioButton;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->customizeRadioButton:Landroid/widget/RadioButton;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneWeekRadioButton:Landroid/widget/RadioButton;
+
+    .line 430
+    const v2, 0x7f070067
+
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/RadioButton;
+
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneMonthRadioButton:Landroid/widget/RadioButton;
 
     .line 431
-    const v1, 0x7f07005e
+    const v2, 0x7f07006a
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/RadioButton;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromTextView:Landroid/widget/TextView;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->sixMonthRadioButton:Landroid/widget/RadioButton;
 
     .line 432
-    const v1, 0x7f070062
+    const v2, 0x7f07006d
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/RadioButton;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->toTextView:Landroid/widget/TextView;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneYearRadioButton:Landroid/widget/RadioButton;
 
-    .line 434
-    const v1, 0x7f070060
+    .line 433
+    const v2, 0x7f070070
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/Button;
+    check-cast v2, Landroid/widget/RadioButton;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromDateButton:Landroid/widget/Button;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->customizeRadioButton:Landroid/widget/RadioButton;
 
     .line 435
-    const v1, 0x7f070061
+    const v2, 0x7f070071
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/Button;
+    check-cast v2, Landroid/widget/TextView;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromTimeButton:Landroid/widget/Button;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromTextView:Landroid/widget/TextView;
 
     .line 436
-    const v1, 0x7f070064
+    const v2, 0x7f070075
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/Button;
+    check-cast v2, Landroid/widget/TextView;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->toDateButton:Landroid/widget/Button;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->toTextView:Landroid/widget/TextView;
 
-    .line 437
-    const v1, 0x7f070065
+    .line 438
+    const v2, 0x7f070073
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/Button;
+    check-cast v2, Landroid/widget/Button;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->toTimeButton:Landroid/widget/Button;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromDateButton:Landroid/widget/Button;
 
     .line 439
-    const v1, 0x7f070067
+    const v2, 0x7f070074
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/widget/Button;
+    check-cast v2, Landroid/widget/Button;
 
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->okButton:Landroid/widget/Button;
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromTimeButton:Landroid/widget/Button;
 
     .line 440
-    const v1, 0x7f070068
+    const v2, 0x7f070077
 
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/Button;
+
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->toDateButton:Landroid/widget/Button;
+
+    .line 441
+    const v2, 0x7f070078
+
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/Button;
+
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->toTimeButton:Landroid/widget/Button;
+
+    .line 443
+    const v2, 0x7f07007a
+
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/Button;
+
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->okButton:Landroid/widget/Button;
+
+    .line 444
+    const v2, 0x7f07007b
+
+    invoke-virtual {p0, v2}, Lcom/android/email/activity/CustomizeDateScreen;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/Button;
+
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->cancelButton:Landroid/widget/Button;
+
+    .line 447
+    invoke-virtual {p0}, Lcom/android/email/activity/CustomizeDateScreen;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
 
-    check-cast v1, Landroid/widget/Button;
-
-    iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->cancelButton:Landroid/widget/Button;
-
-    .line 442
-    invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->updateDisplay()V
-
-    .line 444
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->todayLayout:Landroid/widget/RelativeLayout;
-
-    invoke-virtual {v1, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 445
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneDayLayout:Landroid/widget/RelativeLayout;
-
-    invoke-virtual {v1, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 446
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneWeekLayout:Landroid/widget/RelativeLayout;
-
-    invoke-virtual {v1, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 447
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneMonthLayout:Landroid/widget/RelativeLayout;
-
-    invoke-virtual {v1, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
     .line 448
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->sixMonthLayout:Landroid/widget/RelativeLayout;
+    .local v1, intent:Landroid/content/Intent;
+    const-string v2, "intentDate"
 
-    invoke-virtual {v1, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->defaultDate:Ljava/lang/String;
 
     .line 449
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneYearLayout:Landroid/widget/RelativeLayout;
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->defaultDate:Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    const v3, 0x7f080274
 
-    .line 450
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->customizeLayout:Landroid/widget/RelativeLayout;
+    invoke-virtual {p0, v3}, Lcom/android/email/activity/CustomizeDateScreen;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
 
     .line 451
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromDateButton:Landroid/widget/Button;
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->todayRadioButton:Landroid/widget/RadioButton;
 
-    invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, v5}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 452
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromTimeButton:Landroid/widget/Button;
+    .line 478
+    :goto_0
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->defaultDate:Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    iput-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mStringToReturn:Ljava/lang/String;
+
+    .line 481
+    invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->updateDisplay()V
+
+    .line 483
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->todayLayout:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v2, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 484
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneDayLayout:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v2, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 485
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneWeekLayout:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v2, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 486
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneMonthLayout:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v2, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 487
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->sixMonthLayout:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v2, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 488
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneYearLayout:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v2, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 489
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->customizeLayout:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v2, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 490
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromDateButton:Landroid/widget/Button;
+
+    invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 491
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromTimeButton:Landroid/widget/Button;
+
+    invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 492
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->toDateButton:Landroid/widget/Button;
+
+    invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 493
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->toTimeButton:Landroid/widget/Button;
+
+    invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 494
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->okButton:Landroid/widget/Button;
+
+    invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 495
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->cancelButton:Landroid/widget/Button;
+
+    invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 496
+    return-void
 
     .line 453
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->toDateButton:Landroid/widget/Button;
+    :cond_0
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->defaultDate:Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    const v3, 0x7f080275
 
-    .line 454
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->toTimeButton:Landroid/widget/Button;
+    invoke-virtual {p0, v3}, Lcom/android/email/activity/CustomizeDateScreen;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
 
     .line 455
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->okButton:Landroid/widget/Button;
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneDayRadioButton:Landroid/widget/RadioButton;
 
-    invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, v5}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 456
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->cancelButton:Landroid/widget/Button;
-
-    invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    goto :goto_0
 
     .line 457
-    return-void
+    :cond_1
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->defaultDate:Ljava/lang/String;
+
+    const v3, 0x7f080276
+
+    invoke-virtual {p0, v3}, Lcom/android/email/activity/CustomizeDateScreen;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 459
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneWeekRadioButton:Landroid/widget/RadioButton;
+
+    invoke-virtual {v2, v5}, Landroid/widget/RadioButton;->setChecked(Z)V
+
+    goto :goto_0
+
+    .line 461
+    :cond_2
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->defaultDate:Ljava/lang/String;
+
+    const v3, 0x7f080277
+
+    invoke-virtual {p0, v3}, Lcom/android/email/activity/CustomizeDateScreen;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    .line 463
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneMonthRadioButton:Landroid/widget/RadioButton;
+
+    invoke-virtual {v2, v5}, Landroid/widget/RadioButton;->setChecked(Z)V
+
+    goto/16 :goto_0
+
+    .line 465
+    :cond_3
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->defaultDate:Ljava/lang/String;
+
+    const v3, 0x7f080278
+
+    invoke-virtual {p0, v3}, Lcom/android/email/activity/CustomizeDateScreen;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    .line 467
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->sixMonthRadioButton:Landroid/widget/RadioButton;
+
+    invoke-virtual {v2, v5}, Landroid/widget/RadioButton;->setChecked(Z)V
+
+    goto/16 :goto_0
+
+    .line 469
+    :cond_4
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->defaultDate:Ljava/lang/String;
+
+    const v3, 0x7f080279
+
+    invoke-virtual {p0, v3}, Lcom/android/email/activity/CustomizeDateScreen;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    .line 471
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneYearRadioButton:Landroid/widget/RadioButton;
+
+    invoke-virtual {v2, v5}, Landroid/widget/RadioButton;->setChecked(Z)V
+
+    goto/16 :goto_0
+
+    .line 475
+    :cond_5
+    iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->customizeRadioButton:Landroid/widget/RadioButton;
+
+    invoke-virtual {v2, v5}, Landroid/widget/RadioButton;->setChecked(Z)V
+
+    .line 476
+    invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->enableCustomView()V
+
+    goto/16 :goto_0
 .end method
 
 .method private setDefaultValues()V
@@ -1198,7 +1326,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 314
+    .line 318
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
 
     invoke-virtual {v0}, Ljava/util/Date;->getYear()I
@@ -1209,7 +1337,7 @@
 
     iput v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYearToSearch:I
 
-    .line 315
+    .line 319
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
 
     invoke-virtual {v0}, Ljava/util/Date;->getMonth()I
@@ -1218,7 +1346,7 @@
 
     iput v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonthToSearch:I
 
-    .line 316
+    .line 320
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
 
     invoke-virtual {v0}, Ljava/util/Date;->getDate()I
@@ -1227,13 +1355,13 @@
 
     iput v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDayToSearch:I
 
-    .line 318
+    .line 322
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mHourFromSearch:I
 
-    .line 319
+    .line 323
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMinuteFromSearch:I
 
-    .line 321
+    .line 325
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
 
     invoke-virtual {v0}, Ljava/util/Date;->getHours()I
@@ -1242,7 +1370,7 @@
 
     iput v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mHourToSearch:I
 
-    .line 322
+    .line 326
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
 
     invoke-virtual {v0}, Ljava/util/Date;->getMinutes()I
@@ -1251,7 +1379,7 @@
 
     iput v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMinuteToSearch:I
 
-    .line 323
+    .line 327
     return-void
 .end method
 
@@ -1261,42 +1389,42 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 556
+    .line 595
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->todayRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 557
+    .line 596
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneDayRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 558
+    .line 597
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneWeekRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 559
+    .line 598
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneMonthRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 560
+    .line 599
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->sixMonthRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 561
+    .line 600
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneYearRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 562
+    .line 601
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->customizeRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 563
+    .line 602
     return-void
 .end method
 
@@ -1310,18 +1438,18 @@
 
     const-string v8, ":"
 
-    .line 460
+    .line 499
     new-instance v2, Ljava/util/Date;
 
     invoke-direct {v2}, Ljava/util/Date;-><init>()V
 
-    .line 461
+    .line 500
     .local v2, todayDate:Ljava/util/Date;
     new-instance v3, Ljava/util/Date;
 
     invoke-direct {v3}, Ljava/util/Date;-><init>()V
 
-    .line 462
+    .line 501
     .local v3, todayTime:Ljava/util/Date;
     iget-object v4, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromDateButton:Landroid/widget/Button;
 
@@ -1333,7 +1461,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 463
+    .line 502
     iget-object v4, p0, Lcom/android/email/activity/CustomizeDateScreen;->toDateButton:Landroid/widget/Button;
 
     iget-object v5, p0, Lcom/android/email/activity/CustomizeDateScreen;->dateFormatter:Ljava/text/SimpleDateFormat;
@@ -1344,12 +1472,12 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 465
+    .line 504
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 466
+    .line 505
     .local v0, fromBuffer:Ljava/lang/StringBuilder;
     invoke-virtual {v2}, Ljava/util/Date;->getHours()I
 
@@ -1357,10 +1485,10 @@
 
     if-ge v4, v7, :cond_0
 
-    .line 467
+    .line 506
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 468
+    .line 507
     :cond_0
     invoke-virtual {v2}, Ljava/util/Date;->getHours()I
 
@@ -1368,22 +1496,22 @@
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 469
+    .line 508
     const-string v4, ":"
 
     invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 470
+    .line 509
     invoke-virtual {v2}, Ljava/util/Date;->getMinutes()I
 
     move-result v4
 
     if-ge v4, v7, :cond_1
 
-    .line 471
+    .line 510
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 472
+    .line 511
     :cond_1
     invoke-virtual {v2}, Ljava/util/Date;->getMinutes()I
 
@@ -1391,7 +1519,7 @@
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 473
+    .line 512
     iget-object v4, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromTimeButton:Landroid/widget/Button;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1400,12 +1528,12 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 475
+    .line 514
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 476
+    .line 515
     .local v1, toBuffer:Ljava/lang/StringBuilder;
     invoke-virtual {v2}, Ljava/util/Date;->getHours()I
 
@@ -1413,10 +1541,10 @@
 
     if-ge v4, v7, :cond_2
 
-    .line 477
+    .line 516
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 478
+    .line 517
     :cond_2
     invoke-virtual {v2}, Ljava/util/Date;->getHours()I
 
@@ -1424,22 +1552,22 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 479
+    .line 518
     const-string v4, ":"
 
     invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 480
+    .line 519
     invoke-virtual {v2}, Ljava/util/Date;->getMinutes()I
 
     move-result v4
 
     if-ge v4, v7, :cond_3
 
-    .line 481
+    .line 520
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 482
+    .line 521
     :cond_3
     invoke-virtual {v2}, Ljava/util/Date;->getMinutes()I
 
@@ -1447,7 +1575,7 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 483
+    .line 522
     iget-object v4, p0, Lcom/android/email/activity/CustomizeDateScreen;->toTimeButton:Landroid/widget/Button;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1456,7 +1584,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 484
+    .line 523
     return-void
 .end method
 
@@ -1466,7 +1594,7 @@
     .prologue
     const-string v4, ", "
 
-    .line 487
+    .line 526
     new-instance v0, Ljava/util/Date;
 
     iget v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromYear:I
@@ -1477,7 +1605,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Ljava/util/Date;-><init>(III)V
 
-    .line 488
+    .line 527
     .local v0, date:Ljava/util/Date;
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromDateStringBuffer:Ljava/lang/StringBuilder;
 
@@ -1491,7 +1619,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    .line 489
+    .line 528
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromDateStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/util/Date;->getDay()I
@@ -1504,14 +1632,14 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 490
+    .line 529
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromDateStringBuffer:Ljava/lang/StringBuilder;
 
     const-string v2, ", "
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 491
+    .line 530
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromDateStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/util/Date;->getDate()I
@@ -1520,14 +1648,14 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 492
+    .line 531
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromDateStringBuffer:Ljava/lang/StringBuilder;
 
     const-string v2, " "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 493
+    .line 532
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromDateStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/util/Date;->getMonth()I
@@ -1542,14 +1670,14 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 494
+    .line 533
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromDateStringBuffer:Ljava/lang/StringBuilder;
 
     const-string v2, ", "
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 495
+    .line 534
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromDateStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/util/Date;->getYear()I
@@ -1558,7 +1686,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 496
+    .line 535
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromDateButton:Landroid/widget/Button;
 
     iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromDateStringBuffer:Ljava/lang/StringBuilder;
@@ -1569,7 +1697,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 497
+    .line 536
     return-void
 .end method
 
@@ -1581,7 +1709,7 @@
 
     const/4 v2, 0x0
 
-    .line 513
+    .line 552
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromTimeStringBuffer:Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromTimeStringBuffer:Ljava/lang/StringBuilder;
@@ -1592,17 +1720,17 @@
 
     invoke-virtual {v0, v2, v1}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    .line 514
+    .line 553
     iget v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromHourOfDay:I
 
     if-ge v0, v3, :cond_0
 
-    .line 515
+    .line 554
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromTimeStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 516
+    .line 555
     :cond_0
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromTimeStringBuffer:Ljava/lang/StringBuilder;
 
@@ -1610,24 +1738,24 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 517
+    .line 556
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromTimeStringBuffer:Ljava/lang/StringBuilder;
 
     const-string v1, ":"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 518
+    .line 557
     iget v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromMinute:I
 
     if-ge v0, v3, :cond_1
 
-    .line 519
+    .line 558
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromTimeStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 520
+    .line 559
     :cond_1
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromTimeStringBuffer:Ljava/lang/StringBuilder;
 
@@ -1635,7 +1763,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 521
+    .line 560
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromTimeButton:Landroid/widget/Button;
 
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromTimeStringBuffer:Ljava/lang/StringBuilder;
@@ -1646,7 +1774,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 522
+    .line 561
     return-void
 .end method
 
@@ -1656,7 +1784,7 @@
     .prologue
     const-string v4, ", "
 
-    .line 500
+    .line 539
     new-instance v0, Ljava/util/Date;
 
     iget v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToYear:I
@@ -1667,7 +1795,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Ljava/util/Date;-><init>(III)V
 
-    .line 501
+    .line 540
     .local v0, date:Ljava/util/Date;
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToDateStringBuffer:Ljava/lang/StringBuilder;
 
@@ -1681,7 +1809,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    .line 502
+    .line 541
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToDateStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/util/Date;->getDay()I
@@ -1694,14 +1822,14 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 503
+    .line 542
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToDateStringBuffer:Ljava/lang/StringBuilder;
 
     const-string v2, ", "
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 504
+    .line 543
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToDateStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/util/Date;->getDate()I
@@ -1710,14 +1838,14 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 505
+    .line 544
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToDateStringBuffer:Ljava/lang/StringBuilder;
 
     const-string v2, " "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 506
+    .line 545
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToDateStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/util/Date;->getMonth()I
@@ -1732,14 +1860,14 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 507
+    .line 546
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToDateStringBuffer:Ljava/lang/StringBuilder;
 
     const-string v2, ", "
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 508
+    .line 547
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToDateStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/util/Date;->getYear()I
@@ -1748,7 +1876,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 509
+    .line 548
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->toDateButton:Landroid/widget/Button;
 
     iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToDateStringBuffer:Ljava/lang/StringBuilder;
@@ -1759,7 +1887,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 510
+    .line 549
     return-void
 .end method
 
@@ -1771,7 +1899,7 @@
 
     const/4 v2, 0x0
 
-    .line 525
+    .line 564
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
@@ -1782,17 +1910,17 @@
 
     invoke-virtual {v0, v2, v1}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    .line 526
+    .line 565
     iget v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToHourOfDay:I
 
     if-ge v0, v3, :cond_0
 
-    .line 527
+    .line 566
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 528
+    .line 567
     :cond_0
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
 
@@ -1800,24 +1928,24 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 529
+    .line 568
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
 
     const-string v1, ":"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 530
+    .line 569
     iget v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToMinute:I
 
     if-ge v0, v3, :cond_1
 
-    .line 531
+    .line 570
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 532
+    .line 571
     :cond_1
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
 
@@ -1825,7 +1953,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 533
+    .line 572
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->toTimeButton:Landroid/widget/Button;
 
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
@@ -1836,7 +1964,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 534
+    .line 573
     return-void
 .end method
 
@@ -1855,23 +1983,23 @@
 
     const-string v4, " "
 
-    .line 135
+    .line 139
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->todayLayout:Landroid/widget/RelativeLayout;
 
     if-ne p1, v1, :cond_1
 
-    .line 137
+    .line 141
     iput-boolean v3, p0, Lcom/android/email/activity/CustomizeDateScreen;->mIsCustomize:Z
 
-    .line 138
+    .line 142
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->toggleAllRadioButtons()V
 
-    .line 139
+    .line 143
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->todayRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v1, v2}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 140
+    .line 144
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getYear()I
@@ -1882,7 +2010,7 @@
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYearFromSearch:I
 
-    .line 141
+    .line 145
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getMonth()I
@@ -1891,7 +2019,7 @@
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonthFromSearch:I
 
-    .line 142
+    .line 146
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getDate()I
@@ -1900,11 +2028,11 @@
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDayFromSearch:I
 
-    .line 143
+    .line 147
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->setDefaultValues()V
 
-    .line 144
-    const v1, 0x7f080248
+    .line 148
+    const v1, 0x7f080274
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->getString(I)Ljava/lang/String;
 
@@ -1912,37 +2040,37 @@
 
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mStringToReturn:Ljava/lang/String;
 
-    .line 145
+    .line 149
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->disableCustomView()V
 
-    .line 311
+    .line 315
     :cond_0
     :goto_0
     return-void
 
-    .line 147
+    .line 151
     :cond_1
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneDayLayout:Landroid/widget/RelativeLayout;
 
     if-ne p1, v1, :cond_2
 
-    .line 149
+    .line 153
     iput-boolean v3, p0, Lcom/android/email/activity/CustomizeDateScreen;->mIsCustomize:Z
 
-    .line 150
+    .line 154
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->toggleAllRadioButtons()V
 
-    .line 151
+    .line 155
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneDayRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v1, v2}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 152
+    .line 156
     new-instance v7, Ljava/util/Date;
 
     invoke-direct {v7}, Ljava/util/Date;-><init>()V
 
-    .line 153
+    .line 157
     .local v7, date:Ljava/util/Date;
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
 
@@ -1954,7 +2082,7 @@
 
     invoke-virtual {v7, v1}, Ljava/util/Date;->setDate(I)V
 
-    .line 154
+    .line 158
     invoke-virtual {v7}, Ljava/util/Date;->getYear()I
 
     move-result v1
@@ -1963,25 +2091,25 @@
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYearFromSearch:I
 
-    .line 155
+    .line 159
     invoke-virtual {v7}, Ljava/util/Date;->getMonth()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonthFromSearch:I
 
-    .line 156
+    .line 160
     invoke-virtual {v7}, Ljava/util/Date;->getDate()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDayFromSearch:I
 
-    .line 157
+    .line 161
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->setDefaultValues()V
 
-    .line 158
-    const v1, 0x7f080249
+    .line 162
+    const v1, 0x7f080275
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->getString(I)Ljava/lang/String;
 
@@ -1989,35 +2117,35 @@
 
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mStringToReturn:Ljava/lang/String;
 
-    .line 159
+    .line 163
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->disableCustomView()V
 
     goto :goto_0
 
-    .line 161
+    .line 165
     .end local v7           #date:Ljava/util/Date;
     :cond_2
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneWeekLayout:Landroid/widget/RelativeLayout;
 
     if-ne p1, v1, :cond_3
 
-    .line 163
+    .line 167
     iput-boolean v3, p0, Lcom/android/email/activity/CustomizeDateScreen;->mIsCustomize:Z
 
-    .line 164
+    .line 168
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->toggleAllRadioButtons()V
 
-    .line 165
+    .line 169
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneWeekRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v1, v2}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 166
+    .line 170
     new-instance v7, Ljava/util/Date;
 
     invoke-direct {v7}, Ljava/util/Date;-><init>()V
 
-    .line 167
+    .line 171
     .restart local v7       #date:Ljava/util/Date;
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
 
@@ -2031,7 +2159,7 @@
 
     invoke-virtual {v7, v1}, Ljava/util/Date;->setDate(I)V
 
-    .line 168
+    .line 172
     invoke-virtual {v7}, Ljava/util/Date;->getYear()I
 
     move-result v1
@@ -2040,25 +2168,25 @@
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYearFromSearch:I
 
-    .line 169
+    .line 173
     invoke-virtual {v7}, Ljava/util/Date;->getMonth()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonthFromSearch:I
 
-    .line 170
+    .line 174
     invoke-virtual {v7}, Ljava/util/Date;->getDate()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDayFromSearch:I
 
-    .line 171
+    .line 175
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->setDefaultValues()V
 
-    .line 172
-    const v1, 0x7f08024a
+    .line 176
+    const v1, 0x7f080276
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->getString(I)Ljava/lang/String;
 
@@ -2066,35 +2194,35 @@
 
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mStringToReturn:Ljava/lang/String;
 
-    .line 173
+    .line 177
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->disableCustomView()V
 
     goto/16 :goto_0
 
-    .line 175
+    .line 179
     .end local v7           #date:Ljava/util/Date;
     :cond_3
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneMonthLayout:Landroid/widget/RelativeLayout;
 
     if-ne p1, v1, :cond_4
 
-    .line 177
+    .line 181
     iput-boolean v3, p0, Lcom/android/email/activity/CustomizeDateScreen;->mIsCustomize:Z
 
-    .line 178
+    .line 182
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->toggleAllRadioButtons()V
 
-    .line 179
+    .line 183
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneMonthRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v1, v2}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 180
+    .line 184
     new-instance v7, Ljava/util/Date;
 
     invoke-direct {v7}, Ljava/util/Date;-><init>()V
 
-    .line 181
+    .line 185
     .restart local v7       #date:Ljava/util/Date;
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
 
@@ -2106,7 +2234,7 @@
 
     invoke-virtual {v7, v1}, Ljava/util/Date;->setMonth(I)V
 
-    .line 182
+    .line 186
     invoke-virtual {v7}, Ljava/util/Date;->getYear()I
 
     move-result v1
@@ -2115,25 +2243,25 @@
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYearFromSearch:I
 
-    .line 183
+    .line 187
     invoke-virtual {v7}, Ljava/util/Date;->getMonth()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonthFromSearch:I
 
-    .line 184
+    .line 188
     invoke-virtual {v7}, Ljava/util/Date;->getDate()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDayFromSearch:I
 
-    .line 185
+    .line 189
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->setDefaultValues()V
 
-    .line 186
-    const v1, 0x7f08024b
+    .line 190
+    const v1, 0x7f080277
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->getString(I)Ljava/lang/String;
 
@@ -2141,35 +2269,35 @@
 
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mStringToReturn:Ljava/lang/String;
 
-    .line 187
+    .line 191
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->disableCustomView()V
 
     goto/16 :goto_0
 
-    .line 189
+    .line 193
     .end local v7           #date:Ljava/util/Date;
     :cond_4
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->sixMonthLayout:Landroid/widget/RelativeLayout;
 
     if-ne p1, v1, :cond_5
 
-    .line 191
+    .line 195
     iput-boolean v3, p0, Lcom/android/email/activity/CustomizeDateScreen;->mIsCustomize:Z
 
-    .line 192
+    .line 196
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->toggleAllRadioButtons()V
 
-    .line 193
+    .line 197
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->sixMonthRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v1, v2}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 194
+    .line 198
     new-instance v7, Ljava/util/Date;
 
     invoke-direct {v7}, Ljava/util/Date;-><init>()V
 
-    .line 195
+    .line 199
     .restart local v7       #date:Ljava/util/Date;
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
 
@@ -2183,7 +2311,7 @@
 
     invoke-virtual {v7, v1}, Ljava/util/Date;->setMonth(I)V
 
-    .line 196
+    .line 200
     invoke-virtual {v7}, Ljava/util/Date;->getYear()I
 
     move-result v1
@@ -2192,25 +2320,25 @@
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYearFromSearch:I
 
-    .line 197
+    .line 201
     invoke-virtual {v7}, Ljava/util/Date;->getMonth()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonthFromSearch:I
 
-    .line 198
+    .line 202
     invoke-virtual {v7}, Ljava/util/Date;->getDate()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDayFromSearch:I
 
-    .line 199
+    .line 203
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->setDefaultValues()V
 
-    .line 200
-    const v1, 0x7f08024c
+    .line 204
+    const v1, 0x7f080278
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->getString(I)Ljava/lang/String;
 
@@ -2218,35 +2346,35 @@
 
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mStringToReturn:Ljava/lang/String;
 
-    .line 201
+    .line 205
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->disableCustomView()V
 
     goto/16 :goto_0
 
-    .line 203
+    .line 207
     .end local v7           #date:Ljava/util/Date;
     :cond_5
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneYearLayout:Landroid/widget/RelativeLayout;
 
     if-ne p1, v1, :cond_6
 
-    .line 205
+    .line 209
     iput-boolean v3, p0, Lcom/android/email/activity/CustomizeDateScreen;->mIsCustomize:Z
 
-    .line 206
+    .line 210
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->toggleAllRadioButtons()V
 
-    .line 207
+    .line 211
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->oneYearRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v1, v2}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 208
+    .line 212
     new-instance v7, Ljava/util/Date;
 
     invoke-direct {v7}, Ljava/util/Date;-><init>()V
 
-    .line 209
+    .line 213
     .restart local v7       #date:Ljava/util/Date;
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
 
@@ -2258,7 +2386,7 @@
 
     invoke-virtual {v7, v1}, Ljava/util/Date;->setYear(I)V
 
-    .line 210
+    .line 214
     invoke-virtual {v7}, Ljava/util/Date;->getYear()I
 
     move-result v1
@@ -2267,25 +2395,25 @@
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYearFromSearch:I
 
-    .line 211
+    .line 215
     invoke-virtual {v7}, Ljava/util/Date;->getMonth()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonthFromSearch:I
 
-    .line 212
+    .line 216
     invoke-virtual {v7}, Ljava/util/Date;->getDate()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDayFromSearch:I
 
-    .line 213
+    .line 217
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->setDefaultValues()V
 
-    .line 214
-    const v1, 0x7f08024d
+    .line 218
+    const v1, 0x7f080279
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->getString(I)Ljava/lang/String;
 
@@ -2293,24 +2421,24 @@
 
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mStringToReturn:Ljava/lang/String;
 
-    .line 215
+    .line 219
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->disableCustomView()V
 
     goto/16 :goto_0
 
-    .line 217
+    .line 221
     .end local v7           #date:Ljava/util/Date;
     :cond_6
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->customizeLayout:Landroid/widget/RelativeLayout;
 
     if-ne p1, v1, :cond_7
 
-    .line 219
+    .line 223
     new-instance v7, Ljava/util/Date;
 
     invoke-direct {v7}, Ljava/util/Date;-><init>()V
 
-    .line 220
+    .line 224
     .restart local v7       #date:Ljava/util/Date;
     invoke-virtual {v7}, Ljava/util/Date;->getYear()I
 
@@ -2320,35 +2448,35 @@
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYearFromSearch:I
 
-    .line 221
+    .line 225
     invoke-virtual {v7}, Ljava/util/Date;->getMonth()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonthFromSearch:I
 
-    .line 222
+    .line 226
     invoke-virtual {v7}, Ljava/util/Date;->getDate()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDayFromSearch:I
 
-    .line 223
+    .line 227
     invoke-virtual {v7}, Ljava/util/Date;->getHours()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mHourFromSearch:I
 
-    .line 224
+    .line 228
     invoke-virtual {v7}, Ljava/util/Date;->getMinutes()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMinuteFromSearch:I
 
-    .line 225
+    .line 229
     invoke-virtual {v7}, Ljava/util/Date;->getYear()I
 
     move-result v1
@@ -2357,43 +2485,43 @@
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYearToSearch:I
 
-    .line 226
+    .line 230
     invoke-virtual {v7}, Ljava/util/Date;->getMonth()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonthToSearch:I
 
-    .line 227
+    .line 231
     invoke-virtual {v7}, Ljava/util/Date;->getDate()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDayToSearch:I
 
-    .line 228
+    .line 232
     invoke-virtual {v7}, Ljava/util/Date;->getHours()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mHourToSearch:I
 
-    .line 229
+    .line 233
     invoke-virtual {v7}, Ljava/util/Date;->getMinutes()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMinuteToSearch:I
 
-    .line 230
+    .line 234
     iput-boolean v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mIsCustomize:Z
 
-    .line 232
+    .line 236
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 233
+    .line 237
     .local v8, defaultBuilder:Ljava/lang/StringBuilder;
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->dateFormatter:Ljava/text/SimpleDateFormat;
 
@@ -2407,12 +2535,12 @@
 
     invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 234
+    .line 238
     const-string v1, "~"
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 235
+    .line 239
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->dateFormatter:Ljava/text/SimpleDateFormat;
 
     invoke-virtual {v1, v7}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
@@ -2425,27 +2553,27 @@
 
     invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 236
+    .line 240
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mStringToReturn:Ljava/lang/String;
 
-    .line 238
+    .line 242
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->toggleAllRadioButtons()V
 
-    .line 239
+    .line 243
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->customizeRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v1, v2}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 240
+    .line 244
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->enableCustomView()V
 
     goto/16 :goto_0
 
-    .line 242
+    .line 246
     .end local v7           #date:Ljava/util/Date;
     .end local v8           #defaultBuilder:Ljava/lang/StringBuilder;
     :cond_7
@@ -2453,91 +2581,71 @@
 
     if-ne p1, v1, :cond_8
 
-    .line 244
+    .line 248
     const/16 v1, 0x64
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->showDialog(I)V
 
     goto/16 :goto_0
 
-    .line 246
+    .line 250
     :cond_8
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->fromTimeButton:Landroid/widget/Button;
 
     if-ne p1, v1, :cond_9
 
-    .line 248
+    .line 252
     const/16 v1, 0x12c
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->showDialog(I)V
 
     goto/16 :goto_0
 
-    .line 250
+    .line 254
     :cond_9
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->toDateButton:Landroid/widget/Button;
 
     if-ne p1, v1, :cond_a
 
-    .line 252
+    .line 256
     const/16 v1, 0xc8
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->showDialog(I)V
 
     goto/16 :goto_0
 
-    .line 254
+    .line 258
     :cond_a
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->toTimeButton:Landroid/widget/Button;
 
     if-ne p1, v1, :cond_b
 
-    .line 256
+    .line 260
     const/16 v1, 0x190
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDateScreen;->showDialog(I)V
 
     goto/16 :goto_0
 
-    .line 258
+    .line 262
     :cond_b
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->okButton:Landroid/widget/Button;
 
     if-ne p1, v1, :cond_e
 
-    .line 260
+    .line 264
     iget-boolean v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mIsCustomize:Z
 
     if-eqz v1, :cond_c
 
-    .line 262
+    .line 266
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 263
+    .line 267
     .local v10, sb:Ljava/lang/StringBuilder;
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromDateStringBuffer:Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
-
-    .line 264
-    const-string v1, " "
-
-    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 265
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromTimeStringBuffer:Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
-
-    .line 266
-    const-string v1, "~"
-
-    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 267
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToDateStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
@@ -2547,31 +2655,51 @@
     invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 269
-    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromTimeStringBuffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
     .line 270
+    const-string v1, "~"
+
+    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 271
+    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToDateStringBuffer:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+    .line 272
+    const-string v1, " "
+
+    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 273
+    iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+    .line 274
     invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mStringToReturn:Ljava/lang/String;
 
-    .line 274
+    .line 278
     .end local v10           #sb:Ljava/lang/StringBuilder;
     :cond_c
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 275
+    .line 279
     .local v0, fromCal:Ljava/util/Calendar;
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v11
 
-    .line 276
+    .line 280
     .local v11, toCal:Ljava/util/Calendar;
     iget v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYearFromSearch:I
 
@@ -2585,7 +2713,7 @@
 
     invoke-virtual/range {v0 .. v5}, Ljava/util/Calendar;->set(IIIII)V
 
-    .line 277
+    .line 281
     iget v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYearToSearch:I
 
     iget v3, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonthToSearch:I
@@ -2600,19 +2728,19 @@
 
     invoke-virtual/range {v1 .. v6}, Ljava/util/Calendar;->set(IIIII)V
 
-    .line 279
+    .line 283
     invoke-virtual {v0, v11}, Ljava/util/Calendar;->after(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_d
 
-    .line 281
+    .line 285
     invoke-virtual {p0}, Lcom/android/email/activity/CustomizeDateScreen;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    const v2, 0x7f080256
+    const v2, 0x7f080282
 
     const/16 v3, 0x7d0
 
@@ -2624,13 +2752,13 @@
 
     goto/16 :goto_0
 
-    .line 286
+    .line 290
     :cond_d
     new-instance v9, Landroid/content/Intent;
 
     invoke-direct {v9}, Landroid/content/Intent;-><init>()V
 
-    .line 287
+    .line 291
     .local v9, intent:Landroid/content/Intent;
     const-string v1, "FROM_YEAR"
 
@@ -2638,87 +2766,87 @@
 
     invoke-virtual {v9, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 288
+    .line 292
     const-string v1, "FROM_MONTH"
 
     iget v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonthFromSearch:I
 
     invoke-virtual {v9, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 289
+    .line 293
     const-string v1, "FROM_DAY"
 
     iget v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDayFromSearch:I
 
     invoke-virtual {v9, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 291
+    .line 295
     const-string v1, "TO_YEAR"
 
     iget v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mYearToSearch:I
 
     invoke-virtual {v9, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 292
+    .line 296
     const-string v1, "TO_MONTH"
 
     iget v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMonthToSearch:I
 
     invoke-virtual {v9, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 293
+    .line 297
     const-string v1, "TO_DAY"
 
     iget v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDayToSearch:I
 
     invoke-virtual {v9, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 295
+    .line 299
     const-string v1, "FROM_HOUR"
 
     iget v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mHourFromSearch:I
 
     invoke-virtual {v9, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 296
+    .line 300
     const-string v1, "FROM_MINUTE"
 
     iget v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMinuteFromSearch:I
 
     invoke-virtual {v9, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 298
+    .line 302
     const-string v1, "TO_HOUR"
 
     iget v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mHourToSearch:I
 
     invoke-virtual {v9, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 299
+    .line 303
     const-string v1, "TO_MINUTE"
 
     iget v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mMinuteToSearch:I
 
     invoke-virtual {v9, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 301
+    .line 305
     const-string v1, "SEARCH_STRING"
 
     iget-object v2, p0, Lcom/android/email/activity/CustomizeDateScreen;->mStringToReturn:Ljava/lang/String;
 
     invoke-virtual {v9, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 302
+    .line 306
     const/4 v1, -0x1
 
     invoke-virtual {p0, v1, v9}, Lcom/android/email/activity/CustomizeDateScreen;->setResult(ILandroid/content/Intent;)V
 
-    .line 303
+    .line 307
     invoke-virtual {p0}, Lcom/android/email/activity/CustomizeDateScreen;->finish()V
 
     goto/16 :goto_0
 
-    .line 305
+    .line 309
     .end local v0           #fromCal:Ljava/util/Calendar;
     .end local v9           #intent:Landroid/content/Intent;
     .end local v11           #toCal:Ljava/util/Calendar;
@@ -2727,10 +2855,10 @@
 
     if-ne p1, v1, :cond_0
 
-    .line 307
+    .line 311
     invoke-virtual {p0, v3}, Lcom/android/email/activity/CustomizeDateScreen;->setResult(I)V
 
-    .line 308
+    .line 312
     invoke-virtual {p0}, Lcom/android/email/activity/CustomizeDateScreen;->finish()V
 
     goto/16 :goto_0
@@ -2743,18 +2871,18 @@
     .prologue
     const-string v3, ":"
 
-    .line 120
+    .line 124
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 121
-    const v0, 0x7f030010
+    .line 125
+    const v0, 0x7f030013
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/CustomizeDateScreen;->setContentView(I)V
 
-    .line 123
+    .line 127
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDateScreen;->init()V
 
-    .line 124
+    .line 128
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromDateStringBuffer:Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->dateFormatter:Ljava/text/SimpleDateFormat;
@@ -2771,7 +2899,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 125
+    .line 129
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromTimeStringBuffer:Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
@@ -2782,14 +2910,14 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 126
+    .line 130
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromTimeStringBuffer:Ljava/lang/StringBuilder;
 
     const-string v1, ":"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 127
+    .line 131
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mFromTimeStringBuffer:Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
@@ -2800,7 +2928,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 128
+    .line 132
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToDateStringBuffer:Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->dateFormatter:Ljava/text/SimpleDateFormat;
@@ -2817,7 +2945,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 129
+    .line 133
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
@@ -2828,14 +2956,14 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 130
+    .line 134
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
 
     const-string v1, ":"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 131
+    .line 135
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDateScreen;->mToTimeStringBuffer:Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/email/activity/CustomizeDateScreen;->mDate:Ljava/util/Date;
@@ -2846,7 +2974,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 132
+    .line 136
     return-void
 .end method
 
@@ -2857,16 +2985,16 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 326
+    .line 330
     sparse-switch p1, :sswitch_data_0
 
-    .line 340
+    .line 344
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 328
+    .line 332
     :sswitch_0
     new-instance v0, Landroid/app/DatePickerDialog;
 
@@ -2884,7 +3012,7 @@
 
     goto :goto_0
 
-    .line 332
+    .line 336
     :sswitch_1
     new-instance v0, Landroid/app/DatePickerDialog;
 
@@ -2902,7 +3030,7 @@
 
     goto :goto_0
 
-    .line 336
+    .line 340
     :sswitch_2
     new-instance v0, Landroid/app/TimePickerDialog;
 
@@ -2918,7 +3046,7 @@
 
     goto :goto_0
 
-    .line 338
+    .line 342
     :sswitch_3
     new-instance v0, Landroid/app/TimePickerDialog;
 
@@ -2934,7 +3062,7 @@
 
     goto :goto_0
 
-    .line 326
+    .line 330
     :sswitch_data_0
     .sparse-switch
         0x64 -> :sswitch_0

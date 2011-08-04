@@ -15,18 +15,6 @@
 
 
 # static fields
-.field private static final COLUMN_FLAG_ATTACHMENT:I = 0x5
-
-.field private static final COLUMN_FLAG_FAVORITE:I = 0x2
-
-.field private static final COLUMN_FLAG_LOADED:I = 0x3
-
-.field private static final COLUMN_FLAG_READ:I = 0x1
-
-.field private static final COLUMN_ID:I = 0x0
-
-.field private static final COLUMN_SERVER_ID:I = 0x4
-
 .field private static final PROJECTION:[Ljava/lang/String;
 
 
@@ -53,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 841
+    .line 850
     const/16 v0, 0x8
 
     new-array v0, v0, [Ljava/lang/String;
@@ -120,27 +108,27 @@
 
     const/4 v2, 0x0
 
-    .line 859
+    .line 868
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 857
+    .line 866
     iput-boolean v2, p0, Lcom/android/email/MessagingController$LocalMessageInfo;->mFlagAttachment:Z
 
-    .line 860
+    .line 869
     invoke-interface {p1}, Landroid/database/Cursor;->getPosition()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/email/MessagingController$LocalMessageInfo;->mCursorIndex:I
 
-    .line 861
+    .line 870
     invoke-interface {p1, v2}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/email/MessagingController$LocalMessageInfo;->mId:J
 
-    .line 862
+    .line 871
     invoke-interface {p1, v3}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
@@ -152,7 +140,7 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/email/MessagingController$LocalMessageInfo;->mFlagRead:Z
 
-    .line 863
+    .line 872
     const/4 v0, 0x2
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -166,7 +154,7 @@
     :goto_1
     iput-boolean v0, p0, Lcom/android/email/MessagingController$LocalMessageInfo;->mFlagFavorite:Z
 
-    .line 866
+    .line 875
     const/4 v0, 0x3
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -175,7 +163,7 @@
 
     iput v0, p0, Lcom/android/email/MessagingController$LocalMessageInfo;->mFlagLoaded:I
 
-    .line 867
+    .line 876
     iget v0, p0, Lcom/android/email/MessagingController$LocalMessageInfo;->mFlagLoaded:I
 
     const v1, 0xff00
@@ -188,14 +176,14 @@
 
     iput-byte v0, p0, Lcom/android/email/MessagingController$LocalMessageInfo;->mFlagTruncated:B
 
-    .line 868
+    .line 877
     iget v0, p0, Lcom/android/email/MessagingController$LocalMessageInfo;->mFlagLoaded:I
 
     and-int/lit16 v0, v0, 0xff
 
     iput v0, p0, Lcom/android/email/MessagingController$LocalMessageInfo;->mFlagLoaded:I
 
-    .line 870
+    .line 879
     const/4 v0, 0x4
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -204,7 +192,7 @@
 
     iput-object v0, p0, Lcom/android/email/MessagingController$LocalMessageInfo;->mServerId:Ljava/lang/String;
 
-    .line 872
+    .line 881
     const/4 v0, 0x5
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -218,25 +206,25 @@
     :goto_2
     iput-boolean v0, p0, Lcom/android/email/MessagingController$LocalMessageInfo;->mFlagAttachment:Z
 
-    .line 873
+    .line 882
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 862
+    .line 871
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 863
+    .line 872
     goto :goto_1
 
     :cond_2
     move v0, v2
 
-    .line 872
+    .line 881
     goto :goto_2
 .end method
 
@@ -244,7 +232,7 @@
     .locals 1
 
     .prologue
-    .line 834
+    .line 843
     sget-object v0, Lcom/android/email/MessagingController$LocalMessageInfo;->PROJECTION:[Ljava/lang/String;
 
     return-object v0

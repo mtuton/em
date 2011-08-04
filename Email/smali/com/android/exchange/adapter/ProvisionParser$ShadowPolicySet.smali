@@ -31,7 +31,7 @@
 
 .field public mAllowPOPIMAPEmail:Z
 
-.field public mAllowSMIMEEncryptionAlgorithmNegotiation:Z
+.field public mAllowSMIMEEncryptionAlgorithmNegotiation:I
 
 .field public mAllowSMIMESoftCerts:Z
 
@@ -73,11 +73,11 @@
 
 .field public mRequireEncryptedSMIMEMessages:Z
 
-.field public mRequireEncryptionSMIMEAlgorithm:Z
+.field public mRequireEncryptionSMIMEAlgorithm:I
 
 .field public mRequireManualSyncWhenRoaming:Z
 
-.field public mRequireSignedSMIMEAlgorithm:Z
+.field public mRequireSignedSMIMEAlgorithm:I
 
 .field public mRequireSignedSMIMEMessages:Z
 
@@ -88,121 +88,123 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/exchange/adapter/ProvisionParser;)V
-    .locals 3
+    .locals 4
     .parameter
 
     .prologue
+    const/4 v3, -0x1
+
     const/4 v2, 0x1
 
     const/4 v1, 0x0
 
-    .line 347
+    .line 419
     iput-object p1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->this$0:Lcom/android/exchange/adapter/ProvisionParser;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 348
+    .line 420
     iput v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMinPasswordLength:I
 
-    .line 349
+    .line 421
     iput v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mPasswordMode:I
 
-    .line 350
+    .line 422
     iput v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxPasswordFails:I
 
-    .line 351
+    .line 423
     iput v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxScreenLockTime:I
 
-    .line 353
+    .line 425
     iput-boolean v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mPasswordRecoverable:Z
 
-    .line 354
+    .line 426
     iput v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mPasswordExpires:I
 
-    .line 355
+    .line 427
     iput v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mPasswordHistory:I
 
-    .line 356
+    .line 428
     iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAttachmentsEnabled:Z
 
-    .line 357
+    .line 429
     iput v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxAttachmentSize:I
 
-    .line 360
+    .line 432
     iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowStorageCard:Z
 
-    .line 361
+    .line 433
     iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowCamera:Z
 
-    .line 362
+    .line 434
     iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowWifi:Z
 
-    .line 363
+    .line 435
     iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowTextMessaging:Z
 
-    .line 364
+    .line 436
     iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowPOPIMAPEmail:Z
 
-    .line 365
+    .line 437
     iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowHTMLEmail:Z
 
-    .line 366
+    .line 438
     iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowBrowser:Z
 
-    .line 367
+    .line 439
     iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowInternetSharing:Z
 
-    .line 368
+    .line 440
     iput-boolean v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireManualSyncWhenRoaming:Z
 
-    .line 369
+    .line 441
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowBluetoothMode:I
 
-    .line 370
+    .line 442
     iput v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMinPasswordComplexChars:I
 
-    .line 371
+    .line 443
     iput v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxCalendarAgeFilter:I
 
-    .line 372
+    .line 444
     iput v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxEmailAgeFilter:I
 
-    .line 373
+    .line 445
     iput v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxEmailBodyTruncationSize:I
 
-    .line 374
+    .line 446
     iput v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxEmailHtmlBodyTruncationSize:I
 
-    .line 375
+    .line 447
     iput-boolean v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireSignedSMIMEMessages:Z
 
-    .line 376
+    .line 448
     iput-boolean v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireEncryptedSMIMEMessages:Z
 
-    .line 377
-    iput-boolean v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireSignedSMIMEAlgorithm:Z
+    .line 450
+    iput v3, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireSignedSMIMEAlgorithm:I
 
-    .line 378
-    iput-boolean v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireEncryptionSMIMEAlgorithm:Z
+    .line 451
+    iput v3, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireEncryptionSMIMEAlgorithm:I
 
-    .line 379
-    iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowSMIMEEncryptionAlgorithmNegotiation:Z
+    .line 452
+    iput v3, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowSMIMEEncryptionAlgorithmNegotiation:I
 
-    .line 380
+    .line 454
     iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowSMIMESoftCerts:Z
 
-    .line 381
+    .line 455
     iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowDesktopSync:Z
 
-    .line 382
+    .line 456
     iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowIrDA:Z
 
-    .line 383
+    .line 458
     iput-boolean v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireDeviceEncryption:Z
 
-    .line 384
+    .line 459
     iput-boolean v1, p0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireStorageCardEncryption:Z
 
     return-void

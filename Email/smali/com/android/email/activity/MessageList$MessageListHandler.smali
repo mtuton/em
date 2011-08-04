@@ -14,20 +14,6 @@
 .end annotation
 
 
-# static fields
-.field private static final MSG_ERROR_BANNER:I = 0x3
-
-.field private static final MSG_LOOKUP_MAILBOX_TYPE:I = 0x2
-
-.field private static final MSG_MOVE_PROGRESS:I = 0x5
-
-.field private static final MSG_PROGRESS:I = 0x1
-
-.field private static final MSG_REQUERY_LIST:I = 0x4
-
-.field private static final MSG_SHOW_MESSAGE:I = 0x6
-
-
 # instance fields
 .field final synthetic this$0:Lcom/android/email/activity/MessageList;
 
@@ -38,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 5868
+    .line 7467
     iput-object p1, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -49,30 +35,24 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 13
+    .locals 14
     .parameter "msg"
 
     .prologue
-    const/16 v1, 0x8
-
-    const/4 v12, 0x1
-
-    const/4 v5, 0x0
-
-    .line 5879
+    .line 7480
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 5961
+    .line 7577
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 5963
+    .line 7579
     :cond_0
     :goto_0
     return-void
 
-    .line 5881
+    .line 7482
     :pswitch_0
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
@@ -80,39 +60,39 @@
 
     if-eqz v1, :cond_1
 
-    move v1, v12
+    const/4 v1, 0x1
 
     :goto_1
     iput-boolean v1, v0, Lcom/android/email/activity/MessageList;->mMoveDialogVisible:Z
 
-    .line 5882
+    .line 7483
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
     iget-boolean v0, v0, Lcom/android/email/activity/MessageList;->mMoveDialogVisible:Z
 
     if-eqz v0, :cond_2
 
-    .line 5883
+    .line 7484
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8100(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$ProgressDialogForMessageMove;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$9000(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$ProgressDialogForMessageMove;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    const v5, 0x7f080161
+    const v2, 0x7f080179
 
-    invoke-virtual {v1, v5}, Lcom/android/email/activity/MessageList;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Lcom/android/email/activity/MessageList;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageList$ProgressDialogForMessageMove;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 5884
+    .line 7485
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8100(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$ProgressDialogForMessageMove;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$9000(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$ProgressDialogForMessageMove;
 
     move-result-object v0
 
@@ -120,17 +100,17 @@
 
     goto :goto_0
 
+    .line 7482
     :cond_1
-    move v1, v5
+    const/4 v1, 0x0
 
-    .line 5881
     goto :goto_1
 
-    .line 5887
+    .line 7488
     :cond_2
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8100(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$ProgressDialogForMessageMove;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$9000(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$ProgressDialogForMessageMove;
 
     move-result-object v0
 
@@ -138,82 +118,93 @@
 
     goto :goto_0
 
-    .line 5892
+    .line 7493
     :pswitch_1
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    if-eqz v0, :cond_5
-
-    move v11, v12
-
-    .line 5893
-    .local v11, visible:Z
-    :goto_2
-    if-eqz v11, :cond_6
-
-    .line 5894
-    iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
-
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$6200(Lcom/android/email/activity/MessageList;)Landroid/widget/ProgressBar;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v5}, Landroid/widget/ProgressBar;->setVisibility(I)V
-
-    .line 5898
-    :goto_3
-    iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
-
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8200(Lcom/android/email/activity/MessageList;)Landroid/view/View;
-
-    move-result-object v0
-
     if-eqz v0, :cond_4
 
-    .line 5899
+    const/4 v0, 0x1
+
+    move v13, v0
+
+    .line 7494
+    .local v13, visible:Z
+    :goto_2
+    if-eqz v13, :cond_5
+
+    .line 7495
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8200(Lcom/android/email/activity/MessageList;)Landroid/view/View;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$6900(Lcom/android/email/activity/MessageList;)Landroid/widget/ProgressBar;
 
     move-result-object v0
 
-    if-eqz v11, :cond_3
-
-    move v1, v5
-
-    :cond_3
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 5901
-    :cond_4
-    iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
-
-    invoke-static {v0, v11}, Lcom/android/email/activity/MessageList;->access$8300(Lcom/android/email/activity/MessageList;Z)V
-
-    goto :goto_0
-
-    .end local v11           #visible:Z
-    :cond_5
-    move v11, v5
-
-    .line 5892
-    goto :goto_2
-
-    .line 5896
-    .restart local v11       #visible:Z
-    :cond_6
-    iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
-
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$6200(Lcom/android/email/activity/MessageList;)Landroid/widget/ProgressBar;
-
-    move-result-object v0
+    const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
+    .line 7509
+    :cond_3
+    :goto_3
+    iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
+
+    invoke-static {v0, v13}, Lcom/android/email/activity/MessageList;->access$9100(Lcom/android/email/activity/MessageList;Z)V
+
+    goto :goto_0
+
+    .line 7493
+    .end local v13           #visible:Z
+    :cond_4
+    const/4 v0, 0x0
+
+    move v13, v0
+
+    goto :goto_2
+
+    .line 7497
+    .restart local v13       #visible:Z
+    :cond_5
+    iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$6900(Lcom/android/email/activity/MessageList;)Landroid/widget/ProgressBar;
+
+    move-result-object v0
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
+
+    .line 7499
+    iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
+
+    const v1, 0x7f0700b7
+
+    invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageList;->findViewById(I)Landroid/view/View;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/widget/TextView;
+
+    .line 7500
+    .local v6, estimateView:Landroid/widget/TextView;
+    if-eqz v6, :cond_3
+
+    .line 7501
+    const-string v0, ""
+
+    invoke-virtual {v6, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 7502
+    const/16 v0, 0x8
+
+    invoke-virtual {v6, v0}, Landroid/widget/TextView;->setVisibility(I)V
+
     goto :goto_3
 
-    .line 5904
-    .end local v11           #visible:Z
+    .line 7512
+    .end local v6           #estimateView:Landroid/widget/TextView;
+    .end local v13           #visible:Z
     :pswitch_2
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -223,49 +214,49 @@
 
     move-result-wide v2
 
-    .line 5905
+    .line 7513
     .local v2, accountId:J
     iget v4, p1, Landroid/os/Message;->arg1:I
 
-    .line 5906
+    .line 7514
     .local v4, mailboxType:I
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-static {v0, v2, v3, v4}, Lcom/android/email/provider/EmailContent$Mailbox;->findMailboxOfType(Landroid/content/Context;JI)J
 
-    move-result-wide v7
+    move-result-wide v8
 
-    .line 5907
-    .local v7, mailboxId:J
+    .line 7515
+    .local v8, mailboxId:J
     const-wide/16 v0, -0x1
 
-    cmp-long v0, v7, v0
+    cmp-long v0, v8, v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
-    .line 5908
+    .line 7516
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0, v7, v8}, Lcom/android/email/activity/MessageList;->access$302(Lcom/android/email/activity/MessageList;J)J
+    invoke-static {v0, v8, v9}, Lcom/android/email/activity/MessageList;->access$202(Lcom/android/email/activity/MessageList;J)J
 
-    .line 5909
+    .line 7517
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8400(Lcom/android/email/activity/MessageList;)V
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$9200(Lcom/android/email/activity/MessageList;)V
 
-    .line 5913
-    :cond_7
+    .line 7521
+    :cond_6
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8500(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$FindMailboxTask;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$9300(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$FindMailboxTask;
 
     move-result-object v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8500(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$FindMailboxTask;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$9300(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$FindMailboxTask;
 
     move-result-object v0
 
@@ -275,63 +266,69 @@
 
     sget-object v1, Landroid/os/AsyncTask$Status;->FINISHED:Landroid/os/AsyncTask$Status;
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_7
 
-    .line 5915
+    .line 7523
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8500(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$FindMailboxTask;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$9300(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$FindMailboxTask;
 
     move-result-object v0
 
-    invoke-virtual {v0, v12}, Lcom/android/email/activity/MessageList$FindMailboxTask;->cancel(Z)Z
+    const/4 v1, 0x1
 
-    .line 5916
+    invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageList$FindMailboxTask;->cancel(Z)Z
+
+    .line 7524
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/email/activity/MessageList;->access$8502(Lcom/android/email/activity/MessageList;Lcom/android/email/activity/MessageList$FindMailboxTask;)Lcom/android/email/activity/MessageList$FindMailboxTask;
+    invoke-static {v0, v1}, Lcom/android/email/activity/MessageList;->access$9302(Lcom/android/email/activity/MessageList;Lcom/android/email/activity/MessageList$FindMailboxTask;)Lcom/android/email/activity/MessageList$FindMailboxTask;
 
-    .line 5920
-    :cond_8
-    iget-object v12, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
+    .line 7528
+    :cond_7
+    iget-object v6, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
     new-instance v0, Lcom/android/email/activity/MessageList$FindMailboxTask;
 
     iget-object v1, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
+    const/4 v5, 0x0
+
     invoke-direct/range {v0 .. v5}, Lcom/android/email/activity/MessageList$FindMailboxTask;-><init>(Lcom/android/email/activity/MessageList;JIZ)V
 
-    invoke-static {v12, v0}, Lcom/android/email/activity/MessageList;->access$8502(Lcom/android/email/activity/MessageList;Lcom/android/email/activity/MessageList$FindMailboxTask;)Lcom/android/email/activity/MessageList$FindMailboxTask;
+    invoke-static {v6, v0}, Lcom/android/email/activity/MessageList;->access$9302(Lcom/android/email/activity/MessageList;Lcom/android/email/activity/MessageList$FindMailboxTask;)Lcom/android/email/activity/MessageList$FindMailboxTask;
 
-    .line 5921
+    .line 7529
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8500(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$FindMailboxTask;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$9300(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$FindMailboxTask;
 
     move-result-object v0
 
-    new-array v1, v5, [Ljava/lang/Void;
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Void;
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageList$FindMailboxTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     goto/16 :goto_0
 
-    .line 5924
+    .line 7532
     .end local v2           #accountId:J
     .end local v4           #mailboxType:I
-    .end local v7           #mailboxId:J
+    .end local v8           #mailboxId:J
     :pswitch_3
-    iget-object v9, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object v10, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v9, Ljava/lang/String;
+    check-cast v10, Ljava/lang/String;
 
-    .line 5925
-    .local v9, message:Ljava/lang/String;
+    .line 7533
+    .local v10, message:Ljava/lang/String;
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8600(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8800(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
 
     move-result-object v0
 
@@ -339,88 +336,52 @@
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_8
 
-    move v6, v12
+    const/4 v0, 0x1
 
-    .line 5926
-    .local v6, isVisible:Z
+    move v7, v0
+
+    .line 7534
+    .local v7, isVisible:Z
     :goto_4
-    if-eqz v9, :cond_a
+    if-eqz v10, :cond_9
 
-    .line 5927
+    .line 7535
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8600(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8800(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
 
     move-result-object v0
 
-    invoke-virtual {v0, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5928
-    if-nez v6, :cond_0
+    .line 7536
+    if-nez v7, :cond_0
 
-    .line 5929
+    .line 7537
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8600(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8800(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
 
     move-result-object v0
 
-    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 5930
-    iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
-
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8600(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
-
-    const v5, 0x7f040002
-
-    invoke-static {v1, v5}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->startAnimation(Landroid/view/animation/Animation;)V
-
-    goto/16 :goto_0
-
-    .end local v6           #isVisible:Z
-    :cond_9
-    move v6, v5
-
-    .line 5925
-    goto :goto_4
-
-    .line 5935
-    .restart local v6       #isVisible:Z
-    :cond_a
-    if-eqz v6, :cond_0
-
-    .line 5936
-    iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
-
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8600(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
-
-    move-result-object v0
+    const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 5937
+    .line 7538
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8600(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8800(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    const v5, 0x7f040003
+    const v2, 0x7f040002
 
-    invoke-static {v1, v5}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+    invoke-static {v1, v2}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object v1
 
@@ -428,31 +389,75 @@
 
     goto/16 :goto_0
 
-    .line 5944
-    .end local v6           #isVisible:Z
-    .end local v9           #message:Ljava/lang/String;
+    .line 7533
+    .end local v7           #isVisible:Z
+    :cond_8
+    const/4 v0, 0x0
+
+    move v7, v0
+
+    goto :goto_4
+
+    .line 7543
+    .restart local v7       #isVisible:Z
+    :cond_9
+    if-eqz v7, :cond_0
+
+    .line 7544
+    iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8800(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 7545
+    iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
+
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8800(Lcom/android/email/activity/MessageList;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
+
+    const v2, 0x7f040003
+
+    invoke-static {v1, v2}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->startAnimation(Landroid/view/animation/Animation;)V
+
+    goto/16 :goto_0
+
+    .line 7552
+    .end local v7           #isVisible:Z
+    .end local v10           #message:Ljava/lang/String;
     :pswitch_4
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2400(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$MessageListAdapter;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2700(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$MessageListAdapter;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 5945
+    .line 7553
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2400(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$MessageListAdapter;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$2700(Lcom/android/email/activity/MessageList;)Lcom/android/email/activity/MessageList$MessageListAdapter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/email/activity/MessageList$MessageListAdapter;->doRequery()V
 
-    .line 5946
+    .line 7554
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8700(Lcom/android/email/activity/MessageList;)Landroid/view/View;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$9400(Lcom/android/email/activity/MessageList;)Landroid/view/View;
 
     move-result-object v0
 
@@ -460,35 +465,37 @@
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_a
 
-    .line 5947
+    .line 7555
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8800(Lcom/android/email/activity/MessageList;)V
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$9500(Lcom/android/email/activity/MessageList;)V
 
-    .line 5949
-    :cond_b
+    .line 7557
+    :cond_a
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$8900(Lcom/android/email/activity/MessageList;)V
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$9600(Lcom/android/email/activity/MessageList;)V
 
     goto/16 :goto_0
 
-    .line 5954
+    .line 7562
     :pswitch_5
-    iget-object v10, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object v11, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v10, Ljava/lang/String;
+    check-cast v11, Ljava/lang/String;
 
-    .line 5955
-    .local v10, string:Ljava/lang/String;
-    if-eqz v10, :cond_0
+    .line 7563
+    .local v11, string:Ljava/lang/String;
+    if-eqz v11, :cond_0
 
-    .line 5956
+    .line 7564
     iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0, v10, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    const/4 v1, 0x0
+
+    invoke-static {v0, v11, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object v0
 
@@ -496,7 +503,33 @@
 
     goto/16 :goto_0
 
-    .line 5879
+    .line 7570
+    .end local v11           #string:Ljava/lang/String;
+    :pswitch_6
+    iget-object v12, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v12, Ljava/lang/String;
+
+    .line 7571
+    .local v12, stringConv:Ljava/lang/String;
+    if-eqz v12, :cond_0
+
+    .line 7572
+    iget-object v0, p0, Lcom/android/email/activity/MessageList$MessageListHandler;->this$0:Lcom/android/email/activity/MessageList;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v12, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    goto/16 :goto_0
+
+    .line 7480
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -505,6 +538,7 @@
         :pswitch_4
         :pswitch_0
         :pswitch_5
+        :pswitch_6
     .end packed-switch
 .end method
 
@@ -514,31 +548,31 @@
     .parameter "mailboxType"
 
     .prologue
-    .line 5991
+    .line 7607
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 5992
+    .line 7608
     .local v0, msg:Landroid/os/Message;
     const/4 v1, 0x2
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 5993
+    .line 7609
     iput p3, v0, Landroid/os/Message;->arg1:I
 
-    .line 5994
+    .line 7610
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
     iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 5995
+    .line 7611
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MessageList$MessageListHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 5996
+    .line 7612
     return-void
 .end method
 
@@ -549,28 +583,28 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 5977
+    .line 7593
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 5978
+    .line 7594
     .local v0, msg:Landroid/os/Message;
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 5979
+    .line 7595
     if-eqz p1, :cond_0
 
     :goto_0
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    .line 5980
+    .line 7596
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MessageList$MessageListHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 5981
+    .line 7597
     return-void
 
-    .line 5979
+    .line 7595
     :cond_0
     const/4 v1, 0x0
 
@@ -582,18 +616,18 @@
     .parameter "progress"
 
     .prologue
-    .line 5966
+    .line 7582
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 5967
+    .line 7583
     .local v0, msg:Landroid/os/Message;
     const/4 v1, 0x5
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 5968
+    .line 7584
     if-eqz p1, :cond_0
 
     const/4 v1, 0x1
@@ -601,13 +635,13 @@
     :goto_0
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    .line 5969
+    .line 7585
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MessageList$MessageListHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 5970
+    .line 7586
     return-void
 
-    .line 5968
+    .line 7584
     :cond_0
     const/4 v1, 0x0
 
@@ -618,12 +652,12 @@
     .locals 1
 
     .prologue
-    .line 6022
+    .line 7644
     const/4 v0, 0x4
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MessageList$MessageListHandler;->sendEmptyMessage(I)Z
 
-    .line 6023
+    .line 7645
     return-void
 .end method
 
@@ -632,24 +666,24 @@
     .parameter "message"
 
     .prologue
-    .line 6003
+    .line 7619
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 6004
+    .line 7620
     .local v0, msg:Landroid/os/Message;
     const/4 v1, 0x3
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 6005
+    .line 7621
     iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 6006
+    .line 7622
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MessageList$MessageListHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 6007
+    .line 7623
     return-void
 .end method
 
@@ -658,23 +692,23 @@
     .parameter "message"
 
     .prologue
-    .line 6011
+    .line 7627
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 6012
+    .line 7628
     .local v0, msg:Landroid/os/Message;
     const/4 v1, 0x6
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 6013
+    .line 7629
     iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 6014
+    .line 7630
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MessageList$MessageListHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 6015
+    .line 7631
     return-void
 .end method

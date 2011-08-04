@@ -42,20 +42,25 @@
     .parameter "v"
 
     .prologue
-    .line 240
+    .line 242
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$7;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/email/activity/setup/OoOSettings;->access$002(Lcom/android/email/activity/setup/OoOSettings;Z)Z
 
-    .line 241
+    .line 243
+    iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$7;->this$0:Lcom/android/email/activity/setup/OoOSettings;
+
+    invoke-static {v0}, Lcom/android/email/activity/setup/OoOSettings;->access$1300(Lcom/android/email/activity/setup/OoOSettings;)V
+
+    .line 244
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$7;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/setup/OoOSettings;->showDialog(I)V
 
-    .line 242
+    .line 245
     return-void
 .end method

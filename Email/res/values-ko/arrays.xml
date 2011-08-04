@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="search_list">
+        <item>Google</item>
+        <item>Google 번역</item>
+        <item>위키피디아</item>
+        <item>사전</item>
+    </string-array>
+    <string-array name="share_list">
+        <item>텍스트로 공유</item>
+        <item>이미지로 공유</item>
+    </string-array>
+</resources>

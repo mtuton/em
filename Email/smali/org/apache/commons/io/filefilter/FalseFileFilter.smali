@@ -3,8 +3,8 @@
 .source "FalseFileFilter.java"
 
 # interfaces
-.implements Lorg/apache/commons/io/filefilter/IOFileFilter;
 .implements Ljava/io/Serializable;
+.implements Lorg/apache/commons/io/filefilter/IOFileFilter;
 
 
 # static fields

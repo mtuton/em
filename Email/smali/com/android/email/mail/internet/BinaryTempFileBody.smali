@@ -158,39 +158,6 @@
     return-object v0
 .end method
 
-.method public setFile(Ljava/lang/String;)V
-    .locals 1
-    .parameter "filePath"
-
-    .prologue
-    .line 72
-    new-instance v0, Ljava/io/File;
-
-    invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    iput-object v0, p0, Lcom/android/email/mail/internet/BinaryTempFileBody;->mFile:Ljava/io/File;
-
-    .line 73
-    return-void
-.end method
-
-.method public writeTo(Landroid/content/Context;JLjava/io/OutputStream;)V
-    .locals 0
-    .parameter "context"
-    .parameter "messageId"
-    .parameter "out"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 64
-    return-void
-.end method
-
 .method public writeTo(Ljava/io/OutputStream;)V
     .locals 3
     .parameter "out"

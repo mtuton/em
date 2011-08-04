@@ -8,33 +8,6 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;JJ)V
-    .locals 2
-    .parameter "inputStream"
-    .parameter "offset"
-    .parameter "length"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 30
-    invoke-direct {p0, p1}, Lorg/apache/james/mime4j/util/PositionInputStream;-><init>(Ljava/io/InputStream;)V
-
-    .line 31
-    invoke-virtual {p1, p2, p3}, Ljava/io/InputStream;->skip(J)J
-
-    .line 32
-    add-long v0, p2, p4
-
-    iput-wide v0, p0, Lorg/apache/james/mime4j/util/PartialInputStream;->limit:J
-
-    .line 33
-    return-void
-.end method
-
 .method private getBytesLeft()I
     .locals 6
 

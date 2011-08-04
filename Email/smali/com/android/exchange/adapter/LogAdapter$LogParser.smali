@@ -14,10 +14,6 @@
 .end annotation
 
 
-# static fields
-.field private static final TAG:Ljava/lang/String; = "LogParser"
-
-
 # instance fields
 .field final synthetic this$0:Lcom/android/exchange/adapter/LogAdapter;
 

@@ -3,10 +3,6 @@
 .source "SmtpSender.java"
 
 
-# static fields
-.field private static final TAG:Ljava/lang/String; = "SmtpSender >>"
-
-
 # instance fields
 .field mContext:Landroid/content/Context;
 
@@ -227,14 +223,28 @@
 
     move-result-object v1
 
-    .line 279
+    .line 277
     .local v1, line:Ljava/lang/String;
+    if-nez v1, :cond_1
+
+    .line 278
+    new-instance v3, Lcom/android/email/mail/MessagingException;
+
+    const-string v4, "Returned mTransport.readLine() is null"
+
+    invoke-direct {v3, v4}, Lcom/android/email/mail/MessagingException;-><init>(Ljava/lang/String;)V
+
+    throw v3
+
+    .line 282
+    :cond_1
     new-instance v2, Ljava/lang/StringBuffer;
 
     invoke-direct {v2, v1}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
-    .line 281
+    .line 284
     .local v2, result:Ljava/lang/StringBuffer;
+    :cond_2
     :goto_0
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -242,7 +252,7 @@
 
     const/4 v4, 0x4
 
-    if-lt v3, v4, :cond_1
+    if-lt v3, v4, :cond_3
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->charAt(I)C
 
@@ -250,16 +260,19 @@
 
     const/16 v4, 0x2d
 
-    if-ne v3, v4, :cond_1
+    if-ne v3, v4, :cond_3
 
-    .line 282
+    .line 285
     iget-object v3, p0, Lcom/android/email/mail/transport/SmtpSender;->mTransport:Lcom/android/email/mail/Transport;
 
     invoke-interface {v3}, Lcom/android/email/mail/Transport;->readLine()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 283
+    .line 286
+    if-eqz v1, :cond_2
+
+    .line 287
     invoke-virtual {v1, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v3
@@ -268,33 +281,33 @@
 
     goto :goto_0
 
-    .line 286
-    :cond_1
+    .line 291
+    :cond_3
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->length()I
 
     move-result v3
 
-    if-lez v3, :cond_3
+    if-lez v3, :cond_5
 
-    .line 287
+    .line 292
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->charAt(I)C
 
     move-result v0
 
-    .line 288
+    .line 293
     .local v0, c:C
     const/16 v3, 0x34
 
-    if-eq v0, v3, :cond_2
+    if-eq v0, v3, :cond_4
 
     const/16 v3, 0x35
 
-    if-ne v0, v3, :cond_3
+    if-ne v0, v3, :cond_5
 
-    .line 289
-    :cond_2
+    .line 294
+    :cond_4
     new-instance v3, Lcom/android/email/mail/MessagingException;
 
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
@@ -305,9 +318,9 @@
 
     throw v3
 
-    .line 293
+    .line 298
     .end local v0           #c:C
-    :cond_3
+    :cond_5
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -370,13 +383,13 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 317
+    .line 322
     :try_start_0
     const-string v1, "AUTH LOGIN"
 
     invoke-direct {p0, v1}, Lcom/android/email/mail/transport/SmtpSender;->executeSimpleCommand(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 318
+    .line 323
     invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v1
@@ -391,7 +404,7 @@
 
     invoke-direct {p0, v1, v2}, Lcom/android/email/mail/transport/SmtpSender;->executeSensitiveCommand(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 321
+    .line 326
     invoke-virtual {p2}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v1
@@ -408,16 +421,16 @@
     :try_end_0
     .catch Lcom/android/email/mail/MessagingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 331
+    .line 336
     return-void
 
-    .line 325
+    .line 330
     :catch_0
     move-exception v1
 
     move-object v0, v1
 
-    .line 326
+    .line 331
     .local v0, me:Lcom/android/email/mail/MessagingException;
     invoke-virtual {v0}, Lcom/android/email/mail/MessagingException;->getMessage()Ljava/lang/String;
 
@@ -441,7 +454,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 327
+    .line 332
     new-instance v1, Lcom/android/email/mail/AuthenticationFailedException;
 
     invoke-virtual {v0}, Lcom/android/email/mail/MessagingException;->getMessage()Ljava/lang/String;
@@ -452,7 +465,7 @@
 
     throw v1
 
-    .line 329
+    .line 334
     :cond_0
     throw v0
 .end method
@@ -474,7 +487,7 @@
 
     const-string v5, "\u0000"
 
-    .line 335
+    .line 340
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -507,7 +520,7 @@
 
     move-result-object v0
 
-    .line 336
+    .line 341
     .local v0, data:[B
     const/4 v2, 0x2
 
@@ -515,7 +528,7 @@
 
     move-result-object v0
 
-    .line 338
+    .line 343
     :try_start_0
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -545,16 +558,16 @@
     :try_end_0
     .catch Lcom/android/email/mail/MessagingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 346
+    .line 351
     return-void
 
-    .line 340
+    .line 345
     :catch_0
     move-exception v2
 
     move-object v1, v2
 
-    .line 341
+    .line 346
     .local v1, me:Lcom/android/email/mail/MessagingException;
     invoke-virtual {v1}, Lcom/android/email/mail/MessagingException;->getMessage()Ljava/lang/String;
 
@@ -578,7 +591,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 342
+    .line 347
     new-instance v2, Lcom/android/email/mail/AuthenticationFailedException;
 
     invoke-virtual {v1}, Lcom/android/email/mail/MessagingException;->getMessage()Ljava/lang/String;
@@ -589,7 +602,7 @@
 
     throw v2
 
-    .line 344
+    .line 349
     :cond_0
     throw v1
 .end method

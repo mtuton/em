@@ -3,8 +3,8 @@
 .source "EasySSLSocketFactory.java"
 
 # interfaces
-.implements Lorg/apache/http/conn/scheme/SocketFactory;
 .implements Lorg/apache/http/conn/scheme/LayeredSocketFactory;
+.implements Lorg/apache/http/conn/scheme/SocketFactory;
 
 
 # instance fields
@@ -267,7 +267,7 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
-    .parameter "obj"
+    .parameter
 
     .prologue
     .line 147

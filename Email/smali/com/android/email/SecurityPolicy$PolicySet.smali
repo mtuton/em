@@ -14,38 +14,6 @@
 .end annotation
 
 
-# static fields
-.field private static final PASSWORD_LENGTH_EXCEEDED:I = 0x1f
-
-.field private static final PASSWORD_LENGTH_MASK:I = 0x1f
-
-.field public static final PASSWORD_LENGTH_MAX:I = 0x1e
-
-.field private static final PASSWORD_LENGTH_SHIFT:I = 0x0
-
-.field private static final PASSWORD_MAX_FAILS_MASK:I = 0x3e00
-
-.field public static final PASSWORD_MAX_FAILS_MAX:I = 0x1f
-
-.field private static final PASSWORD_MAX_FAILS_SHIFT:I = 0x9
-
-.field public static final PASSWORD_MODE_NONE:I = 0x0
-
-.field public static final PASSWORD_MODE_REQUIRED:I = 0x1
-
-.field public static final PASSWORD_MODE_SIMPLE:I = 0x2
-
-.field public static final PASSWORD_MODE_STRONG:I = 0x4
-
-.field private static final REQUIRE_REMOTE_WIPE:I = 0x2000000
-
-.field private static final SCREEN_LOCK_TIME_MASK:I = 0x1ffc000
-
-.field public static final SCREEN_LOCK_TIME_MAX:I = 0x7ff
-
-.field private static final SCREEN_LOCK_TIME_SHIFT:I = 0xe
-
-
 # instance fields
 .field public mAllowBluetoothMode:I
 
@@ -63,7 +31,7 @@
 
 .field public mAllowPOPIMAPEmail:Z
 
-.field public mAllowSMIMEEncryptionAlgorithmNegotiation:Z
+.field public mAllowSMIMEEncryptionAlgorithmNegotiation:I
 
 .field public mAllowSMIMESoftCerts:Z
 
@@ -105,13 +73,13 @@
 
 .field public mRequireEncryptedSMIMEMessages:Z
 
-.field public mRequireEncryptionSMIMEAlgorithm:Z
+.field public mRequireEncryptionSMIMEAlgorithm:I
 
 .field public mRequireManualSyncWhenRoaming:Z
 
 .field public mRequireRemoteWipe:Z
 
-.field public mRequireSignedSMIMEAlgorithm:Z
+.field public mRequireSignedSMIMEAlgorithm:I
 
 .field public mRequireSignedSMIMEMessages:Z
 
@@ -119,7 +87,7 @@
 
 
 # direct methods
-.method public constructor <init>(IIIIZZIIZIZZZZZZZZZIIIIIIZZZZZZZZZZ)V
+.method public constructor <init>(IIIIZZIIZIZZZZZZZZZIIIIIIZZIIIZZZZZ)V
     .locals 4
     .parameter "minPasswordLength"
     .parameter "passwordMode"
@@ -163,18 +131,18 @@
     .end annotation
 
     .prologue
-    .line 1328
+    .line 1568
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1331
+    .line 1572
     const/16 v2, 0x1e
 
     if-le p1, v2, :cond_0
 
-    .line 1332
+    .line 1573
     const/16 p1, 0x1f
 
-    .line 1334
+    .line 1575
     :cond_0
     if-ltz p2, :cond_1
 
@@ -182,7 +150,7 @@
 
     if-le p2, v2, :cond_2
 
-    .line 1336
+    .line 1577
     :cond_1
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -192,227 +160,227 @@
 
     throw v2
 
-    .line 1346
+    .line 1587
     :cond_2
     const/16 v2, 0x1f
 
     if-le p3, v2, :cond_3
 
-    .line 1347
+    .line 1588
     const/16 p3, 0x1f
 
-    .line 1350
+    .line 1591
     :cond_3
     const/16 v2, 0x7ff
 
     if-le p4, v2, :cond_4
 
-    .line 1351
+    .line 1592
     const/16 p4, 0x7ff
 
-    .line 1354
+    .line 1595
     :cond_4
     iput p1, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMinPasswordLength:I
 
-    .line 1355
+    .line 1596
     iput p2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordMode:I
 
-    .line 1356
+    .line 1597
     iput p3, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxPasswordFails:I
 
-    .line 1357
+    .line 1598
     iput p4, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxScreenLockTime:I
 
-    .line 1358
+    .line 1599
     iput-boolean p5, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireRemoteWipe:Z
 
-    .line 1361
+    .line 1602
     iput-boolean p6, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordRecoverable:Z
 
-    .line 1362
+    .line 1603
     iput p7, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordExpires:I
 
-    .line 1363
+    .line 1604
     iput p8, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordHistory:I
 
-    .line 1364
+    .line 1605
     iput-boolean p9, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAttachmentsEnabled:Z
 
-    .line 1365
+    .line 1606
     iput p10, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxAttachmentSize:I
 
-    .line 1369
+    .line 1610
     iput-boolean p11, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowStorageCard:Z
 
-    .line 1370
+    .line 1611
     move/from16 v0, p12
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowCamera:Z
 
-    .line 1371
+    .line 1612
     move/from16 v0, p13
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowWifi:Z
 
-    .line 1372
+    .line 1613
     move/from16 v0, p14
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowTextMessaging:Z
 
-    .line 1373
+    .line 1614
     move/from16 v0, p15
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowPOPIMAPEmail:Z
 
-    .line 1374
+    .line 1615
     move/from16 v0, p16
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowHTMLEmail:Z
 
-    .line 1375
+    .line 1616
     move/from16 v0, p17
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowBrowser:Z
 
-    .line 1376
+    .line 1617
     move/from16 v0, p18
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowInternetSharing:Z
 
-    .line 1377
+    .line 1618
     move/from16 v0, p19
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireManualSyncWhenRoaming:Z
 
-    .line 1378
+    .line 1619
     move/from16 v0, p20
 
     move-object v1, p0
 
     iput v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowBluetoothMode:I
 
-    .line 1379
+    .line 1620
     move/from16 v0, p21
 
     move-object v1, p0
 
     iput v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mMinPasswordComplexChars:I
 
-    .line 1380
+    .line 1621
     move/from16 v0, p22
 
     move-object v1, p0
 
     iput v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxCalendarAgeFilter:I
 
-    .line 1381
+    .line 1622
     move/from16 v0, p23
 
     move-object v1, p0
 
     iput v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailAgeFilter:I
 
-    .line 1382
+    .line 1623
     move/from16 v0, p24
 
     move-object v1, p0
 
     iput v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailBodyTruncationSize:I
 
-    .line 1383
+    .line 1624
     move/from16 v0, p25
 
     move-object v1, p0
 
     iput v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailHtmlBodyTruncationSize:I
 
-    .line 1384
+    .line 1625
     move/from16 v0, p26
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireSignedSMIMEMessages:Z
 
-    .line 1385
+    .line 1626
     move/from16 v0, p27
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireEncryptedSMIMEMessages:Z
 
-    .line 1386
+    .line 1627
     move/from16 v0, p28
 
     move-object v1, p0
 
-    iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireSignedSMIMEAlgorithm:Z
+    iput v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireSignedSMIMEAlgorithm:I
 
-    .line 1387
+    .line 1628
     move/from16 v0, p29
 
     move-object v1, p0
 
-    iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireEncryptionSMIMEAlgorithm:Z
+    iput v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireEncryptionSMIMEAlgorithm:I
 
-    .line 1388
+    .line 1629
     move/from16 v0, p30
 
     move-object v1, p0
 
-    iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowSMIMEEncryptionAlgorithmNegotiation:Z
+    iput v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowSMIMEEncryptionAlgorithmNegotiation:I
 
-    .line 1389
+    .line 1630
     move/from16 v0, p31
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowSMIMESoftCerts:Z
 
-    .line 1390
+    .line 1631
     move/from16 v0, p32
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowDesktopSync:Z
 
-    .line 1391
+    .line 1632
     move/from16 v0, p33
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowIrDA:Z
 
-    .line 1392
+    .line 1636
     move/from16 v0, p34
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireDeviceEncryption:Z
 
-    .line 1393
+    .line 1637
     move/from16 v0, p35
 
     move-object v1, p0
 
     iput-boolean v0, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireStorageCardEncryption:Z
 
-    .line 1395
+    .line 1638
     return-void
 .end method
 
@@ -421,10 +389,10 @@
     .parameter "account"
 
     .prologue
-    .line 1401
+    .line 1644
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1404
+    .line 1647
     if-eqz p1, :cond_0
 
     invoke-static {}, Lcom/android/email/SecurityPolicy;->getContext()Landroid/content/Context;
@@ -433,7 +401,7 @@
 
     if-nez v0, :cond_2
 
-    .line 1406
+    .line 1649
     :cond_0
     const-string v0, "SecurityPolicy"
 
@@ -441,12 +409,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1532
+    .line 1777
     :cond_1
     :goto_0
     return-void
 
-    .line 1409
+    .line 1652
     :cond_2
     invoke-static {}, Lcom/android/email/SecurityPolicy;->getContext()Landroid/content/Context;
 
@@ -458,7 +426,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1412
+    .line 1655
     invoke-static {}, Lcom/android/email/SecurityPolicy;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -493,11 +461,11 @@
 
     move-result-object v6
 
-    .line 1416
+    .line 1659
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_1
 
-    .line 1417
+    .line 1660
     :cond_3
     :goto_1
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
@@ -506,7 +474,7 @@
 
     if-eqz v0, :cond_26
 
-    .line 1418
+    .line 1661
     const-string v0, "name"
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -517,7 +485,7 @@
 
     move-result-object v7
 
-    .line 1419
+    .line 1662
     .local v7, name:Ljava/lang/String;
     const-string v0, "type"
 
@@ -529,7 +497,7 @@
 
     move-result-object v8
 
-    .line 1420
+    .line 1663
     .local v8, type:Ljava/lang/String;
     const-string v0, "value"
 
@@ -541,17 +509,17 @@
 
     move-result-object v10
 
-    .line 1422
+    .line 1665
     .local v10, value:Ljava/lang/String;
     const-string v0, "Integer"
 
-    invoke-virtual {v8, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_13
 
-    .line 1423
+    .line 1666
     invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
@@ -560,7 +528,7 @@
 
     move-result-object v9
 
-    .line 1424
+    .line 1667
     .local v9, val:Ljava/lang/Integer;
     const-string v0, "PasswordMode"
 
@@ -570,14 +538,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 1425
+    .line 1668
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordMode:I
 
-    .line 1434
+    .line 1677
     :cond_4
     :goto_2
     const-string v0, "DevicePasswordExpiration"
@@ -588,7 +556,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 1435
+    .line 1678
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -597,7 +565,7 @@
 
     goto :goto_1
 
-    .line 1426
+    .line 1669
     :cond_5
     const-string v0, "MaxDevicePasswordFailedAttempts"
 
@@ -607,7 +575,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 1427
+    .line 1670
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -616,7 +584,7 @@
 
     goto :goto_2
 
-    .line 1428
+    .line 1671
     :cond_6
     const-string v0, "MinDevicePasswordLength"
 
@@ -626,7 +594,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 1429
+    .line 1672
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -635,7 +603,7 @@
 
     goto :goto_2
 
-    .line 1430
+    .line 1673
     :cond_7
     const-string v0, "MaxInactivityTime"
 
@@ -645,7 +613,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 1431
+    .line 1674
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -654,7 +622,7 @@
 
     goto :goto_2
 
-    .line 1432
+    .line 1675
     :cond_8
     const-string v0, "MaxAttachmentSize"
 
@@ -664,7 +632,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1433
+    .line 1676
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -673,7 +641,7 @@
 
     goto :goto_2
 
-    .line 1436
+    .line 1679
     :cond_9
     const-string v0, "DevicePasswordHistory"
 
@@ -683,7 +651,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 1437
+    .line 1680
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -692,7 +660,7 @@
 
     goto/16 :goto_1
 
-    .line 1440
+    .line 1683
     :cond_a
     const-string v0, "AllowBluetoothMode"
 
@@ -702,7 +670,7 @@
 
     if-eqz v0, :cond_b
 
-    .line 1441
+    .line 1684
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -711,7 +679,7 @@
 
     goto/16 :goto_1
 
-    .line 1443
+    .line 1686
     :cond_b
     const-string v0, "MinPasswordComplexCharacters"
 
@@ -721,7 +689,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 1444
+    .line 1687
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -730,7 +698,7 @@
 
     goto/16 :goto_1
 
-    .line 1446
+    .line 1689
     :cond_c
     const-string v0, "MaxCalendarAgeFilter"
 
@@ -740,7 +708,7 @@
 
     if-eqz v0, :cond_d
 
-    .line 1447
+    .line 1690
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -749,7 +717,7 @@
 
     goto/16 :goto_1
 
-    .line 1449
+    .line 1692
     :cond_d
     const-string v0, "MaxEmailAgeFilter"
 
@@ -759,7 +727,7 @@
 
     if-eqz v0, :cond_e
 
-    .line 1450
+    .line 1693
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -768,7 +736,7 @@
 
     goto/16 :goto_1
 
-    .line 1452
+    .line 1695
     :cond_e
     const-string v0, "MaxEmailBodyTruncationSize"
 
@@ -778,7 +746,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 1453
+    .line 1696
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -787,7 +755,7 @@
 
     goto/16 :goto_1
 
-    .line 1455
+    .line 1698
     :cond_f
     const-string v0, "MaxEmailHtmlBodyTruncationSize"
 
@@ -795,9 +763,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_10
 
-    .line 1456
+    .line 1699
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -806,18 +774,75 @@
 
     goto/16 :goto_1
 
-    .line 1459
-    .end local v9           #val:Ljava/lang/Integer;
+    .line 1702
     :cond_10
-    const-string v0, "Boolean"
+    const-string v0, "RequireSignedSMIMEAlgorithm"
 
-    invoke-virtual {v8, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_11
+
+    .line 1703
+    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireSignedSMIMEAlgorithm:I
+
+    goto/16 :goto_1
+
+    .line 1705
+    :cond_11
+    const-string v0, "RequireEncryptionSMIMEAlgorithm"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_12
+
+    .line 1706
+    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireEncryptionSMIMEAlgorithm:I
+
+    goto/16 :goto_1
+
+    .line 1708
+    :cond_12
+    const-string v0, "AllowSMIMEEncryptionAlgorithmNegotiation"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 1460
+    .line 1709
+    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowSMIMEEncryptionAlgorithmNegotiation:I
+
+    goto/16 :goto_1
+
+    .line 1713
+    .end local v9           #val:Ljava/lang/Integer;
+    :cond_13
+    const-string v0, "Boolean"
+
+    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    .line 1714
     invoke-static {v10}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v0
@@ -826,7 +851,7 @@
 
     move-result-object v9
 
-    .line 1461
+    .line 1715
     .local v9, val:Ljava/lang/Boolean;
     const-string v0, "PasswordRecoveryEnabled"
 
@@ -834,9 +859,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_14
 
-    .line 1462
+    .line 1716
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -845,17 +870,17 @@
 
     goto/16 :goto_1
 
-    .line 1463
-    :cond_11
+    .line 1717
+    :cond_14
     const-string v0, "AttachmentsEnabled"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_15
 
-    .line 1464
+    .line 1718
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -864,17 +889,17 @@
 
     goto/16 :goto_1
 
-    .line 1465
-    :cond_12
+    .line 1719
+    :cond_15
     const-string v0, "RemoteWipe"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_16
 
-    .line 1466
+    .line 1720
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -883,17 +908,17 @@
 
     goto/16 :goto_1
 
-    .line 1469
-    :cond_13
+    .line 1723
+    :cond_16
     const-string v0, "AllowStorageCard"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_17
 
-    .line 1470
+    .line 1724
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -902,17 +927,17 @@
 
     goto/16 :goto_1
 
-    .line 1472
-    :cond_14
+    .line 1726
+    :cond_17
     const-string v0, "AllowCamera"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_18
 
-    .line 1473
+    .line 1727
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -921,17 +946,17 @@
 
     goto/16 :goto_1
 
-    .line 1475
-    :cond_15
+    .line 1729
+    :cond_18
     const-string v0, "AllowWifi"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_19
 
-    .line 1476
+    .line 1730
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -940,17 +965,17 @@
 
     goto/16 :goto_1
 
-    .line 1478
-    :cond_16
+    .line 1732
+    :cond_19
     const-string v0, "AllowTextMessaging"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1a
 
-    .line 1479
+    .line 1733
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -959,17 +984,17 @@
 
     goto/16 :goto_1
 
-    .line 1481
-    :cond_17
+    .line 1735
+    :cond_1a
     const-string v0, "AllowPOPIMAPEmail"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1b
 
-    .line 1482
+    .line 1736
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -978,17 +1003,17 @@
 
     goto/16 :goto_1
 
-    .line 1484
-    :cond_18
+    .line 1738
+    :cond_1b
     const-string v0, "AllowHTMLEmail"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1c
 
-    .line 1485
+    .line 1739
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -997,17 +1022,17 @@
 
     goto/16 :goto_1
 
-    .line 1487
-    :cond_19
+    .line 1741
+    :cond_1c
     const-string v0, "AllowBrowser"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1d
 
-    .line 1488
+    .line 1742
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -1016,17 +1041,17 @@
 
     goto/16 :goto_1
 
-    .line 1490
-    :cond_1a
+    .line 1744
+    :cond_1d
     const-string v0, "AllowInternetSharing"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1e
 
-    .line 1491
+    .line 1745
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -1035,17 +1060,17 @@
 
     goto/16 :goto_1
 
-    .line 1493
-    :cond_1b
+    .line 1747
+    :cond_1e
     const-string v0, "RequireManualSyncWhenRoaming"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1f
 
-    .line 1494
+    .line 1748
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -1054,17 +1079,17 @@
 
     goto/16 :goto_1
 
-    .line 1496
-    :cond_1c
+    .line 1750
+    :cond_1f
     const-string v0, "RequireSignedSMIMEMessages"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_20
 
-    .line 1497
+    .line 1751
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -1073,17 +1098,17 @@
 
     goto/16 :goto_1
 
-    .line 1499
-    :cond_1d
+    .line 1753
+    :cond_20
     const-string v0, "RequireEncryptedSMIMEMessages"
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_21
 
-    .line 1500
+    .line 1754
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -1092,64 +1117,7 @@
 
     goto/16 :goto_1
 
-    .line 1502
-    :cond_1e
-    const-string v0, "RequireSignedSMIMEAlgorithm"
-
-    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1f
-
-    .line 1503
-    invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireSignedSMIMEAlgorithm:Z
-
-    goto/16 :goto_1
-
-    .line 1505
-    :cond_1f
-    const-string v0, "RequireEncryptionSMIMEAlgorithm"
-
-    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_20
-
-    .line 1506
-    invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireEncryptionSMIMEAlgorithm:Z
-
-    goto/16 :goto_1
-
-    .line 1508
-    :cond_20
-    const-string v0, "AllowSMIMEEncryptionAlgorithmNegotiation"
-
-    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_21
-
-    .line 1509
-    invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowSMIMEEncryptionAlgorithmNegotiation:Z
-
-    goto/16 :goto_1
-
-    .line 1511
+    .line 1756
     :cond_21
     const-string v0, "AllowSMIMESoftCerts"
 
@@ -1159,7 +1127,7 @@
 
     if-eqz v0, :cond_22
 
-    .line 1512
+    .line 1757
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -1168,7 +1136,7 @@
 
     goto/16 :goto_1
 
-    .line 1514
+    .line 1759
     :cond_22
     const-string v0, "AllowDesktopSync"
 
@@ -1178,7 +1146,7 @@
 
     if-eqz v0, :cond_23
 
-    .line 1515
+    .line 1760
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -1187,7 +1155,7 @@
 
     goto/16 :goto_1
 
-    .line 1517
+    .line 1762
     :cond_23
     const-string v0, "AllowIrDA"
 
@@ -1197,7 +1165,7 @@
 
     if-eqz v0, :cond_24
 
-    .line 1518
+    .line 1763
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -1206,7 +1174,7 @@
 
     goto/16 :goto_1
 
-    .line 1520
+    .line 1765
     :cond_24
     const-string v0, "RequireDeviceEncryption"
 
@@ -1216,7 +1184,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 1521
+    .line 1766
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -1225,7 +1193,7 @@
 
     goto/16 :goto_1
 
-    .line 1523
+    .line 1768
     :cond_25
     const-string v0, "RequireStorageCardEncryption"
 
@@ -1235,7 +1203,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1524
+    .line 1769
     invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -1244,7 +1212,7 @@
 
     goto/16 :goto_1
 
-    .line 1529
+    .line 1774
     .end local v7           #name:Ljava/lang/String;
     .end local v8           #type:Ljava/lang/String;
     .end local v9           #val:Ljava/lang/Boolean;
@@ -1277,7 +1245,7 @@
 
     const/4 v4, 0x0
 
-    .line 1761
+    .line 2006
     const-string v1, "PasswordMode"
 
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordMode:I
@@ -1288,12 +1256,12 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1763
+    .line 2008
     iget v1, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordMode:I
 
     if-eqz v1, :cond_1
 
-    .line 1764
+    .line 2009
     const-string v1, "PasswordRecoveryEnabled"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordRecoverable:Z
@@ -1304,7 +1272,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1765
+    .line 2010
     const-string v1, "MaxDevicePasswordFailedAttempts"
 
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxPasswordFails:I
@@ -1315,7 +1283,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1766
+    .line 2011
     const-string v1, "DevicePasswordExpiration"
 
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordExpires:I
@@ -1326,7 +1294,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1767
+    .line 2012
     const-string v1, "DevicePasswordHistory"
 
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordHistory:I
@@ -1337,7 +1305,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1769
+    .line 2014
     const-string v1, "MinPasswordComplexCharacters"
 
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMinPasswordComplexChars:I
@@ -1360,7 +1328,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1770
+    .line 2015
     const-string v1, "MinDevicePasswordLength"
 
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMinPasswordLength:I
@@ -1371,7 +1339,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1773
+    .line 2018
     :cond_1
     const-string v1, "MaxAttachmentSize"
 
@@ -1383,7 +1351,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1774
+    .line 2019
     const-string v1, "AttachmentsEnabled"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAttachmentsEnabled:Z
@@ -1394,10 +1362,10 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1776
+    .line 2021
     iget v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxScreenLockTime:I
 
-    .line 1778
+    .line 2023
     .local v0, inactivityTime:I
     const-string v1, "MaxInactivityTime"
 
@@ -1414,7 +1382,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1779
+    .line 2024
     const-string v1, "RemoteWipe"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireRemoteWipe:Z
@@ -1425,7 +1393,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1781
+    .line 2026
     const-string v1, "AllowStorageCard"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowStorageCard:Z
@@ -1436,7 +1404,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1782
+    .line 2027
     const-string v1, "AllowCamera"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowCamera:Z
@@ -1447,7 +1415,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1783
+    .line 2028
     const-string v1, "AllowWifi"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowWifi:Z
@@ -1458,7 +1426,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1784
+    .line 2029
     const-string v1, "AllowTextMessaging"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowTextMessaging:Z
@@ -1469,7 +1437,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1785
+    .line 2030
     const-string v1, "AllowPOPIMAPEmail"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowPOPIMAPEmail:Z
@@ -1480,7 +1448,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1786
+    .line 2031
     const-string v1, "AllowHTMLEmail"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowHTMLEmail:Z
@@ -1491,7 +1459,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1787
+    .line 2032
     const-string v1, "AllowBrowser"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowBrowser:Z
@@ -1502,7 +1470,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1788
+    .line 2033
     const-string v1, "AllowInternetSharing"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowInternetSharing:Z
@@ -1513,7 +1481,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1789
+    .line 2034
     const-string v1, "RequireManualSyncWhenRoaming"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireManualSyncWhenRoaming:Z
@@ -1524,7 +1492,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1790
+    .line 2035
     const-string v1, "AllowBluetoothMode"
 
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowBluetoothMode:I
@@ -1545,7 +1513,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1792
+    .line 2037
     const-string v1, "MaxCalendarAgeFilter"
 
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxCalendarAgeFilter:I
@@ -1566,7 +1534,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1793
+    .line 2038
     const-string v1, "MaxEmailAgeFilter"
 
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailAgeFilter:I
@@ -1587,7 +1555,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1794
+    .line 2039
     const-string v1, "MaxEmailBodyTruncationSize"
 
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailBodyTruncationSize:I
@@ -1603,7 +1571,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1795
+    .line 2040
     const-string v1, "MaxEmailHtmlBodyTruncationSize"
 
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailHtmlBodyTruncationSize:I
@@ -1619,7 +1587,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1796
+    .line 2041
     const-string v1, "RequireSignedSMIMEMessages"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireSignedSMIMEMessages:Z
@@ -1630,7 +1598,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1797
+    .line 2042
     const-string v1, "RequireEncryptedSMIMEMessages"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireEncryptedSMIMEMessages:Z
@@ -1641,40 +1609,40 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1798
+    .line 2043
     const-string v1, "RequireSignedSMIMEAlgorithm"
 
-    iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireSignedSMIMEAlgorithm:Z
+    iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireSignedSMIMEAlgorithm:I
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1799
+    .line 2044
     const-string v1, "RequireEncryptionSMIMEAlgorithm"
 
-    iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireEncryptionSMIMEAlgorithm:Z
+    iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireEncryptionSMIMEAlgorithm:I
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1800
+    .line 2045
     const-string v1, "AllowSMIMEEncryptionAlgorithmNegotiation"
 
-    iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowSMIMEEncryptionAlgorithmNegotiation:Z
+    iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowSMIMEEncryptionAlgorithmNegotiation:I
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1801
+    .line 2046
     const-string v1, "AllowSMIMESoftCerts"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowSMIMESoftCerts:Z
@@ -1685,7 +1653,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1802
+    .line 2047
     const-string v1, "AllowDesktopSync"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowDesktopSync:Z
@@ -1696,7 +1664,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1803
+    .line 2048
     const-string v1, "AllowIrDA"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowIrDA:Z
@@ -1707,7 +1675,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1804
+    .line 2049
     const-string v1, "RequireDeviceEncryption"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireDeviceEncryption:Z
@@ -1718,7 +1686,7 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1805
+    .line 2050
     const-string v1, "RequireStorageCardEncryption"
 
     iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireStorageCardEncryption:Z
@@ -1729,10 +1697,10 @@
 
     invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1807
+    .line 2052
     return-void
 
-    .line 1769
+    .line 2014
     .end local v0           #inactivityTime:I
     :cond_5
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMinPasswordComplexChars:I
@@ -1743,34 +1711,34 @@
     :cond_6
     move v2, v0
 
-    .line 1778
+    .line 2023
     goto/16 :goto_1
 
-    .line 1790
+    .line 2035
     :cond_7
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowBluetoothMode:I
 
     goto/16 :goto_2
 
-    .line 1792
+    .line 2037
     :cond_8
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxCalendarAgeFilter:I
 
     goto/16 :goto_3
 
-    .line 1793
+    .line 2038
     :cond_9
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailAgeFilter:I
 
     goto/16 :goto_4
 
-    .line 1794
+    .line 2039
     :cond_a
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailBodyTruncationSize:I
 
     goto/16 :goto_5
 
-    .line 1795
+    .line 2040
     :cond_b
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailHtmlBodyTruncationSize:I
 
@@ -1786,19 +1754,19 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1812
+    .line 2057
     instance-of v2, p1, Lcom/android/email/SecurityPolicy$PolicySet;
 
     if-eqz v2, :cond_1
 
-    .line 1813
+    .line 2058
     move-object v0, p1
 
     check-cast v0, Lcom/android/email/SecurityPolicy$PolicySet;
 
     move-object v1, v0
 
-    .line 1814
+    .line 2059
     .local v1, other:Lcom/android/email/SecurityPolicy$PolicySet;
     iget v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMinPasswordLength:I
 
@@ -1950,9 +1918,21 @@
 
     if-ne v2, v3, :cond_0
 
+    iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireDeviceEncryption:Z
+
+    iget-boolean v3, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireDeviceEncryption:Z
+
+    if-ne v2, v3, :cond_0
+
+    iget-boolean v2, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireStorageCardEncryption:Z
+
+    iget-boolean v3, v1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireStorageCardEncryption:Z
+
+    if-ne v2, v3, :cond_0
+
     const/4 v2, 0x1
 
-    .line 1859
+    .line 2103
     .end local v1           #other:Lcom/android/email/SecurityPolicy$PolicySet;
     :goto_0
     return v2
@@ -1961,14 +1941,14 @@
     :cond_0
     move v2, v4
 
-    .line 1814
+    .line 2059
     goto :goto_0
 
     .end local v1           #other:Lcom/android/email/SecurityPolicy$PolicySet;
     :cond_1
     move v2, v4
 
-    .line 1859
+    .line 2103
     goto :goto_0
 .end method
 
@@ -1976,37 +1956,37 @@
     .locals 1
 
     .prologue
-    .line 1591
+    .line 1836
     iget v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordMode:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1600
+    .line 1845
     :pswitch_0
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 1593
+    .line 1838
     :pswitch_1
     const/high16 v0, 0x2
 
     goto :goto_0
 
-    .line 1595
+    .line 1840
     :pswitch_2
     const/high16 v0, 0x5
 
     goto :goto_0
 
-    .line 1598
+    .line 1843
     :pswitch_3
     const/high16 v0, 0x1
 
     goto :goto_0
 
-    .line 1591
+    .line 1836
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_3
@@ -2016,100 +1996,50 @@
     .end packed-switch
 .end method
 
-.method public getMaxPasswordFails()I
-    .locals 1
-
-    .prologue
-    .line 1291
-    iget v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxPasswordFails:I
-
-    return v0
-.end method
-
-.method public getMaxScreenLockTime()I
-    .locals 1
-
-    .prologue
-    .line 1295
-    iget v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxScreenLockTime:I
-
-    return v0
-.end method
-
-.method public getMinPasswordLength()I
-    .locals 1
-
-    .prologue
-    .line 1283
-    iget v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMinPasswordLength:I
-
-    return v0
-.end method
-
-.method public getPasswordMode()I
-    .locals 1
-
-    .prologue
-    .line 1287
-    iget v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordMode:I
-
-    return v0
-.end method
-
 .method public hashCode()I
     .locals 2
 
     .prologue
-    .line 1867
+    .line 2111
     const/4 v0, 0x0
 
-    .line 1868
+    .line 2112
     .local v0, flags:I
     iget v1, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMinPasswordLength:I
 
     shl-int/lit8 v0, v1, 0x0
 
-    .line 1869
+    .line 2113
     iget v1, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordMode:I
 
     or-int/2addr v0, v1
 
-    .line 1870
+    .line 2114
     iget v1, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxPasswordFails:I
 
     shl-int/lit8 v1, v1, 0x9
 
     or-int/2addr v0, v1
 
-    .line 1871
+    .line 2115
     iget v1, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxScreenLockTime:I
 
     shl-int/lit8 v1, v1, 0xe
 
     or-int/2addr v0, v1
 
-    .line 1872
+    .line 2116
     iget-boolean v1, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireRemoteWipe:Z
 
     if-eqz v1, :cond_0
 
-    .line 1873
+    .line 2117
     const/high16 v1, 0x200
 
     or-int/2addr v0, v1
 
-    .line 1875
+    .line 2119
     :cond_0
-    return v0
-.end method
-
-.method public isRequireRemoteWipe()Z
-    .locals 1
-
-    .prologue
-    .line 1299
-    iget-boolean v0, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireRemoteWipe:Z
-
     return v0
 .end method
 
@@ -2118,7 +2048,7 @@
     .parameter "accountId"
 
     .prologue
-    .line 1753
+    .line 1998
     invoke-static {}, Lcom/android/email/SecurityPolicy;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2145,247 +2075,233 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 1754
+    .line 1999
     return-void
 .end method
 
 .method public storePolicyRules(J)V
-    .locals 9
-    .parameter "accountId"
+    .locals 7
+    .parameter
 
     .prologue
-    const-string v5, "Email"
+    const-string v0, "Email"
 
-    .line 1724
-    const-class v5, Lcom/android/email/SecurityPolicy;
+    .line 1969
+    const-class v1, Lcom/android/email/SecurityPolicy;
 
-    monitor-enter v5
+    monitor-enter v1
 
-    .line 1725
+    .line 1970
     :try_start_0
-    const-string v6, "Email"
+    const-string v0, "Email"
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "storePolicyRules() - accountId = "
+    const-string v3, "storePolicyRules() - accountId = "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1726
-    new-instance v4, Ljava/util/HashMap;
-
-    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
-
-    .line 1728
-    .local v4, values:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
-    invoke-direct {p0, v4}, Lcom/android/email/SecurityPolicy$PolicySet;->populateHash(Ljava/util/HashMap;)V
-
-    .line 1730
-    invoke-static {}, Lcom/android/email/SecurityPolicy;->getContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    .line 1732
-    .local v0, cv:Landroid/content/ContentResolver;
-    invoke-virtual {p0, p1, p2}, Lcom/android/email/SecurityPolicy$PolicySet;->removePolicyRules(J)V
-
-    .line 1733
-    const-string v6, "Email"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, " storePolicyRules: removed policies for accountId:"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1734
-    invoke-virtual {v4}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
-
-    move-result-object v6
-
-    invoke-interface {v6}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .end local p0
-    .local v2, i$:Ljava/util/Iterator;
+    invoke-virtual {v2, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1971
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    .line 1973
+    invoke-direct {p0, v0}, Lcom/android/email/SecurityPolicy$PolicySet;->populateHash(Ljava/util/HashMap;)V
+
+    .line 1975
+    invoke-static {}, Lcom/android/email/SecurityPolicy;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    .line 1977
+    invoke-virtual {p0, p1, p2}, Lcom/android/email/SecurityPolicy$PolicySet;->removePolicyRules(J)V
+
+    .line 1978
+    const-string v3, "Email"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, " storePolicyRules: removed policies for accountId:"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1979
+    invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
     :cond_0
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_2
+    if-eqz v0, :cond_2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/Map$Entry;
-
-    .line 1735
-    .local v1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;"
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_0
-
-    .line 1736
-    new-instance v3, Lcom/android/email/provider/EmailContent$Policies;
-
-    invoke-direct {v3}, Lcom/android/email/provider/EmailContent$Policies;-><init>()V
-
-    .line 1737
-    .local v3, policy:Lcom/android/email/provider/EmailContent$Policies;
-    iput-wide p1, v3, Lcom/android/email/provider/EmailContent$Policies;->mAccountId:J
-
-    .line 1738
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Ljava/lang/String;
+    check-cast p0, Ljava/util/Map$Entry;
 
-    iput-object p0, v3, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+    .line 1980
+    invoke-interface {p0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    .line 1739
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v6
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v6}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 1981
+    new-instance v4, Lcom/android/email/provider/EmailContent$Policies;
 
-    move-result-object v6
+    invoke-direct {v4}, Lcom/android/email/provider/EmailContent$Policies;-><init>()V
 
-    iput-object v6, v3, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+    .line 1982
+    iput-wide p1, v4, Lcom/android/email/provider/EmailContent$Policies;->mAccountId:J
 
-    .line 1740
-    sget-boolean v6, Lcom/android/exchange/Eas;->USER_LOG:Z
+    .line 1983
+    invoke-interface {p0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    if-eqz v6, :cond_1
+    move-result-object v0
 
-    .line 1741
-    const-string v6, "SecurityPolicy"
+    check-cast v0, Ljava/lang/String;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    iput-object v0, v4, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    .line 1984
+    invoke-interface {p0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    const-string v8, "policy Name:"
+    move-result-object v0
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    iget-object v8, v3, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+    iput-object v0, v4, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 1985
+    sget-boolean v0, Lcom/android/exchange/Eas;->USER_LOG:Z
 
-    move-result-object v7
+    if-eqz v0, :cond_1
 
-    const-string v8, ", policyValue:"
+    .line 1986
+    const-string v0, "SecurityPolicy"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v8, v3, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+    const-string v6, "policy Name:"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v6, v4, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
-    move-result-object v7
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v5
 
-    .line 1742
+    const-string v6, ", policyValue:"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    iget-object v6, v4, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v0, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1987
     :cond_1
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v0
 
-    iput-object v6, v3, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+    iput-object v0, v4, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
 
-    .line 1743
-    sget-object v6, Lcom/android/email/provider/EmailContent$Policies;->CONTENT_URI:Landroid/net/Uri;
+    .line 1988
+    sget-object v0, Lcom/android/email/provider/EmailContent$Policies;->CONTENT_URI:Landroid/net/Uri;
 
-    invoke-virtual {v3}, Lcom/android/email/provider/EmailContent$Policies;->toContentValues()Landroid/content/ContentValues;
+    invoke-virtual {v4}, Lcom/android/email/provider/EmailContent$Policies;->toContentValues()Landroid/content/ContentValues;
 
-    move-result-object v7
+    move-result-object v4
 
-    invoke-virtual {v0, v6, v7}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+    invoke-virtual {v2, v0, v4}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
     goto :goto_0
 
-    .line 1746
-    .end local v0           #cv:Landroid/content/ContentResolver;
-    .end local v1           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;"
-    .end local v2           #i$:Ljava/util/Iterator;
-    .end local v3           #policy:Lcom/android/email/provider/EmailContent$Policies;
-    .end local v4           #values:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
+    .line 1991
     :catchall_0
-    move-exception v6
+    move-exception v0
 
-    monitor-exit v5
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v6
+    throw v0
 
-    .restart local v0       #cv:Landroid/content/ContentResolver;
-    .restart local v2       #i$:Ljava/util/Iterator;
-    .restart local v4       #values:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     :cond_2
     :try_start_1
-    monitor-exit v5
+    monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1747
+    .line 1992
     return-void
 .end method
 
@@ -2393,7 +2309,7 @@
     .locals 2
 
     .prologue
-    .line 1880
+    .line 2124
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2728,9 +2644,9 @@
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireSignedSMIMEAlgorithm:Z
+    iget v1, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireSignedSMIMEAlgorithm:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -2740,9 +2656,9 @@
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireEncryptionSMIMEAlgorithm:Z
+    iget v1, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireEncryptionSMIMEAlgorithm:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -2752,9 +2668,9 @@
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowSMIMEEncryptionAlgorithmNegotiation:Z
+    iget v1, p0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowSMIMEEncryptionAlgorithmNegotiation:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -2839,7 +2755,7 @@
     .parameter "context"
 
     .prologue
-    .line 1621
+    .line 1866
     new-instance v9, Lcom/android/email/SecurityPolicy$PolicySet;
 
     move-object v0, v9
@@ -2848,7 +2764,7 @@
 
     invoke-direct {v0, v1}, Lcom/android/email/SecurityPolicy$PolicySet;-><init>(Lcom/android/email/provider/EmailContent$Account;)V
 
-    .line 1622
+    .line 1867
     .local v9, oldPolicy:Lcom/android/email/SecurityPolicy$PolicySet;
     move-object/from16 v0, p0
 
@@ -2864,7 +2780,7 @@
 
     move v6, v13
 
-    .line 1627
+    .line 1872
     .local v6, dirty:Z
     :goto_0
     move-object/from16 v0, p2
@@ -2873,17 +2789,17 @@
 
     iput-object v0, v1, Lcom/android/email/provider/EmailContent$Account;->mSecuritySyncKey:Ljava/lang/String;
 
-    .line 1628
+    .line 1873
     if-eqz p3, :cond_7
 
-    .line 1632
+    .line 1877
     const/4 v3, 0x0
 
-    .line 1633
+    .line 1878
     .local v3, changedValues:Z
     const/4 v4, 0x0
 
-    .line 1635
+    .line 1880
     .local v4, currentSize:I
     move-object/from16 v0, p1
 
@@ -2899,14 +2815,14 @@
 
     move-result v4
 
-    .line 1638
+    .line 1883
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailBodyTruncationSize:I
 
     move v10, v0
 
-    .line 1639
+    .line 1884
     .local v10, plainTextSize:I
     const-string v13, "SecurityPolicy"
 
@@ -2930,7 +2846,7 @@
 
     invoke-static {v13, v14}, Lcom/android/exchange/SyncManager;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1640
+    .line 1885
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailHtmlBodyTruncationSize:I
@@ -2939,7 +2855,7 @@
 
     div-int/lit16 v7, v13, 0x400
 
-    .line 1641
+    .line 1886
     .local v7, htmlSize:I
     const-string v13, "SecurityPolicy"
 
@@ -2963,14 +2879,14 @@
 
     invoke-static {v13, v14}, Lcom/android/exchange/SyncManager;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1642
+    .line 1887
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowHTMLEmail:Z
 
     move v8, v0
 
-    .line 1643
+    .line 1888
     .local v8, isHtmlAllowed:Z
     const-string v13, "SecurityPolicy"
 
@@ -2994,27 +2910,27 @@
 
     invoke-static {v13, v14}, Lcom/android/exchange/SyncManager;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1644
+    .line 1889
     if-eqz v8, :cond_9
 
     if-lez v7, :cond_9
 
-    .line 1645
+    .line 1890
     move v11, v7
 
-    .line 1649
+    .line 1894
     .local v11, restrictedSize:I
     :goto_1
     if-lez v11, :cond_a
 
-    .line 1650
+    .line 1895
     mul-int/lit16 v11, v11, 0x400
 
-    .line 1653
+    .line 1898
     :goto_2
     if-ge v11, v4, :cond_1
 
-    .line 1655
+    .line 1900
     const-string v13, "SecurityPolicy"
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -3053,7 +2969,7 @@
 
     invoke-static {v13, v14}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1657
+    .line 1902
     move-object/from16 v0, p1
 
     iget-byte v0, v0, Lcom/android/email/provider/EmailContent$Account;->mEmailSize:B
@@ -3062,7 +2978,7 @@
 
     if-lez v13, :cond_0
 
-    .line 1658
+    .line 1903
     invoke-static {v11}, Lcom/android/exchange/Eas$EmailDataSize;->parseToByte(I)B
 
     move-result v13
@@ -3073,15 +2989,15 @@
 
     iput-byte v0, v1, Lcom/android/email/provider/EmailContent$Account;->mEmailSize:B
 
-    .line 1659
+    .line 1904
     :cond_0
     const/4 v3, 0x1
 
-    .line 1662
+    .line 1907
     :cond_1
     const/4 v12, 0x6
 
-    .line 1663
+    .line 1908
     .local v12, restrictedWindow:I
     move-object/from16 v0, p0
 
@@ -3089,13 +3005,13 @@
 
     move v12, v0
 
-    .line 1664
+    .line 1909
     if-gtz v12, :cond_2
 
-    .line 1665
+    .line 1910
     const/4 v12, 0x6
 
-    .line 1666
+    .line 1911
     :cond_2
     move-object/from16 v0, p1
 
@@ -3105,7 +3021,7 @@
 
     if-ge v12, v13, :cond_3
 
-    .line 1668
+    .line 1913
     const-string v13, "AccountSettings"
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -3144,17 +3060,17 @@
 
     invoke-static {v13, v14}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1669
+    .line 1914
     move v0, v12
 
     move-object/from16 v1, p1
 
     iput v0, v1, Lcom/android/email/provider/EmailContent$Account;->mSyncLookback:I
 
-    .line 1670
+    .line 1915
     const/4 v3, 0x1
 
-    .line 1673
+    .line 1918
     :cond_3
     move-object/from16 v0, p0
 
@@ -3162,7 +3078,7 @@
 
     move v12, v0
 
-    .line 1674
+    .line 1919
     if-lez v12, :cond_5
 
     move-object/from16 v0, p1
@@ -3181,7 +3097,7 @@
 
     if-ge v12, v13, :cond_5
 
-    .line 1678
+    .line 1923
     :cond_4
     const-string v13, "AccountSettings"
 
@@ -3221,17 +3137,17 @@
 
     invoke-static {v13, v14}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1679
+    .line 1924
     move v0, v12
 
     move-object/from16 v1, p1
 
     iput v0, v1, Lcom/android/email/provider/EmailContent$Account;->mCalendarSyncLookback:I
 
-    .line 1680
+    .line 1925
     const/4 v3, 0x1
 
-    .line 1684
+    .line 1929
     :cond_5
     invoke-virtual/range {p1 .. p1}, Lcom/android/email/provider/EmailContent$Account;->isSaved()Z
 
@@ -3239,12 +3155,12 @@
 
     if-eqz v13, :cond_c
 
-    .line 1685
+    .line 1930
     new-instance v5, Landroid/content/ContentValues;
 
     invoke-direct {v5}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1687
+    .line 1932
     .local v5, cv:Landroid/content/ContentValues;
     const-string v13, "securitySyncKey"
 
@@ -3256,10 +3172,10 @@
 
     invoke-virtual {v5, v13, v14}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1692
+    .line 1937
     if-eqz v3, :cond_6
 
-    .line 1695
+    .line 1940
     const-string v13, "isDefault"
 
     move-object/from16 v0, p1
@@ -3295,7 +3211,7 @@
 
     invoke-virtual {v5, v13, v14}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Byte;)V
 
-    .line 1696
+    .line 1941
     const-string v13, "syncLookback"
 
     move-object/from16 v0, p1
@@ -3310,7 +3226,7 @@
 
     invoke-virtual {v5, v13, v14}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1698
+    .line 1943
     const-string v13, "calendarSyncLookback"
 
     move-object/from16 v0, p1
@@ -3325,7 +3241,7 @@
 
     invoke-virtual {v5, v13, v14}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1704
+    .line 1949
     :cond_6
     move-object/from16 v0, p1
 
@@ -3335,7 +3251,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/email/provider/EmailContent$Account;->update(Landroid/content/Context;Landroid/content/ContentValues;)I
 
-    .line 1711
+    .line 1956
     .end local v5           #cv:Landroid/content/ContentValues;
     :goto_4
     move-object/from16 v0, p1
@@ -3350,7 +3266,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/email/SecurityPolicy$PolicySet;->storePolicyRules(J)V
 
-    .line 1714
+    .line 1959
     .end local v3           #changedValues:Z
     .end local v4           #currentSize:I
     .end local v7           #htmlSize:I
@@ -3381,10 +3297,10 @@
 
     invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1715
+    .line 1960
     return v6
 
-    .line 1622
+    .line 1867
     .end local v6           #dirty:Z
     :cond_8
     const/4 v13, 0x0
@@ -3393,7 +3309,7 @@
 
     goto/16 :goto_0
 
-    .line 1647
+    .line 1892
     .restart local v3       #changedValues:Z
     .restart local v4       #currentSize:I
     .restart local v6       #dirty:Z
@@ -3406,13 +3322,13 @@
     .restart local v11       #restrictedSize:I
     goto/16 :goto_1
 
-    .line 1652
+    .line 1897
     :cond_a
     const v11, 0x7fffffff
 
     goto/16 :goto_2
 
-    .line 1695
+    .line 1940
     .restart local v5       #cv:Landroid/content/ContentValues;
     .restart local v12       #restrictedWindow:I
     :cond_b
@@ -3420,7 +3336,7 @@
 
     goto :goto_3
 
-    .line 1706
+    .line 1951
     .end local v5           #cv:Landroid/content/ContentValues;
     :cond_c
     move-object/from16 v0, p1

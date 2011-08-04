@@ -93,16 +93,6 @@
     return-void
 .end method
 
-.method public getUnderlyingStream()Ljava/io/InputStream;
-    .locals 1
-
-    .prologue
-    .line 44
-    iget-object v0, p0, Lorg/apache/james/mime4j/CloseShieldInputStream;->is:Ljava/io/InputStream;
-
-    return-object v0
-.end method
-
 .method public declared-synchronized mark(I)V
     .locals 1
     .parameter "readlimit"

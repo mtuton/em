@@ -1,4 +1,4 @@
-.class Lcom/android/email/provider/EmailContent$HostAuth$1;
+.class final Lcom/android/email/provider/EmailContent$HostAuth$1;
 .super Ljava/lang/Object;
 .source "EmailContent.java"
 
@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 3578
+    .line 4229
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 3575
+    .line 4231
     new-instance v0, Lcom/android/email/provider/EmailContent$HostAuth;
 
     invoke-direct {v0, p1}, Lcom/android/email/provider/EmailContent$HostAuth;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3578
+    .line 4229
     invoke-virtual {p0, p1}, Lcom/android/email/provider/EmailContent$HostAuth$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/email/provider/EmailContent$HostAuth;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 3579
+    .line 4235
     new-array v0, p1, [Lcom/android/email/provider/EmailContent$HostAuth;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3578
+    .line 4229
     invoke-virtual {p0, p1}, Lcom/android/email/provider/EmailContent$HostAuth$1;->newArray(I)[Lcom/android/email/provider/EmailContent$HostAuth;
 
     move-result-object v0

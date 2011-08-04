@@ -28,16 +28,6 @@
 
 
 # virtual methods
-.method public getParent()Lorg/apache/james/mime4j/message/Entity;
-    .locals 1
-
-    .prologue
-    .line 37
-    iget-object v0, p0, Lorg/apache/james/mime4j/message/AbstractBody;->parent:Lorg/apache/james/mime4j/message/Entity;
-
-    return-object v0
-.end method
-
 .method public setParent(Lorg/apache/james/mime4j/message/Entity;)V
     .locals 0
     .parameter "parent"

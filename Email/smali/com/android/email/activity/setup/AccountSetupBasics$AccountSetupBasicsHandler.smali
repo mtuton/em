@@ -14,10 +14,6 @@
 .end annotation
 
 
-# static fields
-.field private static final MSG_PROGRESS:I = 0x1
-
-
 # instance fields
 .field final synthetic this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
@@ -28,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 859
+    .line 982
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$AccountSetupBasicsHandler;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -43,17 +39,17 @@
     .parameter "msg"
 
     .prologue
-    .line 864
+    .line 987
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 878
+    .line 1001
     :cond_0
     :goto_0
     return-void
 
-    .line 866
+    .line 989
     :pswitch_0
     iget v1, p1, Landroid/os/Message;->arg1:I
 
@@ -66,7 +62,7 @@
 
     move-result-object v0
 
-    .line 867
+    .line 990
     .local v0, state:Ljava/lang/Boolean;
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$AccountSetupBasicsHandler;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
@@ -76,14 +72,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 869
+    .line 992
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 870
+    .line 993
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$AccountSetupBasicsHandler;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     invoke-static {v1}, Lcom/android/email/activity/setup/AccountSetupBasics;->access$200(Lcom/android/email/activity/setup/AccountSetupBasics;)Landroid/app/ProgressDialog;
@@ -92,7 +88,7 @@
 
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupBasics$AccountSetupBasicsHandler;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
-    const v3, 0x7f080104
+    const v3, 0x7f08011a
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/setup/AccountSetupBasics;->getString(I)Ljava/lang/String;
 
@@ -100,7 +96,7 @@
 
     invoke-virtual {v1, v2}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 871
+    .line 994
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$AccountSetupBasicsHandler;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     invoke-static {v1}, Lcom/android/email/activity/setup/AccountSetupBasics;->access$200(Lcom/android/email/activity/setup/AccountSetupBasics;)Landroid/app/ProgressDialog;
@@ -111,14 +107,14 @@
 
     goto :goto_0
 
-    .line 866
+    .line 989
     .end local v0           #state:Ljava/lang/Boolean;
     :cond_1
     const/4 v1, 0x1
 
     goto :goto_1
 
-    .line 873
+    .line 996
     .restart local v0       #state:Ljava/lang/Boolean;
     :cond_2
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$AccountSetupBasicsHandler;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
@@ -131,7 +127,7 @@
 
     goto :goto_0
 
-    .line 864
+    .line 987
     nop
 
     :pswitch_data_0
@@ -147,28 +143,28 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 881
+    .line 1004
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 882
+    .line 1005
     .local v0, msg:Landroid/os/Message;
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 883
+    .line 1006
     if-eqz p1, :cond_0
 
     :goto_0
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    .line 884
+    .line 1007
     invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/AccountSetupBasics$AccountSetupBasicsHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 885
+    .line 1008
     return-void
 
-    .line 883
+    .line 1006
     :cond_0
     const/4 v1, 0x0
 

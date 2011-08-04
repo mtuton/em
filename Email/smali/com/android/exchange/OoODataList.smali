@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator; = null
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator",
@@ -17,8 +17,6 @@
         }
     .end annotation
 .end field
-
-.field private static final TAG:Ljava/lang/String; = "OoODataList"
 
 
 # instance fields
@@ -126,43 +124,6 @@
     return v0
 .end method
 
-.method public AddOoOData(IIILjava/lang/String;JJ)I
-    .locals 10
-    .parameter "atype"
-    .parameter "astate"
-    .parameter "aenabled"
-    .parameter "amsg"
-    .parameter "astart"
-    .parameter "aend"
-
-    .prologue
-    .line 49
-    iget-object v9, p0, Lcom/android/exchange/OoODataList;->dataList:Ljava/util/ArrayList;
-
-    new-instance v0, Lcom/android/exchange/OoOData;
-
-    move v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move-object v4, p4
-
-    move-wide v5, p5
-
-    move-wide/from16 v7, p7
-
-    invoke-direct/range {v0 .. v8}, Lcom/android/exchange/OoOData;-><init>(IIILjava/lang/String;JJ)V
-
-    invoke-virtual {v9, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 50
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public AddOoOData(IIILjava/lang/String;Ljava/util/Date;Ljava/util/Date;)I
     .locals 8
     .parameter "atype"
@@ -208,43 +169,6 @@
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public displayOoOData()V
-    .locals 3
-
-    .prologue
-    .line 59
-    const-string v0, "OoODataList"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "OOF ResultList: Number of results = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/exchange/OoODataList;->dataList:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/android/exchange/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 60
-    return-void
 .end method
 
 .method public getCount()I

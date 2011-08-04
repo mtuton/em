@@ -15,14 +15,6 @@
 
 
 # static fields
-.field private static final DATE_DIALOG_ID:I = 0x0
-
-.field private static final KEY_EXTRA_ACCOUNT_ID:Ljava/lang/String; = "com.android.email.AccountId"
-
-.field private static final KEY_EXTRA_MAILBOX_ID:Ljava/lang/String; = "com.android.email.MailboxId"
-
-.field private static final RESULT_SEARCH:I = 0x1
-
 .field private static final TAG:Ljava/lang/String;
 
 
@@ -32,6 +24,8 @@
 .field private mAccount:Lcom/android/email/provider/EmailContent$Account;
 
 .field private mController:Lcom/android/email/Controller;
+
+.field private mConversationId:Ljava/lang/String;
 
 .field private mEmailSearchAdapter:Lcom/android/exchange/provider/EmailSearchAdapter;
 
@@ -88,7 +82,7 @@
     .line 44
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 77
+    .line 87
     return-void
 .end method
 
@@ -147,7 +141,18 @@
     return-object v0
 .end method
 
-.method static synthetic access$1300(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/email/provider/EmailContent$Account;
+.method static synthetic access$1300(Lcom/android/email/activity/EmailSearchQuery;)Ljava/lang/String;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 44
+    iget-object v0, p0, Lcom/android/email/activity/EmailSearchQuery;->mConversationId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1400(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/email/provider/EmailContent$Account;
     .locals 1
     .parameter "x0"
 
@@ -158,7 +163,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1400(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/email/Controller;
+.method static synthetic access$1500(Lcom/android/email/activity/EmailSearchQuery;)Lcom/android/email/Controller;
     .locals 1
     .parameter "x0"
 
@@ -169,12 +174,13 @@
     return-object v0
 .end method
 
-.method static synthetic access$1500()Ljava/lang/String;
+.method static synthetic access$1600(Lcom/android/email/activity/EmailSearchQuery;)Landroid/widget/TextView;
     .locals 1
+    .parameter "x0"
 
     .prologue
     .line 44
-    sget-object v0, Lcom/android/email/activity/EmailSearchQuery;->TAG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/email/activity/EmailSearchQuery;->mSearchText:Landroid/widget/TextView;
 
     return-object v0
 .end method
@@ -304,121 +310,151 @@
 .end method
 
 .method private readArgumentsFromIntent()V
-    .locals 8
+    .locals 9
 
     .prologue
-    const-wide/16 v6, -0x1
+    const-wide/16 v7, -0x1
 
-    .line 314
+    .line 346
     invoke-virtual {p0}, Lcom/android/email/activity/EmailSearchQuery;->getIntent()Landroid/content/Intent;
 
-    move-result-object v4
+    move-result-object v5
 
-    const-string v5, "com.android.email.AccountId"
+    const-string v6, "com.android.email.AccountId"
 
-    invoke-virtual {v4, v5, v6, v7}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+    invoke-virtual {v5, v6, v7, v8}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
     move-result-wide v0
 
-    .line 315
+    .line 347
     .local v0, accountId:J
-    cmp-long v4, v0, v6
+    cmp-long v5, v0, v7
 
-    if-nez v4, :cond_0
+    if-nez v5, :cond_1
 
-    .line 316
-    sget-object v4, Lcom/android/email/activity/EmailSearchQuery;->TAG:Ljava/lang/String;
+    .line 348
+    sget-object v5, Lcom/android/email/activity/EmailSearchQuery;->TAG:Ljava/lang/String;
 
-    const-string v5, "Must pass com.android.email.AccountId of type long in extras"
+    const-string v6, "Must pass com.android.email.AccountId of type long in extras"
 
-    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 317
+    .line 349
     invoke-virtual {p0}, Lcom/android/email/activity/EmailSearchQuery;->finish()V
 
-    .line 321
+    .line 353
     :goto_0
     invoke-virtual {p0}, Lcom/android/email/activity/EmailSearchQuery;->getIntent()Landroid/content/Intent;
 
-    move-result-object v4
+    move-result-object v5
 
-    const-string v5, "com.android.email.MailboxId"
+    const-string v6, "com.android.email.MailboxId"
 
-    invoke-virtual {v4, v5, v6, v7}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+    invoke-virtual {v5, v6, v7, v8}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
-    move-result-wide v2
+    move-result-wide v3
 
-    .line 322
-    .local v2, mailboxId:J
-    cmp-long v4, v2, v6
+    .line 354
+    .local v3, mailboxId:J
+    cmp-long v5, v3, v7
 
-    if-gtz v4, :cond_1
+    if-gtz v5, :cond_2
 
-    .line 323
-    const/4 v4, 0x0
+    .line 355
+    const/4 v5, 0x0
 
-    iput-object v4, p0, Lcom/android/email/activity/EmailSearchQuery;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iput-object v5, p0, Lcom/android/email/activity/EmailSearchQuery;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    .line 327
+    .line 360
     :goto_1
+    invoke-virtual {p0}, Lcom/android/email/activity/EmailSearchQuery;->getIntent()Landroid/content/Intent;
+
+    move-result-object v5
+
+    const-string v6, "com.android.email.ConversationId"
+
+    invoke-virtual {v5, v6}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 361
+    .local v2, conversationId:Ljava/lang/String;
+    if-eqz v2, :cond_0
+
+    .line 362
+    iput-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mConversationId:Ljava/lang/String;
+
+    .line 367
+    :cond_0
     return-void
 
-    .line 319
-    .end local v2           #mailboxId:J
-    :cond_0
+    .line 351
+    .end local v2           #conversationId:Ljava/lang/String;
+    .end local v3           #mailboxId:J
+    :cond_1
     invoke-static {p0, v0, v1}, Lcom/android/email/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Account;
 
-    move-result-object v4
+    move-result-object v5
 
-    iput-object v4, p0, Lcom/android/email/activity/EmailSearchQuery;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iput-object v5, p0, Lcom/android/email/activity/EmailSearchQuery;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     goto :goto_0
 
-    .line 325
-    .restart local v2       #mailboxId:J
-    :cond_1
-    invoke-static {p0, v2, v3}, Lcom/android/email/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Mailbox;
+    .line 357
+    .restart local v3       #mailboxId:J
+    :cond_2
+    invoke-static {p0, v3, v4}, Lcom/android/email/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Mailbox;
 
-    move-result-object v4
+    move-result-object v5
 
-    iput-object v4, p0, Lcom/android/email/activity/EmailSearchQuery;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iput-object v5, p0, Lcom/android/email/activity/EmailSearchQuery;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     goto :goto_1
 .end method
 
-.method public static startActivity(Landroid/app/Activity;JJI)V
+.method public static startActivity(Landroid/app/Activity;JJLjava/lang/String;IZ)V
     .locals 2
-    .parameter "activity"
-    .parameter "accountId"
-    .parameter "mailboxId"
-    .parameter "requestCode"
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
-    .line 165
+    .line 189
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 166
-    .local v0, searchQuery:Landroid/content/Intent;
+    .line 190
+    if-eqz p7, :cond_0
+
+    .line 193
+    :cond_0
     const-class v1, Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-virtual {v0, p0, v1}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
-    .line 167
+    .line 194
     const-string v1, "com.android.email.AccountId"
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 168
+    .line 195
     const-string v1, "com.android.email.MailboxId"
 
     invoke-virtual {v0, v1, p3, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 169
-    invoke-virtual {p0, v0, p5}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
+    .line 196
+    const-string v1, "com.android.email.ConversationId"
 
-    .line 170
+    invoke-virtual {v0, v1, p5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 197
+    invoke-virtual {p0, v0, p6}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
+
+    .line 199
     return-void
 .end method
 
@@ -429,7 +465,7 @@
     .parameter "editText"
 
     .prologue
-    .line 173
+    .line 203
     iget-object v1, p0, Lcom/android/email/activity/EmailSearchQuery;->mQuery:Landroid/widget/EditText;
 
     invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -440,7 +476,7 @@
 
     move-result-object v0
 
-    .line 174
+    .line 204
     .local v0, queryString:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -448,18 +484,18 @@
 
     if-nez v1, :cond_0
 
-    .line 175
+    .line 205
     iget-object v1, p0, Lcom/android/email/activity/EmailSearchQuery;->mSearchButton:Landroid/widget/Button;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 179
+    .line 209
     :goto_0
     return-void
 
-    .line 177
+    .line 207
     :cond_0
     iget-object v1, p0, Lcom/android/email/activity/EmailSearchQuery;->mSearchButton:Landroid/widget/Button;
 
@@ -478,7 +514,7 @@
     .parameter "after"
 
     .prologue
-    .line 183
+    .line 213
     return-void
 .end method
 
@@ -491,12 +527,12 @@
     .prologue
     const-string v3, " "
 
-    .line 331
+    .line 371
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_0
 
-    .line 332
+    .line 372
     const-string v0, "FROM_YEAR"
 
     iget v1, p0, Lcom/android/email/activity/EmailSearchQuery;->mFromYear:I
@@ -507,7 +543,7 @@
 
     iput v0, p0, Lcom/android/email/activity/EmailSearchQuery;->mFromYear:I
 
-    .line 333
+    .line 373
     const-string v0, "FROM_MONTH"
 
     iget v1, p0, Lcom/android/email/activity/EmailSearchQuery;->mFromMonth:I
@@ -518,7 +554,7 @@
 
     iput v0, p0, Lcom/android/email/activity/EmailSearchQuery;->mFromMonth:I
 
-    .line 334
+    .line 374
     const-string v0, "FROM_DAY"
 
     iget v1, p0, Lcom/android/email/activity/EmailSearchQuery;->mFromDay:I
@@ -529,7 +565,7 @@
 
     iput v0, p0, Lcom/android/email/activity/EmailSearchQuery;->mFromDay:I
 
-    .line 336
+    .line 376
     const-string v0, "TO_YEAR"
 
     iget v1, p0, Lcom/android/email/activity/EmailSearchQuery;->mToYear:I
@@ -540,7 +576,7 @@
 
     iput v0, p0, Lcom/android/email/activity/EmailSearchQuery;->mToYear:I
 
-    .line 337
+    .line 377
     const-string v0, "TO_MONTH"
 
     iget v1, p0, Lcom/android/email/activity/EmailSearchQuery;->mToMonth:I
@@ -551,7 +587,7 @@
 
     iput v0, p0, Lcom/android/email/activity/EmailSearchQuery;->mToMonth:I
 
-    .line 338
+    .line 378
     const-string v0, "TO_DAY"
 
     iget v1, p0, Lcom/android/email/activity/EmailSearchQuery;->mToDay:I
@@ -562,7 +598,7 @@
 
     iput v0, p0, Lcom/android/email/activity/EmailSearchQuery;->mToDay:I
 
-    .line 346
+    .line 386
     iget-object v0, p0, Lcom/android/email/activity/EmailSearchQuery;->mSearchText:Landroid/widget/TextView;
 
     const-string v1, "SEARCH_STRING"
@@ -573,7 +609,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 348
+    .line 388
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -622,11 +658,11 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 350
+    .line 390
     :cond_0
     invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 351
+    .line 391
     return-void
 .end method
 
@@ -635,7 +671,7 @@
     .parameter "savedInstanceState"
 
     .prologue
-    const v3, 0x7f0801a3
+    const v3, 0x7f0801c7
 
     const/4 v11, 0x5
 
@@ -645,23 +681,23 @@
 
     const/4 v8, 0x0
 
-    .line 191
+    .line 221
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 192
-    const v2, 0x7f030014
+    .line 222
+    const v2, 0x7f030018
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/EmailSearchQuery;->setContentView(I)V
 
-    .line 193
+    .line 223
     invoke-direct {p0}, Lcom/android/email/activity/EmailSearchQuery;->readArgumentsFromIntent()V
 
-    .line 195
+    .line 225
     iget-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     if-eqz v2, :cond_0
 
-    .line 196
+    .line 226
     invoke-virtual {p0}, Lcom/android/email/activity/EmailSearchQuery;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -672,7 +708,7 @@
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/EmailSearchQuery;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 206
+    .line 236
     :goto_0
     invoke-virtual {p0}, Lcom/android/email/activity/EmailSearchQuery;->getApplication()Landroid/app/Application;
 
@@ -684,22 +720,22 @@
 
     iput-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mController:Lcom/android/email/Controller;
 
-    .line 209
+    .line 239
     new-instance v2, Lcom/android/exchange/provider/EmailSearchAdapter;
 
     invoke-direct {v2, p0}, Lcom/android/exchange/provider/EmailSearchAdapter;-><init>(Landroid/app/Activity;)V
 
     iput-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mEmailSearchAdapter:Lcom/android/exchange/provider/EmailSearchAdapter;
 
-    .line 210
+    .line 240
     iget-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mEmailSearchAdapter:Lcom/android/exchange/provider/EmailSearchAdapter;
 
     iget-object v3, p0, Lcom/android/email/activity/EmailSearchQuery;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     invoke-virtual {v2, v3}, Lcom/android/exchange/provider/EmailSearchAdapter;->setAccount(Lcom/android/email/provider/EmailContent$Account;)V
 
-    .line 213
-    const v2, 0x7f070074
+    .line 243
+    const v2, 0x7f07008f
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/EmailSearchQuery;->findViewById(I)Landroid/view/View;
 
@@ -709,7 +745,7 @@
 
     iput-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->dateHolder:Landroid/widget/LinearLayout;
 
-    .line 214
+    .line 244
     iget-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->dateHolder:Landroid/widget/LinearLayout;
 
     new-instance v3, Lcom/android/email/activity/EmailSearchQuery$1;
@@ -718,8 +754,8 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 221
-    const v2, 0x7f070077
+    .line 253
+    const v2, 0x7f070092
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/EmailSearchQuery;->findViewById(I)Landroid/view/View;
 
@@ -729,12 +765,12 @@
 
     iput-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mSearchButton:Landroid/widget/Button;
 
-    .line 222
+    .line 254
     iget-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mSearchButton:Landroid/widget/Button;
 
     invoke-virtual {v2, v8}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 223
+    .line 255
     iget-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mSearchButton:Landroid/widget/Button;
 
     new-instance v3, Lcom/android/email/activity/EmailSearchQuery$OnSearchButtonClickListener;
@@ -745,8 +781,8 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 225
-    const v2, 0x7f070078
+    .line 257
+    const v2, 0x7f070093
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/EmailSearchQuery;->findViewById(I)Landroid/view/View;
 
@@ -754,7 +790,7 @@
 
     check-cast v1, Landroid/widget/Button;
 
-    .line 226
+    .line 258
     .local v1, cancelButton:Landroid/widget/Button;
     new-instance v2, Lcom/android/email/activity/EmailSearchQuery$2;
 
@@ -762,8 +798,8 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 233
-    const v2, 0x7f070072
+    .line 265
+    const v2, 0x7f07008d
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/EmailSearchQuery;->findViewById(I)Landroid/view/View;
 
@@ -773,20 +809,20 @@
 
     iput-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mQuery:Landroid/widget/EditText;
 
-    .line 234
+    .line 266
     iget-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mQuery:Landroid/widget/EditText;
 
-    const v3, 0x7f080124
+    const v3, 0x7f08013a
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setHint(I)V
 
-    .line 235
+    .line 267
     iget-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mQuery:Landroid/widget/EditText;
 
     invoke-virtual {v2, p0}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 237
-    const v2, 0x7f070076
+    .line 269
+    const v2, 0x7f070091
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/EmailSearchQuery;->findViewById(I)Landroid/view/View;
 
@@ -796,12 +832,12 @@
 
     iput-object v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mSearchText:Landroid/widget/TextView;
 
-    .line 257
+    .line 289
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 258
+    .line 290
     .local v0, c:Ljava/util/Calendar;
     invoke-virtual {v0, v9}, Ljava/util/Calendar;->get(I)I
 
@@ -809,48 +845,48 @@
 
     iput v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mFromYear:I
 
-    .line 259
+    .line 291
     invoke-virtual {v0, v10}, Ljava/util/Calendar;->get(I)I
 
     move-result v2
 
     iput v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mFromMonth:I
 
-    .line 260
+    .line 292
     invoke-virtual {v0, v11}, Ljava/util/Calendar;->get(I)I
 
     move-result v2
 
     iput v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mFromDay:I
 
-    .line 262
+    .line 294
     invoke-virtual {v0, v9}, Ljava/util/Calendar;->get(I)I
 
     move-result v2
 
     iput v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mToYear:I
 
-    .line 263
+    .line 295
     invoke-virtual {v0, v10}, Ljava/util/Calendar;->get(I)I
 
     move-result v2
 
     iput v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mToMonth:I
 
-    .line 264
+    .line 296
     invoke-virtual {v0, v11}, Ljava/util/Calendar;->get(I)I
 
     move-result v2
 
     iput v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mToDay:I
 
-    .line 266
+    .line 298
     iput v8, p0, Lcom/android/email/activity/EmailSearchQuery;->mFromHour:I
 
-    .line 267
+    .line 299
     iput v8, p0, Lcom/android/email/activity/EmailSearchQuery;->mFromMinute:I
 
-    .line 269
+    .line 301
     const/16 v2, 0xb
 
     invoke-virtual {v0, v2}, Ljava/util/Calendar;->get(I)I
@@ -859,7 +895,7 @@
 
     iput v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mToHour:I
 
-    .line 270
+    .line 302
     const/16 v2, 0xc
 
     invoke-virtual {v0, v2}, Ljava/util/Calendar;->get(I)I
@@ -868,10 +904,10 @@
 
     iput v2, p0, Lcom/android/email/activity/EmailSearchQuery;->mToMinute:I
 
-    .line 271
+    .line 303
     return-void
 
-    .line 198
+    .line 228
     .end local v0           #c:Ljava/util/Calendar;
     .end local v1           #cancelButton:Landroid/widget/Button;
     :cond_0
@@ -879,7 +915,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 199
+    .line 229
     invoke-virtual {p0}, Lcom/android/email/activity/EmailSearchQuery;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -892,7 +928,7 @@
 
     goto/16 :goto_0
 
-    .line 201
+    .line 231
     :cond_1
     sget-object v2, Lcom/android/email/activity/EmailSearchQuery;->TAG:Ljava/lang/String;
 
@@ -928,7 +964,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 202
+    .line 232
     invoke-virtual {p0}, Lcom/android/email/activity/EmailSearchQuery;->finish()V
 
     goto/16 :goto_0
@@ -939,22 +975,22 @@
     .parameter "id"
 
     .prologue
-    .line 275
+    .line 307
     packed-switch p1, :pswitch_data_0
 
-    .line 310
+    .line 342
     const/4 v1, 0x0
 
     :goto_0
     return-object v1
 
-    .line 277
+    .line 309
     :pswitch_0
     new-instance v2, Lcom/android/email/activity/EmailSearchQuery$3;
 
     invoke-direct {v2, p0}, Lcom/android/email/activity/EmailSearchQuery$3;-><init>(Lcom/android/email/activity/EmailSearchQuery;)V
 
-    .line 295
+    .line 327
     .local v2, dateSetListener:Landroid/app/DatePickerDialog$OnDateSetListener;
     new-instance v0, Landroid/app/DatePickerDialog;
 
@@ -968,7 +1004,7 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/app/DatePickerDialog;-><init>(Landroid/content/Context;Landroid/app/DatePickerDialog$OnDateSetListener;III)V
 
-    .line 300
+    .line 332
     .local v0, datePickerDialog:Landroid/app/Dialog;
     new-instance v1, Lcom/android/email/activity/EmailSearchQuery$4;
 
@@ -978,10 +1014,10 @@
 
     move-object v1, v0
 
-    .line 308
+    .line 340
     goto :goto_0
 
-    .line 275
+    .line 307
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -996,6 +1032,6 @@
     .parameter "count"
 
     .prologue
-    .line 187
+    .line 217
     return-void
 .end method

@@ -209,7 +209,7 @@
     .local v0, launchCalendarPendingIntent:Landroid/app/PendingIntent;
     iget-object v4, p0, Lcom/android/exchange/CalendarSyncEnabler;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f08016b
+    const v5, 0x7f080184
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -219,7 +219,7 @@
     .local v3, tickerText:Ljava/lang/String;
     new-instance v1, Landroid/app/Notification;
 
-    const v4, 0x7f0200d3
+    const v4, 0x7f0200fc
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 

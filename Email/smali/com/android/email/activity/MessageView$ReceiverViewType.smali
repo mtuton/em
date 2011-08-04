@@ -30,18 +30,18 @@
     .parameter "name"
 
     .prologue
-    .line 2038
+    .line 2713
     iput-object p1, p0, Lcom/android/email/activity/MessageView$ReceiverViewType;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2039
+    .line 2714
     iput-object p2, p0, Lcom/android/email/activity/MessageView$ReceiverViewType;->_group:Ljava/lang/String;
 
-    .line 2040
+    .line 2715
     iput-object p3, p0, Lcom/android/email/activity/MessageView$ReceiverViewType;->_name:Ljava/lang/String;
 
-    .line 2041
+    .line 2716
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .locals 1
 
     .prologue
-    .line 2048
+    .line 2723
     iget-object v0, p0, Lcom/android/email/activity/MessageView$ReceiverViewType;->_name:Ljava/lang/String;
 
     return-object v0
@@ -61,7 +61,7 @@
     .locals 1
 
     .prologue
-    .line 2044
+    .line 2719
     iget-object v0, p0, Lcom/android/email/activity/MessageView$ReceiverViewType;->_group:Ljava/lang/String;
 
     return-object v0

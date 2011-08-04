@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageList;->onMultiDeletePopup()V
+    value = Lcom/android/email/activity/MessageList;->onDeletePopup(JJ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,25 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/activity/MessageList;
 
+.field final synthetic val$accountIdforDelete:J
+
+.field final synthetic val$messageIdforDelete:J
+
 
 # direct methods
-.method constructor <init>(Lcom/android/email/activity/MessageList;)V
+.method constructor <init>(Lcom/android/email/activity/MessageList;JJ)V
     .locals 0
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 3361
+    .line 3903
     iput-object p1, p0, Lcom/android/email/activity/MessageList$21;->this$0:Lcom/android/email/activity/MessageList;
+
+    iput-wide p2, p0, Lcom/android/email/activity/MessageList$21;->val$messageIdforDelete:J
+
+    iput-wide p4, p0, Lcom/android/email/activity/MessageList$21;->val$accountIdforDelete:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,14 +48,23 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
+    .locals 5
     .parameter "dialog"
     .parameter "whichButton"
 
     .prologue
-    .line 3362
+    .line 3905
+    iget-object v0, p0, Lcom/android/email/activity/MessageList$21;->this$0:Lcom/android/email/activity/MessageList;
+
+    iget-wide v1, p0, Lcom/android/email/activity/MessageList$21;->val$messageIdforDelete:J
+
+    iget-wide v3, p0, Lcom/android/email/activity/MessageList$21;->val$accountIdforDelete:J
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/android/email/activity/MessageList;->access$3200(Lcom/android/email/activity/MessageList;JJ)V
+
+    .line 3906
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 3363
+    .line 3909
     return-void
 .end method

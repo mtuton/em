@@ -4,30 +4,6 @@
 
 
 # static fields
-.field public static final JJTADDRESS:I = 0x2
-
-.field public static final JJTADDRESS_LIST:I = 0x1
-
-.field public static final JJTADDR_SPEC:I = 0x9
-
-.field public static final JJTANGLE_ADDR:I = 0x6
-
-.field public static final JJTDOMAIN:I = 0xb
-
-.field public static final JJTGROUP_BODY:I = 0x5
-
-.field public static final JJTLOCAL_PART:I = 0xa
-
-.field public static final JJTMAILBOX:I = 0x3
-
-.field public static final JJTNAME_ADDR:I = 0x4
-
-.field public static final JJTPHRASE:I = 0x8
-
-.field public static final JJTROUTE:I = 0x7
-
-.field public static final JJTVOID:I
-
 .field public static final jjtNodeName:[Ljava/lang/String;
 
 

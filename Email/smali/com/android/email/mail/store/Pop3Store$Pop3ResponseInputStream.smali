@@ -31,21 +31,21 @@
     .parameter "in"
 
     .prologue
-    .line 1058
+    .line 1052
     iput-object p1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
-    .line 1059
+    .line 1053
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    .line 1055
+    .line 1049
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mStartOfLine:Z
 
-    .line 1060
+    .line 1054
     iput-object p2, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mIn:Ljava/io/InputStream;
 
-    .line 1061
+    .line 1055
     return-void
 .end method
 
@@ -64,18 +64,18 @@
 
     const/4 v2, -0x1
 
-    .line 1065
+    .line 1059
     iget-boolean v1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mFinished:Z
 
     if-eqz v1, :cond_0
 
     move v1, v2
 
-    .line 1080
+    .line 1074
     :goto_0
     return v1
 
-    .line 1068
+    .line 1062
     :cond_0
     iget-object v1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mIn:Ljava/io/InputStream;
 
@@ -83,7 +83,7 @@
 
     move-result v0
 
-    .line 1069
+    .line 1063
     .local v0, d:I
     iget-boolean v1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mStartOfLine:Z
 
@@ -93,32 +93,32 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1070
+    .line 1064
     iget-object v1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mIn:Ljava/io/InputStream;
 
     invoke-virtual {v1}, Ljava/io/InputStream;->read()I
 
     move-result v0
 
-    .line 1071
+    .line 1065
     const/16 v1, 0xd
 
     if-ne v0, v1, :cond_1
 
-    .line 1072
+    .line 1066
     iput-boolean v3, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mFinished:Z
 
-    .line 1073
+    .line 1067
     iget-object v1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mIn:Ljava/io/InputStream;
 
     invoke-virtual {v1}, Ljava/io/InputStream;->read()I
 
     move v1, v2
 
-    .line 1074
+    .line 1068
     goto :goto_0
 
-    .line 1078
+    .line 1072
     :cond_1
     const/16 v1, 0xa
 
@@ -131,10 +131,10 @@
 
     move v1, v0
 
-    .line 1080
+    .line 1074
     goto :goto_0
 
-    .line 1078
+    .line 1072
     :cond_2
     const/4 v1, 0x0
 

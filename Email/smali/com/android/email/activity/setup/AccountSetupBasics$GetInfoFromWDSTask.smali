@@ -37,12 +37,12 @@
     .parameter
 
     .prologue
-    .line 888
+    .line 1011
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$GetInfoFromWDSTask;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 889
+    .line 1012
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountSetupBasics$GetInfoFromWDSTask;->mDomain:Ljava/lang/String;
@@ -67,7 +67,7 @@
 
     const-string v6, ""
 
-    .line 894
+    .line 1017
     iget-object v4, p0, Lcom/android/email/activity/setup/AccountSetupBasics$GetInfoFromWDSTask;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     invoke-static {v4}, Lcom/android/email/activity/setup/AccountSetupBasics;->access$300(Lcom/android/email/activity/setup/AccountSetupBasics;)Lcom/android/email/activity/setup/AccountSetupBasics$AccountSetupBasicsHandler;
@@ -78,25 +78,25 @@
 
     invoke-virtual {v4, v5}, Lcom/android/email/activity/setup/AccountSetupBasics$AccountSetupBasicsHandler;->progress(Z)V
 
-    .line 895
+    .line 1018
     const/4 v4, 0x0
 
     aget-object v4, p1, v4
 
     iput-object v4, p0, Lcom/android/email/activity/setup/AccountSetupBasics$GetInfoFromWDSTask;->mDomain:Ljava/lang/String;
 
-    .line 900
+    .line 1023
     new-instance v3, Lcom/android/email/wds/ServicemineClient;
 
     iget-object v4, p0, Lcom/android/email/activity/setup/AccountSetupBasics$GetInfoFromWDSTask;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     invoke-direct {v3, v4}, Lcom/android/email/wds/ServicemineClient;-><init>(Landroid/content/Context;)V
 
-    .line 901
+    .line 1024
     .local v3, sc:Lcom/android/email/wds/ServicemineClient;
     const/4 v1, 0x0
 
-    .line 904
+    .line 1027
     .local v1, ep:Lcom/android/email/wds/EmailProviderWds;
     :try_start_0
     iget-object v4, p0, Lcom/android/email/activity/setup/AccountSetupBasics$GetInfoFromWDSTask;->mDomain:Ljava/lang/String;
@@ -108,23 +108,23 @@
 
     move-result-object v1
 
-    .line 910
+    .line 1033
     if-nez v1, :cond_1
 
     :cond_0
     move-object v4, v8
 
-    .line 923
+    .line 1046
     :goto_0
     return-object v4
 
-    .line 906
+    .line 1029
     :catch_0
     move-exception v4
 
     move-object v0, v4
 
-    .line 907
+    .line 1030
     .local v0, e:Ljava/lang/IllegalArgumentException;
     :try_start_1
     const-string v4, "Email"
@@ -137,52 +137,52 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 910
+    .line 1033
     if-eqz v1, :cond_0
 
-    .line 912
+    .line 1035
     new-instance v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
 
     invoke-direct {v2}, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;-><init>()V
 
-    .line 913
+    .line 1036
     .local v2, provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
     const-string v4, ""
 
     iput-object v6, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->id:Ljava/lang/String;
 
-    .line 914
+    .line 1037
     const-string v4, ""
 
     iput-object v6, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->note:Ljava/lang/String;
 
-    .line 915
+    .line 1038
     iget-object v4, p0, Lcom/android/email/activity/setup/AccountSetupBasics$GetInfoFromWDSTask;->mDomain:Ljava/lang/String;
 
     iput-object v4, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->domain:Ljava/lang/String;
 
-    .line 916
+    .line 1039
     throw v1
 
     #Unreachable code
     #throw v2
 
-    .line 917
+    .line 1040
     #throw v1
 
     #throw v2
 
-    .line 918
+    .line 1041
     #throw v1
 
     #throw v2
 
-    .line 919
+    .line 1042
     #throw v1
 
     #throw v2
 
-    .line 920
+    .line 1043
     #const-string v4, "SetBasics"
 
     #new-instance v4, Ljava/lang/StringBuilder;
@@ -207,7 +207,7 @@
 
     #invoke-static {v7, v4}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 921
+    .line 1044
     #const-string v4, "SetBasics"
 
     #new-instance v4, Ljava/lang/StringBuilder;
@@ -236,59 +236,59 @@
     :goto_1
     move-object v4, v2
 
-    .line 923
+    .line 1046
     goto :goto_0
 
-    .line 910
+    .line 1033
     .end local v2           #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
     :catchall_0
     move-exception v4
 
     if-eqz v1, :cond_0
 
-    .line 912
+    .line 1035
     new-instance v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
 
     invoke-direct {v2}, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;-><init>()V
 
-    .line 913
+    .line 1036
     .restart local v2       #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
     const-string v4, ""
 
     iput-object v6, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->id:Ljava/lang/String;
 
-    .line 914
+    .line 1037
     const-string v4, ""
 
     iput-object v6, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->note:Ljava/lang/String;
 
-    .line 915
+    .line 1038
     iget-object v4, p0, Lcom/android/email/activity/setup/AccountSetupBasics$GetInfoFromWDSTask;->mDomain:Ljava/lang/String;
 
     iput-object v4, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->domain:Ljava/lang/String;
 
-    .line 916
+    .line 1039
     throw v1
 
     #Unreachable code
     #throw v2
 
-    .line 917
+    .line 1040
     #throw v1
 
     #throw v2
 
-    .line 918
+    .line 1041
     #throw v1
 
     #throw v2
 
-    .line 919
+    .line 1042
     #throw v1
 
     #throw v2
 
-    .line 920
+    .line 1043
     #const-string v4, "SetBasics"
 
     #new-instance v4, Ljava/lang/StringBuilder;
@@ -313,7 +313,7 @@
 
     #invoke-static {v7, v4}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 921
+    .line 1044
     #const-string v4, "SetBasics"
 
     #new-instance v4, Ljava/lang/StringBuilder;
@@ -340,50 +340,50 @@
 
     #goto :goto_1
 
-    .line 912
+    .line 1035
     .end local v2           #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
     :cond_1
     new-instance v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
 
     invoke-direct {v2}, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;-><init>()V
 
-    .line 913
+    .line 1036
     .restart local v2       #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
     const-string v4, ""
 
     iput-object v6, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->id:Ljava/lang/String;
 
-    .line 914
+    .line 1037
     const-string v4, ""
 
     iput-object v6, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->note:Ljava/lang/String;
 
-    .line 915
+    .line 1038
     iget-object v4, p0, Lcom/android/email/activity/setup/AccountSetupBasics$GetInfoFromWDSTask;->mDomain:Ljava/lang/String;
 
     iput-object v4, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->domain:Ljava/lang/String;
 
-    .line 916
+    .line 1039
     iget-object v4, v1, Lcom/android/email/wds/EmailProviderWds;->authNameFormat:Ljava/lang/String;
 
     iput-object v4, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->incomingUsernameTemplate:Ljava/lang/String;
 
-    .line 917
+    .line 1040
     iget-object v4, v1, Lcom/android/email/wds/EmailProviderWds;->authNameFormat:Ljava/lang/String;
 
     iput-object v4, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->outgoingUsernameTemplate:Ljava/lang/String;
 
-    .line 918
+    .line 1041
     iget-object v4, v1, Lcom/android/email/wds/EmailProviderWds;->incomingUriTemplate:Ljava/net/URI;
 
     iput-object v4, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->incomingUriTemplate:Ljava/net/URI;
 
-    .line 919
+    .line 1042
     iget-object v4, v1, Lcom/android/email/wds/EmailProviderWds;->outgoingUriTemplate:Ljava/net/URI;
 
     iput-object v4, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->outgoingUriTemplate:Ljava/net/URI;
 
-    .line 920
+    .line 1043
     const-string v4, "SetBasics"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -408,7 +408,7 @@
 
     invoke-static {v7, v4}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 921
+    .line 1044
     const-string v4, "SetBasics"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -441,7 +441,7 @@
     .parameter "x0"
 
     .prologue
-    .line 888
+    .line 1011
     check-cast p1, [Ljava/lang/String;
 
     .end local p1
@@ -457,7 +457,7 @@
     .parameter "result"
 
     .prologue
-    .line 929
+    .line 1053
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupBasics$GetInfoFromWDSTask;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     invoke-static {v0}, Lcom/android/email/activity/setup/AccountSetupBasics;->access$200(Lcom/android/email/activity/setup/AccountSetupBasics;)Landroid/app/ProgressDialog;
@@ -478,7 +478,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 930
+    .line 1054
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupBasics$GetInfoFromWDSTask;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     if-eqz p1, :cond_1
@@ -488,7 +488,7 @@
     :goto_0
     invoke-static {v0, v1}, Lcom/android/email/activity/setup/AccountSetupBasics;->access$400(Lcom/android/email/activity/setup/AccountSetupBasics;Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;)V
 
-    .line 931
+    .line 1055
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupBasics$GetInfoFromWDSTask;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     invoke-static {v0}, Lcom/android/email/activity/setup/AccountSetupBasics;->access$300(Lcom/android/email/activity/setup/AccountSetupBasics;)Lcom/android/email/activity/setup/AccountSetupBasics$AccountSetupBasicsHandler;
@@ -499,11 +499,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/setup/AccountSetupBasics$AccountSetupBasicsHandler;->progress(Z)V
 
-    .line 933
+    .line 1057
     :cond_0
     return-void
 
-    .line 930
+    .line 1054
     :cond_1
     const/4 v1, 0x0
 
@@ -515,7 +515,7 @@
     .parameter "x0"
 
     .prologue
-    .line 888
+    .line 1011
     check-cast p1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
 
     .end local p1

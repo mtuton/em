@@ -26,17 +26,17 @@
     .parameter "name"
 
     .prologue
-    .line 860
+    .line 953
     iput-object p1, p0, Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;->this$0:Lcom/android/email/provider/EmailProvider;
 
-    .line 861
+    .line 954
     const/4 v0, 0x0
 
     const/4 v1, 0x6
 
     invoke-direct {p0, p2, p3, v0, v1}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
-    .line 862
+    .line 955
     return-void
 .end method
 
@@ -47,17 +47,17 @@
     .parameter "db"
 
     .prologue
-    .line 866
+    .line 959
     const-string v0, "EmailProvider"
 
     const-string v1, "Creating EmailProviderBody database"
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 867
+    .line 960
     invoke-static {p1}, Lcom/android/email/provider/EmailProvider;->createBodyTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 868
+    .line 961
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .parameter "db"
 
     .prologue
-    .line 879
+    .line 972
     return-void
 .end method
 
@@ -77,7 +77,7 @@
     .parameter "newVersion"
 
     .prologue
-    .line 872
+    .line 965
     const-string v0, "EmailProvider"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -110,9 +110,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 874
+    .line 967
     invoke-static {p1, p2, p3}, Lcom/android/email/provider/EmailProvider;->upgradeBodyTable(Landroid/database/sqlite/SQLiteDatabase;II)V
 
-    .line 875
+    .line 968
     return-void
 .end method

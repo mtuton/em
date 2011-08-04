@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <menu
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:icon="@drawable/ic_menu_save_draft" android:id="@id/save" android:title="@string/save_draft_action" android:alphabeticShortcut="d" />
+    <item android:icon="@drawable/ic_menu_save_draft" android:id="@id/save" android:title="@string/save_draft_action" />
     <group android:id="@id/add_text_group">
-        <item android:icon="@drawable/ic_menu_add_text" android:id="@id/add_text" android:title="@string/add_text_action" android:alphabeticShortcut="t" />
+        <item android:icon="@drawable/ic_menu_add_text" android:id="@id/add_text" android:title="@string/add_text_action" />
     </group>
     <group android:id="@id/priority_group">
-        <item android:icon="@drawable/ic_menu_priority" android:id="@id/priority" android:title="@string/priority" android:alphabeticShortcut="p" />
+        <item android:icon="@drawable/ic_menu_priority" android:id="@id/priority" android:title="@string/priority" />
     </group>
 </menu>

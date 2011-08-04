@@ -1,4 +1,4 @@
-.class Lcom/android/email/mail/internet/EasySSLSocketFactory$1;
+.class final Lcom/android/email/mail/internet/EasySSLSocketFactory$1;
 .super Ljava/lang/Object;
 .source "EasySSLSocketFactory.java"
 
@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 65
+    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

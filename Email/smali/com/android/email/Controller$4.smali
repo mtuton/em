@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 343
+    .line 346
     iput-object p1, p0, Lcom/android/email/Controller$4;->this$0:Lcom/android/email/Controller;
 
     iput-wide p2, p0, Lcom/android/email/Controller$4;->val$messageId:J
@@ -43,7 +43,7 @@
     .locals 4
 
     .prologue
-    .line 344
+    .line 349
     iget-object v0, p0, Lcom/android/email/Controller$4;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v0}, Lcom/android/email/Controller;->access$300(Lcom/android/email/Controller;)Lcom/android/email/MessagingController;
@@ -60,6 +60,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/email/MessagingController;->loadMessageForView(JLcom/android/email/MessagingListener;)V
 
-    .line 345
+    .line 350
     return-void
 .end method

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="search_list">
+        <item>Google</item>
+        <item>Превод с Google</item>
+        <item>Уикипедия</item>
+        <item>Речник</item>
+    </string-array>
+    <string-array name="share_list">
+        <item>Споделяне като текст</item>
+        <item>Споделяне като изображение</item>
+    </string-array>
+</resources>

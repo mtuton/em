@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 1639
+    .line 1667
     iput-object p1, p0, Lcom/android/email/MessagingController$8;->this$0:Lcom/android/email/MessagingController;
 
     iput-wide p2, p0, Lcom/android/email/MessagingController$8;->val$accountId:J
@@ -51,7 +51,7 @@
     .locals 4
 
     .prologue
-    .line 1641
+    .line 1670
     :try_start_0
     iget-object v1, p0, Lcom/android/email/MessagingController$8;->this$0:Lcom/android/email/MessagingController;
 
@@ -65,16 +65,16 @@
 
     move-result-object v0
 
-    .line 1643
+    .line 1672
     .local v0, account:Lcom/android/email/provider/EmailContent$Account;
     if-nez v0, :cond_0
 
-    .line 1657
+    .line 1686
     .end local v0           #account:Lcom/android/email/provider/EmailContent$Account;
     :goto_0
     return-void
 
-    .line 1646
+    .line 1675
     .restart local v0       #account:Lcom/android/email/provider/EmailContent$Account;
     :cond_0
     iget-object v1, p0, Lcom/android/email/MessagingController$8;->this$0:Lcom/android/email/MessagingController;
@@ -87,7 +87,7 @@
 
     goto :goto_0
 
-    .line 1648
+    .line 1677
     .end local v0           #account:Lcom/android/email/provider/EmailContent$Account;
     :catch_0
     move-exception v1

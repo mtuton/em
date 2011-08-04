@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/service/EmailServiceProxy;->sendMeetingResponse(JI)V
+    value = Lcom/android/email/service/EmailServiceProxy;->moveConversationAlways(JJ[BI)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,14 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/service/EmailServiceProxy;
 
+.field final synthetic val$conversationId:[B
+
+.field final synthetic val$ignore:I
+
 .field final synthetic val$messageId:J
 
-.field final synthetic val$response:I
+.field final synthetic val$toMailboxId:J
 
 
 # direct methods
-.method constructor <init>(Lcom/android/email/service/EmailServiceProxy;JI)V
+.method constructor <init>(Lcom/android/email/service/EmailServiceProxy;JJ[BI)V
     .locals 0
+    .parameter
+    .parameter
     .parameter
     .parameter
     .parameter
@@ -38,7 +44,11 @@
 
     iput-wide p2, p0, Lcom/android/email/service/EmailServiceProxy$11;->val$messageId:J
 
-    iput p4, p0, Lcom/android/email/service/EmailServiceProxy$11;->val$response:I
+    iput-wide p4, p0, Lcom/android/email/service/EmailServiceProxy$11;->val$toMailboxId:J
+
+    iput-object p6, p0, Lcom/android/email/service/EmailServiceProxy$11;->val$conversationId:[B
+
+    iput p7, p0, Lcom/android/email/service/EmailServiceProxy$11;->val$ignore:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,35 +58,11 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 7
 
     .prologue
-    .line 307
-    :try_start_0
-    iget-object v0, p0, Lcom/android/email/service/EmailServiceProxy$11;->this$0:Lcom/android/email/service/EmailServiceProxy;
-
-    invoke-static {v0}, Lcom/android/email/service/EmailServiceProxy;->access$200(Lcom/android/email/service/EmailServiceProxy;)Lcom/android/email/service/IEmailServiceCallback;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/email/service/EmailServiceProxy$11;->this$0:Lcom/android/email/service/EmailServiceProxy;
-
-    invoke-static {v0}, Lcom/android/email/service/EmailServiceProxy;->access$000(Lcom/android/email/service/EmailServiceProxy;)Lcom/android/email/service/IEmailService;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/email/service/EmailServiceProxy$11;->this$0:Lcom/android/email/service/EmailServiceProxy;
-
-    invoke-static {v1}, Lcom/android/email/service/EmailServiceProxy;->access$200(Lcom/android/email/service/EmailServiceProxy;)Lcom/android/email/service/IEmailServiceCallback;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/android/email/service/IEmailService;->setCallback(Lcom/android/email/service/IEmailServiceCallback;)V
-
     .line 308
-    :cond_0
+    :try_start_0
     iget-object v0, p0, Lcom/android/email/service/EmailServiceProxy$11;->this$0:Lcom/android/email/service/EmailServiceProxy;
 
     invoke-static {v0}, Lcom/android/email/service/EmailServiceProxy;->access$000(Lcom/android/email/service/EmailServiceProxy;)Lcom/android/email/service/IEmailService;
@@ -85,9 +71,13 @@
 
     iget-wide v1, p0, Lcom/android/email/service/EmailServiceProxy$11;->val$messageId:J
 
-    iget v3, p0, Lcom/android/email/service/EmailServiceProxy$11;->val$response:I
+    iget-wide v3, p0, Lcom/android/email/service/EmailServiceProxy$11;->val$toMailboxId:J
 
-    invoke-interface {v0, v1, v2, v3}, Lcom/android/email/service/IEmailService;->sendMeetingResponse(JI)V
+    iget-object v5, p0, Lcom/android/email/service/EmailServiceProxy$11;->val$conversationId:[B
+
+    iget v6, p0, Lcom/android/email/service/EmailServiceProxy$11;->val$ignore:I
+
+    invoke-interface/range {v0 .. v6}, Lcom/android/email/service/IEmailService;->moveConversationAlways(JJ[BI)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 

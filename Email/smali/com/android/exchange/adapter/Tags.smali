@@ -4,946 +4,6 @@
 
 
 # static fields
-.field public static final AIRSYNC:I = 0x0
-
-.field public static final BASE:I = 0x11
-
-.field public static final BASE_ALL_OR_NONE:I = 0x448
-
-.field public static final BASE_ATTACHMENT:I = 0x44f
-
-.field public static final BASE_ATTACHMENTS:I = 0x44e
-
-.field public static final BASE_BODY:I = 0x44a
-
-.field public static final BASE_BODY_PREFERENCE:I = 0x445
-
-.field public static final BASE_CONTENT_ID:I = 0x453
-
-.field public static final BASE_CONTENT_LOCATION:I = 0x454
-
-.field public static final BASE_CONTENT_TYPE:I = 0x457
-
-.field public static final BASE_DATA:I = 0x44b
-
-.field public static final BASE_DISPLAY_NAME:I = 0x450
-
-.field public static final BASE_ESTIMATED_DATA_SIZE:I = 0x44c
-
-.field public static final BASE_FILE_REFERENCE:I = 0x451
-
-.field public static final BASE_IS_INLINE:I = 0x455
-
-.field public static final BASE_METHOD:I = 0x452
-
-.field public static final BASE_NATIVE_BODY_TYPE:I = 0x456
-
-.field public static final BASE_PAGE:I = 0x440
-
-.field public static final BASE_RESERVED:I = 0x449
-
-.field public static final BASE_TRUNCATED:I = 0x44d
-
-.field public static final BASE_TRUNCATION_SIZE:I = 0x447
-
-.field public static final BASE_TYPE:I = 0x446
-
-.field public static final CALENDAR:I = 0x4
-
-.field public static final CALENDAR_ALL_DAY_EVENT:I = 0x106
-
-.field public static final CALENDAR_ATTENDEE:I = 0x108
-
-.field public static final CALENDAR_ATTENDEES:I = 0x107
-
-.field public static final CALENDAR_ATTENDEE_EMAIL:I = 0x109
-
-.field public static final CALENDAR_ATTENDEE_NAME:I = 0x10a
-
-.field public static final CALENDAR_ATTENDEE_STATUS:I = 0x129
-
-.field public static final CALENDAR_ATTENDEE_TYPE:I = 0x12a
-
-.field public static final CALENDAR_BODY:I = 0x10b
-
-.field public static final CALENDAR_BODY_TRUNCATED:I = 0x10c
-
-.field public static final CALENDAR_BUSY_STATUS:I = 0x10d
-
-.field public static final CALENDAR_CATEGORIES:I = 0x10e
-
-.field public static final CALENDAR_CATEGORY:I = 0x10f
-
-.field public static final CALENDAR_COMPRESSED_RTF:I = 0x110
-
-.field public static final CALENDAR_DTSTAMP:I = 0x111
-
-.field public static final CALENDAR_END_TIME:I = 0x112
-
-.field public static final CALENDAR_EXCEPTION:I = 0x113
-
-.field public static final CALENDAR_EXCEPTIONS:I = 0x114
-
-.field public static final CALENDAR_EXCEPTION_IS_DELETED:I = 0x115
-
-.field public static final CALENDAR_EXCEPTION_START_TIME:I = 0x116
-
-.field public static final CALENDAR_LOCATION:I = 0x117
-
-.field public static final CALENDAR_MEETING_STATUS:I = 0x118
-
-.field public static final CALENDAR_ORGANIZER_EMAIL:I = 0x119
-
-.field public static final CALENDAR_ORGANIZER_NAME:I = 0x11a
-
-.field public static final CALENDAR_PAGE:I = 0x100
-
-.field public static final CALENDAR_RECURRENCE:I = 0x11b
-
-.field public static final CALENDAR_RECURRENCE_DAYOFMONTH:I = 0x121
-
-.field public static final CALENDAR_RECURRENCE_DAYOFWEEK:I = 0x120
-
-.field public static final CALENDAR_RECURRENCE_INTERVAL:I = 0x11f
-
-.field public static final CALENDAR_RECURRENCE_MONTHOFYEAR:I = 0x123
-
-.field public static final CALENDAR_RECURRENCE_OCCURRENCES:I = 0x11e
-
-.field public static final CALENDAR_RECURRENCE_TYPE:I = 0x11c
-
-.field public static final CALENDAR_RECURRENCE_UNTIL:I = 0x11d
-
-.field public static final CALENDAR_RECURRENCE_WEEKOFMONTH:I = 0x122
-
-.field public static final CALENDAR_REMINDER_MINS_BEFORE:I = 0x124
-
-.field public static final CALENDAR_SENSITIVITY:I = 0x125
-
-.field public static final CALENDAR_START_TIME:I = 0x127
-
-.field public static final CALENDAR_SUBJECT:I = 0x126
-
-.field public static final CALENDAR_TIME_ZONE:I = 0x105
-
-.field public static final CALENDAR_UID:I = 0x128
-
-.field public static final COMPRESSED_RTF:I = 0x261
-
-.field public static final CONTACTS:I = 0x1
-
-.field public static final CONTACTS2:I = 0xc
-
-.field public static final CONTACTS2_ACCOUNT_NAME:I = 0x30c
-
-.field public static final CONTACTS2_COMPANY_MAIN_PHONE:I = 0x30b
-
-.field public static final CONTACTS2_CUSTOMER_ID:I = 0x305
-
-.field public static final CONTACTS2_GOVERNMENT_ID:I = 0x306
-
-.field public static final CONTACTS2_IM_ADDRESS:I = 0x307
-
-.field public static final CONTACTS2_IM_ADDRESS_2:I = 0x308
-
-.field public static final CONTACTS2_IM_ADDRESS_3:I = 0x309
-
-.field public static final CONTACTS2_MANAGER_NAME:I = 0x30a
-
-.field public static final CONTACTS2_MMS:I = 0x30e
-
-.field public static final CONTACTS2_NICKNAME:I = 0x30d
-
-.field public static final CONTACTS2_PAGE:I = 0x300
-
-.field public static final CONTACTS_ANNIVERSARY:I = 0x45
-
-.field public static final CONTACTS_ASSISTANT_NAME:I = 0x46
-
-.field public static final CONTACTS_ASSISTANT_TELEPHONE_NUMBER:I = 0x47
-
-.field public static final CONTACTS_BIRTHDAY:I = 0x48
-
-.field public static final CONTACTS_BODY:I = 0x49
-
-.field public static final CONTACTS_BODY_SIZE:I = 0x4a
-
-.field public static final CONTACTS_BODY_TRUNCATED:I = 0x4b
-
-.field public static final CONTACTS_BUSINESS2_TELEPHONE_NUMBER:I = 0x4c
-
-.field public static final CONTACTS_BUSINESS_ADDRESS_CITY:I = 0x4d
-
-.field public static final CONTACTS_BUSINESS_ADDRESS_COUNTRY:I = 0x4e
-
-.field public static final CONTACTS_BUSINESS_ADDRESS_POSTAL_CODE:I = 0x4f
-
-.field public static final CONTACTS_BUSINESS_ADDRESS_STATE:I = 0x50
-
-.field public static final CONTACTS_BUSINESS_ADDRESS_STREET:I = 0x51
-
-.field public static final CONTACTS_BUSINESS_FAX_NUMBER:I = 0x52
-
-.field public static final CONTACTS_BUSINESS_TELEPHONE_NUMBER:I = 0x53
-
-.field public static final CONTACTS_CAR_TELEPHONE_NUMBER:I = 0x54
-
-.field public static final CONTACTS_CATEGORIES:I = 0x55
-
-.field public static final CONTACTS_CATEGORY:I = 0x56
-
-.field public static final CONTACTS_CHILD:I = 0x58
-
-.field public static final CONTACTS_CHILDREN:I = 0x57
-
-.field public static final CONTACTS_COMPANY_NAME:I = 0x59
-
-.field public static final CONTACTS_COMPRESSED_RTF:I = 0x7b
-
-.field public static final CONTACTS_DEPARTMENT:I = 0x5a
-
-.field public static final CONTACTS_EMAIL1_ADDRESS:I = 0x5b
-
-.field public static final CONTACTS_EMAIL2_ADDRESS:I = 0x5c
-
-.field public static final CONTACTS_EMAIL3_ADDRESS:I = 0x5d
-
-.field public static final CONTACTS_FILE_AS:I = 0x5e
-
-.field public static final CONTACTS_FIRST_NAME:I = 0x5f
-
-.field public static final CONTACTS_HOME2_TELEPHONE_NUMBER:I = 0x60
-
-.field public static final CONTACTS_HOME_ADDRESS_CITY:I = 0x61
-
-.field public static final CONTACTS_HOME_ADDRESS_COUNTRY:I = 0x62
-
-.field public static final CONTACTS_HOME_ADDRESS_POSTAL_CODE:I = 0x63
-
-.field public static final CONTACTS_HOME_ADDRESS_STATE:I = 0x64
-
-.field public static final CONTACTS_HOME_ADDRESS_STREET:I = 0x65
-
-.field public static final CONTACTS_HOME_FAX_NUMBER:I = 0x66
-
-.field public static final CONTACTS_HOME_TELEPHONE_NUMBER:I = 0x67
-
-.field public static final CONTACTS_JOB_TITLE:I = 0x68
-
-.field public static final CONTACTS_LAST_NAME:I = 0x69
-
-.field public static final CONTACTS_MIDDLE_NAME:I = 0x6a
-
-.field public static final CONTACTS_MOBILE_TELEPHONE_NUMBER:I = 0x6b
-
-.field public static final CONTACTS_OFFICE_LOCATION:I = 0x6c
-
-.field public static final CONTACTS_OTHER_ADDRESS_CITY:I = 0x6d
-
-.field public static final CONTACTS_OTHER_ADDRESS_COUNTRY:I = 0x6e
-
-.field public static final CONTACTS_OTHER_ADDRESS_POSTAL_CODE:I = 0x6f
-
-.field public static final CONTACTS_OTHER_ADDRESS_STATE:I = 0x70
-
-.field public static final CONTACTS_OTHER_ADDRESS_STREET:I = 0x71
-
-.field public static final CONTACTS_PAGE:I = 0x40
-
-.field public static final CONTACTS_PAGER_NUMBER:I = 0x72
-
-.field public static final CONTACTS_PICTURE:I = 0x7c
-
-.field public static final CONTACTS_RADIO_TELEPHONE_NUMBER:I = 0x73
-
-.field public static final CONTACTS_SPOUSE:I = 0x74
-
-.field public static final CONTACTS_SUFFIX:I = 0x75
-
-.field public static final CONTACTS_TITLE:I = 0x76
-
-.field public static final CONTACTS_WEBPAGE:I = 0x77
-
-.field public static final CONTACTS_YOMI_COMPANY_NAME:I = 0x78
-
-.field public static final CONTACTS_YOMI_FIRST_NAME:I = 0x79
-
-.field public static final CONTACTS_YOMI_LAST_NAME:I = 0x7a
-
-.field public static final EMAIL:I = 0x2
-
-.field public static final EMAIL_ALL_DAY_EVENT:I = 0x9a
-
-.field public static final EMAIL_ATT0ID:I = 0x89
-
-.field public static final EMAIL_ATTACHMENT:I = 0x85
-
-.field public static final EMAIL_ATTACHMENTS:I = 0x86
-
-.field public static final EMAIL_ATT_METHOD:I = 0x8a
-
-.field public static final EMAIL_ATT_NAME:I = 0x87
-
-.field public static final EMAIL_ATT_REMOVED:I = 0x8b
-
-.field public static final EMAIL_ATT_SIZE:I = 0x88
-
-.field public static final EMAIL_BODY:I = 0x8c
-
-.field public static final EMAIL_BODY_SIZE:I = 0x8d
-
-.field public static final EMAIL_BODY_TRUNCATED:I = 0x8e
-
-.field public static final EMAIL_CATEGORIES:I = 0x9b
-
-.field public static final EMAIL_CATEGORY:I = 0x9c
-
-.field public static final EMAIL_CC:I = 0x97
-
-.field public static final EMAIL_COMPLETE_TIME:I = 0xbe
-
-.field public static final EMAIL_CONTENT_CLASS:I = 0xbc
-
-.field public static final EMAIL_DATE_RECEIVED:I = 0x8f
-
-.field public static final EMAIL_DISPLAY_NAME:I = 0x90
-
-.field public static final EMAIL_DISPLAY_TO:I = 0x91
-
-.field public static final EMAIL_DTSTAMP:I = 0x9d
-
-.field public static final EMAIL_END_TIME:I = 0x9e
-
-.field public static final EMAIL_FLAG:I = 0xba
-
-.field public static final EMAIL_FLAG_STATUS:I = 0xbb
-
-.field public static final EMAIL_FLAG_TYPE:I = 0xbd
-
-.field public static final EMAIL_FROM:I = 0x98
-
-.field public static final EMAIL_GLOBAL_OBJID:I = 0xb4
-
-.field public static final EMAIL_IMPORTANCE:I = 0x92
-
-.field public static final EMAIL_INSTANCE_TYPE:I = 0x9f
-
-.field public static final EMAIL_INTD_BUSY_STATUS:I = 0xa0
-
-.field public static final EMAIL_INTERNET_CPID:I = 0xb9
-
-.field public static final EMAIL_LOCATION:I = 0xa1
-
-.field public static final EMAIL_MEETING_REQUEST:I = 0xa2
-
-.field public static final EMAIL_MESSAGE_CLASS:I = 0x93
-
-.field public static final EMAIL_MIME_DATA:I = 0xb6
-
-.field public static final EMAIL_MIME_SIZE:I = 0xb8
-
-.field public static final EMAIL_MIME_TRUNCATED:I = 0xb7
-
-.field public static final EMAIL_ORGANIZER:I = 0xa3
-
-.field public static final EMAIL_PAGE:I = 0x80
-
-.field public static final EMAIL_READ:I = 0x95
-
-.field public static final EMAIL_RECURRENCE:I = 0xa8
-
-.field public static final EMAIL_RECURRENCES:I = 0xa7
-
-.field public static final EMAIL_RECURRENCE_DAYOFMONTH:I = 0xae
-
-.field public static final EMAIL_RECURRENCE_DAYOFWEEK:I = 0xad
-
-.field public static final EMAIL_RECURRENCE_ID:I = 0xa4
-
-.field public static final EMAIL_RECURRENCE_INTERVAL:I = 0xac
-
-.field public static final EMAIL_RECURRENCE_MONTHOFYEAR:I = 0xb0
-
-.field public static final EMAIL_RECURRENCE_OCCURRENCES:I = 0xab
-
-.field public static final EMAIL_RECURRENCE_TYPE:I = 0xa9
-
-.field public static final EMAIL_RECURRENCE_UNTIL:I = 0xaa
-
-.field public static final EMAIL_RECURRENCE_WEEKOFMONTH:I = 0xaf
-
-.field public static final EMAIL_REMINDER:I = 0xa5
-
-.field public static final EMAIL_REPLY_TO:I = 0x99
-
-.field public static final EMAIL_RESPONSE_REQUESTED:I = 0xa6
-
-.field public static final EMAIL_SENSITIVITY:I = 0xb2
-
-.field public static final EMAIL_START_TIME:I = 0xb1
-
-.field public static final EMAIL_SUBJECT:I = 0x94
-
-.field public static final EMAIL_THREAD_TOPIC:I = 0xb5
-
-.field public static final EMAIL_TIME_ZONE:I = 0xb3
-
-.field public static final EMAIL_TO:I = 0x96
-
-.field public static final FOLDER:I = 0x7
-
-.field public static final FOLDER_ADD:I = 0x1cf
-
-.field public static final FOLDER_CHANGES:I = 0x1ce
-
-.field public static final FOLDER_CONTENT_CLASS:I = 0x1cd
-
-.field public static final FOLDER_COUNT:I = 0x1d7
-
-.field public static final FOLDER_DELETE:I = 0x1d0
-
-.field public static final FOLDER_DISPLAY_NAME:I = 0x1c7
-
-.field public static final FOLDER_FOLDER:I = 0x1c6
-
-.field public static final FOLDER_FOLDERS:I = 0x1c5
-
-.field public static final FOLDER_FOLDER_CREATE:I = 0x1d3
-
-.field public static final FOLDER_FOLDER_DELETE:I = 0x1d4
-
-.field public static final FOLDER_FOLDER_SYNC:I = 0x1d6
-
-.field public static final FOLDER_FOLDER_UPDATE:I = 0x1d5
-
-.field public static final FOLDER_PAGE:I = 0x1c0
-
-.field public static final FOLDER_PARENT_ID:I = 0x1c9
-
-.field public static final FOLDER_RESPONSE:I = 0x1cb
-
-.field public static final FOLDER_SERVER_ID:I = 0x1c8
-
-.field public static final FOLDER_STATUS:I = 0x1cc
-
-.field public static final FOLDER_SYNC_KEY:I = 0x1d2
-
-.field public static final FOLDER_TYPE:I = 0x1ca
-
-.field public static final FOLDER_UPDATE:I = 0x1d1
-
-.field public static final FOLDER_VERSION:I = 0x1d8
-
-.field public static final GAL:I = 0x10
-
-.field public static final GAL_ALIAS:I = 0x40a
-
-.field public static final GAL_COMPANY:I = 0x409
-
-.field public static final GAL_DISPLAY_NAME:I = 0x405
-
-.field public static final GAL_EMAIL_ADDRESS:I = 0x40f
-
-.field public static final GAL_FIRST_NAME:I = 0x40b
-
-.field public static final GAL_HOME_PHONE:I = 0x40d
-
-.field public static final GAL_LAST_NAME:I = 0x40c
-
-.field public static final GAL_MOBILE_PHONE:I = 0x40e
-
-.field public static final GAL_OFFICE:I = 0x407
-
-.field public static final GAL_PAGE:I = 0x400
-
-.field public static final GAL_PHONE:I = 0x406
-
-.field public static final GAL_TITLE:I = 0x408
-
-.field public static final GIE:I = 0x6
-
-.field public static final GIE_CLASS:I = 0x189
-
-.field public static final GIE_COLLECTION:I = 0x188
-
-.field public static final GIE_COLLECTIONS:I = 0x187
-
-.field public static final GIE_COLLECTION_ID:I = 0x18a
-
-.field public static final GIE_DATE_TIME:I = 0x18b
-
-.field public static final GIE_ESTIMATE:I = 0x18c
-
-.field public static final GIE_GET_ITEM_ESTIMATE:I = 0x185
-
-.field public static final GIE_PAGE:I = 0x180
-
-.field public static final GIE_RESPONSE:I = 0x18d
-
-.field public static final GIE_STATUS:I = 0x18e
-
-.field public static final GIE_VERSION:I = 0x186
-
-.field public static final ITEMOPERATIONS:I = 0x14
-
-.field public static final ITEMOPERATIONS_DATA:I = 0x50c
-
-.field public static final ITEMOPERATIONS_DELETESUBFOLDERS:I = 0x513
-
-.field public static final ITEMOPERATIONS_EMPTYFOLDERCONTENTS:I = 0x512
-
-.field public static final ITEMOPERATIONS_FETCH:I = 0x506
-
-.field public static final ITEMOPERATIONS_ITEMOPERATIONS:I = 0x505
-
-.field public static final ITEMOPERATIONS_OPTIONS:I = 0x508
-
-.field public static final ITEMOPERATIONS_PAGE:I = 0x500
-
-.field public static final ITEMOPERATIONS_PART:I = 0x511
-
-.field public static final ITEMOPERATIONS_PROPERTIES:I = 0x50b
-
-.field public static final ITEMOPERATIONS_RANGE:I = 0x509
-
-.field public static final ITEMOPERATIONS_RESPONSE:I = 0x50e
-
-.field public static final ITEMOPERATIONS_SCHEMA:I = 0x510
-
-.field public static final ITEMOPERATIONS_STATUS:I = 0x50d
-
-.field public static final ITEMOPERATIONS_STORE:I = 0x507
-
-.field public static final ITEMOPERATIONS_TOTAL:I = 0x50a
-
-.field public static final ITEMOPERATIONS_VERSION:I = 0x50f
-
-.field public static final MOVE:I = 0x5
-
-.field public static final MOVE_DSTFLDID:I = 0x149
-
-.field public static final MOVE_DSTMSGID:I = 0x14c
-
-.field public static final MOVE_MOVE:I = 0x146
-
-.field public static final MOVE_MOVE_ITEMS:I = 0x145
-
-.field public static final MOVE_PAGE:I = 0x140
-
-.field public static final MOVE_RESPONSE:I = 0x14a
-
-.field public static final MOVE_SRCFLDID:I = 0x148
-
-.field public static final MOVE_SRCMSGID:I = 0x147
-
-.field public static final MOVE_STATUS:I = 0x14b
-
-.field public static final MREQ:I = 0x8
-
-.field public static final MREQ_CAL_ID:I = 0x205
-
-.field public static final MREQ_COLLECTION_ID:I = 0x206
-
-.field public static final MREQ_MEETING_RESPONSE:I = 0x207
-
-.field public static final MREQ_PAGE:I = 0x200
-
-.field public static final MREQ_REQUEST:I = 0x209
-
-.field public static final MREQ_REQ_ID:I = 0x208
-
-.field public static final MREQ_RESULT:I = 0x20a
-
-.field public static final MREQ_STATUS:I = 0x20b
-
-.field public static final MREQ_USER_RESPONSE:I = 0x20c
-
-.field public static final MREQ_VERSION:I = 0x20d
-
-.field public static final ORDINAL_DATE:I = 0x262
-
-.field public static final PAGE_MASK:I = 0x3f
-
-.field public static final PAGE_SHIFT:I = 0x6
-
-.field public static final PING:I = 0xd
-
-.field public static final PING_AUTD_STATE:I = 0x346
-
-.field public static final PING_CLASS:I = 0x34c
-
-.field public static final PING_FOLDER:I = 0x34a
-
-.field public static final PING_FOLDERS:I = 0x349
-
-.field public static final PING_HEARTBEAT_INTERVAL:I = 0x348
-
-.field public static final PING_ID:I = 0x34b
-
-.field public static final PING_MAX_FOLDERS:I = 0x34d
-
-.field public static final PING_PAGE:I = 0x340
-
-.field public static final PING_PING:I = 0x345
-
-.field public static final PING_STATUS:I = 0x347
-
-.field public static final PROVISION:I = 0xe
-
-.field public static final PROVISION_ALLOW_BLUETOOTH:I = 0x3a4
-
-.field public static final PROVISION_ALLOW_BROWSER:I = 0x3b3
-
-.field public static final PROVISION_ALLOW_CAMERA:I = 0x39c
-
-.field public static final PROVISION_ALLOW_CONSUMER_EMAIL:I = 0x3b4
-
-.field public static final PROVISION_ALLOW_DESKTOP_SYNC:I = 0x3a7
-
-.field public static final PROVISION_ALLOW_HTML_EMAIL:I = 0x3a9
-
-.field public static final PROVISION_ALLOW_INTERNET_SHARING:I = 0x3b6
-
-.field public static final PROVISION_ALLOW_IRDA:I = 0x3a5
-
-.field public static final PROVISION_ALLOW_POP_IMAP_EMAIL:I = 0x3a3
-
-.field public static final PROVISION_ALLOW_REMOTE_DESKTOP:I = 0x3b5
-
-.field public static final PROVISION_ALLOW_SIMPLE_DEVICE_PASSWORD:I = 0x398
-
-.field public static final PROVISION_ALLOW_SMIME_ENCRYPTION_NEGOTIATION:I = 0x3b1
-
-.field public static final PROVISION_ALLOW_SMIME_SOFT_CERTS:I = 0x3b2
-
-.field public static final PROVISION_ALLOW_STORAGE_CARD:I = 0x39b
-
-.field public static final PROVISION_ALLOW_TEXT_MESSAGING:I = 0x3a2
-
-.field public static final PROVISION_ALLOW_UNSIGNED_APPLICATIONS:I = 0x39e
-
-.field public static final PROVISION_ALLOW_UNSIGNED_INSTALLATION_PACKAGES:I = 0x39f
-
-.field public static final PROVISION_ALLOW_WIFI:I = 0x3a1
-
-.field public static final PROVISION_ALPHA_DEVICE_PASSWORD_ENABLED:I = 0x38f
-
-.field public static final PROVISION_APPLICATION_NAME:I = 0x3b8
-
-.field public static final PROVISION_APPROVED_APPLICATION_LIST:I = 0x3b9
-
-.field public static final PROVISION_ATTACHMENTS_ENABLED:I = 0x393
-
-.field public static final PROVISION_DATA:I = 0x38a
-
-.field public static final PROVISION_DEVICE_ENCRYPTION_ENABLED:I = 0x390
-
-.field public static final PROVISION_DEVICE_PASSWORD_ENABLED:I = 0x38e
-
-.field public static final PROVISION_DEVICE_PASSWORD_EXPIRATION:I = 0x399
-
-.field public static final PROVISION_DEVICE_PASSWORD_HISTORY:I = 0x39a
-
-.field public static final PROVISION_EAS_PROVISION_DOC:I = 0x38d
-
-.field public static final PROVISION_HASH:I = 0x3ba
-
-.field public static final PROVISION_MAX_ATTACHMENT_SIZE:I = 0x397
-
-.field public static final PROVISION_MAX_CALENDAR_AGE_FILTER:I = 0x3a8
-
-.field public static final PROVISION_MAX_DEVICE_PASSWORD_FAILED_ATTEMPTS:I = 0x396
-
-.field public static final PROVISION_MAX_EMAIL_AGE_FILTER:I = 0x3aa
-
-.field public static final PROVISION_MAX_EMAIL_BODY_TRUNCATION_SIZE:I = 0x3ab
-
-.field public static final PROVISION_MAX_EMAIL_HTML_BODY_TRUNCATION_SIZE:I = 0x3ac
-
-.field public static final PROVISION_MAX_INACTIVITY_TIME_DEVICE_LOCK:I = 0x395
-
-.field public static final PROVISION_MAX_SUPPORTED_TAG:I = 0x39a
-
-.field public static final PROVISION_MIN_DEVICE_PASSWORD_COMPLEX_CHARS:I = 0x3a0
-
-.field public static final PROVISION_MIN_DEVICE_PASSWORD_LENGTH:I = 0x394
-
-.field public static final PROVISION_PAGE:I = 0x380
-
-.field public static final PROVISION_PASSWORD_RECOVERY_ENABLED:I = 0x391
-
-.field public static final PROVISION_POLICIES:I = 0x386
-
-.field public static final PROVISION_POLICY:I = 0x387
-
-.field public static final PROVISION_POLICY_KEY:I = 0x389
-
-.field public static final PROVISION_POLICY_TYPE:I = 0x388
-
-.field public static final PROVISION_PROVISION:I = 0x385
-
-.field public static final PROVISION_REMOTE_WIPE:I = 0x38c
-
-.field public static final PROVISION_REQUIRE_DEVICE_ENCRYPTION:I = 0x39d
-
-.field public static final PROVISION_REQUIRE_ENCRYPTED_SMIME_MESSAGES:I = 0x3ae
-
-.field public static final PROVISION_REQUIRE_ENCRYPTION_SMIME_ALGORITHM:I = 0x3b0
-
-.field public static final PROVISION_REQUIRE_MANUAL_SYNC_WHEN_ROAMING:I = 0x3a6
-
-.field public static final PROVISION_REQUIRE_SIGNED_SMIME_ALGORITHM:I = 0x3af
-
-.field public static final PROVISION_REQUIRE_SIGNED_SMIME_MESSAGES:I = 0x3ad
-
-.field public static final PROVISION_STATUS:I = 0x38b
-
-.field public static final PROVISION_UNAPPROVED_IN_ROM_APPLICATION_LIST:I = 0x3b7
-
-.field public static final SEARCH:I = 0xf
-
-.field public static final SEARCH_AND:I = 0x3d3
-
-.field public static final SEARCH_DEEP_TRAVERSAL:I = 0x3d7
-
-.field public static final SEARCH_EQUAL_TO:I = 0x3d1
-
-.field public static final SEARCH_FREE_TEXT:I = 0x3d5
-
-.field public static final SEARCH_GREATER_THAN:I = 0x3db
-
-.field public static final SEARCH_LESS_THAN:I = 0x3da
-
-.field public static final SEARCH_LONG_ID:I = 0x3d8
-
-.field public static final SEARCH_NAME:I = 0x3c8
-
-.field public static final SEARCH_OPTIONS:I = 0x3ca
-
-.field public static final SEARCH_OR:I = 0x3d4
-
-.field public static final SEARCH_PAGE:I = 0x3c0
-
-.field public static final SEARCH_PROPERTIES:I = 0x3cf
-
-.field public static final SEARCH_QUERY:I = 0x3c9
-
-.field public static final SEARCH_RANGE:I = 0x3cb
-
-.field public static final SEARCH_REBUILD_RESULTS:I = 0x3d9
-
-.field public static final SEARCH_RESPONSE:I = 0x3cd
-
-.field public static final SEARCH_RESULT:I = 0x3ce
-
-.field public static final SEARCH_SCHEMA:I = 0x3dc
-
-.field public static final SEARCH_SEARCH:I = 0x3c5
-
-.field public static final SEARCH_STATUS:I = 0x3cc
-
-.field public static final SEARCH_STORE:I = 0x3c7
-
-.field public static final SEARCH_STORES:I = 0x3c6
-
-.field public static final SEARCH_SUBSTRING_OP:I = 0x3d6
-
-.field public static final SEARCH_SUPPORTED:I = 0x3dd
-
-.field public static final SEARCH_TOTAL:I = 0x3d0
-
-.field public static final SEARCH_VALUE:I = 0x3d2
-
-.field public static final SETTINGS:I = 0x12
-
-.field public static final SETTINGS_APPLIES_TO_EXT_KNOWN:I = 0x48f
-
-.field public static final SETTINGS_APPLIES_TO_EXT_UNKNOWN:I = 0x490
-
-.field public static final SETTINGS_APPLIES_TO_INTERNAL:I = 0x48e
-
-.field public static final SETTINGS_BODY_TYPE:I = 0x493
-
-.field public static final SETTINGS_DEVICE_INFORMATION:I = 0x496
-
-.field public static final SETTINGS_DEVICE_PASSWORD:I = 0x494
-
-.field public static final SETTINGS_EMAIL_ADDRESS:I = 0x49e
-
-.field public static final SETTINGS_ENABLED:I = 0x491
-
-.field public static final SETTINGS_END_TIME:I = 0x48c
-
-.field public static final SETTINGS_FRIENDLY_NAME:I = 0x499
-
-.field public static final SETTINGS_GET:I = 0x487
-
-.field public static final SETTINGS_IMIE:I = 0x498
-
-.field public static final SETTINGS_MODEL:I = 0x497
-
-.field public static final SETTINGS_OOO:I = 0x489
-
-.field public static final SETTINGS_OOO_MESSAGE:I = 0x48d
-
-.field public static final SETTINGS_OOO_STATE:I = 0x48a
-
-.field public static final SETTINGS_OS:I = 0x49a
-
-.field public static final SETTINGS_OS_LANGUAGE:I = 0x49b
-
-.field public static final SETTINGS_PAGE:I = 0x480
-
-.field public static final SETTINGS_PASSWORD:I = 0x495
-
-.field public static final SETTINGS_PHONE_NUMBER:I = 0x49c
-
-.field public static final SETTINGS_REPLY_MESSAGE:I = 0x492
-
-.field public static final SETTINGS_SET:I = 0x488
-
-.field public static final SETTINGS_SETTINGS:I = 0x485
-
-.field public static final SETTINGS_SMTP_ADDRESS:I = 0x49f
-
-.field public static final SETTINGS_START_TIME:I = 0x48b
-
-.field public static final SETTINGS_STATUS:I = 0x486
-
-.field public static final SETTINGS_USER_INFORMATION:I = 0x49d
-
-.field public static final SUBORDINAL_DATE:I = 0x263
-
-.field public static final SYNC_ADD:I = 0x7
-
-.field public static final SYNC_APPLICATION_DATA:I = 0x1d
-
-.field public static final SYNC_CHANGE:I = 0x8
-
-.field public static final SYNC_CLASS:I = 0x10
-
-.field public static final SYNC_CLIENT_ID:I = 0xc
-
-.field public static final SYNC_COLLECTION:I = 0xf
-
-.field public static final SYNC_COLLECTIONS:I = 0x1c
-
-.field public static final SYNC_COLLECTION_ID:I = 0x12
-
-.field public static final SYNC_COMMANDS:I = 0x16
-
-.field public static final SYNC_CONFLICT:I = 0x1b
-
-.field public static final SYNC_DELETE:I = 0x9
-
-.field public static final SYNC_DELETES_AS_MOVES:I = 0x1e
-
-.field public static final SYNC_FETCH:I = 0xa
-
-.field public static final SYNC_FILTER_TYPE:I = 0x18
-
-.field public static final SYNC_GET_CHANGES:I = 0x13
-
-.field public static final SYNC_LIMIT:I = 0x25
-
-.field public static final SYNC_MIME_SUPPORT:I = 0x22
-
-.field public static final SYNC_MIME_TRUNCATION:I = 0x23
-
-.field public static final SYNC_MORE_AVAILABLE:I = 0x14
-
-.field public static final SYNC_NOTIFY_GUID:I = 0x1f
-
-.field public static final SYNC_OPTIONS:I = 0x17
-
-.field public static final SYNC_PAGE:I = 0x0
-
-.field public static final SYNC_PARTIAL:I = 0x26
-
-.field public static final SYNC_RESPONSES:I = 0x6
-
-.field public static final SYNC_RTF_TRUNCATION:I = 0x1a
-
-.field public static final SYNC_SERVER_ID:I = 0xd
-
-.field public static final SYNC_SOFT_DELETE:I = 0x21
-
-.field public static final SYNC_STATUS:I = 0xe
-
-.field public static final SYNC_SUPPORTED:I = 0x20
-
-.field public static final SYNC_SYNC:I = 0x5
-
-.field public static final SYNC_SYNC_KEY:I = 0xb
-
-.field public static final SYNC_TRUNCATION:I = 0x19
-
-.field public static final SYNC_VERSION:I = 0x11
-
-.field public static final SYNC_WAIT:I = 0x24
-
-.field public static final SYNC_WINDOW_SIZE:I = 0x15
-
-.field public static final TASK:I = 0x9
-
-.field public static final TASK_BODY:I = 0x245
-
-.field public static final TASK_BODY_SIZE:I = 0x246
-
-.field public static final TASK_BODY_TRUNCATED:I = 0x247
-
-.field public static final TASK_CATEGORIES:I = 0x248
-
-.field public static final TASK_CATEGORY:I = 0x249
-
-.field public static final TASK_COMPLETE:I = 0x24a
-
-.field public static final TASK_DATE_COMPLETED:I = 0x24b
-
-.field public static final TASK_DUE_DATE:I = 0x24c
-
-.field public static final TASK_IMPORTANCE:I = 0x24e
-
-.field public static final TASK_PAGE:I = 0x240
-
-.field public static final TASK_RECURRENCE:I = 0x24f
-
-.field public static final TASK_RECURRENCE_DAY_OF_MONTH:I = 0x255
-
-.field public static final TASK_RECURRENCE_DAY_OF_WEEK:I = 0x256
-
-.field public static final TASK_RECURRENCE_DEAD_OCCUR:I = 0x25a
-
-.field public static final TASK_RECURRENCE_INTERVAL:I = 0x254
-
-.field public static final TASK_RECURRENCE_MONTH_OF_YEAR:I = 0x258
-
-.field public static final TASK_RECURRENCE_OCCURRENCES:I = 0x253
-
-.field public static final TASK_RECURRENCE_REGENERATE:I = 0x259
-
-.field public static final TASK_RECURRENCE_START:I = 0x251
-
-.field public static final TASK_RECURRENCE_TYPE:I = 0x250
-
-.field public static final TASK_RECURRENCE_UNTIL:I = 0x252
-
-.field public static final TASK_RECURRENCE_WEEK_OF_MONTH:I = 0x257
-
-.field public static final TASK_REMINDER_SET:I = 0x25b
-
-.field public static final TASK_REMINDER_TIME:I = 0x25c
-
-.field public static final TASK_SENSITIVITY:I = 0x25d
-
-.field public static final TASK_START_DATE:I = 0x25e
-
-.field public static final TASK_SUBJECT:I = 0x260
-
-.field public static final TASK_UTC_DUE_DATE:I = 0x24d
-
-.field public static final TASK_UTC_START_DATE:I = 0x25f
-
 .field public static pages:[[Ljava/lang/String;
 
 
@@ -962,12 +22,12 @@
 
     const/4 v5, 0x0
 
-    .line 539
-    const/16 v0, 0x15
+    .line 677
+    const/16 v0, 0x18
 
     new-array v0, v0, [[Ljava/lang/String;
 
-    const/16 v1, 0x22
+    const/16 v1, 0x25
 
     new-array v1, v1, [Ljava/lang/String;
 
@@ -1165,9 +225,27 @@
 
     aput-object v3, v1, v2
 
+    const/16 v2, 0x22
+
+    const-string v3, "ConversationMode"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x23
+
+    const-string v3, "MaxItems"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x24
+
+    const-string v3, "HeartbeatInterval"
+
+    aput-object v3, v1, v2
+
     aput-object v1, v0, v5
 
-    const/16 v1, 0x38
+    const/16 v1, 0x3a
 
     new-array v1, v1, [Ljava/lang/String;
 
@@ -1494,6 +572,18 @@
     const/16 v2, 0x37
 
     const-string v3, "Picture"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x38
+
+    const-string v3, "Alias"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x39
+
+    const-string v3, "WeightedRank"
 
     aput-object v3, v1, v2
 
@@ -1953,7 +1043,7 @@
 
     aput-object v1, v0, v8
 
-    const/16 v1, 0x26
+    const/16 v1, 0x34
 
     new-array v1, v1, [Ljava/lang/String;
 
@@ -2175,6 +1265,90 @@
 
     aput-object v3, v1, v2
 
+    const/16 v2, 0x26
+
+    const-string v3, "CalAttachment"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x27
+
+    const-string v3, "CalAttachments"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x28
+
+    const-string v3, "CalAttName"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x29
+
+    const-string v3, "CalAttSize"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x2a
+
+    const-string v3, "CalAttOid"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x2b
+
+    const-string v3, "CalAttMethod"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x2c
+
+    const-string v3, "CalAttRemoved"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x2d
+
+    const-string v3, "CalDisplayName"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x2e
+
+    const-string v3, "CalDisallowNewTimeProposal"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x2f
+
+    const-string v3, "CalResponseRequested"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x30
+
+    const-string v3, "CalAppointmentReplyTime"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x31
+
+    const-string v3, "CalResponseType"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x32
+
+    const-string v3, "CalCalendarType"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x33
+
+    const-string v3, "CalIsLeapMonth"
+
+    aput-object v3, v1, v2
+
     aput-object v1, v0, v9
 
     const/4 v1, 0x5
@@ -2183,7 +1357,7 @@
 
     new-array v2, v2, [Ljava/lang/String;
 
-    const-string v3, "MoveItems"
+    const-string v3, "MoveItems/Moves"
 
     aput-object v3, v2, v5
 
@@ -2637,7 +1811,7 @@
 
     const/16 v1, 0xa
 
-    const/16 v2, 0x11
+    const/16 v2, 0x15
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -2730,6 +1904,30 @@
     const/16 v3, 0x10
 
     const-string v4, "certificateCount"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x11
+
+    const-string v4, "Availability"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x12
+
+    const-string v4, "StartTime"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x13
+
+    const-string v4, "EndTime"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x14
+
+    const-string v4, "MergedFreeBusy"
 
     aput-object v4, v2, v3
 
@@ -3203,7 +2401,7 @@
 
     const/16 v1, 0xf
 
-    const/16 v2, 0x19
+    const/16 v2, 0x1c
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -3347,6 +2545,24 @@
 
     aput-object v4, v2, v3
 
+    const/16 v3, 0x19
+
+    const-string v4, "UserName"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x1a
+
+    const-string v4, "Password"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x1b
+
+    const-string v4, "ConversationId"
+
+    aput-object v4, v2, v3
+
     aput-object v2, v0, v1
 
     const/16 v1, 0x10
@@ -3415,7 +2631,7 @@
 
     const/16 v1, 0x11
 
-    const/16 v2, 0x13
+    const/16 v2, 0x14
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -3523,11 +2739,17 @@
 
     aput-object v4, v2, v3
 
+    const/16 v3, 0x13
+
+    const-string v4, "BasePreview"
+
+    aput-object v4, v2, v3
+
     aput-object v2, v0, v1
 
     const/16 v1, 0x12
 
-    const/16 v2, 0x1b
+    const/16 v2, 0x1e
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -3683,6 +2905,24 @@
 
     aput-object v4, v2, v3
 
+    const/16 v3, 0x1b
+
+    const-string v4, "UserAgent"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x1c
+
+    const-string v4, "outBoundSms"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x1d
+
+    const-string v4, "networkOperator"
+
+    aput-object v4, v2, v3
+
     aput-object v2, v0, v1
 
     const/16 v1, 0x13
@@ -3733,7 +2973,7 @@
 
     const/16 v1, 0x14
 
-    const/16 v2, 0xf
+    const/16 v2, 0x15
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -3816,6 +3056,222 @@
     const-string v4, "DeleteSubFolders"
 
     aput-object v4, v2, v3
+
+    const/16 v3, 0xf
+
+    const-string v4, "UserName"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x10
+
+    const-string v4, "Password"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x11
+
+    const-string v4, "Move"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x12
+
+    const-string v4, "DstFldId"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x13
+
+    const-string v4, "ConversationId"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x14
+
+    const-string v4, "MoveAlways"
+
+    aput-object v4, v2, v3
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x15
+
+    const/16 v2, 0xe
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    const-string v3, "SendMail"
+
+    aput-object v3, v2, v5
+
+    const-string v3, "SmartForward"
+
+    aput-object v3, v2, v6
+
+    const-string v3, "SmartReply"
+
+    aput-object v3, v2, v7
+
+    const-string v3, "SaveInSentItems"
+
+    aput-object v3, v2, v8
+
+    const-string v3, "ReplaceMime"
+
+    aput-object v3, v2, v9
+
+    const/4 v3, 0x5
+
+    const-string v4, "Type"
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x6
+
+    const-string v4, "Source"
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x7
+
+    const-string v4, "FolderId"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x8
+
+    const-string v4, "ItemId"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x9
+
+    const-string v4, "LongId"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0xa
+
+    const-string v4, "InstanceId"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0xb
+
+    const-string v4, "MIME"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0xc
+
+    const-string v4, "ClientId"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0xd
+
+    const-string v4, "Status"
+
+    aput-object v4, v2, v3
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x16
+
+    const/16 v2, 0xc
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    const-string v3, "UmCallerID"
+
+    aput-object v3, v2, v5
+
+    const-string v3, "UmUserNotes"
+
+    aput-object v3, v2, v6
+
+    const-string v3, "UmAttDuration"
+
+    aput-object v3, v2, v7
+
+    const-string v3, "UmAttOrder"
+
+    aput-object v3, v2, v8
+
+    const-string v3, "ConversationId"
+
+    aput-object v3, v2, v9
+
+    const/4 v3, 0x5
+
+    const-string v4, "ConversationIndex"
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x6
+
+    const-string v4, "LastVerbExecuted"
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x7
+
+    const-string v4, "LastVerbExecutionTime"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x8
+
+    const-string v4, "ReveivedAsBcc"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x9
+
+    const-string v4, "Sender"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0xa
+
+    const-string v4, "CalendarType"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0xb
+
+    const-string v4, "IsLeapMonth"
+
+    aput-object v4, v2, v3
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x17
+
+    const/4 v2, 0x5
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    const-string v3, "Subject"
+
+    aput-object v3, v2, v5
+
+    const-string v3, "MessageClass"
+
+    aput-object v3, v2, v6
+
+    const-string v3, "LastModifiedDate"
+
+    aput-object v3, v2, v7
+
+    const-string v3, "Categories"
+
+    aput-object v3, v2, v8
+
+    const-string v3, "Category"
+
+    aput-object v3, v2, v9
 
     aput-object v2, v0, v1
 

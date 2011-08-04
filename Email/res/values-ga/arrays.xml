@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="search_list">
+        <item>Google</item>
+        <item>Aistrigh le Google</item>
+        <item>Wikipedia</item>
+        <item>Foclóir</item>
+    </string-array>
+    <string-array name="share_list">
+        <item>Comhroinn mar théacs</item>
+        <item>Comhroinn mar íomhá</item>
+    </string-array>
+</resources>

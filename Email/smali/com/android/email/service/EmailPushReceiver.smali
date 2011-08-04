@@ -3,28 +3,6 @@
 .source "EmailPushReceiver.java"
 
 
-# static fields
-.field public static final EMAIL_PUSH_RECEIVER_WBXML_HEADER_LENGTH:I = 0x7
-
-.field public static final EMAIL_PUSH_RECEIVER_WBXML_SUFFIX_COM:Ljava/lang/String; = ".com"
-
-.field public static final EMAIL_PUSH_RECEIVER_WBXML_SUFFIX_EDU:Ljava/lang/String; = ".edu"
-
-.field public static final EMAIL_PUSH_RECEIVER_WBXML_SUFFIX_NET:Ljava/lang/String; = ".net"
-
-.field public static final EMAIL_PUSH_RECEIVER_WBXML_SUFFIX_ORG:Ljava/lang/String; = ".org"
-
-.field public static final EMAIL_PUSH_RECEIVER_WBXML_TOKEN_COM:I = 0x85
-
-.field public static final EMAIL_PUSH_RECEIVER_WBXML_TOKEN_EDU:I = 0x86
-
-.field public static final EMAIL_PUSH_RECEIVER_WBXML_TOKEN_NET:I = 0x87
-
-.field public static final EMAIL_PUSH_RECEIVER_WBXML_TOKEN_ORG:I = 0x88
-
-.field private static final LOG_TAG:Ljava/lang/String; = "EmailPushReceiver"
-
-
 # instance fields
 .field WAP_Push_Wbxml_header:[I
 

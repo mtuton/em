@@ -3,10 +3,6 @@
 .source "AccountFolderListItem.java"
 
 
-# static fields
-.field private static final FOLDER_PAD:F = 5.0f
-
-
 # instance fields
 .field public mAccountId:J
 

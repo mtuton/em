@@ -11,16 +11,6 @@
 .end annotation
 
 
-# static fields
-.field public static final ADD_BOOKMARK:I = 0x1
-
-.field public static final ADD_CALENDAR:I = 0x2
-
-.field public static final ADD_MEMO:I = 0x3
-
-.field public static final ADD_NAMECARD:I
-
-
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
@@ -96,39 +86,39 @@
 
     .line 43
     .local v0, data:Ljava/util/List;,"Ljava/util/List<Lcom/android/email/activity/IconListAdapter$IconListItem;>;"
-    const v1, 0x7f080127
+    const v1, 0x7f08013d
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v2, 0x7f020085
+    const v2, 0x7f020083
 
     const/4 v3, 0x0
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/email/activity/AddTextSelectorAdapter;->addItem(Ljava/util/List;Ljava/lang/String;II)V
 
     .line 47
-    const v1, 0x7f080128
+    const v1, 0x7f08013e
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v2, 0x7f020082
+    const v2, 0x7f020080
 
     const/4 v3, 0x2
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/email/activity/AddTextSelectorAdapter;->addItem(Ljava/util/List;Ljava/lang/String;II)V
 
     .line 51
-    const v1, 0x7f08012a
+    const v1, 0x7f080140
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v2, 0x7f020087
+    const v2, 0x7f020085
 
     const/4 v3, 0x3
 

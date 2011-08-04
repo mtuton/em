@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 1170
+    .line 1282
     iput-object p1, p0, Lcom/android/exchange/SyncManager$MailboxObserver;->this$0:Lcom/android/exchange/SyncManager;
 
-    .line 1171
+    .line 1283
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 1172
+    .line 1284
     return-void
 .end method
 
@@ -42,15 +42,15 @@
     .parameter "selfChange"
 
     .prologue
-    .line 1177
+    .line 1289
     if-nez p1, :cond_0
 
-    .line 1178
+    .line 1290
     const-string v0, "mailbox changed"
 
     invoke-static {v0}, Lcom/android/exchange/SyncManager;->kick(Ljava/lang/String;)V
 
-    .line 1180
+    .line 1292
     :cond_0
     return-void
 .end method

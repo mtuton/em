@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 240
+    .line 248
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$1;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     invoke-direct {p0, p2}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
@@ -39,9 +39,9 @@
     .locals 0
 
     .prologue
-    .line 241
+    .line 250
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupBasics$1;->hide()V
 
-    .line 242
+    .line 251
     return-void
 .end method

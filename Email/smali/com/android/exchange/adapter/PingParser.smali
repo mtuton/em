@@ -32,25 +32,25 @@
     .end annotation
 
     .prologue
-    .line 48
+    .line 54
     invoke-direct {p0, p1}, Lcom/android/exchange/adapter/Parser;-><init>(Ljava/io/InputStream;)V
 
-    .line 35
+    .line 41
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/exchange/adapter/PingParser;->syncList:Ljava/util/ArrayList;
 
-    .line 37
+    .line 43
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/exchange/adapter/PingParser;->mSyncStatus:I
 
-    .line 49
+    .line 55
     iput-object p2, p0, Lcom/android/exchange/adapter/PingParser;->mService:Lcom/android/exchange/EasSyncService;
 
-    .line 50
+    .line 56
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .end annotation
 
     .prologue
-    .line 40
+    .line 46
     iget-object v0, p0, Lcom/android/exchange/adapter/PingParser;->syncList:Ljava/util/ArrayList;
 
     return-object v0
@@ -79,7 +79,7 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 50
     iget v0, p0, Lcom/android/exchange/adapter/PingParser;->mSyncStatus:I
 
     return v0
@@ -91,17 +91,18 @@
         value = {
             Ljava/io/IOException;,
             Lcom/android/exchange/StaleFolderListException;,
-            Lcom/android/exchange/IllegalHeartbeatException;
+            Lcom/android/exchange/IllegalHeartbeatException;,
+            Lcom/android/email/mail/DeviceAccessException;
         }
     .end annotation
 
     .prologue
     const/4 v4, 0x0
 
-    .line 67
+    .line 73
     const/4 v0, 0x0
 
-    .line 68
+    .line 74
     .local v0, res:Z
     invoke-virtual {p0, v4}, Lcom/android/exchange/adapter/PingParser;->nextTag(I)I
 
@@ -111,14 +112,14 @@
 
     if-eq v2, v3, :cond_0
 
-    .line 69
+    .line 75
     new-instance v2, Ljava/io/IOException;
 
     invoke-direct {v2}, Ljava/io/IOException;-><init>()V
 
     throw v2
 
-    .line 71
+    .line 77
     :cond_0
     :goto_0
     invoke-virtual {p0, v4}, Lcom/android/exchange/adapter/PingParser;->nextTag(I)I
@@ -129,40 +130,40 @@
 
     if-eq v2, v3, :cond_7
 
-    .line 72
+    .line 78
     iget v2, p0, Lcom/android/exchange/adapter/PingParser;->tag:I
 
     const/16 v3, 0x347
 
     if-ne v2, v3, :cond_4
 
-    .line 73
+    .line 79
     invoke-virtual {p0}, Lcom/android/exchange/adapter/PingParser;->getValueInt()I
 
     move-result v1
 
-    .line 74
+    .line 80
     .local v1, status:I
     iput v1, p0, Lcom/android/exchange/adapter/PingParser;->mSyncStatus:I
 
-    .line 75
+    .line 81
     iget-object v2, p0, Lcom/android/exchange/adapter/PingParser;->mService:Lcom/android/exchange/EasSyncService;
 
     const-string v3, "Ping completed, status = "
 
     invoke-virtual {v2, v3, v1}, Lcom/android/exchange/EasSyncService;->userLog(Ljava/lang/String;I)V
 
-    .line 76
+    .line 82
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_1
 
-    .line 77
+    .line 83
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 78
+    .line 84
     :cond_1
     const/4 v2, 0x7
 
@@ -172,7 +173,7 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 80
+    .line 86
     :cond_2
     new-instance v2, Lcom/android/exchange/StaleFolderListException;
 
@@ -180,15 +181,36 @@
 
     throw v2
 
-    .line 81
+    .line 87
     :cond_3
     const/4 v2, 0x5
 
+    if-eq v1, v2, :cond_0
+
+    .line 91
+    const/16 v2, 0x81
+
     if-ne v1, v2, :cond_0
 
-    goto :goto_0
+    .line 93
+    const-string v2, "PingParser"
 
-    .line 85
+    const-string v3, "PingParser::parse() - Received status 129 for ping, to Block device "
+
+    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 95
+    new-instance v2, Lcom/android/email/mail/DeviceAccessException;
+
+    const v3, 0x40001
+
+    const v4, 0x7f0802cb
+
+    invoke-direct {v2, v3, v4}, Lcom/android/email/mail/DeviceAccessException;-><init>(II)V
+
+    throw v2
+
+    .line 99
     .end local v1           #status:I
     :cond_4
     iget v2, p0, Lcom/android/exchange/adapter/PingParser;->tag:I
@@ -197,14 +219,14 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 86
+    .line 100
     iget-object v2, p0, Lcom/android/exchange/adapter/PingParser;->syncList:Ljava/util/ArrayList;
 
     invoke-virtual {p0, v2}, Lcom/android/exchange/adapter/PingParser;->parsePingFolders(Ljava/util/ArrayList;)V
 
     goto :goto_0
 
-    .line 87
+    .line 101
     :cond_5
     iget v2, p0, Lcom/android/exchange/adapter/PingParser;->tag:I
 
@@ -212,7 +234,7 @@
 
     if-ne v2, v3, :cond_6
 
-    .line 89
+    .line 103
     new-instance v2, Lcom/android/exchange/IllegalHeartbeatException;
 
     invoke-virtual {p0}, Lcom/android/exchange/adapter/PingParser;->getValueInt()I
@@ -223,13 +245,13 @@
 
     throw v2
 
-    .line 91
+    .line 105
     :cond_6
     invoke-virtual {p0}, Lcom/android/exchange/adapter/PingParser;->skipTag()V
 
     goto :goto_0
 
-    .line 94
+    .line 108
     :cond_7
     return v0
 .end method
@@ -254,7 +276,7 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 59
     .local p1, syncList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     :goto_0
     const/16 v1, 0x349
@@ -267,23 +289,23 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 54
+    .line 60
     iget v1, p0, Lcom/android/exchange/adapter/PingParser;->tag:I
 
     const/16 v2, 0x34a
 
     if-ne v1, v2, :cond_0
 
-    .line 56
+    .line 62
     invoke-virtual {p0}, Lcom/android/exchange/adapter/PingParser;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 57
+    .line 63
     .local v0, serverId:Ljava/lang/String;
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 58
+    .line 64
     iget-object v1, p0, Lcom/android/exchange/adapter/PingParser;->mService:Lcom/android/exchange/EasSyncService;
 
     const/4 v2, 0x2
@@ -304,14 +326,14 @@
 
     goto :goto_0
 
-    .line 60
+    .line 66
     .end local v0           #serverId:Ljava/lang/String;
     :cond_0
     invoke-virtual {p0}, Lcom/android/exchange/adapter/PingParser;->skipTag()V
 
     goto :goto_0
 
-    .line 63
+    .line 69
     :cond_1
     return-void
 .end method

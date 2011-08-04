@@ -35,7 +35,7 @@
     .parameter
 
     .prologue
-    .line 3959
+    .line 5425
     iput-object p1, p0, Lcom/android/email/activity/MessageView$PresenceCheckTask;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -49,7 +49,7 @@
     .parameter "x1"
 
     .prologue
-    .line 3959
+    .line 5425
     invoke-direct {p0, p1}, Lcom/android/email/activity/MessageView$PresenceCheckTask;-><init>(Lcom/android/email/activity/MessageView;)V
 
     return-void
@@ -64,7 +64,7 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 3962
+    .line 5428
     iget-object v0, p0, Lcom/android/email/activity/MessageView$PresenceCheckTask;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-virtual {v0}, Lcom/android/email/activity/MessageView;->getContentResolver()Landroid/content/ContentResolver;
@@ -73,7 +73,7 @@
 
     sget-object v1, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
-    invoke-static {}, Lcom/android/email/activity/MessageView;->access$3400()[Ljava/lang/String;
+    invoke-static {}, Lcom/android/email/activity/MessageView;->access$4200()[Ljava/lang/String;
 
     move-result-object v2
 
@@ -87,11 +87,11 @@
 
     move-result-object v6
 
-    .line 3965
+    .line 5431
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_1
 
-    .line 3967
+    .line 5433
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -99,20 +99,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 3968
+    .line 5434
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v8
 
-    .line 3969
+    .line 5435
     .local v8, status:I
     invoke-static {v8}, Landroid/provider/ContactsContract$StatusUpdates;->getPresenceIconResourceId(I)I
 
     move-result v7
 
-    .line 3970
+    .line 5436
     .local v7, icon:I
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
     :try_end_0
@@ -120,20 +120,20 @@
 
     move-result-object v0
 
-    .line 3973
+    .line 5439
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 3976
+    .line 5442
     .end local v7           #icon:I
     .end local v8           #status:I
     :goto_0
     return-object v0
 
-    .line 3973
+    .line 5439
     :cond_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 3976
+    .line 5442
     :cond_1
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -141,7 +141,7 @@
 
     goto :goto_0
 
-    .line 3973
+    .line 5439
     :catchall_0
     move-exception v0
 
@@ -155,7 +155,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3959
+    .line 5425
     check-cast p1, [Ljava/lang/String;
 
     .end local p1
@@ -171,14 +171,14 @@
     .parameter "icon"
 
     .prologue
-    .line 3981
+    .line 5447
     if-nez p1, :cond_0
 
-    .line 3985
+    .line 5451
     :goto_0
     return-void
 
-    .line 3984
+    .line 5450
     :cond_0
     iget-object v0, p0, Lcom/android/email/activity/MessageView$PresenceCheckTask;->this$0:Lcom/android/email/activity/MessageView;
 
@@ -186,7 +186,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/android/email/activity/MessageView;->access$3500(Lcom/android/email/activity/MessageView;I)V
+    invoke-static {v0, v1}, Lcom/android/email/activity/MessageView;->access$4300(Lcom/android/email/activity/MessageView;I)V
 
     goto :goto_0
 .end method
@@ -196,7 +196,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3959
+    .line 5425
     check-cast p1, Ljava/lang/Integer;
 
     .end local p1

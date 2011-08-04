@@ -142,7 +142,7 @@
     .line 120
     new-instance v8, Lcom/android/email/mail/MessagingException;
 
-    const/16 v9, 0x8
+    const/16 v9, 0xc
 
     invoke-direct {v8, v9}, Lcom/android/email/mail/MessagingException;-><init>(I)V
 
@@ -404,6 +404,19 @@
 
     .line 195
     .local v0, folder:Lcom/android/email/mail/store/Pop3Store$Pop3Folder;
+    iget-object v1, p0, Lcom/android/email/mail/store/Pop3Store;->mTransport:Lcom/android/email/mail/Transport;
+
+    invoke-interface {v1}, Lcom/android/email/mail/Transport;->isOpen()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 196
+    invoke-virtual {v0, v3}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->close(Z)V
+
+    .line 199
+    :cond_0
     :try_start_0
     sget-object v1, Lcom/android/email/mail/Folder$OpenMode;->READ_WRITE:Lcom/android/email/mail/Folder$OpenMode;
 
@@ -411,18 +424,18 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->open(Lcom/android/email/mail/Folder$OpenMode;Lcom/android/email/mail/Folder$PersistentDataCallbacks;)V
 
-    .line 196
+    .line 200
     invoke-virtual {v0}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->checkSettings()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 198
+    .line 202
     invoke-virtual {v0, v3}, Lcom/android/email/mail/store/Pop3Store$Pop3Folder;->close(Z)V
 
-    .line 200
+    .line 204
     return-void
 
-    .line 198
+    .line 202
     :catchall_0
     move-exception v1
 

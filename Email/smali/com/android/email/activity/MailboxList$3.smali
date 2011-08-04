@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 437
+    .line 440
     iput-object p1, p0, Lcom/android/email/activity/MailboxList$3;->this$0:Lcom/android/email/activity/MailboxList;
 
     iput-object p2, p0, Lcom/android/email/activity/MailboxList$3;->val$text:Landroid/widget/EditText;
@@ -58,7 +58,7 @@
     .parameter "which"
 
     .prologue
-    .line 439
+    .line 443
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$3;->val$text:Landroid/widget/EditText;
 
     invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -69,7 +69,7 @@
 
     move-result-object v1
 
-    .line 440
+    .line 444
     .local v1, folderName:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -77,7 +77,7 @@
 
     if-nez v2, :cond_2
 
-    .line 441
+    .line 445
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$3;->this$0:Lcom/android/email/activity/MailboxList;
 
     invoke-virtual {v2}, Lcom/android/email/activity/MailboxList;->getApplication()Landroid/app/Application;
@@ -88,42 +88,42 @@
 
     move-result-object v0
 
-    .line 442
+    .line 446
     .local v0, controller:Lcom/android/email/Controller;
     iget v2, p0, Lcom/android/email/activity/MailboxList$3;->val$action:I
 
-    const v3, 0x7f07012b
+    const v3, 0x7f070190
 
     if-ne v2, v3, :cond_1
 
-    .line 443
+    .line 447
     iget-wide v2, p0, Lcom/android/email/activity/MailboxList$3;->val$mailboxId:J
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/email/Controller;->createFolder(Ljava/lang/String;J)V
 
-    .line 450
+    .line 454
     .end local v0           #controller:Lcom/android/email/Controller;
     :cond_0
     :goto_0
     return-void
 
-    .line 444
+    .line 448
     .restart local v0       #controller:Lcom/android/email/Controller;
     :cond_1
     iget v2, p0, Lcom/android/email/activity/MailboxList$3;->val$action:I
 
-    const v3, 0x7f07012c
+    const v3, 0x7f070191
 
     if-ne v2, v3, :cond_0
 
-    .line 445
+    .line 449
     iget-wide v2, p0, Lcom/android/email/activity/MailboxList$3;->val$mailboxId:J
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/email/Controller;->renameFolder(Ljava/lang/String;J)V
 
     goto :goto_0
 
-    .line 448
+    .line 452
     .end local v0           #controller:Lcom/android/email/Controller;
     :cond_2
     iget-object v2, p0, Lcom/android/email/activity/MailboxList$3;->this$0:Lcom/android/email/activity/MailboxList;
@@ -134,7 +134,7 @@
 
     iget-object v3, p0, Lcom/android/email/activity/MailboxList$3;->this$0:Lcom/android/email/activity/MailboxList;
 
-    const v4, 0x7f08021a
+    const v4, 0x7f080246
 
     invoke-virtual {v3, v4}, Lcom/android/email/activity/MailboxList;->getString(I)Ljava/lang/String;
 

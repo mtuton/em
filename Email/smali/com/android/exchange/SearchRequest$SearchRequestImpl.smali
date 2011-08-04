@@ -17,6 +17,8 @@
 # instance fields
 .field private mAccountId:J
 
+.field private mConversationId:Ljava/lang/String;
+
 .field private mOptionsBodyPreferenceTruncationSize:I
 
 .field private mOptionsBodyPreferenceType:Lcom/android/exchange/SearchRequest$BodyPreferenceType;
@@ -55,7 +57,7 @@
 
 
 # direct methods
-.method public constructor <init>(JLcom/android/exchange/SearchRequest$StoreName;Ljava/lang/String;Ljava/lang/String;Lcom/android/exchange/SearchRequest$QueryClass;[JLjava/util/Date;Ljava/util/Date;Landroid/util/Pair;ZZLcom/android/exchange/SearchRequest$BodyPreferenceType;ILcom/android/exchange/SearchRequest$OptionsMIMESupport;)V
+.method public constructor <init>(JLcom/android/exchange/SearchRequest$StoreName;Ljava/lang/String;Ljava/lang/String;Lcom/android/exchange/SearchRequest$QueryClass;[JLjava/util/Date;Ljava/util/Date;Landroid/util/Pair;ZZLcom/android/exchange/SearchRequest$BodyPreferenceType;ILcom/android/exchange/SearchRequest$OptionsMIMESupport;Ljava/lang/String;)V
     .locals 3
     .parameter "accountId"
     .parameter "storeName"
@@ -71,6 +73,7 @@
     .parameter "optionsBodyPreferenceType"
     .parameter "optionsBodyPreferenceTruncationSize"
     .parameter "optionsMIMESupport"
+    .parameter "convId"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -89,72 +92,80 @@
             "Lcom/android/exchange/SearchRequest$BodyPreferenceType;",
             "I",
             "Lcom/android/exchange/SearchRequest$OptionsMIMESupport;",
+            "Ljava/lang/String;",
             ")V"
         }
     .end annotation
 
     .prologue
-    .line 104
+    .line 112
     .local p10, optionsRange:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     const/4 v2, 0x0
 
     invoke-direct {p0, v2}, Lcom/android/exchange/SearchRequest;-><init>(Lcom/android/exchange/SearchRequest$1;)V
 
-    .line 105
+    .line 113
     iput-wide p1, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mAccountId:J
 
-    .line 106
+    .line 114
     iput-object p3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mStoreName:Lcom/android/exchange/SearchRequest$StoreName;
 
-    .line 107
+    .line 115
     iput-object p4, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryText:Ljava/lang/String;
 
-    .line 108
+    .line 116
     iput-object p5, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryFreeText:Ljava/lang/String;
 
-    .line 109
+    .line 117
     iput-object p6, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryClass:Lcom/android/exchange/SearchRequest$QueryClass;
 
-    .line 110
+    .line 118
     iput-object p7, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryCollectionIds:[J
 
-    .line 111
+    .line 119
     iput-object p8, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryGreaterThan:Ljava/util/Date;
 
-    .line 112
+    .line 120
     iput-object p9, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryLessThan:Ljava/util/Date;
 
-    .line 113
+    .line 121
     iput-object p10, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsRange:Landroid/util/Pair;
 
-    .line 114
+    .line 122
     iput-boolean p11, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsDeepTraversal:Z
 
-    .line 115
+    .line 123
     iput-boolean p12, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsRebuildResults:Z
 
-    .line 116
+    .line 124
     move-object/from16 v0, p13
 
     move-object v1, p0
 
     iput-object v0, v1, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsBodyPreferenceType:Lcom/android/exchange/SearchRequest$BodyPreferenceType;
 
-    .line 117
+    .line 125
     move/from16 v0, p14
 
     move-object v1, p0
 
     iput v0, v1, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsBodyPreferenceTruncationSize:I
 
-    .line 118
+    .line 126
     move-object/from16 v0, p15
 
     move-object v1, p0
 
     iput-object v0, v1, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsMIMESupport:Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
 
-    .line 119
+    .line 128
+    move-object/from16 v0, p16
+
+    move-object v1, p0
+
+    iput-object v0, v1, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mConversationId:Ljava/lang/String;
+
+    .line 130
     return-void
 .end method
 
@@ -167,19 +178,19 @@
 
     const/4 v6, 0x0
 
-    .line 217
+    .line 234
     const/4 v3, 0x0
 
     invoke-direct {p0, v3}, Lcom/android/exchange/SearchRequest;-><init>(Lcom/android/exchange/SearchRequest$1;)V
 
-    .line 218
+    .line 235
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mAccountId:J
 
-    .line 219
+    .line 236
     invoke-static {}, Lcom/android/exchange/SearchRequest$StoreName;->values()[Lcom/android/exchange/SearchRequest$StoreName;
 
     move-result-object v3
@@ -192,21 +203,21 @@
 
     iput-object v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mStoreName:Lcom/android/exchange/SearchRequest$StoreName;
 
-    .line 220
+    .line 237
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryText:Ljava/lang/String;
 
-    .line 221
+    .line 238
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryFreeText:Ljava/lang/String;
 
-    .line 222
+    .line 239
     invoke-static {}, Lcom/android/exchange/SearchRequest$QueryClass;->values()[Lcom/android/exchange/SearchRequest$QueryClass;
 
     move-result-object v3
@@ -219,23 +230,23 @@
 
     iput-object v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryClass:Lcom/android/exchange/SearchRequest$QueryClass;
 
-    .line 223
+    .line 240
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 224
+    .line 241
     .local v0, collectionIdsSize:I
     new-array v3, v0, [J
 
     iput-object v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryCollectionIds:[J
 
-    .line 225
+    .line 242
     iget-object v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryCollectionIds:[J
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->readLongArray([J)V
 
-    .line 226
+    .line 243
     iget-object v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryGreaterThan:Ljava/util/Date;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
@@ -244,7 +255,7 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/Date;->setTime(J)V
 
-    .line 227
+    .line 244
     iget-object v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryLessThan:Ljava/util/Date;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
@@ -253,7 +264,7 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/Date;->setTime(J)V
 
-    .line 228
+    .line 245
     new-instance v3, Landroid/util/Pair;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -276,31 +287,31 @@
 
     iput-object v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsRange:Landroid/util/Pair;
 
-    .line 229
+    .line 246
     new-array v1, v7, [Z
 
-    .line 230
+    .line 247
     .local v1, deepTraversalVal:[Z
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readBooleanArray([Z)V
 
-    .line 231
+    .line 248
     aget-boolean v3, v1, v6
 
     iput-boolean v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsDeepTraversal:Z
 
-    .line 232
+    .line 249
     new-array v2, v7, [Z
 
-    .line 233
+    .line 250
     .local v2, rebuildResultsVal:[Z
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->readBooleanArray([Z)V
 
-    .line 234
+    .line 251
     aget-boolean v3, v2, v6
 
     iput-boolean v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsRebuildResults:Z
 
-    .line 235
+    .line 252
     invoke-static {}, Lcom/android/exchange/SearchRequest$BodyPreferenceType;->values()[Lcom/android/exchange/SearchRequest$BodyPreferenceType;
 
     move-result-object v3
@@ -313,14 +324,14 @@
 
     iput-object v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsBodyPreferenceType:Lcom/android/exchange/SearchRequest$BodyPreferenceType;
 
-    .line 236
+    .line 253
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     iput v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsBodyPreferenceTruncationSize:I
 
-    .line 237
+    .line 254
     invoke-static {}, Lcom/android/exchange/SearchRequest$OptionsMIMESupport;->values()[Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
 
     move-result-object v3
@@ -333,7 +344,14 @@
 
     iput-object v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsMIMESupport:Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
 
-    .line 238
+    .line 256
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mConversationId:Ljava/lang/String;
+
+    .line 258
     return-void
 .end method
 
@@ -343,7 +361,7 @@
     .parameter "x1"
 
     .prologue
-    .line 84
+    .line 87
     invoke-direct {p0, p1}, Lcom/android/exchange/SearchRequest$SearchRequestImpl;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -355,37 +373,27 @@
     .locals 1
 
     .prologue
-    .line 241
+    .line 261
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public getAccountId()J
-    .locals 2
-
-    .prologue
-    .line 122
-    iget-wide v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mAccountId:J
-
-    return-wide v0
 .end method
 
 .method public getOptionsBodyPreferenceTruncationSize()Ljava/lang/String;
     .locals 2
 
     .prologue
-    .line 204
+    .line 221
     iget v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsBodyPreferenceTruncationSize:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 205
+    .line 222
     const/4 v0, 0x0
 
-    .line 207
+    .line 224
     :goto_0
     return-object v0
 
@@ -417,7 +425,7 @@
     .locals 2
 
     .prologue
-    .line 189
+    .line 206
     sget-object v0, Lcom/android/exchange/SearchRequest$2;->$SwitchMap$com$android$exchange$SearchRequest$BodyPreferenceType:[I
 
     iget-object v1, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsBodyPreferenceType:Lcom/android/exchange/SearchRequest$BodyPreferenceType;
@@ -430,37 +438,37 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 199
+    .line 216
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 191
+    .line 208
     :pswitch_0
     const-string v0, "1"
 
     goto :goto_0
 
-    .line 193
+    .line 210
     :pswitch_1
     const-string v0, "2"
 
     goto :goto_0
 
-    .line 195
+    .line 212
     :pswitch_2
     const-string v0, "3"
 
     goto :goto_0
 
-    .line 197
+    .line 214
     :pswitch_3
     const-string v0, "4"
 
     goto :goto_0
 
-    .line 189
+    .line 206
     nop
 
     :pswitch_data_0
@@ -476,7 +484,7 @@
     .locals 1
 
     .prologue
-    .line 181
+    .line 198
     iget-boolean v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsDeepTraversal:Z
 
     return v0
@@ -486,7 +494,7 @@
     .locals 2
 
     .prologue
-    .line 211
+    .line 228
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsMIMESupport:Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
 
     invoke-virtual {v0}, Lcom/android/exchange/SearchRequest$OptionsMIMESupport;->ordinal()I
@@ -501,10 +509,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 212
+    .line 229
     const/4 v0, 0x0
 
-    .line 214
+    .line 231
     :goto_0
     return-object v0
 
@@ -540,15 +548,15 @@
     .locals 2
 
     .prologue
-    .line 174
+    .line 191
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsRange:Landroid/util/Pair;
 
     if-nez v0, :cond_0
 
-    .line 175
+    .line 192
     const/4 v0, 0x0
 
-    .line 177
+    .line 194
     :goto_0
     return-object v0
 
@@ -596,7 +604,7 @@
     .locals 1
 
     .prologue
-    .line 185
+    .line 202
     iget-boolean v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsRebuildResults:Z
 
     return v0
@@ -606,7 +614,7 @@
     .locals 2
 
     .prologue
-    .line 143
+    .line 160
     sget-object v0, Lcom/android/exchange/SearchRequest$2;->$SwitchMap$com$android$exchange$SearchRequest$QueryClass:[I
 
     iget-object v1, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryClass:Lcom/android/exchange/SearchRequest$QueryClass;
@@ -619,19 +627,19 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 147
+    .line 164
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 145
+    .line 162
     :pswitch_0
     const-string v0, "Email"
 
     goto :goto_0
 
-    .line 143
+    .line 160
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -642,8 +650,18 @@
     .locals 1
 
     .prologue
-    .line 152
+    .line 169
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryCollectionIds:[J
+
+    return-object v0
+.end method
+
+.method public getQueryConvIdText()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 155
+    iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mConversationId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -652,7 +670,7 @@
     .locals 1
 
     .prologue
-    .line 139
+    .line 150
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryFreeText:Ljava/lang/String;
 
     return-object v0
@@ -662,19 +680,19 @@
     .locals 3
 
     .prologue
-    .line 156
+    .line 173
     iget-object v1, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryGreaterThan:Ljava/util/Date;
 
     if-nez v1, :cond_0
 
-    .line 157
+    .line 174
     const/4 v1, 0x0
 
-    .line 161
+    .line 178
     :goto_0
     return-object v1
 
-    .line 159
+    .line 176
     :cond_0
     const-string v1, "GMT"
 
@@ -686,7 +704,7 @@
 
     move-result-object v0
 
-    .line 160
+    .line 177
     .local v0, calendar:Ljava/util/Calendar;
     iget-object v1, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryGreaterThan:Ljava/util/Date;
 
@@ -696,7 +714,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 161
+    .line 178
     invoke-static {v0}, Lcom/android/email/Utility;->formatDateTime(Ljava/util/Calendar;)Ljava/lang/String;
 
     move-result-object v1
@@ -708,19 +726,19 @@
     .locals 3
 
     .prologue
-    .line 165
+    .line 182
     iget-object v1, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryLessThan:Ljava/util/Date;
 
     if-nez v1, :cond_0
 
-    .line 166
+    .line 183
     const/4 v1, 0x0
 
-    .line 170
+    .line 187
     :goto_0
     return-object v1
 
-    .line 168
+    .line 185
     :cond_0
     const-string v1, "GMT"
 
@@ -732,7 +750,7 @@
 
     move-result-object v0
 
-    .line 169
+    .line 186
     .local v0, calendar:Ljava/util/Calendar;
     iget-object v1, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryLessThan:Ljava/util/Date;
 
@@ -742,7 +760,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 170
+    .line 187
     invoke-static {v0}, Lcom/android/email/Utility;->formatDateTime(Ljava/util/Calendar;)Ljava/lang/String;
 
     move-result-object v1
@@ -754,7 +772,7 @@
     .locals 1
 
     .prologue
-    .line 135
+    .line 146
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryText:Ljava/lang/String;
 
     return-object v0
@@ -764,7 +782,7 @@
     .locals 2
 
     .prologue
-    .line 126
+    .line 137
     sget-object v0, Lcom/android/exchange/SearchRequest$2;->$SwitchMap$com$android$exchange$SearchRequest$StoreName:[I
 
     iget-object v1, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mStoreName:Lcom/android/exchange/SearchRequest$StoreName;
@@ -777,19 +795,19 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 130
+    .line 141
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 128
+    .line 139
     :pswitch_0
     const-string v0, "Mailbox"
 
     goto :goto_0
 
-    .line 126
+    .line 137
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -806,12 +824,12 @@
 
     const/4 v2, 0x0
 
-    .line 245
+    .line 265
     iget-wide v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mAccountId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 246
+    .line 266
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mStoreName:Lcom/android/exchange/SearchRequest$StoreName;
 
     invoke-virtual {v0}, Lcom/android/exchange/SearchRequest$StoreName;->ordinal()I
@@ -820,17 +838,17 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 247
+    .line 267
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryText:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 248
+    .line 268
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryFreeText:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 249
+    .line 269
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryClass:Lcom/android/exchange/SearchRequest$QueryClass;
 
     invoke-virtual {v0}, Lcom/android/exchange/SearchRequest$QueryClass;->ordinal()I
@@ -839,19 +857,19 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 250
+    .line 270
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryCollectionIds:[J
 
     array-length v0, v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 251
+    .line 271
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryCollectionIds:[J
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeLongArray([J)V
 
-    .line 252
+    .line 272
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryGreaterThan:Ljava/util/Date;
 
     invoke-virtual {v0}, Ljava/util/Date;->getTime()J
@@ -860,7 +878,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 253
+    .line 273
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mQueryLessThan:Ljava/util/Date;
 
     invoke-virtual {v0}, Ljava/util/Date;->getTime()J
@@ -869,7 +887,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 254
+    .line 274
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsRange:Landroid/util/Pair;
 
     iget-object v0, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -882,7 +900,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 255
+    .line 275
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsRange:Landroid/util/Pair;
 
     iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
@@ -895,7 +913,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 256
+    .line 276
     new-array v0, v3, [Z
 
     iget-boolean v1, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsDeepTraversal:Z
@@ -904,7 +922,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBooleanArray([Z)V
 
-    .line 257
+    .line 277
     new-array v0, v3, [Z
 
     iget-boolean v1, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsRebuildResults:Z
@@ -913,7 +931,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBooleanArray([Z)V
 
-    .line 258
+    .line 278
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsBodyPreferenceType:Lcom/android/exchange/SearchRequest$BodyPreferenceType;
 
     invoke-virtual {v0}, Lcom/android/exchange/SearchRequest$BodyPreferenceType;->ordinal()I
@@ -922,12 +940,12 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 259
+    .line 279
     iget v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsBodyPreferenceTruncationSize:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 260
+    .line 280
     iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mOptionsMIMESupport:Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
 
     invoke-virtual {v0}, Lcom/android/exchange/SearchRequest$OptionsMIMESupport;->ordinal()I
@@ -936,6 +954,11 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 261
+    .line 282
+    iget-object v0, p0, Lcom/android/exchange/SearchRequest$SearchRequestImpl;->mConversationId:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 284
     return-void
 .end method

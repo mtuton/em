@@ -1,4 +1,4 @@
-.class Lcom/android/email/activity/UpgradeAccounts$1;
+.class synthetic Lcom/android/email/activity/UpgradeAccounts$1;
 .super Ljava/lang/Object;
 .source "UpgradeAccounts.java"
 

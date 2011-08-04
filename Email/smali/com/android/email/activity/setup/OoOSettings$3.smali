@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 136
+    .line 135
     iput-object p1, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -43,7 +43,7 @@
 
     const/16 v2, 0x64
 
-    .line 138
+    .line 140
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-static {v0}, Lcom/android/email/activity/setup/OoOSettings;->access$600(Lcom/android/email/activity/setup/OoOSettings;)Landroid/app/ProgressDialog;
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 139
+    .line 141
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-static {v0}, Lcom/android/email/activity/setup/OoOSettings;->access$600(Lcom/android/email/activity/setup/OoOSettings;)Landroid/app/ProgressDialog;
@@ -61,13 +61,13 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 141
+    .line 143
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 178
+    .line 180
     :pswitch_0
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
@@ -83,14 +83,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/Controller;->removeResultCallback(Lcom/android/email/Controller$Result;)V
 
-    .line 179
+    .line 181
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-virtual {v0}, Lcom/android/email/activity/setup/OoOSettings;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    const v1, 0x7f08020c
+    const v1, 0x7f080238
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -98,11 +98,11 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 182
+    .line 184
     :goto_0
     return-void
 
-    .line 143
+    .line 145
     :pswitch_1
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
@@ -118,7 +118,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/Controller;->removeResultCallback(Lcom/android/email/Controller$Result;)V
 
-    .line 144
+    .line 146
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
@@ -129,7 +129,7 @@
 
     goto :goto_0
 
-    .line 147
+    .line 149
     :pswitch_2
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
@@ -145,14 +145,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/Controller;->removeResultCallback(Lcom/android/email/Controller$Result;)V
 
-    .line 148
+    .line 150
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-virtual {v0}, Lcom/android/email/activity/setup/OoOSettings;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    const v1, 0x7f080207
+    const v1, 0x7f080233
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -160,14 +160,14 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 149
+    .line 151
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-static {v0, v5}, Lcom/android/email/activity/setup/OoOSettings;->access$900(Lcom/android/email/activity/setup/OoOSettings;Landroid/os/Bundle;)V
 
     goto :goto_0
 
-    .line 152
+    .line 154
     :pswitch_3
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
@@ -183,14 +183,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/Controller;->removeResultCallback(Lcom/android/email/Controller$Result;)V
 
-    .line 153
+    .line 155
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-virtual {v0}, Lcom/android/email/activity/setup/OoOSettings;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    const v1, 0x7f08020b
+    const v1, 0x7f080237
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -200,7 +200,7 @@
 
     goto :goto_0
 
-    .line 156
+    .line 158
     :pswitch_4
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
@@ -208,7 +208,7 @@
 
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
-    const v3, 0x7f0801f6
+    const v3, 0x7f080222
 
     invoke-virtual {v2, v3}, Lcom/android/email/activity/setup/OoOSettings;->getString(I)Ljava/lang/String;
 
@@ -226,7 +226,7 @@
 
     goto :goto_0
 
-    .line 170
+    .line 172
     :pswitch_5
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
@@ -234,7 +234,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f080033
+    const v1, 0x7f08003a
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -244,7 +244,7 @@
 
     goto/16 :goto_0
 
-    .line 173
+    .line 175
     :pswitch_6
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
@@ -260,14 +260,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/Controller;->removeResultCallback(Lcom/android/email/Controller$Result;)V
 
-    .line 174
+    .line 176
     iget-object v0, p0, Lcom/android/email/activity/setup/OoOSettings$3;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-virtual {v0}, Lcom/android/email/activity/setup/OoOSettings;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    const v1, 0x7f080209
+    const v1, 0x7f080235
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -277,7 +277,7 @@
 
     goto/16 :goto_0
 
-    .line 141
+    .line 143
     nop
 
     :pswitch_data_0

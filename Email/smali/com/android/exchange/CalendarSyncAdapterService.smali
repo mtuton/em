@@ -12,19 +12,7 @@
 
 
 # static fields
-.field private static final ACCOUNT_AND_TYPE_CALENDAR:Ljava/lang/String; = "accountKey=? AND type=65"
-
-.field private static final DIRTY_IN_ACCOUNT:Ljava/lang/String; = "_sync_dirty=1 AND _sync_account=?"
-
-.field private static final ID_SYNC_KEY_MAILBOX_ID:I = 0x0
-
-.field private static final ID_SYNC_KEY_PROJECTION:[Ljava/lang/String; = null
-
-.field private static final ID_SYNC_KEY_SYNC_INTERVAL:I = 0x2
-
-.field private static final ID_SYNC_KEY_SYNC_KEY:I = 0x1
-
-.field private static final TAG:Ljava/lang/String; = "EAS CalendarSyncAdapterService"
+.field private static final ID_SYNC_KEY_PROJECTION:[Ljava/lang/String;
 
 .field private static sSyncAdapter:Lcom/android/exchange/CalendarSyncAdapterService$SyncAdapterImpl;
 

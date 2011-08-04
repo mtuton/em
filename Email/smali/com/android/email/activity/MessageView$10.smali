@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageView;->onMovePopupToOtherAccount(JLjava/lang/String;)V
+    value = Lcom/android/email/activity/MessageView;->onMovePopup()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1936
+    .line 2488
     iput-object p1, p0, Lcom/android/email/activity/MessageView$10;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,10 +43,12 @@
     .parameter "which"
 
     .prologue
-    .line 1938
+    const-wide/16 v3, -0x1
+
+    .line 2491
     iget-object v1, p0, Lcom/android/email/activity/MessageView$10;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v1}, Lcom/android/email/activity/MessageView;->access$1600(Lcom/android/email/activity/MessageView;)Lcom/android/email/activity/MessageView$MailBoxAdapter;
+    invoke-static {v1}, Lcom/android/email/activity/MessageView;->access$2100(Lcom/android/email/activity/MessageView;)Lcom/android/email/activity/MessageView$MailBoxAdapter;
 
     move-result-object v1
 
@@ -56,27 +58,50 @@
 
     check-cast v0, Lcom/android/email/activity/MessageView$MailBoxType;
 
-    .line 1940
+    .line 2493
     .local v0, viewType:Lcom/android/email/activity/MessageView$MailBoxType;
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 1941
+    .line 2494
     invoke-virtual {v0}, Lcom/android/email/activity/MessageView$MailBoxType;->getAccountKey()J
 
     move-result-wide v1
-
-    const-wide/16 v3, -0x1
 
     cmp-long v1, v1, v3
 
     if-nez v1, :cond_0
 
-    .line 1946
+    .line 2507
     :goto_0
     return-void
 
-    .line 1945
+    .line 2499
     :cond_0
+    invoke-virtual {v0}, Lcom/android/email/activity/MessageView$MailBoxType;->getMailboxId()J
+
+    move-result-wide v1
+
+    cmp-long v1, v1, v3
+
+    if-nez v1, :cond_1
+
+    .line 2501
+    iget-object v1, p0, Lcom/android/email/activity/MessageView$10;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-virtual {v0}, Lcom/android/email/activity/MessageView$MailBoxType;->getAccountKey()J
+
+    move-result-wide v2
+
+    invoke-virtual {v0}, Lcom/android/email/activity/MessageView$MailBoxType;->getName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v1, v2, v3, v4}, Lcom/android/email/activity/MessageView;->access$2200(Lcom/android/email/activity/MessageView;JLjava/lang/String;)V
+
+    goto :goto_0
+
+    .line 2505
+    :cond_1
     iget-object v1, p0, Lcom/android/email/activity/MessageView$10;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-virtual {v0}, Lcom/android/email/activity/MessageView$MailBoxType;->getAccountKey()J
@@ -87,7 +112,7 @@
 
     move-result-wide v4
 
-    invoke-static {v1, v2, v3, v4, v5}, Lcom/android/email/activity/MessageView;->access$1700(Lcom/android/email/activity/MessageView;JJ)V
+    invoke-static {v1, v2, v3, v4, v5}, Lcom/android/email/activity/MessageView;->access$2300(Lcom/android/email/activity/MessageView;JJ)V
 
     goto :goto_0
 .end method

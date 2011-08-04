@@ -18,35 +18,6 @@
 .field final synthetic this$0:Lorg/apache/commons/io/FileCleaningTracker;
 
 
-# direct methods
-.method constructor <init>(Lorg/apache/commons/io/FileCleaningTracker;)V
-    .locals 1
-    .parameter
-
-    .prologue
-    .line 189
-    iput-object p1, p0, Lorg/apache/commons/io/FileCleaningTracker$Reaper;->this$0:Lorg/apache/commons/io/FileCleaningTracker;
-
-    .line 190
-    const-string v0, "File Reaper"
-
-    invoke-direct {p0, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
-
-    .line 191
-    const/16 v0, 0xa
-
-    invoke-virtual {p0, v0}, Lorg/apache/commons/io/FileCleaningTracker$Reaper;->setPriority(I)V
-
-    .line 192
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lorg/apache/commons/io/FileCleaningTracker$Reaper;->setDaemon(Z)V
-
-    .line 193
-    return-void
-.end method
-
-
 # virtual methods
 .method public run()V
     .locals 3

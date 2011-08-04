@@ -35,7 +35,7 @@
     .parameter
 
     .prologue
-    .line 40
+    .line 32
     iput-object p1, p0, Lcom/android/email/activity/FolderMessageList$1;->this$0:Lcom/android/email/activity/FolderMessageList;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -50,7 +50,7 @@
     .parameter "x0"
 
     .prologue
-    .line 40
+    .line 32
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 40
+    .line 32
     check-cast p1, Ljava/lang/Void;
 
     .end local p1

@@ -3,21 +3,7 @@
 .source "Transport.java"
 
 
-# static fields
-.field public static final CONNECTION_SECURITY_NONE:I = 0x0
-
-.field public static final CONNECTION_SECURITY_SSL:I = 0x1
-
-.field public static final CONNECTION_SECURITY_TLS:I = 0x2
-
-
 # virtual methods
-.method public abstract canTrustAllCertificates()Z
-.end method
-
-.method public abstract canTrySslSecurity()Z
-.end method
-
 .method public abstract canTryTlsSecurity()Z
 .end method
 
@@ -31,12 +17,6 @@
 .end method
 
 .method public abstract getOutputStream()Ljava/io/OutputStream;
-.end method
-
-.method public abstract getPort()I
-.end method
-
-.method public abstract getSecurity()I
 .end method
 
 .method public abstract getUserInfoParts()[Ljava/lang/String;

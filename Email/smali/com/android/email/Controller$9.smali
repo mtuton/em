@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 812
+    .line 841
     iput-object p1, p0, Lcom/android/email/Controller$9;->this$0:Lcom/android/email/Controller;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -38,7 +38,7 @@
     .locals 14
 
     .prologue
-    .line 813
+    .line 844
     iget-object v1, p0, Lcom/android/email/Controller$9;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v1}, Lcom/android/email/Controller;->access$400(Lcom/android/email/Controller;)Landroid/content/Context;
@@ -49,11 +49,11 @@
 
     move-result-object v0
 
-    .line 814
+    .line 845
     .local v0, resolver:Landroid/content/ContentResolver;
     const/4 v9, 0x0
 
-    .line 816
+    .line 847
     .local v9, c:Landroid/database/Cursor;
     :try_start_0
     sget-object v1, Lcom/android/email/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
@@ -70,10 +70,10 @@
 
     move-result-object v9
 
-    .line 821
+    .line 852
     const-string v13, "accountKey=?"
 
-    .line 823
+    .line 854
     .local v13, selection:Ljava/lang/String;
     :cond_0
     :goto_0
@@ -83,14 +83,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 824
+    .line 855
     const/4 v1, 0x0
 
     invoke-interface {v9, v1}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v7
 
-    .line 825
+    .line 856
     .local v7, accountId:J
     iget-object v1, p0, Lcom/android/email/Controller$9;->this$0:Lcom/android/email/Controller;
 
@@ -102,11 +102,11 @@
 
     move-result-object v6
 
-    .line 826
+    .line 857
     .local v6, account:Lcom/android/email/provider/EmailContent$Account;
     if-eqz v6, :cond_0
 
-    .line 827
+    .line 858
     iget-object v1, p0, Lcom/android/email/Controller$9;->this$0:Lcom/android/email/Controller;
 
     invoke-static {v1}, Lcom/android/email/Controller;->access$400(Lcom/android/email/Controller;)Landroid/content/Context;
@@ -127,7 +127,7 @@
 
     move-result-object v11
 
-    .line 829
+    .line 860
     .local v11, info:Lcom/android/email/mail/Store$StoreInfo;
     if-eqz v11, :cond_0
 
@@ -135,16 +135,16 @@
 
     if-lez v1, :cond_0
 
-    .line 830
+    .line 861
     iget v12, v11, Lcom/android/email/mail/Store$StoreInfo;->mVisibleLimitDefault:I
 
-    .line 831
+    .line 862
     .local v12, limit:I
     new-instance v10, Landroid/content/ContentValues;
 
     invoke-direct {v10}, Landroid/content/ContentValues;-><init>()V
 
-    .line 832
+    .line 863
     .local v10, cv:Landroid/content/ContentValues;
     const-string v1, "visibleLimit"
 
@@ -154,7 +154,7 @@
 
     invoke-virtual {v10, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 833
+    .line 864
     sget-object v1, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v2, 0x1
@@ -175,7 +175,7 @@
 
     goto :goto_0
 
-    .line 839
+    .line 870
     .end local v6           #account:Lcom/android/email/provider/EmailContent$Account;
     .end local v7           #accountId:J
     .end local v10           #cv:Landroid/content/ContentValues;
@@ -193,13 +193,13 @@
 
     if-nez v2, :cond_1
 
-    .line 840
+    .line 871
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
+    .line 870
     :cond_1
     throw v1
 
-    .line 839
     .restart local v13       #selection:Ljava/lang/String;
     :cond_2
     if-eqz v9, :cond_3
@@ -210,10 +210,10 @@
 
     if-nez v1, :cond_3
 
-    .line 840
+    .line 871
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
-    .line 843
+    .line 874
     :cond_3
     return-void
 .end method

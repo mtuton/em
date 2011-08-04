@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageView;->onForwardOld()V
+    value = Lcom/android/email/activity/MessageView;->onForward()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2465
+    .line 3162
     iput-object p1, p0, Lcom/android/email/activity/MessageView$12;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +42,11 @@
     .parameter "arg0"
 
     .prologue
-    .line 2467
+    .line 3165
     iget-object v0, p0, Lcom/android/email/activity/MessageView$12;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-virtual {v0}, Lcom/android/email/activity/MessageView;->finish()V
 
-    .line 2469
+    .line 3167
     return-void
 .end method

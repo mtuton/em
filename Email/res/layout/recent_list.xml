@@ -9,7 +9,6 @@
     <com.sec.android.touchwiz.widget.TwSoftkeyView android:id="@id/softkeyview" android:layout_width="fill_parent" android:layout_height="57.0dip"
       xmlns:touchwiz="http://schemas.android.com/apk/res/touchwiz">
         <com.sec.android.touchwiz.widget.TwSoftkeyItem android:id="@id/tw_select" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true" touchwiz:twSoftkeyItemType="text" touchwiz:twSoftkeyItemText="@string/select_action" />
-        <com.sec.android.touchwiz.widget.TwSoftkeyItem android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twSoftkeyItemType="space" />
         <com.sec.android.touchwiz.widget.TwSoftkeyItem android:id="@id/tw_cancel" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true" touchwiz:twSoftkeyItemType="text" touchwiz:twSoftkeyItemText="@string/cancel_action" />
     </com.sec.android.touchwiz.widget.TwSoftkeyView>
 </LinearLayout>

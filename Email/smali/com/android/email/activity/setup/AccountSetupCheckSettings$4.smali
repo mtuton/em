@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 462
+    .line 474
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$4;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 
     const/4 v3, 0x0
 
-    .line 463
+    .line 476
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$4;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     invoke-static {v2}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$000(Lcom/android/email/activity/setup/AccountSetupCheckSettings;)Z
@@ -54,11 +54,11 @@
 
     if-eqz v2, :cond_0
 
-    .line 492
+    .line 505
     :goto_0
     return-void
 
-    .line 466
+    .line 479
     :cond_0
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$4;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
@@ -68,7 +68,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ProgressBar;->setIndeterminate(Z)V
 
-    .line 467
+    .line 480
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$4;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     invoke-static {v2}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$300(Lcom/android/email/activity/setup/AccountSetupCheckSettings;)Lcom/android/email/provider/EmailContent$Account;
@@ -79,13 +79,13 @@
 
     iget-object v1, v2, Lcom/android/email/provider/EmailContent$HostAuth;->mAddress:Ljava/lang/String;
 
-    .line 468
+    .line 481
     .local v1, host:Ljava/lang/String;
     new-array v0, v5, [Ljava/lang/String;
 
     aput-object v1, v0, v3
 
-    .line 469
+    .line 482
     .local v0, args:[Ljava/lang/Object;
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
@@ -101,7 +101,7 @@
 
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$4;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
-    const v4, 0x7f080181
+    const v4, 0x7f08019c
 
     invoke-virtual {v3, v4}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->getString(I)Ljava/lang/String;
 
@@ -113,7 +113,7 @@
 
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$4;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
-    const v4, 0x7f080167
+    const v4, 0x7f08017d
 
     invoke-virtual {v3, v4, v0}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -129,7 +129,7 @@
 
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$4;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
-    const v4, 0x7f080011
+    const v4, 0x7f080113
 
     invoke-virtual {v3, v4}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->getString(I)Ljava/lang/String;
 
@@ -145,7 +145,7 @@
 
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$4;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
-    const v4, 0x7f080012
+    const v4, 0x7f080114
 
     invoke-virtual {v3, v4}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->getString(I)Ljava/lang/String;
 

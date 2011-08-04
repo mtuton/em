@@ -17,6 +17,10 @@
 # instance fields
 .field accountKey:S
 
+.field convId:Ljava/lang/String;
+
+.field convThreadId:I
+
 .field displayName:Ljava/lang/String;
 
 .field flagAttachment:S
@@ -25,13 +29,25 @@
 
 .field flagRead:S
 
+.field flagReadConv:I
+
 .field followUpFlag:I
+
+.field followflagComConv:I
+
+.field followflagSetConv:I
 
 .field importance:I
 
+.field lastVerb:I
+
 .field mailBoxKey:S
 
+.field messageType:I
+
 .field recordID:I
+
+.field smimeFlags:I
 
 .field subject:Ljava/lang/String;
 
@@ -50,7 +66,7 @@
     .parameter
 
     .prologue
-    .line 7330
+    .line 9520
     iput-object p1, p0, Lcom/android/email/activity/MessageList$MessageData;->this$0:Lcom/android/email/activity/MessageList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

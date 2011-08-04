@@ -17,6 +17,8 @@
 # instance fields
 .field private mAccountId:J
 
+.field private mConversationId:Ljava/lang/String;
+
 .field private mOptionsBodyPreferenceTruncationSize:I
 
 .field private mOptionsBodyPreferenceType:Lcom/android/exchange/SearchRequest$BodyPreferenceType;
@@ -59,50 +61,50 @@
     .locals 2
 
     .prologue
-    .line 291
+    .line 317
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 292
+    .line 318
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/android/exchange/SearchRequest$Builder;->mAccountId:J
 
-    .line 293
+    .line 319
     sget-object v0, Lcom/android/exchange/SearchRequest$StoreName;->INVALID:Lcom/android/exchange/SearchRequest$StoreName;
 
     iput-object v0, p0, Lcom/android/exchange/SearchRequest$Builder;->mStoreName:Lcom/android/exchange/SearchRequest$StoreName;
 
-    .line 294
+    .line 320
     sget-object v0, Lcom/android/exchange/SearchRequest$QueryClass;->INVALID:Lcom/android/exchange/SearchRequest$QueryClass;
 
     iput-object v0, p0, Lcom/android/exchange/SearchRequest$Builder;->mQueryClass:Lcom/android/exchange/SearchRequest$QueryClass;
 
-    .line 295
+    .line 321
     sget-object v0, Lcom/android/exchange/SearchRequest$BodyPreferenceType;->INVALID:Lcom/android/exchange/SearchRequest$BodyPreferenceType;
 
     iput-object v0, p0, Lcom/android/exchange/SearchRequest$Builder;->mOptionsBodyPreferenceType:Lcom/android/exchange/SearchRequest$BodyPreferenceType;
 
-    .line 296
+    .line 322
     sget-object v0, Lcom/android/exchange/SearchRequest$OptionsMIMESupport;->INVALID:Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
 
     iput-object v0, p0, Lcom/android/exchange/SearchRequest$Builder;->mOptionsMIMESupport:Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
 
-    .line 297
+    .line 323
     sget-object v0, Lcom/android/exchange/SearchRequest$BodyPreferenceType;->INVALID:Lcom/android/exchange/SearchRequest$BodyPreferenceType;
 
     iput-object v0, p0, Lcom/android/exchange/SearchRequest$Builder;->mOptionsBodyPreferenceType:Lcom/android/exchange/SearchRequest$BodyPreferenceType;
 
-    .line 298
+    .line 324
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/exchange/SearchRequest$Builder;->mOptionsBodyPreferenceTruncationSize:I
 
-    .line 299
+    .line 325
     sget-object v0, Lcom/android/exchange/SearchRequest$OptionsMIMESupport;->INVALID:Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
 
     iput-object v0, p0, Lcom/android/exchange/SearchRequest$Builder;->mOptionsMIMESupport:Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
 
-    .line 300
+    .line 326
     return-void
 .end method
 
@@ -113,18 +115,18 @@
     .parameter "accountId"
 
     .prologue
-    .line 303
+    .line 329
     iput-wide p1, p0, Lcom/android/exchange/SearchRequest$Builder;->mAccountId:J
 
-    .line 304
+    .line 330
     return-object p0
 .end method
 
 .method public build()Lcom/android/exchange/SearchRequest;
-    .locals 18
+    .locals 19
 
     .prologue
-    .line 373
+    .line 404
     new-instance v2, Lcom/android/exchange/SearchRequest$SearchRequestImpl;
 
     move-object/from16 v0, p0
@@ -211,7 +213,13 @@
 
     move-object/from16 v17, v0
 
-    invoke-direct/range {v2 .. v17}, Lcom/android/exchange/SearchRequest$SearchRequestImpl;-><init>(JLcom/android/exchange/SearchRequest$StoreName;Ljava/lang/String;Ljava/lang/String;Lcom/android/exchange/SearchRequest$QueryClass;[JLjava/util/Date;Ljava/util/Date;Landroid/util/Pair;ZZLcom/android/exchange/SearchRequest$BodyPreferenceType;ILcom/android/exchange/SearchRequest$OptionsMIMESupport;)V
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/exchange/SearchRequest$Builder;->mConversationId:Ljava/lang/String;
+
+    move-object/from16 v18, v0
+
+    invoke-direct/range {v2 .. v18}, Lcom/android/exchange/SearchRequest$SearchRequestImpl;-><init>(JLcom/android/exchange/SearchRequest$StoreName;Ljava/lang/String;Ljava/lang/String;Lcom/android/exchange/SearchRequest$QueryClass;[JLjava/util/Date;Ljava/util/Date;Landroid/util/Pair;ZZLcom/android/exchange/SearchRequest$BodyPreferenceType;ILcom/android/exchange/SearchRequest$OptionsMIMESupport;Ljava/lang/String;)V
 
     return-object v2
 .end method
@@ -221,10 +229,10 @@
     .parameter "optionsBodyPreferenceTruncationSize"
 
     .prologue
-    .line 363
+    .line 394
     iput p1, p0, Lcom/android/exchange/SearchRequest$Builder;->mOptionsBodyPreferenceTruncationSize:I
 
-    .line 364
+    .line 395
     return-object p0
 .end method
 
@@ -233,10 +241,10 @@
     .parameter "optionsBodyPreferenceType"
 
     .prologue
-    .line 358
+    .line 389
     iput-object p1, p0, Lcom/android/exchange/SearchRequest$Builder;->mOptionsBodyPreferenceType:Lcom/android/exchange/SearchRequest$BodyPreferenceType;
 
-    .line 359
+    .line 390
     return-object p0
 .end method
 
@@ -244,12 +252,12 @@
     .locals 1
 
     .prologue
-    .line 348
+    .line 379
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/exchange/SearchRequest$Builder;->mOptionsDeepTraversal:Z
 
-    .line 349
+    .line 380
     return-object p0
 .end method
 
@@ -258,10 +266,10 @@
     .parameter "optionsMIMESupport"
 
     .prologue
-    .line 368
+    .line 399
     iput-object p1, p0, Lcom/android/exchange/SearchRequest$Builder;->mOptionsMIMESupport:Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
 
-    .line 369
+    .line 400
     return-object p0
 .end method
 
@@ -271,7 +279,7 @@
     .parameter "endRange"
 
     .prologue
-    .line 343
+    .line 374
     new-instance v0, Landroid/util/Pair;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -286,7 +294,7 @@
 
     iput-object v0, p0, Lcom/android/exchange/SearchRequest$Builder;->mOptionsRange:Landroid/util/Pair;
 
-    .line 344
+    .line 375
     return-object p0
 .end method
 
@@ -294,12 +302,12 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 384
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/exchange/SearchRequest$Builder;->mOptionsRebuildResults:Z
 
-    .line 354
+    .line 385
     return-object p0
 .end method
 
@@ -308,10 +316,10 @@
     .parameter "queryClass"
 
     .prologue
-    .line 323
+    .line 354
     iput-object p1, p0, Lcom/android/exchange/SearchRequest$Builder;->mQueryClass:Lcom/android/exchange/SearchRequest$QueryClass;
 
-    .line 324
+    .line 355
     return-object p0
 .end method
 
@@ -320,10 +328,22 @@
     .parameter "queryCollectionIds"
 
     .prologue
-    .line 328
+    .line 359
     iput-object p1, p0, Lcom/android/exchange/SearchRequest$Builder;->mQueryCollectionIds:[J
 
-    .line 329
+    .line 360
+    return-object p0
+.end method
+
+.method public queryConvId(Ljava/lang/String;)Lcom/android/exchange/SearchRequest$Builder;
+    .locals 0
+    .parameter "convId"
+
+    .prologue
+    .line 349
+    iput-object p1, p0, Lcom/android/exchange/SearchRequest$Builder;->mConversationId:Ljava/lang/String;
+
+    .line 350
     return-object p0
 .end method
 
@@ -332,10 +352,10 @@
     .parameter "query"
 
     .prologue
-    .line 318
+    .line 344
     iput-object p1, p0, Lcom/android/exchange/SearchRequest$Builder;->mQueryFreeText:Ljava/lang/String;
 
-    .line 319
+    .line 345
     return-object p0
 .end method
 
@@ -344,10 +364,10 @@
     .parameter "queryGreaterThan"
 
     .prologue
-    .line 333
+    .line 364
     iput-object p1, p0, Lcom/android/exchange/SearchRequest$Builder;->mQueryGreaterThan:Ljava/util/Date;
 
-    .line 334
+    .line 365
     return-object p0
 .end method
 
@@ -356,22 +376,10 @@
     .parameter "queryLessThan"
 
     .prologue
-    .line 338
+    .line 369
     iput-object p1, p0, Lcom/android/exchange/SearchRequest$Builder;->mQueryLessThan:Ljava/util/Date;
 
-    .line 339
-    return-object p0
-.end method
-
-.method public queryText(Ljava/lang/String;)Lcom/android/exchange/SearchRequest$Builder;
-    .locals 0
-    .parameter "query"
-
-    .prologue
-    .line 313
-    iput-object p1, p0, Lcom/android/exchange/SearchRequest$Builder;->mQueryText:Ljava/lang/String;
-
-    .line 314
+    .line 370
     return-object p0
 .end method
 
@@ -380,9 +388,9 @@
     .parameter "storeName"
 
     .prologue
-    .line 308
+    .line 334
     iput-object p1, p0, Lcom/android/exchange/SearchRequest$Builder;->mStoreName:Lcom/android/exchange/SearchRequest$StoreName;
 
-    .line 309
+    .line 335
     return-object p0
 .end method

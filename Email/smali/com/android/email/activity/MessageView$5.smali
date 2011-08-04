@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageView;->onDeletePopup()V
+    value = Lcom/android/email/activity/MessageView;->onCreateDialog(I)Landroid/app/Dialog;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/activity/MessageView;
 
+.field final synthetic val$extra:Ljava/lang/String;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/email/activity/MessageView;)V
+.method constructor <init>(Lcom/android/email/activity/MessageView;Ljava/lang/String;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 1528
+    .line 1549
     iput-object p1, p0, Lcom/android/email/activity/MessageView$5;->this$0:Lcom/android/email/activity/MessageView;
+
+    iput-object p2, p0, Lcom/android/email/activity/MessageView$5;->val$extra:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,19 +43,60 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 1
+    .locals 2
     .parameter "dialog"
-    .parameter "whichButton"
+    .parameter "which"
 
     .prologue
-    .line 1529
-    iget-object v0, p0, Lcom/android/email/activity/MessageView$5;->this$0:Lcom/android/email/activity/MessageView;
+    .line 1551
+    packed-switch p2, :pswitch_data_0
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageView;->access$1100(Lcom/android/email/activity/MessageView;)V
-
-    .line 1531
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
-
-    .line 1532
+    .line 1567
+    :goto_0
     return-void
+
+    .line 1554
+    :pswitch_0
+    iget-object v1, p0, Lcom/android/email/activity/MessageView$5;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-virtual {v1}, Lcom/android/email/activity/MessageView;->onSaveImage()V
+
+    goto :goto_0
+
+    .line 1558
+    :pswitch_1
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.intent.action.VIEW"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 1559
+    .local v0, intent:Landroid/content/Intent;
+    iget-object v1, p0, Lcom/android/email/activity/MessageView$5;->val$extra:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    .line 1561
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    .line 1562
+    iget-object v1, p0, Lcom/android/email/activity/MessageView$5;->this$0:Lcom/android/email/activity/MessageView;
+
+    invoke-virtual {v1, v0}, Lcom/android/email/activity/MessageView;->startActivity(Landroid/content/Intent;)V
+
+    goto :goto_0
+
+    .line 1551
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method

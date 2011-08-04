@@ -1,4 +1,4 @@
-.class Lcom/android/exchange/EasSyncService$1;
+.class synthetic Lcom/android/exchange/EasSyncService$1;
 .super Ljava/lang/Object;
 .source "EasSyncService.java"
 

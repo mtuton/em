@@ -23,28 +23,6 @@
 .end annotation
 
 
-# static fields
-.field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.email.service.IEmailServiceCallback"
-
-.field static final TRANSACTION_emptyTrashStatus:I = 0x9
-
-.field static final TRANSACTION_folderCommandStatus:I = 0x8
-
-.field static final TRANSACTION_loadAttachmentStatus:I = 0x3
-
-.field static final TRANSACTION_loadMoreStatus:I = 0x5
-
-.field static final TRANSACTION_moveItemStatus:I = 0x6
-
-.field static final TRANSACTION_oOOfStatus:I = 0x7
-
-.field static final TRANSACTION_sendMessageStatus:I = 0x4
-
-.field static final TRANSACTION_syncMailboxListStatus:I = 0x1
-
-.field static final TRANSACTION_syncMailboxStatus:I = 0x2
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 1
@@ -137,7 +115,7 @@
     .line 38
     sparse-switch p1, :sswitch_data_0
 
-    .line 163
+    .line 189
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
@@ -568,6 +546,90 @@
 
     goto/16 :goto_0
 
+    .line 164
+    .end local v3           #_arg0:J
+    .end local v5           #_arg1:I
+    .end local v7           #_arg2:I
+    :sswitch_a
+    const-string v2, "com.android.email.service.IEmailServiceCallback"
+
+    move-object/from16 v0, p2
+
+    move-object v1, v2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 166
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v3
+
+    .line 168
+    .restart local v3       #_arg0:J
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    .line 170
+    .restart local v5       #_arg1:I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v7
+
+    .line 171
+    .restart local v7       #_arg2:I
+    invoke-virtual {p0, v3, v4, v5, v7}, Lcom/android/email/service/IEmailServiceCallback$Stub;->setDeviceInfoStatus(JII)V
+
+    .line 172
+    const/4 v2, 0x1
+
+    goto/16 :goto_0
+
+    .line 176
+    .end local v3           #_arg0:J
+    .end local v5           #_arg1:I
+    .end local v7           #_arg2:I
+    :sswitch_b
+    const-string v2, "com.android.email.service.IEmailServiceCallback"
+
+    move-object/from16 v0, p2
+
+    move-object v1, v2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 178
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createByteArray()[B
+
+    move-result-object v3
+
+    .line 180
+    .local v3, _arg0:[B
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    .line 182
+    .restart local v5       #_arg1:I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v7
+
+    .line 184
+    .restart local v7       #_arg2:I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v8
+
+    .line 185
+    .local v8, _arg3:I
+    invoke-virtual {p0, v3, v5, v7, v8}, Lcom/android/email/service/IEmailServiceCallback$Stub;->moveConvAlwaysStatus([BIII)V
+
+    .line 186
+    const/4 v2, 0x1
+
+    goto/16 :goto_0
+
     .line 38
     :sswitch_data_0
     .sparse-switch
@@ -580,6 +642,8 @@
         0x7 -> :sswitch_7
         0x8 -> :sswitch_8
         0x9 -> :sswitch_9
+        0xa -> :sswitch_a
+        0xb -> :sswitch_b
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

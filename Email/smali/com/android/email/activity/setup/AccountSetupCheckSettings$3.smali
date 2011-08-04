@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 415
+    .line 427
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$3;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     iput p2, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$3;->val$msgResId:I
@@ -56,7 +56,7 @@
     .locals 4
 
     .prologue
-    .line 416
+    .line 429
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$3;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
     invoke-static {v0}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->access$000(Lcom/android/email/activity/setup/AccountSetupCheckSettings;)Z
@@ -65,11 +65,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 449
+    .line 462
     :goto_0
     return-void
 
-    .line 419
+    .line 432
     :cond_0
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$3;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
@@ -81,7 +81,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setIndeterminate(Z)V
 
-    .line 420
+    .line 433
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$3;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
@@ -96,7 +96,7 @@
 
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupCheckSettings$3;->this$0:Lcom/android/email/activity/setup/AccountSetupCheckSettings;
 
-    const v2, 0x7f0800bf
+    const v2, 0x7f0800c9
 
     invoke-virtual {v1, v2}, Lcom/android/email/activity/setup/AccountSetupCheckSettings;->getString(I)Ljava/lang/String;
 

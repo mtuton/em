@@ -4,40 +4,6 @@
 
 
 # static fields
-.field public static final ACTIVATION_EXCEPTION:I = 0x14
-
-.field public static final AUTHENTICATION_FAILED:I = 0x5
-
-.field public static final AUTH_REQUIRED:I = 0x3
-
-.field public static final DUPLICATE_ACCOUNT:I = 0x6
-
-.field public static final EMPTYTRASH_EXCEPTION:I = 0x20000
-
-.field public static final GAL_EXCEPTION:I = 0xa
-
-.field public static final GENERAL_SECURITY:I = 0x4
-
-.field public static final IOERROR:I = 0x1
-
-.field public static final LOADMORE_EXCEPTION:I = 0x30000
-
-.field public static final NO_ERROR:I = -0x1
-
-.field public static final OOO_EXCEPTION:I = 0xb
-
-.field public static final PROTOCOL_VERSION_UNSUPPORTED:I = 0x9
-
-.field public static final SECURITY_POLICIES_REQUIRED:I = 0x7
-
-.field public static final SECURITY_POLICIES_UNSUPPORTED:I = 0x8
-
-.field public static final TLS_REQUIRED:I = 0x2
-
-.field public static final UNSPECIFIED_EXCEPTION:I = 0x0
-
-.field public static final UNSUPPORTED:I = 0x10000
-
 .field public static final serialVersionUID:J = -0x1L
 
 
@@ -51,13 +17,13 @@
     .parameter "exceptionType"
 
     .prologue
-    .line 91
+    .line 104
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    .line 92
+    .line 105
     iput p1, p0, Lcom/android/email/mail/MessagingException;->mExceptionType:I
 
-    .line 93
+    .line 106
     return-void
 .end method
 
@@ -67,17 +33,17 @@
     .parameter "exceptionMessage"
 
     .prologue
-    .line 106
+    .line 119
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 107
+    .line 120
     iput p1, p0, Lcom/android/email/mail/MessagingException;->mExceptionType:I
 
-    .line 108
+    .line 121
     return-void
 .end method
 
@@ -87,13 +53,13 @@
     .parameter "message"
 
     .prologue
-    .line 100
+    .line 113
     invoke-direct {p0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 101
+    .line 114
     iput p1, p0, Lcom/android/email/mail/MessagingException;->mExceptionType:I
 
-    .line 102
+    .line 115
     return-void
 .end method
 
@@ -102,15 +68,15 @@
     .parameter "message"
 
     .prologue
-    .line 77
+    .line 90
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 78
+    .line 91
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/email/mail/MessagingException;->mExceptionType:I
 
-    .line 79
+    .line 92
     return-void
 .end method
 
@@ -120,15 +86,15 @@
     .parameter "throwable"
 
     .prologue
-    .line 82
+    .line 95
     invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 83
+    .line 96
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/email/mail/MessagingException;->mExceptionType:I
 
-    .line 84
+    .line 97
     return-void
 .end method
 
@@ -138,7 +104,7 @@
     .locals 1
 
     .prologue
-    .line 117
+    .line 130
     iget v0, p0, Lcom/android/email/mail/MessagingException;->mExceptionType:I
 
     return v0

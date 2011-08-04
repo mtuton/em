@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 28
+    .line 30
     new-instance v0, Lcom/android/email/mail/Message$RecipientType;
 
     const-string v1, "TO"
@@ -69,7 +69,7 @@
 
     sput-object v0, Lcom/android/email/mail/Message$RecipientType;->BCC:Lcom/android/email/mail/Message$RecipientType;
 
-    .line 27
+    .line 29
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/email/mail/Message$RecipientType;
@@ -102,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 27
+    .line 29
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -110,27 +110,26 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/email/mail/Message$RecipientType;
     .locals 1
-    .parameter "name"
+    .parameter
 
     .prologue
-    .line 27
+    .line 29
     const-class v0, Lcom/android/email/mail/Message$RecipientType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
-    .end local p0
     check-cast p0, Lcom/android/email/mail/Message$RecipientType;
 
     return-object p0
 .end method
 
-.method public static final values()[Lcom/android/email/mail/Message$RecipientType;
+.method public static values()[Lcom/android/email/mail/Message$RecipientType;
     .locals 1
 
     .prologue
-    .line 27
+    .line 29
     sget-object v0, Lcom/android/email/mail/Message$RecipientType;->$VALUES:[Lcom/android/email/mail/Message$RecipientType;
 
     invoke-virtual {v0}, [Lcom/android/email/mail/Message$RecipientType;->clone()Ljava/lang/Object;

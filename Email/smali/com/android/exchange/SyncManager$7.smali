@@ -1,4 +1,4 @@
-.class Lcom/android/exchange/SyncManager$7;
+.class final Lcom/android/exchange/SyncManager$7;
 .super Ljava/lang/Object;
 .source "SyncManager.java"
 
@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 2149
+    .line 2339
     iput-object p1, p0, Lcom/android/exchange/SyncManager$7;->val$syncManager:Lcom/android/exchange/SyncManager;
 
     iput-wide p2, p0, Lcom/android/exchange/SyncManager$7;->val$id:J
@@ -53,7 +53,7 @@
     .prologue
     const-string v6, "mailboxKey=?"
 
-    .line 2150
+    .line 2341
     iget-object v3, p0, Lcom/android/exchange/SyncManager$7;->val$syncManager:Lcom/android/exchange/SyncManager;
 
     iget-wide v4, p0, Lcom/android/exchange/SyncManager$7;->val$id:J
@@ -62,18 +62,18 @@
 
     move-result-object v1
 
-    .line 2151
+    .line 2342
     .local v1, m:Lcom/android/email/provider/EmailContent$Mailbox;
     if-eqz v1, :cond_0
 
-    .line 2157
+    .line 2348
     iget v3, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mType:I
 
     const/4 v4, 0x3
 
     if-ne v3, v4, :cond_1
 
-    .line 2158
+    .line 2349
     const/4 v3, 0x1
 
     new-array v0, v3, [Ljava/lang/String;
@@ -88,7 +88,7 @@
 
     aput-object v4, v0, v3
 
-    .line 2159
+    .line 2350
     .local v0, args:[Ljava/lang/String;
     sget-object v3, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
@@ -96,7 +96,7 @@
 
     move-result-object v2
 
-    .line 2160
+    .line 2351
     .local v2, resolver:Landroid/content/ContentResolver;
     sget-object v3, Lcom/android/email/provider/EmailContent$Message;->DELETED_CONTENT_URI:Landroid/net/Uri;
 
@@ -104,21 +104,21 @@
 
     invoke-virtual {v2, v3, v6, v0}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 2162
+    .line 2353
     sget-object v3, Lcom/android/email/provider/EmailContent$Message;->UPDATED_CONTENT_URI:Landroid/net/Uri;
 
     const-string v4, "mailboxKey=?"
 
     invoke-virtual {v2, v3, v6, v0}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 2182
+    .line 2373
     .end local v0           #args:[Ljava/lang/String;
     .end local v2           #resolver:Landroid/content/ContentResolver;
     :cond_0
     :goto_0
     return-void
 
-    .line 2166
+    .line 2357
     :cond_1
     iget-object v3, p0, Lcom/android/exchange/SyncManager$7;->val$service:Lcom/android/exchange/AbstractSyncService;
 
@@ -132,12 +132,12 @@
 
     iput-object v4, v3, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    .line 2167
+    .line 2358
     iget-object v3, p0, Lcom/android/exchange/SyncManager$7;->val$service:Lcom/android/exchange/AbstractSyncService;
 
     iput-object v1, v3, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    .line 2169
+    .line 2360
     iget-object v3, p0, Lcom/android/exchange/SyncManager$7;->val$service:Lcom/android/exchange/AbstractSyncService;
 
     invoke-virtual {v3}, Lcom/android/exchange/AbstractSyncService;->alarm()Z
@@ -146,37 +146,37 @@
 
     if-nez v3, :cond_0
 
-    .line 2173
+    .line 2364
     const-string v3, "Alarm failed; releasing mailbox"
 
     invoke-static {v3}, Lcom/android/exchange/SyncManager;->log(Ljava/lang/String;)V
 
-    .line 2174
+    .line 2365
     invoke-static {}, Lcom/android/exchange/SyncManager;->access$400()Ljava/lang/Object;
 
     move-result-object v3
 
     monitor-enter v3
 
-    .line 2175
+    .line 2366
     :try_start_0
     iget-object v4, p0, Lcom/android/exchange/SyncManager$7;->val$syncManager:Lcom/android/exchange/SyncManager;
 
     iget-wide v5, p0, Lcom/android/exchange/SyncManager$7;->val$id:J
 
-    invoke-static {v4, v5, v6}, Lcom/android/exchange/SyncManager;->access$1800(Lcom/android/exchange/SyncManager;J)V
+    invoke-static {v4, v5, v6}, Lcom/android/exchange/SyncManager;->access$2000(Lcom/android/exchange/SyncManager;J)V
 
-    .line 2176
+    .line 2367
     monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2179
+    .line 2370
     invoke-static {}, Lcom/android/exchange/SyncManager;->shutdownConnectionManager()V
 
     goto :goto_0
 
-    .line 2176
+    .line 2367
     :catchall_0
     move-exception v4
 

@@ -175,7 +175,7 @@
     .parameter "parentMailboxId"
 
     .prologue
-    .line 168
+    .line 174
     return-void
 .end method
 
@@ -220,6 +220,18 @@
 
     .prologue
     .line 119
+    return-void
+.end method
+
+.method public moveConversationAlways(JJ[BI)V
+    .locals 0
+    .parameter "messageId"
+    .parameter "toMailboxId"
+    .parameter "conversatoinId"
+    .parameter "ignore"
+
+    .prologue
+    .line 179
     return-void
 .end method
 
@@ -277,6 +289,20 @@
 
     .prologue
     .line 133
+    return-void
+.end method
+
+.method public setDeviceInfo(J)V
+    .locals 0
+    .parameter "accountId"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 167
     return-void
 .end method
 

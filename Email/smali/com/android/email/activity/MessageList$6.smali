@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageList;->animation_title2(I)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/email/activity/MessageList;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -23,34 +23,16 @@
 .field final synthetic val$ANIMATION_TYPE:I
 
 
-# direct methods
-.method constructor <init>(Lcom/android/email/activity/MessageList;I)V
-    .locals 0
-    .parameter
-    .parameter
-
-    .prologue
-    .line 1803
-    iput-object p1, p0, Lcom/android/email/activity/MessageList$6;->this$0:Lcom/android/email/activity/MessageList;
-
-    iput p2, p0, Lcom/android/email/activity/MessageList$6;->val$ANIMATION_TYPE:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .locals 2
     .parameter "_animation"
 
     .prologue
-    .line 1783
+    .line 2052
     iget-object v0, p0, Lcom/android/email/activity/MessageList$6;->this$0:Lcom/android/email/activity/MessageList;
 
-    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$1700(Lcom/android/email/activity/MessageList;)Landroid/widget/LinearLayout;
+    invoke-static {v0}, Lcom/android/email/activity/MessageList;->access$1900(Lcom/android/email/activity/MessageList;)Lcom/android/email/winset/TwTabWidget;
 
     move-result-object v0
 
@@ -58,9 +40,9 @@
 
     invoke-direct {v1, p0}, Lcom/android/email/activity/MessageList$6$1;-><init>(Lcom/android/email/activity/MessageList$6;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Lcom/android/email/winset/TwTabWidget;->post(Ljava/lang/Runnable;)Z
 
-    .line 1799
+    .line 2068
     return-void
 .end method
 
@@ -69,7 +51,7 @@
     .parameter "_animation"
 
     .prologue
-    .line 1802
+    .line 2071
     return-void
 .end method
 
@@ -78,6 +60,6 @@
     .parameter "_animation"
 
     .prologue
-    .line 1805
+    .line 2074
     return-void
 .end method

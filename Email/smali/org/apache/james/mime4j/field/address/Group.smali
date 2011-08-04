@@ -68,26 +68,6 @@
     return-void
 .end method
 
-.method public getMailboxes()Lorg/apache/james/mime4j/field/address/MailboxList;
-    .locals 1
-
-    .prologue
-    .line 53
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/address/Group;->mailboxList:Lorg/apache/james/mime4j/field/address/MailboxList;
-
-    return-object v0
-.end method
-
-.method public getName()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 46
-    iget-object v0, p0, Lorg/apache/james/mime4j/field/address/Group;->name:Ljava/lang/String;
-
-    return-object v0
-.end method
-
 .method public toString()Ljava/lang/String;
     .locals 4
 

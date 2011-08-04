@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1386
+    .line 1530
     iput-object p1, p0, Lcom/android/exchange/SyncManager$3;->this$0:Lcom/android/exchange/SyncManager;
 
     iput-object p2, p0, Lcom/android/exchange/SyncManager$3;->val$syncManager:Lcom/android/exchange/SyncManager;
@@ -43,21 +43,21 @@
     .locals 6
 
     .prologue
-    .line 1388
+    .line 1534
     sget-object v1, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     if-nez v1, :cond_0
 
-    .line 1389
+    .line 1535
     const-string v1, "!!! EAS SyncManager  -----------  Quit thread : null INSTANCE(1)"
 
     invoke-static {v1}, Lcom/android/exchange/SyncManager;->alwaysLog(Ljava/lang/String;)V
 
-    .line 1412
+    .line 1563
     :goto_0
     return-void
 
-    .line 1393
+    .line 1539
     :cond_0
     iget-object v1, p0, Lcom/android/exchange/SyncManager$3;->val$syncManager:Lcom/android/exchange/SyncManager;
 
@@ -71,13 +71,13 @@
 
     move-result-object v0
 
-    .line 1395
+    .line 1541
     .local v0, accountMgrList:[Landroid/accounts/Account;
     sget-object v1, Lcom/android/exchange/SyncManager;->sAccountList:Lcom/android/exchange/SyncManager$AccountList;
 
     monitor-enter v1
 
-    .line 1399
+    .line 1545
     :try_start_0
     iget-object v2, p0, Lcom/android/exchange/SyncManager$3;->this$0:Lcom/android/exchange/SyncManager;
 
@@ -87,7 +87,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 1400
+    .line 1546
     iget-object v2, p0, Lcom/android/exchange/SyncManager$3;->this$0:Lcom/android/exchange/SyncManager;
 
     invoke-static {v2}, Lcom/android/exchange/SyncManager;->access$1400(Lcom/android/exchange/SyncManager;)Lcom/android/exchange/SyncManager$AccountObserver;
@@ -96,22 +96,22 @@
 
     invoke-static {v2}, Lcom/android/exchange/SyncManager$AccountObserver;->access$900(Lcom/android/exchange/SyncManager$AccountObserver;)V
 
-    .line 1403
+    .line 1549
     sget-object v2, Lcom/android/exchange/SyncManager;->INSTANCE:Lcom/android/exchange/SyncManager;
 
     if-nez v2, :cond_1
 
-    .line 1404
+    .line 1550
     const-string v2, "!!! EAS SyncManager  -----------  Quit thread : null INSTANCE(2)"
 
     invoke-static {v2}, Lcom/android/exchange/SyncManager;->alwaysLog(Ljava/lang/String;)V
 
-    .line 1405
+    .line 1551
     monitor-exit v1
 
     goto :goto_0
 
-    .line 1411
+    .line 1562
     :catchall_0
     move-exception v2
 
@@ -121,7 +121,7 @@
 
     throw v2
 
-    .line 1408
+    .line 1554
     :cond_1
     :try_start_1
     iget-object v2, p0, Lcom/android/exchange/SyncManager$3;->val$syncManager:Lcom/android/exchange/SyncManager;
@@ -138,7 +138,26 @@
 
     invoke-static {v2, v3, v0, v4, v5}, Lcom/android/exchange/SyncManager;->reconcileAccountsWithAccountManager(Landroid/content/Context;Ljava/util/List;[Landroid/accounts/Account;ZLandroid/content/ContentResolver;)V
 
-    .line 1411
+    .line 1556
+    invoke-static {}, Lcom/android/exchange/SyncManager;->access$1500()Z
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-ne v2, v3, :cond_2
+
+    .line 1558
+    iget-object v2, p0, Lcom/android/exchange/SyncManager$3;->this$0:Lcom/android/exchange/SyncManager;
+
+    invoke-static {v2}, Lcom/android/exchange/SyncManager;->access$1600(Lcom/android/exchange/SyncManager;)V
+
+    .line 1559
+    const/4 v2, 0x0
+
+    invoke-static {v2}, Lcom/android/exchange/SyncManager;->access$1502(Z)Z
+
+    .line 1562
     :cond_2
     monitor-exit v1
     :try_end_1

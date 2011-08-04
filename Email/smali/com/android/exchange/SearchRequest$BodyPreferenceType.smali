@@ -146,7 +146,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/exchange/SearchRequest$BodyPreferenceType;
     .locals 1
-    .parameter "name"
+    .parameter
 
     .prologue
     .line 39
@@ -156,13 +156,12 @@
 
     move-result-object p0
 
-    .end local p0
     check-cast p0, Lcom/android/exchange/SearchRequest$BodyPreferenceType;
 
     return-object p0
 .end method
 
-.method public static final values()[Lcom/android/exchange/SearchRequest$BodyPreferenceType;
+.method public static values()[Lcom/android/exchange/SearchRequest$BodyPreferenceType;
     .locals 1
 
     .prologue

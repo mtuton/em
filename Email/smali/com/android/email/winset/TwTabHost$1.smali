@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 188
+    .line 203
     iput-object p1, p0, Lcom/android/email/winset/TwTabHost$1;->this$0:Lcom/android/email/winset/TwTabHost;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,10 +44,10 @@
     .parameter "event"
 
     .prologue
-    .line 189
+    .line 205
     sparse-switch p2, :sswitch_data_0
 
-    .line 199
+    .line 217
     iget-object v0, p0, Lcom/android/email/winset/TwTabHost$1;->this$0:Lcom/android/email/winset/TwTabHost;
 
     invoke-static {v0}, Lcom/android/email/winset/TwTabHost;->access$100(Lcom/android/email/winset/TwTabHost;)Landroid/widget/FrameLayout;
@@ -58,7 +58,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->requestFocus(I)Z
 
-    .line 200
+    .line 218
     iget-object v0, p0, Lcom/android/email/winset/TwTabHost$1;->this$0:Lcom/android/email/winset/TwTabHost;
 
     invoke-static {v0}, Lcom/android/email/winset/TwTabHost;->access$100(Lcom/android/email/winset/TwTabHost;)Landroid/widget/FrameLayout;
@@ -72,15 +72,16 @@
     :goto_0
     return v0
 
-    .line 196
+    .line 214
     :sswitch_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 189
+    .line 205
     :sswitch_data_0
     .sparse-switch
+        0x4 -> :sswitch_0
         0x13 -> :sswitch_0
         0x14 -> :sswitch_0
         0x15 -> :sswitch_0

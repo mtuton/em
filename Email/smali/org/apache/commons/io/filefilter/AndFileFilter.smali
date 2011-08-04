@@ -3,8 +3,8 @@
 .source "AndFileFilter.java"
 
 # interfaces
-.implements Lorg/apache/commons/io/filefilter/ConditionalFileFilter;
 .implements Ljava/io/Serializable;
+.implements Lorg/apache/commons/io/filefilter/ConditionalFileFilter;
 
 
 # instance fields
@@ -28,39 +28,6 @@
 
     .line 52
     return-void
-.end method
-
-.method public constructor <init>(Ljava/util/List;)V
-    .locals 1
-    .parameter "fileFilters"
-
-    .prologue
-    .line 61
-    invoke-direct {p0}, Lorg/apache/commons/io/filefilter/AbstractFileFilter;-><init>()V
-
-    .line 62
-    if-nez p1, :cond_0
-
-    .line 63
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lorg/apache/commons/io/filefilter/AndFileFilter;->fileFilters:Ljava/util/List;
-
-    .line 67
-    :goto_0
-    return-void
-
-    .line 65
-    :cond_0
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    iput-object v0, p0, Lorg/apache/commons/io/filefilter/AndFileFilter;->fileFilters:Ljava/util/List;
-
-    goto :goto_0
 .end method
 
 .method public constructor <init>(Lorg/apache/commons/io/filefilter/IOFileFilter;Lorg/apache/commons/io/filefilter/IOFileFilter;)V
@@ -251,51 +218,6 @@
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 90
-    return-void
-.end method
-
-.method public getFileFilters()Ljava/util/List;
-    .locals 1
-
-    .prologue
-    .line 96
-    iget-object v0, p0, Lorg/apache/commons/io/filefilter/AndFileFilter;->fileFilters:Ljava/util/List;
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public removeFileFilter(Lorg/apache/commons/io/filefilter/IOFileFilter;)Z
-    .locals 1
-    .parameter "ioFileFilter"
-
-    .prologue
-    .line 103
-    iget-object v0, p0, Lorg/apache/commons/io/filefilter/AndFileFilter;->fileFilters:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public setFileFilters(Ljava/util/List;)V
-    .locals 1
-    .parameter "fileFilters"
-
-    .prologue
-    .line 110
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    iput-object v0, p0, Lorg/apache/commons/io/filefilter/AndFileFilter;->fileFilters:Ljava/util/List;
-
-    .line 111
     return-void
 .end method
 

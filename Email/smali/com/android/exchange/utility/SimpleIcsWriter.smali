@@ -3,12 +3,6 @@
 .source "SimpleIcsWriter.java"
 
 
-# static fields
-.field private static final CHAR_MAX_BYTES_IN_UTF8:I = 0x4
-
-.field private static final MAX_LINE_LENGTH:I = 0x4b
-
-
 # instance fields
 .field private final mOut:Ljava/io/ByteArrayOutputStream;
 

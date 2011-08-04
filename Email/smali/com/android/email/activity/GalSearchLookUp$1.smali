@@ -3,7 +3,7 @@
 .source "GalSearchLookUp.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 87
+    .line 102
     iput-object p1, p0, Lcom/android/email/activity/GalSearchLookUp$1;->this$0:Lcom/android/email/activity/GalSearchLookUp;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,16 +37,47 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 1
-    .parameter "v"
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .locals 2
+    .parameter
+    .parameter "view"
+    .parameter "position"
+    .parameter "id"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/widget/AdapterView",
+            "<*>;",
+            "Landroid/view/View;",
+            "IJ)V"
+        }
+    .end annotation
 
     .prologue
-    .line 88
+    .line 106
+    .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
+    const-wide v0, 0x7fffffffffffffffL
+
+    cmp-long v0, p4, v0
+
+    if-nez v0, :cond_0
+
+    .line 108
     iget-object v0, p0, Lcom/android/email/activity/GalSearchLookUp$1;->this$0:Lcom/android/email/activity/GalSearchLookUp;
 
-    invoke-static {v0}, Lcom/android/email/activity/GalSearchLookUp;->access$000(Lcom/android/email/activity/GalSearchLookUp;)V
+    invoke-virtual {v0}, Lcom/android/email/activity/GalSearchLookUp;->doGalSearch()V
 
-    .line 89
+    .line 112
+    :goto_0
     return-void
+
+    .line 110
+    :cond_0
+    iget-object v0, p0, Lcom/android/email/activity/GalSearchLookUp$1;->this$0:Lcom/android/email/activity/GalSearchLookUp;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/android/email/activity/GalSearchLookUp;->access$002(Lcom/android/email/activity/GalSearchLookUp;I)I
+
+    goto :goto_0
 .end method

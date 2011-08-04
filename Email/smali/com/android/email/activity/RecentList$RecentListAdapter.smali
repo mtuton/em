@@ -31,7 +31,7 @@
     .parameter "to"
 
     .prologue
-    .line 371
+    .line 370
     iput-object p1, p0, Lcom/android/email/activity/RecentList$RecentListAdapter;->this$0:Lcom/android/email/activity/RecentList;
 
     move-object v0, p0
@@ -46,10 +46,10 @@
 
     move-object v5, p6
 
-    .line 372
+    .line 371
     invoke-direct/range {v0 .. v5}, Landroid/widget/SimpleCursorAdapter;-><init>(Landroid/content/Context;ILandroid/database/Cursor;[Ljava/lang/String;[I)V
 
-    .line 374
+    .line 373
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-interface {p4}, Landroid/database/Cursor;->getCount()I
@@ -60,7 +60,7 @@
 
     iput-object v0, p0, Lcom/android/email/activity/RecentList$RecentListAdapter;->mCheckStates:Landroid/util/SparseBooleanArray;
 
-    .line 375
+    .line 374
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .locals 1
 
     .prologue
-    .line 408
+    .line 407
     iget-object v0, p0, Lcom/android/email/activity/RecentList$RecentListAdapter;->mCheckStates:Landroid/util/SparseBooleanArray;
 
     return-object v0
@@ -83,14 +83,14 @@
     .parameter "parent"
 
     .prologue
-    .line 380
+    .line 379
     invoke-super {p0, p1, p2, p3}, Landroid/widget/SimpleCursorAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v1
 
-    .line 381
+    .line 380
     .local v1, v:Landroid/view/View;
-    const v2, 0x7f07010b
+    const v2, 0x7f07015f
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -98,7 +98,7 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    .line 382
+    .line 381
     .local v0, cb:Landroid/widget/CheckBox;
     iget-object v2, p0, Lcom/android/email/activity/RecentList$RecentListAdapter;->mCheckStates:Landroid/util/SparseBooleanArray;
 
@@ -110,14 +110,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 395
+    .line 394
     invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 396
+    .line 395
     iget-object v2, p0, Lcom/android/email/activity/RecentList$RecentListAdapter;->this$0:Lcom/android/email/activity/RecentList;
 
     invoke-static {v2}, Lcom/android/email/activity/RecentList;->access$000(Lcom/android/email/activity/RecentList;)Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
@@ -128,7 +128,7 @@
 
     invoke-virtual {v2, v3}, Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;->setEnabled(Z)V
 
-    .line 400
+    .line 399
     :cond_0
     return-object v1
 .end method
@@ -139,14 +139,14 @@
     .parameter "isChecked"
 
     .prologue
-    .line 403
+    .line 402
     iget-object v0, p0, Lcom/android/email/activity/RecentList$RecentListAdapter;->mCheckStates:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 404
+    .line 403
     invoke-virtual {p0}, Lcom/android/email/activity/RecentList$RecentListAdapter;->notifyDataSetChanged()V
 
-    .line 405
+    .line 404
     return-void
 .end method

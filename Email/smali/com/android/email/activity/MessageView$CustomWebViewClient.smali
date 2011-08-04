@@ -18,21 +18,6 @@
 .field final synthetic this$0:Lcom/android/email/activity/MessageView;
 
 
-# direct methods
-.method private constructor <init>(Lcom/android/email/activity/MessageView;)V
-    .locals 0
-    .parameter
-
-    .prologue
-    .line 2195
-    iput-object p1, p0, Lcom/android/email/activity/MessageView$CustomWebViewClient;->this$0:Lcom/android/email/activity/MessageView;
-
-    invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
-
-    return-void
-.end method
-
-
 # virtual methods
 .method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
     .locals 6
@@ -44,7 +29,7 @@
 
     const-string v4, "View >>"
 
-    .line 2206
+    .line 2927
     const-string v2, "View >>"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -67,7 +52,7 @@
 
     invoke-static {v4, v2}, Lcom/android/email/Email;->logv(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2208
+    .line 2929
     if-eqz p2, :cond_0
 
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -82,12 +67,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 2209
+    .line 2930
     iget-object v2, p0, Lcom/android/email/activity/MessageView$CustomWebViewClient;->this$0:Lcom/android/email/activity/MessageView;
 
     iget-object v3, p0, Lcom/android/email/activity/MessageView$CustomWebViewClient;->this$0:Lcom/android/email/activity/MessageView;
 
-    invoke-static {v3}, Lcom/android/email/activity/MessageView;->access$1800(Lcom/android/email/activity/MessageView;)J
+    invoke-static {v3}, Lcom/android/email/activity/MessageView;->access$2700(Lcom/android/email/activity/MessageView;)J
 
     move-result-wide v3
 
@@ -95,11 +80,11 @@
 
     move-result v2
 
-    .line 2226
+    .line 2947
     :goto_0
     return v2
 
-    .line 2213
+    .line 2934
     :cond_0
     const-string v2, "View >>"
 
@@ -123,10 +108,10 @@
 
     invoke-static {v4, v2}, Lcom/android/email/Email;->logv(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2214
+    .line 2935
     const/4 v1, 0x0
 
-    .line 2215
+    .line 2936
     .local v1, result:Z
     new-instance v0, Landroid/content/Intent;
 
@@ -138,13 +123,13 @@
 
     invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 2216
+    .line 2937
     .local v0, intent:Landroid/content/Intent;
     const-string v2, "android.intent.category.BROWSABLE"
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2217
+    .line 2938
     const-string v2, "com.android.browser.application_id"
 
     iget-object v3, p0, Lcom/android/email/activity/MessageView$CustomWebViewClient;->this$0:Lcom/android/email/activity/MessageView;
@@ -155,12 +140,12 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2218
+    .line 2939
     const/high16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 2220
+    .line 2941
     :try_start_0
     iget-object v2, p0, Lcom/android/email/activity/MessageView$CustomWebViewClient;->this$0:Lcom/android/email/activity/MessageView;
 
@@ -168,16 +153,16 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2221
+    .line 2942
     const/4 v1, 0x1
 
     :goto_1
     move v2, v1
 
-    .line 2226
+    .line 2947
     goto :goto_0
 
-    .line 2222
+    .line 2943
     :catch_0
     move-exception v2
 

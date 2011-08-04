@@ -1,4 +1,4 @@
-.class Lcom/android/email/provider/EmailContent$1;
+.class synthetic Lcom/android/email/provider/EmailContent$1;
 .super Ljava/lang/Object;
 .source "EmailContent.java"
 
@@ -25,7 +25,7 @@
     .locals 3
 
     .prologue
-    .line 1414
+    .line 1723
     invoke-static {}, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagDefaultState;->values()[Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagDefaultState;
 
     move-result-object v0
@@ -147,7 +147,7 @@
     :try_end_6
     .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_3
 
-    .line 1047
+    .line 1356
     :goto_6
     invoke-static {}, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->values()[Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
@@ -224,7 +224,7 @@
 
     goto :goto_7
 
-    .line 1414
+    .line 1723
     :catch_3
     move-exception v0
 

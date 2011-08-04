@@ -4,22 +4,6 @@
 
 
 # static fields
-.field private static final KEY_EXTRA_ACCOUNT:Ljava/lang/String; = "com.android.email.ACCOUNT"
-
-.field public static final KEY_EXTRA_DOMAIN:Ljava/lang/String; = "com.android.email.DOMAIN"
-
-.field private static final KEY_EXTRA_EAS_FLOW:Ljava/lang/String; = "com.android.email.EAS_FLOW"
-
-.field public static final KEY_EXTRA_EMAIL:Ljava/lang/String; = "com.android.email.EMAIL"
-
-.field private static final KEY_EXTRA_MAKE_DEFAULT:Ljava/lang/String; = "com.android.email.MAKE_DEFAULT"
-
-.field public static final KEY_EXTRA_PASSWORD:Ljava/lang/String; = "com.android.email.PASSWORD"
-
-.field public static final KEY_EXTRA_TRUST_CERT:Ljava/lang/String; = "com.android.email.TRUSTCERT"
-
-.field public static final KEY_EXTRA_USER:Ljava/lang/String; = "com.android.email.USER"
-
 .field private static final TAG:Ljava/lang/String;
 
 
@@ -37,8 +21,6 @@
 .field mNextButton:Lcom/android/email/EmailTwSoftkeyItem;
 
 .field public mPasswordText:Landroid/widget/EditText;
-
-.field mTrustCerti:Z
 
 .field public mUserNameText:Landroid/widget/EditText;
 
@@ -95,10 +77,10 @@
 
 .method public static actionAutoDiscoverSetupExchangeIntent(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;ZZ)V
     .locals 2
-    .parameter "fromActivity"
-    .parameter "account"
-    .parameter "makeDefault"
-    .parameter "easFlowMode"
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
     .line 61
@@ -109,7 +91,6 @@
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     .line 62
-    .local v0, i:Landroid/content/Intent;
     const-string v1, "com.android.email.ACCOUNT"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
@@ -413,7 +394,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 73
-    const v1, 0x7f03000e
+    const v1, 0x7f03000f
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/AutoDiscoverSetupExchange;->setContentView(I)V
 
@@ -427,7 +408,7 @@
 
     .line 88
     .local v0, validationTextWatcher:Landroid/text/TextWatcher;
-    const v1, 0x7f07001b
+    const v1, 0x7f07001f
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/AutoDiscoverSetupExchange;->findViewById(I)Landroid/view/View;
 
@@ -438,7 +419,7 @@
     iput-object v1, p0, Lcom/android/email/activity/setup/AutoDiscoverSetupExchange;->mNextButton:Lcom/android/email/EmailTwSoftkeyItem;
 
     .line 89
-    const v1, 0x7f070042
+    const v1, 0x7f070050
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/AutoDiscoverSetupExchange;->findViewById(I)Landroid/view/View;
 
@@ -451,7 +432,7 @@
     iput-object v1, p0, Lcom/android/email/activity/setup/AutoDiscoverSetupExchange;->mEmailText:Landroid/widget/EditText;
 
     .line 90
-    const v1, 0x7f07001a
+    const v1, 0x7f07001e
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/AutoDiscoverSetupExchange;->findViewById(I)Landroid/view/View;
 
@@ -464,7 +445,7 @@
     iput-object v1, p0, Lcom/android/email/activity/setup/AutoDiscoverSetupExchange;->mPasswordText:Landroid/widget/EditText;
 
     .line 91
-    const v1, 0x7f070043
+    const v1, 0x7f070051
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/AutoDiscoverSetupExchange;->findViewById(I)Landroid/view/View;
 
@@ -477,7 +458,7 @@
     iput-object v1, p0, Lcom/android/email/activity/setup/AutoDiscoverSetupExchange;->mDomainText:Landroid/widget/EditText;
 
     .line 92
-    const v1, 0x7f070044
+    const v1, 0x7f070052
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/AutoDiscoverSetupExchange;->findViewById(I)Landroid/view/View;
 
@@ -513,7 +494,7 @@
     invoke-direct {p0}, Lcom/android/email/activity/setup/AutoDiscoverSetupExchange;->setSmartValues()V
 
     .line 102
-    const v1, 0x7f070045
+    const v1, 0x7f070053
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/AutoDiscoverSetupExchange;->findViewById(I)Landroid/view/View;
 

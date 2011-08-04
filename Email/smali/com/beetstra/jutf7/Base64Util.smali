@@ -3,10 +3,6 @@
 .source "Base64Util.java"
 
 
-# static fields
-.field private static final ALPHABET_LENGTH:I = 0x40
-
-
 # instance fields
 .field private final alphabet:[C
 

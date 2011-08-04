@@ -20,10 +20,6 @@
 .end annotation
 
 
-# static fields
-.field private static final RESOURCE:I = 0x7f030013
-
-
 # instance fields
 .field private inflater:Landroid/view/LayoutInflater;
 
@@ -35,53 +31,53 @@
     .parameter "objects"
 
     .prologue
-    .line 3373
-    const v0, 0x7f030013
+    .line 4603
+    const v0, 0x7f030017
 
     invoke-direct {p0, p1, v0, p2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
-    .line 3374
+    .line 4604
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/email/activity/MessageView$DisplayViewAdapter;->inflater:Landroid/view/LayoutInflater;
 
-    .line 3375
+    .line 4605
     return-void
 .end method
 
 
 # virtual methods
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 6
+    .locals 5
     .parameter "position"
     .parameter "convertView"
     .parameter "parent"
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    .line 3382
-    if-nez p2, :cond_1
+    .line 4612
+    if-nez p2, :cond_0
 
-    .line 3384
+    .line 4614
     iget-object v2, p0, Lcom/android/email/activity/MessageView$DisplayViewAdapter;->inflater:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f030013
+    const v3, 0x7f030017
 
-    invoke-virtual {v2, v3, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-virtual {v2, v3, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object p2
 
-    .line 3386
+    .line 4616
     new-instance v0, Lcom/android/email/activity/MessageView$DisplayViewAdapter$ViewHolder;
 
     invoke-direct {v0}, Lcom/android/email/activity/MessageView$DisplayViewAdapter$ViewHolder;-><init>()V
 
-    .line 3387
+    .line 4617
     .local v0, holder:Lcom/android/email/activity/MessageView$DisplayViewAdapter$ViewHolder;
-    const v2, 0x7f070070
+    const v2, 0x7f07008b
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -91,10 +87,10 @@
 
     iput-object v2, v0, Lcom/android/email/activity/MessageView$DisplayViewAdapter$ViewHolder;->displayModeType:Landroid/widget/TextView;
 
-    .line 3389
+    .line 4619
     invoke-virtual {p2, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 3395
+    .line 4625
     :goto_0
     invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageView$DisplayViewAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -102,11 +98,11 @@
 
     check-cast v1, Lcom/android/email/activity/MessageView$DisplayViewType;
 
-    .line 3396
+    .line 4626
     .local v1, viewType:Lcom/android/email/activity/MessageView$DisplayViewType;
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
-    .line 3397
+    .line 4627
     const-string v2, "View >>"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -129,32 +125,14 @@
 
     invoke-static {v2, v3}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3399
-    :cond_0
-    iget-object v2, v0, Lcom/android/email/activity/MessageView$DisplayViewAdapter$ViewHolder;->displayModeType:Landroid/widget/TextView;
-
-    invoke-virtual {v1}, Lcom/android/email/activity/MessageView$DisplayViewType;->getName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 3400
-    iget-object v2, v0, Lcom/android/email/activity/MessageView$DisplayViewAdapter$ViewHolder;->displayModeType:Landroid/widget/TextView;
-
-    invoke-virtual {v1}, Lcom/android/email/activity/MessageView$DisplayViewType;->getImg()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3, v5, v5, v5}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    .line 3402
+    .line 4635
+    :goto_1
     return-object p2
 
-    .line 3392
+    .line 4622
     .end local v0           #holder:Lcom/android/email/activity/MessageView$DisplayViewAdapter$ViewHolder;
     .end local v1           #viewType:Lcom/android/email/activity/MessageView$DisplayViewType;
-    :cond_1
+    :cond_0
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -163,4 +141,26 @@
 
     .restart local v0       #holder:Lcom/android/email/activity/MessageView$DisplayViewAdapter$ViewHolder;
     goto :goto_0
+
+    .line 4631
+    .restart local v1       #viewType:Lcom/android/email/activity/MessageView$DisplayViewType;
+    :cond_1
+    iget-object v2, v0, Lcom/android/email/activity/MessageView$DisplayViewAdapter$ViewHolder;->displayModeType:Landroid/widget/TextView;
+
+    invoke-virtual {v1}, Lcom/android/email/activity/MessageView$DisplayViewType;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 4632
+    iget-object v2, v0, Lcom/android/email/activity/MessageView$DisplayViewAdapter$ViewHolder;->displayModeType:Landroid/widget/TextView;
+
+    invoke-virtual {v1}, Lcom/android/email/activity/MessageView$DisplayViewType;->getImg()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3, v4, v4, v4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_1
 .end method

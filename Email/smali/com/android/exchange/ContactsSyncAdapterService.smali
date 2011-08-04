@@ -12,11 +12,7 @@
 
 
 # static fields
-.field private static final ACCOUNT_AND_TYPE_CONTACTS:Ljava/lang/String; = "accountKey=? AND type=66"
-
-.field private static final ID_PROJECTION:[Ljava/lang/String; = null
-
-.field private static final TAG:Ljava/lang/String; = "EAS ContactsSyncAdapterService"
+.field private static final ID_PROJECTION:[Ljava/lang/String;
 
 .field private static sSyncAdapter:Lcom/android/exchange/ContactsSyncAdapterService$SyncAdapterImpl;
 

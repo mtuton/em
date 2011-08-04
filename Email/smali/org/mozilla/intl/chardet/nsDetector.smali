@@ -76,17 +76,6 @@
     goto :goto_0
 .end method
 
-.method public Done()V
-    .locals 0
-
-    .prologue
-    .line 167
-    invoke-virtual {p0}, Lorg/mozilla/intl/chardet/nsDetector;->DataEnd()V
-
-    .line 169
-    return-void
-.end method
-
 .method public Init(Lorg/mozilla/intl/chardet/nsICharsetDetectionObserver;)V
     .locals 0
     .parameter "aObserver"

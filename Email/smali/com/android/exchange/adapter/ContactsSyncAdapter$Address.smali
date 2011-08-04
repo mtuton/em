@@ -31,7 +31,7 @@
     .locals 0
 
     .prologue
-    .line 254
+    .line 256
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .locals 1
 
     .prologue
-    .line 262
+    .line 264
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->city:Ljava/lang/String;
 
     if-nez v0, :cond_0

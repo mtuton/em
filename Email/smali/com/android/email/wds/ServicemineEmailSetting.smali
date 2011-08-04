@@ -133,7 +133,7 @@
 
     sput-object v0, Lcom/android/email/wds/ServicemineEmailSetting;->SMTP:Lcom/android/email/wds/ServicemineEmailSetting$Protocol;
 
-    .line 58
+    .line 59
     new-instance v0, Lcom/android/email/wds/ServicemineEmailSetting$Protocol;
 
     const-string v1, "eas"
@@ -142,7 +142,7 @@
 
     sput-object v0, Lcom/android/email/wds/ServicemineEmailSetting;->EAS:Lcom/android/email/wds/ServicemineEmailSetting$Protocol;
 
-    .line 60
+    .line 61
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -156,10 +156,10 @@
     .locals 3
 
     .prologue
-    .line 68
+    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 69
+    .line 70
     sget-object v0, Lcom/android/email/wds/ServicemineEmailSetting;->securityTypes:Ljava/util/Map;
 
     sget-object v1, Lcom/android/email/wds/ServicemineEmailSetting;->TLS:Lcom/android/email/wds/ServicemineEmailSetting$SecurityType;
@@ -172,7 +172,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 70
+    .line 71
     sget-object v0, Lcom/android/email/wds/ServicemineEmailSetting;->securityTypes:Ljava/util/Map;
 
     sget-object v1, Lcom/android/email/wds/ServicemineEmailSetting;->SSL:Lcom/android/email/wds/ServicemineEmailSetting$SecurityType;
@@ -185,7 +185,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 71
+    .line 72
     sget-object v0, Lcom/android/email/wds/ServicemineEmailSetting;->securityTypes:Ljava/util/Map;
 
     sget-object v1, Lcom/android/email/wds/ServicemineEmailSetting;->NONE:Lcom/android/email/wds/ServicemineEmailSetting$SecurityType;
@@ -198,7 +198,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 73
+    .line 74
     sget-object v0, Lcom/android/email/wds/ServicemineEmailSetting;->protocols:Ljava/util/Map;
 
     sget-object v1, Lcom/android/email/wds/ServicemineEmailSetting;->IMAP4:Lcom/android/email/wds/ServicemineEmailSetting$Protocol;
@@ -211,7 +211,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 74
+    .line 75
     sget-object v0, Lcom/android/email/wds/ServicemineEmailSetting;->protocols:Ljava/util/Map;
 
     sget-object v1, Lcom/android/email/wds/ServicemineEmailSetting;->POP3:Lcom/android/email/wds/ServicemineEmailSetting$Protocol;
@@ -224,7 +224,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 75
+    .line 76
     sget-object v0, Lcom/android/email/wds/ServicemineEmailSetting;->protocols:Ljava/util/Map;
 
     sget-object v1, Lcom/android/email/wds/ServicemineEmailSetting;->SMTP:Lcom/android/email/wds/ServicemineEmailSetting$Protocol;
@@ -237,7 +237,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 76
+    .line 78
     sget-object v0, Lcom/android/email/wds/ServicemineEmailSetting;->protocols:Ljava/util/Map;
 
     sget-object v1, Lcom/android/email/wds/ServicemineEmailSetting;->EAS:Lcom/android/email/wds/ServicemineEmailSetting$Protocol;
@@ -250,7 +250,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 77
+    .line 79
     return-void
 .end method
 
@@ -263,18 +263,18 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 102
+    .line 104
     instance-of v2, p1, Lcom/android/email/wds/ServicemineEmailSetting;
 
     if-nez v2, :cond_0
 
     move v2, v4
 
-    .line 106
+    .line 108
     :goto_0
     return v2
 
-    .line 104
+    .line 106
     :cond_0
     move-object v0, p1
 
@@ -282,7 +282,7 @@
 
     move-object v1, v0
 
-    .line 106
+    .line 108
     .local v1, other:Lcom/android/email/wds/ServicemineEmailSetting;
     iget-object v2, p0, Lcom/android/email/wds/ServicemineEmailSetting;->server:Ljava/lang/String;
 
@@ -339,14 +339,14 @@
     .end annotation
 
     .prologue
-    .line 80
+    .line 82
     const/4 v0, 0x0
 
-    .line 81
+    .line 83
     .local v0, uriProtocol:Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 83
+    .line 85
     .local v1, uriSecurity:Ljava/lang/String;
     sget-object v2, Lcom/android/email/wds/ServicemineEmailSetting;->IMAP4:Lcom/android/email/wds/ServicemineEmailSetting$Protocol;
 
@@ -358,10 +358,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 84
+    .line 86
     const-string v0, "imap"
 
-    .line 89
+    .line 91
     :goto_0
     sget-object v2, Lcom/android/email/wds/ServicemineEmailSetting;->NONE:Lcom/android/email/wds/ServicemineEmailSetting$SecurityType;
 
@@ -373,10 +373,10 @@
 
     if-eqz v2, :cond_2
 
-    .line 90
+    .line 92
     const-string v1, ""
 
-    .line 97
+    .line 99
     :cond_0
     :goto_1
     new-instance v2, Ljava/net/URI;
@@ -425,7 +425,7 @@
 
     return-object v2
 
-    .line 86
+    .line 88
     :cond_1
     iget-object v2, p0, Lcom/android/email/wds/ServicemineEmailSetting;->protocol:Lcom/android/email/wds/ServicemineEmailSetting$Protocol;
 
@@ -435,7 +435,7 @@
 
     goto :goto_0
 
-    .line 91
+    .line 93
     :cond_2
     sget-object v2, Lcom/android/email/wds/ServicemineEmailSetting;->SSL:Lcom/android/email/wds/ServicemineEmailSetting$SecurityType;
 
@@ -447,12 +447,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 92
+    .line 94
     const-string v1, "+ssl+"
 
     goto :goto_1
 
-    .line 93
+    .line 95
     :cond_3
     sget-object v2, Lcom/android/email/wds/ServicemineEmailSetting;->TLS:Lcom/android/email/wds/ServicemineEmailSetting$SecurityType;
 
@@ -464,7 +464,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 94
+    .line 96
     const-string v1, "+tls+"
 
     goto :goto_1
@@ -475,7 +475,7 @@
     .parameter "protocol"
 
     .prologue
-    .line 114
+    .line 116
     sget-object v0, Lcom/android/email/wds/ServicemineEmailSetting;->protocols:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -486,7 +486,7 @@
 
     iput-object v0, p0, Lcom/android/email/wds/ServicemineEmailSetting;->protocol:Lcom/android/email/wds/ServicemineEmailSetting$Protocol;
 
-    .line 115
+    .line 117
     iget-object v0, p0, Lcom/android/email/wds/ServicemineEmailSetting;->protocol:Lcom/android/email/wds/ServicemineEmailSetting$Protocol;
 
     if-nez v0, :cond_0
@@ -521,7 +521,7 @@
 
     throw v0
 
-    .line 116
+    .line 118
     :cond_0
     return-void
 .end method
@@ -531,7 +531,7 @@
     .parameter "securityType"
 
     .prologue
-    .line 119
+    .line 121
     sget-object v0, Lcom/android/email/wds/ServicemineEmailSetting;->securityTypes:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -542,7 +542,7 @@
 
     iput-object v0, p0, Lcom/android/email/wds/ServicemineEmailSetting;->securityType:Lcom/android/email/wds/ServicemineEmailSetting$SecurityType;
 
-    .line 120
+    .line 122
     iget-object v0, p0, Lcom/android/email/wds/ServicemineEmailSetting;->securityType:Lcom/android/email/wds/ServicemineEmailSetting$SecurityType;
 
     if-nez v0, :cond_0
@@ -577,7 +577,7 @@
 
     throw v0
 
-    .line 121
+    .line 123
     :cond_0
     return-void
 .end method

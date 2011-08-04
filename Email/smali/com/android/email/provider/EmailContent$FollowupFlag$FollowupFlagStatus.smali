@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 1177
+    .line 1486
     new-instance v0, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     const-string v1, "FOLLOWUP_STATUS_CLEARED"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_CLEARED:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
-    .line 1178
+    .line 1487
     new-instance v0, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     const-string v1, "FOLLOWUP_STATUS_COMPLETE"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_COMPLETE:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
-    .line 1179
+    .line 1488
     new-instance v0, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     const-string v1, "FOLLOWUP_STATUS_ACTIVE"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->FOLLOWUP_STATUS_ACTIVE:Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
-    .line 1176
+    .line 1485
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 1176
+    .line 1485
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -112,27 +112,26 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
     .locals 1
-    .parameter "name"
+    .parameter
 
     .prologue
-    .line 1176
+    .line 1485
     const-class v0, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
-    .end local p0
     check-cast p0, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     return-object p0
 .end method
 
-.method public static final values()[Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
+.method public static values()[Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
     .locals 1
 
     .prologue
-    .line 1176
+    .line 1485
     sget-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->$VALUES:[Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;
 
     invoke-virtual {v0}, [Lcom/android/email/provider/EmailContent$FollowupFlag$FollowupFlagStatus;->clone()Ljava/lang/Object;

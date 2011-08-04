@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 139
+    .line 137
     iput-object p1, p0, Lcom/android/email/activity/setup/SyncScheduleSettings$4;->this$0:Lcom/android/email/activity/setup/SyncScheduleSettings;
 
     iput p2, p0, Lcom/android/email/activity/setup/SyncScheduleSettings$4;->val$schedulePos:I
@@ -57,7 +57,7 @@
 
     iget-object v1, p0, Lcom/android/email/activity/setup/SyncScheduleSettings$4;->this$0:Lcom/android/email/activity/setup/SyncScheduleSettings;
 
-    const v2, 0x7f0801d4
+    const v2, 0x7f0801ff
 
     invoke-virtual {v1, v2}, Lcom/android/email/activity/setup/SyncScheduleSettings;->getString(I)Ljava/lang/String;
 

@@ -6,20 +6,6 @@
 .implements Landroid/view/View$OnClickListener;
 
 
-# static fields
-.field private static final DATE_DIALOG_FROM:I = 0x3e8
-
-.field private static final DATE_DIALOG_TO:I = 0x7d0
-
-.field private static final KEY_EXTRA_ACCOUNT_ID:Ljava/lang/String; = "com.android.email.AccountId"
-
-.field private static final KEY_EXTRA_MAILBOX_ID:Ljava/lang/String; = "com.android.email.MailboxId"
-
-.field private static final SEARCH_TEXT:Ljava/lang/String; = "com.android.email.SearchText"
-
-.field private static final TAG:Ljava/lang/String; = "CustomizeDate"
-
-
 # instance fields
 .field private cancelButton:Landroid/widget/Button;
 
@@ -141,14 +127,14 @@
 
     iput-object v0, p0, Lcom/android/email/activity/CustomizeDate;->dateFormatter:Ljava/text/SimpleDateFormat;
 
-    .line 397
+    .line 398
     new-instance v0, Lcom/android/email/activity/CustomizeDate$1;
 
     invoke-direct {v0, p0}, Lcom/android/email/activity/CustomizeDate$1;-><init>(Lcom/android/email/activity/CustomizeDate;)V
 
     iput-object v0, p0, Lcom/android/email/activity/CustomizeDate;->mFromDateSetListener:Landroid/app/DatePickerDialog$OnDateSetListener;
 
-    .line 412
+    .line 413
     new-instance v0, Lcom/android/email/activity/CustomizeDate$2;
 
     invoke-direct {v0, p0}, Lcom/android/email/activity/CustomizeDate$2;-><init>(Lcom/android/email/activity/CustomizeDate;)V
@@ -269,27 +255,27 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 449
+    .line 450
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->fromTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 450
+    .line 451
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->toTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 451
+    .line 452
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->fromDateButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 452
+    .line 453
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->toDateButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 453
+    .line 454
     return-void
 .end method
 
@@ -299,27 +285,27 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 456
+    .line 457
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->fromTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 457
+    .line 458
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->toTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 458
+    .line 459
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->fromDateButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 459
+    .line 460
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->toDateButton:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 460
+    .line 461
     return-void
 .end method
 
@@ -334,7 +320,7 @@
 
     .line 166
     .local v0, today:Ljava/util/Date;
-    const v1, 0x7f070049
+    const v1, 0x7f07005c
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -345,7 +331,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->todayLayout:Landroid/widget/RelativeLayout;
 
     .line 167
-    const v1, 0x7f07004c
+    const v1, 0x7f07005f
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -356,7 +342,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->oneDayLayout:Landroid/widget/RelativeLayout;
 
     .line 168
-    const v1, 0x7f07004f
+    const v1, 0x7f070062
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -367,7 +353,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->oneWeekLayout:Landroid/widget/RelativeLayout;
 
     .line 169
-    const v1, 0x7f070052
+    const v1, 0x7f070065
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -378,7 +364,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->oneMonthLayout:Landroid/widget/RelativeLayout;
 
     .line 170
-    const v1, 0x7f070055
+    const v1, 0x7f070068
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -389,7 +375,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->sixMonthLayout:Landroid/widget/RelativeLayout;
 
     .line 171
-    const v1, 0x7f070058
+    const v1, 0x7f07006b
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -400,7 +386,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->oneYearLayout:Landroid/widget/RelativeLayout;
 
     .line 172
-    const v1, 0x7f07005b
+    const v1, 0x7f07006e
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -411,7 +397,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->customizeLayout:Landroid/widget/RelativeLayout;
 
     .line 174
-    const v1, 0x7f07004b
+    const v1, 0x7f07005e
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -429,7 +415,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/RadioButton;->setChecked(Z)V
 
     .line 176
-    const v1, 0x7f07004e
+    const v1, 0x7f070061
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -440,7 +426,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->oneDayRadioButton:Landroid/widget/RadioButton;
 
     .line 177
-    const v1, 0x7f070051
+    const v1, 0x7f070064
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -451,7 +437,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->oneWeekRadioButton:Landroid/widget/RadioButton;
 
     .line 178
-    const v1, 0x7f070054
+    const v1, 0x7f070067
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -462,7 +448,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->oneMonthRadioButton:Landroid/widget/RadioButton;
 
     .line 179
-    const v1, 0x7f070057
+    const v1, 0x7f07006a
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -473,7 +459,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->sixMonthRadioButton:Landroid/widget/RadioButton;
 
     .line 180
-    const v1, 0x7f07005a
+    const v1, 0x7f07006d
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -484,7 +470,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->oneYearRadioButton:Landroid/widget/RadioButton;
 
     .line 181
-    const v1, 0x7f07005d
+    const v1, 0x7f070070
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -495,7 +481,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->customizeRadioButton:Landroid/widget/RadioButton;
 
     .line 183
-    const v1, 0x7f07005e
+    const v1, 0x7f070071
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -506,7 +492,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->fromTextView:Landroid/widget/TextView;
 
     .line 184
-    const v1, 0x7f070062
+    const v1, 0x7f070075
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -517,7 +503,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->toTextView:Landroid/widget/TextView;
 
     .line 186
-    const v1, 0x7f070060
+    const v1, 0x7f070073
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -528,7 +514,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->fromDateButton:Landroid/widget/Button;
 
     .line 187
-    const v1, 0x7f070064
+    const v1, 0x7f070077
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -539,7 +525,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->toDateButton:Landroid/widget/Button;
 
     .line 189
-    const v1, 0x7f07006a
+    const v1, 0x7f07007d
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -550,7 +536,7 @@
     iput-object v1, p0, Lcom/android/email/activity/CustomizeDate;->searchButton:Landroid/widget/Button;
 
     .line 190
-    const v1, 0x7f070068
+    const v1, 0x7f07007b
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->findViewById(I)Landroid/view/View;
 
@@ -688,7 +674,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 437
+    .line 438
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->mDate:Ljava/util/Date;
 
     invoke-virtual {v0}, Ljava/util/Date;->getYear()I
@@ -699,7 +685,7 @@
 
     iput v0, p0, Lcom/android/email/activity/CustomizeDate;->mYearToSearch:I
 
-    .line 438
+    .line 439
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->mDate:Ljava/util/Date;
 
     invoke-virtual {v0}, Ljava/util/Date;->getMonth()I
@@ -708,7 +694,7 @@
 
     iput v0, p0, Lcom/android/email/activity/CustomizeDate;->mMonthToSearch:I
 
-    .line 439
+    .line 440
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->mDate:Ljava/util/Date;
 
     invoke-virtual {v0}, Ljava/util/Date;->getDate()I
@@ -717,13 +703,13 @@
 
     iput v0, p0, Lcom/android/email/activity/CustomizeDate;->mDayToSearch:I
 
-    .line 441
+    .line 442
     iput v1, p0, Lcom/android/email/activity/CustomizeDate;->mHourFromSearch:I
 
-    .line 442
+    .line 443
     iput v1, p0, Lcom/android/email/activity/CustomizeDate;->mMinuteFromSearch:I
 
-    .line 444
+    .line 445
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->mDate:Ljava/util/Date;
 
     invoke-virtual {v0}, Ljava/util/Date;->getHours()I
@@ -732,7 +718,7 @@
 
     iput v0, p0, Lcom/android/email/activity/CustomizeDate;->mHourToSearch:I
 
-    .line 445
+    .line 446
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->mDate:Ljava/util/Date;
 
     invoke-virtual {v0}, Ljava/util/Date;->getMinutes()I
@@ -741,17 +727,17 @@
 
     iput v0, p0, Lcom/android/email/activity/CustomizeDate;->mMinuteToSearch:I
 
-    .line 446
+    .line 447
     return-void
 .end method
 
 .method public static startActivity(Landroid/app/Activity;JJILjava/lang/String;)V
     .locals 2
-    .parameter "activity"
-    .parameter "accountId"
-    .parameter "mailboxId"
-    .parameter "requestCode"
-    .parameter "searchText"
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
     .line 154
@@ -760,7 +746,6 @@
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
     .line 155
-    .local v0, searchQuery:Landroid/content/Intent;
     const-class v1, Lcom/android/email/activity/CustomizeDate;
 
     invoke-virtual {v0, p0, v1}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
@@ -793,42 +778,42 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 427
+    .line 428
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->todayRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 428
+    .line 429
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->oneDayRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 429
+    .line 430
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->oneWeekRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 430
+    .line 431
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->oneMonthRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 431
+    .line 432
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->sixMonthRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 432
+    .line 433
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->oneYearRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 433
+    .line 434
     iget-object v0, p0, Lcom/android/email/activity/CustomizeDate;->customizeRadioButton:Landroid/widget/RadioButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 434
+    .line 435
     return-void
 .end method
 
@@ -894,7 +879,7 @@
     .line 205
     invoke-direct {p0}, Lcom/android/email/activity/CustomizeDate;->disableCustomView()V
 
-    .line 381
+    .line 382
     :cond_0
     :goto_0
     return-void
@@ -1474,7 +1459,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f080256
+    const v11, 0x7f080282
 
     const/16 v12, 0x7d0
 
@@ -1963,7 +1948,7 @@
 
     invoke-virtual {v10, v11}, Lcom/android/exchange/provider/EmailSearchAdapter;->setIdStr(Ljava/lang/String;)V
 
-    .line 363
+    .line 364
     :goto_5
     iget-object v10, p0, Lcom/android/email/activity/CustomizeDate;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
@@ -1976,7 +1961,7 @@
 
     invoke-virtual {v10, v11}, Lcom/android/exchange/provider/EmailSearchAdapter;->setoptionsDeepTraversalStr(Ljava/lang/String;)V
 
-    .line 370
+    .line 371
     :goto_6
     iget-object v10, p0, Lcom/android/email/activity/CustomizeDate;->mController:Lcom/android/email/Controller;
 
@@ -1990,7 +1975,7 @@
 
     move-result-wide v6
 
-    .line 372
+    .line 373
     .local v6, searchFolderId:J
     iget-object v10, p0, Lcom/android/email/activity/CustomizeDate;->mEmailSearchAdapter:Lcom/android/exchange/provider/EmailSearchAdapter;
 
@@ -2000,73 +1985,22 @@
 
     invoke-virtual {v10, v11}, Lcom/android/exchange/provider/EmailSearchAdapter;->setFoldIdStr(Ljava/lang/String;)V
 
-    .line 373
-    const-string v10, "CustomizeDate"
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "fzhang email Search Adapter search is called mMailbox = "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    iget-object v12, p0, Lcom/android/email/activity/CustomizeDate;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
-
-    iget-wide v12, v12, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
-
-    invoke-virtual {v11, v12, v13}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    const-string v12, " foldid ="
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    const-string v12, "accoundid = "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    iget-object v12, p0, Lcom/android/email/activity/CustomizeDate;->mAccount:Lcom/android/email/provider/EmailContent$Account;
-
-    iget-wide v12, v12, Lcom/android/email/provider/EmailContent$Account;->mId:J
-
-    invoke-virtual {v11, v12, v13}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v10, v11}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 374
+    .line 375
     iget-object v10, p0, Lcom/android/email/activity/CustomizeDate;->mEmailSearchAdapter:Lcom/android/exchange/provider/EmailSearchAdapter;
 
     invoke-virtual {v10}, Lcom/android/exchange/provider/EmailSearchAdapter;->search()I
 
-    .line 375
+    .line 376
     const/4 v10, 0x1
 
     invoke-static {p0, v6, v7, v10}, Lcom/android/email/activity/MessageList;->actionHandleMailbox(Landroid/content/Context;JZ)V
 
-    .line 376
+    .line 377
     const/4 v10, -0x1
 
     invoke-virtual {p0, v10}, Lcom/android/email/activity/CustomizeDate;->setResult(I)V
 
-    .line 377
+    .line 378
     invoke-virtual {p0}, Lcom/android/email/activity/CustomizeDate;->finish()V
 
     goto/16 :goto_0
@@ -2124,7 +2058,7 @@
 
     invoke-virtual {v10, v11}, Lcom/android/exchange/provider/EmailSearchAdapter;->setIdStr(Ljava/lang/String;)V
 
-    goto/16 :goto_5
+    goto :goto_5
 
     .line 367
     :cond_10
@@ -2134,9 +2068,9 @@
 
     invoke-virtual {v10, v11}, Lcom/android/exchange/provider/EmailSearchAdapter;->setoptionsDeepTraversalStr(Ljava/lang/String;)V
 
-    goto/16 :goto_6
+    goto :goto_6
 
-    .line 378
+    .line 379
     .end local v0           #c:Ljava/util/Calendar;
     .end local v1           #cTo:Ljava/util/Calendar;
     .end local v4           #formatter:Ljava/text/SimpleDateFormat;
@@ -2148,7 +2082,7 @@
 
     if-ne p1, v10, :cond_0
 
-    .line 379
+    .line 380
     invoke-virtual {p0}, Lcom/android/email/activity/CustomizeDate;->finish()V
 
     goto/16 :goto_0
@@ -2159,7 +2093,7 @@
     .parameter "savedInstanceState"
 
     .prologue
-    const v5, 0x7f080227
+    const v5, 0x7f080253
 
     const/4 v4, 0x0
 
@@ -2169,7 +2103,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 92
-    const v1, 0x7f030011
+    const v1, 0x7f030014
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/CustomizeDate;->setContentView(I)V
 
@@ -2426,16 +2360,16 @@
     .parameter "id"
 
     .prologue
-    .line 384
+    .line 385
     sparse-switch p1, :sswitch_data_0
 
-    .line 394
+    .line 395
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 386
+    .line 387
     :sswitch_0
     new-instance v0, Landroid/app/DatePickerDialog;
 
@@ -2453,7 +2387,7 @@
 
     goto :goto_0
 
-    .line 390
+    .line 391
     :sswitch_1
     new-instance v0, Landroid/app/DatePickerDialog;
 
@@ -2471,7 +2405,7 @@
 
     goto :goto_0
 
-    .line 384
+    .line 385
     nop
 
     :sswitch_data_0

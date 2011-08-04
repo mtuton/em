@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 1203
+    .line 1341
     iput-object p1, p0, Lcom/android/exchange/SyncManager$MessageObserver;->this$0:Lcom/android/exchange/SyncManager;
 
-    .line 1204
+    .line 1342
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 1205
+    .line 1343
     return-void
 .end method
 
@@ -42,15 +42,15 @@
     .parameter "selfChange"
 
     .prologue
-    .line 1211
+    .line 1349
     if-nez p1, :cond_0
 
-    .line 1212
+    .line 1350
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/exchange/SyncManager;->kick(Ljava/lang/String;)V
 
-    .line 1214
+    .line 1352
     :cond_0
     return-void
 .end method

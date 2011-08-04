@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 709
+    .line 786
     iput-object p1, p0, Lcom/android/email/activity/setup/OoOSettings$Listener;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,18 +37,6 @@
 
 
 # virtual methods
-.method public GALSearchCallback(Lcom/android/email/mail/MessagingException;JILandroid/os/Bundle;)V
-    .locals 0
-    .parameter "result"
-    .parameter "accountId"
-    .parameter "progress"
-    .parameter "searchResults"
-
-    .prologue
-    .line 715
-    return-void
-.end method
-
 .method public OoOCallback(Lcom/android/email/mail/MessagingException;JILandroid/os/Bundle;)V
     .locals 7
     .parameter "result"
@@ -61,7 +49,7 @@
 
     const/16 v5, 0x8
 
-    .line 720
+    .line 797
     const-string v2, "OoOSettings"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -84,10 +72,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 722
+    .line 799
     if-eqz p1, :cond_5
 
-    .line 723
+    .line 800
     invoke-virtual {p1}, Lcom/android/email/mail/MessagingException;->getExceptionType()I
 
     move-result v2
@@ -96,7 +84,7 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 725
+    .line 802
     invoke-virtual {p1}, Lcom/android/email/mail/MessagingException;->getMessage()Ljava/lang/String;
 
     move-result-object v2
@@ -105,32 +93,32 @@
 
     move-result v0
 
-    .line 727
+    .line 804
     .local v0, messageErr:I
     packed-switch v0, :pswitch_data_0
 
-    .line 735
+    .line 812
     :pswitch_0
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings$Listener;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1600(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1800(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
 
     move-result-object v2
 
     invoke-virtual {v2, v5}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 815
+    .line 892
     .end local v0           #messageErr:I
     :cond_0
     :goto_0
     return-void
 
-    .line 729
+    .line 806
     .restart local v0       #messageErr:I
     :pswitch_1
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings$Listener;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1600(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1800(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -140,11 +128,11 @@
 
     goto :goto_0
 
-    .line 732
+    .line 809
     :pswitch_2
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings$Listener;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1600(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1800(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -154,7 +142,7 @@
 
     goto :goto_0
 
-    .line 739
+    .line 816
     .end local v0           #messageErr:I
     :cond_1
     invoke-virtual {p1}, Lcom/android/email/mail/MessagingException;->getExceptionType()I
@@ -163,7 +151,7 @@
 
     if-ne v2, v6, :cond_4
 
-    .line 740
+    .line 817
     invoke-virtual {p1}, Lcom/android/email/mail/MessagingException;->getMessage()Ljava/lang/String;
 
     move-result-object v2
@@ -176,10 +164,10 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 741
+    .line 818
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings$Listener;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1600(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1800(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -189,7 +177,7 @@
 
     goto :goto_0
 
-    .line 742
+    .line 819
     :cond_2
     invoke-virtual {p1}, Lcom/android/email/mail/MessagingException;->getMessage()Ljava/lang/String;
 
@@ -203,10 +191,10 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 743
+    .line 820
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings$Listener;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1600(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1800(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -216,11 +204,11 @@
 
     goto :goto_0
 
-    .line 745
+    .line 822
     :cond_3
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings$Listener;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1600(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1800(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -228,11 +216,11 @@
 
     goto :goto_0
 
-    .line 749
+    .line 826
     :cond_4
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings$Listener;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1600(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1800(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -240,33 +228,33 @@
 
     goto :goto_0
 
-    .line 752
+    .line 829
     :cond_5
     const/16 v2, 0x64
 
     if-ne p4, v2, :cond_7
 
-    .line 753
+    .line 830
     if-eqz p5, :cond_6
 
-    .line 754
+    .line 831
     new-instance v1, Landroid/os/Message;
 
     invoke-direct {v1}, Landroid/os/Message;-><init>()V
 
-    .line 755
+    .line 832
     .local v1, msg:Landroid/os/Message;
     const/4 v2, 0x0
 
     iput v2, v1, Landroid/os/Message;->what:I
 
-    .line 756
+    .line 833
     invoke-virtual {v1, p5}, Landroid/os/Message;->setData(Landroid/os/Bundle;)V
 
-    .line 757
+    .line 834
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings$Listener;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1600(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1800(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -274,12 +262,12 @@
 
     goto :goto_0
 
-    .line 760
+    .line 837
     .end local v1           #msg:Landroid/os/Message;
     :cond_6
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings$Listener;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1600(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1800(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -287,14 +275,14 @@
 
     goto/16 :goto_0
 
-    .line 764
+    .line 841
     :cond_7
     if-nez p4, :cond_0
 
-    .line 765
+    .line 842
     iget-object v2, p0, Lcom/android/email/activity/setup/OoOSettings$Listener;->this$0:Lcom/android/email/activity/setup/OoOSettings;
 
-    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1600(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/email/activity/setup/OoOSettings;->access$1800(Lcom/android/email/activity/setup/OoOSettings;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -304,7 +292,7 @@
 
     goto/16 :goto_0
 
-    .line 727
+    .line 804
     :pswitch_data_0
     .packed-switch -0x9
         :pswitch_2
@@ -317,7 +305,18 @@
     .locals 0
 
     .prologue
-    .line 872
+    .line 953
+    return-void
+.end method
+
+.method public deviceInformationCallback(Lcom/android/email/mail/MessagingException;JI)V
+    .locals 0
+    .parameter "result"
+    .parameter "accountId"
+    .parameter "progress"
+
+    .prologue
+    .line 967
     return-void
 .end method
 
@@ -328,7 +327,7 @@
     .parameter "progress"
 
     .prologue
-    .line 878
+    .line 959
     return-void
 .end method
 
@@ -339,7 +338,7 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 862
+    .line 943
     return-void
 .end method
 
@@ -351,7 +350,7 @@
     .parameter "progress"
 
     .prologue
-    .line 821
+    .line 898
     return-void
 .end method
 
@@ -362,7 +361,7 @@
     .parameter "progress"
 
     .prologue
-    .line 827
+    .line 904
     return-void
 .end method
 
@@ -373,7 +372,19 @@
     .parameter "progress"
 
     .prologue
-    .line 876
+    .line 957
+    return-void
+.end method
+
+.method public moveConvAlwaysCallback(Lcom/android/email/mail/MessagingException;[BII)V
+    .locals 0
+    .parameter "result"
+    .parameter "convId"
+    .parameter "progress"
+    .parameter "ignore"
+
+    .prologue
+    .line 973
     return-void
 .end method
 
@@ -383,19 +394,7 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 857
-    return-void
-.end method
-
-.method public searchCallback(Lcom/android/email/mail/MessagingException;JILandroid/os/Bundle;)V
-    .locals 0
-    .parameter "result"
-    .parameter "accountId"
-    .parameter "progress"
-    .parameter "searchResults"
-
-    .prologue
-    .line 868
+    .line 934
     return-void
 .end method
 
@@ -407,7 +406,7 @@
     .parameter "progress"
 
     .prologue
-    .line 833
+    .line 910
     return-void
 .end method
 
@@ -420,7 +419,7 @@
     .parameter "tag"
 
     .prologue
-    .line 839
+    .line 916
     return-void
 .end method
 
@@ -433,7 +432,7 @@
     .parameter "numNewMessages"
 
     .prologue
-    .line 845
+    .line 922
     return-void
 .end method
 
@@ -444,6 +443,6 @@
     .parameter "progress"
 
     .prologue
-    .line 851
+    .line 928
     return-void
 .end method

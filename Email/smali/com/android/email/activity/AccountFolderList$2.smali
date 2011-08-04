@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 781
+    .line 782
     iput-object p1, p0, Lcom/android/email/activity/AccountFolderList$2;->this$0:Lcom/android/email/activity/AccountFolderList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,12 +45,12 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 782
+    .line 784
     iget-object v1, p0, Lcom/android/email/activity/AccountFolderList$2;->this$0:Lcom/android/email/activity/AccountFolderList;
 
     invoke-virtual {v1, v3}, Lcom/android/email/activity/AccountFolderList;->dismissDialog(I)V
 
-    .line 784
+    .line 786
     iget-object v1, p0, Lcom/android/email/activity/AccountFolderList$2;->this$0:Lcom/android/email/activity/AccountFolderList;
 
     const-string v2, "notification"
@@ -61,16 +61,16 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 786
+    .line 788
     .local v0, notificationManager:Landroid/app/NotificationManager;
     sget v1, Lcom/android/email/service/MailService;->NOTIFICATION_ID_NEW_MESSAGES:I
 
     invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 788
+    .line 790
     iget-object v1, p0, Lcom/android/email/activity/AccountFolderList$2;->this$0:Lcom/android/email/activity/AccountFolderList;
 
-    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$1000(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;
+    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$1100(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;
 
     move-result-object v1
 
@@ -78,7 +78,7 @@
 
     iget-object v1, p0, Lcom/android/email/activity/AccountFolderList$2;->this$0:Lcom/android/email/activity/AccountFolderList;
 
-    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$1000(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;
+    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$1100(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;
 
     move-result-object v1
 
@@ -90,33 +90,33 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 790
+    .line 792
     iget-object v1, p0, Lcom/android/email/activity/AccountFolderList$2;->this$0:Lcom/android/email/activity/AccountFolderList;
 
-    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$1000(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;
+    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$1100(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;
 
     move-result-object v1
 
     invoke-virtual {v1, v3}, Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;->cancel(Z)Z
 
-    .line 791
+    .line 793
     iget-object v1, p0, Lcom/android/email/activity/AccountFolderList$2;->this$0:Lcom/android/email/activity/AccountFolderList;
 
     const/4 v2, 0x0
 
-    invoke-static {v1, v2}, Lcom/android/email/activity/AccountFolderList;->access$1002(Lcom/android/email/activity/AccountFolderList;Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;)Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;
+    invoke-static {v1, v2}, Lcom/android/email/activity/AccountFolderList;->access$1102(Lcom/android/email/activity/AccountFolderList;Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;)Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;
 
-    .line 794
+    .line 796
     :cond_0
     iget-object v1, p0, Lcom/android/email/activity/AccountFolderList$2;->this$0:Lcom/android/email/activity/AccountFolderList;
 
-    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$900(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/activity/AccountFolderList$ProgressDialogDelete;
+    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$1000(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/activity/AccountFolderList$ProgressDialogDelete;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/android/email/activity/AccountFolderList$ProgressDialogDelete;->show()V
 
-    .line 796
+    .line 798
     iget-object v1, p0, Lcom/android/email/activity/AccountFolderList$2;->this$0:Lcom/android/email/activity/AccountFolderList;
 
     new-instance v2, Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;
@@ -125,7 +125,7 @@
 
     iget-object v4, p0, Lcom/android/email/activity/AccountFolderList$2;->this$0:Lcom/android/email/activity/AccountFolderList;
 
-    invoke-static {v4}, Lcom/android/email/activity/AccountFolderList;->access$1100(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/provider/EmailContent$Account;
+    invoke-static {v4}, Lcom/android/email/activity/AccountFolderList;->access$1200(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/provider/EmailContent$Account;
 
     move-result-object v4
 
@@ -133,7 +133,7 @@
 
     iget-object v6, p0, Lcom/android/email/activity/AccountFolderList$2;->this$0:Lcom/android/email/activity/AccountFolderList;
 
-    invoke-static {v6}, Lcom/android/email/activity/AccountFolderList;->access$1100(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/provider/EmailContent$Account;
+    invoke-static {v6}, Lcom/android/email/activity/AccountFolderList;->access$1200(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/provider/EmailContent$Account;
 
     move-result-object v6
 
@@ -145,12 +145,12 @@
 
     invoke-direct {v2, v3, v4, v5, v6}, Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;-><init>(Lcom/android/email/activity/AccountFolderList;JLjava/lang/String;)V
 
-    invoke-static {v1, v2}, Lcom/android/email/activity/AccountFolderList;->access$1002(Lcom/android/email/activity/AccountFolderList;Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;)Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;
+    invoke-static {v1, v2}, Lcom/android/email/activity/AccountFolderList;->access$1102(Lcom/android/email/activity/AccountFolderList;Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;)Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;
 
-    .line 798
+    .line 800
     iget-object v1, p0, Lcom/android/email/activity/AccountFolderList$2;->this$0:Lcom/android/email/activity/AccountFolderList;
 
-    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$1000(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;
+    invoke-static {v1}, Lcom/android/email/activity/AccountFolderList;->access$1100(Lcom/android/email/activity/AccountFolderList;)Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;
 
     move-result-object v1
 
@@ -160,6 +160,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/email/activity/AccountFolderList$DeleteAccountTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 834
+    .line 836
     return-void
 .end method

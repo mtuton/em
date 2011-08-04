@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 228
+    .line 258
     iput-object p1, p0, Lcom/android/email/activity/EmailSearchQuery$2;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +42,11 @@
     .parameter "v"
 
     .prologue
-    .line 229
+    .line 261
     iget-object v0, p0, Lcom/android/email/activity/EmailSearchQuery$2;->this$0:Lcom/android/email/activity/EmailSearchQuery;
 
     invoke-virtual {v0}, Lcom/android/email/activity/EmailSearchQuery;->finish()V
 
-    .line 230
+    .line 262
     return-void
 .end method

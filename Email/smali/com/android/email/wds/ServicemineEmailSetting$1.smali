@@ -1,4 +1,4 @@
-.class Lcom/android/email/wds/ServicemineEmailSetting$1;
+.class synthetic Lcom/android/email/wds/ServicemineEmailSetting$1;
 .super Ljava/lang/Object;
 .source "ServicemineParser.java"
 

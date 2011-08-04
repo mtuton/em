@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+    <string name="account_setup_basics_instructions">Puede configurar correo electrónico para la mayoría de cuentas en pocos pasos</string>
     <string name="read_attachment_label">Leer archivos adjuntos del correo</string>
     <string name="read_attachment_desc">Permite a esta aplicación leer los archivos adjuntos de su correo</string>
     <string name="permission_access_provider_label">Acceder a datos de proveedor de correo</string>
@@ -12,6 +13,7 @@
     <string name="okay_action">OK</string>
     <string name="cancel_action">Cancelar</string>
     <string name="send_action">Enviar</string>
+    <string name="insert_action">Insertar</string>
     <string name="reply_action">Responder</string>
     <string name="reply_all_action">Responder a todos</string>
     <string name="delete_action">Eliminar</string>
@@ -48,6 +50,8 @@
     <string name="status_loading_more_failed">Vuelva a intentar cargar mensajes</string>
     <string name="notification_new_title">Nuevo correo electrónico</string>
     <string name="error_loading_message_body">No se puede cargar mensaje. Mensaje demasiado largo</string>
+    <string name="print">Imprimir</string>
+    <string name="print_action">Imprimir</string>
     <string name="mailbox_name_display_inbox">Buzón de entrada</string>
     <string name="mailbox_name_display_outbox">Buzón de salida</string>
     <string name="mailbox_name_display_drafts">Borrador</string>
@@ -179,6 +183,7 @@
     <string name="account_setup_options_mail_window_1month">1 mes</string>
     <string name="account_setup_options_mail_window_all">Todo el correo</string>
     <string name="account_setup_failed_dlg_auth_message">Nombre de usuario o contraseña incorrectos</string>
+    <string name="account_setup_autodiscover_failed_dlg_auth_message">Error de detección automática</string>
     <string name="account_setup_failed_dlg_auth_message_fmt">Nombre de usuario o contraseña incorrectos.\n(%s)</string>
     <string name="account_setup_failed_dlg_certificate_message">No se puede conectar con seguridad al servidor</string>
     <string name="account_setup_failed_dlg_certificate_message_fmt">No se ha podido conectar con el servidor de manera segura.\n(%s)</string>
@@ -261,7 +266,7 @@
     <string name="search_empty">No hay coincidencias</string>
     <string name="search">Búsqueda de correo electrónico</string>
     <string name="search_label">Correo electrónico</string>
-    <string name="search_hint">Búsqueda de correo electrónico</string>
+    <string name="search_hint">Buscar</string>
     <string name="message_compose_cc_bcc_hint">CC/CCO</string>
     <string name="add_text_action">Añadir texto</string>
     <string name="namecard">Contactos</string>
@@ -346,6 +351,8 @@
     <string name="meeting_when">Cuándo: %s</string>
     <string name="meeting_where">Dónde: %s</string>
     <string name="meeting_recurring">Cuándo: %s (recurrente)</string>
+    <string name="meeting_time">Fecha:</string>
+    <string name="meeting_location">Ubicación:</string>
     <string name="exception_cancel">Evento del %s cancelado</string>
     <string name="exception_updated">Se han cambiado los detalles para el evento del %s</string>
     <string name="account_setup_basics_exchange_title_alternate">Añadir cuenta de Exchange ActiveSync</string>
@@ -370,6 +377,15 @@
     <string name="account_setup_options_recent_messages_limit_total">Total</string>
     <string name="no_Calendar_configured">Ningún calendario configurado</string>
     <string name="no_Calendar">Configurar primero</string>
+    <string name="view_contact">Ver contactos</string>
+    <string name="no_recipients_added_enter_recipients">No se han añadido destinatarios. Introduzca destinatarios</string>
+    <string name="unsupported_file_type">Tipo de archivo no admitido</string>
+    <string name="contextmenu_copy">Copiar</string>
+    <string name="popup_search">Buscar</string>
+    <string name="popup_share">Compartir</string>
+    <string name="choosertitle_sharevia">Compartir mediante</string>
+    <string name="unable_to_download_file_size_too_large">No se puede descargar. Tamaño de archivo demasiado grande</string>
+    <string name="empty_string_popup">El campo no puede estar vacío</string>
     <string name="more_message_action">Cargar más detalles</string>
     <string name="create_action">Crear</string>
     <string name="rename_action">Renombrar</string>
@@ -386,7 +402,7 @@
     <string name="server_search">Servidor de búsqueda</string>
     <string name="mailbox_name_local_search">Buscar</string>
     <string name="mailbox_name_display_search_results">Buscar</string>
-    <string name="message_view_priority_label">Priority:</string>
+    <string name="message_view_priority_label">Prioridad:</string>
     <string name="folder_updated_toast">Carpeta actualizada</string>
     <string name="folder_deleted_toast">Carpeta eliminada</string>
     <string name="folder_created_toast">Carpeta creada</string>
@@ -401,7 +417,7 @@
     <string name="message_view_loadmore_fetch_error_toast">Sin respuesta. Volver a intentarlo más tarde.</string>
     <string name="account_setup_options_mail_email_size_label">Tamaño de recuperación de correos</string>
     <string name="account_setup_options_mail_email_size_headersonly">Sólo asunto</string>
-    <string name="account_setup_options_mail_email_size_halfkb">Half KB</string>
+    <string name="account_setup_options_mail_email_size_halfkb">0.5 KB</string>
     <string name="account_setup_options_mail_email_size_1kb">1 KB</string>
     <string name="account_setup_options_mail_email_size_2kb">2 KB</string>
     <string name="account_setup_options_mail_email_size_5kb">5 KB</string>
@@ -427,8 +443,8 @@
     <string name="account_settings_bcc_summary">Copiarme siempre en CCO</string>
     <string name="account_settings_cc_bcc_none">Ninguno</string>
     <string name="account_settings_cc_bcc_cc">Cc</string>
-    <string name="account_settings_cc_bcc_bcc">Bcc</string>
-    <string name="account_settings_cc_bcc_dlg_title">Always Cc/Bcc myself</string>
+    <string name="account_settings_cc_bcc_bcc">Cco</string>
+    <string name="account_settings_cc_bcc_dlg_title">Copiarme siempre en copia oculta o visible</string>
     <string name="sync_schedule_title">Programación de sincronización</string>
     <string name="account_settings_sync_schedule">Programación de sincronización</string>
     <string name="account_settings_sync_schedule_summary">Control de hora pico/fuera de hora pico</string>
@@ -564,4 +580,36 @@
     <string name="account_settings_calender_sync_restricted">Período para sincronizar el calendario restringido por el servidor a:</string>
     <string name="date_warning_toast">La fecha final debe ser posterior a la fecha inicial</string>
     <string name="imei_always_show">Mostrar siempre</string>
+    <string name="Policy_list_disable_Bluetooth">Permitir Bluetooth</string>
+    <string name="Policy_list_disable_Browser">Permitir uso de Internet</string>
+    <string name="Policy_list_disable_Camera">Permitir cámara</string>
+    <string name="Policy_list_disable_HTML">Permitir correo HTML</string>
+    <string name="Policy_list_disable_Internet_sharing">Permitir uso compartido de Internet</string>
+    <string name="Policy_list_disable_POP3_IMAP4_email">Permitir correo POP e IMAP</string>
+    <string name="Policy_list_disable_SMS_Text_Messaging">Permitir mensajes de texto</string>
+    <string name="Policy_list_disable_WIFI">Permitir Wi-Fi</string>
+    <string name="Policy_list_disable_SDcard">Permitir tarjeta de almacenamiento</string>
+    <string name="Policy_list_disable_Smime_Soft_Certs">Permitir certificados de software S/MIME</string>
+    <string name="Policy_list_disable_Smime_encrypt_Alg_negotiation">Permitir negociación de algoritmo de cifrado de S/MIME</string>
+    <string name="Policy_list_disable_Attachmentdownload">Control de adjuntos</string>
+    <string name="Policy_list_Limited_eas_attachment_size">Límites de adjuntos</string>
+    <string name="Policy_list_Limited_Email_body_truncation_size">Tamaño de cuerpo máximo de correo</string>
+    <string name="Policy_list_Limited_HTML_Email_body_truncation_size">Tamaño de cuerpo máximo de correo HTML</string>
+    <string name="Policy_list_Limited_Calendar_sync">Duración máxima de eventos de calendario</string>
+    <string name="Policy_list_Limited_Email_sync">Duración máxima de correo</string>
+    <string name="Policy_list_Limited_manual_sync">Requerir sincronización manual en itinerancia</string>
+    <string name="Policy_list_Limited_Device_Encryption">Require Device Encryption</string>
+    <string name="Policy_list_Limited_Storagecard_Encryption">Require Storage card Encryption</string>
+    <string name="Policy_list_disable_Smime_sign_msg">Requerir que los mensajes tengan firma S/MIME</string>
+    <string name="Policy_list_disable_Smime_encrypt_msg">Requerir que los mensajes tengan cifrado S/MIME</string>
+    <string name="Policy_list_disable_Smime_sign_Alg">Requerir algoritmo S/MIME firmado</string>
+    <string name="Policy_list_disable_Smime_encrypt_Alg">Requerir cifrado de algoritmo S/MIME</string>
+    <string name="Policy_list_Limited_Password_mode">Definir reglas contraseña</string>
+    <string name="Policy_list_Limited_Password_Recovery_Enabled">Recuperación de contraseña</string>
+    <string name="Policy_list_Limited_MaxDevicePassword_FailedAttempts">MaxDevice Password FailedAttempts</string>
+    <string name="Policy_list_Limited_DevicePassword_Expiration">Caducidad de la contraseña</string>
+    <string name="Policy_list_Limited_DevicePassword_History">Historial de contraseña</string>
+    <string name="Policy_list_Limited_MinDevicePassword_Length">MinDevice Password Length</string>
+    <string name="Policy_list_Limited_MaxInactivity_Time">MaxInactivityTime</string>
+    <string name="Policy_list_Limited_Password_Complex_charaters">Número mínimo de caracteres complejos en contraseña</string>
 </resources>

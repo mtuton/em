@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/service/EmailServiceProxy;->folderCreate(JLjava/lang/String;J)V
+    value = Lcom/android/email/service/EmailServiceProxy;->loadMore(J)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,30 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/service/EmailServiceProxy;
 
-.field final synthetic val$accountId:J
-
-.field final synthetic val$folderName:Ljava/lang/String;
-
-.field final synthetic val$parentMailboxId:J
+.field final synthetic val$messageId:J
 
 
 # direct methods
-.method constructor <init>(Lcom/android/email/service/EmailServiceProxy;JLjava/lang/String;J)V
+.method constructor <init>(Lcom/android/email/service/EmailServiceProxy;J)V
     .locals 0
-    .parameter
-    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 348
+    .line 345
     iput-object p1, p0, Lcom/android/email/service/EmailServiceProxy$13;->this$0:Lcom/android/email/service/EmailServiceProxy;
 
-    iput-wide p2, p0, Lcom/android/email/service/EmailServiceProxy$13;->val$accountId:J
-
-    iput-object p4, p0, Lcom/android/email/service/EmailServiceProxy$13;->val$folderName:Ljava/lang/String;
-
-    iput-wide p5, p0, Lcom/android/email/service/EmailServiceProxy$13;->val$parentMailboxId:J
+    iput-wide p2, p0, Lcom/android/email/service/EmailServiceProxy$13;->val$messageId:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,74 +43,54 @@
 
 # virtual methods
 .method public run()V
-    .locals 7
+    .locals 3
 
     .prologue
-    .line 350
+    .line 348
     :try_start_0
+    iget-object v0, p0, Lcom/android/email/service/EmailServiceProxy$13;->this$0:Lcom/android/email/service/EmailServiceProxy;
+
+    invoke-static {v0}, Lcom/android/email/service/EmailServiceProxy;->access$200(Lcom/android/email/service/EmailServiceProxy;)Lcom/android/email/service/IEmailServiceCallback;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
     iget-object v0, p0, Lcom/android/email/service/EmailServiceProxy$13;->this$0:Lcom/android/email/service/EmailServiceProxy;
 
     invoke-static {v0}, Lcom/android/email/service/EmailServiceProxy;->access$000(Lcom/android/email/service/EmailServiceProxy;)Lcom/android/email/service/IEmailService;
 
     move-result-object v0
 
-    iget-wide v1, p0, Lcom/android/email/service/EmailServiceProxy$13;->val$accountId:J
+    iget-object v1, p0, Lcom/android/email/service/EmailServiceProxy$13;->this$0:Lcom/android/email/service/EmailServiceProxy;
 
-    iget-object v3, p0, Lcom/android/email/service/EmailServiceProxy$13;->val$folderName:Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/email/service/EmailServiceProxy;->access$200(Lcom/android/email/service/EmailServiceProxy;)Lcom/android/email/service/IEmailServiceCallback;
 
-    iget-wide v4, p0, Lcom/android/email/service/EmailServiceProxy$13;->val$parentMailboxId:J
+    move-result-object v1
 
-    invoke-interface/range {v0 .. v5}, Lcom/android/email/service/IEmailService;->folderCreate(JLjava/lang/String;J)V
+    invoke-interface {v0, v1}, Lcom/android/email/service/IEmailService;->setCallback(Lcom/android/email/service/IEmailServiceCallback;)V
+
+    .line 349
+    :cond_0
+    iget-object v0, p0, Lcom/android/email/service/EmailServiceProxy$13;->this$0:Lcom/android/email/service/EmailServiceProxy;
+
+    invoke-static {v0}, Lcom/android/email/service/EmailServiceProxy;->access$000(Lcom/android/email/service/EmailServiceProxy;)Lcom/android/email/service/IEmailService;
+
+    move-result-object v0
+
+    iget-wide v1, p0, Lcom/android/email/service/EmailServiceProxy$13;->val$messageId:J
+
+    invoke-interface {v0, v1, v2}, Lcom/android/email/service/IEmailService;->loadMore(J)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 355
+    .line 353
     :goto_0
     return-void
 
-    .line 351
+    .line 350
     :catch_0
     move-exception v0
-
-    move-object v6, v0
-
-    .line 352
-    .local v6, e:Landroid/os/RemoteException;
-    const-string v0, "EmailServiceProxy"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Could not create folder: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/email/service/EmailServiceProxy$13;->val$folderName:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", parent: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-wide v2, p0, Lcom/android/email/service/EmailServiceProxy$13;->val$parentMailboxId:J
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 .end method

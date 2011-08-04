@@ -44,14 +44,6 @@
     .end annotation
 .end method
 
-.method public abstract getExtendedHeader(Ljava/lang/String;)Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getHeader(Ljava/lang/String;)[Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -76,31 +68,7 @@
     .end annotation
 .end method
 
-.method public abstract isMimeType(Ljava/lang/String;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
-.method public abstract removeHeader(Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setBody(Lcom/android/email/mail/Body;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/email/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setExtendedHeader(Ljava/lang/String;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/email/mail/MessagingException;

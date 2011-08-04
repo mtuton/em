@@ -324,47 +324,6 @@
     goto :goto_0
 .end method
 
-.method public checkRegionMatches(Ljava/lang/String;ILjava/lang/String;)Z
-    .locals 6
-    .parameter "str"
-    .parameter "strStartIndex"
-    .parameter "search"
-
-    .prologue
-    const/4 v4, 0x0
-
-    .line 211
-    iget-boolean v0, p0, Lorg/apache/commons/io/IOCase;->sensitive:Z
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    move v1, v0
-
-    :goto_0
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    move-object v0, p1
-
-    move v2, p2
-
-    move-object v3, p3
-
-    invoke-virtual/range {v0 .. v5}, Ljava/lang/String;->regionMatches(ZILjava/lang/String;II)Z
-
-    move-result v0
-
-    return v0
-
-    :cond_0
-    move v1, v4
-
-    goto :goto_0
-.end method
-
 .method public checkStartsWith(Ljava/lang/String;Ljava/lang/String;)Z
     .locals 6
     .parameter "str"
@@ -435,26 +394,6 @@
     move-result-object v0
 
     goto :goto_0
-.end method
-
-.method public getName()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 118
-    iget-object v0, p0, Lorg/apache/commons/io/IOCase;->name:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public isCaseSensitive()Z
-    .locals 1
-
-    .prologue
-    .line 127
-    iget-boolean v0, p0, Lorg/apache/commons/io/IOCase;->sensitive:Z
-
-    return v0
 .end method
 
 .method public toString()Ljava/lang/String;

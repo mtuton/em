@@ -184,7 +184,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/email/mail/Folder$FolderRole;
     .locals 1
-    .parameter "name"
+    .parameter
 
     .prologue
     .line 32
@@ -194,13 +194,12 @@
 
     move-result-object p0
 
-    .end local p0
     check-cast p0, Lcom/android/email/mail/Folder$FolderRole;
 
     return-object p0
 .end method
 
-.method public static final values()[Lcom/android/email/mail/Folder$FolderRole;
+.method public static values()[Lcom/android/email/mail/Folder$FolderRole;
     .locals 1
 
     .prologue

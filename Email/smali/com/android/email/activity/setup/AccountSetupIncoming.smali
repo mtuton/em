@@ -7,18 +7,6 @@
 
 
 # static fields
-.field private static final DIALOG_DUPLICATE_ACCOUNT:I = 0x1
-
-.field private static final EXTRA_ACCOUNT:Ljava/lang/String; = "account"
-
-.field private static final EXTRA_ACCOUNT_EDIT_IMAP_POP:Ljava/lang/String; = "accountEditImapPop"
-
-.field private static final EXTRA_MAKE_DEFAULT:Ljava/lang/String; = "makeDefault"
-
-.field public static final EXTRA_SETWIZ_FLOW:Ljava/lang/String; = "com.android.email.extra.setwiz_flow"
-
-.field private static final MAX_PORT:I = 0xffff
-
 .field private static final imapPorts:[I
 
 .field private static final imapSchemes:[Ljava/lang/String;
@@ -45,7 +33,7 @@
 
 .field private mMakeDefault:Z
 
-.field private mNextTwSoftkeyItem:Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+.field private mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
 
 .field private mPasswordView:Landroid/widget/EditText;
 
@@ -73,14 +61,14 @@
 
     const/4 v3, 0x5
 
-    .line 54
+    .line 55
     new-array v0, v3, [I
 
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->popPorts:[I
 
-    .line 57
+    .line 58
     new-array v0, v3, [Ljava/lang/String;
 
     const-string v1, "pop3"
@@ -107,14 +95,14 @@
 
     sput-object v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->popSchemes:[Ljava/lang/String;
 
-    .line 60
+    .line 61
     new-array v0, v3, [I
 
     fill-array-data v0, :array_1
 
     sput-object v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->imapPorts:[I
 
-    .line 63
+    .line 64
     new-array v0, v3, [Ljava/lang/String;
 
     const-string v1, "imap"
@@ -143,7 +131,7 @@
 
     return-void
 
-    .line 54
+    .line 55
     :array_0
     .array-data 0x4
         0x6et 0x0t 0x0t 0x0t
@@ -153,7 +141,7 @@
         0x6et 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 60
+    .line 61
     :array_1
     .array-data 0x4
         0x8ft 0x0t 0x0t 0x0t
@@ -168,7 +156,7 @@
     .locals 0
 
     .prologue
-    .line 48
+    .line 49
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
     return-void
@@ -179,7 +167,7 @@
     .parameter "x0"
 
     .prologue
-    .line 48
+    .line 49
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->updatePortFromSecurityType()V
 
     return-void
@@ -190,7 +178,7 @@
     .parameter "x0"
 
     .prologue
-    .line 48
+    .line 49
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPortView:Landroid/widget/EditText;
 
     return-object v0
@@ -201,7 +189,7 @@
     .parameter "x0"
 
     .prologue
-    .line 48
+    .line 49
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->validateFields()V
 
     return-void
@@ -209,139 +197,104 @@
 
 .method public static actionEditIncomingSettings(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;)V
     .locals 2
-    .parameter "fromActivity"
-    .parameter "account"
+    .parameter
+    .parameter
 
     .prologue
-    .line 113
+    .line 114
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/email/activity/setup/AccountSetupIncoming;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 114
-    .local v0, i:Landroid/content/Intent;
+    .line 115
     const-string v1, "android.intent.action.EDIT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 115
+    .line 116
     const-string v1, "account"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 116
+    .line 117
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 117
+    .line 118
     return-void
 .end method
 
 .method public static actionEditIncomingSettings(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;Z)V
     .locals 2
-    .parameter "fromActivity"
-    .parameter "account"
-    .parameter "edit"
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
-    .line 122
+    .line 123
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/email/activity/setup/AccountSetupIncoming;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 123
-    .local v0, i:Landroid/content/Intent;
+    .line 124
     const-string v1, "android.intent.action.EDIT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 124
+    .line 125
     const-string v1, "account"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 125
+    .line 126
     const-string v1, "accountEditImapPop"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 126
-    invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
     .line 127
-    return-void
-.end method
-
-.method public static actionIncomingSettings(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;Z)V
-    .locals 2
-    .parameter "fromActivity"
-    .parameter "account"
-    .parameter "makeDefault"
-
-    .prologue
-    .line 93
-    new-instance v0, Landroid/content/Intent;
-
-    const-class v1, Lcom/android/email/activity/setup/AccountSetupIncoming;
-
-    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 94
-    .local v0, i:Landroid/content/Intent;
-    const-string v1, "account"
-
-    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    .line 95
-    const-string v1, "makeDefault"
-
-    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 96
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 97
+    .line 128
     return-void
 .end method
 
 .method public static actionIncomingSettings(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;ZZ)V
     .locals 2
-    .parameter "fromActivity"
-    .parameter "account"
-    .parameter "makeDefault"
-    .parameter "setWizMode"
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
-    .line 104
+    .line 105
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/email/activity/setup/AccountSetupIncoming;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 105
-    .local v0, i:Landroid/content/Intent;
+    .line 106
     const-string v1, "account"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 106
+    .line 107
     const-string v1, "makeDefault"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 107
+    .line 108
     const-string v1, "com.android.email.extra.setwiz_flow"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 108
+    .line 109
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 109
+    .line 110
     return-void
 .end method
 
@@ -357,7 +310,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 463
+    .line 501
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mSecurityTypeView:Landroid/widget/Spinner;
 
     invoke-virtual {v1}, Landroid/widget/Spinner;->getSelectedItem()Ljava/lang/Object;
@@ -374,11 +327,11 @@
 
     move-result v8
 
-    .line 464
+    .line 502
     .local v8, securityType:I
     const/4 v5, 0x0
 
-    .line 465
+    .line 503
     .local v5, path:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccountSchemes:[Ljava/lang/String;
 
@@ -392,7 +345,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 466
+    .line 504
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -425,7 +378,7 @@
 
     move-result-object v5
 
-    .line 468
+    .line 506
     :cond_0
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mUsernameView:Landroid/widget/EditText;
 
@@ -441,11 +394,11 @@
 
     move-result-object v9
 
-    .line 469
+    .line 507
     .local v9, userName:Ljava/lang/String;
     iput-object v9, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mCacheLoginCredential:Ljava/lang/String;
 
-    .line 470
+    .line 508
     new-instance v0, Ljava/net/URI;
 
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccountSchemes:[Ljava/lang/String;
@@ -524,7 +477,7 @@
 
     invoke-direct/range {v0 .. v7}, Ljava/net/URI;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 479
+    .line 517
     .local v0, uri:Ljava/net/URI;
     return-object v0
 .end method
@@ -535,13 +488,13 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 484
+    .line 522
     :try_start_0
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->getUri()Ljava/net/URI;
 
     move-result-object v1
 
-    .line 485
+    .line 523
     .local v1, uri:Ljava/net/URI;
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
@@ -551,7 +504,7 @@
 
     invoke-virtual {v3, p0, v4}, Lcom/android/email/provider/EmailContent$Account;->setStoreUri(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 489
+    .line 527
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-wide v3, v3, Lcom/android/email/provider/EmailContent$Account;->mId:J
@@ -568,12 +521,12 @@
 
     iput-object v3, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mDuplicateAccountName:Ljava/lang/String;
 
-    .line 491
+    .line 529
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mDuplicateAccountName:Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 492
+    .line 530
     const/4 v3, 0x1
 
     invoke-virtual {p0, v3}, Lcom/android/email/activity/setup/AccountSetupIncoming;->showDialog(I)V
@@ -581,18 +534,18 @@
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 509
+    .line 547
     :goto_0
     return-void
 
-    .line 495
+    .line 533
     .end local v1           #uri:Ljava/net/URI;
     :catch_0
     move-exception v3
 
     move-object v2, v3
 
-    .line 500
+    .line 538
     .local v2, use:Ljava/net/URISyntaxException;
     new-instance v3, Ljava/lang/Error;
 
@@ -600,14 +553,14 @@
 
     throw v3
 
-    .line 502
+    .line 540
     .end local v2           #use:Ljava/net/URISyntaxException;
     :catch_1
     move-exception v3
 
     move-object v0, v3
 
-    .line 503
+    .line 541
     .local v0, ne:Ljava/lang/NullPointerException;
     new-instance v3, Ljava/lang/Error;
 
@@ -615,7 +568,7 @@
 
     throw v3
 
-    .line 507
+    .line 545
     .end local v0           #ne:Ljava/lang/NullPointerException;
     .restart local v1       #uri:Ljava/net/URI;
     :cond_0
@@ -639,7 +592,7 @@
 
     invoke-virtual {v4, v3}, Lcom/android/email/provider/EmailContent$Account;->setDeletePolicy(I)V
 
-    .line 508
+    .line 546
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     const/4 v4, 0x0
@@ -653,7 +606,7 @@
     .locals 3
 
     .prologue
-    .line 404
+    .line 442
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mSecurityTypeView:Landroid/widget/Spinner;
 
     invoke-virtual {v1}, Landroid/widget/Spinner;->getSelectedItem()Ljava/lang/Object;
@@ -670,7 +623,7 @@
 
     move-result v0
 
-    .line 405
+    .line 443
     .local v0, securityType:I
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPortView:Landroid/widget/EditText;
 
@@ -684,7 +637,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 406
+    .line 444
     return-void
 .end method
 
@@ -692,7 +645,7 @@
     .locals 4
 
     .prologue
-    .line 379
+    .line 416
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mUsernameView:Landroid/widget/EditText;
 
     invoke-static {v3}, Lcom/android/email/Utility;->requiredFieldValid(Landroid/widget/TextView;)Z
@@ -729,29 +682,34 @@
 
     move v0, v3
 
-    .line 383
+    .line 420
     .local v0, enabled:Z
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 385
+    .line 422
     :try_start_0
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->getUri()Ljava/net/URI;
     :try_end_0
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 398
+    .line 435
     :cond_0
     :goto_1
-    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mNextTwSoftkeyItem:Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
 
-    invoke-virtual {v3, v0}, Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;->setEnabled(Z)V
+    invoke-virtual {v3, v0}, Lcom/android/email/EmailTwSoftkeyItem;->setEnabled(Z)V
 
-    .line 401
+    .line 436
+    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
+
+    invoke-virtual {v3, v0}, Lcom/android/email/EmailTwSoftkeyItem;->setFocusable(Z)V
+
+    .line 439
     return-void
 
-    .line 379
+    .line 416
     .end local v0           #enabled:Z
     :cond_1
     const/4 v3, 0x0
@@ -760,24 +718,24 @@
 
     goto :goto_0
 
-    .line 386
+    .line 423
     .restart local v0       #enabled:Z
     :catch_0
     move-exception v2
 
-    .line 387
+    .line 424
     .local v2, use:Ljava/net/URISyntaxException;
     const/4 v0, 0x0
 
-    .line 391
+    .line 428
     goto :goto_1
 
-    .line 389
+    .line 426
     .end local v2           #use:Ljava/net/URISyntaxException;
     :catch_1
     move-exception v1
 
-    .line 390
+    .line 427
     .local v1, ne:Ljava/lang/NullPointerException;
     const/4 v0, 0x0
 
@@ -793,12 +751,12 @@
     .parameter "data"
 
     .prologue
-    .line 410
+    .line 448
     const/4 v1, -0x1
 
     if-ne p2, v1, :cond_0
 
-    .line 411
+    .line 449
     const-string v1, "android.intent.action.EDIT"
 
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->getIntent()Landroid/content/Intent;
@@ -815,7 +773,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 412
+    .line 450
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     invoke-virtual {v1}, Lcom/android/email/provider/EmailContent$Account;->isSaved()Z
@@ -824,7 +782,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 413
+    .line 451
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
@@ -835,7 +793,7 @@
 
     invoke-virtual {v1, p0, v2}, Lcom/android/email/provider/EmailContent$Account;->update(Landroid/content/Context;Landroid/content/ContentValues;)I
 
-    .line 414
+    .line 452
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v1, v1, Lcom/android/email/provider/EmailContent$Account;->mHostAuthRecv:Lcom/android/email/provider/EmailContent$HostAuth;
@@ -850,16 +808,16 @@
 
     invoke-virtual {v1, p0, v2}, Lcom/android/email/provider/EmailContent$HostAuth;->update(Landroid/content/Context;Landroid/content/ContentValues;)I
 
-    .line 420
+    .line 458
     :goto_0
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->finish()V
 
-    .line 454
+    .line 492
     :cond_0
     :goto_1
     return-void
 
-    .line 416
+    .line 454
     :cond_1
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
@@ -867,7 +825,7 @@
 
     goto :goto_0
 
-    .line 427
+    .line 465
     :cond_2
     :try_start_0
     new-instance v9, Ljava/net/URI;
@@ -880,7 +838,7 @@
 
     invoke-direct {v9, v1}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
 
-    .line 428
+    .line 466
     .local v9, oldUri:Ljava/net/URI;
     new-instance v0, Ljava/net/URI;
 
@@ -954,7 +912,7 @@
 
     invoke-direct/range {v0 .. v7}, Ljava/net/URI;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 437
+    .line 475
     .local v0, uri:Ljava/net/URI;
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
@@ -966,7 +924,7 @@
     :try_end_0
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 448
+    .line 486
     .end local v0           #uri:Ljava/net/URI;
     .end local v9           #oldUri:Ljava/net/URI;
     :goto_2
@@ -982,7 +940,7 @@
 
     move-result v8
 
-    .line 449
+    .line 487
     .local v8, mSetWizMode:Z
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
@@ -990,12 +948,12 @@
 
     invoke-static {p0, v1, v2, v8}, Lcom/android/email/activity/setup/AccountSetupOutgoing;->actionOutgoingSettings(Landroid/app/Activity;Lcom/android/email/provider/EmailContent$Account;ZZ)V
 
-    .line 451
+    .line 489
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->finish()V
 
     goto :goto_1
 
-    .line 438
+    .line 476
     .end local v8           #mSetWizMode:Z
     :catch_0
     move-exception v1
@@ -1008,26 +966,26 @@
     .parameter "v"
 
     .prologue
-    .line 512
+    .line 550
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 520
+    .line 558
     :goto_0
     return-void
 
-    .line 516
+    .line 554
     :pswitch_0
     invoke-direct {p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->onNext()V
 
     goto :goto_0
 
-    .line 512
+    .line 550
     :pswitch_data_0
-    .packed-switch 0x7f07001f
+    .packed-switch 0x7f070022
         :pswitch_0
     .end packed-switch
 .end method
@@ -1037,10 +995,10 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 132
+    .line 133
     invoke-super/range {p0 .. p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 133
+    .line 134
     const v17, 0x7f030007
 
     move-object/from16 v0, p0
@@ -1049,8 +1007,8 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/setup/AccountSetupIncoming;->setContentView(I)V
 
-    .line 135
-    const v17, 0x7f070023
+    .line 136
+    const v17, 0x7f070026
 
     move-object/from16 v0, p0
 
@@ -1068,8 +1026,8 @@
 
     iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mUsernameView:Landroid/widget/EditText;
 
-    .line 136
-    const v17, 0x7f07001a
+    .line 137
+    const v17, 0x7f07001e
 
     move-object/from16 v0, p0
 
@@ -1087,8 +1045,8 @@
 
     iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPasswordView:Landroid/widget/EditText;
 
-    .line 137
-    const v17, 0x7f070028
+    .line 138
+    const v17, 0x7f07002b
 
     move-object/from16 v0, p0
 
@@ -1100,9 +1058,9 @@
 
     check-cast v11, Landroid/widget/TextView;
 
-    .line 138
+    .line 139
     .local v11, serverLabelView:Landroid/widget/TextView;
-    const v17, 0x7f070024
+    const v17, 0x7f070027
 
     move-object/from16 v0, p0
 
@@ -1120,8 +1078,8 @@
 
     iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mServerView:Landroid/widget/EditText;
 
-    .line 139
-    const v17, 0x7f070029
+    .line 140
+    const v17, 0x7f07002c
 
     move-object/from16 v0, p0
 
@@ -1139,8 +1097,8 @@
 
     iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPortView:Landroid/widget/EditText;
 
-    .line 140
-    const v17, 0x7f07002a
+    .line 141
+    const v17, 0x7f07002d
 
     move-object/from16 v0, p0
 
@@ -1158,8 +1116,8 @@
 
     iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mSecurityTypeView:Landroid/widget/Spinner;
 
-    .line 141
-    const v17, 0x7f07002c
+    .line 142
+    const v17, 0x7f07002f
 
     move-object/from16 v0, p0
 
@@ -1177,8 +1135,8 @@
 
     iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mDeletePolicyView:Landroid/widget/Spinner;
 
-    .line 142
-    const v17, 0x7f07002e
+    .line 143
+    const v17, 0x7f070031
 
     move-object/from16 v0, p0
 
@@ -1196,8 +1154,8 @@
 
     iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mImapPathPrefixView:Landroid/widget/EditText;
 
-    .line 146
-    const v17, 0x7f07001f
+    .line 147
+    const v17, 0x7f070022
 
     move-object/from16 v0, p0
 
@@ -1207,18 +1165,18 @@
 
     move-result-object v4
 
-    check-cast v4, Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+    check-cast v4, Lcom/android/email/EmailTwSoftkeyItem;
 
     move-object v0, v4
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mNextTwSoftkeyItem:Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+    iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
 
-    .line 148
+    .line 149
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mNextTwSoftkeyItem:Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+    iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
 
     move-object/from16 v17, v0
 
@@ -1226,9 +1184,9 @@
 
     move-object/from16 v1, p0
 
-    invoke-virtual {v0, v1}, Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Lcom/android/email/EmailTwSoftkeyItem;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 151
+    .line 152
     const/16 v17, 0x5
 
     move/from16 v0, v17
@@ -1247,7 +1205,7 @@
 
     move-result-object v19
 
-    const v20, 0x7f08009b
+    const v20, 0x7f0800a5
 
     move-object/from16 v0, p0
 
@@ -1271,7 +1229,7 @@
 
     move-result-object v19
 
-    const v20, 0x7f08009d
+    const v20, 0x7f0800a7
 
     move-object/from16 v0, p0
 
@@ -1295,7 +1253,7 @@
 
     move-result-object v19
 
-    const v20, 0x7f08009c
+    const v20, 0x7f0800a6
 
     move-object/from16 v0, p0
 
@@ -1319,7 +1277,7 @@
 
     move-result-object v19
 
-    const v20, 0x7f08009f
+    const v20, 0x7f0800a9
 
     move-object/from16 v0, p0
 
@@ -1343,7 +1301,7 @@
 
     move-result-object v19
 
-    const v20, 0x7f08009e
+    const v20, 0x7f0800a8
 
     move-object/from16 v0, p0
 
@@ -1357,7 +1315,7 @@
 
     aput-object v18, v9, v17
 
-    .line 161
+    .line 162
     .local v9, securityTypes:[Lcom/android/email/activity/setup/SpinnerOption;
     const/16 v17, 0x2
 
@@ -1377,7 +1335,7 @@
 
     move-result-object v19
 
-    const v20, 0x7f0800a1
+    const v20, 0x7f0800ab
 
     move-object/from16 v0, p0
 
@@ -1401,7 +1359,7 @@
 
     move-result-object v19
 
-    const v20, 0x7f0800a2
+    const v20, 0x7f0800ac
 
     move-object/from16 v0, p0
 
@@ -1415,7 +1373,7 @@
 
     aput-object v18, v4, v17
 
-    .line 168
+    .line 169
     .local v4, deletePolicies:[Lcom/android/email/activity/setup/SpinnerOption;
     new-instance v10, Landroid/widget/ArrayAdapter;
 
@@ -1431,7 +1389,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
-    .line 170
+    .line 171
     .local v10, securityTypesAdapter:Landroid/widget/ArrayAdapter;,"Landroid/widget/ArrayAdapter<Lcom/android/email/activity/setup/SpinnerOption;>;"
     const v17, 0x1090009
 
@@ -1441,7 +1399,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ArrayAdapter;->setDropDownViewResource(I)V
 
-    .line 171
+    .line 172
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mSecurityTypeView:Landroid/widget/Spinner;
@@ -1454,7 +1412,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
 
-    .line 173
+    .line 174
     new-instance v5, Landroid/widget/ArrayAdapter;
 
     const v17, 0x1090008
@@ -1469,7 +1427,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
-    .line 175
+    .line 176
     .local v5, deletePoliciesAdapter:Landroid/widget/ArrayAdapter;,"Landroid/widget/ArrayAdapter<Lcom/android/email/activity/setup/SpinnerOption;>;"
     const v17, 0x1090009
 
@@ -1479,7 +1437,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ArrayAdapter;->setDropDownViewResource(I)V
 
-    .line 177
+    .line 178
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mDeletePolicyView:Landroid/widget/Spinner;
@@ -1492,7 +1450,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
 
-    .line 183
+    .line 184
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mSecurityTypeView:Landroid/widget/Spinner;
@@ -1509,7 +1467,7 @@
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
-    .line 196
+    .line 197
     new-instance v16, Lcom/android/email/activity/setup/AccountSetupIncoming$2;
 
     move-object/from16 v0, v16
@@ -1518,7 +1476,7 @@
 
     invoke-direct {v0, v1}, Lcom/android/email/activity/setup/AccountSetupIncoming$2;-><init>(Lcom/android/email/activity/setup/AccountSetupIncoming;)V
 
-    .line 218
+    .line 219
     .local v16, validationTextWatcher:Landroid/text/TextWatcher;
     invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->getIntent()Landroid/content/Intent;
 
@@ -1532,20 +1490,9 @@
 
     move-result v6
 
-    .line 219
+    .line 220
     .local v6, editing:Z
     if-eqz v6, :cond_6
-
-    .line 220
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mUsernameView:Landroid/widget/EditText;
-
-    move-object/from16 v17, v0
-
-    const/16 v18, 0x0
-
-    invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setEnabled(Z)V
 
     .line 221
     move-object/from16 v0, p0
@@ -1556,9 +1503,20 @@
 
     const/16 v18, 0x0
 
+    invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setEnabled(Z)V
+
+    .line 222
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mUsernameView:Landroid/widget/EditText;
+
+    move-object/from16 v17, v0
+
+    const/16 v18, 0x0
+
     invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setFocusable(Z)V
 
-    .line 224
+    .line 225
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPasswordView:Landroid/widget/EditText;
@@ -1571,7 +1529,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 225
+    .line 226
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mServerView:Landroid/widget/EditText;
@@ -1584,7 +1542,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 226
+    .line 227
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPortView:Landroid/widget/EditText;
@@ -1597,7 +1555,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 238
+    .line 239
     :goto_0
     move-object/from16 v0, p0
 
@@ -1613,7 +1571,7 @@
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setKeyListener(Landroid/text/method/KeyListener;)V
 
-    .line 240
+    .line 241
     invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->getIntent()Landroid/content/Intent;
 
     move-result-object v17
@@ -1633,7 +1591,7 @@
 
     iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    .line 241
+    .line 242
     invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->getIntent()Landroid/content/Intent;
 
     move-result-object v17
@@ -1652,7 +1610,7 @@
 
     iput-boolean v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mMakeDefault:Z
 
-    .line 247
+    .line 248
     if-eqz p1, :cond_0
 
     const-string v17, "account"
@@ -1667,7 +1625,7 @@
 
     if-eqz v17, :cond_0
 
-    .line 248
+    .line 249
     const-string v17, "account"
 
     move-object/from16 v0, p1
@@ -1687,7 +1645,7 @@
 
     iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    .line 253
+    .line 254
     :cond_0
     :try_start_0
     new-instance v12, Ljava/net/URI;
@@ -1712,15 +1670,15 @@
 
     invoke-direct {v0, v1}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
 
-    .line 254
+    .line 255
     .local v12, uri:Ljava/net/URI;
     const/4 v15, 0x0
 
-    .line 255
+    .line 256
     .local v15, username:Ljava/lang/String;
     const/4 v8, 0x0
 
-    .line 256
+    .line 257
     .local v8, password:Ljava/lang/String;
     invoke-virtual {v12}, Ljava/net/URI;->getUserInfo()Ljava/lang/String;
 
@@ -1728,7 +1686,7 @@
 
     if-eqz v17, :cond_1
 
-    .line 257
+    .line 258
     invoke-virtual {v12}, Ljava/net/URI;->getUserInfo()Ljava/lang/String;
 
     move-result-object v17
@@ -1741,13 +1699,13 @@
 
     move-result-object v14
 
-    .line 258
+    .line 259
     .local v14, userInfoParts:[Ljava/lang/String;
     const/16 v17, 0x0
 
     aget-object v15, v14, v17
 
-    .line 259
+    .line 260
     move-object v0, v14
 
     array-length v0, v0
@@ -1762,28 +1720,28 @@
 
     if-le v0, v1, :cond_1
 
-    .line 260
+    .line 261
     const/16 v17, 0x1
 
     aget-object v8, v14, v17
 
-    .line 264
+    .line 265
     .end local v14           #userInfoParts:[Ljava/lang/String;
     :cond_1
     if-eqz v15, :cond_2
 
-    .line 265
+    .line 266
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mUsernameView:Landroid/widget/EditText;
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f080095
+    const v18, 0x7f08009f
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setHint(I)V
 
-    .line 266
+    .line 267
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mUsernameView:Landroid/widget/EditText;
@@ -1796,22 +1754,22 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 269
+    .line 270
     :cond_2
     if-eqz v8, :cond_3
 
-    .line 270
+    .line 271
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPasswordView:Landroid/widget/EditText;
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f080096
+    const v18, 0x7f0800a0
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setHint(I)V
 
-    .line 271
+    .line 272
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPasswordView:Landroid/widget/EditText;
@@ -1824,7 +1782,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 274
+    .line 275
     :cond_3
     invoke-virtual {v12}, Ljava/net/URI;->getScheme()Ljava/lang/String;
 
@@ -1838,30 +1796,30 @@
 
     if-eqz v17, :cond_7
 
-    .line 275
+    .line 276
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPortView:Landroid/widget/EditText;
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f080099
+    const v18, 0x7f0800a3
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setHint(I)V
 
-    .line 276
+    .line 277
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mServerView:Landroid/widget/EditText;
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f080097
+    const v18, 0x7f0800a1
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setHint(I)V
 
-    .line 277
-    const v17, 0x7f080097
+    .line 278
+    const v17, 0x7f0800a1
 
     move-object v0, v11
 
@@ -1869,7 +1827,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 278
+    .line 279
     sget-object v17, Lcom/android/email/activity/setup/AccountSetupIncoming;->popPorts:[I
 
     move-object/from16 v0, v17
@@ -1878,7 +1836,7 @@
 
     iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccountPorts:[I
 
-    .line 279
+    .line 280
     sget-object v17, Lcom/android/email/activity/setup/AccountSetupIncoming;->popSchemes:[Ljava/lang/String;
 
     move-object/from16 v0, v17
@@ -1887,8 +1845,8 @@
 
     iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccountSchemes:[Ljava/lang/String;
 
-    .line 281
-    const v17, 0x7f07002d
+    .line 282
+    const v17, 0x7f070030
 
     move-object/from16 v0, p0
 
@@ -1902,7 +1860,7 @@
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->setVisibility(I)V
 
-    .line 302
+    .line 303
     :cond_4
     :goto_1
     const/4 v7, 0x0
@@ -1927,7 +1885,7 @@
 
     if-ge v0, v1, :cond_9
 
-    .line 303
+    .line 304
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccountSchemes:[Ljava/lang/String;
@@ -1946,7 +1904,7 @@
 
     if-eqz v17, :cond_5
 
-    .line 304
+    .line 305
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mSecurityTypeView:Landroid/widget/Spinner;
@@ -1961,13 +1919,13 @@
     :try_end_0
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 302
+    .line 303
     :cond_5
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_2
 
-    .line 228
+    .line 229
     .end local v7           #i:I
     .end local v8           #password:Ljava/lang/String;
     .end local v12           #uri:Ljava/net/URI;
@@ -1987,7 +1945,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 229
+    .line 230
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPasswordView:Landroid/widget/EditText;
@@ -2000,7 +1958,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 230
+    .line 231
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mServerView:Landroid/widget/EditText;
@@ -2013,7 +1971,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 231
+    .line 232
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPortView:Landroid/widget/EditText;
@@ -2028,7 +1986,7 @@
 
     goto/16 :goto_0
 
-    .line 282
+    .line 283
     .end local v4           #deletePolicies:[Lcom/android/email/activity/setup/SpinnerOption;
     .end local p1
     .restart local v8       #password:Ljava/lang/String;
@@ -2048,30 +2006,30 @@
 
     if-eqz v17, :cond_8
 
-    .line 283
+    .line 284
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPortView:Landroid/widget/EditText;
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f080099
+    const v18, 0x7f0800a3
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setHint(I)V
 
-    .line 284
+    .line 285
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mServerView:Landroid/widget/EditText;
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f080098
+    const v18, 0x7f0800a2
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setHint(I)V
 
-    .line 285
-    const v17, 0x7f080098
+    .line 286
+    const v17, 0x7f0800a2
 
     move-object v0, v11
 
@@ -2079,7 +2037,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 286
+    .line 287
     sget-object v17, Lcom/android/email/activity/setup/AccountSetupIncoming;->imapPorts:[I
 
     move-object/from16 v0, v17
@@ -2088,7 +2046,7 @@
 
     iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccountPorts:[I
 
-    .line 287
+    .line 288
     sget-object v17, Lcom/android/email/activity/setup/AccountSetupIncoming;->imapSchemes:[Ljava/lang/String;
 
     move-object/from16 v0, v17
@@ -2097,7 +2055,7 @@
 
     iput-object v0, v1, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccountSchemes:[Ljava/lang/String;
 
-    .line 290
+    .line 291
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPortView:Landroid/widget/EditText;
@@ -2108,8 +2066,8 @@
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 293
-    const v17, 0x7f07002b
+    .line 294
+    const v17, 0x7f07002e
 
     move-object/from16 v0, p0
 
@@ -2123,7 +2081,7 @@
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->setVisibility(I)V
 
-    .line 294
+    .line 295
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mDeletePolicyView:Landroid/widget/Spinner;
@@ -2134,7 +2092,7 @@
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/Spinner;->setVisibility(I)V
 
-    .line 295
+    .line 296
     invoke-virtual {v12}, Ljava/net/URI;->getPath()Ljava/lang/String;
 
     move-result-object v17
@@ -2151,7 +2109,7 @@
 
     if-lez v17, :cond_4
 
-    .line 296
+    .line 297
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mImapPathPrefixView:Landroid/widget/EditText;
@@ -2174,7 +2132,7 @@
 
     goto/16 :goto_1
 
-    .line 319
+    .line 320
     .end local v8           #password:Ljava/lang/String;
     .end local v12           #uri:Ljava/net/URI;
     .end local v15           #username:Ljava/lang/String;
@@ -2183,7 +2141,7 @@
 
     move-object/from16 v13, v17
 
-    .line 323
+    .line 324
     .local v13, use:Ljava/net/URISyntaxException;
     new-instance v17, Ljava/lang/Error;
 
@@ -2195,7 +2153,7 @@
 
     throw v17
 
-    .line 299
+    .line 300
     .end local v13           #use:Ljava/net/URISyntaxException;
     .restart local v8       #password:Ljava/lang/String;
     .restart local v12       #uri:Ljava/net/URI;
@@ -2240,7 +2198,7 @@
 
     throw v17
 
-    .line 308
+    .line 309
     .restart local v7       #i:I
     :cond_9
     move-object/from16 v0, p0
@@ -2265,14 +2223,14 @@
 
     invoke-static/range {v17 .. v18}, Lcom/android/email/activity/setup/SpinnerOption;->setSpinnerOptionValue(Landroid/widget/Spinner;Ljava/lang/Object;)V
 
-    .line 310
+    .line 311
     invoke-virtual {v12}, Ljava/net/URI;->getHost()Ljava/lang/String;
 
     move-result-object v17
 
     if-eqz v17, :cond_a
 
-    .line 311
+    .line 312
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mServerView:Landroid/widget/EditText;
@@ -2285,7 +2243,7 @@
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 314
+    .line 315
     :cond_a
     invoke-virtual {v12}, Ljava/net/URI;->getPort()I
 
@@ -2299,7 +2257,7 @@
 
     if-eq v0, v1, :cond_b
 
-    .line 315
+    .line 316
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPortView:Landroid/widget/EditText;
@@ -2318,14 +2276,106 @@
     :try_end_2
     .catch Ljava/net/URISyntaxException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 326
+    .line 327
     :goto_3
     invoke-direct/range {p0 .. p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->validateFields()V
 
-    .line 327
+    .line 329
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mUsernameView:Landroid/widget/EditText;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mUsernameView:Landroid/widget/EditText;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v18
+
+    invoke-interface/range {v18 .. v18}, Landroid/text/Editable;->length()I
+
+    move-result v18
+
+    invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setSelection(I)V
+
+    .line 330
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPasswordView:Landroid/widget/EditText;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPasswordView:Landroid/widget/EditText;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v18
+
+    invoke-interface/range {v18 .. v18}, Landroid/text/Editable;->length()I
+
+    move-result v18
+
+    invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setSelection(I)V
+
+    .line 331
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mServerView:Landroid/widget/EditText;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mServerView:Landroid/widget/EditText;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v18
+
+    invoke-interface/range {v18 .. v18}, Landroid/text/Editable;->length()I
+
+    move-result v18
+
+    invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setSelection(I)V
+
+    .line 332
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPortView:Landroid/widget/EditText;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPortView:Landroid/widget/EditText;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v18
+
+    invoke-interface/range {v18 .. v18}, Landroid/text/Editable;->length()I
+
+    move-result v18
+
+    invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setSelection(I)V
+
+    .line 333
     return-void
 
-    .line 317
+    .line 318
     :cond_b
     :try_start_3
     invoke-direct/range {p0 .. p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->updatePortFromSecurityType()V
@@ -2340,16 +2390,16 @@
     .parameter "id"
 
     .prologue
-    .line 340
+    .line 377
     packed-switch p1, :pswitch_data_0
 
-    .line 355
+    .line 392
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 342
+    .line 379
     :pswitch_0
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
@@ -2361,13 +2411,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f080084
+    const v1, 0x7f08008e
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f080185
+    const v1, 0x7f0801a0
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/AccountSetupIncoming;->getString(I)Ljava/lang/String;
 
@@ -2393,11 +2443,163 @@
 
     goto :goto_0
 
-    .line 340
+    .line 377
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
     .end packed-switch
+.end method
+
+.method public onKeyDown(ILandroid/view/KeyEvent;)Z
+    .locals 5
+    .parameter "keyCode"
+    .parameter "event"
+
+    .prologue
+    const/4 v4, 0x1
+
+    .line 337
+    const/16 v1, 0x13
+
+    if-ne p1, v1, :cond_3
+
+    .line 338
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
+
+    invoke-virtual {v1}, Lcom/android/email/EmailTwSoftkeyItem;->isEnabled()Z
+
+    move-result v1
+
+    if-ne v1, v4, :cond_0
+
+    .line 339
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mNextTwSoftkeyItem:Lcom/android/email/EmailTwSoftkeyItem;
+
+    invoke-virtual {v1}, Lcom/android/email/EmailTwSoftkeyItem;->requestFocus()Z
+
+    :goto_0
+    move v1, v4
+
+    .line 363
+    :goto_1
+    return v1
+
+    .line 341
+    :cond_0
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mDeletePolicyView:Landroid/widget/Spinner;
+
+    invoke-virtual {v1}, Landroid/widget/Spinner;->getVisibility()I
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    .line 342
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mDeletePolicyView:Landroid/widget/Spinner;
+
+    invoke-virtual {v1}, Landroid/widget/Spinner;->requestFocus()Z
+
+    goto :goto_0
+
+    .line 343
+    :cond_1
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mImapPathPrefixView:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->getVisibility()I
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    .line 344
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mImapPathPrefixView:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->requestFocus()Z
+
+    goto :goto_0
+
+    .line 346
+    :cond_2
+    new-instance v1, Ljava/lang/Error;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Unknown account type: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+
+    invoke-virtual {v3, p0}, Lcom/android/email/provider/EmailContent$Account;->getStoreUri(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/lang/Error;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    .line 351
+    :cond_3
+    const/16 v1, 0x14
+
+    if-ne p1, v1, :cond_5
+
+    .line 353
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupIncoming;->getIntent()Landroid/content/Intent;
+
+    move-result-object v1
+
+    const-string v2, "accountEditImapPop"
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    .line 355
+    .local v0, editing:Z
+    if-eqz v0, :cond_4
+
+    .line 356
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mPasswordView:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->requestFocus()Z
+
+    :goto_2
+    move v1, v4
+
+    .line 360
+    goto :goto_1
+
+    .line 358
+    :cond_4
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mUsernameView:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->requestFocus()Z
+
+    goto :goto_2
+
+    .line 363
+    .end local v0           #editing:Z
+    :cond_5
+    invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyDown(ILandroid/view/KeyEvent;)Z
+
+    move-result v1
+
+    goto :goto_1
 .end method
 
 .method public onPrepareDialog(ILandroid/app/Dialog;)V
@@ -2406,30 +2608,30 @@
     .parameter "dialog"
 
     .prologue
-    .line 363
+    .line 400
     packed-switch p1, :pswitch_data_0
 
-    .line 372
+    .line 409
     :cond_0
     :goto_0
     return-void
 
-    .line 365
+    .line 402
     :pswitch_0
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mDuplicateAccountName:Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 366
+    .line 403
     move-object v0, p2
 
     check-cast v0, Landroid/app/AlertDialog;
 
     move-object v1, v0
 
-    .line 368
+    .line 405
     .local v1, alert:Landroid/app/AlertDialog;
-    const v2, 0x7f080185
+    const v2, 0x7f0801a0
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/setup/AccountSetupIncoming;->getString(I)Ljava/lang/String;
 
@@ -2439,7 +2641,7 @@
 
     goto :goto_0
 
-    .line 363
+    .line 400
     nop
 
     :pswitch_data_0
@@ -2453,16 +2655,16 @@
     .parameter "outState"
 
     .prologue
-    .line 331
+    .line 368
     invoke-super {p0, p1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 332
+    .line 369
     const-string v0, "account"
 
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupIncoming;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 333
+    .line 370
     return-void
 .end method

@@ -26,12 +26,12 @@
     .parameter
 
     .prologue
-    .line 142
+    .line 137
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupExchange$1;->this$0:Lcom/android/email/activity/setup/AccountSetupExchange;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 139
+    .line 138
     const-string v0, "AccountSetupExchange"
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange$1;->ACCOUNT_HANDLER_TAG:Ljava/lang/String;
@@ -50,23 +50,23 @@
 
     const-string v2, "AccountSetupExchange"
 
-    .line 144
+    .line 143
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 152
+    .line 151
     const-string v0, "AccountSetupExchange"
 
     const-string v0, "AccountSetupExchange:handleMessage() default"
 
     invoke-static {v2, v0}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 154
+    .line 153
     :goto_0
     return-void
 
-    .line 146
+    .line 145
     :pswitch_0
     const-string v0, "AccountSetupExchange"
 
@@ -74,23 +74,23 @@
 
     invoke-static {v2, v0}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 147
+    .line 146
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange$1;->this$0:Lcom/android/email/activity/setup/AccountSetupExchange;
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/setup/AccountSetupExchange;->showDialog(I)V
 
-    .line 148
+    .line 147
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupExchange$1;->this$0:Lcom/android/email/activity/setup/AccountSetupExchange;
 
-    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSetupExchange;->access$000(Lcom/android/email/activity/setup/AccountSetupExchange;)Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;
+    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSetupExchange;->access$000(Lcom/android/email/activity/setup/AccountSetupExchange;)Lcom/android/email/EmailTwSoftkeyItem;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Lcom/sec/android/touchwiz/widget/TwSoftkeyItem;->setClickable(Z)V
+    invoke-virtual {v0, v1}, Lcom/android/email/EmailTwSoftkeyItem;->setClickable(Z)V
 
     goto :goto_0
 
-    .line 144
+    .line 143
     :pswitch_data_0
     .packed-switch 0x64
         :pswitch_0

@@ -35,7 +35,7 @@
     .parameter
 
     .prologue
-    .line 3567
+    .line 4804
     iput-object p1, p0, Lcom/android/email/activity/MessageView$ChangeTextSizeTask;->this$0:Lcom/android/email/activity/MessageView;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -49,7 +49,7 @@
     .parameter "x1"
 
     .prologue
-    .line 3567
+    .line 4804
     invoke-direct {p0, p1}, Lcom/android/email/activity/MessageView$ChangeTextSizeTask;-><init>(Lcom/android/email/activity/MessageView;)V
 
     return-void
@@ -62,7 +62,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3567
+    .line 4804
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -82,7 +82,7 @@
 
     const/4 v3, 0x0
 
-    .line 3571
+    .line 4808
     iget-object v0, p0, Lcom/android/email/activity/MessageView$ChangeTextSizeTask;->this$0:Lcom/android/email/activity/MessageView;
 
     sget-object v1, Lcom/android/email/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
@@ -97,7 +97,7 @@
 
     move-result-object v6
 
-    .line 3575
+    .line 4812
     .local v6, c:Landroid/database/Cursor;
     if-eqz v6, :cond_1
 
@@ -107,12 +107,12 @@
 
     if-nez v0, :cond_1
 
-    .line 3576
+    .line 4813
     const/4 v0, -0x1
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 3577
+    .line 4814
     :goto_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -120,7 +120,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3578
+    .line 4815
     const-string v0, "View >>"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -147,8 +147,8 @@
 
     invoke-static {v0, v1}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3579
-    invoke-static {}, Lcom/android/email/activity/MessageView;->access$2800()I
+    .line 4816
+    invoke-static {}, Lcom/android/email/activity/MessageView;->access$3700()I
 
     move-result v0
 
@@ -156,14 +156,14 @@
 
     goto :goto_0
 
-    .line 3581
+    .line 4818
     :cond_0
     invoke-interface {v6}, Landroid/database/Cursor;->commitUpdates()Z
 
-    .line 3583
-    :cond_1
+    .line 4819
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 3584
+    .line 4821
+    :cond_1
     return-object v3
 .end method

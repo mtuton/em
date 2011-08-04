@@ -4,40 +4,6 @@
 
 
 # static fields
-.field private static final CHECK_ROAMING_MANUAL_POSITION:I = 0x0
-
-.field private static final CHECK_ROAMING_SYNC_SCHEDULE_POSITION:I = 0x1
-
-.field public static final EXTRA_SCHEDULE:Ljava/lang/String; = "com.android.email.SyncScheduleExtra"
-
-.field private static final SYNC_INTERVAL_12_HRS:I = 0x2d0
-
-.field private static final SYNC_INTERVAL_12_HRS_POS:I = 0x4
-
-.field private static final SYNC_INTERVAL_15_MINS:I = 0xf
-
-.field private static final SYNC_INTERVAL_15_MINS_POS:I = 0x1
-
-.field private static final SYNC_INTERVAL_1_HRS:I = 0x3c
-
-.field private static final SYNC_INTERVAL_1_HRS_POS:I = 0x2
-
-.field private static final SYNC_INTERVAL_4_HRS:I = 0xf0
-
-.field private static final SYNC_INTERVAL_4_HRS_POS:I = 0x3
-
-.field private static final SYNC_INTERVAL_5_MINS:I = 0x5
-
-.field private static final SYNC_INTERVAL_5_MINS_POS:I = 0x0
-
-.field private static final SYNC_INTERVAL_MANUAL:I = -0x1
-
-.field private static final SYNC_INTERVAL_MANUAL_POS:I = 0x5
-
-.field private static final SYNC_INTERVAL_PUSH:I = -0x2
-
-.field private static final SYNC_INTERVAL_PUSH_POS:I = 0x6
-
 .field private static final TAG:Ljava/lang/String;
 
 
@@ -326,9 +292,9 @@
 
 .method public static actionSyncSchedule(Landroid/app/Activity;Lcom/android/exchange/SyncScheduleData;I)V
     .locals 2
-    .parameter "fromActivity"
-    .parameter "syncScheduleData"
-    .parameter "requestCode"
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
     .line 73
@@ -339,7 +305,6 @@
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     .line 74
-    .local v0, i:Landroid/content/Intent;
     const-string v1, "com.android.email.SyncScheduleExtra"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
@@ -1001,7 +966,7 @@
 
     .prologue
     .line 134
-    const v2, 0x7f070111
+    const v2, 0x7f07016d
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/setup/SyncScheduleSettings;->findViewById(I)Landroid/view/View;
 
@@ -1043,7 +1008,7 @@
 
     .prologue
     .line 150
-    const v1, 0x7f070112
+    const v1, 0x7f07016e
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/SyncScheduleSettings;->findViewById(I)Landroid/view/View;
 
@@ -1101,7 +1066,7 @@
     iput v2, p0, Lcom/android/email/activity/setup/SyncScheduleSettings;->mEndMinute:I
 
     .line 182
-    const v2, 0x7f070114
+    const v2, 0x7f070170
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/setup/SyncScheduleSettings;->findViewById(I)Landroid/view/View;
 
@@ -1163,7 +1128,7 @@
 
     .prologue
     .line 118
-    const v2, 0x7f070110
+    const v2, 0x7f07016c
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/setup/SyncScheduleSettings;->findViewById(I)Landroid/view/View;
 
@@ -1235,7 +1200,7 @@
     iput v2, p0, Lcom/android/email/activity/setup/SyncScheduleSettings;->mStartMinute:I
 
     .line 166
-    const v2, 0x7f070113
+    const v2, 0x7f07016f
 
     invoke-virtual {p0, v2}, Lcom/android/email/activity/setup/SyncScheduleSettings;->findViewById(I)Landroid/view/View;
 
@@ -1297,7 +1262,7 @@
 
     .prologue
     .line 194
-    const v3, 0x7f070115
+    const v3, 0x7f070171
 
     invoke-virtual {p0, v3}, Lcom/android/email/activity/setup/SyncScheduleSettings;->findViewById(I)Landroid/view/View;
 
@@ -1309,7 +1274,7 @@
     .local v2, roaming:Landroid/widget/Spinner;
     const v3, 0x7f060013
 
-    const v4, 0x7f030040
+    const v4, 0x7f03004e
 
     invoke-static {p0, v3, v4}, Landroid/widget/ArrayAdapter;->createFromResource(Landroid/content/Context;II)Landroid/widget/ArrayAdapter;
 
@@ -1372,7 +1337,7 @@
 
     .line 246
     .local v0, peakScheduleDialog:Landroid/app/AlertDialog$Builder;
-    const v1, 0x7f0801d6
+    const v1, 0x7f080201
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -1388,7 +1353,7 @@
     invoke-virtual {v0, v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setMultiChoiceItems([Ljava/lang/CharSequence;[ZLandroid/content/DialogInterface$OnMultiChoiceClickListener;)Landroid/app/AlertDialog$Builder;
 
     .line 254
-    const v1, 0x7f0801db
+    const v1, 0x7f080206
 
     new-instance v2, Lcom/android/email/activity/setup/SyncScheduleSettings$11;
 
@@ -1500,7 +1465,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 81
-    const v0, 0x7f03003f
+    const v0, 0x7f03004d
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/SyncScheduleSettings;->setContentView(I)V
 
@@ -1568,7 +1533,7 @@
     invoke-direct {p0}, Lcom/android/email/activity/setup/SyncScheduleSettings;->setupRoaming()V
 
     .line 98
-    const v0, 0x7f070116
+    const v0, 0x7f070172
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/SyncScheduleSettings;->findViewById(I)Landroid/view/View;
 
@@ -1581,7 +1546,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 107
-    const v0, 0x7f070117
+    const v0, 0x7f070173
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/SyncScheduleSettings;->findViewById(I)Landroid/view/View;
 

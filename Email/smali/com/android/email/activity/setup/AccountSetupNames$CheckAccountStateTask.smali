@@ -38,15 +38,15 @@
     .parameter "accountId"
 
     .prologue
-    .line 251
+    .line 296
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupNames$CheckAccountStateTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 252
+    .line 297
     iput-wide p2, p0, Lcom/android/email/activity/setup/AccountSetupNames$CheckAccountStateTask;->mAccountId:J
 
-    .line 253
+    .line 298
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 257
+    .line 302
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupNames$CheckAccountStateTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
 
     invoke-virtual {v0}, Lcom/android/email/activity/setup/AccountSetupNames;->getContentResolver()Landroid/content/ContentResolver;
@@ -86,7 +86,7 @@
 
     move-result-object v6
 
-    .line 261
+    .line 306
     .local v6, c:Landroid/database/Cursor;
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
@@ -95,14 +95,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 262
+    .line 307
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v7
 
-    .line 263
+    .line 308
     .local v7, flags:I
     const/4 v0, 0x1
 
@@ -110,27 +110,27 @@
 
     move-result v8
 
-    .line 264
+    .line 309
     .local v8, securityFlags:I
     and-int/lit8 v0, v7, 0x20
 
     if-eqz v0, :cond_0
 
-    .line 265
+    .line 310
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 269
+    .line 314
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 272
+    .line 317
     .end local v7           #flags:I
     .end local v8           #securityFlags:I
     :goto_0
     return-object v0
 
-    .line 269
+    .line 314
     :catchall_0
     move-exception v0
 
@@ -141,7 +141,7 @@
     :cond_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 272
+    .line 317
     sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     goto :goto_0
@@ -152,7 +152,7 @@
     .parameter "x0"
 
     .prologue
-    .line 247
+    .line 292
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -168,21 +168,21 @@
     .parameter "isSecurityHold"
 
     .prologue
-    .line 277
+    .line 322
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupNames$CheckAccountStateTask;->isCancelled()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 278
+    .line 323
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 279
+    .line 324
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupNames$CheckAccountStateTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
 
     iget-wide v2, p0, Lcom/android/email/activity/setup/AccountSetupNames$CheckAccountStateTask;->mAccountId:J
@@ -191,7 +191,7 @@
 
     move-result-object v0
 
-    .line 281
+    .line 326
     .local v0, i:Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupNames$CheckAccountStateTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
 
@@ -199,13 +199,13 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/android/email/activity/setup/AccountSetupNames;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 286
+    .line 331
     .end local v0           #i:Landroid/content/Intent;
     :cond_0
     :goto_0
     return-void
 
-    .line 283
+    .line 328
     :cond_1
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupNames$CheckAccountStateTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
 
@@ -219,7 +219,7 @@
     .parameter "x0"
 
     .prologue
-    .line 247
+    .line 292
     check-cast p1, Ljava/lang/Boolean;
 
     .end local p1
