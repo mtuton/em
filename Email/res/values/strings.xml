@@ -336,7 +336,7 @@
     <string name="account_settings_add_signature_label">Add signature</string>
     <string name="account_settings_signature_label">Signature</string>
     <string name="message_view_forwarding">Forwarding</string>
-    <string name="account_settings_signature_default_value">Sent from Samsung Mobile</string>
+    <string name="account_settings_signature_default_value">Sent from my mobile</string>
     <string name="add_to_contacts_action">Add to Contacts</string>
     <string name="recent_list_empty">No contacts</string>
     <string name="account_setup_options_sync_calendar_label">Sync Calendar</string>
