@@ -1,0 +1,7 @@
+Steps
+
+1. apktool d -t xxjvr Email.apk
+2. edit the source code file
+3. apktool b Email
+4. jarsigner
+5. zipalign
