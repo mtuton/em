@@ -80,7 +80,7 @@
 
     .line 228
     :cond_1
-    iget-object v3, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "AttachmentsEnabled"
 
@@ -90,7 +90,7 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "AllowStorageCard"
 
@@ -100,7 +100,7 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "AllowCamera"
 
@@ -110,7 +110,7 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "AllowWifi"
 
@@ -120,7 +120,7 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "AllowTextMessaging"
 
@@ -130,7 +130,7 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "AllowPOPIMAPEmail"
 
@@ -140,7 +140,7 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "AllowHTMLEmail"
 
@@ -150,7 +150,7 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "AllowBrowser"
 
@@ -160,7 +160,7 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "AllowInternetSharing"
 
@@ -170,7 +170,7 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "AllowSMIMEEncryptionAlgorithmNegotiation"
 
@@ -180,7 +180,7 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "AllowSMIMESoftCerts"
 
@@ -190,7 +190,7 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "AllowDesktopSync"
 
@@ -200,7 +200,7 @@
 
     if-nez v3, :cond_2
 
-    iget-object v3, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "AllowIrDA"
 
@@ -255,7 +255,7 @@
 
     .line 261
     .local v2, invert:Z
-    iget-object v4, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v5, "MaxInactivityTime"
 
@@ -265,7 +265,7 @@
 
     if-nez v4, :cond_0
 
-    iget-object v4, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v5, "MaxDevicePasswordFailedAttempts"
 
@@ -275,7 +275,7 @@
 
     if-nez v4, :cond_0
 
-    iget-object v4, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v5, "DevicePasswordExpiration"
 
@@ -285,7 +285,7 @@
 
     if-nez v4, :cond_0
 
-    iget-object v4, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v5, "MaxAttachmentSize"
 
@@ -295,7 +295,7 @@
 
     if-nez v4, :cond_0
 
-    iget-object v4, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v5, "MaxCalendarAgeFilter"
 
@@ -305,7 +305,7 @@
 
     if-nez v4, :cond_0
 
-    iget-object v4, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v5, "MaxEmailAgeFilter"
 
@@ -315,7 +315,7 @@
 
     if-nez v4, :cond_0
 
-    iget-object v4, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v5, "MaxEmailBodyTruncationSize"
 
@@ -325,7 +325,7 @@
 
     if-nez v4, :cond_0
 
-    iget-object v4, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v5, "MaxEmailHtmlBodyTruncationSize"
 
@@ -375,7 +375,7 @@
 
     .line 283
     :cond_6
-    iget-object v4, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v5, "RequireSignedSMIMEAlgorithm"
 
@@ -385,7 +385,7 @@
 
     if-nez v4, :cond_7
 
-    iget-object v4, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v5, "RequireEncryptionSMIMEAlgorithm"
 
@@ -395,7 +395,7 @@
 
     if-nez v4, :cond_7
 
-    iget-object v4, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v5, "AllowSMIMEEncryptionAlgorithmNegotiation"
 
@@ -427,7 +427,7 @@
 
     .line 299
     :cond_a
-    iget-object v4, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v5, "AllowBluetoothMode"
 
@@ -464,7 +464,7 @@
 
     .line 208
     .local v0, retVal:I
-    iget-object v1, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
 
     const-string v2, "Boolean"
 
@@ -486,7 +486,7 @@
 
     .line 211
     :cond_1
-    iget-object v1, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
 
     const-string v2, "Integer"
 
@@ -525,7 +525,7 @@
 
     .prologue
     .line 318
-    iget-object v0, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mValue:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
@@ -539,7 +539,7 @@
 
     .prologue
     .line 322
-    iget-object v0, p0, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mValue:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 

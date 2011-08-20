@@ -412,12 +412,12 @@
     .line 1517
     sget-object v0, Lcom/android/email/provider/EmailContent$FollowupFlag;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v0, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->mBaseUri:Landroid/net/Uri;
+    iput-object v0, p0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     .line 1518
     const-wide/16 v0, -0x1
 
-    iput-wide v0, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->mId:J
+    iput-wide v0, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 1519
     return-void
@@ -526,14 +526,14 @@
     .line 1644
     sget-object v1, Lcom/android/email/provider/EmailContent$FollowupFlag;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->mBaseUri:Landroid/net/Uri;
+    iput-object v1, p0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     .line 1645
     invoke-interface {p1, v4}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v1
 
-    iput-wide v1, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->mId:J
+    iput-wide v1, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 1648
     const/4 v1, 0x6
@@ -1245,7 +1245,7 @@
     .line 1689
     sget-object v3, Lcom/android/email/provider/EmailContent$FollowupFlag;->SYNCED_CONTENT_URI:Landroid/net/Uri;
 
-    iget-wide v4, p0, Lcom/android/email/provider/EmailContent$FollowupFlag;->mId:J
+    iget-wide v4, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {p0}, Lcom/android/email/provider/EmailContent$FollowupFlag;->toContentValues()Landroid/content/ContentValues;
 

@@ -328,7 +328,7 @@
     .line 116
     .restart local v0       #acc:Lcom/android/email/provider/EmailContent$Account;
     :cond_4
-    iget-wide v5, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v5, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {p1, v5, v6}, Lcom/android/email/service/MailService;->actionSyncOneAccount(Landroid/content/Context;J)V
 

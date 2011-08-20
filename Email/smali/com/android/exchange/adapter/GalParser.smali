@@ -89,7 +89,7 @@
     if-eq v0, v1, :cond_2
 
     .line 46
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x3cd
 
@@ -207,7 +207,7 @@
     if-eq v0, v1, :cond_b
 
     .line 76
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x405
 
@@ -222,7 +222,7 @@
 
     .line 80
     :cond_0
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x406
 
@@ -237,7 +237,7 @@
 
     .line 83
     :cond_1
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x407
 
@@ -252,7 +252,7 @@
 
     .line 86
     :cond_2
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x408
 
@@ -267,7 +267,7 @@
 
     .line 89
     :cond_3
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x409
 
@@ -282,7 +282,7 @@
 
     .line 92
     :cond_4
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x40a
 
@@ -297,7 +297,7 @@
 
     .line 96
     :cond_5
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x40f
 
@@ -312,7 +312,7 @@
 
     .line 100
     :cond_6
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x40b
 
@@ -327,7 +327,7 @@
 
     .line 103
     :cond_7
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x40c
 
@@ -342,7 +342,7 @@
 
     .line 106
     :cond_8
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x40d
 
@@ -357,7 +357,7 @@
 
     .line 109
     :cond_9
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x40e
 
@@ -417,7 +417,7 @@
     if-eq v0, v1, :cond_1
 
     .line 136
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x3c7
 
@@ -462,7 +462,7 @@
     if-eq v0, v1, :cond_1
 
     .line 126
-    iget v0, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x3cf
 
@@ -508,7 +508,7 @@
     if-eq v2, v3, :cond_4
 
     .line 146
-    iget v2, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x3ce
 
@@ -521,7 +521,7 @@
 
     .line 148
     :cond_1
-    iget v2, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x3cb
 
@@ -579,7 +579,7 @@
     .end local v0           #range:Ljava/lang/String;
     .end local v1           #rangeNums:[Ljava/lang/String;
     :cond_2
-    iget v2, p0, Lcom/android/exchange/adapter/GalParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x3d0
 

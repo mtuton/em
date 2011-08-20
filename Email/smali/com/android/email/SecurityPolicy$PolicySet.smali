@@ -447,7 +447,7 @@
 
     const/4 v5, 0x0
 
-    iget-wide v11, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v11, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v11, v12}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
@@ -3256,7 +3256,7 @@
     :goto_4
     move-object/from16 v0, p1
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-wide v13, v0
 

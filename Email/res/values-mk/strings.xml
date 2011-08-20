@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Може да конфигурирате email за сметките во неколку чекори</string>
     <string name="read_attachment_label">прочитај прилози од Email</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Означи како прочитано</string>
     <string name="unread_action">Озн.за непрочит.</string>
     <string name="favorite_action">Омилени</string>
-    <string name="set_star_action">Додај\nѕвезда</string>
+    <string name="set_star_action">"Додај
+ѕвезда"</string>
     <string name="remove_star_action">Отстрани ѕвезда</string>
     <string name="refresh_action">Обнови</string>
     <string name="add_account_action">Додај сметка</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Пребарај</string>
     <string name="open_action">Отвори</string>
     <string name="account_settings_action">Опции за сметката</string>
-    <string name="remove_account_action">Избриши\nсметка</string>
+    <string name="remove_account_action">"Избриши
+сметка"</string>
     <string name="folders_action">Папки</string>
     <string name="accounts_action">Сметки</string>
     <string name="mark_as_read_action">Означи како прочитано</string>
@@ -81,7 +83,7 @@
     <string name="mailbox_list_title">Поштенско сандаче</string>
     <string name="message_list_load_more_messages_action">Вчитај повеќе пораки</string>
     <string name="message_list_send_pending_messages_action">Прати непратени пораки</string>
-    <string name="message_list_title">%1$s: %2$s</string>
+    <string name="message_list_title" formatted="false">%1$s: %2$s</string>
     <string name="message_compose_to_hint">До</string>
     <string name="message_compose_cc_hint">Коп</string>
     <string name="message_compose_bcc_hint">Н.к.</string>
@@ -94,7 +96,7 @@
     <string name="message_compose_error_invalid_email">Неважечка адреса за email</string>
     <string name="message_compose_attachments_skipped_toast">Некои прилози не може да се препратат бидејќи не се преземени</string>
     <string name="message_compose_attachment_size">Не може да се приложи фајлот. Фајлот е преголем</string>
-    <string name="message_compose_display_name">%1$s и %2$d други</string>
+    <string name="message_compose_display_name" formatted="false">%1$s и %2$d други</string>
     <string name="message_compose_discard_dialog">Пораката не е пратена. Да се отфрли?</string>
     <string name="message_view_to_label">До:</string>
     <string name="message_view_cc_label">Cc:</string>
@@ -225,7 +227,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Вибрации</string>
     <string name="account_settings_ringtone">Избери ѕвонење</string>
     <string name="account_settings_servers">Опции за серверот</string>
-    <string name="account_delete_dlg_title">Избриши\nсметка</string>
+    <string name="account_delete_dlg_title">"Избриши
+сметка"</string>
     <string name="account_delete_dlg_instructions_fmt">Налогот “%s” ќе се избрише од Email-от</string>
     <string name="provider_note_yahoo">Пристапот кон поштенското сандаче не е поддржан за некои видови сметки за email на Yahoo! Ако имате проблеми со поврзувањето, посетете го yahoo.com за повеќе информации</string>
     <string name="provider_note_yahoo_uk">Пред да ја поставите сметката за email, посетете го сајтот на Yahoo! и овозможете лозинка за POP3 пристап кон email за оваа сметка</string>
@@ -357,7 +360,7 @@
     <string name="account_settings_signature_hint">Направете потпис за појдовните пораки</string>
     <string name="notification_exchange_calendar_added">Додаден е календар Exchange ActiveSync</string>
     <string name="gal_searching_fmt">Се бара %s...…</string>
-    <string name="gal_completed_limited_fmt">Први %1$d резултати од %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Први %1$d резултати од %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Серверот бара безбедносни функции што вашиот уред не ги поддржува</string>
     <string name="message_view_invite_accept">Да</string>
     <string name="message_view_invite_maybe">Можеби</string>
@@ -449,7 +452,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Сите</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Големина на email</string>
     <string name="account_settings_mail_empty_trash_label">Испразни ѓубре од серверот</string>
     <string name="account_settings_mail_empty_trash_message">Да се избришат содржините во ѓубрето на серверот?</string>

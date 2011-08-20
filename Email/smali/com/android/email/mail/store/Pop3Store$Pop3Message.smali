@@ -38,15 +38,15 @@
     invoke-direct {p0}, Lcom/android/email/mail/internet/MimeMessage;-><init>()V
 
     .line 1000
-    iput-object p2, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->mUid:Ljava/lang/String;
+    iput-object p2, p0, Lcom/android/email/mail/Message;->mUid:Ljava/lang/String;
 
     .line 1001
-    iput-object p3, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->mFolder:Lcom/android/email/mail/Folder;
+    iput-object p3, p0, Lcom/android/email/mail/Message;->mFolder:Lcom/android/email/mail/Folder;
 
     .line 1002
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->mSize:I
+    iput v0, p0, Lcom/android/email/mail/internet/MimeMessage;->mSize:I
 
     .line 1003
     return-void
@@ -91,7 +91,7 @@
     invoke-super {p0, p1, p2}, Lcom/android/email/mail/internet/MimeMessage;->setFlag(Lcom/android/email/mail/Flag;Z)V
 
     .line 1016
-    iget-object v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->mFolder:Lcom/android/email/mail/Folder;
+    iget-object v0, p0, Lcom/android/email/mail/Message;->mFolder:Lcom/android/email/mail/Folder;
 
     new-array v1, v2, [Lcom/android/email/mail/Message;
 
@@ -113,7 +113,7 @@
 
     .prologue
     .line 1006
-    iput p1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Message;->mSize:I
+    iput p1, p0, Lcom/android/email/mail/internet/MimeMessage;->mSize:I
 
     .line 1007
     return-void

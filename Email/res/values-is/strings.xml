@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Þú getur stillt tölvupóst flestra reikninga í fáum skrefum</string>
     <string name="read_attachment_label">lesa tölvupóstviðhengi</string>
@@ -40,7 +40,8 @@
     <string name="search_action">Leit</string>
     <string name="open_action">Opna</string>
     <string name="account_settings_action">Reikningsstillingar</string>
-    <string name="remove_account_action">Fjarlægja\nreikning</string>
+    <string name="remove_account_action">"Fjarlægja
+reikning"</string>
     <string name="folders_action">Möppur</string>
     <string name="accounts_action">Pósthólf</string>
     <string name="mark_as_read_action">Merkja sem lesið</string>
@@ -85,7 +86,7 @@
     <string name="mailbox_list_title">Pósthólf</string>
     <string name="message_list_load_more_messages_action">Hlaða upp fleiri skilaboðum</string>
     <string name="message_list_send_pending_messages_action">Senda tölvupóst á útleið</string>
-    <string name="message_list_title">%1$s: %2$s</string>
+    <string name="message_list_title" formatted="false">%1$s: %2$s</string>
     <string name="message_compose_to_hint">Til</string>
     <string name="message_compose_cc_hint">Afrit</string>
     <string name="message_compose_bcc_hint">Falið afrit</string>
@@ -98,7 +99,7 @@
     <string name="message_compose_error_invalid_email">Ógilt netfang</string>
     <string name="message_compose_attachments_skipped_toast">Það er ekki hægt að framsenda sum viðhengi þar sem þeim hefur ekki verið hlaðið niður</string>
     <string name="message_compose_attachment_size">Mistókst að hengja við skrá. Hún er of stór</string>
-    <string name="message_compose_display_name">%1$s og %2$d aðrir</string>
+    <string name="message_compose_display_name" formatted="false">%1$s og %2$d aðrir</string>
     <string name="message_compose_discard_dialog">Skilaboð voru ekki send. Fleygja?</string>
     <string name="message_view_to_label">Til:</string>
     <string name="message_view_cc_label">Samrit:</string>
@@ -229,7 +230,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Titringur</string>
     <string name="account_settings_ringtone">Velja hringitón</string>
     <string name="account_settings_servers">Netþjónsstillingar</string>
-    <string name="account_delete_dlg_title">Fjarlægja\nreikning</string>
+    <string name="account_delete_dlg_title">"Fjarlægja
+reikning"</string>
     <string name="account_delete_dlg_instructions_fmt">Áskriftin „%s“ verður fjarlægð úr póstforritinu</string>
     <string name="provider_note_yahoo">Pósthólfsaðgangur er ekki studdur fyrir allar gerðir Yahoo!-póstáskrifta. Ef þú átt í vandræðum með að tengjast skaltu kynna þér upplýsingar á yahoo.com</string>
     <string name="provider_note_yahoo_uk">Farðu á vefsvæði Yahoo! og opnaðu fyrir POP3-póstaðgang fyrir þessa póstáskrift áður en þú setur hana upp</string>
@@ -361,7 +363,7 @@
     <string name="account_settings_signature_hint">Búa til undirskrift fyrir send skilaboð</string>
     <string name="notification_exchange_calendar_added">Exchange ActiveSync dagbók bætt við</string>
     <string name="gal_searching_fmt">Leitar í %s...…</string>
-    <string name="gal_completed_limited_fmt">Fyrstu %1$d niðurstöður úr %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Fyrstu %1$d niðurstöður úr %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Þjónninn þarfnast öryggiseiginleika sem tækið styður ekki</string>
     <string name="message_view_invite_accept">Já</string>
     <string name="message_view_invite_maybe">Kannski</string>
@@ -453,7 +455,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Allt</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Stærð tölvupósts</string>
     <string name="account_settings_mail_empty_trash_label">Tæma ruslakörfu netþjóns</string>
     <string name="account_settings_mail_empty_trash_message">Eyða efni í ruslakörfu þjóns?</string>

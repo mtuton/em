@@ -2074,13 +2074,2652 @@
 .end method
 
 .method public isActive(Lcom/android/email/SecurityPolicy$PolicySet;)Z
-    .locals 1
+    .locals 12
     .parameter "policies"
 
     .prologue
-    const/4 v0, 0x1
+    const/4 v7, 0x0
 
-    return v0
+    const-string v11, ", value:"
+
+    const-string v10, ", return false"
+
+    const-string v9, " is stronger than device value:"
+
+    const-string v8, "Email"
+
+    .line 732
+    if-nez p1, :cond_0
+
+    .line 733
+    invoke-virtual {p0}, Lcom/android/email/SecurityPolicy;->getAggregatePolicy()Lcom/android/email/SecurityPolicy$PolicySet;
+
+    move-result-object p1
+
+    .line 736
+    :cond_0
+    sget-object v3, Lcom/android/email/SecurityPolicy;->NO_POLICY_SET:Lcom/android/email/SecurityPolicy$PolicySet;
+
+    invoke-virtual {p1, v3}, Lcom/android/email/SecurityPolicy$PolicySet;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    .line 737
+    const/4 v3, 0x1
+
+    .line 1127
+    :goto_0
+    return v3
+
+    .line 739
+    :cond_1
+    invoke-direct {p0}, Lcom/android/email/SecurityPolicy;->getDPM()Landroid/app/admin/DevicePolicyManager;
+
+    move-result-object v0
+
+    .line 740
+    .local v0, dpm:Landroid/app/admin/DevicePolicyManager;
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->isAdminActive(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1f
+
+    .line 742
+    iget v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mMinPasswordLength:I
+
+    if-lez v3, :cond_2
+
+    .line 743
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getPasswordMinimumLength(Landroid/content/ComponentName;)I
+
+    move-result v3
+
+    iget v4, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mMinPasswordLength:I
+
+    if-ge v3, v4, :cond_2
+
+    move v3, v7
+
+    .line 744
+    goto :goto_0
+
+    .line 747
+    :cond_2
+    iget v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordMode:I
+
+    if-lez v3, :cond_4
+
+    .line 748
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getPasswordQuality(Landroid/content/ComponentName;)I
+
+    move-result v3
+
+    invoke-virtual {p1}, Lcom/android/email/SecurityPolicy$PolicySet;->getDPManagerPasswordQuality()I
+
+    move-result v4
+
+    if-ge v3, v4, :cond_3
+
+    move v3, v7
+
+    .line 749
+    goto :goto_0
+
+    .line 751
+    :cond_3
+    invoke-virtual {v0}, Landroid/app/admin/DevicePolicyManager;->isActivePasswordSufficient()Z
+
+    move-result v3
+
+    if-nez v3, :cond_4
+
+    move v3, v7
+
+    .line 752
+    goto :goto_0
+
+    .line 755
+    :cond_4
+    iget v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxScreenLockTime:I
+
+    if-lez v3, :cond_5
+
+    .line 757
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getMaximumTimeToLock(Landroid/content/ComponentName;)J
+
+    move-result-wide v3
+
+    iget v5, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxScreenLockTime:I
+
+    mul-int/lit16 v5, v5, 0x3e8
+
+    int-to-long v5, v5
+
+    cmp-long v3, v3, v5
+
+    if-lez v3, :cond_5
+
+    move v3, v7
+
+    .line 758
+    goto :goto_0
+
+    .line 765
+    :cond_5
+    new-instance v1, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;
+
+    invoke-direct {v1}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;-><init>()V
+
+    .line 766
+    .local v1, ps:Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;
+    new-instance v2, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;
+
+    invoke-direct {v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;-><init>()V
+
+    .line 767
+    .local v2, psAnother:Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;
+    const-string v3, "MaxDevicePasswordFailedAttempts"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 768
+    const-string v3, "Integer"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 769
+    iget v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxPasswordFails:I
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 770
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;)I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 771
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_6
+
+    .line 773
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 774
+    goto/16 :goto_0
+
+    .line 777
+    :cond_6
+    const-string v3, "DevicePasswordExpiration"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 778
+    const-string v3, "Integer"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 779
+    iget v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordExpires:I
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 780
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getPasswordExpires(Landroid/content/ComponentName;)I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 781
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_7
+
+    .line 783
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 784
+    goto/16 :goto_0
+
+    .line 787
+    :cond_7
+    const-string v3, "DevicePasswordHistory"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 788
+    const-string v3, "Integer"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 789
+    iget v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordHistory:I
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 790
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getPasswordHistory(Landroid/content/ComponentName;)I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 791
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_8
+
+    .line 793
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 794
+    goto/16 :goto_0
+
+    .line 797
+    :cond_8
+    const-string v3, "AttachmentsEnabled"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 798
+    const-string v3, "Boolean"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 799
+    iget-boolean v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mAttachmentsEnabled:Z
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 800
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getAttachmentsEnabled(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 801
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_9
+
+    .line 803
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 804
+    goto/16 :goto_0
+
+    .line 807
+    :cond_9
+    const-string v3, "MaxAttachmentSize"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 808
+    const-string v3, "Integer"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 809
+    iget v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxAttachmentSize:I
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 810
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getMaxAttachmentSize(Landroid/content/ComponentName;)I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 811
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_a
+
+    .line 813
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 814
+    goto/16 :goto_0
+
+    .line 817
+    :cond_a
+    const-string v3, "PasswordRecoveryEnabled"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 818
+    const-string v3, "Boolean"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 819
+    iget-boolean v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mPasswordRecoverable:Z
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 820
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getPasswordRecoverable(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 821
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_b
+
+    .line 823
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 824
+    goto/16 :goto_0
+
+    .line 829
+    :cond_b
+    const-string v3, "AllowStorageCard"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 830
+    const-string v3, "Boolean"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 831
+    iget-boolean v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowStorageCard:Z
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 832
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getAllowStorageCard(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 833
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_c
+
+    .line 835
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 836
+    goto/16 :goto_0
+
+    .line 839
+    :cond_c
+    const-string v3, "AllowCamera"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 840
+    const-string v3, "Boolean"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 841
+    iget-boolean v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowCamera:Z
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 842
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getAllowCamera(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 843
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_d
+
+    .line 845
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 846
+    goto/16 :goto_0
+
+    .line 849
+    :cond_d
+    const-string v3, "AllowWifi"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 850
+    const-string v3, "Boolean"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 851
+    iget-boolean v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowWifi:Z
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 852
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getAllowWifi(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 853
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_e
+
+    .line 855
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 856
+    goto/16 :goto_0
+
+    .line 860
+    :cond_e
+    const-string v3, "AllowTextMessaging"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 861
+    const-string v3, "Boolean"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 862
+    iget-boolean v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowTextMessaging:Z
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 863
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getAllowTextMessaging(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 864
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_f
+
+    .line 866
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 867
+    goto/16 :goto_0
+
+    .line 870
+    :cond_f
+    const-string v3, "AllowPOPIMAPEmail"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 871
+    const-string v3, "Boolean"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 872
+    iget-boolean v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowPOPIMAPEmail:Z
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 873
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getAllowPOPIMAPEmail(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 874
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_10
+
+    .line 876
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 877
+    goto/16 :goto_0
+
+    .line 880
+    :cond_10
+    const-string v3, "AllowHTMLEmail"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 881
+    const-string v3, "Boolean"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 882
+    iget-boolean v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowHTMLEmail:Z
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 883
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getAllowHTMLEmail(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 884
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_11
+
+    .line 886
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 887
+    goto/16 :goto_0
+
+    .line 890
+    :cond_11
+    const-string v3, "AllowBrowser"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 891
+    const-string v3, "Boolean"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 892
+    iget-boolean v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowBrowser:Z
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 893
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getAllowBrowser(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 894
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_12
+
+    .line 896
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 897
+    goto/16 :goto_0
+
+    .line 900
+    :cond_12
+    const-string v3, "AllowInternetSharing"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 901
+    const-string v3, "Boolean"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 902
+    iget-boolean v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowInternetSharing:Z
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 903
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getAllowInternetSharing(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 904
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_13
+
+    .line 906
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 907
+    goto/16 :goto_0
+
+    .line 910
+    :cond_13
+    const-string v3, "RequireManualSyncWhenRoaming"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 911
+    const-string v3, "Boolean"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 912
+    iget-boolean v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireManualSyncWhenRoaming:Z
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 913
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getRequireManualSyncRoaming(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 914
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_14
+
+    .line 916
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 917
+    goto/16 :goto_0
+
+    .line 920
+    :cond_14
+    const-string v3, "AllowBluetoothMode"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 921
+    const-string v3, "Integer"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 922
+    iget v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mAllowBluetoothMode:I
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 923
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getAllowBluetoothMode(Landroid/content/ComponentName;)I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 924
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_15
+
+    .line 926
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 927
+    goto/16 :goto_0
+
+    .line 930
+    :cond_15
+    const-string v3, "MinPasswordComplexCharacters"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 931
+    const-string v3, "Integer"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 932
+    iget v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mMinPasswordComplexChars:I
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 933
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getMinPasswordComplexChars(Landroid/content/ComponentName;)I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 934
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_16
+
+    .line 936
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 937
+    goto/16 :goto_0
+
+    .line 940
+    :cond_16
+    const-string v3, "MaxCalendarAgeFilter"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 941
+    const-string v3, "Integer"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 942
+    iget v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxCalendarAgeFilter:I
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 943
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getMaxCalendarAge(Landroid/content/ComponentName;)I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 944
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_17
+
+    .line 946
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 947
+    goto/16 :goto_0
+
+    .line 950
+    :cond_17
+    const-string v3, "MaxEmailAgeFilter"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 951
+    const-string v3, "Integer"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 952
+    iget v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailAgeFilter:I
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 953
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getMaxEmailAge(Landroid/content/ComponentName;)I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 954
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_18
+
+    .line 956
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 957
+    goto/16 :goto_0
+
+    .line 960
+    :cond_18
+    const-string v3, "MaxEmailBodyTruncationSize"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 961
+    const-string v3, "Integer"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 962
+    iget v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailBodyTruncationSize:I
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 963
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getMaxEmailBodyTruncSize(Landroid/content/ComponentName;)I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 964
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_19
+
+    .line 966
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 967
+    goto/16 :goto_0
+
+    .line 970
+    :cond_19
+    const-string v3, "MaxEmailHtmlBodyTruncationSize"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 971
+    const-string v3, "Integer"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 972
+    iget v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mMaxEmailHtmlBodyTruncationSize:I
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 973
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getMaxHtmlEmailBodyTruncSize(Landroid/content/ComponentName;)I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 974
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_1a
+
+    .line 976
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 977
+    goto/16 :goto_0
+
+    .line 1092
+    :cond_1a
+    const-string v3, "RequireDeviceEncryption"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 1093
+    const-string v3, "Boolean"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 1094
+    iget-boolean v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireDeviceEncryption:Z
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 1095
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getRequireDeviceEncryption(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 1096
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_1b
+
+    .line 1098
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 1099
+    goto/16 :goto_0
+
+    .line 1101
+    :cond_1b
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getRequireDeviceEncryption(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1c
+
+    invoke-static {}, Landroid/deviceencryption/DeviceEncryptionManager;->getInternalStorageStatus()Z
+
+    move-result v3
+
+    iget-object v4, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v4}, Landroid/app/admin/DevicePolicyManager;->getRequireDeviceEncryption(Landroid/content/ComponentName;)Z
+
+    move-result v4
+
+    if-eq v3, v4, :cond_1c
+
+    .line 1103
+    const-string v3, "Email"
+
+    const-string v3, "isActive(): Device Encryption is not applied yet!"
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 1104
+    goto/16 :goto_0
+
+    .line 1107
+    :cond_1c
+    const-string v3, "RequireStorageCardEncryption"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    .line 1108
+    const-string v3, "Boolean"
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
+
+    .line 1109
+    iget-boolean v3, p1, Lcom/android/email/SecurityPolicy$PolicySet;->mRequireStorageCardEncryption:Z
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 1110
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getRequireStorageCardEncryption(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    .line 1111
+    invoke-virtual {v1, v2}, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->compareTo(Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;)I
+
+    move-result v3
+
+    if-lez v3, :cond_1d
+
+    .line 1113
+    const-string v3, "Email"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "isActive(): thisPolicy:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", value:"
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " is stronger than device value:"
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", return false"
+
+    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 1114
+    goto/16 :goto_0
+
+    .line 1116
+    :cond_1d
+    iget-object v3, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v3}, Landroid/app/admin/DevicePolicyManager;->getRequireStorageCardEncryption(Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1e
+
+    invoke-static {}, Landroid/deviceencryption/DeviceEncryptionManager;->getExternalStorageStatus()Z
+
+    move-result v3
+
+    iget-object v4, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v4}, Landroid/app/admin/DevicePolicyManager;->getRequireStorageCardEncryption(Landroid/content/ComponentName;)Z
+
+    move-result v4
+
+    if-eq v3, v4, :cond_1e
+
+    .line 1118
+    const-string v3, "Email"
+
+    const-string v3, "isActive(); StorageCard encryption is not applied yet!"
+
+    invoke-static {v8, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v3, v7
+
+    .line 1119
+    goto/16 :goto_0
+
+    .line 1124
+    :cond_1e
+    const/4 v3, 0x1
+
+    goto/16 :goto_0
+
+    .end local v1           #ps:Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;
+    .end local v2           #psAnother:Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;
+    :cond_1f
+    move v3, v7
+
+    .line 1127
+    goto/16 :goto_0
+.end method
+
+.method public isActiveAdmin()Z
+    .locals 2
+
+    .prologue
+    .line 2151
+    invoke-direct {p0}, Lcom/android/email/SecurityPolicy;->getDPM()Landroid/app/admin/DevicePolicyManager;
+
+    move-result-object v0
+
+    .line 2152
+    .local v0, dpm:Landroid/app/admin/DevicePolicyManager;
+    iget-object v1, p0, Lcom/android/email/SecurityPolicy;->mAdminName:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v1}, Landroid/app/admin/DevicePolicyManager;->isAdminActive(Landroid/content/ComponentName;)Z
+
+    move-result v1
+
+    return v1
 .end method
 
 .method onAdminEnabled(Z)V

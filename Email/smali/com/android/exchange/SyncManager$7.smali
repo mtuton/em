@@ -80,7 +80,7 @@
 
     const/4 v3, 0x0
 
-    iget-wide v4, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v4, v1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v4, v5}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 

@@ -46,7 +46,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/exchange/PasswordRecoveryService;->mDeviceId:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -55,14 +55,14 @@
     iput-object p3, p0, Lcom/android/exchange/PasswordRecoveryService;->mPassword:Ljava/lang/String;
 
     .line 45
-    iget-object v0, p0, Lcom/android/exchange/PasswordRecoveryService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v0, v0, Lcom/android/email/provider/EmailContent$Account;->mProtocolVersion:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/android/exchange/PasswordRecoveryService;->mProtocolVersion:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     .line 46
-    iget-object v0, p0, Lcom/android/exchange/PasswordRecoveryService;->mProtocolVersion:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
@@ -72,7 +72,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/exchange/PasswordRecoveryService;->mProtocolVersionDouble:Ljava/lang/Double;
+    iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersionDouble:Ljava/lang/Double;
 
     .line 47
     return-void
@@ -125,7 +125,7 @@
     if-eqz p1, :cond_0
 
     .line 53
-    iget-wide v1, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/16 v3, 0x44
 
@@ -203,7 +203,7 @@
     if-ne v5, v6, :cond_0
 
     .line 116
-    iget-object v6, p0, Lcom/android/exchange/PasswordRecoveryService;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     invoke-static {v6}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
 
@@ -422,7 +422,7 @@
 
     move-result-object v7
 
-    iget-object v8, p0, Lcom/android/exchange/PasswordRecoveryService;->mUserName:Ljava/lang/String;
+    iget-object v8, p0, Lcom/android/exchange/EasSyncService;->mUserName:Ljava/lang/String;
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -468,7 +468,7 @@
     .local v1, byTe:Ljava/io/ByteArrayInputStream;
     new-instance v4, Lcom/android/exchange/adapter/LogAdapter;
 
-    iget-object v6, p0, Lcom/android/exchange/PasswordRecoveryService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v6, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     invoke-direct {v4, v6, p0}, Lcom/android/exchange/adapter/LogAdapter;-><init>(Lcom/android/email/provider/EmailContent$Mailbox;Lcom/android/exchange/EasSyncService;)V
 
@@ -553,21 +553,21 @@
     .line 95
     const/4 v6, 0x5
 
-    iput v6, p0, Lcom/android/exchange/PasswordRecoveryService;->mExitStatus:I
+    iput v6, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     .line 96
-    iget-object v6, p0, Lcom/android/exchange/PasswordRecoveryService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v6, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v6, v6, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v6, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     sget v8, Lcom/android/email/provider/EmailContent$Account;->DEVICE_IS_BLOCKED:I
 
     invoke-static {v6, v7, v8}, Lcom/android/exchange/SyncManager;->blockDevice(JI)V
 
     .line 97
-    iget-object v6, p0, Lcom/android/exchange/PasswordRecoveryService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v6, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v6, v6, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v6, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v6, v7}, Lcom/android/exchange/SyncManager;->stopAccountSyncs(J)V
 

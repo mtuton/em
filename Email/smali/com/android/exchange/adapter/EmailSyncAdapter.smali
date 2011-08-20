@@ -190,7 +190,7 @@
     iput-boolean v1, p0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mIsLooping:Z
 
     .line 147
-    iget-object v0, p0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/email/Controller;->getInstance(Landroid/content/Context;)Lcom/android/email/Controller;
 
@@ -849,7 +849,7 @@
     .local v12, dateRecvd:Ljava/lang/String;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
     move-object v3, v0
 
@@ -1085,7 +1085,7 @@
 
     .line 1731
     :try_start_0
-    iget-object v1, p0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1330,7 +1330,7 @@
     const/4 v4, 0x0
 
     .line 1800
-    iget-object v1, p0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1352,9 +1352,9 @@
 
     move-result-object v3
 
-    iget-object v5, p0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v5, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v10, v5, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v10, v5, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v3, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -1372,9 +1372,9 @@
 
     .line 1805
     .local v6, c:Landroid/database/Cursor;
-    iget-object v1, p0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-wide v2, v2, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
 
@@ -1521,7 +1521,7 @@
     .line 1899
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -1533,7 +1533,7 @@
     .local v4, cr:Landroid/content/ContentResolver;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v5, v0
 
@@ -1545,7 +1545,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v5, v0
 
@@ -1589,7 +1589,7 @@
     .local v14, firstCommand:Z
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v5, v0
 
@@ -1599,7 +1599,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
     move-object v5, v0
 
@@ -1632,13 +1632,13 @@
     :cond_2
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v6, v0
 
@@ -1668,11 +1668,11 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v8, v0
 
-    iget-wide v8, v8, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v8, v8, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v7, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -1918,7 +1918,7 @@
     .local v23, uri:Landroid/net/Uri;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -2071,7 +2071,7 @@
     :cond_a
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/EmailSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
     move-object v5, v0
 

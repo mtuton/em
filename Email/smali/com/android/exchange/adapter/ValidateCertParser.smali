@@ -120,7 +120,7 @@
     if-eq v0, v1, :cond_3
 
     .line 37
-    iget v0, p0, Lcom/android/exchange/adapter/ValidateCertParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x2c7
 
@@ -133,7 +133,7 @@
 
     .line 39
     :cond_1
-    iget v0, p0, Lcom/android/exchange/adapter/ValidateCertParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x2ca
 
@@ -193,7 +193,7 @@
     if-eq v0, v1, :cond_1
 
     .line 50
-    iget v0, p0, Lcom/android/exchange/adapter/ValidateCertParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x2ca
 

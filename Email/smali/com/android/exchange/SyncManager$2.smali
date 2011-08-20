@@ -1274,7 +1274,7 @@
     .line 609
     iget-object v5, p0, Lcom/android/exchange/SyncManager$2;->this$0:Lcom/android/exchange/SyncManager;
 
-    iget-wide v6, v3, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v6, v3, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v5, v4, v10, v6, v7}, Lcom/android/exchange/SyncManager;->access$200(Lcom/android/exchange/SyncManager;Landroid/content/Context;IJ)V
 
@@ -1366,7 +1366,7 @@
 
     move-result-object v2
 
-    iget-wide v3, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v3, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -1383,7 +1383,7 @@
 
     iget-object v2, v2, Lcom/android/exchange/SyncManager;->mSyncErrorMap:Ljava/util/HashMap;
 
-    iget-wide v3, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v3, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -1442,7 +1442,7 @@
 
     move-result-object v2
 
-    iget-wide v3, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v3, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 

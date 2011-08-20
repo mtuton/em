@@ -69,7 +69,7 @@
     .restart local p0
     .restart local p1
     :cond_1
-    iget-wide v0, p1, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v0, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {p0, v0, v1}, Lcom/android/email/provider/EmailContent$Attachment;->restoreAttachmentsWithMessageId(Landroid/content/Context;J)[Lcom/android/email/provider/EmailContent$Attachment;
 
@@ -113,7 +113,7 @@
 
     aget-object v4, v0, v4
 
-    iget-wide v4, v4, Lcom/android/email/provider/EmailContent$Attachment;->mId:J
+    iget-wide v4, v4, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {p0, v1, v2, v4, v5}, Lcom/android/email/provider/AttachmentProvider;->getAttachmentFilename(Landroid/content/Context;JJ)Ljava/io/File;
 
@@ -194,7 +194,7 @@
     aget-object p1, v0, p1
 
     .end local p1
-    iget-wide v5, p1, Lcom/android/email/provider/EmailContent$Attachment;->mId:J
+    iget-wide v5, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v3, v4, v5, v6}, Lcom/android/email/provider/AttachmentProvider;->getAttachmentUri(JJ)Landroid/net/Uri;
 
@@ -235,7 +235,7 @@
     aget-object v0, v0, v1
 
     .end local v0           #atts:[Lcom/android/email/provider/EmailContent$Attachment;
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Attachment;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {p1, v0, v1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -375,7 +375,7 @@
     :goto_0
     sget-object v1, Lcom/android/email/provider/EmailContent$Body;->CONTENT_URI:Landroid/net/Uri;
 
-    iget-wide v3, p3, Lcom/android/email/provider/EmailContent$Body;->mId:J
+    iget-wide v3, p3, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v1, v3, v4}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -397,7 +397,7 @@
     invoke-virtual {v2, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 59
-    iget-wide v0, p2, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v0, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     .end local v0           #cv:Landroid/content/ContentValues;
     invoke-static {p1, v0, v1}, Lcom/android/email/provider/EmailContent$Message;->restoreMessageWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Message;
@@ -533,7 +533,7 @@
 
     move-result-object v1
 
-    iget-wide v3, p2, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v3, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 

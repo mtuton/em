@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <public type="attr" name="itemImageAlign" id="0x7f010000" />
     <public type="attr" name="itemText" id="0x7f010001" />

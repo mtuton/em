@@ -255,9 +255,9 @@
 
     const/4 v1, 0x1
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v2, v2, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v2, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-interface {v0, v1, v2, v3, p1}, Lcom/android/email/service/IEmailServiceCallback;->folderCommandStatus(IJI)V
     :try_end_0
@@ -322,7 +322,7 @@
 
     .line 145
     .local v6, count:I
-    iget-object v1, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -344,7 +344,7 @@
 
     move-result-object v3
 
-    iget-object v5, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v5, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-wide v8, v5, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
 
@@ -515,7 +515,7 @@
     const-string v10, "Mahskyript"
 
     .line 93
-    iget-object v1, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -537,7 +537,7 @@
 
     move-result-object v3
 
-    iget-object v5, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v5, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-wide v7, v5, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
 
@@ -635,7 +635,7 @@
 
     const/16 v2, 0x1d2
 
-    iget-object v3, p0, Lcom/android/exchange/adapter/FolderDeleteAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v3, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v3, v3, Lcom/android/email/provider/EmailContent$Account;->mSyncKey:Ljava/lang/String;
 

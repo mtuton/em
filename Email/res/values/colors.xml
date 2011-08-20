@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="folder_message_list_child_background">#ff3b3b3b</color>
     <color name="message_list_item_background_unread">#ff363636</color>

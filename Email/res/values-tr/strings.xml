@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Çoğu hesap için birkaç adımda e-posta yapılandırabilirsiniz</string>
     <string name="read_attachment_label">E posta eklentilerini oku</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Okundu olarak işaretle</string>
     <string name="unread_action">Oknmdı ol. işar.</string>
     <string name="favorite_action">Favoriler</string>
-    <string name="set_star_action">Yıldız\nekle</string>
+    <string name="set_star_action">"Yıldız
+ekle"</string>
     <string name="remove_star_action">Yıldızı kaldır</string>
     <string name="refresh_action">Yenile</string>
     <string name="add_account_action">Hesap ekle</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Bul</string>
     <string name="open_action">Aç</string>
     <string name="account_settings_action">Hesap ayarları</string>
-    <string name="remove_account_action">Hesabı\nkaldır</string>
+    <string name="remove_account_action">"Hesabı
+kaldır"</string>
     <string name="folders_action">Klasörler</string>
     <string name="accounts_action">Hesaplar</string>
     <string name="mark_as_read_action">Okundu olarak işaretle</string>
@@ -79,20 +81,32 @@
     <string name="mailbox_list_title">Posta kutusu</string>
     <string name="message_list_load_more_messages_action">Daha fazla mesaj yükle</string>
     <string name="message_list_send_pending_messages_action">Giden mesajları gönder</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">Alıcı</string>
     <string name="message_compose_cc_hint">Bilgi</string>
     <string name="message_compose_bcc_hint">Gizli</string>
     <string name="message_compose_subject_hint">Konu</string>
     <string name="message_compose_body_hint">E-posta yaz</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- Orjinal mesaj --------\nKonu: %s\nGönderen: %s\nAlıcı:%s\nCC: %s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s yazdı:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- Orjinal mesaj --------
+Konu: %s
+Gönderen: %s
+Alıcı:%s
+CC: %s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s yazdı:
+
+"</string>
     <string name="message_compose_quoted_text_label">Orjinal mesaj</string>
     <string name="message_compose_error_no_recipients">Alıcı ekle</string>
     <string name="message_compose_error_invalid_email">Geçersiz e-posta adresi</string>
     <string name="message_compose_attachments_skipped_toast">Bazı eklentiler iletilemiyor çünkü indirilmediler</string>
     <string name="message_compose_attachment_size">Dosya eklenemedi. Dosya boyutu çok büyük</string>
-    <string name="message_compose_display_name">%1$s ve %2$d başka</string>
+    <string name="message_compose_display_name" formatted="false">%1$s ve %2$d başka</string>
     <string name="message_compose_discard_dialog">Mesaj gönderilemedi. Atılsın mı?</string>
     <string name="message_view_to_label">Alıcı:</string>
     <string name="message_view_cc_label">Bilgi:</string>
@@ -191,11 +205,14 @@
     <string name="account_setup_options_mail_window_all">Tüm e-postalar</string>
     <string name="account_setup_failed_dlg_auth_message">Kullanıcı adı veya parola yanlış</string>
     <string name="account_setup_autodiscover_failed_dlg_auth_message">Otomatik keşif başarısız</string>
-    <string name="account_setup_failed_dlg_auth_message_fmt">Kullanıcı adı veya şifre yanlış. \n(%s)</string>
+    <string name="account_setup_failed_dlg_auth_message_fmt">"Kullanıcı adı veya şifre yanlış. 
+(%s)"</string>
     <string name="account_setup_failed_dlg_certificate_message">Güvenli şekilde sunucuya bağlanamıyor</string>
-    <string name="account_setup_failed_dlg_certificate_message_fmt">Güvenli şekilde sunucuya bağlanamıyor. \n(%s)</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Güvenli şekilde sunucuya bağlanamıyor. 
+(%s)"</string>
     <string name="account_setup_failed_dlg_server_message">Sunucuya bağlanamıyor</string>
-    <string name="account_setup_failed_dlg_server_message_fmt">Sunucuya bağlanamıyor. \n(%s)</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">"Sunucuya bağlanamıyor. 
+(%s)"</string>
     <string name="account_setup_failed_tls_required">Sunucu TLS’i desteklemiyor</string>
     <string name="account_setup_failed_auth_required">Sunucu kimlik denetimini desteklemiyor</string>
     <string name="account_setup_failed_security">Güvenlik hatası nedeniyle sunucuya bağlantı açılamıyor</string>
@@ -222,7 +239,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Titreşim</string>
     <string name="account_settings_ringtone">Zil sesi seç</string>
     <string name="account_settings_servers">Sunucu ayarları</string>
-    <string name="account_delete_dlg_title">Hesabı\nkaldır</string>
+    <string name="account_delete_dlg_title">"Hesabı
+kaldır"</string>
     <string name="account_delete_dlg_instructions_fmt">\"%s\" hesabı E-postadan kaldırılacak.</string>
     <string name="provider_note_yahoo">Bazı Yahoo! Posta hesapları için posta kutusu erişimi desteklenmez. Eğer bağlantıda sorun yaşıyorsanız daha fazla bilgi için yahoo.com’u ziyaret edin</string>
     <string name="provider_note_yahoo_uk">Bu e-posta hesabını kurmadan önce lütfen Yahoo! web sayfasını ziyaret edin ve bu hesap için POP3 e-posta erişimini etkinleştirin</string>
@@ -350,12 +368,12 @@
     <string name="message_composer_re">YNT:</string>
     <string name="account_setup_security_policies_required_fmt">%s sunucusu, telefonunuzun bazı özelliklerini uzaktan kontrol etmesi için izin vermenizi gerektiriyor. Bu hesabı ayarlamayı tamamlamak istiyor musunuz?</string>
     <string name="security_notification_ticker_fmt">\"%s\" hesabı, güvenlik ayarları güncellemesi gerektiriyor.</string>
-    <string name="account_setup_options_sync_sms_label">SMS\'i senkr et</string>
+    <string name="account_setup_options_sync_sms_label">"SMS'i senkr et"</string>
     <string name="account_security_policy_explanation_fmt">%s sunucusu, telefonunuzdaki bazı güvenlik özelliklerini uzaktan denetlemesi için izin vermenizi gerektiriyor.</string>
     <string name="account_settings_signature_hint">Giden mesajlarınız için imza oluşturun</string>
     <string name="notification_exchange_calendar_added">Exchange ActiveSync takvimi eklendi</string>
     <string name="gal_searching_fmt">Söker %s…</string>
-    <string name="gal_completed_limited_fmt">De första %d resultaten från %s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">De första %d resultaten från %s</string>
     <string name="account_setup_failed_security_policies_unsupported">Bu sunucu, telefonunuzun desteklemediği güvenlik özellikleri gerektiriyor.</string>
     <string name="message_view_invite_accept">Evet</string>
     <string name="message_view_invite_maybe">Belki</string>
@@ -447,7 +465,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Hepsi</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">E-posta boyutu</string>
     <string name="account_settings_mail_empty_trash_label">Sunucu çöp sepeti boş</string>
     <string name="account_settings_mail_empty_trash_message">Sunucu çöp sepetindeki içerikler silinsin mi?</string>
@@ -460,8 +478,8 @@
     <string name="account_settings_mail_empty_trash_timeout">Zaman aşımı. İstek başarısız</string>
     <string name="account_settings_textpreview_label">metin önizleme boyutu</string>
     <string name="account_settings_textpreview_default">128</string>
-    <string name="account_settings_textpreview_255">Yapamaz 255\'ten fazla olması</string>
-    <string name="account_settings_cc_bcc_label">Kendimi her zaman Cc/Bcc\'ye ekle</string>
+    <string name="account_settings_textpreview_255">"Yapamaz 255'ten fazla olması"</string>
+    <string name="account_settings_cc_bcc_label">"Kendimi her zaman Cc/Bcc'ye ekle"</string>
     <string name="account_settings_cc_bcc_default_summary">Cc/Bcc satırına e-posta adresimi ekle</string>
     <string name="account_settings_cc_summary">Kendimi her zaman CC’ye ekle</string>
     <string name="account_settings_sync_task_enable">Görev senkronizasyonu</string>
@@ -469,7 +487,7 @@
     <string name="account_settings_cc_bcc_none">Hiçbiri</string>
     <string name="account_settings_cc_bcc_cc">Bilgi</string>
     <string name="account_settings_cc_bcc_bcc">Gizli</string>
-    <string name="account_settings_cc_bcc_dlg_title">Kendimi her zaman Cc/Bcc\'ye ekle</string>
+    <string name="account_settings_cc_bcc_dlg_title">"Kendimi her zaman Cc/Bcc'ye ekle"</string>
     <string name="sync_schedule_title">Program senkronizasyonu</string>
     <string name="account_settings_sync_schedule">Program senkronizasyonu</string>
     <string name="account_settings_sync_schedule_summary">Yoğun/Durgun dönem program kontrolü</string>
@@ -667,7 +685,7 @@
     <string name="account_setup_options_smime_encryption_algorithm_rc2_64">RC2 64bit</string>
     <string name="account_setup_options_smime_encryption_algorithm_rc2_40">RC2 40bit</string>
     <string name="account_settings_smime_no_certificate">Sertifika yok</string>
-    <string name="account_setting_sms_sync">SMS\'i senkr et</string>
+    <string name="account_setting_sms_sync">"SMS'i senkr et"</string>
     <string name="account_setting_sms_sync_summary_on">SMS senkr açık</string>
     <string name="account_setting_sms_sync_summary_off">SMS senkr kapalı</string>
     <string name="change_sms_settings">Ayarlar değiştiriliyor...</string>
@@ -680,7 +698,7 @@
     <string name="unblocked_device_message">Cihaz engellemesi kaldırıldı</string>
     <string name="quarantined_device_message">Cihaz sınırlı izne sahip</string>
     <string name="gal_search_show_more">Daha fazla göster</string>
-    <string name="Policy_list_disable_Bluetooth">Bluetooth\'a izin ver</string>
+    <string name="Policy_list_disable_Bluetooth">"Bluetooth'a izin ver"</string>
     <string name="Policy_list_disable_Browser">İnternet kullanımına izin verir</string>
     <string name="Policy_list_disable_Camera">Kameraya İzin Ver</string>
     <string name="Policy_list_disable_HTML">HTML e-postasına izin ver</string>
@@ -721,7 +739,7 @@
     <string name="policy_strong_algorith">Güçlü bir algoritma müzakeresi yap</string>
     <string name="policy_any_algorithm">Herhangi bir algoritma müzakeresi yap</string>
     <string name="smime_more_message">S/MIME mesajlarını göstermek için daha fazla ayrıntı indir. Devam?</string>
-    <string name="account_setup_failed_activation_error">Etkinleştirme başarısız. Ağa bağlanılamıyor. Ağ sağlayıcının varsayılan APN\'si ile tekrar deneyin</string>
+    <string name="account_setup_failed_activation_error">"Etkinleştirme başarısız. Ağa bağlanılamıyor. Ağ sağlayıcının varsayılan APN'si ile tekrar deneyin"</string>
     <string name="account_settings_smime_installed_certificates_list">Şifreli sertifikayı yükle</string>
     <string name="account_settings_smime_import_certificate_title">Import Certificate</string>
 </resources>

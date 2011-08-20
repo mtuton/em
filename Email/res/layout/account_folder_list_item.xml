@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <com.android.email.activity.AccountFolderListItem android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/list_item_background" android:paddingRight="18.0px" android:layout_width="fill_parent" android:layout_height="96.0px"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <View android:id="@id/chip" android:background="@drawable/appointment_indicator_leftside_1" android:layout_width="6.0px" android:layout_height="fill_parent" android:layout_centerVertical="true" />

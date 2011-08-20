@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:orientation="horizontal" android:id="@id/account_field" android:layout_width="fill_parent" android:layout_height="46.669983dip"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <View android:id="@id/account_color" android:visibility="visible" android:layout_width="5.299988dip" android:layout_height="fill_parent" />

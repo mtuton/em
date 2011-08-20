@@ -168,7 +168,7 @@
     :try_start_0
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    iget-wide v7, v5, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v7, v5, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v6, v7, v8}, Lcom/android/email/provider/EmailContent$Body;->restoreBodyHtmlWithMessageId(Landroid/content/Context;J)Ljava/lang/String;
 
@@ -179,7 +179,7 @@
     .line 1903
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    iget-wide v7, v5, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v7, v5, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v6, v7, v8}, Lcom/android/email/provider/EmailContent$Body;->restoreBodyTextWithMessageId(Landroid/content/Context;J)Ljava/lang/String;
 
@@ -207,7 +207,7 @@
     .line 1907
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    iget-wide v7, v5, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v7, v5, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v6, v7, v8}, Lcom/android/email/provider/EmailContent$Body;->restoreReplyHtmlWithMessageId(Landroid/content/Context;J)Ljava/lang/String;
 
@@ -218,7 +218,7 @@
     .line 1909
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    iget-wide v7, v5, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v7, v5, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v6, v7, v8}, Lcom/android/email/provider/EmailContent$Body;->restoreReplyTextWithMessageId(Landroid/content/Context;J)Ljava/lang/String;
 
@@ -229,7 +229,7 @@
     .line 1911
     iget-object v6, p0, Lcom/android/email/activity/MessageCompose$LoadMessageTask;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    iget-wide v7, v5, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v7, v5, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v6, v7, v8}, Lcom/android/email/provider/EmailContent$Body;->restoreIntroTextWithMessageId(Landroid/content/Context;J)Ljava/lang/String;
 
@@ -470,7 +470,7 @@
 
     new-array v5, v9, [Ljava/lang/Long;
 
-    iget-wide v6, v2, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v6, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -710,7 +710,7 @@
 
     move-result-object v3
 
-    iget-wide v4, v2, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v4, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v3, v4, v5, v9}, Lcom/android/email/Controller;->setMessageRead(JZ)V
 

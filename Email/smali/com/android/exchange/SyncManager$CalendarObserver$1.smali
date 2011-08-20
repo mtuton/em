@@ -210,7 +210,7 @@
     invoke-static {v0}, Lcom/android/exchange/SyncManager;->log(Ljava/lang/String;)V
 
     .line 1237
-    iget-wide v0, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v0, v10, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v0, v1}, Lcom/android/exchange/SyncManager;->access$300(J)V
 
@@ -267,7 +267,7 @@
 
     sget-object v1, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
-    iget-wide v2, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v2, v10, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v1, v2, v3}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 

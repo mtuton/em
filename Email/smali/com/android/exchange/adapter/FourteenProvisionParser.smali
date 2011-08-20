@@ -84,7 +84,7 @@
     if-eq v1, v2, :cond_2
 
     .line 29
-    iget v1, p0, Lcom/android/exchange/adapter/FourteenProvisionParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v2, 0x1cc
 

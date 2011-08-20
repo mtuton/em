@@ -27,7 +27,7 @@
 
     invoke-direct {v0}, Lorg/apache/commons/io/input/ClosedInputStream;-><init>()V
 
-    iput-object v0, p0, Lorg/apache/commons/io/input/CloseShieldInputStream;->in:Ljava/io/InputStream;
+    iput-object v0, p0, Lorg/apache/commons/io/input/ProxyInputStream;->in:Ljava/io/InputStream;
 
     .line 50
     return-void

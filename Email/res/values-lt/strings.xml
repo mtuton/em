@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Keliais veiksmais sukonfigūruokite įv. paskyrų el. paštą</string>
     <string name="read_attachment_label">skaityti el. pašto priedus</string>
@@ -85,7 +85,7 @@
     <string name="mailbox_list_title">Pašto dėžutė</string>
     <string name="message_list_load_more_messages_action">Įkelti daugiau žinučių</string>
     <string name="message_list_send_pending_messages_action">Siųsti siunčiamas žinutes</string>
-    <string name="message_list_title">%1$s: %2$s</string>
+    <string name="message_list_title" formatted="false">%1$s: %2$s</string>
     <string name="message_compose_to_hint">Kam</string>
     <string name="message_compose_cc_hint">Kopija</string>
     <string name="message_compose_bcc_hint">Nematoma kopija</string>
@@ -98,7 +98,7 @@
     <string name="message_compose_error_invalid_email">Neteisingi el. pašto adresai</string>
     <string name="message_compose_attachments_skipped_toast">Kai kurių priedų negalima persiųsti, nes jie nebuvo atsiųsti</string>
     <string name="message_compose_attachment_size">Neįmanoma pridėti failo. Failas per didelis</string>
-    <string name="message_compose_display_name">%1$s ir kiti %2$d</string>
+    <string name="message_compose_display_name" formatted="false">%1$s ir kiti %2$d</string>
     <string name="message_compose_discard_dialog">Žinutė nebuvo išsiųsta. Panaikinti?</string>
     <string name="message_view_to_label">Kam:</string>
     <string name="message_view_cc_label">Kopija:</string>
@@ -361,7 +361,7 @@
     <string name="account_settings_signature_hint">Sukurkite siunčiamų žinučių parašą</string>
     <string name="notification_exchange_calendar_added">Pridėtas „Exchange ActiveSync“ kalendorius</string>
     <string name="gal_searching_fmt">Ieškoma %s...…</string>
-    <string name="gal_completed_limited_fmt">Pirmieji %1$d rezultatai (-ų) iš %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Pirmieji %1$d rezultatai (-ų) iš %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Serveris %s turi galėti nuotoliniu būdu valdyti kai kurias jūsų įrenginio saugos funkcijas</string>
     <string name="message_view_invite_accept">Taip</string>
     <string name="message_view_invite_maybe">Galbūt</string>
@@ -453,7 +453,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Visi</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">El. laiško dydis</string>
     <string name="account_settings_mail_empty_trash_label">Tuštinti serverio šiukšlinę</string>
     <string name="account_settings_mail_empty_trash_message">Trinti turinį iš serverio šiukšlinės?</string>

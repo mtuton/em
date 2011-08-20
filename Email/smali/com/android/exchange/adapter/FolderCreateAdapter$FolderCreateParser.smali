@@ -99,7 +99,7 @@
 
     .line 172
     .local v10, type:I
-    iget-object v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->this$0:Lcom/android/exchange/adapter/FolderCreateAdapter;
 
@@ -137,7 +137,7 @@
     iput-object v0, v7, Lcom/android/email/provider/EmailContent$Mailbox;->mServerId:Ljava/lang/String;
 
     .line 177
-    iget-object v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
 
@@ -185,7 +185,7 @@
 
     .line 190
     .local v9, ops:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentProviderOperation;>;"
-    iget-object v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v1, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
@@ -260,7 +260,7 @@
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     .line 203
-    iget-object v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     invoke-virtual {v0}, Lcom/android/exchange/EasSyncService;->getSynchronizer()Ljava/lang/Object;
 
@@ -288,7 +288,7 @@
     invoke-virtual {p0, v1, v2, v3}, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->userLog(Ljava/lang/String;ILjava/lang/String;)V
 
     .line 212
-    iget-object v1, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v2, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->this$0:Lcom/android/exchange/adapter/FolderCreateAdapter;
 
@@ -301,9 +301,9 @@
     .line 213
     sget-object v1, Lcom/android/email/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v2, v2, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v1, v2, v3}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -313,7 +313,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     invoke-virtual {v2}, Lcom/android/email/provider/EmailContent$Account;->toContentValues()Landroid/content/ContentValues;
 
@@ -333,7 +333,7 @@
 
     .line 219
     :try_start_2
-    iget-object v1, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v2, "com.android.email.provider"
 
@@ -342,7 +342,7 @@
     .line 221
     const-string v1, "New Account SyncKey: "
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v2, v2, Lcom/android/email/provider/EmailContent$Account;->mSyncKey:Ljava/lang/String;
 
@@ -497,7 +497,7 @@
     if-eq v0, v5, :cond_3
 
     .line 253
-    iget v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x1d2
 
@@ -518,7 +518,7 @@
 
     .line 255
     :cond_1
-    iget v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x1c8
 
@@ -539,7 +539,7 @@
 
     .line 257
     :cond_2
-    iget v0, p0, Lcom/android/exchange/adapter/FolderCreateAdapter$FolderCreateParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x1cc
 

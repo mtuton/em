@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Pode config. e-mail p/ a maioria das contas em poucos passos</string>
     <string name="read_attachment_label">leia os anexos de e-mail</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Marcar como lida</string>
     <string name="unread_action">Mar. c/ não lida</string>
     <string name="favorite_action">Favoritos</string>
-    <string name="set_star_action">Adic.\nestrela</string>
+    <string name="set_star_action">"Adic.
+estrela"</string>
     <string name="remove_star_action">Remover estrela</string>
     <string name="refresh_action">Actualizar</string>
     <string name="add_account_action">Adicionar conta</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Procurar</string>
     <string name="open_action">Abrir</string>
     <string name="account_settings_action">Definições da conta</string>
-    <string name="remove_account_action">Remover\nconta</string>
+    <string name="remove_account_action">"Remover
+conta"</string>
     <string name="folders_action">Pastas</string>
     <string name="accounts_action">Contas</string>
     <string name="mark_as_read_action">Marcar como lida</string>
@@ -79,20 +81,32 @@
     <string name="mailbox_list_title">Caixa de correio</string>
     <string name="message_list_load_more_messages_action">Carregue mais mensagens</string>
     <string name="message_list_send_pending_messages_action">Enviar mensagens a enviar</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">Para</string>
     <string name="message_compose_cc_hint">Cc</string>
     <string name="message_compose_bcc_hint">Cco</string>
     <string name="message_compose_subject_hint">Assunto</string>
     <string name="message_compose_body_hint">Compor e-mail</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- Mensagem Original --------\nAssunto: %s\nDe: %s\nPara: %s\nCc: %s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s escreveu:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- Mensagem Original --------
+Assunto: %s
+De: %s
+Para: %s
+Cc: %s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s escreveu:
+
+"</string>
     <string name="message_compose_quoted_text_label">Mensagem original</string>
     <string name="message_compose_error_no_recipients">Adicionar destinatários</string>
     <string name="message_compose_error_invalid_email">Endereços de e-mail inválidos</string>
     <string name="message_compose_attachments_skipped_toast">Alguns anexos não podem ser reencaminhados porque não foram transferidos</string>
     <string name="message_compose_attachment_size">Impossível anexar ficheiro. Tamanho do ficheiro demasiado grande</string>
-    <string name="message_compose_display_name">%1$s e outros %2$d</string>
+    <string name="message_compose_display_name" formatted="false">%1$s e outros %2$d</string>
     <string name="message_compose_discard_dialog">Mensagem não enviada. Eliminar?</string>
     <string name="message_view_to_label">Para:</string>
     <string name="message_view_cc_label">Cc:</string>
@@ -191,11 +205,14 @@
     <string name="account_setup_options_mail_window_all">Todos os e-mails</string>
     <string name="account_setup_failed_dlg_auth_message">Nome de utilizador ou palavra-passe incorrectos</string>
     <string name="account_setup_autodiscover_failed_dlg_auth_message">Autodiscover falhou</string>
-    <string name="account_setup_failed_dlg_auth_message_fmt">Nome de utilizador ou palavra-passe incorrectos \n(%s)</string>
+    <string name="account_setup_failed_dlg_auth_message_fmt">"Nome de utilizador ou palavra-passe incorrectos 
+(%s)"</string>
     <string name="account_setup_failed_dlg_certificate_message">Impossível estabelecer ligação segura ao servidor</string>
-    <string name="account_setup_failed_dlg_certificate_message_fmt">Impossível estabelecer ligação segura ao servidor. \n(%s)</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Impossível estabelecer ligação segura ao servidor. 
+(%s)"</string>
     <string name="account_setup_failed_dlg_server_message">Impossível estabelecer ligação ao servidor</string>
-    <string name="account_setup_failed_dlg_server_message_fmt">Impossível estabelecer ligação ao servidor. \n(%s)</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">"Impossível estabelecer ligação ao servidor. 
+(%s)"</string>
     <string name="account_setup_failed_tls_required">O servidor não suporta TLS</string>
     <string name="account_setup_failed_auth_required">O servidor não suporta autenticação</string>
     <string name="account_setup_failed_security">Impossível estabelecer ligação com o servidor devido a erro de segurança</string>
@@ -222,7 +239,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Vibrar</string>
     <string name="account_settings_ringtone">Seleccionar tom de toque</string>
     <string name="account_settings_servers">Definições do servidor</string>
-    <string name="account_delete_dlg_title">Remover\nconta</string>
+    <string name="account_delete_dlg_title">"Remover
+conta"</string>
     <string name="account_delete_dlg_instructions_fmt">A conta \"%s\" será removida do e-mail</string>
     <string name="provider_note_yahoo">O acesso à caixa de correio não é suportado para alguns tipos de contas de correio Yahoo!. Se tiver dificuldades em estabelecer a ligação, visite yahoo.com para obter mais informações</string>
     <string name="provider_note_yahoo_uk">Antes de configurar esta conta de e-mail, visite o site na Web da Yahoo! e active um acesso de e-mail POP3 para esta conta</string>
@@ -355,7 +373,7 @@
     <string name="account_settings_signature_hint">Criar assinatura para as suas mensagens de saída</string>
     <string name="notification_exchange_calendar_added">Agenda Exchange ActiveSync adicionada</string>
     <string name="gal_searching_fmt">Pesquisando %s…</string>
-    <string name="gal_completed_limited_fmt">Primeiros %d resultados de %s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Primeiros %d resultados de %s</string>
     <string name="account_setup_failed_security_policies_unsupported">Este servidor precisa de recursos de segurança que não são compatíveis com o seu telefone.</string>
     <string name="message_view_invite_accept">Sim</string>
     <string name="message_view_invite_maybe">Talvez</string>
@@ -447,7 +465,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Tudo</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Tamanho do e-mail</string>
     <string name="account_settings_mail_empty_trash_label">Esvaziar lixo do servidor</string>
     <string name="account_settings_mail_empty_trash_message">Eliminar o conteúdo do lixo do servidor?</string>

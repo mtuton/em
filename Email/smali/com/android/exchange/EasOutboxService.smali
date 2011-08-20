@@ -185,7 +185,7 @@
     if-eqz v0, :cond_0
 
     .line 809
-    iget-wide v1, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v1, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     iput-wide v1, p3, Lcom/android/email/provider/EmailContent$Message;->mMailboxKey:J
 
@@ -297,9 +297,9 @@
     const/4 v2, 0x0
 
     .line 143
-    iget-object v4, p0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
-    iget-wide v9, p1, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v9, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v4, v9, v10}, Lcom/android/email/provider/EmailContent$Body;->restoreBodyWithMessageId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Body;
 
@@ -422,7 +422,7 @@
     .line 699
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -445,12 +445,12 @@
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/exchange/EasOutboxService;->mDeviceId:Ljava/lang/String;
+    iput-object v0, v1, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 703
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mDeviceId:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     move-object v5, v0
 
@@ -458,7 +458,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v5, v0
 
@@ -466,7 +466,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     move-object v5, v0
     :try_end_0
@@ -487,7 +487,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v7, v0
 
@@ -509,7 +509,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v8, v0
 
@@ -535,7 +535,7 @@
     .line 792
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v5, v0
 
@@ -563,13 +563,13 @@
     .line 794
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v6, v0
 
@@ -593,7 +593,7 @@
     :try_start_1
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mProtocolVersionDouble:Ljava/lang/Double;
+    iget-object v0, v0, Lcom/android/exchange/EasSyncService;->mProtocolVersionDouble:Ljava/lang/Double;
 
     move-object v5, v0
 
@@ -628,7 +628,7 @@
     .local v7, MESSAGE_COLUMN_PROJECTION:[Ljava/lang/String;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -648,11 +648,11 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v11, v0
 
-    iget-wide v11, v11, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v11, v11, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v11, v12}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
@@ -705,7 +705,7 @@
     .local v23, result:I
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mProtocolVersionDouble:Ljava/lang/Double;
+    iget-object v0, v0, Lcom/android/exchange/EasSyncService;->mProtocolVersionDouble:Ljava/lang/Double;
 
     move-object v5, v0
 
@@ -765,7 +765,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iput v0, v1, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -791,7 +791,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v7, v0
 
@@ -813,7 +813,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v8, v0
 
@@ -839,7 +839,7 @@
     .line 792
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v5, v0
 
@@ -867,13 +867,13 @@
     .line 794
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v6, v0
 
@@ -887,7 +887,7 @@
     :try_start_4
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -909,11 +909,11 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v6, v0
 
-    iget-wide v6, v6, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v6, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v6, v7}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
@@ -983,7 +983,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iput v0, v1, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
@@ -1009,7 +1009,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v7, v0
 
@@ -1031,7 +1031,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v8, v0
 
@@ -1057,7 +1057,7 @@
     .line 792
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v5, v0
 
@@ -1085,13 +1085,13 @@
     .line 794
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v6, v0
 
@@ -1117,7 +1117,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iput v0, v1, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
@@ -1143,7 +1143,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v7, v0
 
@@ -1165,7 +1165,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v8, v0
 
@@ -1191,7 +1191,7 @@
     .line 792
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v5, v0
 
@@ -1219,13 +1219,13 @@
     .line 794
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v6, v0
 
@@ -1299,7 +1299,7 @@
     .line 776
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -1318,11 +1318,11 @@
     .line 777
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     move-object v5, v0
 
-    iget-wide v5, v5, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v5, v5, Lcom/android/email/provider/EmailContent;->mId:J
 
     sget v7, Lcom/android/email/provider/EmailContent$Account;->DEVICE_IS_BLOCKED:I
 
@@ -1331,11 +1331,11 @@
     .line 778
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     move-object v5, v0
 
-    iget-wide v5, v5, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v5, v5, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v5, v6}, Lcom/android/exchange/SyncManager;->stopAccountSyncs(J)V
 
@@ -1363,7 +1363,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v7, v0
 
@@ -1385,7 +1385,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v8, v0
 
@@ -1411,7 +1411,7 @@
     .line 792
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v5, v0
 
@@ -1439,13 +1439,13 @@
     .line 794
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v6, v0
 
@@ -1473,18 +1473,18 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iput v0, v1, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     .line 760
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v6, v0
 
@@ -1558,7 +1558,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v5, v0
 
@@ -1566,7 +1566,7 @@
 
     move-object/from16 v0, v20
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-wide v11, v0
 
@@ -1588,7 +1588,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v7, v0
 
@@ -1610,7 +1610,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v8, v0
 
@@ -1636,7 +1636,7 @@
     .line 792
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v5, v0
 
@@ -1664,13 +1664,13 @@
     .line 794
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v6, v0
 
@@ -1695,7 +1695,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iput v0, v1, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
     :try_end_e
     .catchall {:try_start_e .. :try_end_e} :catchall_1
 
@@ -1708,7 +1708,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v7, v0
 
@@ -1730,7 +1730,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v8, v0
 
@@ -1756,7 +1756,7 @@
     .line 792
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v5, v0
 
@@ -1784,13 +1784,13 @@
     .line 794
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v6, v0
 
@@ -1825,7 +1825,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iput v0, v1, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
     :try_end_f
     .catchall {:try_start_f .. :try_end_f} :catchall_1
 
@@ -1838,7 +1838,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v7, v0
 
@@ -1860,7 +1860,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v8, v0
 
@@ -1886,7 +1886,7 @@
     .line 792
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v5, v0
 
@@ -1914,13 +1914,13 @@
     .line 794
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v6, v0
 
@@ -1941,7 +1941,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v8, v0
 
@@ -1963,7 +1963,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v9, v0
 
@@ -1989,7 +1989,7 @@
     .line 792
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/EasOutboxService;->mExitStatus:I
+    iget v0, v0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     move v6, v0
 
@@ -2017,13 +2017,13 @@
     .line 794
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v6, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v7, v0
 
@@ -2444,7 +2444,7 @@
     .line 346
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -2474,7 +2474,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     move-object v6, v0
 
@@ -2497,7 +2497,7 @@
     .local v9, rfAdapter:Lcom/android/exchange/adapter/ComposeMailAdapter;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     move-object v5, v0
 
@@ -2553,7 +2553,7 @@
     .end local v9           #rfAdapter:Lcom/android/exchange/adapter/ComposeMailAdapter;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v10, v0
 
@@ -3184,7 +3184,7 @@
     .line 441
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     move-object v5, v0
 
@@ -3272,7 +3272,7 @@
     .line 456
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -3345,7 +3345,7 @@
     .line 466
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, v0, Lcom/android/exchange/EasSyncService;->mContentResolver:Landroid/content/ContentResolver;
 
     move-object v5, v0
 
@@ -3587,7 +3587,7 @@
     :try_start_7
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object/from16 v18, v0
 
@@ -3614,7 +3614,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     move-object v6, v0
 
@@ -3637,7 +3637,7 @@
     .local v18, cmAdapter:Lcom/android/exchange/adapter/ComposeMailAdapter;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     move-object v5, v0
 
@@ -3693,7 +3693,7 @@
     .end local v18           #cmAdapter:Lcom/android/exchange/adapter/ComposeMailAdapter;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object/from16 v19, v0
 
@@ -4055,7 +4055,7 @@
     .line 597
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     move-object v5, v0
 
@@ -4143,7 +4143,7 @@
     .line 617
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -4215,7 +4215,7 @@
     .line 630
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, v0, Lcom/android/exchange/EasSyncService;->mContentResolver:Landroid/content/ContentResolver;
 
     move-object v5, v0
 
@@ -4285,7 +4285,7 @@
     .line 640
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -4526,7 +4526,7 @@
     .line 671
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -4869,7 +4869,7 @@
     .local v14, result:I
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object/from16 v16, v0
 
@@ -4885,7 +4885,7 @@
     .local v11, msg:Lcom/android/email/provider/EmailContent$Message;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object/from16 v16, v0
 
@@ -5107,7 +5107,7 @@
     .line 200
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, v0, Lcom/android/exchange/EasSyncService;->mContentResolver:Landroid/content/ContentResolver;
 
     move-object/from16 v16, v0
 
@@ -5357,7 +5357,7 @@
     .line 227
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/EasOutboxService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     move-object/from16 v16, v0
 

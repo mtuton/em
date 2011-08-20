@@ -188,12 +188,12 @@
 
     const-wide/16 v1, -0x1
 
-    iput-wide v1, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iput-wide v1, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 156
     iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     iput-wide v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
 
@@ -265,7 +265,7 @@
     iput-object p2, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     .line 143
-    iget-wide v0, p2, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v0, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     iput-wide v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
 
@@ -356,7 +356,7 @@
     .line 165
     iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     iput-wide v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
 

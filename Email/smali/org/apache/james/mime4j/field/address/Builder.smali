@@ -656,11 +656,11 @@
 
     .prologue
     .line 193
-    iget-object v0, p1, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->firstToken:Lorg/apache/james/mime4j/field/address/parser/Token;
+    iget-object v0, p1, Lorg/apache/james/mime4j/field/address/parser/BaseNode;->firstToken:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     .line 194
     .local v0, head:Lorg/apache/james/mime4j/field/address/parser/Token;
-    iget-object v2, p1, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->lastToken:Lorg/apache/james/mime4j/field/address/parser/Token;
+    iget-object v2, p1, Lorg/apache/james/mime4j/field/address/parser/BaseNode;->lastToken:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     .line 195
     .local v2, tail:Lorg/apache/james/mime4j/field/address/parser/Token;

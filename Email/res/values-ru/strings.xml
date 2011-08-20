@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Эл. почта настраивается несколькими простыми действиями</string>
     <string name="read_attachment_label">чтение вложений</string>
@@ -76,20 +76,32 @@
     <string name="mailbox_list_title">Учетная запись</string>
     <string name="message_list_load_more_messages_action">Загрузить еще сообщения</string>
     <string name="message_list_send_pending_messages_action">Отправить исходящие сообщения</string>
-    <string name="message_list_title">%1$s: %2$s</string>
+    <string name="message_list_title" formatted="false">%1$s: %2$s</string>
     <string name="message_compose_to_hint">Кому</string>
     <string name="message_compose_cc_hint">Копия</string>
     <string name="message_compose_bcc_hint">скрытая копия</string>
     <string name="message_compose_subject_hint">Тема</string>
     <string name="message_compose_body_hint">Создать сообщение E-mail</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- Исходное сообщение --------\nТема: %1$s\nОт: %2$s\nКому: %3$s\nКопия: %4$s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s написал:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- Исходное сообщение --------
+Тема: %1$s
+От: %2$s
+Кому: %3$s
+Копия: %4$s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s написал:
+
+"</string>
     <string name="message_compose_quoted_text_label">Исходное сообщение</string>
     <string name="message_compose_error_no_recipients">Добавить получателей</string>
     <string name="message_compose_error_invalid_email">Недопустимый адрес электронной почты</string>
     <string name="message_compose_attachments_skipped_toast">Не удалось переслать некоторые вложения, так как они не загружены</string>
     <string name="message_compose_attachment_size">Невозможно вложить файл. Слишком большой файл</string>
-    <string name="message_compose_display_name">%1$s и еще %2$d адресов</string>
+    <string name="message_compose_display_name" formatted="false">%1$s и еще %2$d адресов</string>
     <string name="message_compose_discard_dialog">Сообщение не отправлено. Отменить?</string>
     <string name="message_view_to_label">Кому:</string>
     <string name="message_view_cc_label">Cc:</string>
@@ -190,11 +202,14 @@
     <string name="account_setup_options_mail_window_1month">1 месяц</string>
     <string name="account_setup_options_mail_window_all">Все сообщения</string>
     <string name="account_setup_failed_dlg_auth_message">Неправильное имя пользователя или пароль.</string>
-    <string name="account_setup_failed_dlg_auth_message_fmt">Неверное имя пользователя или пароль. \n%s</string>
+    <string name="account_setup_failed_dlg_auth_message_fmt">"Неверное имя пользователя или пароль. 
+%s"</string>
     <string name="account_setup_failed_dlg_certificate_message">Не удается безопасно подключиться к серверу</string>
-    <string name="account_setup_failed_dlg_certificate_message_fmt">Невозможно установить безопасное соединение с сервером. \n(%s)</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Невозможно установить безопасное соединение с сервером. 
+(%s)"</string>
     <string name="account_setup_failed_dlg_server_message">Не удается подключиться к серверу</string>
-    <string name="account_setup_failed_dlg_server_message_fmt">Невозможно установить соединение с сервером. \n(%s)</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">"Невозможно установить соединение с сервером. 
+(%s)"</string>
     <string name="account_setup_failed_tls_required">Сервер не поддерживает TLS</string>
     <string name="account_setup_failed_auth_required">Сервер не поддерживает аутентификацию</string>
     <string name="account_setup_failed_security">Не удается открыть подключение к серверу из-за ошибки безопасности</string>
@@ -354,11 +369,11 @@
     <string name="account_settings_signature_hint">Добавлять текст к отправляемым сообщениям</string>
     <string name="notification_exchange_calendar_added">Календарь Exchange добавлен</string>
     <string name="gal_searching_fmt">Поиск %s…</string>
-    <string name="gal_completed_limited_fmt">\u0020(%1$d) Первые результаты с %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">" (%1$d) Первые результаты с %2$s"</string>
     <string name="account_setup_failed_security_policies_unsupported">Безопасность этого сервера обеспечивается с помощью средств, не поддерживаемых вашим телефоном.</string>
-    <string name="message_view_invite_accept">\u0020Да</string>
-    <string name="message_view_invite_maybe">\u0020Может быть</string>
-    <string name="message_view_invite_decline">\u0020Нет</string>
+    <string name="message_view_invite_accept">" Да"</string>
+    <string name="message_view_invite_maybe">" Может быть"</string>
+    <string name="message_view_invite_decline">" Нет"</string>
     <string name="device_admin_description">Включение серверных политик безопасности</string>
     <string name="upgrade_accounts_title">Обновить аккаунты</string>
     <string name="upgrade_accounts_error">Не удается обновить аккаунт</string>
@@ -444,7 +459,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Все</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Размер сообщения E-mail</string>
     <string name="account_settings_mail_empty_trash_label">Очистка корзины сервера</string>
     <string name="account_settings_mail_empty_trash_message">Удалить содержимое из корзины сервера?</string>

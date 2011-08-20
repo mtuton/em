@@ -236,7 +236,7 @@
     .line 3381
     sget-object v0, Lcom/android/email/provider/EmailContent$Attachment;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v0, p0, Lcom/android/email/provider/EmailContent$Attachment;->mBaseUri:Landroid/net/Uri;
+    iput-object v0, p0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     .line 3382
     return-void
@@ -255,14 +255,14 @@
     .line 3545
     sget-object v1, Lcom/android/email/provider/EmailContent$Attachment;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v1, p0, Lcom/android/email/provider/EmailContent$Attachment;->mBaseUri:Landroid/net/Uri;
+    iput-object v1, p0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     .line 3546
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v1
 
-    iput-wide v1, p0, Lcom/android/email/provider/EmailContent$Attachment;->mId:J
+    iput-wide v1, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 3547
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -717,7 +717,7 @@
     .line 3470
     sget-object v0, Lcom/android/email/provider/EmailContent$Attachment;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v0, p0, Lcom/android/email/provider/EmailContent$Attachment;->mBaseUri:Landroid/net/Uri;
+    iput-object v0, p0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     .line 3471
     const/4 v0, 0x0
@@ -726,7 +726,7 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/android/email/provider/EmailContent$Attachment;->mId:J
+    iput-wide v0, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 3472
     const/4 v0, 0x1

@@ -245,7 +245,7 @@
 
     .line 143
     :cond_6
-    iget-wide v3, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v3, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     cmp-long v0, v3, v7
 

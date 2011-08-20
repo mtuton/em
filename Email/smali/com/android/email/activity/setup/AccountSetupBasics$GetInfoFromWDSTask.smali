@@ -164,73 +164,72 @@
     .line 1039
     throw v1
 
-    #Unreachable code
-    #throw v2
+    throw v2
 
     .line 1040
-    #throw v1
+    throw v1
 
-    #throw v2
+    throw v2
 
     .line 1041
-    #throw v1
+    throw v1
 
-    #throw v2
+    throw v2
 
     .line 1042
-    #throw v1
+    throw v1
 
-    #throw v2
+    throw v2
 
     .line 1043
-    #const-string v4, "SetBasics"
+    const-string v4, "SetBasics"
 
-    #new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    #invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    #const-string v5, "in : "
+    const-string v5, "in : "
 
-    #throw v4
+    throw v4
 
-    #move-result-object v4
+    move-result-object v4
 
-    #throw v1
+    throw v1
 
-    #throw v4
+    throw v4
 
-    #move-result-object v4
+    move-result-object v4
 
-    #throw v4
+    throw v4
 
-    #move-result-object v4
+    move-result-object v4
 
-    #invoke-static {v7, v4}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v7, v4}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1044
-    #const-string v4, "SetBasics"
+    const-string v4, "SetBasics"
 
-    #new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    #invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    #const-string v5, "out : "
+    const-string v5, "out : "
 
-    #throw v4
+    throw v4
 
-    #move-result-object v4
+    move-result-object v4
 
-    #throw v1
+    throw v1
 
-    #throw v4
+    throw v4
 
-    #move-result-object v4
+    move-result-object v4
 
-    #throw v4
+    throw v4
 
-    #move-result-object v4
+    move-result-object v4
 
-    #invoke-static {v7, v4}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v7, v4}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :goto_1
@@ -270,75 +269,74 @@
     .line 1039
     throw v1
 
-    #Unreachable code
-    #throw v2
+    throw v2
 
     .line 1040
-    #throw v1
+    throw v1
 
-    #throw v2
+    throw v2
 
     .line 1041
-    #throw v1
+    throw v1
 
-    #throw v2
+    throw v2
 
     .line 1042
-    #throw v1
+    throw v1
 
-    #throw v2
+    throw v2
 
     .line 1043
-    #const-string v4, "SetBasics"
+    const-string v4, "SetBasics"
 
-    #new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    #invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    #const-string v5, "in : "
+    const-string v5, "in : "
 
-    #throw v4
+    throw v4
 
-    #move-result-object v4
+    move-result-object v4
 
-    #throw v1
+    throw v1
 
-    #throw v4
+    throw v4
 
-    #move-result-object v4
+    move-result-object v4
 
-    #throw v4
+    throw v4
 
-    #move-result-object v4
+    move-result-object v4
 
-    #invoke-static {v7, v4}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v7, v4}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1044
-    #const-string v4, "SetBasics"
+    const-string v4, "SetBasics"
 
-    #new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    #invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    #const-string v5, "out : "
+    const-string v5, "out : "
 
-    #throw v4
+    throw v4
 
-    #move-result-object v4
+    move-result-object v4
 
-    #throw v1
+    throw v1
 
-    #throw v4
+    throw v4
 
-    #move-result-object v4
+    move-result-object v4
 
-    #throw v4
+    throw v4
 
-    #move-result-object v4
+    move-result-object v4
 
-    #invoke-static {v7, v4}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v7, v4}, Lcom/android/email/Email;->loge(Ljava/lang/String;Ljava/lang/String;)V
 
-    #goto :goto_1
+    goto :goto_1
 
     .line 1035
     .end local v2           #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;

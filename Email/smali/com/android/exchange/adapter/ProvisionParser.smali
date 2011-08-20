@@ -245,7 +245,7 @@
     .line 148
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
+    iget v0, v0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     move v2, v0
 
@@ -1309,7 +1309,7 @@
     if-eq v2, v3, :cond_4
 
     .line 665
-    iget v2, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v2, :sswitch_data_0
 
@@ -1632,7 +1632,7 @@
     if-eq v0, v1, :cond_1
 
     .line 650
-    iget v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x387
 
@@ -1680,7 +1680,7 @@
     if-eq v1, v2, :cond_1
 
     .line 620
-    iget v1, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v1, :pswitch_data_0
 
@@ -1806,7 +1806,7 @@
     if-eq v0, v1, :cond_1
 
     .line 609
-    iget v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x38d
 

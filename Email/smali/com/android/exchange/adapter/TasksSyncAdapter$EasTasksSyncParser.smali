@@ -104,7 +104,7 @@
     if-eq v1, v2, :cond_0
 
     .line 949
-    iget v1, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v1, :pswitch_data_0
 
@@ -313,7 +313,7 @@
     aput-object p1, v0, v1
 
     .line 847
-    iget-object v0, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v1, Landroid/provider/Tasks;->TASK_CONTENT_URI:Landroid/net/Uri;
 
@@ -347,7 +347,7 @@
     aput-object p1, v0, v1
 
     .line 841
-    iget-object v0, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->mAccountUri:Landroid/net/Uri;
 
@@ -518,7 +518,7 @@
     if-eq v3, v4, :cond_1
 
     .line 794
-    iget v3, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v3, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v3, :pswitch_data_0
 
@@ -678,7 +678,7 @@
     if-eq v0, v1, :cond_0
 
     .line 990
-    iget v0, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v0, :pswitch_data_0
 
@@ -976,11 +976,11 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     move-object v14, v0
 
-    iget-wide v14, v14, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v14, v14, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v14, v15}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -993,11 +993,11 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v14, v0
 
-    iget-wide v14, v14, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v14, v14, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v14, v15}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -1010,7 +1010,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     move-object v14, v0
 
@@ -1076,7 +1076,7 @@
     .local v12, task_value:Ljava/lang/String;
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v0, v0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     move v13, v0
 
@@ -1311,7 +1311,7 @@
     .line 1183
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v0, v0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     move v13, v0
 
@@ -1839,7 +1839,7 @@
     if-eq v1, v2, :cond_0
 
     .line 825
-    iget v1, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v1, :sswitch_data_0
 
@@ -1931,7 +1931,7 @@
     if-eq v5, v6, :cond_0
 
     .line 1421
-    iget v5, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v5, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v5, :pswitch_data_0
 
@@ -2210,7 +2210,7 @@
     if-eq v3, v4, :cond_1
 
     .line 884
-    iget v3, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v3, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v3, :sswitch_data_0
 
@@ -2305,7 +2305,7 @@
     if-eq v2, v3, :cond_0
 
     .line 1464
-    iget v2, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v2, :pswitch_data_0
 
@@ -2420,7 +2420,7 @@
     if-eq v0, v1, :cond_4
 
     .line 747
-    iget v0, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/4 v1, 0x7
 
@@ -2440,7 +2440,7 @@
 
     .line 750
     :cond_0
-    iget v0, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x9
 
@@ -2460,7 +2460,7 @@
 
     .line 753
     :cond_1
-    iget v0, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x8
 
@@ -2480,7 +2480,7 @@
 
     .line 757
     :cond_2
-    iget v0, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x21
 
@@ -2519,9 +2519,9 @@
 
     .prologue
     .line 767
-    iget-object v0, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->mAdapter:Lcom/android/exchange/adapter/AbstractSyncAdapter;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAdapter:Lcom/android/exchange/adapter/AbstractSyncAdapter;
 
-    iget-object v1, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-object v1, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
 
@@ -2542,7 +2542,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-object v2, v2, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
 
@@ -2588,7 +2588,7 @@
     if-eq v2, v3, :cond_1
 
     .line 853
-    iget v2, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v2, :pswitch_data_0
 
@@ -2705,7 +2705,7 @@
     if-eq v0, v1, :cond_2
 
     .line 779
-    iget v0, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/4 v1, 0x7
 
@@ -2725,7 +2725,7 @@
 
     .line 782
     :cond_0
-    iget v0, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x8
 
@@ -2773,7 +2773,7 @@
 
     move-result-object v4
 
-    iget-object v5, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v5, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v5, v5, Lcom/android/email/provider/EmailContent$Account;->mEmailAddress:Ljava/lang/String;
 
@@ -2816,7 +2816,7 @@
     invoke-static {v7, v4}, Lcom/android/exchange/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 729
-    iget-object v4, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v4, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v5, Landroid/provider/Tasks$TasksTbl;->CONTENT_URI:Landroid/net/Uri;
 
@@ -2845,9 +2845,9 @@
     .line 737
     sget-object v4, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
-    iget-object v5, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v5, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v5, v5, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v5, v5, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v4, v5, v6}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -2855,7 +2855,7 @@
 
     .line 738
     .local v1, mMailboxUri:Landroid/net/Uri;
-    iget-object v4, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$EasTasksSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v4, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {v4, v1, v0, v8, v8}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 

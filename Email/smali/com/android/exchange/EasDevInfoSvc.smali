@@ -36,14 +36,14 @@
     invoke-direct {p0, p1, p2}, Lcom/android/exchange/EasSyncService;-><init>(Landroid/content/Context;Lcom/android/email/provider/EmailContent$Account;)V
 
     .line 67
-    iget-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v0, v0, Lcom/android/email/provider/EmailContent$Account;->mProtocolVersion:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mProtocolVersion:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     .line 68
-    iget-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mProtocolVersion:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
@@ -53,7 +53,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mProtocolVersionDouble:Ljava/lang/Double;
+    iput-object v0, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersionDouble:Ljava/lang/Double;
 
     .line 70
     const-string v0, "phone"
@@ -77,8 +77,7 @@
     const-string v4, "EasDevInfoSvc"
 
     .line 83
-    # sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
-    const-string v0, "iPhone"
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mModel:Ljava/lang/String;
 
@@ -92,14 +91,12 @@
     iput-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mImei:Ljava/lang/String;
 
     .line 85
-    # sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
-    const-string v0, "iPhone"
+    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mFriendlyName:Ljava/lang/String;
 
     .line 86
-    # const-string v0, "Android-Linux"
-    const-string v0, "iOS"
+    const-string v0, "Android-Linux"
 
     iput-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mOS:Ljava/lang/String;
 
@@ -197,7 +194,7 @@
     invoke-static {v4, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 92
-    iget-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mProtocolVersionDouble:Ljava/lang/Double;
+    iget-object v0, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersionDouble:Ljava/lang/Double;
 
     invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
 
@@ -210,7 +207,7 @@
     if-ltz v0, :cond_0
 
     .line 94
-    const-string v0, "Apple-iPhone3C1/807.4"
+    const-string v0, "Android/0.3"
 
     iput-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mUserAgent:Ljava/lang/String;
 
@@ -301,9 +298,9 @@
     const/16 v11, 0x64
 
     .line 104
-    iget-object v8, p0, Lcom/android/exchange/EasDevInfoSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v8, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v8, v8, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v8, v8, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/4 v10, 0x1
 
@@ -444,7 +441,7 @@
     move-result-object v5
 
     .line 121
-    iget-object v8, p0, Lcom/android/exchange/EasDevInfoSvc;->mProtocolVersion:Ljava/lang/String;
+    iget-object v8, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     const-string v9, "14.0"
 
@@ -601,7 +598,7 @@
 
     new-instance v8, Lcom/android/exchange/adapter/SettingsCommandAdapter;
 
-    iget-object v9, p0, Lcom/android/exchange/EasDevInfoSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v9, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     invoke-direct {v8, v9, p0}, Lcom/android/exchange/adapter/SettingsCommandAdapter;-><init>(Lcom/android/email/provider/EmailContent$Mailbox;Lcom/android/exchange/EasSyncService;)V
 
@@ -616,9 +613,9 @@
     if-eqz v8, :cond_1
 
     .line 147
-    iget-object v8, p0, Lcom/android/exchange/EasDevInfoSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v8, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v8, v8, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v8, v8, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-direct {p0, v8, v9, v12, v11}, Lcom/android/exchange/EasDevInfoSvc;->deviceInfoCb(JII)V
 
@@ -647,9 +644,9 @@
 
     .line 157
     :goto_1
-    iget-object v8, p0, Lcom/android/exchange/EasDevInfoSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v8, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v8, v8, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v8, v8, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-direct {p0, v8, v9, v4, v11}, Lcom/android/exchange/EasDevInfoSvc;->deviceInfoCb(JII)V
 
@@ -665,9 +662,9 @@
     .end local v1           #in:Ljava/io/InputStream;
     .end local v6           #sParser:Lcom/android/exchange/adapter/OoOCommandParser;
     :cond_3
-    iget-object v8, p0, Lcom/android/exchange/EasDevInfoSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v8, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v8, v8, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v8, v8, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-direct {p0, v8, v9, v12, v11}, Lcom/android/exchange/EasDevInfoSvc;->deviceInfoCb(JII)V
 
@@ -692,9 +689,9 @@
     .line 170
     :cond_5
     :goto_2
-    iget-object v8, p0, Lcom/android/exchange/EasDevInfoSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v8, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v8, v8, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v8, v8, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-direct {p0, v8, v9, v4, v11}, Lcom/android/exchange/EasDevInfoSvc;->deviceInfoCb(JII)V
 
@@ -739,14 +736,14 @@
 
     move-result-object v3
 
-    iput-object v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mDeviceId:Ljava/lang/String;
+    iput-object v3, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 183
     const/4 v1, 0x0
 
     .line 187
     .local v1, result:I
-    iget-object v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mProtocolVersionDouble:Ljava/lang/Double;
+    iget-object v3, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersionDouble:Ljava/lang/Double;
 
     invoke-virtual {v3}, Ljava/lang/Double;->doubleValue()D
 
@@ -762,9 +759,9 @@
     const/4 v1, -0x2
 
     .line 190
-    iget-object v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v3, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v3, v3, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v3, v3, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/16 v5, 0x64
 
@@ -779,7 +776,7 @@
     .line 195
     const/4 v3, 0x4
 
-    iput v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mExitStatus:I
+    iput v3, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
@@ -799,7 +796,7 @@
     invoke-static {p0}, Lcom/android/exchange/SyncManager;->done(Lcom/android/exchange/AbstractSyncService;)V
 
     .line 216
-    iget v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mExitStatus:I
+    iget v3, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     packed-switch v3, :pswitch_data_0
 
@@ -827,7 +824,7 @@
     .line 197
     const/4 v3, 0x2
 
-    iput v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mExitStatus:I
+    iput v3, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
@@ -847,7 +844,7 @@
     const/4 v3, 0x1
 
     :try_start_2
-    iput v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mExitStatus:I
+    iput v3, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -864,7 +861,7 @@
     invoke-static {p0}, Lcom/android/exchange/SyncManager;->done(Lcom/android/exchange/AbstractSyncService;)V
 
     .line 216
-    iget v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mExitStatus:I
+    iget v3, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     packed-switch v3, :pswitch_data_1
 
@@ -905,7 +902,7 @@
     const/4 v3, 0x3
 
     :try_start_3
-    iput v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mExitStatus:I
+    iput v3, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
@@ -930,7 +927,7 @@
     .line 210
     const/4 v3, 0x3
 
-    iput v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mExitStatus:I
+    iput v3, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
@@ -947,7 +944,7 @@
     invoke-static {p0}, Lcom/android/exchange/SyncManager;->done(Lcom/android/exchange/AbstractSyncService;)V
 
     .line 216
-    iget v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mExitStatus:I
+    iget v3, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     packed-switch v3, :pswitch_data_2
 
@@ -980,7 +977,7 @@
     const/4 v3, 0x0
 
     :try_start_5
-    iput v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mExitStatus:I
+    iput v3, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_0
@@ -1006,7 +1003,7 @@
     invoke-static {p0}, Lcom/android/exchange/SyncManager;->done(Lcom/android/exchange/AbstractSyncService;)V
 
     .line 216
-    iget v4, p0, Lcom/android/exchange/EasDevInfoSvc;->mExitStatus:I
+    iget v4, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     packed-switch v4, :pswitch_data_3
 
@@ -1046,11 +1043,11 @@
     invoke-virtual {p0, v4}, Lcom/android/exchange/EasDevInfoSvc;->userLog([Ljava/lang/String;)V
 
     .line 228
-    iget-object v4, p0, Lcom/android/exchange/EasDevInfoSvc;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
-    iget-object v5, p0, Lcom/android/exchange/EasDevInfoSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v5, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v5, v5, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v5, v5, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v4, v5, v6, v7}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
 
@@ -1071,11 +1068,11 @@
     invoke-virtual {p0, v3}, Lcom/android/exchange/EasDevInfoSvc;->userLog([Ljava/lang/String;)V
 
     .line 228
-    iget-object v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
-    iget-object v4, p0, Lcom/android/exchange/EasDevInfoSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v4, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v4, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v4, v4, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v3, v4, v5, v7}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
 
@@ -1098,11 +1095,11 @@
     invoke-virtual {p0, v3}, Lcom/android/exchange/EasDevInfoSvc;->userLog([Ljava/lang/String;)V
 
     .line 228
-    iget-object v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
-    iget-object v4, p0, Lcom/android/exchange/EasDevInfoSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v4, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v4, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v4, v4, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v3, v4, v5, v7}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
 
@@ -1141,11 +1138,11 @@
     invoke-virtual {p0, v3}, Lcom/android/exchange/EasDevInfoSvc;->userLog([Ljava/lang/String;)V
 
     .line 228
-    iget-object v3, p0, Lcom/android/exchange/EasDevInfoSvc;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
-    iget-object v4, p0, Lcom/android/exchange/EasDevInfoSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v4, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v4, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v4, v4, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v3, v4, v5, v7}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
 

@@ -275,7 +275,7 @@
 
     .line 2742
     .local v1, account:Lcom/android/email/provider/EmailContent$Account;
-    iget-wide v8, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v8, v1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v8, v9}, Lcom/android/exchange/SyncManager;->stopAccountSyncs(J)V
 

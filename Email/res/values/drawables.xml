@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item type="drawable" name="text_color">#ffffffff</item>
     <item type="drawable" name="text_color_red">#ffff0000</item>

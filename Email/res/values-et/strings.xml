@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Enamiku kontode e-posti saate konfigureerida mone sammuga</string>
     <string name="read_attachment_label">loe e-kirja manuseid</string>
@@ -81,20 +81,24 @@
     <string name="mailbox_list_title">Postkast</string>
     <string name="message_list_load_more_messages_action">Laadi veel sõnumeid</string>
     <string name="message_list_send_pending_messages_action">Saada väljuvad sõnumid</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">Saaja</string>
     <string name="message_compose_cc_hint">Koopia</string>
     <string name="message_compose_bcc_hint">Pimekoopia</string>
     <string name="message_compose_subject_hint">Teema</string>
     <string name="message_compose_body_hint">Koosta e-kiri</string>
     <string name="message_compose_fwd_header_fmt">Algne sõnum</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s kirjutas:\n\n</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s kirjutas:
+
+"</string>
     <string name="message_compose_quoted_text_label">Algne sõnum</string>
     <string name="message_compose_error_no_recipients">Lisa saajad</string>
     <string name="message_compose_error_invalid_email">Valed e-posti aadressid</string>
     <string name="message_compose_attachments_skipped_toast">Mõnda manust ei saa edastada, kuna seda pole alla laaditud</string>
     <string name="message_compose_attachment_size">Faili ei saa manustada. Fail on liiga suur</string>
-    <string name="message_compose_display_name">%1$s ja %2$d teist</string>
+    <string name="message_compose_display_name" formatted="false">%1$s ja %2$d teist</string>
     <string name="message_compose_discard_dialog">Sõnumit ei saadetud. Kas loobuda?</string>
     <string name="message_view_to_label">Asukoht:</string>
     <string name="message_view_cc_label">Koopia:</string>
@@ -120,7 +124,7 @@
     <string name="message_view_forward_to_old">Olemasolevad adressaadid</string>
     <string name="account_setup_basics_title">Seadista e-post</string>
     <string name="accounts_welcome">Enamiku kontode e-posti saate konfigureerida mõne sammuga</string>
-    <string name="accounts_welcome_exchange">Konfigureeri Exchange\'i kontot paari sammuga</string>
+    <string name="accounts_welcome_exchange">"Konfigureeri Exchange'i kontot paari sammuga"</string>
     <string name="account_setup_basics_email_hint">E-posti aadress</string>
     <string name="account_setup_basics_password_hint">Parool</string>
     <string name="account_setup_basics_default_label">Saada e-kiri vaikimisi sellelt kontolt</string>
@@ -230,7 +234,7 @@
     <string name="provider_note_yahoo">Postkasti ligipääsu ei toetata mõne Yahoo! e-posti konto tüübi puhul. Kui teil on probleeme ühenduse loomisega, külastage lisateabe saamiseks veebisaiti yahoo.com</string>
     <string name="provider_note_yahoo_uk">Enne selle e-posti konto seadistamist külastage palun Yahoo! veebisaiti ja aktiveerige POP3 e-posti ligipääs selle konto jaoks</string>
     <string name="provider_note_live">Ainult mõned “Plus” kontod sisaldavad POP-ligipääsu, lubades sellel programmil luua ühendust. Kui teil ei ole võimalik oma õige e-posti aadressi ja parooliga sisse logida, ei ole teil võib-olla makstud “Plus” kontot. Palun käivitage nendele meilikontodele ligipääsemiseks veebibrauser</string>
-    <string name="provider_note_t_online">Enne selle e-posti konto seadistamist külastage palun T-Online\'i veebisaiti ja looge parool POP3 e-posti ligipääsu jaoks</string>
+    <string name="provider_note_t_online">"Enne selle e-posti konto seadistamist külastage palun T-Online'i veebisaiti ja looge parool POP3 e-posti ligipääsu jaoks"</string>
     <string name="exchange_name">Microsoft Exchange ActiveSync</string>
     <string name="move_Conv_action">Teisalda</string>
     <string name="delete_Conv_action">Kustuta</string>
@@ -254,7 +258,7 @@
     <string name="gal_protocol_error">Sünkroonimist ei toetata</string>
     <string name="gal_response_error">Ei saa tuvastada serveri vastust</string>
     <string name="gal_range_error">Kehtetu ulatus</string>
-    <string name="not_exchange_account">Vale Exchange\'i konto</string>
+    <string name="not_exchange_account">"Vale Exchange'i konto"</string>
     <string name="error_occurred">Ilmnes tõrge</string>
     <string name="yes_action">Jah</string>
     <string name="no_action">Ei</string>
@@ -356,9 +360,9 @@
     <string name="account_setup_options_sync_sms_label">SMS-i sünkr.</string>
     <string name="account_security_policy_explanation_fmt">Server %s peab olema võimeline mõningaid teie seadme turvafunktsioone kaugjuhtima</string>
     <string name="account_settings_signature_hint">Looge väljuvatele sõnumitele allkiri</string>
-    <string name="notification_exchange_calendar_added">Exchange ActiveSync\'i kalender on lisatud</string>
+    <string name="notification_exchange_calendar_added">"Exchange ActiveSync'i kalender on lisatud"</string>
     <string name="gal_searching_fmt">Üksuse %s otsimine...…</string>
-    <string name="gal_completed_limited_fmt">Esimesed %1$d tulemust %2$s-st</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Esimesed %1$d tulemust %2$s-st</string>
     <string name="account_setup_failed_security_policies_unsupported">Server nõuab turvafunktsioone, mida teie seade ei toeta</string>
     <string name="message_view_invite_accept">Jah</string>
     <string name="message_view_invite_maybe">Võib-olla</string>
@@ -378,12 +382,12 @@
     <string name="meeting_location">Asukoht:</string>
     <string name="exception_cancel">Sündmus %s tühistatud</string>
     <string name="exception_updated">Sündmuse %s üksikasjad on muudetud</string>
-    <string name="account_setup_basics_exchange_title_alternate">Lisa Exchange ActiveSync\'i konto</string>
-    <string name="account_setup_basics_exchange_title">Lisa Exchange\'i konto</string>
+    <string name="account_setup_basics_exchange_title_alternate">"Lisa Exchange ActiveSync'i konto"</string>
+    <string name="account_setup_basics_exchange_title">"Lisa Exchange'i konto"</string>
     <string name="account_setup_security_required_title">Kaugturvalisuse administratsioon</string>
     <string name="account_security_title">Seadme turvalisus</string>
     <string name="security_notification_content_title">Värskenda turvalisuse seadeid</string>
-    <string name="accounts_welcome_exchange_alternate">Konfigureeri Exchange\'i kontot paari sammuga</string>
+    <string name="accounts_welcome_exchange_alternate">"Konfigureeri Exchange'i kontot paari sammuga"</string>
     <string name="account_duplicate_dlg_message_fmt">See nimi on juba kasutusel</string>
     <string name="activation_action">Aktiveerimine</string>
     <string name="unable_to_send_message">Sõnumit ei saa saata</string>
@@ -450,7 +454,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Kõik</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">E-kirja maht</string>
     <string name="account_settings_mail_empty_trash_label">Tühjenda serveri rämps</string>
     <string name="account_settings_mail_empty_trash_message">Kas kustutada sisu serveri rämpsu hulgast?</string>

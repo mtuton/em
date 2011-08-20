@@ -82,7 +82,7 @@
     const-string v5, "0"
 
     .line 186
-    iget-object v2, p0, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->this$0:Lcom/android/exchange/adapter/MoveItemAdapter;
 
@@ -157,7 +157,7 @@
     invoke-virtual {v0, v2, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 198
-    iget-object v2, p0, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     invoke-virtual {v2}, Lcom/android/exchange/EasSyncService;->getSynchronizer()Ljava/lang/Object;
 
@@ -167,7 +167,7 @@
 
     .line 199
     :try_start_0
-    iget-object v3, p0, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v3, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     invoke-virtual {v3}, Lcom/android/exchange/EasSyncService;->isStopped()Z
 
@@ -176,7 +176,7 @@
     if-nez v3, :cond_2
 
     .line 200
-    iget-object v3, p0, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v3, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v4, Lcom/android/email/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 
@@ -288,7 +288,7 @@
     if-eq v0, v1, :cond_1
 
     .line 270
-    iget v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x14a
 
@@ -337,7 +337,7 @@
     if-eq v0, v5, :cond_3
 
     .line 236
-    iget v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x147
 
@@ -354,7 +354,7 @@
 
     .line 238
     :cond_1
-    iget v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x14b
 
@@ -461,7 +461,7 @@
 
     .line 254
     :cond_2
-    iget v0, p0, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x14c
 
@@ -542,7 +542,7 @@
     invoke-virtual {v0, v1, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 220
-    iget-object v1, p0, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     invoke-virtual {v1}, Lcom/android/exchange/EasSyncService;->getSynchronizer()Ljava/lang/Object;
 
@@ -552,7 +552,7 @@
 
     .line 221
     :try_start_0
-    iget-object v2, p0, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     invoke-virtual {v2}, Lcom/android/exchange/EasSyncService;->isStopped()Z
 
@@ -561,7 +561,7 @@
     if-nez v2, :cond_0
 
     .line 222
-    iget-object v2, p0, Lcom/android/exchange/adapter/MoveItemAdapter$MoveItemParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v3, Lcom/android/email/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 

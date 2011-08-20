@@ -66,7 +66,7 @@
 
     .line 813
     .local v0, account:Lcom/android/email/provider/EmailContent$Account;
-    iget-wide v2, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     cmp-long v2, v2, p1
 
@@ -112,7 +112,7 @@
 
     .line 822
     .local v0, account:Lcom/android/email/provider/EmailContent$Account;
-    iget-wide v2, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     cmp-long v2, v2, p1
 

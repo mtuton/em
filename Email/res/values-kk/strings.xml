@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Көп ес.жазба-р үшін эл.поштаны бірнш қадаммен конф-уға б-ды</string>
     <string name="read_attachment_label">Электрондық пошта тіркемелерін оқу</string>
@@ -81,7 +81,7 @@
     <string name="mailbox_list_title">Пошта жәшігі</string>
     <string name="message_list_load_more_messages_action">Басқа хабарларды жүктеу</string>
     <string name="message_list_send_pending_messages_action">Шығыс хабарлар жіберу</string>
-    <string name="message_list_title">%1$s: %2$s</string>
+    <string name="message_list_title" formatted="false">%1$s: %2$s</string>
     <string name="message_compose_to_hint">Кімге</string>
     <string name="message_compose_cc_hint">Ек</string>
     <string name="message_compose_bcc_hint">ҚК</string>
@@ -94,7 +94,7 @@
     <string name="message_compose_error_invalid_email">Электрондық пошта мекенжайлары қате</string>
     <string name="message_compose_attachments_skipped_toast">Кейбір тіркемелерді қайта жіберу мүмкін емес, себебі олар жүктелмеген</string>
     <string name="message_compose_attachment_size">Файлды тіркеу мүмкін емес. Файл өлшемі тым үлкен</string>
-    <string name="message_compose_display_name">%1$s және тағы %2$d</string>
+    <string name="message_compose_display_name" formatted="false">%1$s және тағы %2$d</string>
     <string name="message_compose_discard_dialog">Хабар жіберілмеген. Алып тастау керек пе?</string>
     <string name="message_view_to_label">Алушы:</string>
     <string name="message_view_cc_label">Көш:</string>
@@ -358,7 +358,7 @@
     <string name="account_settings_signature_hint">Шығыс хабарлар үшін қолтаңба жасау</string>
     <string name="notification_exchange_calendar_added">Exchange ActiveSync күнтізбесі қосылды</string>
     <string name="gal_searching_fmt">%s ізделуде...…</string>
-    <string name="gal_completed_limited_fmt">Бірінші %s алынған %1$d results from %2$s нәтиже</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Бірінші %s алынған %1$d results from %2$s нәтиже</string>
     <string name="account_setup_failed_security_policies_unsupported">%s сервері құрылғыңыздағы кейбір қауіпсіздік мүмкіндіктерін қашықтан басқара алуы керек</string>
     <string name="message_view_invite_accept">Иә</string>
     <string name="message_view_invite_maybe">Мүмкін</string>
@@ -450,7 +450,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Барлығы</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Электрондық пошта өлшемі</string>
     <string name="account_settings_mail_empty_trash_label">Серверлік себетті босату</string>
     <string name="account_settings_mail_empty_trash_message">Сервер себетіндегі мазмұнды жою керек пе?</string>

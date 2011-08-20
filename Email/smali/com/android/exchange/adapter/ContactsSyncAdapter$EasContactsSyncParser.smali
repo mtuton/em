@@ -106,7 +106,7 @@
     if-eq v1, v2, :cond_0
 
     .line 689
-    iget v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v1, :pswitch_data_0
 
@@ -161,7 +161,7 @@
     if-eq v0, v1, :cond_0
 
     .line 662
-    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v0, :pswitch_data_0
 
@@ -228,7 +228,7 @@
     if-eq v0, v1, :cond_1
 
     .line 674
-    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v0, :pswitch_data_0
 
@@ -282,7 +282,7 @@
     aput-object p1, v0, v1
 
     .line 724
-    iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mAccountUri:Landroid/net/Uri;
 
@@ -316,7 +316,7 @@
     aput-object p1, v0, v1
 
     .line 718
-    iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mAccountUri:Landroid/net/Uri;
 
@@ -493,7 +493,7 @@
     .line 401
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v0, v0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     move v4, v0
 
@@ -1859,7 +1859,7 @@
     if-eq v1, v2, :cond_0
 
     .line 703
-    iget v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v1, :sswitch_data_0
 
@@ -1935,7 +1935,7 @@
     if-eq v4, v5, :cond_0
 
     .line 860
-    iget v4, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v4, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v4, :pswitch_data_0
 
@@ -2139,7 +2139,7 @@
     if-eq v1, v3, :cond_2
 
     .line 769
-    iget v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v1, :sswitch_data_0
 
@@ -2190,7 +2190,7 @@
     move-result-object v2
 
     .line 781
-    iget-object v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     const/4 v3, 0x0
 
@@ -2313,7 +2313,7 @@
     if-eq v2, v3, :cond_0
 
     .line 900
-    iget v2, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v2, :pswitch_data_0
 
@@ -2421,7 +2421,7 @@
     if-eq v0, v1, :cond_3
 
     .line 804
-    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/4 v1, 0x7
 
@@ -2441,7 +2441,7 @@
 
     .line 807
     :cond_0
-    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x9
 
@@ -2461,7 +2461,7 @@
 
     .line 810
     :cond_1
-    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x8
 
@@ -2512,7 +2512,7 @@
 
     const/4 v7, 0x1
 
-    iget-object v8, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v8, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-object v8, v8, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
 
@@ -2527,9 +2527,9 @@
 
     iget-object v8, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
 
-    iget-object v8, v8, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mAccountManagerAccount:Landroid/accounts/Account;
+    iget-object v8, v8, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mAccountManagerAccount:Landroid/accounts/Account;
 
-    iget-object v9, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v9, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-object v9, v9, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
 
@@ -2638,7 +2638,7 @@
     invoke-virtual {v6, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     .line 846
-    iget-object v6, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v6, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v7, Landroid/provider/ContactsContract$RawContacts;->CONTENT_URI:Landroid/net/Uri;
 
@@ -2694,7 +2694,7 @@
     if-eq v2, v3, :cond_1
 
     .line 730
-    iget v2, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v2, :pswitch_data_0
 
@@ -2800,7 +2800,7 @@
     if-eq v0, v1, :cond_2
 
     .line 921
-    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/4 v1, 0x7
 
@@ -2813,7 +2813,7 @@
 
     .line 923
     :cond_0
-    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x8
 
@@ -2866,9 +2866,9 @@
     .line 358
     sget-object v6, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
-    iget-object v7, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v7, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v7, v7, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v7, v7, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v6, v7, v8}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -2876,7 +2876,7 @@
 
     .line 359
     .local v4, mMailboxUri:Landroid/net/Uri;
-    iget-object v6, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v6, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {v6, v4, v1, v9, v9}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
@@ -2907,7 +2907,7 @@
     invoke-static {v10, v6}, Lcom/android/exchange/SyncManager;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 362
-    iget-object v6, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v6, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v7, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mAccountUri:Landroid/net/Uri;
 
@@ -2950,7 +2950,7 @@
 
     .line 367
     .local v3, mContactsSyncStateUri:Landroid/net/Uri;
-    iget-object v6, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v6, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {v6, v3, v9, v9}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 

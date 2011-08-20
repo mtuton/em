@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Email konfigracija dostupna u par koraka za većinu računa</string>
     <string name="read_attachment_label">čitaj privitke emaila</string>
@@ -85,7 +85,7 @@
     <string name="mailbox_list_title">Sandučić</string>
     <string name="message_list_load_more_messages_action">Učitaj više poruka</string>
     <string name="message_list_send_pending_messages_action">Pošalji odlazne poruke</string>
-    <string name="message_list_title">%1$s: %2$s</string>
+    <string name="message_list_title" formatted="false">%1$s: %2$s</string>
     <string name="message_compose_to_hint">Za</string>
     <string name="message_compose_cc_hint">Cc</string>
     <string name="message_compose_bcc_hint">Bcc</string>
@@ -98,7 +98,7 @@
     <string name="message_compose_error_invalid_email">Neispravne email adrese</string>
     <string name="message_compose_attachments_skipped_toast">Neki se privici ne mogu proslijediti jer nisu skinuti</string>
     <string name="message_compose_attachment_size">Nemoguće dodati datoteku. Datoteka prevelika</string>
-    <string name="message_compose_display_name">%1$s i %2$d drugih</string>
+    <string name="message_compose_display_name" formatted="false">%1$s i %2$d drugih</string>
     <string name="message_compose_discard_dialog">Poruka nije poslana. Odbaciti?</string>
     <string name="message_view_to_label">To:</string>
     <string name="message_view_cc_label">Kopija:</string>
@@ -362,7 +362,7 @@
     <string name="account_settings_signature_hint">Napravite potpis za odlazne poruke</string>
     <string name="notification_exchange_calendar_added">Dodan kalendar Exchange ActiveSync</string>
     <string name="gal_searching_fmt">Pretraživanje %s...…</string>
-    <string name="gal_completed_limited_fmt">Prvih %1$d %2$s rezultata</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Prvih %1$d %2$s rezultata</string>
     <string name="account_setup_failed_security_policies_unsupported">Poslužitelj zahtijeva sigurnost nepodržan od vašeg uređaja</string>
     <string name="message_view_invite_accept">Da</string>
     <string name="message_view_invite_maybe">Možda</string>
@@ -454,7 +454,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Sve</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Veličina emaila</string>
     <string name="account_settings_mail_empty_trash_label">Isprazni smeće poslužitelja</string>
     <string name="account_settings_mail_empty_trash_message">Obrisati sadržaj u smeću na poslužitelju?</string>

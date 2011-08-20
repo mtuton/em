@@ -247,7 +247,7 @@
 
     move-result-object v2
 
-    iget-wide v3, v14, Lcom/android/email/provider/EmailContent$Attachment;->mId:J
+    iget-wide v3, v14, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-object/from16 v0, p0
 

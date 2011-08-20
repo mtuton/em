@@ -646,7 +646,7 @@
 
     .line 1976
     :try_start_0
-    iget-wide v3, v1, Lcom/android/email/provider/EmailContent$Attachment;->mId:J
+    iget-wide v3, v1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -2103,7 +2103,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 448
-    iget-wide v4, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v4, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     return-wide v4
 .end method
@@ -4467,7 +4467,7 @@
 
     .line 2523
     :try_start_2
-    iget-wide v8, v6, Lcom/android/email/provider/EmailContent$Attachment;->mId:J
+    iget-wide v8, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v5}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 

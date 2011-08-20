@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <providers>
     <provider id="gmail" label="Gmail" domain="gmail.com">
         <incoming uri="imap+ssl+://imap.gmail.com" username="$email" />

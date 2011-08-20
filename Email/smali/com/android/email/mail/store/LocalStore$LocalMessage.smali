@@ -41,10 +41,10 @@
     invoke-direct {p0}, Lcom/android/email/mail/internet/MimeMessage;-><init>()V
 
     .line 1670
-    iput-object p2, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mUid:Ljava/lang/String;
+    iput-object p2, p0, Lcom/android/email/mail/Message;->mUid:Ljava/lang/String;
 
     .line 1671
-    iput-object p3, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mFolder:Lcom/android/email/mail/Folder;
+    iput-object p3, p0, Lcom/android/email/mail/Message;->mFolder:Lcom/android/email/mail/Folder;
 
     .line 1672
     return-void
@@ -149,7 +149,7 @@
     invoke-virtual {v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 1718
-    iget-object v2, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mFolder:Lcom/android/email/mail/Folder;
+    iget-object v2, p0, Lcom/android/email/mail/Message;->mFolder:Lcom/android/email/mail/Folder;
 
     check-cast v2, Lcom/android/email/mail/store/LocalStore$LocalFolder;
 
@@ -198,7 +198,7 @@
 
     .line 1739
     :cond_1
-    iget-object v0, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mFolder:Lcom/android/email/mail/Folder;
+    iget-object v0, p0, Lcom/android/email/mail/Message;->mFolder:Lcom/android/email/mail/Folder;
 
     check-cast v0, Lcom/android/email/mail/store/LocalStore$LocalFolder;
 
@@ -354,7 +354,7 @@
     if-eqz p2, :cond_0
 
     .line 1729
-    iget-object v2, p0, Lcom/android/email/mail/store/LocalStore$LocalMessage;->mFolder:Lcom/android/email/mail/Folder;
+    iget-object v2, p0, Lcom/android/email/mail/Message;->mFolder:Lcom/android/email/mail/Folder;
 
     check-cast v2, Lcom/android/email/mail/store/LocalStore$LocalFolder;
 

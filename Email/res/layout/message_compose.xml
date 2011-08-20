@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:orientation="vertical" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout android:orientation="vertical" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <FrameLayout android:layout_width="fill_parent" android:layout_height="?android:windowTitleSize" style="?android:windowTitleBackgroundStyle">
-            <TextView android:gravity="center_vertical" android:id="@id/title_text" android:background="@null" android:fadingEdge="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" style="?android:windowTitleStyle" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="?android:windowTitleSize" style="?android:attr/windowTitleBackgroundStyle">
+            <TextView android:gravity="center_vertical" android:id="@id/title_text" android:background="@null" android:fadingEdge="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" style="?android:attr/windowTitleStyle" />
         </FrameLayout>
         <FrameLayout android:id="@android:id/content" android:layout_width="fill_parent" android:layout_height="0.0dip" android:foreground="?android:windowContentOverlay" android:layout_weight="1.0" android:foregroundGravity="fill_horizontal|top|center" />
     </LinearLayout>

@@ -44,7 +44,7 @@
     iput-wide p4, p0, Lcom/android/exchange/EasFolderCreateSvc;->mParentFolderID:J
 
     .line 41
-    iget-wide v0, p2, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/16 v2, 0x44
 
@@ -52,16 +52,16 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/android/exchange/EasFolderCreateSvc;->mMailboxId:J
+    iput-wide v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
 
     .line 43
-    iget-wide v0, p0, Lcom/android/exchange/EasFolderCreateSvc;->mMailboxId:J
+    iget-wide v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
 
     invoke-static {p1, v0, v1}, Lcom/android/email/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/exchange/EasFolderCreateSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iput-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     .line 44
     const-string v0, "Mahskyript"
@@ -113,7 +113,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/exchange/EasFolderCreateSvc;->mThread:Ljava/lang/Thread;
+    iget-object v3, p0, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
 
     invoke-virtual {v3}, Ljava/lang/Thread;->getId()J
 
@@ -129,7 +129,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/exchange/EasFolderCreateSvc;->mThread:Ljava/lang/Thread;
+    iget-object v3, p0, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
 
     invoke-virtual {v3}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -158,7 +158,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mMailboxId:J
+    iget-wide v2, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
 
     const/4 v4, 0x1
 
@@ -182,14 +182,14 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mDeviceId:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
 
     .line 62
-    iget-object v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Lcom/android/email/mail/DeviceAccessException; {:try_start_1 .. :try_end_1} :catch_0
@@ -199,7 +199,7 @@
 
     .line 82
     :cond_0
-    iget-boolean v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mStop:Z
+    iget-boolean v1, p0, Lcom/android/exchange/AbstractSyncService;->mStop:Z
 
     if-nez v1, :cond_9
 
@@ -220,7 +220,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mExitStatus:I
+    iget v2, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -236,7 +236,7 @@
     invoke-static {p0}, Lcom/android/exchange/SyncManager;->doneOutOfBand(Lcom/android/exchange/AbstractSyncService;)V
 
     .line 98
-    iget v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mExitStatus:I
+    iget v1, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     packed-switch v1, :pswitch_data_0
 
@@ -257,7 +257,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mMailboxId:J
+    iget-wide v2, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
 
     const/4 v4, 0x0
 
@@ -268,7 +268,7 @@
     .line 139
     .end local v8           #status:I
     :goto_2
-    iget-boolean v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mStop:Z
+    iget-boolean v1, p0, Lcom/android/exchange/AbstractSyncService;->mStop:Z
 
     if-eqz v1, :cond_1
 
@@ -287,7 +287,7 @@
     :try_start_3
     new-instance v0, Lcom/android/exchange/adapter/FolderCreateAdapter;
 
-    iget-object v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-object v3, p0, Lcom/android/exchange/EasFolderCreateSvc;->mNewFolderName:Ljava/lang/String;
 
@@ -301,7 +301,7 @@
     .local v0, createAdapter:Lcom/android/exchange/adapter/FolderCreateAdapter;
     const/4 v1, 0x0
 
-    iput v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mExitStatus:I
+    iput v1, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     .line 68
     invoke-virtual {p0, v0}, Lcom/android/exchange/EasFolderCreateSvc;->processCommand(Lcom/android/exchange/adapter/AbstractCommandAdapter;)Z
@@ -311,7 +311,7 @@
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
     .line 82
-    iget-boolean v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mStop:Z
+    iget-boolean v1, p0, Lcom/android/exchange/AbstractSyncService;->mStop:Z
 
     if-nez v1, :cond_a
 
@@ -332,7 +332,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mExitStatus:I
+    iget v2, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -348,7 +348,7 @@
     invoke-static {p0}, Lcom/android/exchange/SyncManager;->doneOutOfBand(Lcom/android/exchange/AbstractSyncService;)V
 
     .line 98
-    iget v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mExitStatus:I
+    iget v1, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     packed-switch v1, :pswitch_data_1
 
@@ -369,7 +369,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mMailboxId:J
+    iget-wide v2, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
 
     const/4 v4, 0x0
 
@@ -380,7 +380,7 @@
     .line 139
     .end local v8           #status:I
     :goto_5
-    iget-boolean v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mStop:Z
+    iget-boolean v1, p0, Lcom/android/exchange/AbstractSyncService;->mStop:Z
 
     if-eqz v1, :cond_3
 
@@ -405,7 +405,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/exchange/EasFolderCreateSvc;->mThread:Ljava/lang/Thread;
+    iget-object v3, p0, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
 
     invoke-virtual {v3}, Ljava/lang/Thread;->getId()J
 
@@ -421,7 +421,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/exchange/EasFolderCreateSvc;->mThread:Ljava/lang/Thread;
+    iget-object v3, p0, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
 
     invoke-virtual {v3}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -457,28 +457,28 @@
     .line 73
     const/4 v1, 0x5
 
-    iput v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mExitStatus:I
+    iput v1, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     .line 74
-    iget-object v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, v1, Lcom/android/email/provider/EmailContent;->mId:J
 
     sget v3, Lcom/android/email/provider/EmailContent$Account;->DEVICE_IS_BLOCKED:I
 
     invoke-static {v1, v2, v3}, Lcom/android/exchange/SyncManager;->blockDevice(JI)V
 
     .line 75
-    iget-object v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, v1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v1, v2}, Lcom/android/exchange/SyncManager;->stopAccountSyncs(J)V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 82
-    iget-boolean v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mStop:Z
+    iget-boolean v1, p0, Lcom/android/exchange/AbstractSyncService;->mStop:Z
 
     if-nez v1, :cond_7
 
@@ -499,7 +499,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mExitStatus:I
+    iget v2, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -515,7 +515,7 @@
     invoke-static {p0}, Lcom/android/exchange/SyncManager;->doneOutOfBand(Lcom/android/exchange/AbstractSyncService;)V
 
     .line 98
-    iget v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mExitStatus:I
+    iget v1, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     packed-switch v1, :pswitch_data_2
 
@@ -536,7 +536,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mMailboxId:J
+    iget-wide v2, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
 
     const/4 v4, 0x0
 
@@ -547,7 +547,7 @@
     .line 139
     .end local v8           #status:I
     :goto_8
-    iget-boolean v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mStop:Z
+    iget-boolean v1, p0, Lcom/android/exchange/AbstractSyncService;->mStop:Z
 
     if-eqz v1, :cond_3
 
@@ -596,12 +596,12 @@
     .line 80
     const/4 v1, 0x1
 
-    iput v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mExitStatus:I
+    iput v1, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     .line 82
-    iget-boolean v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mStop:Z
+    iget-boolean v1, p0, Lcom/android/exchange/AbstractSyncService;->mStop:Z
 
     if-nez v1, :cond_8
 
@@ -622,7 +622,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mExitStatus:I
+    iget v2, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -638,7 +638,7 @@
     invoke-static {p0}, Lcom/android/exchange/SyncManager;->doneOutOfBand(Lcom/android/exchange/AbstractSyncService;)V
 
     .line 98
-    iget v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mExitStatus:I
+    iget v1, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     packed-switch v1, :pswitch_data_3
 
@@ -659,7 +659,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mMailboxId:J
+    iget-wide v2, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
 
     const/4 v4, 0x0
 
@@ -670,7 +670,7 @@
     .line 139
     .end local v8           #status:I
     :goto_b
-    iget-boolean v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mStop:Z
+    iget-boolean v1, p0, Lcom/android/exchange/AbstractSyncService;->mStop:Z
 
     if-eqz v1, :cond_3
 
@@ -699,7 +699,7 @@
 
     move-result-object v2
 
-    iget-wide v3, p0, Lcom/android/exchange/EasFolderCreateSvc;->mMailboxId:J
+    iget-wide v3, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
 
     const/4 v5, 0x0
 
@@ -710,7 +710,7 @@
     .line 139
     .end local v8           #status:I
     :goto_d
-    iget-boolean v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mStop:Z
+    iget-boolean v2, p0, Lcom/android/exchange/AbstractSyncService;->mStop:Z
 
     if-eqz v2, :cond_5
 
@@ -726,7 +726,7 @@
     :catchall_0
     move-exception v1
 
-    iget-boolean v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mStop:Z
+    iget-boolean v2, p0, Lcom/android/exchange/AbstractSyncService;->mStop:Z
 
     if-nez v2, :cond_6
 
@@ -747,7 +747,7 @@
 
     move-result-object v2
 
-    iget v3, p0, Lcom/android/exchange/EasFolderCreateSvc;->mExitStatus:I
+    iget v3, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -763,7 +763,7 @@
     invoke-static {p0}, Lcom/android/exchange/SyncManager;->doneOutOfBand(Lcom/android/exchange/AbstractSyncService;)V
 
     .line 98
-    iget v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mExitStatus:I
+    iget v2, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
 
     packed-switch v2, :pswitch_data_4
 
@@ -816,11 +816,11 @@
 
     .line 111
     .restart local v8       #status:I
-    iget-object v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/android/exchange/EasFolderCreateSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v3, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v3, v3, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v3, v3, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v2, v3, v4, v10}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
 
@@ -891,11 +891,11 @@
 
     .line 111
     .restart local v8       #status:I
-    iget-object v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v2, v2, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v1, v2, v3, v10}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
 
@@ -967,11 +967,11 @@
 
     .line 111
     .restart local v8       #status:I
-    iget-object v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v2, v2, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v1, v2, v3, v10}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
 
@@ -1043,11 +1043,11 @@
 
     .line 111
     .restart local v8       #status:I
-    iget-object v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v2, v2, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v1, v2, v3, v10}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
 
@@ -1118,11 +1118,11 @@
 
     .line 111
     .restart local v8       #status:I
-    iget-object v1, p0, Lcom/android/exchange/EasFolderCreateSvc;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/exchange/EasFolderCreateSvc;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v2, v2, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v1, v2, v3, v10}, Lcom/android/exchange/SyncManager;->reloadFolderList(Landroid/content/Context;JZ)V
 

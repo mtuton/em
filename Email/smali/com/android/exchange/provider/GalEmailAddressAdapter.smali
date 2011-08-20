@@ -81,7 +81,7 @@
 
     .prologue
     .line 43
-    iget-object v0, p0, Lcom/android/exchange/provider/GalEmailAddressAdapter;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/email/EmailAddressAdapter;->mContentResolver:Landroid/content/ContentResolver;
 
     return-object v0
 .end method
@@ -421,7 +421,7 @@
     if-ne v4, v5, :cond_0
 
     .line 254
-    iget-object v4, p0, Lcom/android/exchange/provider/GalEmailAddressAdapter;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/email/EmailAddressAdapter;->mContext:Landroid/content/Context;
 
     const v5, 0x7f080185
 
@@ -478,7 +478,7 @@
     if-eqz v4, :cond_1
 
     .line 261
-    iget-object v4, p0, Lcom/android/exchange/provider/GalEmailAddressAdapter;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/email/EmailAddressAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -516,7 +516,7 @@
     .line 265
     .end local v0           #bannerText:Ljava/lang/String;
     :cond_1
-    iget-object v4, p0, Lcom/android/exchange/provider/GalEmailAddressAdapter;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/email/EmailAddressAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -568,7 +568,7 @@
     if-eqz v4, :cond_3
 
     .line 276
-    iget-object v4, p0, Lcom/android/exchange/provider/GalEmailAddressAdapter;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/email/EmailAddressAdapter;->mContext:Landroid/content/Context;
 
     new-array v5, v6, [Ljava/lang/Object;
 
@@ -596,7 +596,7 @@
     .line 279
     .end local v0           #bannerText:Ljava/lang/String;
     :cond_3
-    iget-object v4, p0, Lcom/android/exchange/provider/GalEmailAddressAdapter;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/email/EmailAddressAdapter;->mContext:Landroid/content/Context;
 
     new-array v5, v6, [Ljava/lang/Object;
 
@@ -637,7 +637,7 @@
     if-eqz v4, :cond_5
 
     .line 286
-    iget-object v4, p0, Lcom/android/exchange/provider/GalEmailAddressAdapter;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/email/EmailAddressAdapter;->mContext:Landroid/content/Context;
 
     new-array v5, v6, [Ljava/lang/Object;
 
@@ -663,7 +663,7 @@
     .line 291
     .end local v0           #bannerText:Ljava/lang/String;
     :cond_5
-    iget-object v4, p0, Lcom/android/exchange/provider/GalEmailAddressAdapter;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/email/EmailAddressAdapter;->mContext:Landroid/content/Context;
 
     new-array v5, v6, [Ljava/lang/Object;
 

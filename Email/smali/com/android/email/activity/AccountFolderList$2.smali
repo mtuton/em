@@ -129,7 +129,7 @@
 
     move-result-object v4
 
-    iget-wide v4, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v4, v4, Lcom/android/email/provider/EmailContent;->mId:J
 
     iget-object v6, p0, Lcom/android/email/activity/AccountFolderList$2;->this$0:Lcom/android/email/activity/AccountFolderList;
 

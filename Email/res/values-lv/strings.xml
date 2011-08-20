@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Varat ātri konfigurēt e-pastu lielākajai daļai kontu</string>
     <string name="read_attachment_label">lasīt e-pasta pielikumus</string>
@@ -81,7 +81,7 @@
     <string name="mailbox_list_title">Pastkaste</string>
     <string name="message_list_load_more_messages_action">Ielādēt papildu ziņas</string>
     <string name="message_list_send_pending_messages_action">Sūtīt izejošās ziņas</string>
-    <string name="message_list_title">%1$s: %2$s</string>
+    <string name="message_list_title" formatted="false">%1$s: %2$s</string>
     <string name="message_compose_to_hint">Kam</string>
     <string name="message_compose_cc_hint">Kopija</string>
     <string name="message_compose_bcc_hint">Diskrētā kopija</string>
@@ -94,7 +94,7 @@
     <string name="message_compose_error_invalid_email">Nederīgas e-pasta adreses</string>
     <string name="message_compose_attachments_skipped_toast">Dažus pielikumus nevar pārsūtīt, jo tie netika lejupielādēti</string>
     <string name="message_compose_attachment_size">Nevar pievienot failu. Faila lielums ir par lielu</string>
-    <string name="message_compose_display_name">%1$s un %2$d citi</string>
+    <string name="message_compose_display_name" formatted="false">%1$s un %2$d citi</string>
     <string name="message_compose_discard_dialog">Ziņa nav nosūtīta. Vai izmest?</string>
     <string name="message_view_to_label">Kam:</string>
     <string name="message_view_cc_label">Kopija:</string>
@@ -357,7 +357,7 @@
     <string name="account_settings_signature_hint">Izveidojiet parakstu savām izejošajām ziņām</string>
     <string name="notification_exchange_calendar_added">Exchange ActiveSync kalendārs ir pievienots</string>
     <string name="gal_searching_fmt">Meklē %s...…</string>
-    <string name="gal_completed_limited_fmt">Pirmie %1$d rezultāti no %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Pirmie %1$d rezultāti no %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Serverim nepieciešamas drošības funkcijas, kuras neatbalsta jūsu ierīce</string>
     <string name="message_view_invite_accept">Jā</string>
     <string name="message_view_invite_maybe">Varbūt</string>
@@ -449,7 +449,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Visi</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">E-pasta lielums</string>
     <string name="account_settings_mail_empty_trash_label">Iztukšot servera atkritni</string>
     <string name="account_settings_mail_empty_trash_message">Vai dzēst servera atkritnē esošo saturu?</string>

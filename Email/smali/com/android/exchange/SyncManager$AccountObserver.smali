@@ -123,7 +123,7 @@
 
     move-result-object v1
 
-    iget-wide v4, v6, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v4, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -142,7 +142,7 @@
     if-nez v8, :cond_0
 
     .line 853
-    iget-wide v0, v6, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-direct {p0, v0, v1}, Lcom/android/exchange/SyncManager$AccountObserver;->addAccountMailbox(J)V
 
@@ -232,7 +232,7 @@
     iput-object v2, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mServerId:Ljava/lang/String;
 
     .line 1084
-    iget-wide v2, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     iput-wide v2, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
 
@@ -521,7 +521,7 @@
     .restart local v12       #i$:Ljava/util/Iterator;
     :cond_2
     :try_start_4
-    iget-wide v0, v6, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v10, v0, v1}, Lcom/android/exchange/SyncManager$AccountList;->contains(J)Z
 
@@ -537,14 +537,14 @@
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 965
-    iget-wide v0, v6, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v9, v0, v1}, Lcom/android/exchange/EmailKeyManager$EmailKeyStore;->removeCertificate(Landroid/content/Context;J)V
 
     .line 968
     iget-object v0, p0, Lcom/android/exchange/SyncManager$AccountObserver;->this$0:Lcom/android/exchange/SyncManager;
 
-    iget-wide v1, v6, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/4 v3, 0x1
 
@@ -588,7 +588,7 @@
     .line 977
     .end local v7           #acct:Landroid/accounts/Account;
     :cond_3
-    iget-wide v0, v6, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v9, v0, v1}, Lcom/android/email/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Account;
 
@@ -612,7 +612,7 @@
 
     iget v2, v13, Lcom/android/email/provider/EmailContent$Account;->mSyncInterval:I
 
-    iget-wide v3, v13, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v3, v13, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/4 v5, 0x1
 
@@ -652,7 +652,7 @@
     .line 1010
     iget-object v0, p0, Lcom/android/exchange/SyncManager$AccountObserver;->this$0:Lcom/android/exchange/SyncManager;
 
-    iget-wide v1, v6, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/4 v3, 0x1
 
@@ -725,7 +725,7 @@
     .restart local v6       #account:Lcom/android/email/provider/EmailContent$Account;
     iget-object v0, p0, Lcom/android/exchange/SyncManager$AccountObserver;->mAccounts:Lcom/android/exchange/SyncManager$AccountList;
 
-    iget-wide v1, v6, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v0, v1, v2}, Lcom/android/exchange/SyncManager$AccountList;->contains(J)Z
 
@@ -775,7 +775,7 @@
     invoke-static {v0}, Lcom/android/exchange/SyncManager;->log(Ljava/lang/String;)V
 
     .line 1035
-    iget-wide v0, v6, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-direct {p0, v0, v1}, Lcom/android/exchange/SyncManager$AccountObserver;->addAccountMailbox(J)V
 
@@ -859,7 +859,7 @@
     const/4 v6, 0x0
 
     .line 912
-    iget-wide v0, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 914
     .local v0, accountId:J
@@ -894,7 +894,7 @@
 
     .line 916
     .local v3, oldAccount:Lcom/android/email/provider/EmailContent$Account;
-    iget-wide v4, v3, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v4, v3, Lcom/android/email/provider/EmailContent;->mId:J
 
     cmp-long v4, v4, v0
 
@@ -1003,7 +1003,7 @@
 
     .line 901
     :goto_1
-    iget-wide v5, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v5, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v3, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -1118,7 +1118,7 @@
 
     .line 876
     :goto_1
-    iget-wide v5, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v5, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v3, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 

@@ -52,7 +52,7 @@
     if-eq v0, v1, :cond_4
 
     .line 31
-    iget v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v0, :sswitch_data_0
 
@@ -696,7 +696,7 @@
     if-eq v6, v7, :cond_0
 
     .line 350
-    iget v6, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->tag:I
+    iget v6, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v6, :sswitch_data_0
 
@@ -855,7 +855,7 @@
     if-eq v0, v1, :cond_0
 
     .line 328
-    iget v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v0, :sswitch_data_0
 
@@ -921,7 +921,7 @@
     if-eq v2, v3, :cond_1
 
     .line 175
-    iget v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v2, :sswitch_data_0
 
@@ -1105,7 +1105,7 @@
     if-eq v2, v3, :cond_3
 
     .line 226
-    iget v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v2, :sswitch_data_0
 
@@ -1184,10 +1184,10 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     .line 246
-    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     invoke-static {v2}, Lcom/android/exchange/adapter/ParserUtility;->getTimeInMillis(Ljava/lang/String;)J
 
@@ -1203,10 +1203,10 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     .line 250
-    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     invoke-static {v2}, Lcom/android/exchange/adapter/ParserUtility;->getTimeInMillis(Ljava/lang/String;)J
 
@@ -1222,10 +1222,10 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     .line 254
-    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     invoke-static {v2}, Lcom/android/exchange/adapter/ParserUtility;->getTimeInMillis(Ljava/lang/String;)J
 
@@ -1241,10 +1241,10 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     .line 258
-    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     invoke-static {v2}, Lcom/android/exchange/adapter/ParserUtility;->getTimeInMillis(Ljava/lang/String;)J
 
@@ -1260,10 +1260,10 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     .line 262
-    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     invoke-static {v2}, Lcom/android/exchange/adapter/ParserUtility;->getTimeInMillis(Ljava/lang/String;)J
 
@@ -1279,10 +1279,10 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     .line 266
-    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     invoke-static {v2}, Lcom/android/exchange/adapter/ParserUtility;->getTimeInMillis(Ljava/lang/String;)J
 
@@ -1322,10 +1322,10 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     .line 273
-    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     invoke-static {v2}, Lcom/android/exchange/adapter/ParserUtility;->getTimeInMillis(Ljava/lang/String;)J
 
@@ -1341,10 +1341,10 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     .line 277
-    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->text:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/exchange/adapter/Parser;->text:Ljava/lang/String;
 
     invoke-static {v2}, Lcom/android/exchange/adapter/ParserUtility;->getTimeInMillis(Ljava/lang/String;)J
 

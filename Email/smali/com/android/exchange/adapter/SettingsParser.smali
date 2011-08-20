@@ -77,7 +77,7 @@
     if-eq v1, v2, :cond_2
 
     .line 100
-    iget v1, p0, Lcom/android/exchange/adapter/SettingsParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v2, 0x486
 
@@ -140,7 +140,7 @@
     if-eq v1, v2, :cond_4
 
     .line 46
-    iget v1, p0, Lcom/android/exchange/adapter/SettingsParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v2, 0x486
 
@@ -167,7 +167,7 @@
 
     .line 51
     :cond_1
-    iget v1, p0, Lcom/android/exchange/adapter/SettingsParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v2, 0x496
 
@@ -182,7 +182,7 @@
 
     .line 53
     :cond_2
-    iget v1, p0, Lcom/android/exchange/adapter/SettingsParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v2, 0x494
 
@@ -232,7 +232,7 @@
     if-eq v1, v2, :cond_1
 
     .line 74
-    iget v1, p0, Lcom/android/exchange/adapter/SettingsParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v2, 0x488
 
@@ -282,7 +282,7 @@
     if-eq v1, v2, :cond_1
 
     .line 87
-    iget v1, p0, Lcom/android/exchange/adapter/SettingsParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v2, 0x488
 

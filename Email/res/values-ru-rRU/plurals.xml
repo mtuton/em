@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <plurals name="notification_new_one_account_fmt">
         <item quantity="other"></item>
-        <item quantity="one">%d не прочитано (%s)</item>
+        <item quantity="one">%1$d не прочитано (%2$s)</item>
         <item quantity="few"></item>
     </plurals>
     <plurals name="notification_new_multi_account_fmt">
@@ -10,7 +10,7 @@
         <item quantity="few">в %d уч. зап.</item>
     </plurals>
     <plurals name="search_results_title">
-        <item quantity="other">Результаты (%d) для %1$s</item>
+        <item quantity="other">Результаты (%1$d) для %2$1$s</item>
         <item quantity="one">1 результат для %1$s</item>
     </plurals>
 </resources>

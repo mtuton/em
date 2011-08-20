@@ -640,7 +640,7 @@
 
     move-result-object v7
 
-    iget-wide v7, v7, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v7, v7, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v7, v8}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
@@ -692,7 +692,7 @@
 
     move-result-object v7
 
-    iget-wide v7, v7, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v7, v7, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/16 v9, 0x8
 

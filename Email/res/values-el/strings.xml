@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Εύκολη ρύθμιση email για τους περισσότερους λογαριασμούς</string>
     <string name="read_attachment_label">ανάγνωση συνημμένων email</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Σήμανση ως αναγνωσμένου</string>
     <string name="unread_action">Σήμ. ως μη αναγ.</string>
     <string name="favorite_action">Αγαπημένα</string>
-    <string name="set_star_action">Προσθήκη\nαστεριού</string>
+    <string name="set_star_action">"Προσθήκη
+αστεριού"</string>
     <string name="remove_star_action">Κατάργηση αστεριού</string>
     <string name="refresh_action">Ανανέωση</string>
     <string name="add_account_action">Προσθήκη λογαριασμού</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Αναζήτηση</string>
     <string name="open_action">Άνοιγμα</string>
     <string name="account_settings_action">Ρυθμίσεις λογαριασμού</string>
-    <string name="remove_account_action">Αφαίρ.\nλογαριασμού</string>
+    <string name="remove_account_action">"Αφαίρ.
+λογαριασμού"</string>
     <string name="folders_action">Φάκελοι</string>
     <string name="accounts_action">Λογαρ.</string>
     <string name="mark_as_read_action">Σήμανση ως αναγνωσμένου</string>
@@ -76,20 +78,32 @@
     <string name="mailbox_list_title">Φάκελος αλληλογραφίας</string>
     <string name="message_list_load_more_messages_action">Φόρτωση περισσότερων μηνυμάτων</string>
     <string name="message_list_send_pending_messages_action">Αποστολή εξερχόμενων μηνυμάτων</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">Προς</string>
     <string name="message_compose_cc_hint">Κοιν.</string>
     <string name="message_compose_bcc_hint">Ιδιαίτερη κοινοποίηση</string>
     <string name="message_compose_subject_hint">Θέμα</string>
     <string name="message_compose_body_hint">Σύνθεση email</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- Αρχικό μήνυμα --------\nΘέμα: %1$s\nΑπό: %2$s\nΠρος: %3$s\nΚοιν.: %4$s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s έγγραψε:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- Αρχικό μήνυμα --------
+Θέμα: %1$s
+Από: %2$s
+Προς: %3$s
+Κοιν.: %4$s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s έγγραψε:
+
+"</string>
     <string name="message_compose_quoted_text_label">Αρχικό μήνυμα</string>
     <string name="message_compose_error_no_recipients">Προσθήκη παραληπτών</string>
     <string name="message_compose_error_invalid_email">Άκυρες διευθύνσεις email</string>
     <string name="message_compose_attachments_skipped_toast">Δεν είναι δυνατή η προώθηση ορισμένων συνημμένων επειδή δεν έχει πραγματοποιηθεί η λήψη τους</string>
     <string name="message_compose_attachment_size">Δεν ήταν δυνατή η επισύναψη του αρχείου. Το αρχείο είναι πολύ μεγάλο</string>
-    <string name="message_compose_display_name">Ο χρήστης %1$s και %2$d άλλοι</string>
+    <string name="message_compose_display_name" formatted="false">Ο χρήστης %1$s και %2$d άλλοι</string>
     <string name="message_compose_discard_dialog">Το μήνυμα δεν εστάλη. Απόρριψη;</string>
     <string name="message_view_to_label">Προς:</string>
     <string name="message_view_cc_label">Κοιν.:</string>
@@ -191,11 +205,14 @@
     <string name="account_setup_options_mail_window_all">Όλα τα email</string>
     <string name="account_setup_failed_dlg_auth_message">Λάθος όνομα χρήστη ή κωδικός πρόσβασης.</string>
     <string name="account_setup_autodiscover_failed_dlg_auth_message">Ο αυτόματος εντοπισμός απέτυχε</string>
-    <string name="account_setup_failed_dlg_auth_message_fmt">Λάθος όνομα χρήστη ή κωδικός πρόσβασης.\n(%s)</string>
+    <string name="account_setup_failed_dlg_auth_message_fmt">"Λάθος όνομα χρήστη ή κωδικός πρόσβασης.
+(%s)"</string>
     <string name="account_setup_failed_dlg_certificate_message">Δεν ήταν δυνατή η ασφαλής σύνδεση με το διακομιστή</string>
-    <string name="account_setup_failed_dlg_certificate_message_fmt">Δεν είναι δυνατή η ασφαλής σύνδεση με το διακομιστή.\n(%s)</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Δεν είναι δυνατή η ασφαλής σύνδεση με το διακομιστή.
+(%s)"</string>
     <string name="account_setup_failed_dlg_server_message">Αδύνατη η σύνδεση στο διακομιστή</string>
-    <string name="account_setup_failed_dlg_server_message_fmt">Δεν είναι δυνατή η σύνδεση με το διακομιστή.\n(%s)</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">"Δεν είναι δυνατή η σύνδεση με το διακομιστή.
+(%s)"</string>
     <string name="account_setup_failed_tls_required">Ο διακομιστής δεν υποστηρίζει το TLS</string>
     <string name="account_setup_failed_auth_required">Ο διακομιστής δεν υποστηρίζει τον έλεγχο ταυτότητας</string>
     <string name="account_setup_failed_security">Δεν ήταν δυνατό το άνοιγμα σύνδεσης με το διακομιστή λόγω σφάλματος ασφαλείας</string>
@@ -222,7 +239,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Δόνηση</string>
     <string name="account_settings_ringtone">Επιλογή ήχου κλήσης</string>
     <string name="account_settings_servers">Ρυθμίσεις διακομιστή</string>
-    <string name="account_delete_dlg_title">Αφαίρ.\nλογαριασμού</string>
+    <string name="account_delete_dlg_title">"Αφαίρ.
+λογαριασμού"</string>
     <string name="account_delete_dlg_instructions_fmt">Ο λογαριασμός \"%s\" θα αφαιρεθεί από το Email</string>
     <string name="provider_note_yahoo">Η πρόσβαση στο γραμματοκιβώτιο δεν υποστηρίζεται για ορισμένους τύπους λογαριασμών αλληλογραφίας Yahoo!. Εάν αντιμετωπίζετε προβλήματα σύνδεσης, επισκεφτείτε τη διεύθυνση yahoo.com για περισσότερες πληροφορίες</string>
     <string name="provider_note_yahoo_uk">Πριν από τη δημιουργία αυτού του λογαριασμού email, επισκεφτείτε την τοποθεσία web του Yahoo! και ενεργοποιήστε την πρόσβαση email POP3 για αυτόν το λογαριασμό</string>
@@ -355,11 +373,11 @@
     <string name="account_settings_signature_hint">Προσάρτηση κειμένου στα μηνύματα που αποστέλλετε</string>
     <string name="notification_exchange_calendar_added">Προστέθηκε ημερολόγιο Exchange</string>
     <string name="gal_searching_fmt">Αναζήτηση %s…</string>
-    <string name="gal_completed_limited_fmt">Τα πρώτα %1$d αποτελέσματα από %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Τα πρώτα %1$d αποτελέσματα από %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Για αυτόν τον διακομιστή απαιτούνται λειτουργίες ασφαλείας που δεν υποστηρίζονται από το τηλέφωνό σας.</string>
-    <string name="message_view_invite_accept">\u0020Ναι</string>
-    <string name="message_view_invite_maybe">\u0020Ίσως</string>
-    <string name="message_view_invite_decline">\u0020Όχι</string>
+    <string name="message_view_invite_accept">" Ναι"</string>
+    <string name="message_view_invite_maybe">" Ίσως"</string>
+    <string name="message_view_invite_decline">" Όχι"</string>
     <string name="device_admin_description">Ενεργοποιεί πολιτικές ασφαλείας καθορισμένες από διακομιστή</string>
     <string name="upgrade_accounts_title">Αναβάθμιση λογαριασμών</string>
     <string name="upgrade_accounts_error">Δεν είναι δυνατή η αναβάθμιση του λογαριασμού</string>
@@ -447,7 +465,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Όλα</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Μέγεθος email</string>
     <string name="account_settings_mail_empty_trash_label">Άδειασμα απορριμμάτων διακομιστή</string>
     <string name="account_settings_mail_empty_trash_message">Διαγραφή περιεχομένου από τα απορρίμματα διακομιστή;</string>

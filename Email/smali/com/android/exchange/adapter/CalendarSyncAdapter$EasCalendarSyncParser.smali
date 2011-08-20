@@ -204,7 +204,7 @@
     if-eq v3, v5, :cond_4
 
     .line 1127
-    iget v3, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v3, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v3, :sswitch_data_0
 
@@ -404,7 +404,7 @@
     if-eq v3, v4, :cond_1
 
     .line 1103
-    iget v3, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v3, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v3, :pswitch_data_0
 
@@ -473,7 +473,7 @@
     if-eq v1, v2, :cond_0
 
     .line 1174
-    iget v1, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v1, :pswitch_data_0
 
@@ -548,7 +548,7 @@
     if-eq v1, v2, :cond_0
 
     .line 1084
-    iget v1, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v1, :pswitch_data_0
 
@@ -868,7 +868,7 @@
     .line 942
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v0, v0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     move v3, v0
 
@@ -1279,7 +1279,7 @@
     .line 1042
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     move-object v3, v0
 
@@ -1357,7 +1357,7 @@
     if-eq v0, v1, :cond_0
 
     .line 1070
-    iget v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v0, :pswitch_data_0
 
@@ -1397,7 +1397,7 @@
 
     const-string v1, "_sync_account"
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v2, v2, Lcom/android/email/provider/EmailContent$Account;->mEmailAddress:Ljava/lang/String;
 
@@ -1433,7 +1433,7 @@
     aput-object p1, v0, v1
 
     .line 1212
-    iget-object v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mAccountUri:Landroid/net/Uri;
 
@@ -1460,7 +1460,7 @@
 
     .prologue
     .line 1206
-    iget-object v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mAccountUri:Landroid/net/Uri;
 
@@ -1663,7 +1663,7 @@
     if-eq v8, v9, :cond_0
 
     .line 883
-    iget v8, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v8, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v8, :pswitch_data_0
 
@@ -1814,13 +1814,13 @@
     .line 1308
     .local v1, eventId:J
     :try_start_0
-    iget-object v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
     const/16 v3, 0x20
 
     const/4 v4, 0x0
 
-    iget-object v5, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v5, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     invoke-static/range {v0 .. v5}, Lcom/android/exchange/utility/CalendarUtilities;->createMessageForEventId(Landroid/content/Context;JILjava/lang/String;Lcom/android/email/provider/EmailContent$Account;)Lcom/android/email/provider/EmailContent$Message;
     :try_end_0
@@ -1833,11 +1833,11 @@
     if-eqz v9, :cond_0
 
     .line 1317
-    iget-object v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v3, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v3, v3, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v3, v3, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v0, v3, v4, v9}, Lcom/android/exchange/EasOutboxService;->sendMessage(Landroid/content/Context;JLcom/android/email/provider/EmailContent$Message;)V
 
@@ -1948,7 +1948,7 @@
 
     .line 1330
     .restart local v1       #eventId:J
-    iget-object v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-static {}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->access$700()Landroid/net/Uri;
 
@@ -2008,7 +2008,7 @@
 
     .line 1337
     .restart local v1       #eventId:J
-    iget-object v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-static {}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->access$700()Landroid/net/Uri;
 
@@ -2050,11 +2050,11 @@
 
     .line 1343
     .restart local v9       #msg:Lcom/android/email/provider/EmailContent$Message;
-    iget-object v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v3, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v3, v3, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v3, v3, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v0, v3, v4, v9}, Lcom/android/exchange/EasOutboxService;->sendMessage(Landroid/content/Context;JLcom/android/email/provider/EmailContent$Message;)V
 
@@ -2318,7 +2318,7 @@
     .line 504
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v0, v0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     move v5, v0
 
@@ -2346,7 +2346,7 @@
     :cond_2
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v0, v0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     move v5, v0
 
@@ -2415,7 +2415,7 @@
     .line 533
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v0, v0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     move v5, v0
 
@@ -2743,7 +2743,7 @@
     :sswitch_4
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
     move-object v5, v0
 
@@ -3174,7 +3174,7 @@
     .line 699
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     move-object v5, v0
 
@@ -4080,7 +4080,7 @@
     if-eq v1, v2, :cond_0
 
     .line 1192
-    iget v1, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v1, :sswitch_data_0
 
@@ -4160,7 +4160,7 @@
     if-eq v4, v5, :cond_1
 
     .line 1409
-    iget v4, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v4, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v4, :pswitch_data_0
 
@@ -4407,7 +4407,7 @@
     if-eq v1, v2, :cond_0
 
     .line 1248
-    iget v1, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v1, :sswitch_data_0
 
@@ -4499,7 +4499,7 @@
     if-eq v2, v3, :cond_0
 
     .line 1455
-    iget v2, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v2, :pswitch_data_0
 
@@ -4606,7 +4606,7 @@
     if-eq v0, v1, :cond_5
 
     .line 1265
-    iget v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/4 v1, 0x7
 
@@ -4654,13 +4654,13 @@
 
     .line 1268
     :cond_1
-    iget v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x9
 
     if-eq v0, v1, :cond_2
 
-    iget v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x21
 
@@ -4681,7 +4681,7 @@
 
     .line 1271
     :cond_3
-    iget v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x8
 
@@ -4734,7 +4734,7 @@
 
     const/4 v1, 0x1
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-object v2, v2, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
 
@@ -4749,9 +4749,9 @@
 
     iget-object v2, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->this$0:Lcom/android/exchange/adapter/CalendarSyncAdapter;
 
-    iget-object v2, v2, Lcom/android/exchange/adapter/CalendarSyncAdapter;->mAccountManagerAccount:Landroid/accounts/Account;
+    iget-object v2, v2, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mAccountManagerAccount:Landroid/accounts/Account;
 
-    iget-object v3, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v3, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-object v3, v3, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
 
@@ -4796,13 +4796,13 @@
 
     .line 1363
     :try_start_0
-    iget-object v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
     const/16 v3, 0x20
 
     const/4 v4, 0x0
 
-    iget-object v5, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v5, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     invoke-static/range {v0 .. v5}, Lcom/android/exchange/utility/CalendarUtilities;->createMessageForEventId(Landroid/content/Context;JILjava/lang/String;Lcom/android/email/provider/EmailContent$Account;)Lcom/android/email/provider/EmailContent$Message;
     :try_end_0
@@ -4814,11 +4814,11 @@
     if-eqz v0, :cond_0
 
     .line 1371
-    iget-object v1, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v2, v2, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v1, v2, v3, v0}, Lcom/android/exchange/EasOutboxService;->sendMessage(Landroid/content/Context;JLcom/android/email/provider/EmailContent$Message;)V
 
@@ -4904,7 +4904,7 @@
     move-result-wide v3
 
     .line 1385
-    iget-object v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-static {}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->access$700()Landroid/net/Uri;
 
@@ -4961,7 +4961,7 @@
     move-result-wide v2
 
     .line 1392
-    iget-object v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-static {}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->access$700()Landroid/net/Uri;
 
@@ -5001,11 +5001,11 @@
     check-cast v0, Lcom/android/email/provider/EmailContent$Message;
 
     .line 1398
-    iget-object v2, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v3, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v3, v3, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v3, v3, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v2, v3, v4, v0}, Lcom/android/exchange/EasOutboxService;->sendMessage(Landroid/content/Context;JLcom/android/email/provider/EmailContent$Message;)V
 
@@ -5045,7 +5045,7 @@
     if-eq v2, v3, :cond_1
 
     .line 1218
-    iget v2, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v2, :pswitch_data_0
 
@@ -5340,7 +5340,7 @@
     if-eq v0, v1, :cond_2
 
     .line 1476
-    iget v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/4 v1, 0x7
 
@@ -5353,7 +5353,7 @@
 
     .line 1478
     :cond_0
-    iget v0, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x8
 
@@ -5986,9 +5986,9 @@
     .line 313
     sget-object v8, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
-    iget-object v9, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v9, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v9, v9, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v9, v9, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v8, v9, v10}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -5996,7 +5996,7 @@
 
     .line 314
     .local v5, mMailboxUri:Landroid/net/Uri;
-    iget-object v8, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v8, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {v8, v5, v1, v11, v11}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
@@ -6039,7 +6039,7 @@
 
     .line 321
     .local v4, mCalendarUri:Landroid/net/Uri;
-    iget-object v8, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v8, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {v8, v4, v7, v11}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
@@ -6078,7 +6078,7 @@
 
     .line 329
     .local v3, mCalendarSyncStateUri:Landroid/net/Uri;
-    iget-object v8, p0, Lcom/android/exchange/adapter/CalendarSyncAdapter$EasCalendarSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v8, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {v8, v3, v11, v11}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 

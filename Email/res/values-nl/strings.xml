@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Configureer e-mail meeste accounts in een paar stappen</string>
     <string name="read_attachment_label">E-mailbijlagen lezen</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Markeren als gelezen</string>
     <string name="unread_action">Mrk. als ongel.</string>
     <string name="favorite_action">Favorieten</string>
-    <string name="set_star_action">Ster\ntoev.</string>
+    <string name="set_star_action">"Ster
+toev."</string>
     <string name="remove_star_action">Ster verwijderen</string>
     <string name="refresh_action">Vernieuw</string>
     <string name="add_account_action">Account toevoegen</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Zoeken</string>
     <string name="open_action">Openen</string>
     <string name="account_settings_action">Accountinstellingen</string>
-    <string name="remove_account_action">Account\nwissen</string>
+    <string name="remove_account_action">"Account
+wissen"</string>
     <string name="folders_action">Mappen</string>
     <string name="accounts_action">Accounts</string>
     <string name="mark_as_read_action">Markeren als gelezen</string>
@@ -80,20 +82,32 @@
     <string name="mailbox_list_title">Mailbox</string>
     <string name="message_list_load_more_messages_action">Laad meer berichten</string>
     <string name="message_list_send_pending_messages_action">Uitgaande berichten verzenden</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">Aan</string>
     <string name="message_compose_cc_hint">CC</string>
     <string name="message_compose_bcc_hint">BCC</string>
     <string name="message_compose_subject_hint">Onderwerp</string>
     <string name="message_compose_body_hint">E-mail schrijven</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- Oorspronkelijk bericht --------\nOnderwerp: %s\nVan: %s\nAan: %s\nCc: %s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s schreef:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- Oorspronkelijk bericht --------
+Onderwerp: %s
+Van: %s
+Aan: %s
+Cc: %s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s schreef:
+
+"</string>
     <string name="message_compose_quoted_text_label">Oorspronkelijk bericht</string>
     <string name="message_compose_error_no_recipients">Ontvangers toevoegen</string>
     <string name="message_compose_error_invalid_email">Ongeldig e-mailadres</string>
     <string name="message_compose_attachments_skipped_toast">Sommige bijlagen kunnen niet worden doorgestuurd omdat ze niet zijn gedownload</string>
     <string name="message_compose_attachment_size">Kan bestand niet toevoegen. Bestand te groot</string>
-    <string name="message_compose_display_name">%1$s en %2$d anderen</string>
+    <string name="message_compose_display_name" formatted="false">%1$s en %2$d anderen</string>
     <string name="message_compose_discard_dialog">Bericht niet verzonden. Verwijderen?</string>
     <string name="message_view_to_label">Aan:</string>
     <string name="message_view_cc_label">Cc:</string>
@@ -101,8 +115,8 @@
     <string name="message_view_attachment_download_action">Opslaan</string>
     <string name="message_view_status_attachment_saved">Opgeslagen op SD-kaart als %s.</string>
     <string name="message_view_status_attachment_not_saved">Kan bijlage niet opslaan op SD-kaart</string>
-    <string name="message_view_show_pictures_instructions">Selecteer Foto\'s weergeven om ingesloten foto\'s weer te geven</string>
-    <string name="message_view_show_pictures_action">Foto\'s weerg.</string>
+    <string name="message_view_show_pictures_instructions">"Selecteer Foto's weergeven om ingesloten foto's weer te geven"</string>
+    <string name="message_view_show_pictures_action">"Foto's weerg."</string>
     <string name="message_view_fetching_attachment_toast">Bijlage ophalen</string>
     <string name="message_view_fetching_attachment_progress">Bijlage %s ophalen</string>
     <string name="message_view_invite_toast_yes">Uitnodiging aangenomen</string>
@@ -192,11 +206,14 @@
     <string name="account_setup_options_mail_window_all">Alle e-mailberichten</string>
     <string name="account_setup_failed_dlg_auth_message">Onjuiste gebruikersnaam of wachtwoord.</string>
     <string name="account_setup_autodiscover_failed_dlg_auth_message">Autodiscovermislukt</string>
-    <string name="account_setup_failed_dlg_auth_message_fmt">Onjuiste gebruikersnaam of wachtwoord. \n(%s)</string>
+    <string name="account_setup_failed_dlg_auth_message_fmt">"Onjuiste gebruikersnaam of wachtwoord. 
+(%s)"</string>
     <string name="account_setup_failed_dlg_certificate_message">Kan niet veilig verbinden met server</string>
-    <string name="account_setup_failed_dlg_certificate_message_fmt">Kan niet veilig verbinden met server. \n(%s)</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Kan niet veilig verbinden met server. 
+(%s)"</string>
     <string name="account_setup_failed_dlg_server_message">Kan niet verbinden met server</string>
-    <string name="account_setup_failed_dlg_server_message_fmt">Kan niet verbinden met server. \n(%s)</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">"Kan niet verbinden met server. 
+(%s)"</string>
     <string name="account_setup_failed_tls_required">Server ondersteunt TLS niet</string>
     <string name="account_setup_failed_auth_required">Server ondersteunt geen verificatie</string>
     <string name="account_setup_failed_security">Kan geen verbinding met server openen vanwege beveiligingsfout</string>
@@ -223,7 +240,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Trillen</string>
     <string name="account_settings_ringtone">Beltoon selecteren</string>
     <string name="account_settings_servers">Serverinstellingen</string>
-    <string name="account_delete_dlg_title">Account\nwissen</string>
+    <string name="account_delete_dlg_title">"Account
+wissen"</string>
     <string name="account_delete_dlg_instructions_fmt">Account %s wordt verwijderd uit E-mail</string>
     <string name="provider_note_yahoo">Mailboxtoegang wordt niet ondersteund voor bepaalde typen Yahoo!-mailaccounts. Ga naar yahoo.com voor meer informatie als u problemen hebt met de verbinding</string>
     <string name="provider_note_yahoo_uk">Voordat u deze e-mailaccount instelt, gaat u naar de Yahoo!-website en schakelt u POP3 e-mailtoegang in voor deze account</string>
@@ -315,9 +333,9 @@
     <string name="empty_str">Leeg</string>
     <string name="message_about_storing_imei">Door deze toepassing te activeren accepteert u dat een deel van uw mobiele-telefoongegevens (waaronder IMEI en modelnaam) door Samsung worden opgeslagen, verwerkt en gebruikt om het activeren van de toepassing te rapporteren aan de licentiegevers van de toepassingsoftware. Zulke gegevens worden door Samsung strikt volgens het Samsung-privacybeleid behandeld. Een exemplaar van dit beleid is op aanvraag beschikbaar. Doorgaan?</string>
     <string name="unable_to_attach">Onvoldoende ruimte in telefoongeheugen. Verwijder een aantal items en probeer het opnieuw</string>
-    <string name="attach_image">Foto\'s</string>
+    <string name="attach_image">"Foto's"</string>
     <string name="attach_take_photo">Foto maken</string>
-    <string name="attach_video">Video\'s</string>
+    <string name="attach_video">"Video's"</string>
     <string name="attach_record_video">Video opnemen</string>
     <string name="attach_sound">Audio</string>
     <string name="attach_record_sound">Geluid opnemen</string>
@@ -350,13 +368,13 @@
     <string name="message_composer_fwd">Fw:</string>
     <string name="message_composer_re">Re:</string>
     <string name="account_setup_security_policies_required_fmt">De server %s vereist dat u de server toestemming geeft bepaalde beveiligingsfuncties van uw telefoon extern te bedienen. Wilt u het instellen van dit account voltooien?</string>
-    <string name="security_notification_ticker_fmt">Account \'%s\' vereist een update van de beveiligingsinstellingen.</string>
+    <string name="security_notification_ticker_fmt">"Account '%s' vereist een update van de beveiligingsinstellingen."</string>
     <string name="account_setup_options_sync_sms_label">SMS synchroniseren</string>
     <string name="account_security_policy_explanation_fmt">De server %s vereist dat u de server toestemming geeft bepaalde beveiligingsfuncties van uw telefoon extern te bedienen.</string>
     <string name="account_settings_signature_hint">Handtekening maken voor uitgaande berichten</string>
     <string name="notification_exchange_calendar_added">Exchange ActiveSync-agenda toegevoegd</string>
     <string name="gal_searching_fmt">%s zoeken…</string>
-    <string name="gal_completed_limited_fmt">Eerste %d resultaten van %s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Eerste %d resultaten van %s</string>
     <string name="account_setup_failed_security_policies_unsupported">Voor deze server zijn beveiligingsfuncties nodig die uw telefoon niet ondersteunt.</string>
     <string name="message_view_invite_accept">Ja</string>
     <string name="message_view_invite_maybe">Misschien</string>
@@ -448,7 +466,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Alles</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">E-mailgrootte</string>
     <string name="account_settings_mail_empty_trash_label">Serverprullenbak legen</string>
     <string name="account_settings_mail_empty_trash_message">Inhoud in serverprullenbak verwijderen?</string>
@@ -471,8 +489,10 @@
     <string name="account_settings_cc_bcc_cc">CC</string>
     <string name="account_settings_cc_bcc_bcc">BCC</string>
     <string name="account_settings_cc_bcc_dlg_title">Altijd CC/BCC aan mijzelf</string>
-    <string name="sync_schedule_title">Synchronisatie-\nschema</string>
-    <string name="account_settings_sync_schedule">Synchronisatie-\nschema</string>
+    <string name="sync_schedule_title">"Synchronisatie-
+schema"</string>
+    <string name="account_settings_sync_schedule">"Synchronisatie-
+schema"</string>
     <string name="account_settings_sync_schedule_summary">Regeling schema in/buiten piek</string>
     <string name="sync_schedule_peak_schedule">Schema tijdens piektijd</string>
     <string name="sync_schedule_off_peak_schedule">Schema buiten piektijd</string>

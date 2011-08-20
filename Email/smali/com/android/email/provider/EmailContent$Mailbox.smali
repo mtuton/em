@@ -278,7 +278,7 @@
     .line 3803
     sget-object v0, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v0, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mBaseUri:Landroid/net/Uri;
+    iput-object v0, p0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     .line 3804
     return-void
@@ -544,7 +544,7 @@
     .line 3847
     sget-object v8, Lcom/android/email/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mBaseUri:Landroid/net/Uri;
+    iput-object v8, p0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     .line 3848
     const/4 v8, 0x0
@@ -553,7 +553,7 @@
 
     move-result-wide v8
 
-    iput-wide v8, p0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iput-wide v8, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 3849
     const/4 v8, 0x1

@@ -676,7 +676,7 @@
     .line 844
     sget-object v0, Lcom/android/email/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v0, p0, Lcom/android/email/provider/EmailContent$Message;->mBaseUri:Landroid/net/Uri;
+    iput-object v0, p0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     .line 845
     return-void
@@ -793,7 +793,7 @@
 
     .line 1200
     .local v6, nOPSIndex:I
-    iget-object v7, p0, Lcom/android/email/provider/EmailContent$Message;->mBaseUri:Landroid/net/Uri;
+    iget-object v7, p0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     invoke-static {v7}, Landroid/content/ContentProviderOperation;->newInsert(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
 
@@ -1064,7 +1064,7 @@
 
     .prologue
     .line 1346
-    iget-wide v0, p0, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v0, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {p1, v0, v1}, Lcom/android/email/provider/EmailContent$FollowupFlag;->restoreFollowupFlagWithEmailId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$FollowupFlag;
 
@@ -1171,14 +1171,14 @@
     .line 1042
     sget-object v1, Lcom/android/email/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v1, p0, Lcom/android/email/provider/EmailContent$Message;->mBaseUri:Landroid/net/Uri;
+    iput-object v1, p0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     .line 1043
     invoke-interface {p1, v5}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v1
 
-    iput-wide v1, p0, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iput-wide v1, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 1044
     invoke-interface {p1, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -1755,7 +1755,7 @@
 
     move-result-wide v8
 
-    iput-wide v8, p0, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iput-wide v8, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 1171
     iget-object v8, p0, Lcom/android/email/provider/EmailContent$Message;->mAttachments:Ljava/util/ArrayList;
@@ -1821,11 +1821,11 @@
 
     move-result-wide v8
 
-    iput-wide v8, v0, Lcom/android/email/provider/EmailContent$Attachment;->mId:J
+    iput-wide v8, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 1179
     :cond_5
-    iget-wide v8, p0, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v8, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     iput-wide v8, v0, Lcom/android/email/provider/EmailContent$Attachment;->mMessageKey:J
     :try_end_0

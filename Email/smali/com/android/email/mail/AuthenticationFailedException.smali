@@ -34,7 +34,7 @@
     .line 28
     const/4 v0, 0x5
 
-    iput v0, p0, Lcom/android/email/mail/AuthenticationFailedException;->mExceptionType:I
+    iput v0, p0, Lcom/android/email/mail/MessagingException;->mExceptionType:I
 
     .line 29
     return-void

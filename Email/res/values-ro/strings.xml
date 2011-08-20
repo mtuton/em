@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Puteţi conf. adresa e-mail pt. major. cont. în câţiva paşi</string>
     <string name="read_attachment_label">citire ataşamente e-mail</string>
@@ -81,7 +81,7 @@
     <string name="mailbox_list_title">Cutie poştală</string>
     <string name="message_list_load_more_messages_action">Încărcare mesaje suplimentare</string>
     <string name="message_list_send_pending_messages_action">Trimitere mesaje de ieşire</string>
-    <string name="message_list_title">%1$s: %2$s</string>
+    <string name="message_list_title" formatted="false">%1$s: %2$s</string>
     <string name="message_compose_to_hint">Către</string>
     <string name="message_compose_cc_hint">Cc</string>
     <string name="message_compose_bcc_hint">Bcc</string>
@@ -94,7 +94,7 @@
     <string name="message_compose_error_invalid_email">Adresă de e-mail nevalidă</string>
     <string name="message_compose_attachments_skipped_toast">Unele ataşamente nu pot fi redirecţionate deoarece nu au fost descărcate</string>
     <string name="message_compose_attachment_size">Imposibil de ataşat fişierul. Dimensiunea fişierului este prea mare</string>
-    <string name="message_compose_display_name">%1$s şi alte %2$d (de) persoane</string>
+    <string name="message_compose_display_name" formatted="false">%1$s şi alte %2$d (de) persoane</string>
     <string name="message_compose_discard_dialog">Mesaj netrimis. Renunţaţi?</string>
     <string name="message_view_to_label">Către:</string>
     <string name="message_view_cc_label">Cc:</string>
@@ -358,7 +358,7 @@
     <string name="account_settings_signature_hint">Creaţi semnătura pentru mesaje de ieşire</string>
     <string name="notification_exchange_calendar_added">Calendarul Exchange ActiveSync a fost adăugat</string>
     <string name="gal_searching_fmt">Se caută %s...…</string>
-    <string name="gal_completed_limited_fmt">Primele %1$d (de) rezultate din %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Primele %1$d (de) rezultate din %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Serverul solicită funcţii de securitate care nu sunt acceptate de dispozitivul dvs.</string>
     <string name="message_view_invite_accept">Da</string>
     <string name="message_view_invite_maybe">Poate</string>
@@ -450,7 +450,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Toate</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Dimensiune e-mail</string>
     <string name="account_settings_mail_empty_trash_label">Golire coş de reciclare server</string>
     <string name="account_settings_mail_empty_trash_message">Ştergeţi conţinutul din coşul serverului?</string>

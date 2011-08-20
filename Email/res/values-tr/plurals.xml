@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <plurals name="notification_new_one_account_fmt">
-        <item quantity="other">%d okunmadı (%s)</item>
-        <item quantity="one">%d okunmadı (%s)</item>
-        <item quantity="few">%d okunmadı (%s)</item>
+        <item quantity="other">%1$d okunmadı (%2$s)</item>
+        <item quantity="one">%1$d okunmadı (%2$s)</item>
+        <item quantity="few">%1$d okunmadı (%2$s)</item>
     </plurals>
     <plurals name="notification_new_multi_account_fmt">
         <item quantity="other">%d hesaplarında</item>
         <item quantity="few">%d hesaplarında</item>
     </plurals>
     <plurals name="search_results_title">
-        <item quantity="other">\"%2$s\" için %1$s sonuç</item>
-        <item quantity="one">\"%2$s\" için %1$s sonuç</item>
+        <item quantity="other">\"%1$2$s\" için %2$1$s sonuç</item>
+        <item quantity="one">\"%1$2$s\" için %2$1$s sonuç</item>
     </plurals>
     <plurals name="gal_completed_fmt">
-        <item quantity="other">%d resultat från %s</item>
-        <item quantity="one">%d resultat från %s</item>
+        <item quantity="other">%1$d resultat från %2$s</item>
+        <item quantity="one">%1$d resultat från %2$s</item>
     </plurals>
     <plurals name="message_moved_toast_fmt">
         <item quantity="other">%1$d mesaj taşındı</item>

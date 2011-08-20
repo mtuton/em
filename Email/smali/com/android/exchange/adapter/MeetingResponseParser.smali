@@ -74,7 +74,7 @@
     if-eq v1, v2, :cond_2
 
     .line 56
-    iget v1, p0, Lcom/android/exchange/adapter/MeetingResponseParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v2, 0x20a
 
@@ -123,7 +123,7 @@
     if-eq v1, v2, :cond_3
 
     .line 36
-    iget v1, p0, Lcom/android/exchange/adapter/MeetingResponseParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v2, 0x20b
 
@@ -170,7 +170,7 @@
     .line 41
     .end local v0           #status:I
     :cond_1
-    iget v1, p0, Lcom/android/exchange/adapter/MeetingResponseParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v2, 0x205
 

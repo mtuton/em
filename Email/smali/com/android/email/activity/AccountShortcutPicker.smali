@@ -90,7 +90,7 @@
 
     .prologue
     .line 160
-    iget-wide v3, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v3, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/4 v5, 0x0
 

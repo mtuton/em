@@ -378,7 +378,7 @@
 
     const/4 v5, 0x0
 
-    iget-wide v6, p2, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v6, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v6, v7}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
@@ -388,7 +388,7 @@
 
     const/4 v5, 0x1
 
-    iget-wide v6, p3, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v6, p3, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v6, v7}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
@@ -569,7 +569,7 @@
     :try_start_4
     iget-object v1, p0, Lcom/android/email/MessagingController;->mContext:Landroid/content/Context;
 
-    iget-wide v2, v0, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v2, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v1, v2, v3}, Lcom/android/email/provider/EmailContent$Body;->restoreBodyWithMessageId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Body;
 
@@ -591,9 +591,9 @@
     .line 1614
     :goto_3
     :try_start_5
-    iget-wide v2, p2, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
-    iget-wide v4, p3, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v4, p3, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-object v1, p1
 
@@ -735,7 +735,7 @@
     .line 1650
     sget-object v2, Lcom/android/email/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 
-    iget-wide v3, v0, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v3, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v2, v3, v4}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -924,15 +924,14 @@
 
     throw v9
 
-    #Unreachable code
-    #move-result v1
+    move-result v1
 
-    #if-eqz v1, :cond_0
+    if-eqz v1, :cond_0
 
     .line 3589
-    #const/4 v1, 0x0
+    const/4 v1, 0x0
 
-    #throw v9
+    throw v9
 
     .line 3591
     :cond_0
@@ -968,15 +967,14 @@
 
     throw v9
 
-    #Unreachable code
-    #move-result v1
+    move-result v1
 
-    #if-eqz v1, :cond_3
+    if-eqz v1, :cond_3
 
     .line 3589
-    #const/4 v1, 0x0
+    const/4 v1, 0x0
 
-    #throw v9
+    throw v9
 
     .line 3591
     :cond_3
@@ -1027,15 +1025,14 @@
 
     throw v9
 
-    #Unreachable code
-    #move-result v1
+    move-result v1
 
-    #if-eqz v1, :cond_6
+    if-eqz v1, :cond_6
 
     .line 3589
-    #const/4 v1, 0x0
+    const/4 v1, 0x0
 
-    #throw v9
+    throw v9
 
     .line 3591
     :cond_6
@@ -1526,7 +1523,7 @@
 
     move-object/from16 v0, p5
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-wide v3, v0
 
@@ -2075,7 +2072,7 @@
 
     const/4 v2, 0x0
 
-    iget-wide v3, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v3, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v3, v4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
@@ -2198,7 +2195,7 @@
 
     move-result-object v1
 
-    iget-wide v2, p4, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v2, p4, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -2213,7 +2210,7 @@
     .line 3084
     sget-object v1, Lcom/android/email/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 
-    iget-wide v2, p4, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v2, p4, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v1, v2, v3}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -2470,7 +2467,7 @@
     :cond_b
     sget-object v3, Lcom/android/email/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 
-    iget-wide v4, p4, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v4, p4, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v3, v4, v5}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -3049,12 +3046,12 @@
     if-eqz p3, :cond_0
 
     .line 1990
-    iget-wide v3, p3, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v3, p3, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 1991
     if-eqz v1, :cond_1
 
-    iget-wide v5, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v5, v1, Lcom/android/email/provider/EmailContent;->mId:J
 
     iget-wide v7, p3, Lcom/android/email/provider/EmailContent$Message;->mMailboxKey:J
 
@@ -3116,7 +3113,7 @@
     :cond_4
     sget-object v5, Lcom/android/email/provider/EmailContent$Message;->DELETED_CONTENT_URI:Landroid/net/Uri;
 
-    iget-wide v6, p3, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v6, p3, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v5, v6, v7}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -3416,7 +3413,7 @@
 
     move-result-object v3
 
-    iget-wide v4, p5, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v4, p5, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -3723,13 +3720,12 @@
 
     throw v4
 
-    #Unreachable code
-    #move-result v5
+    move-result v5
 
-    #if-eqz v5, :cond_2
+    if-eqz v5, :cond_2
 
     .line 2506
-    #throw v4
+    throw v4
 
     :cond_2
     move v5, v8
@@ -3779,13 +3775,12 @@
 
     throw v4
 
-    #Unreachable code
-    #move-result v5
+    move-result v5
 
-    #if-eqz v5, :cond_6
+    if-eqz v5, :cond_6
 
     .line 2506
-    #throw v4
+    throw v4
 
     :cond_6
     move v5, v8
@@ -3836,13 +3831,12 @@
 
     throw v4
 
-    #Unreachable code
-    #move-result v5
+    move-result v5
 
-    #if-eqz v5, :cond_9
+    if-eqz v5, :cond_9
 
     .line 2506
-    #throw v4
+    throw v4
 
     :cond_9
     move v5, v8
@@ -3886,13 +3880,12 @@
 
     throw v4
 
-    #Unreachable code
-    #move-result v5
+    move-result v5
 
-    #if-eqz v5, :cond_c
+    if-eqz v5, :cond_c
 
     .line 2506
-    #throw v4
+    throw v4
 
     :cond_c
     move v5, v8
@@ -4280,15 +4273,14 @@
 
     throw v3
 
-    #Unreachable code
-    #move-result v0
+    move-result v0
 
-    #if-ne v0, v6, :cond_0
+    if-ne v0, v6, :cond_0
 
     .line 2959
-    #throw v3
+    throw v3
 
-    #goto :goto_0
+    goto :goto_0
 
     .line 2871
     :cond_5
@@ -4334,15 +4326,14 @@
 
     throw v3
 
-    #Unreachable code
-    #move-result v0
+    move-result v0
 
-    #if-ne v0, v6, :cond_0
+    if-ne v0, v6, :cond_0
 
     .line 2959
-    #throw v3
+    throw v3
 
-    #goto :goto_0
+    goto :goto_0
 
     .line 2878
     :cond_7
@@ -4382,15 +4373,14 @@
 
     throw v3
 
-    #Unreachable code
-    #move-result v0
+    move-result v0
 
-    #if-ne v0, v6, :cond_0
+    if-ne v0, v6, :cond_0
 
     .line 2959
-    #throw v3
+    throw v3
 
-    #goto/16 :goto_0
+    goto/16 :goto_0
 
     .line 2885
     :cond_9
@@ -4791,15 +4781,14 @@
 
     throw v7
 
-    #Unreachable code
-    #move-result v0
+    move-result v0
 
-    #if-ne v0, v6, :cond_0
+    if-ne v0, v6, :cond_0
 
     .line 2801
-    #throw v7
+    throw v7
 
-    #goto :goto_0
+    goto :goto_0
 
     .line 2714
     :cond_4
@@ -4870,15 +4859,14 @@
 
     throw v7
 
-    #Unreachable code
-    #move-result v0
+    move-result v0
 
-    #if-ne v0, v6, :cond_0
+    if-ne v0, v6, :cond_0
 
     .line 2801
-    #throw v7
+    throw v7
 
-    #goto :goto_0
+    goto :goto_0
 
     .line 2723
     :cond_6
@@ -4918,15 +4906,14 @@
 
     throw v7
 
-    #Unreachable code
-    #move-result v0
+    move-result v0
 
-    #if-ne v0, v6, :cond_0
+    if-ne v0, v6, :cond_0
 
     .line 2801
-    #throw v7
+    throw v7
 
-    #goto/16 :goto_0
+    goto/16 :goto_0
 
     .line 2730
     :cond_8
@@ -5436,7 +5423,7 @@
     .line 2308
     move-object v0, v8
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-wide/from16 v18, v0
     :try_end_1
@@ -5451,7 +5438,7 @@
 
     move-object v6, v0
 
-    iget-wide v14, v8, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v14, v8, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v6, v14, v15}, Lcom/android/email/provider/EmailContent$Message;->restoreMessageWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Message;
 
@@ -5463,7 +5450,7 @@
     .line 2312
     if-eqz v4, :cond_0
 
-    iget-wide v6, v4, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v6, v4, Lcom/android/email/provider/EmailContent;->mId:J
 
     iget-wide v10, v9, Lcom/android/email/provider/EmailContent$Message;->mMailboxKey:J
 
@@ -5622,7 +5609,7 @@
     :goto_6
     sget-object v4, Lcom/android/email/provider/EmailContent$Message;->UPDATED_CONTENT_URI:Landroid/net/Uri;
 
-    iget-wide v8, v8, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v8, v8, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v4, v8, v9}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -6963,7 +6950,7 @@
 
     move-object/from16 v0, p1
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-wide v11, v0
 
@@ -6977,7 +6964,7 @@
 
     move-object/from16 v0, p2
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-wide v11, v0
 
@@ -8516,7 +8503,7 @@
 
     move-object/from16 v0, p1
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-wide v11, v0
 
@@ -8530,7 +8517,7 @@
 
     move-object/from16 v0, p2
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-wide v11, v0
 
@@ -9770,7 +9757,7 @@
 
     move-object/from16 v0, p1
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-wide v7, v0
 
@@ -10385,9 +10372,9 @@
     .line 425
     iget-object v0, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v1, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
-    iget-wide v3, p2, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v3, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/email/GroupMessagingListener;->synchronizeMailboxStarted(JJ)V
 
@@ -10432,9 +10419,9 @@
     :goto_0
     iget-object v0, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v1, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
-    iget-wide v3, p2, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v3, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     iget v5, v9, Lcom/android/email/mail/StoreSynchronizer$SyncResults;->mTotalMessages:I
 
@@ -10479,9 +10466,9 @@
     .local v5, e:Lcom/android/email/mail/MessagingException;
     iget-object v0, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v1, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
-    iget-wide v3, p2, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v3, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/email/GroupMessagingListener;->synchronizeMailboxFailed(JJLjava/lang/Exception;)V
 
@@ -10497,9 +10484,9 @@
     .line 807
     iget-object v0, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v1, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
-    iget-wide v3, p2, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v3, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/email/GroupMessagingListener;->synchronizeMailboxStarted(JJ)V
 
@@ -10547,9 +10534,9 @@
     .line 823
     iget-object v0, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v1, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
-    iget-wide v3, p2, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v3, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     iget v5, v9, Lcom/android/email/mail/StoreSynchronizer$SyncResults;->mTotalMessages:I
 
@@ -10583,9 +10570,9 @@
     :cond_1
     iget-object v0, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v1, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
-    iget-wide v3, p2, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v3, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/4 v5, 0x0
 
@@ -10608,9 +10595,9 @@
     .local v5, e:Lcom/android/email/mail/MessagingException;
     iget-object v0, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v1, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
-    iget-wide v3, p2, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v3, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/email/GroupMessagingListener;->synchronizeMailboxFailed(JJLjava/lang/Exception;)V
 
@@ -11188,17 +11175,16 @@
 
     throw v14
 
-    #Unreachable code
-    #move-result v6
+    move-result v6
 
-    #const/4 v7, 0x1
+    const/4 v7, 0x1
 
-    #if-ne v6, v7, :cond_1
+    if-ne v6, v7, :cond_1
 
     .line 1892
-    #const/4 v6, 0x0
+    const/4 v6, 0x0
 
-    #throw v14
+    throw v14
 
     .line 1894
     :cond_1
@@ -12016,19 +12002,18 @@
     if-eqz v9, :cond_5
 
     .line 2043
-    iget-wide v5, v9, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v5, v9, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 2044
     if-eqz v8, :cond_0
 
     throw v8
 
-    #Unreachable code
-    #throw v9
+    throw v9
 
-    #cmp-long v10, v10, v12
+    cmp-long v10, v10, v12
 
-    #if-eqz v10, :cond_5
+    if-eqz v10, :cond_5
 
     .line 2045
     :cond_0
@@ -12184,7 +12169,7 @@
 
     move-result-object v7
 
-    iget-wide v8, v6, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v8, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v7, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -12804,9 +12789,9 @@
     :cond_0
     iget-object v0, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v1, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
-    iget-wide v3, p2, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v3, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/email/GroupMessagingListener;->synchronizeMailboxStarted(JJ)V
 
@@ -12851,7 +12836,7 @@
     .line 3826
     iget-object v0, p0, Lcom/android/email/MessagingController;->mContext:Landroid/content/Context;
 
-    iget-wide v1, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/4 v3, 0x4
 
@@ -12924,7 +12909,7 @@
     :try_start_1
     iget-object v1, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v2, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     const-wide/16 v4, -0x1
 
@@ -13010,7 +12995,7 @@
     .line 3857
     iget-object v3, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v4, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v4, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v3, v4, v5, v1, v2}, Lcom/android/email/GroupMessagingListener;->sendPendingMessagesStarted(JJ)V
 
@@ -13054,7 +13039,7 @@
     :try_start_4
     iget-object v0, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v1, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     const-wide/16 v3, -0x1
 
@@ -13079,7 +13064,7 @@
     :try_start_5
     iget-object v1, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v2, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual/range {v1 .. v6}, Lcom/android/email/GroupMessagingListener;->sendPendingMessagesFailed(JJLjava/lang/Exception;)V
     :try_end_5
@@ -13101,7 +13086,7 @@
     :try_start_6
     iget-object v4, p0, Lcom/android/email/MessagingController;->mContext:Landroid/content/Context;
 
-    iget-wide v5, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v5, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v4, v5, v6, v1, v2}, Lcom/android/email/provider/AttachmentProvider;->deleteAllAttachmentFiles(Landroid/content/Context;JJ)V
 
@@ -13132,7 +13117,7 @@
     :cond_3
     iget-object v0, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v1, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v0, v1, v2}, Lcom/android/email/GroupMessagingListener;->sendPendingMessagesCompleted(J)V
     :try_end_6
@@ -13184,9 +13169,9 @@
     :cond_0
     iget-object v0, p0, Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
 
-    iget-wide v1, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
-    iget-wide v3, p2, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v3, p2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/email/GroupMessagingListener;->synchronizeMailboxStarted(JJ)V
 
@@ -13293,7 +13278,7 @@
 
     move-result-object v2
 
-    iget-wide v3, p3, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v3, p3, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -13370,7 +13355,7 @@
     .line 1476
     const-string v1, "messageid"
 
-    iget-wide v2, p3, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v2, p3, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 

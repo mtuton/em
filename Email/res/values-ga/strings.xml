@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Is feidir formhor na gcuntas r-phoist a chumru i gcupla ceim</string>
     <string name="read_attachment_label">léigh ceangaltáin R-phoist</string>
@@ -81,20 +81,24 @@
     <string name="mailbox_list_title">Bosca r-phoist</string>
     <string name="message_list_load_more_messages_action">Lódáil tuilleadh teachtaireachtaí</string>
     <string name="message_list_send_pending_messages_action">Seol teachtaireachtaí amach</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">Chuig</string>
     <string name="message_compose_cc_hint">Cc</string>
     <string name="message_compose_bcc_hint">Bcc</string>
     <string name="message_compose_subject_hint">Ábhar</string>
     <string name="message_compose_body_hint">Cum r-phost</string>
     <string name="message_compose_fwd_header_fmt">Teachtaireacht bhunaidh</string>
-    <string name="message_compose_reply_header_fmt">\n\nScríobh %s:\n\n</string>
+    <string name="message_compose_reply_header_fmt">"
+
+Scríobh %s:
+
+"</string>
     <string name="message_compose_quoted_text_label">Teachtaireacht bhunaidh</string>
     <string name="message_compose_error_no_recipients">Cuir faighteoirí leis</string>
     <string name="message_compose_error_invalid_email">Seoltaí r-phoist neamhbhailí</string>
     <string name="message_compose_attachments_skipped_toast">Ní féidir roinnt ceangaltán a sheoladh ar aghaidh mar nach bhfuil siad íoslódáilte</string>
     <string name="message_compose_attachment_size">Ní féidir comhad a cheangal. Méid an chomhaid rómhór</string>
-    <string name="message_compose_display_name">%1$s agus %2$d duine eile</string>
+    <string name="message_compose_display_name" formatted="false">%1$s agus %2$d duine eile</string>
     <string name="message_compose_discard_dialog">Níor seoladh an teachtaireacht. Cuileáil?</string>
     <string name="message_view_to_label">Chuig:</string>
     <string name="message_view_cc_label">Cc:</string>
@@ -358,7 +362,7 @@
     <string name="account_settings_signature_hint">Cruthaigh síniú do do theachtaireachtaí amach</string>
     <string name="notification_exchange_calendar_added">Féilire Exchange ActiveSync curtha leis</string>
     <string name="gal_searching_fmt">Ag cuardach %s...…</string>
-    <string name="gal_completed_limited_fmt">Na chéad %1$d thoradh ó %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Na chéad %1$d thoradh ó %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Tá gnéithe slándála de dhíth ar an bhfreastalaí nach bhfuil tacú ann dóibh i do ghléas</string>
     <string name="message_view_invite_accept">Déan é</string>
     <string name="message_view_invite_maybe">B’fhéidir</string>
@@ -450,7 +454,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Gach</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Méid an r-phoist</string>
     <string name="account_settings_mail_empty_trash_label">Folmhaigh bruscar an fhreastalaí</string>
     <string name="account_settings_mail_empty_trash_message">Scrios inneachar i mbruscar an fhreastalaí?</string>

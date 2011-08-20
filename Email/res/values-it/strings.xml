@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="account_setup_basics_instructions">Configura l\'e-mail per i maggiori account in pochi passaggi</string>
+    <string name="account_setup_basics_instructions">"Configura l'e-mail per i maggiori account in pochi passaggi"</string>
     <string name="read_attachment_label">leggi allegati E-mail</string>
-    <string name="read_attachment_desc">Consente all\'applicazione di leggere gli allegati e-mail</string>
+    <string name="read_attachment_desc">"Consente all'applicazione di leggere gli allegati e-mail"</string>
     <string name="permission_access_provider_label">Accedi ai dati del fornitore e-mail</string>
-    <string name="permission_access_provider_desc">Consente all\'applicazione di accedere al database e-mail, inclusi messaggi ricevuti, messaggi inviati, nomi utenti e password</string>
+    <string name="permission_access_provider_desc">"Consente all'applicazione di accedere al database e-mail, inclusi messaggi ricevuti, messaggi inviati, nomi utenti e password"</string>
     <string name="app_name">E-mail</string>
     <string name="accounts_title">E-mail</string>
     <string name="compose_title">Componi</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Segna come letto</string>
     <string name="unread_action">Segna come non letto</string>
     <string name="favorite_action">Preferiti</string>
-    <string name="set_star_action">Aggiungi\nstella</string>
+    <string name="set_star_action">"Aggiungi
+stella"</string>
     <string name="remove_star_action">Rimuovi stella</string>
     <string name="refresh_action">Aggiorna</string>
     <string name="add_account_action">Aggiungi account</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Cerca</string>
     <string name="open_action">Apri</string>
     <string name="account_settings_action">Impostazioni account</string>
-    <string name="remove_account_action">Rimuovi\naccount</string>
+    <string name="remove_account_action">"Rimuovi
+account"</string>
     <string name="folders_action">Cartelle</string>
     <string name="accounts_action">Account</string>
     <string name="mark_as_read_action">Segna come letto</string>
@@ -79,20 +81,32 @@
     <string name="mailbox_list_title">Casella di posta</string>
     <string name="message_list_load_more_messages_action">Carica altri messaggi</string>
     <string name="message_list_send_pending_messages_action">Invia messaggi in uscita</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">A</string>
     <string name="message_compose_cc_hint">Cc</string>
     <string name="message_compose_bcc_hint">Ccn</string>
     <string name="message_compose_subject_hint">Oggetto</string>
     <string name="message_compose_body_hint">Scrivi e-mail</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- Messaggio originale --------\nOggetto: %s\nDa: %s\nA: %s\nCC: %s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s ha scritto:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- Messaggio originale --------
+Oggetto: %s
+Da: %s
+A: %s
+CC: %s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s ha scritto:
+
+"</string>
     <string name="message_compose_quoted_text_label">Messaggio originale</string>
     <string name="message_compose_error_no_recipients">Aggiungi destinatari</string>
     <string name="message_compose_error_invalid_email">Indirizzi e-mail non validi</string>
     <string name="message_compose_attachments_skipped_toast">Alcuni allegati non possono essere inoltrati perché non sono stati scaricati</string>
     <string name="message_compose_attachment_size">Impossibile allegare file. File troppo grande</string>
-    <string name="message_compose_display_name">%1$s e altri %2$d</string>
+    <string name="message_compose_display_name" formatted="false">%1$s e altri %2$d</string>
     <string name="message_compose_discard_dialog">Messaggio non inviato. Ignorare?</string>
     <string name="message_view_to_label">A:</string>
     <string name="message_view_cc_label">Cc:</string>
@@ -117,7 +131,7 @@
     <string name="message_view_forward_to_new">Nuovi destinatari</string>
     <string name="message_view_forward_to_old">Destinatari esistenti</string>
     <string name="account_setup_basics_title">Config. e-mail</string>
-    <string name="accounts_welcome">Configura l\'e-mail per i maggiori account in pochi passaggi</string>
+    <string name="accounts_welcome">"Configura l'e-mail per i maggiori account in pochi passaggi"</string>
     <string name="accounts_welcome_exchange">Configura un account Exchange in pochi passi</string>
     <string name="account_setup_basics_email_hint">Indirizzo e-mail</string>
     <string name="account_setup_basics_password_hint">Password</string>
@@ -130,7 +144,7 @@
     <string name="account_setup_check_settings_check_outgoing_msg">Controllo delle impostazioni del server in uscita...</string>
     <string name="account_setup_check_settings_canceling_msg">Annullamento...</string>
     <string name="account_setup_names_title">Config. e-mail</string>
-    <string name="account_setup_names_instructions">Il tuo account è stato configurato e stai per ricevere un\' e-mail!</string>
+    <string name="account_setup_names_instructions">"Il tuo account è stato configurato e stai per ricevere un' e-mail!"</string>
     <string name="account_setup_names_account_name_label">Nomina questo account (Opzionale)</string>
     <string name="account_setup_names_user_name_label">Nome utente (Visualizzato sui messaggi in uscita)</string>
     <string name="account_setup_account_type_title">Aggiungi account e-mail</string>
@@ -159,7 +173,7 @@
     <string name="account_setup_outgoing_smtp_server_label">Server SMTP</string>
     <string name="account_setup_outgoing_port_label">Porta</string>
     <string name="account_setup_outgoing_security_label">Tipo protezione</string>
-    <string name="account_setup_outgoing_require_login_label">È richiesto l\'accesso</string>
+    <string name="account_setup_outgoing_require_login_label">"È richiesto l'accesso"</string>
     <string name="account_setup_outgoing_username_label">Nome utente</string>
     <string name="account_setup_outgoing_password_label">Password</string>
     <string name="account_setup_exchange_title">Impostazioni server Exchange</string>
@@ -179,7 +193,7 @@
     <string name="account_setup_options_mail_check_frequency_30min">Ogni 30 minuti</string>
     <string name="account_setup_options_mail_check_frequency_1hour">Ogni ora</string>
     <string name="account_setup_options_default_label">Invia e-mail da questo account come impostazione predefinita</string>
-    <string name="account_setup_options_notify_label">Notifica l\'arrivo di e-mail</string>
+    <string name="account_setup_options_notify_label">"Notifica l'arrivo di e-mail"</string>
     <string name="account_setup_options_sync_contacts_label">Sincronizza contatti</string>
     <string name="account_setup_failed_dlg_title">Configurazione non terminata</string>
     <string name="account_setup_options_mail_window_label">Giorni da sincronizzare</string>
@@ -191,13 +205,16 @@
     <string name="account_setup_options_mail_window_all">Tutte le e-mail</string>
     <string name="account_setup_failed_dlg_auth_message">Nome utente o password errati</string>
     <string name="account_setup_autodiscover_failed_dlg_auth_message">Individuazione automatica non riuscita</string>
-    <string name="account_setup_failed_dlg_auth_message_fmt">Nome utente o password errati. \n(%s)</string>
+    <string name="account_setup_failed_dlg_auth_message_fmt">"Nome utente o password errati. 
+(%s)"</string>
     <string name="account_setup_failed_dlg_certificate_message">Impossibile connettersi al server in modo sicuro</string>
-    <string name="account_setup_failed_dlg_certificate_message_fmt">Impossibile connettersi al server in modo sicuro.\n(%s)</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Impossibile connettersi al server in modo sicuro.
+(%s)"</string>
     <string name="account_setup_failed_dlg_server_message">Impossibile connettersi al server</string>
-    <string name="account_setup_failed_dlg_server_message_fmt">Impossibile connettersi al server. \n(%s)</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">"Impossibile connettersi al server. 
+(%s)"</string>
     <string name="account_setup_failed_tls_required">Il server non supporta TLS</string>
-    <string name="account_setup_failed_auth_required">Il server non supporta l\'autenticazione</string>
+    <string name="account_setup_failed_auth_required">"Il server non supporta l'autenticazione"</string>
     <string name="account_setup_failed_security">Impossibile aprire la connessione al server a causa di un errore di protezione</string>
     <string name="account_setup_failed_ioerror">Impossibile connettersi al server</string>
     <string name="account_setup_failed_dlg_edit_details_action">Modifica dettagli</string>
@@ -216,18 +233,19 @@
     <string name="account_settings_sync_contacts_enable">Sincronizza contatti</string>
     <string name="account_settings_sync_contacts_summary">Sincronizza anche Rubrica da questo account</string>
     <string name="account_settings_vibrate_when_label">Vibrazione</string>
-    <string name="account_settings_vibrate_when_summary">Vibra all\'arrivo di un\'e-mail</string>
+    <string name="account_settings_vibrate_when_summary">"Vibra all'arrivo di un'e-mail"</string>
     <string name="account_settings_vibrate_when_always">Sempre</string>
     <string name="account_settings_vibrate_when_never">Mai</string>
     <string name="account_settings_vibrate_when_dlg_title">Vibrazione</string>
     <string name="account_settings_ringtone">Seleziona suoneria</string>
     <string name="account_settings_servers">Impostazioni server</string>
-    <string name="account_delete_dlg_title">Rimuovi\naccount</string>
-    <string name="account_delete_dlg_instructions_fmt">L\'account \"%s\" sarà rimosso da E-mail</string>
-    <string name="provider_note_yahoo">L\'accesso alla casella di posta non è supportato per alcuni tipi di account di posta Yahoo!. In caso di problemi di connessione, visitare yahoo.com per ulteriori informazioni</string>
-    <string name="provider_note_yahoo_uk">Prima di configurare questo account e-mail, visitare il sito web Yahoo! e attivare l\'accesso e-mail POP3 per questo account</string>
-    <string name="provider_note_live">Solo alcuni account Plus includono l\'accesso a POP consentendo a questo programma di connettersi. In caso di impossibilità di accesso con indirizzo e-mail e password corretti, accertarsi di aver pagato per un account Plus. Avviare il browser Web per accedere a questi account di posta</string>
-    <string name="provider_note_t_online">Prima di configurare questo account e-mail, visitare il sito web T-Online e creare una password per l\'accesso e-mail POP3</string>
+    <string name="account_delete_dlg_title">"Rimuovi
+account"</string>
+    <string name="account_delete_dlg_instructions_fmt">"L'account \"%s\" sarà rimosso da E-mail"</string>
+    <string name="provider_note_yahoo">"L'accesso alla casella di posta non è supportato per alcuni tipi di account di posta Yahoo!. In caso di problemi di connessione, visitare yahoo.com per ulteriori informazioni"</string>
+    <string name="provider_note_yahoo_uk">"Prima di configurare questo account e-mail, visitare il sito web Yahoo! e attivare l'accesso e-mail POP3 per questo account"</string>
+    <string name="provider_note_live">"Solo alcuni account Plus includono l'accesso a POP consentendo a questo programma di connettersi. In caso di impossibilità di accesso con indirizzo e-mail e password corretti, accertarsi di aver pagato per un account Plus. Avviare il browser Web per accedere a questi account di posta"</string>
+    <string name="provider_note_t_online">"Prima di configurare questo account e-mail, visitare il sito web T-Online e creare una password per l'accesso e-mail POP3"</string>
     <string name="exchange_name">Microsoft Exchange ActiveSync</string>
     <string name="move_Conv_action">Sposta</string>
     <string name="delete_Conv_action">Elimina</string>
@@ -238,7 +256,7 @@
     <string name="ignored_conversation_toast">Conversazione ignorata</string>
     <string name="ignoring_conversation_toast">La conversazione viene ignorata...</string>
     <string name="follow_up_flag_Conversation">Flag</string>
-    <string name="system_account_create_failed">Impossibile creare l\'account in gestione account. Riprovare</string>
+    <string name="system_account_create_failed">"Impossibile creare l'account in gestione account. Riprovare"</string>
     <string name="gal_look_up_str">Cerca</string>
     <string name="gal_search_str">Cerca</string>
     <string name="gal_name">Ricerca GAL</string>
@@ -297,7 +315,7 @@
     <string name="group_action">Gruppi</string>
     <string name="recent_list_title">Recenti</string>
     <string name="account_setting_conversation_mode_label">Filtro visualizzazione conversazione</string>
-    <string name="account_setting_conversation_mode_summary">Applica filtro visualizzazione conversazione all\'account</string>
+    <string name="account_setting_conversation_mode_summary">"Applica filtro visualizzazione conversazione all'account"</string>
     <string name="account_settings_common">Impostazioni comuni</string>
     <string name="account_settings_reply_with_body_label">Rispondi con msg. origin.</string>
     <string name="account_settings_forward_with_files_label">Inoltra con file</string>
@@ -312,7 +330,7 @@
     <string name="account_settings_sync_calendar_summary">Sincronizza anche Calendario da questo account</string>
     <string name="device_admin_label">E-mail</string>
     <string name="empty_str">Vuoto</string>
-    <string name="message_about_storing_imei">Attivando questa applicazione, l\'utente accetta che parte dei dati del telefono cellulare (compresi IMEI e nome del modello) siano memorizzati, elaborati e utilizzati da Samsung allo scopo di segnalare l\'attivazione dell\'applicazione ai concessori della licenza del software stesso. Tali dati in possesso di Samsung saranno trattati in modo strettamente conforme all\'informativa sulla privacy di Samsung. Una copia di tale informativa è disponibile su richiesta. Continuare?</string>
+    <string name="message_about_storing_imei">"Attivando questa applicazione, l'utente accetta che parte dei dati del telefono cellulare (compresi IMEI e nome del modello) siano memorizzati, elaborati e utilizzati da Samsung allo scopo di segnalare l'attivazione dell'applicazione ai concessori della licenza del software stesso. Tali dati in possesso di Samsung saranno trattati in modo strettamente conforme all'informativa sulla privacy di Samsung. Una copia di tale informativa è disponibile su richiesta. Continuare?"</string>
     <string name="unable_to_attach">Memoria insufficiente. Disinstallare alcuni elementi e riprovare</string>
     <string name="attach_image">Immagini</string>
     <string name="attach_take_photo">Cattura foto</string>
@@ -323,7 +341,7 @@
     <string name="attach_my_files">File</string>
     <string name="attach_slideshow">Presentazione</string>
     <string name="edit_slideshow">Modifica presentazione</string>
-    <string name="account_setup_basics_email_hint_ex">Immettere l\'indirizzo e-mail. Ad: account@example.com</string>
+    <string name="account_setup_basics_email_hint_ex">"Immettere l'indirizzo e-mail. Ad: account@example.com"</string>
     <string name="Download_All_Attachment">Salva tutto</string>
     <string name="reply_dlg_title">Rispondi a</string>
     <string name="forward_dlg_title">Inoltra a</string>
@@ -348,21 +366,21 @@
     <string name="message_deletefailed_toast">Impossibile eliminare messaggio</string>
     <string name="message_composer_fwd">I:</string>
     <string name="message_composer_re">R:</string>
-    <string name="account_setup_security_policies_required_fmt">Il server %s richiede che tu consenta il controllo remoto di alcune funzionalità di protezione del tuo telefono. Completare la configurazione dell\'account?</string>
-    <string name="security_notification_ticker_fmt">È richiesto l\'aggiornamento delle impostazioni di protezione per l\'account \"%s\".</string>
+    <string name="account_setup_security_policies_required_fmt">"Il server %s richiede che tu consenta il controllo remoto di alcune funzionalità di protezione del tuo telefono. Completare la configurazione dell'account?"</string>
+    <string name="security_notification_ticker_fmt">"È richiesto l'aggiornamento delle impostazioni di protezione per l'account \"%s\"."</string>
     <string name="account_setup_options_sync_sms_label">Sincronizza SMS</string>
     <string name="account_security_policy_explanation_fmt">Il server %s richiede che tu consenta il controllo remoto di alcune funzionalità di protezione del tuo telefono.</string>
     <string name="account_settings_signature_hint">Crea una firma per i messaggi in uscita</string>
     <string name="notification_exchange_calendar_added">Aggiunto calendario Exchange ActiveSync</string>
     <string name="gal_searching_fmt">Ricerca in %s in corso...</string>
-    <string name="gal_completed_limited_fmt">Primi %d risultati da %s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Primi %d risultati da %s</string>
     <string name="account_setup_failed_security_policies_unsupported">Per questo server sono richieste funzionalità di protezione non supportate dal tuo telefono.</string>
     <string name="message_view_invite_accept">Sì</string>
     <string name="message_view_invite_maybe">Forse</string>
     <string name="message_view_invite_decline">No</string>
     <string name="device_admin_description">Attiva le norme di sicurezza specificate dal server</string>
     <string name="upgrade_accounts_title">Aggiornare gli account</string>
-    <string name="upgrade_accounts_error">Impossibile aggiornare l\'account</string>
+    <string name="upgrade_accounts_error">"Impossibile aggiornare l'account"</string>
     <string name="meeting_accepted">Accettato: %s</string>
     <string name="meeting_declined">Rifiutato: %s</string>
     <string name="meeting_tentative">Provvisorio: %s</string>
@@ -374,9 +392,9 @@
     <string name="meeting_time">Data:</string>
     <string name="meeting_location">Luogo:</string>
     <string name="exception_cancel">Evento del %s annullato</string>
-    <string name="exception_updated">Dettagli modificati per l\'evento del %s</string>
-    <string name="account_setup_basics_exchange_title_alternate">Aggiungere l\'account Exchange ActiveSync</string>
-    <string name="account_setup_basics_exchange_title">Aggiungere l\'account Exchange</string>
+    <string name="exception_updated">"Dettagli modificati per l'evento del %s"</string>
+    <string name="account_setup_basics_exchange_title_alternate">"Aggiungere l'account Exchange ActiveSync"</string>
+    <string name="account_setup_basics_exchange_title">"Aggiungere l'account Exchange"</string>
     <string name="account_setup_security_required_title">Amministrazione protezione da remoto</string>
     <string name="account_security_title">Protezione dispositivo</string>
     <string name="security_notification_content_title">Aggiorna impostazioni di protezione</string>
@@ -385,8 +403,8 @@
     <string name="activation_action">Attivazione</string>
     <string name="unable_to_send_message">Impossibile inviare messaggio</string>
     <string name="alertpopup_exit_newmessage_compose">Limitato da criteri di protezione. Toccare il pulsante per uscire</string>
-    <string name="security_policy_restricts_html">I criteri di protezione limitano l\'utilizzo di e-mail HTML</string>
-    <string name="security_policy_restricts_pop_imap">I criteri di sicurezza limitano l\'uso delle e-mail POP/IMAP</string>
+    <string name="security_policy_restricts_html">"I criteri di protezione limitano l'utilizzo di e-mail HTML"</string>
+    <string name="security_policy_restricts_pop_imap">"I criteri di sicurezza limitano l'uso delle e-mail POP/IMAP"</string>
     <string name="exchange_download_restricted">Il download degli allegati sul dispositivo cellulare non è ammesso dalla politica di Exchange Server</string>
     <string name="account_settings_recent_messages_limit">Messaggi recenti</string>
     <string name="account_setup_options_recent_messages_limit_25">25</string>
@@ -447,7 +465,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Tutto</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Dimensioni e-mail</string>
     <string name="account_settings_mail_empty_trash_label">Svuota cestino server</string>
     <string name="account_settings_mail_empty_trash_message">Eliminare contenuti nel cestino del server?</string>
@@ -526,7 +544,7 @@
     <string name="rb_unknown">Invia risposte automatiche fuori sede a chiunque al di fuori della mia organizzazione</string>
     <string name="oof_no_status">Impossibile impostare stato Fuori sede</string>
     <string name="oof_set_success">Operazione eseguita</string>
-    <string name="oof_set_error">Errore durante l\'impostazione di Fuori sede</string>
+    <string name="oof_set_error">"Errore durante l'impostazione di Fuori sede"</string>
     <string name="oof_get_error">Impossibile accedere alle impostazioni Fuori sede</string>
     <string name="oof_no_protocol_support">Funzione non supportata</string>
     <string name="oof_internal_error">Si è verificato un errore interno</string>
@@ -547,7 +565,7 @@
     <string name="enter_folder_name">Specifica nome cartella</string>
     <string name="folder_server_error">Errore del server</string>
     <string name="folder_system_error">Impossibile cambiare cartella di sistema</string>
-    <string name="folder_not_exist_error">Cartella inesistente. Creare una cartella e spostare l\'elemento?</string>
+    <string name="folder_not_exist_error">"Cartella inesistente. Creare una cartella e spostare l'elemento?"</string>
     <string name="folder_exists_error">Nome cartella già in uso</string>
     <string name="folder_parent_not_found_error">Impossibile cambiare cartella principale</string>
     <string name="move_item_failed">Impossibile spostare messaggio</string>
@@ -575,7 +593,7 @@
     <string name="auto_discover_in_progress">Recupero informazioni account...</string>
     <string name="auto_discover_title" />
     <string name="auto_discover_failed_title">Errore</string>
-    <string name="auto_discover_failed">Impossibile cercare l\'Exchange Server automaticamente. Immettere le impostazioni manualmente</string>
+    <string name="auto_discover_failed">"Impossibile cercare l'Exchange Server automaticamente. Immettere le impostazioni manualmente"</string>
     <string name="auto_discover_successful">Trovato Exchange Server. Premere Avanti se le impostazioni sono corrette</string>
     <string name="auto_discover_setup_exchange_trust_certificates_label">Accetta tutti i certificati SSL</string>
     <string name="auto_discover_failed_connection_error">Impossibile connettersi al server. Ricerca automatica di Exchange Server non riuscita</string>
@@ -602,7 +620,7 @@
     <string name="email_search_cancel">Annulla</string>
     <string name="account_settings_email_sync_restricted">Periodo di sincronizzazione delle e-mail limitato dal server a:</string>
     <string name="account_settings_email_size_restricted">Dimensioni per il recupero dei messaggi e-mail limitate dal server a:</string>
-    <string name="account_settings_calender_sync_restricted">Periodo di sincronizzazione dell\'agenda limitato dal server a:</string>
+    <string name="account_settings_calender_sync_restricted">"Periodo di sincronizzazione dell'agenda limitato dal server a:"</string>
     <string name="date_warning_toast">Data fine deve essere successiva a data inizio</string>
     <string name="imei_always_show">Mostra sempre</string>
     <string name="account_settings_smime_import_certificate">Install. il certif. critt.</string>
@@ -615,7 +633,7 @@
     <string name="account_settings_smime_rename_certificate">Rinominare il certificato se si desidera</string>
     <string name="account_settings_smime_name_your_certificate_error">Inserisci nome</string>
     <string name="account_settings_smime_extracting_certificate">Estrazione...</string>
-    <string name="account_settings_smime_could_not_import_cetificate">Errore durante l\'importazione del certificato</string>
+    <string name="account_settings_smime_could_not_import_cetificate">"Errore durante l'importazione del certificato"</string>
     <string name="account_settings_smime_could_not_load_keystore">Impossibile caricare il keystore</string>
     <string name="account_settings_smime_could_not_rename_certificate">Errore durante la ridenominazione del certificato</string>
     <string name="account_settings_smime_could_not_read_from_keystore">Impossibile leggere dal keystore</string>
@@ -629,16 +647,16 @@
     <string name="account_settings_smime_removing_certificate">Eliminazione certificato in corso...</string>
     <string name="account_settings_smime_undelivered_message">Messaggio non recapitato</string>
     <string name="account_settings_smime_message_could_not_be_sent">Impossibile inviare a destinatari con certificati non validi</string>
-    <string name="account_settings_smime_certificate_not_match_email_account">Il certificato non corrisponde all\'indirizzo e-mail</string>
+    <string name="account_settings_smime_certificate_not_match_email_account">"Il certificato non corrisponde all'indirizzo e-mail"</string>
     <string name="message_compose_certificate_not_present_or_invalid">I seguenti destinatari dispongono di certificati non validi</string>
     <string name="message_compose_no_valid_certificate_dialog_title">Certificati</string>
     <string name="message_compose_no_valid_certificate_dialog_positive_buton">Chiudi</string>
     <string name="message_compose_getting_and_checking_certificates">Recupero certificati destinatari in corso...</string>
     <string name="message_compose_validating_certificates">Convalida dei certificati in corso...</string>
-    <string name="message_compose_validating_certificates_error">Impossibile completare l\'invio. Errore durante la convalida dei certificati</string>
+    <string name="message_compose_validating_certificates_error">"Impossibile completare l'invio. Errore durante la convalida dei certificati"</string>
     <string name="message_compose_reply_fwd_message_not_decoded">Testo tra virgolette non consentito. Risposta a un messaggio S/MIME non codificato</string>
     <string name="security_policies_list_title">I criteri di protezione possono limitare alcune funzioni provenienti dai server aziendali come mostrato di seguito</string>
-    <string name="message_compose_soft_certs_false">I criteri di sicurezza limitano l\'utilizzo della certificazione software</string>
+    <string name="message_compose_soft_certs_false">"I criteri di sicurezza limitano l'utilizzo della certificazione software"</string>
     <string name="account_settings_smime">Opzioni di protezione</string>
     <string name="account_settings_smime_sign_all">Firma tutte le e-mail in uscita</string>
     <string name="account_settings_smime_sign_all_summary">Firma tutte le e-mail in uscita</string>
@@ -654,7 +672,7 @@
     <string name="message_view_downloading_smime_message_error">Impossibile scaricare il messaggio crittografato</string>
     <string name="message_view_certificate_not_installed">Impossibile decrittografare il messaggio. Certificato non installato</string>
     <string name="message_view_allow_softcerts_false">Funzionalità SMIME bloccata dal criterio IT</string>
-    <string name="message_view_parsing_signed_message_error">Errore durante l\'analisi del messaggio firmato</string>
+    <string name="message_view_parsing_signed_message_error">"Errore durante l'analisi del messaggio firmato"</string>
     <string name="message_compose_missing_certificate_error">Impossibile firmare o crittografare il messaggio. Certificato non installato</string>
     <string name="message_compose_missing_required_certificate_error">Impossibile firmare o crittografare il messaggio. Certificato non installato. Crittografia/firma richiesta dalla politica IT</string>
     <string name="account_settings_smime_sign_algorithm_label">Algoritmo firma</string>
@@ -681,7 +699,7 @@
     <string name="quarantined_device_message">Il dispositivo ha permesso limitato</string>
     <string name="gal_search_show_more">Mostra altro</string>
     <string name="Policy_list_disable_Bluetooth">Consente Bluetooth</string>
-    <string name="Policy_list_disable_Browser">Consente l\'accesso a Internet</string>
+    <string name="Policy_list_disable_Browser">"Consente l'accesso a Internet"</string>
     <string name="Policy_list_disable_Camera">Consente fotocamera</string>
     <string name="Policy_list_disable_HTML">Consente e-mail HTML</string>
     <string name="Policy_list_disable_Internet_sharing">Consente condivisione Internet</string>
@@ -693,8 +711,8 @@
     <string name="Policy_list_disable_Smime_encrypt_Alg_negotiation">Consenti negoziazione algoritmo crittografia S/MIME</string>
     <string name="Policy_list_disable_Attachmentdownload">Controllo allegato</string>
     <string name="Policy_list_Limited_eas_attachment_size">Limiti allegato</string>
-    <string name="Policy_list_Limited_Email_body_truncation_size">Dimensioni massime dei corpo dell\'e-mail</string>
-    <string name="Policy_list_Limited_HTML_Email_body_truncation_size">Dimensioni massime dei corpo dell\'e-mail HTML</string>
+    <string name="Policy_list_Limited_Email_body_truncation_size">"Dimensioni massime dei corpo dell'e-mail"</string>
+    <string name="Policy_list_Limited_HTML_Email_body_truncation_size">"Dimensioni massime dei corpo dell'e-mail HTML"</string>
     <string name="Policy_list_Limited_Calendar_sync">Validità massima degli eventi di calendario</string>
     <string name="Policy_list_Limited_Email_sync">Validità massima delle e-mail</string>
     <string name="Policy_list_Limited_manual_sync">Richiede la sincronizzazione manuale durante il roaming</string>
@@ -721,7 +739,7 @@
     <string name="policy_strong_algorith">Negoziare un algoritmo complesso</string>
     <string name="policy_any_algorithm">Negoziare qualsiasi algoritmo</string>
     <string name="smime_more_message">Scaricare maggiori dettagli per mostrare i messaggi S/MIME. Continuare?</string>
-    <string name="account_setup_failed_activation_error">Attivazione non riuscita. Impossibile connettersi alla rete. Riprovare con l\'APN predefinito del fornitore della rete</string>
+    <string name="account_setup_failed_activation_error">"Attivazione non riuscita. Impossibile connettersi alla rete. Riprovare con l'APN predefinito del fornitore della rete"</string>
     <string name="account_settings_smime_installed_certificates_list">Install. il certif. critt.</string>
     <string name="account_settings_smime_import_certificate_title">Import Certificate</string>
 </resources>

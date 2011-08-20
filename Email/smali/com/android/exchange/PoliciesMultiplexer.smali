@@ -120,7 +120,7 @@
 
     .line 106
     .local v14, policy:Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;
-    iget-object v1, v14, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v1, v14, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v2, "RequireSignedSMIMEAlgorithm"
 
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v1, v14, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mType:Ljava/lang/String;
+    iget-object v1, v14, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
 
     const-string v2, "Boolean"
 
@@ -163,7 +163,7 @@
 
     .line 109
     :cond_1
-    iget-object v1, v14, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v1, v14, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v2, "RequireEncryptionSMIMEAlgorithm"
 
@@ -173,7 +173,7 @@
 
     if-eqz v1, :cond_2
 
-    iget-object v1, v14, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mType:Ljava/lang/String;
+    iget-object v1, v14, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
 
     const-string v2, "Boolean"
 
@@ -206,7 +206,7 @@
 
     .line 112
     :cond_2
-    iget-object v1, v14, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v1, v14, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v2, "AllowSMIMEEncryptionAlgorithmNegotiation"
 
@@ -216,7 +216,7 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v1, v14, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mType:Ljava/lang/String;
+    iget-object v1, v14, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
 
     const-string v2, "Boolean"
 
@@ -307,7 +307,7 @@
 
     .line 134
     .restart local v14       #policy:Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;
-    iget-object v1, v14, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v1, v14, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v2, "PasswordMode"
 
@@ -317,7 +317,7 @@
 
     if-eqz v1, :cond_4
 
-    iget-object v1, v14, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mValue:Ljava/lang/String;
+    iget-object v1, v14, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
 
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -326,7 +326,7 @@
     if-nez v1, :cond_4
 
     .line 135
-    iget-wide v1, v14, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mAccountId:J
+    iget-wide v1, v14, Lcom/android/email/provider/EmailContent$Policies;->mAccountId:J
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -336,7 +336,7 @@
 
     .line 140
     :cond_4
-    iget-wide v1, v14, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mAccountId:J
+    iget-wide v1, v14, Lcom/android/email/provider/EmailContent$Policies;->mAccountId:J
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -349,7 +349,7 @@
     if-nez v1, :cond_5
 
     .line 141
-    iget-wide v1, v14, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mAccountId:J
+    iget-wide v1, v14, Lcom/android/email/provider/EmailContent$Policies;->mAccountId:J
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -363,7 +363,7 @@
 
     .line 145
     :cond_5
-    iget-wide v1, v14, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mAccountId:J
+    iget-wide v1, v14, Lcom/android/email/provider/EmailContent$Policies;->mAccountId:J
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -578,7 +578,7 @@
 
     .line 176
     .local v1, policy:Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;
-    iget-object v3, v1, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v3, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     const-string v4, "PasswordMode"
 
@@ -591,7 +591,7 @@
     .line 179
     sget-object v3, Lcom/android/email/SecurityPolicy;->PASSWORD_POLICIES:[Ljava/lang/String;
 
-    iget-object v4, v1, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v4, v1, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     invoke-static {v3, v4}, Lcom/android/internal/util/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -683,7 +683,7 @@
 
     .line 45
     .local v8, policy:Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;
-    iget-object v12, v8, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v12, v8, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     invoke-virtual {v3, v12}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -703,7 +703,7 @@
 
     .line 48
     .restart local v1       #arrayList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;>;"
-    iget-object v12, v8, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v12, v8, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
     invoke-virtual {v3, v12, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -842,11 +842,11 @@
 
     .line 67
     .local v8, policy:Lcom/android/email/provider/EmailContent$Policies;
-    iget-object v12, v8, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mName:Ljava/lang/String;
+    iget-object v12, v8, Lcom/android/email/provider/EmailContent$Policies;->mName:Ljava/lang/String;
 
-    iget-object v13, v8, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mType:Ljava/lang/String;
+    iget-object v13, v8, Lcom/android/email/provider/EmailContent$Policies;->mType:Ljava/lang/String;
 
-    iget-object v14, v8, Lcom/android/exchange/PoliciesMultiplexer$PoliciesComparable;->mValue:Ljava/lang/String;
+    iget-object v14, v8, Lcom/android/email/provider/EmailContent$Policies;->mValue:Ljava/lang/String;
 
     invoke-direct {p0, v13, v14}, Lcom/android/exchange/PoliciesMultiplexer;->getConcreteObject(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
 

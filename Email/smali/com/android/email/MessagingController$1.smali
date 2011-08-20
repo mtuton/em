@@ -191,7 +191,7 @@
 
     move-object v10, v0
 
-    iget-wide v10, v10, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v10, v10, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v10, v11}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
@@ -521,7 +521,7 @@
 
     move-object v4, v0
 
-    iget-wide v4, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v4, v4, Lcom/android/email/provider/EmailContent;->mId:J
 
     iput-wide v4, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
 
@@ -620,7 +620,7 @@
 
     move-object v4, v0
 
-    iget-wide v4, v4, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v4, v4, Lcom/android/email/provider/EmailContent;->mId:J
 
     iput-wide v4, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mAccountKey:J
 

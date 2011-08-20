@@ -37,12 +37,12 @@
     iput-object p2, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
     .line 71
-    iget-object v0, p2, Lcom/android/exchange/EasSyncService;->mContext:Landroid/content/Context;
+    iget-object v0, p2, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     iput-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
     .line 72
-    iget-object v0, p2, Lcom/android/exchange/EasSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, p2, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iput-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
@@ -129,11 +129,11 @@
     .line 83
     iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
-    iget v1, v0, Lcom/android/exchange/EasSyncService;->mChangeCount:I
+    iget v1, v0, Lcom/android/exchange/AbstractSyncService;->mChangeCount:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, v0, Lcom/android/exchange/EasSyncService;->mChangeCount:I
+    iput v1, v0, Lcom/android/exchange/AbstractSyncService;->mChangeCount:I
 
     .line 84
     return-void

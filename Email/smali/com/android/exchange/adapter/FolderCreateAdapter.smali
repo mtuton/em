@@ -206,9 +206,9 @@
 
     const/4 v1, 0x4
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v2, v2, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v2, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-interface {v0, v1, v2, v3, p1}, Lcom/android/email/service/IEmailServiceCallback;->folderCommandStatus(IJI)V
     :try_end_0
@@ -378,7 +378,7 @@
     invoke-static {v5, v2}, Lcom/android/exchange/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 77
-    iget-object v2, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
     iget-wide v3, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mParentFolderId:J
 
@@ -407,7 +407,7 @@
 
     if-eqz v2, :cond_1
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     if-eqz v2, :cond_1
 
@@ -420,7 +420,7 @@
 
     const/16 v3, 0x1d2
 
-    iget-object v4, p0, Lcom/android/exchange/adapter/FolderCreateAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v4, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v4, v4, Lcom/android/email/provider/EmailContent$Account;->mSyncKey:Ljava/lang/String;
 

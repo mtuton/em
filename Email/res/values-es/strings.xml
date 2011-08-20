@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Puede configurar correo electrónico para la mayoría de cuentas en pocos pasos</string>
     <string name="read_attachment_label">leer archivos adjuntos del correo electrónico</string>
@@ -79,20 +79,32 @@
     <string name="mailbox_list_title">Buzón de correo</string>
     <string name="message_list_load_more_messages_action">Cargar más mensajes</string>
     <string name="message_list_send_pending_messages_action">Enviar mensajes salientes</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">Para</string>
     <string name="message_compose_cc_hint">Cc</string>
     <string name="message_compose_bcc_hint">Cco</string>
     <string name="message_compose_subject_hint">Asunto</string>
     <string name="message_compose_body_hint">Escribir email</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- Mensaje original --------\nSubject: %s\nFrom: %s\nTo: %s\nCC: %s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s escribió:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- Mensaje original --------
+Subject: %s
+From: %s
+To: %s
+CC: %s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s escribió:
+
+"</string>
     <string name="message_compose_quoted_text_label">Mensaje original</string>
     <string name="message_compose_error_no_recipients">Añadir destinatarios</string>
     <string name="message_compose_error_invalid_email">Direcciones de correo electrónico no válidas</string>
     <string name="message_compose_attachments_skipped_toast">No se pueden reenviar determinados archivos adjuntos porque no se han descargado</string>
     <string name="message_compose_attachment_size">No se puede adjuntar archivo. Tamaño de archivo demasiado grande</string>
-    <string name="message_compose_display_name">%1$s y otros %2$d</string>
+    <string name="message_compose_display_name" formatted="false">%1$s y otros %2$d</string>
     <string name="message_compose_discard_dialog">Mensaje no enviado. ¿Descartar?</string>
     <string name="message_view_to_label">Para:</string>
     <string name="message_view_cc_label">Cc:</string>
@@ -191,11 +203,14 @@
     <string name="account_setup_options_mail_window_all">Todos los correos</string>
     <string name="account_setup_failed_dlg_auth_message">Nombre de usuario o contraseña incorrectos</string>
     <string name="account_setup_autodiscover_failed_dlg_auth_message">Error de detección automática</string>
-    <string name="account_setup_failed_dlg_auth_message_fmt">Nombre de usuario o contraseña incorrectos.\n(%s)</string>
+    <string name="account_setup_failed_dlg_auth_message_fmt">"Nombre de usuario o contraseña incorrectos.
+(%s)"</string>
     <string name="account_setup_failed_dlg_certificate_message">No se puede conectar con seguridad al servidor</string>
-    <string name="account_setup_failed_dlg_certificate_message_fmt">No se ha podido conectar con el servidor de manera segura.\n(%s)</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"No se ha podido conectar con el servidor de manera segura.
+(%s)"</string>
     <string name="account_setup_failed_dlg_server_message">No se puede conectar al servidor</string>
-    <string name="account_setup_failed_dlg_server_message_fmt">No se ha podido conectar con el servidor.\n(%s)</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">"No se ha podido conectar con el servidor.
+(%s)"</string>
     <string name="account_setup_failed_tls_required">El servidor no admite TLS</string>
     <string name="account_setup_failed_auth_required">El servidor no admite la autenticación</string>
     <string name="account_setup_failed_security">No se puede abrir la conexión con el servidor debido a un error de seguridad</string>
@@ -355,7 +370,7 @@
     <string name="account_settings_signature_hint">Crear firma para mensajes salientes</string>
     <string name="notification_exchange_calendar_added">Calendario de Exchange ActiveSync añadido</string>
     <string name="gal_searching_fmt">Buscando %s??</string>
-    <string name="gal_completed_limited_fmt">Primeros %d resultados de %s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Primeros %d resultados de %s</string>
     <string name="account_setup_failed_security_policies_unsupported">Este servidor necesita funciones de seguridad que no son compatibles con el teléfono.</string>
     <string name="message_view_invite_accept">Sí</string>
     <string name="message_view_invite_maybe">Quizás</string>
@@ -447,7 +462,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Todo</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Tamaño de email</string>
     <string name="account_settings_mail_empty_trash_label">Papelera de servidor vacía</string>
     <string name="account_settings_mail_empty_trash_message">¿Eliminar contenidos de la papelera del servidor?</string>

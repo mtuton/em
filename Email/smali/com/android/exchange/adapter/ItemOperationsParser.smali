@@ -66,9 +66,9 @@
     iput-boolean v1, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->isSigned:Z
 
     .line 72
-    iget-object v0, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v0, v1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
@@ -123,7 +123,7 @@
     .line 296
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/exchange/adapter/ItemOperationsParser;->tag:I
+    iget v0, v0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     move/from16 v22, v0
 
@@ -156,7 +156,7 @@
     .line 303
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/ItemOperationsParser;->mAdapter:Lcom/android/exchange/adapter/AbstractSyncAdapter;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAdapter:Lcom/android/exchange/adapter/AbstractSyncAdapter;
 
     move-object v4, v0
 
@@ -203,7 +203,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/ItemOperationsParser;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
     move-object/from16 v23, v0
 
@@ -229,7 +229,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/ItemOperationsParser;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
     move-object/from16 v23, v0
 
@@ -1104,7 +1104,7 @@
     .line 433
     move-object/from16 v0, p1
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-wide/from16 v22, v0
 
@@ -1316,7 +1316,7 @@
     if-eq v8, v9, :cond_4
 
     .line 230
-    iget v8, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->tag:I
+    iget v8, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v8, :sswitch_data_0
 
@@ -1413,9 +1413,9 @@
     if-eqz v3, :cond_2
 
     .line 261
-    iget-object v8, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->mContext:Landroid/content/Context;
+    iget-object v8, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
-    iget-wide v9, v3, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v9, v3, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v8, v9, v10}, Lcom/android/email/provider/EmailContent$Body;->restoreBodyWithMessageId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Body;
 
@@ -1441,9 +1441,9 @@
     if-eqz v0, :cond_0
 
     .line 272
-    iget-object v8, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v8, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
-    iget-object v9, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->mContext:Landroid/content/Context;
+    iget-object v9, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
     invoke-static {v8, v9, v3, v0}, Lcom/android/exchange/adapter/LoadMoreUtility;->updateEmail(Lcom/android/exchange/AbstractSyncService;Landroid/content/Context;Lcom/android/email/provider/EmailContent$Message;Lcom/android/email/provider/EmailContent$Body;)V
 
@@ -1453,7 +1453,7 @@
     if-eqz v8, :cond_0
 
     .line 274
-    iget-object v8, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->mContext:Landroid/content/Context;
+    iget-object v8, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
     invoke-static {v8, v3}, Lcom/android/exchange/adapter/LoadMoreUtility;->updateAttachment(Landroid/content/Context;Lcom/android/email/provider/EmailContent$Message;)V
 
@@ -1528,7 +1528,7 @@
     aput-object v2, v0, v1
 
     .line 78
-    iget-object v0, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v1, Lcom/android/email/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 
@@ -1582,7 +1582,7 @@
     if-eq v2, v3, :cond_1
 
     .line 498
-    iget v2, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v2, :sswitch_data_0
 
@@ -1600,7 +1600,7 @@
     if-eq v1, v5, :cond_0
 
     .line 502
-    iget-object v2, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1702,7 +1702,7 @@
     if-eq v2, v3, :cond_1
 
     .line 181
-    iget v2, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v2, :sswitch_data_0
 
@@ -1721,7 +1721,7 @@
     if-eq v1, v5, :cond_0
 
     .line 187
-    iget-object v2, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1824,7 +1824,7 @@
     if-eq v2, v3, :cond_2
 
     .line 527
-    iget v2, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x50d
 
@@ -1839,7 +1839,7 @@
     if-eq v1, v5, :cond_0
 
     .line 532
-    iget-object v2, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1868,7 +1868,7 @@
 
     .line 536
     :cond_1
-    iget v2, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x518
 
@@ -1923,7 +1923,7 @@
     if-eq v0, v1, :cond_0
 
     .line 156
-    iget v0, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     sparse-switch v0, :sswitch_data_0
 
@@ -2050,7 +2050,7 @@
     if-eq v1, v2, :cond_3
 
     .line 106
-    iget v1, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     packed-switch v1, :pswitch_data_0
 
@@ -2070,7 +2070,7 @@
     if-eq v1, v5, :cond_1
 
     .line 111
-    iget-object v1, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -2104,7 +2104,7 @@
     if-eqz v1, :cond_2
 
     .line 116
-    iget-object v1, p0, Lcom/android/exchange/adapter/ItemOperationsParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     iput-boolean v5, v1, Lcom/android/exchange/EasSyncService;->mEasNeedsProvisioning:Z
 

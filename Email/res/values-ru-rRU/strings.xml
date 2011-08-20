@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_settings_add_account_label">Добавить еще запись</string>
     <string name="account_setup_basics_instructions">Эл. почта настраивается несколькими простыми действиями</string>
@@ -86,7 +86,7 @@
     <string name="mailbox_list_title">Учетная запись</string>
     <string name="message_list_load_more_messages_action">Загрузить еще сообщения</string>
     <string name="message_list_send_pending_messages_action">Отправить исходящие сообщения</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">Кому</string>
     <string name="message_compose_cc_hint">Копия</string>
     <string name="message_compose_bcc_hint">скрытая копия</string>
@@ -99,7 +99,7 @@
     <string name="message_compose_error_invalid_email">Недопустимый адрес электронной почты</string>
     <string name="message_compose_attachments_skipped_toast">Не удалось переслать некоторые вложения, так как они не загружены</string>
     <string name="message_compose_attachment_size">Невозможно вложить файл. Слишком большой файл</string>
-    <string name="message_compose_display_name">%1$s и еще %2$d адресов</string>
+    <string name="message_compose_display_name" formatted="false">%1$s и еще %2$d адресов</string>
     <string name="message_view_to_label">Кому:</string>
     <string name="message_view_cc_label">Cc:</string>
     <string name="message_view_attachment_view_action">Открыть</string>

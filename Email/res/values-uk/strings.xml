@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Можна настр. Email для більшості обл. зап. за кілька кроків</string>
     <string name="read_attachment_label">прочитати вкладення повідомлення Email</string>
@@ -81,7 +81,7 @@
     <string name="mailbox_list_title">Поштова скринька</string>
     <string name="message_list_load_more_messages_action">Завантажити більше повідомлень</string>
     <string name="message_list_send_pending_messages_action">Надсилати вихідні повідомлення</string>
-    <string name="message_list_title">%1$s: %2$s</string>
+    <string name="message_list_title" formatted="false">%1$s: %2$s</string>
     <string name="message_compose_to_hint">Кому</string>
     <string name="message_compose_cc_hint">Копія</string>
     <string name="message_compose_bcc_hint">Прих. копія</string>
@@ -94,7 +94,7 @@
     <string name="message_compose_error_invalid_email">Хибні адреси Email</string>
     <string name="message_compose_attachments_skipped_toast">Деякі вкладення неможливо переслати, оскільки вони ще назавантажені</string>
     <string name="message_compose_attachment_size">Неможливо вкласти файл. Завеликий файл</string>
-    <string name="message_compose_display_name">%1$s і %2$d інших користувачів</string>
+    <string name="message_compose_display_name" formatted="false">%1$s і %2$d інших користувачів</string>
     <string name="message_compose_discard_dialog">Повідомлення не надіслано. Скасувати його?</string>
     <string name="message_view_to_label">Кому:</string>
     <string name="message_view_cc_label">Копія:</string>
@@ -142,7 +142,7 @@
     <string name="account_setup_account_type_imap_action">Обліковий запис IMAP</string>
     <string name="account_setup_account_type_exchange_action">Microsoft Exchange ActiveSync</string>
     <string name="account_setup_incoming_title">Установки сервера вхідної пошти</string>
-    <string name="account_setup_incoming_username_label">Ім\'я користувача</string>
+    <string name="account_setup_incoming_username_label">"Ім'я користувача"</string>
     <string name="account_setup_incoming_password_label">Пароль</string>
     <string name="account_setup_incoming_pop_server_label">Сервер POP3</string>
     <string name="account_setup_incoming_imap_server_label">Сервер IMAP</string>
@@ -163,7 +163,7 @@
     <string name="account_setup_outgoing_port_label">Порт</string>
     <string name="account_setup_outgoing_security_label">Тип захисту</string>
     <string name="account_setup_outgoing_require_login_label">Вимагати реєстрацію</string>
-    <string name="account_setup_outgoing_username_label">Ім\'я користувача</string>
+    <string name="account_setup_outgoing_username_label">"Ім'я користувача"</string>
     <string name="account_setup_outgoing_password_label">Пароль</string>
     <string name="account_setup_exchange_title">Установки сервера Exchange</string>
     <string name="account_setup_exchange_server_label">Север Exchange</string>
@@ -249,7 +249,7 @@
     <string name="gal_confirm_add">Готово</string>
     <string name="gal_no_results">Результатів не знайдено</string>
     <string name="gal_null_str">Пусто</string>
-    <string name="gal_http_req_error">Неможливо з\'єднатися з сервером</string>
+    <string name="gal_http_req_error">"Неможливо з'єднатися з сервером"</string>
     <string name="gal_protocol_error">Синхронізація не підтримується</string>
     <string name="gal_response_error">Неможливо проаналізувати відповідь сервера</string>
     <string name="gal_range_error">Хибний діапазон</string>
@@ -291,7 +291,7 @@
     <string name="calendar">Календар</string>
     <string name="bookmark">Закладка</string>
     <string name="memo">Нагадування</string>
-    <string name="low_database_storage_view_text">Пам\'ять заповнено</string>
+    <string name="low_database_storage_view_text">"Пам'ять заповнено"</string>
     <string name="save_to_calendar_action">Зберегти в календарі</string>
     <string name="recent_action">Останні</string>
     <string name="select_action">Додати</string>
@@ -357,7 +357,7 @@
     <string name="account_settings_signature_hint">Створення підпису для вихідних повідомлень</string>
     <string name="notification_exchange_calendar_added">Додано календар Exchange ActiveSync</string>
     <string name="gal_searching_fmt">Пошук у %s...…</string>
-    <string name="gal_completed_limited_fmt">Перші результати (%1$d) із %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Перші результати (%1$d) із %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Для сервера потрібні функції безпеки, які не підтримуються пристроєм</string>
     <string name="message_view_invite_accept">Так</string>
     <string name="message_view_invite_maybe">Можливо</string>
@@ -449,7 +449,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Всі</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Розмір повідомлення Email</string>
     <string name="account_settings_mail_empty_trash_label">Очищення папки Видалені сервера</string>
     <string name="account_settings_mail_empty_trash_message">Видалити вміст із папки Видалені сервера?</string>
@@ -495,7 +495,7 @@
     <string name="sync_schedule_tuesday">Вівторок</string>
     <string name="sync_schedule_wednesday">Середа</string>
     <string name="sync_schedule_thursday">Четвер</string>
-    <string name="sync_schedule_friday">П\'ятниця</string>
+    <string name="sync_schedule_friday">"П'ятниця"</string>
     <string name="sync_schedule_saturday">Субота</string>
     <string name="sync_schedule_sun">Нд</string>
     <string name="sync_schedule_mon">Пн</string>
@@ -572,7 +572,7 @@
     <string name="search_until_received_date_checkbox_format">Only messages received after %s</string>
     <string name="auto_discover_setup_exchange_email_address_label">Адреса Email</string>
     <string name="auto_discover_setup_exchange_domain_label">Домен</string>
-    <string name="auto_discover_setup_exchange_user_name_label">Ім\'я користувача</string>
+    <string name="auto_discover_setup_exchange_user_name_label">"Ім'я користувача"</string>
     <string name="auto_discover_setup_exchange_password_label">Пароль</string>
     <string name="auto_discover_in_progress">Отримання відомостей про обліковий запис...</string>
     <string name="auto_discover_title" />

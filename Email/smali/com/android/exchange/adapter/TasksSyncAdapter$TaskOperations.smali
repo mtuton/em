@@ -234,7 +234,7 @@
     .line 1599
     iget-object v1, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$TaskOperations;->this$0:Lcom/android/exchange/adapter/TasksSyncAdapter;
 
-    iget-object v1, v1, Lcom/android/exchange/adapter/TasksSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v1, v1, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
     invoke-virtual {v1}, Lcom/android/exchange/EasSyncService;->getSynchronizer()Ljava/lang/Object;
 
@@ -246,7 +246,7 @@
     :try_start_0
     iget-object v2, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$TaskOperations;->this$0:Lcom/android/exchange/adapter/TasksSyncAdapter;
 
-    iget-object v2, v2, Lcom/android/exchange/adapter/TasksSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v2, v2, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
     invoke-virtual {v2}, Lcom/android/exchange/EasSyncService;->isStopped()Z
     :try_end_0
@@ -267,7 +267,7 @@
     .line 1603
     iget-object v2, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$TaskOperations;->this$0:Lcom/android/exchange/adapter/TasksSyncAdapter;
 
-    iget-object v2, v2, Lcom/android/exchange/adapter/TasksSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v2, v2, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
     const-string v3, "Executing "
 
@@ -282,7 +282,7 @@
     .line 1604
     iget-object v2, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$TaskOperations;->this$0:Lcom/android/exchange/adapter/TasksSyncAdapter;
 
-    iget-object v2, v2, Lcom/android/exchange/adapter/TasksSyncAdapter;->mContext:Landroid/content/Context;
+    iget-object v2, v2, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -316,7 +316,7 @@
     :try_start_3
     iget-object v2, p0, Lcom/android/exchange/adapter/TasksSyncAdapter$TaskOperations;->this$0:Lcom/android/exchange/adapter/TasksSyncAdapter;
 
-    iget-object v2, v2, Lcom/android/exchange/adapter/TasksSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v2, v2, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
     const/4 v3, 0x1
 

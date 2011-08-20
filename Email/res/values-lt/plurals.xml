@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <plurals name="notification_new_one_account_fmt">
-        <item quantity="other">Neskaitytų %1$d (%2$s)</item>
-        <item quantity="one">Neskaitytų %1$d (%2$s)</item>
-        <item quantity="few">Neskaitytų %1$d (%2$s)</item>
+        <item quantity="other">Neskaitytų %1$1$d (%2$2$s)</item>
+        <item quantity="one">Neskaitytų %1$1$d (%2$2$s)</item>
+        <item quantity="few">Neskaitytų %1$1$d (%2$2$s)</item>
     </plurals>
     <plurals name="notification_new_multi_account_fmt">
         <item quantity="other">%d abonementuose</item>
         <item quantity="few">%d abonementuose</item>
     </plurals>
     <plurals name="search_results_title">
-        <item quantity="other">Rezultatai skirti \"%2$s\": %1$s</item>
-        <item quantity="one">%1$s rezultatas skirtas \"%2$s\"</item>
+        <item quantity="other">Rezultatai skirti \"%1$2$s\": %2$1$s</item>
+        <item quantity="one">%1$1$s rezultatas skirtas \"%2$2$s\"</item>
     </plurals>
     <plurals name="gal_completed_fmt">
-        <item quantity="other">%1$d rezultatas iš %2$s</item>
+        <item quantity="other">%1$1$d rezultatas iš %2$2$s</item>
         <item quantity="one">1 rezultatas iš %2$s</item>
     </plurals>
     <plurals name="message_moved_toast_fmt">

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">간단한 몇 가지 설정만으로 이메일 계정을 등록할 수 있습니다</string>
     <string name="read_attachment_label">이메일 첨부파일 읽기</string>
@@ -29,7 +29,8 @@
     <string name="save_draft_action">임시보관함에 저장</string>
     <string name="read_unread_action">읽음/읽지 않음</string>
     <string name="read_action">읽음으로 표시</string>
-    <string name="unread_action">읽지 않음\n으로 표시</string>
+    <string name="unread_action">"읽지 않음
+으로 표시"</string>
     <string name="favorite_action">자주 사용하는 번호</string>
     <string name="set_star_action">별 추가</string>
     <string name="remove_star_action">별 삭제</string>
@@ -44,7 +45,8 @@
     <string name="folders_action">폴더</string>
     <string name="accounts_action">계정</string>
     <string name="mark_as_read_action">읽음으로 표시</string>
-    <string name="mark_as_unread_action">읽지 않음\n으로 표시</string>
+    <string name="mark_as_unread_action">"읽지 않음
+으로 표시"</string>
     <string name="add_cc_bcc_action">참조/숨은참조 추가</string>
     <string name="add_attachment_action">첨부</string>
     <string name="dump_settings_action">Dump settings</string>
@@ -79,20 +81,32 @@
     <string name="mailbox_list_title">이메일함</string>
     <string name="message_list_load_more_messages_action">이메일 더 불러오기</string>
     <string name="message_list_send_pending_messages_action">보낼 이메일 전송</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">받는 사람</string>
     <string name="message_compose_cc_hint">참조</string>
     <string name="message_compose_bcc_hint">숨은참조</string>
     <string name="message_compose_subject_hint">제목</string>
     <string name="message_compose_body_hint">이메일 작성</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- 원본 이메일 --------\n제목: %s\n보낸사람: %s\n받는사람: %s\n참조: %s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s 님이 쓰신 이메일:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- 원본 이메일 --------
+제목: %s
+보낸사람: %s
+받는사람: %s
+참조: %s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s 님이 쓰신 이메일:
+
+"</string>
     <string name="message_compose_quoted_text_label">원본 이메일</string>
     <string name="message_compose_error_no_recipients">받는 사람 추가</string>
     <string name="message_compose_error_invalid_email">이메일 주소가 바르지 않습니다</string>
     <string name="message_compose_attachments_skipped_toast">다운로드되지 않은 일부 첨부파일은 전송할 수 없습니다</string>
     <string name="message_compose_attachment_size">파일이 너무 커서 첨부할 수 없습니다</string>
-    <string name="message_compose_display_name">%1$s 외 %2$d명</string>
+    <string name="message_compose_display_name" formatted="false">%1$s 외 %2$d명</string>
     <string name="message_compose_discard_dialog">이메일이 전송되지 않았습니다. 삭제할까요?</string>
     <string name="message_view_to_label">받는 사람:</string>
     <string name="message_view_cc_label">참조:</string>
@@ -354,7 +368,7 @@
     <string name="account_settings_signature_hint">보내는 메시지에 사용할 서명을 만드세요</string>
     <string name="notification_exchange_calendar_added">Exchange ActiveSync 일정이 추가되었습니다</string>
     <string name="gal_searching_fmt">%s 검색 중...</string>
-    <string name="gal_completed_limited_fmt">\u0020%d 개 검색결과 %s의 처음</string>
+    <string name="gal_completed_limited_fmt" formatted="false">" %d 개 검색결과 %s의 처음"</string>
     <string name="account_setup_failed_security_policies_unsupported">내 기기에서 지원하지 않는 보안 기능이 서버에서 필요합니다</string>
     <string name="message_view_invite_accept">예</string>
     <string name="message_view_invite_maybe">가능하다면 참석</string>
@@ -446,7 +460,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">전체</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">이메일 크기</string>
     <string name="account_settings_mail_empty_trash_label">서버 휴지통 비우기</string>
     <string name="account_settings_mail_empty_trash_message">서버 휴지통에서 컨텐츠를 삭제할까요?</string>

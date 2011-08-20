@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <com.android.email.winset.TwTabHost android:id="@android:id/tabhost" android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
@@ -11,7 +11,7 @@
                 </LinearLayout>
                 <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/seperatortitle_layout" android:background="@drawable/email_address_header" android:layout_width="fill_parent" android:layout_height="52.0px">
                     <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceGroupTitle" android:ellipsize="end" android:gravity="fill" android:id="@id/seperatortitle" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0px" android:layout_marginRight="10.0px" android:scaleType="fitXY" android:maxLines="1" android:lines="1" android:singleLine="true" android:shadowColor="@touchwiz:color/tw_color002" android:shadowDx="-1.0" android:shadowDy="-1.0" android:shadowRadius="0.3" android:layout_weight="1.0" />
-                    <ProgressBar android:id="@id/seperatortitle_progress_icon" android:paddingRight="1.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:minWidth="10.0dip" style="?android:progressBarStyleSmallTitle" />
+                    <ProgressBar android:id="@id/seperatortitle_progress_icon" android:paddingRight="1.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:minWidth="10.0dip" style="?android:attr/progressBarStyleSmallTitle" />
                     <Button android:textSize="21.0px" android:typeface="sans" android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="left|center" android:id="@id/account_title_button" android:background="@drawable/btn_account_background" android:paddingLeft="10.0px" android:paddingTop="0.0dip" android:paddingRight="10.0px" android:paddingBottom="0.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="41.0px" android:layout_marginRight="10.0px" android:maxWidth="205.0px" android:singleLine="true" />
                 </LinearLayout>
                 <include layout="@layout/connection_error_banner" />

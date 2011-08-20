@@ -100,13 +100,13 @@
 
     move-result-wide v3
 
-    iput-wide v3, p0, Lcom/android/exchange/MoveMessageRequest;->mMessageId:J
+    iput-wide v3, p0, Lcom/android/exchange/Request;->mMessageId:J
 
     .line 43
-    iput-wide p4, p0, Lcom/android/exchange/MoveMessageRequest;->mSelBoxId:J
+    iput-wide p4, p0, Lcom/android/exchange/Request;->mSelBoxId:J
 
     .line 44
-    iput-wide p6, p0, Lcom/android/exchange/MoveMessageRequest;->mCurBoxId:J
+    iput-wide p6, p0, Lcom/android/exchange/Request;->mCurBoxId:J
 
     .line 45
     return-void

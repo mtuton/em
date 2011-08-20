@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Konfigurer e-post for de fleste kontoer med noen få trinn</string>
     <string name="read_attachment_label">les e-postvedlegg</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Marker som lest</string>
     <string name="unread_action">Marker som ulest</string>
     <string name="favorite_action">Favoritter</string>
-    <string name="set_star_action">Legg til\nstjerne</string>
+    <string name="set_star_action">"Legg til
+stjerne"</string>
     <string name="remove_star_action">Fjern stjerne</string>
     <string name="refresh_action">Oppdater</string>
     <string name="add_account_action">Legg til konto</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Søk</string>
     <string name="open_action">Åpne</string>
     <string name="account_settings_action">Kontoinnstillinger</string>
-    <string name="remove_account_action">Fjern\nkonto</string>
+    <string name="remove_account_action">"Fjern
+konto"</string>
     <string name="folders_action">Mapper</string>
     <string name="accounts_action">Kontoer</string>
     <string name="mark_as_read_action">Marker som lest</string>
@@ -81,7 +83,7 @@
     <string name="mailbox_list_title">E-postboks</string>
     <string name="message_list_load_more_messages_action">Åpne flere meldinger</string>
     <string name="message_list_send_pending_messages_action">Send utgående meldinger</string>
-    <string name="message_list_title">%1$s: %2$s</string>
+    <string name="message_list_title" formatted="false">%1$s: %2$s</string>
     <string name="message_compose_to_hint">Til</string>
     <string name="message_compose_cc_hint">Kopi</string>
     <string name="message_compose_bcc_hint">Bko</string>
@@ -94,7 +96,7 @@
     <string name="message_compose_error_invalid_email">Ugyldige e-postadresser</string>
     <string name="message_compose_attachments_skipped_toast">Noen vedlegg kan ikke videresendes fordi de ikke har blitt lastet ned</string>
     <string name="message_compose_attachment_size">Kan ikke legge ved fil. Filstørrelsen er for stor</string>
-    <string name="message_compose_display_name">%1$s og %2$d andre</string>
+    <string name="message_compose_display_name" formatted="false">%1$s og %2$d andre</string>
     <string name="message_compose_discard_dialog">Melding ikke sendt. Forkaste?</string>
     <string name="message_view_to_label">Til:</string>
     <string name="message_view_cc_label">Ko:</string>
@@ -225,7 +227,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Vibrasjon</string>
     <string name="account_settings_ringtone">Velg ringetone</string>
     <string name="account_settings_servers">Serverinnstillinger</string>
-    <string name="account_delete_dlg_title">Fjern\nkonto</string>
+    <string name="account_delete_dlg_title">"Fjern
+konto"</string>
     <string name="account_delete_dlg_instructions_fmt">Kontoen “%s” vil bli fjernet fra e-post</string>
     <string name="provider_note_yahoo">Postbokstilgang støttes ikke for noen typer Yahoo!-e-postkontoer. Hvis du har problemer med tilkoblingen, går du til yahoo.com for mer informasjon</string>
     <string name="provider_note_yahoo_uk">Før du angir denne e-postkontoen, går du til Yahoo!-nettområdet og aktiverer POP3-e-posttilgang for denne kontoen</string>
@@ -358,7 +361,7 @@
     <string name="account_settings_signature_hint">Opprett signatur for dine utgående meldinger</string>
     <string name="notification_exchange_calendar_added">Exchange ActiveSync-kalender lagt til</string>
     <string name="gal_searching_fmt">Søker %s...…</string>
-    <string name="gal_completed_limited_fmt">Første %1$d resultater fra %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Første %1$d resultater fra %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Tjeneren krever sikkerhetsfunksjoner som ikke støttes av enheten din</string>
     <string name="message_view_invite_accept">Ja</string>
     <string name="message_view_invite_maybe">Kanskje</string>
@@ -450,7 +453,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Alle</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">E-poststørrelse</string>
     <string name="account_settings_mail_empty_trash_label">Tøm serversøppel</string>
     <string name="account_settings_mail_empty_trash_message">Slette innhold i serversøppel?</string>

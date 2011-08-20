@@ -46,7 +46,7 @@
     if-eqz v2, :cond_5
 
     .line 37
-    iget-object v5, p0, Lcom/android/exchange/security/ode/ODESyncService;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     invoke-static {v5}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
 
@@ -63,11 +63,11 @@
     if-eqz v3, :cond_0
 
     .line 40
-    iget-object v5, p0, Lcom/android/exchange/security/ode/ODESyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v5, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     const/4 v6, 0x0
 
-    iget-object v7, p0, Lcom/android/exchange/security/ode/ODESyncService;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3, v5, v6, v8, v7}, Lcom/android/email/SecurityPolicy$PolicySet;->writeAccount(Lcom/android/email/provider/EmailContent$Account;Ljava/lang/String;ZLandroid/content/Context;)Z
 
@@ -76,9 +76,9 @@
     if-eqz v5, :cond_0
 
     .line 41
-    iget-object v5, p0, Lcom/android/exchange/security/ode/ODESyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v5, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v5, v5, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v5, v5, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v4, v5, v6}, Lcom/android/email/SecurityPolicy;->updatePolicies(J)V
 
@@ -95,7 +95,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v6, p0, Lcom/android/exchange/security/ode/ODESyncService;->TAG:Ljava/lang/String;
+    iget-object v6, p0, Lcom/android/exchange/AbstractSyncService;->TAG:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -152,14 +152,14 @@
     if-nez v5, :cond_1
 
     .line 53
-    iget-object v5, p0, Lcom/android/exchange/security/ode/ODESyncService;->TAG:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/exchange/AbstractSyncService;->TAG:Ljava/lang/String;
 
     const-string v6, "Email is not admin. Sending broadcast for MASTER_CLEAR"
 
     invoke-static {v5, v6}, Lcom/android/exchange/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 54
-    iget-object v5, p0, Lcom/android/exchange/security/ode/ODESyncService;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     new-instance v6, Landroid/content/Intent;
 
@@ -188,7 +188,7 @@
 
     .line 50
     .local v0, e:Ljava/lang/Exception;
-    iget-object v5, p0, Lcom/android/exchange/security/ode/ODESyncService;->TAG:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/exchange/AbstractSyncService;->TAG:Ljava/lang/String;
 
     const-string v6, "acknowledgeRemoteWipe exception"
 
@@ -227,9 +227,9 @@
     if-eqz v1, :cond_4
 
     .line 62
-    iget-object v5, p0, Lcom/android/exchange/security/ode/ODESyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v5, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-object v6, p0, Lcom/android/exchange/security/ode/ODESyncService;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3, v5, v1, v8, v6}, Lcom/android/email/SecurityPolicy$PolicySet;->writeAccount(Lcom/android/email/provider/EmailContent$Account;Ljava/lang/String;ZLandroid/content/Context;)Z
 
@@ -241,9 +241,9 @@
     .line 66
     .end local v1           #policyKey:Ljava/lang/String;
     :cond_3
-    iget-object v5, p0, Lcom/android/exchange/security/ode/ODESyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v5, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v5, v5, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v5, v5, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v4, v5, v6}, Lcom/android/email/SecurityPolicy;->policiesRequired(J)V
 
@@ -262,7 +262,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v6, p0, Lcom/android/exchange/security/ode/ODESyncService;->TAG:Ljava/lang/String;
+    iget-object v6, p0, Lcom/android/exchange/AbstractSyncService;->TAG:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -415,7 +415,7 @@
     if-nez v7, :cond_1
 
     .line 135
-    iget-object v7, p0, Lcom/android/exchange/security/ode/ODESyncService;->TAG:Ljava/lang/String;
+    iget-object v7, p0, Lcom/android/exchange/AbstractSyncService;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -507,7 +507,7 @@
     .restart local v4       #resp:Lorg/apache/http/HttpResponse;
     :cond_2
     :try_start_3
-    iget-object v7, p0, Lcom/android/exchange/security/ode/ODESyncService;->TAG:Ljava/lang/String;
+    iget-object v7, p0, Lcom/android/exchange/AbstractSyncService;->TAG:Ljava/lang/String;
 
     const-string v8, "unable to send device information to the server"
 
@@ -525,7 +525,7 @@
     const/4 v5, 0x0
 
     .line 75
-    iget-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     if-nez v2, :cond_0
 
@@ -537,20 +537,20 @@
 
     .line 76
     :cond_0
-    iget-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/android/exchange/security/ode/ODESyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v3, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v3, v3, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v3, v3, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v2, v3, v4}, Lcom/android/email/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Account;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iput-object v2, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     .line 77
-    iget-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     if-nez v2, :cond_1
 
@@ -560,9 +560,9 @@
 
     .line 80
     :cond_1
-    iget-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/android/exchange/security/ode/ODESyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v3, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-wide v3, v3, Lcom/android/email/provider/EmailContent$Account;->mHostAuthKeyRecv:J
 
@@ -575,7 +575,7 @@
     if-nez v1, :cond_2
 
     .line 83
-    iget-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->TAG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/exchange/AbstractSyncService;->TAG:Ljava/lang/String;
 
     const-string v3, "ha is null for account"
 
@@ -590,38 +590,38 @@
     :cond_2
     iget-object v2, v1, Lcom/android/email/provider/EmailContent$HostAuth;->mAddress:Ljava/lang/String;
 
-    iput-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mHostAddress:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/EasSyncService;->mHostAddress:Ljava/lang/String;
 
     .line 87
     iget-object v2, v1, Lcom/android/email/provider/EmailContent$HostAuth;->mLogin:Ljava/lang/String;
 
-    iput-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mUserName:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/EasSyncService;->mUserName:Ljava/lang/String;
 
     .line 88
     iget-object v2, v1, Lcom/android/email/provider/EmailContent$HostAuth;->mPassword:Ljava/lang/String;
 
-    iput-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mPassword:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/EasSyncService;->mPassword:Ljava/lang/String;
 
     .line 91
-    iget-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v2, v2, Lcom/android/email/provider/EmailContent$Account;->mProtocolVersion:Ljava/lang/String;
 
-    iput-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mProtocolVersion:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     .line 93
-    iget-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mProtocolVersion:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     if-nez v2, :cond_3
 
     .line 94
     const-string v2, "2.5"
 
-    iput-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mProtocolVersion:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     .line 96
     :cond_3
-    iget-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mProtocolVersion:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersion:Ljava/lang/String;
 
     invoke-static {v2}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
@@ -631,14 +631,14 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mProtocolVersionDouble:Ljava/lang/Double;
+    iput-object v2, p0, Lcom/android/exchange/EasSyncService;->mProtocolVersionDouble:Ljava/lang/Double;
 
     .line 98
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mThread:Ljava/lang/Thread;
+    iput-object v2, p0, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
 
     .line 99
     const/16 v2, 0xa
@@ -646,13 +646,13 @@
     invoke-static {v2}, Landroid/os/Process;->setThreadPriority(I)V
 
     .line 100
-    iget-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mThread:Ljava/lang/Thread;
+    iget-object v2, p0, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
 
     invoke-virtual {v2}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->TAG:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/AbstractSyncService;->TAG:Ljava/lang/String;
 
     .line 104
     :try_start_0
@@ -660,7 +660,7 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/exchange/security/ode/ODESyncService;->mDeviceId:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/exchange/EasSyncService;->mDeviceId:Ljava/lang/String;
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 

@@ -25,7 +25,7 @@
     .line 34
     iget-wide v0, p1, Lcom/android/email/provider/EmailContent$Attachment;->mMessageKey:J
 
-    iput-wide v0, p0, Lcom/android/exchange/PartRequest;->mMessageId:J
+    iput-wide v0, p0, Lcom/android/exchange/Request;->mMessageId:J
 
     .line 35
     iput-object p1, p0, Lcom/android/exchange/PartRequest;->mAttachment:Lcom/android/email/provider/EmailContent$Attachment;

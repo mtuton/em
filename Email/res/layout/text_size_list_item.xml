@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <TextView android:textAppearance="?android:textAppearanceLargeInverse" android:gravity="center" android:id="@id/text_size_sample" android:background="@drawable/frame_01" android:layout_width="122.0px" android:layout_height="78.0px" android:maxLines="1" android:lines="1" android:singleLine="true" />

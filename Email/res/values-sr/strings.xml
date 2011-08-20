@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Za većinu naloga možeš konfigurisati e-poštu u par koraka</string>
     <string name="read_attachment_label">čitaj priloge e-pošte</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Označi kao pročitano</string>
     <string name="unread_action">Kao nepročitano</string>
     <string name="favorite_action">Omiljeni</string>
-    <string name="set_star_action">Dodaj\nzvezdu</string>
+    <string name="set_star_action">"Dodaj
+zvezdu"</string>
     <string name="remove_star_action">Ukloni zvezdu</string>
     <string name="refresh_action">Osveži</string>
     <string name="add_account_action">Dodaj nalog</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Pretraga</string>
     <string name="open_action">Otvori</string>
     <string name="account_settings_action">Podešavanja naloga</string>
-    <string name="remove_account_action">Ukloni\nnalog</string>
+    <string name="remove_account_action">"Ukloni
+nalog"</string>
     <string name="folders_action">Folderi</string>
     <string name="accounts_action">Nalozi</string>
     <string name="mark_as_read_action">Označi kao pročitano</string>
@@ -81,7 +83,7 @@
     <string name="mailbox_list_title">Sanduče</string>
     <string name="message_list_load_more_messages_action">Učitaj još poruka</string>
     <string name="message_list_send_pending_messages_action">Pošalji odlazne poruke</string>
-    <string name="message_list_title">%1$s: %2$s</string>
+    <string name="message_list_title" formatted="false">%1$s: %2$s</string>
     <string name="message_compose_to_hint">Za</string>
     <string name="message_compose_cc_hint">Kopija</string>
     <string name="message_compose_bcc_hint">Nevid. kopija</string>
@@ -94,7 +96,7 @@
     <string name="message_compose_error_invalid_email">Neispravne adrese e-pošte</string>
     <string name="message_compose_attachments_skipped_toast">Neki prilozi ne mogu da se proslede jer nisu preuzeti</string>
     <string name="message_compose_attachment_size">Nemoguće priložiti fajl. Fajl prevelik</string>
-    <string name="message_compose_display_name">%1$s i još %2$d</string>
+    <string name="message_compose_display_name" formatted="false">%1$s i još %2$d</string>
     <string name="message_compose_discard_dialog">Poruka nije poslata. Obriši?</string>
     <string name="message_view_to_label">Na:</string>
     <string name="message_view_cc_label">Kopija:</string>
@@ -225,7 +227,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Vibracija</string>
     <string name="account_settings_ringtone">Izaberi ton zvona</string>
     <string name="account_settings_servers">Podešavanja servera</string>
-    <string name="account_delete_dlg_title">Ukloni\nnalog</string>
+    <string name="account_delete_dlg_title">"Ukloni
+nalog"</string>
     <string name="account_delete_dlg_instructions_fmt">Nalog „%s” će biti uklonjen iz e-pošte</string>
     <string name="provider_note_yahoo">Pristup poštanskom sandučetu nije podržan za neke tipove Yahoo! naloga e-pošte. Ako imaš problema sa povezivanjem, za više informacija poseti yahoo.com</string>
     <string name="provider_note_yahoo_uk">Pre podešavanja ovog naloga e-pošte poseti sajt Yahoo! i omogući POP3 pristup e-pošti za ovaj nalog</string>
@@ -358,7 +361,7 @@
     <string name="account_settings_signature_hint">Kreiraj potpis za odlazne poruke</string>
     <string name="notification_exchange_calendar_added">Exchange ActiveSync kalendar dodat</string>
     <string name="gal_searching_fmt">Pretraga %s...…</string>
-    <string name="gal_completed_limited_fmt">Prvih %1$d rezultata sa %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Prvih %1$d rezultata sa %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Server zahteva bezbednosne funkcije koje vaš uređaj ne podržava</string>
     <string name="message_view_invite_accept">Da</string>
     <string name="message_view_invite_maybe">Možda</string>
@@ -450,7 +453,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Sačuvaj sve</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Veličina e-poruke</string>
     <string name="account_settings_mail_empty_trash_label">Isprazni kantu servera</string>
     <string name="account_settings_mail_empty_trash_message">Obriši sadržaj iz kante servera?</string>

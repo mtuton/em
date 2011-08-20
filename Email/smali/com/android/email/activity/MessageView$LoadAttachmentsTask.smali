@@ -833,7 +833,7 @@
 
     move-result-object v6
 
-    iget-wide v6, v6, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v6, v6, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 

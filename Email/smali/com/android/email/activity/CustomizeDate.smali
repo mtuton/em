@@ -1940,7 +1940,7 @@
 
     iget-object v11, p0, Lcom/android/email/activity/CustomizeDate;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v11, v11, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v11, v11, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v11, v12}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
@@ -1967,7 +1967,7 @@
 
     iget-object v11, p0, Lcom/android/email/activity/CustomizeDate;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v11, v11, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v11, v11, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/16 v13, 0x8
 

@@ -2638,7 +2638,7 @@
 
     add-int/2addr v3, p5
 
-    iget v4, v2, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iget v4, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-static {p4, v3, v4}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildMeasureSpec(III)I
 
@@ -3110,7 +3110,7 @@
 
     add-int/2addr v7, v8
 
-    iget v8, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
+    iget v8, v4, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-static {p2, v7, v8}, Lcom/android/email/winset/TwTabWidgetWrapper$HorizontalTabScrollView;->getChildMeasureSpec(III)I
 

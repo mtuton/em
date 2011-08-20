@@ -131,7 +131,7 @@
     if-eq v2, v3, :cond_7
 
     .line 78
-    iget v2, p0, Lcom/android/exchange/adapter/PingParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x347
 
@@ -213,7 +213,7 @@
     .line 99
     .end local v1           #status:I
     :cond_4
-    iget v2, p0, Lcom/android/exchange/adapter/PingParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x349
 
@@ -228,7 +228,7 @@
 
     .line 101
     :cond_5
-    iget v2, p0, Lcom/android/exchange/adapter/PingParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x348
 
@@ -290,7 +290,7 @@
     if-eq v1, v2, :cond_1
 
     .line 60
-    iget v1, p0, Lcom/android/exchange/adapter/PingParser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v2, 0x34a
 

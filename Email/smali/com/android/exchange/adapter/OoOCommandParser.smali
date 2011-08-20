@@ -335,7 +335,7 @@
     if-eq v0, v1, :cond_6
 
     .line 152
-    iget v0, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x48a
 
@@ -360,7 +360,7 @@
 
     .line 158
     :cond_1
-    iget v0, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x48b
 
@@ -385,7 +385,7 @@
     .line 166
     :cond_2
     :goto_1
-    iget v0, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x48c
 
@@ -410,7 +410,7 @@
     .line 174
     :cond_3
     :goto_2
-    iget v0, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x48d
 
@@ -481,7 +481,7 @@
     if-eq v5, v6, :cond_b
 
     .line 100
-    iget v5, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v5, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v6, 0x48e
 
@@ -494,7 +494,7 @@
 
     .line 102
     :cond_1
-    iget v5, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v5, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v6, 0x48f
 
@@ -507,7 +507,7 @@
 
     .line 104
     :cond_2
-    iget v5, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v5, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v6, 0x490
 
@@ -520,7 +520,7 @@
 
     .line 106
     :cond_3
-    iget v5, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v5, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v6, 0x491
 
@@ -543,7 +543,7 @@
     .line 111
     .end local v4           #value:I
     :cond_4
-    iget v5, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v5, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v6, 0x492
 
@@ -670,7 +670,7 @@
 
     .line 143
     :cond_a
-    iget v5, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v5, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v6, 0x493
 
@@ -796,7 +796,7 @@
     if-eq v0, v1, :cond_19
 
     .line 192
-    iget v0, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x486
 
@@ -829,7 +829,7 @@
     .line 201
     .end local v11           #value:I
     :cond_2
-    iget v0, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x496
 
@@ -855,7 +855,7 @@
     if-eq v0, v1, :cond_6
 
     .line 205
-    iget v0, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x486
 
@@ -898,7 +898,7 @@
     if-eqz v0, :cond_4
 
     .line 215
-    iget-object v0, p0, Lcom/android/exchange/adapter/OoOCommandParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     const/4 v1, 0x1
 
@@ -942,7 +942,7 @@
 
     .line 227
     :cond_8
-    iget v0, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x489
 
@@ -961,7 +961,7 @@
     if-eq v0, v1, :cond_0
 
     .line 229
-    iget v0, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x486
 
@@ -997,7 +997,7 @@
     if-eqz v0, :cond_a
 
     .line 238
-    iget-object v0, p0, Lcom/android/exchange/adapter/OoOCommandParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     const/4 v1, 0x1
 
@@ -1014,7 +1014,7 @@
     .line 242
     .end local v11           #value:I
     :cond_b
-    iget v0, p0, Lcom/android/exchange/adapter/OoOCommandParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x487
 

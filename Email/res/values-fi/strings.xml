@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Voit maarittaa useimpien tilien sahkopostin helposti</string>
     <string name="read_attachment_label">lue sähköpostiviestien liitteet</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Merkitse luetuksi</string>
     <string name="unread_action">Merk. lukematt.</string>
     <string name="favorite_action">Suosikit</string>
-    <string name="set_star_action">Lisää\ntähti</string>
+    <string name="set_star_action">"Lisää
+tähti"</string>
     <string name="remove_star_action">Poista tähti</string>
     <string name="refresh_action">Päivitä</string>
     <string name="add_account_action">Lisää tili</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Etsi</string>
     <string name="open_action">Avaa</string>
     <string name="account_settings_action">Tilin asetukset</string>
-    <string name="remove_account_action">Poista\ntili</string>
+    <string name="remove_account_action">"Poista
+tili"</string>
     <string name="folders_action">Kansiot</string>
     <string name="accounts_action">Tilit</string>
     <string name="mark_as_read_action">Merkitse luetuksi</string>
@@ -81,20 +83,24 @@
     <string name="mailbox_list_title">Postilaatikko</string>
     <string name="message_list_load_more_messages_action">Lisää viestejä</string>
     <string name="message_list_send_pending_messages_action">Lähetä lähtevät viestit</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">Vastaanottaja</string>
     <string name="message_compose_cc_hint">Kopio</string>
     <string name="message_compose_bcc_hint">Piilokopio</string>
     <string name="message_compose_subject_hint">Aihe</string>
     <string name="message_compose_body_hint">Luo sähköpostiviesti</string>
     <string name="message_compose_fwd_header_fmt">Alkuperäinen viesti</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s kirjoitti:\n\n</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s kirjoitti:
+
+"</string>
     <string name="message_compose_quoted_text_label">Alkuperäinen viesti</string>
     <string name="message_compose_error_no_recipients">Lisää vastaanottajia</string>
     <string name="message_compose_error_invalid_email">Virheelliset sähköpostiosoitteet</string>
     <string name="message_compose_attachments_skipped_toast">Joitakin liitteitä ei voi siirtää, sillä niitä ei ole ladattu</string>
     <string name="message_compose_attachment_size">Tiedostoa ei voi liittää. Tiedostokoko on liian iso</string>
-    <string name="message_compose_display_name">%1$s ja %2$d muuta</string>
+    <string name="message_compose_display_name" formatted="false">%1$s ja %2$d muuta</string>
     <string name="message_compose_discard_dialog">Viestiä ei ole lähetetty. Hylätäänkö?</string>
     <string name="message_view_to_label">Vastaanottaja:</string>
     <string name="message_view_cc_label">Kopio:</string>
@@ -225,7 +231,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Värinä</string>
     <string name="account_settings_ringtone">Valitse soittoääni</string>
     <string name="account_settings_servers">Palvelinasetukset</string>
-    <string name="account_delete_dlg_title">Poista\ntili</string>
+    <string name="account_delete_dlg_title">"Poista
+tili"</string>
     <string name="account_delete_dlg_instructions_fmt">Tili %s poistetaan sähköpostista</string>
     <string name="provider_note_yahoo">Joidenkin Yahoo!-sähköpostitilien postilaatikoiden käyttöä ei tueta Jos sinulla on yhteyden muodostamiseen liittyviä ongelmia, katso lisätietoja sivustosta yahoo.com</string>
     <string name="provider_note_yahoo_uk">Käy Yahoo!-sivustossa ennen sähköpostitilin määrittämistä ja ota tämän tilin POP3-sähköposti käyttöön</string>
@@ -358,7 +365,7 @@
     <string name="account_settings_signature_hint">Luo allekirjoitus lähteviä viestejä varten</string>
     <string name="notification_exchange_calendar_added">Exchange ActiveSync -kalenteri lisätty</string>
     <string name="gal_searching_fmt">Haetaan %s...…</string>
-    <string name="gal_completed_limited_fmt">Ensimmäiset %1$d tulosta kohteesta %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Ensimmäiset %1$d tulosta kohteesta %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Palvelin vaatii suojaustoimintoja, joita laite ei tue</string>
     <string name="message_view_invite_accept">Kyllä</string>
     <string name="message_view_invite_maybe">Ehkä</string>
@@ -450,7 +457,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Kaikki</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Sähköpostin koko</string>
     <string name="account_settings_mail_empty_trash_label">Tyhjennä palvelimen roskakori</string>
     <string name="account_settings_mail_empty_trash_message">Poistetaanko palvelimen roskakorin sisältö?</string>

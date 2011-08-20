@@ -47,7 +47,7 @@
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
     .line 1183
-    iget-wide v0, p3, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, p3, Lcom/android/email/provider/EmailContent;->mId:J
 
     iput-wide v0, p0, Lcom/android/exchange/SyncManager$CalendarObserver;->mAccountId:J
 

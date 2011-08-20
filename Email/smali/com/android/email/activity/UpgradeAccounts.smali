@@ -1616,7 +1616,7 @@
     .line 689
     move-object/from16 v0, p3
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-wide v5, v0
 
@@ -1625,7 +1625,7 @@
     .line 690
     iget-object v5, p1, Lcom/android/email/activity/UpgradeAccounts$FolderConversion;->mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v5, v5, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v5, v5, Lcom/android/email/provider/EmailContent;->mId:J
 
     iput-wide v5, v3, Lcom/android/email/provider/EmailContent$Message;->mMailboxKey:J
 
@@ -1732,13 +1732,13 @@
     :try_start_3
     move-object/from16 v0, p3
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-wide v5, v0
 
     iget-object v7, p1, Lcom/android/email/activity/UpgradeAccounts$FolderConversion;->mailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v7, v7, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v7, v7, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static/range {v3 .. v8}, Lcom/android/email/LegacyConversions;->updateMessageFields(Lcom/android/email/provider/EmailContent$Message;Lcom/android/email/mail/Message;JJ)Z
 

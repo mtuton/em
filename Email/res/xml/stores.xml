@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <stores>
     <store scheme="local" class="com.android.email.mail.store.LocalStore" />
     <store scheme="pop3" class="com.android.email.mail.store.Pop3Store" />

@@ -1128,7 +1128,7 @@
 
     const/high16 v4, -0x100
 
-    iget-wide v5, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v5, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v5, v6}, Lcom/android/email/Email;->getAccountColor(J)I
 

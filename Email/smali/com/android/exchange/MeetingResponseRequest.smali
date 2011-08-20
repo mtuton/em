@@ -18,7 +18,7 @@
     invoke-direct {p0}, Lcom/android/exchange/Request;-><init>()V
 
     .line 26
-    iput-wide p1, p0, Lcom/android/exchange/MeetingResponseRequest;->mMessageId:J
+    iput-wide p1, p0, Lcom/android/exchange/Request;->mMessageId:J
 
     .line 27
     iput p3, p0, Lcom/android/exchange/MeetingResponseRequest;->mResponse:I

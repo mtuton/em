@@ -118,11 +118,11 @@
     :try_start_1
     iget-object v1, p0, Lcom/android/email/MessagingController$3;->val$account:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v2, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, v1, Lcom/android/email/provider/EmailContent;->mId:J
 
     iget-object v1, p0, Lcom/android/email/MessagingController$3;->val$folder:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v4, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v4, v1, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-object v1, p1
 

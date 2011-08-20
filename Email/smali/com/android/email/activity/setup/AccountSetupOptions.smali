@@ -645,7 +645,7 @@
     .local v0, mSetWizMode:Z
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupOptions;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v1, v1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v1, v1, Lcom/android/email/provider/EmailContent;->mId:J
 
     iget-boolean v3, p0, Lcom/android/email/activity/setup/AccountSetupOptions;->mEasFlowMode:Z
 

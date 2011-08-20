@@ -1014,7 +1014,7 @@
 
     move-result-object v3
 
-    iget-wide v4, p1, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v4, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 

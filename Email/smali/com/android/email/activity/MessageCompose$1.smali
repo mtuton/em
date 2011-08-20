@@ -171,7 +171,7 @@
 
     move-result-object v0
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     const-wide/16 v2, -0x1
 
@@ -193,7 +193,7 @@
 
     move-result-object v2
 
-    iget-wide v2, v2, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     cmp-long v0, v0, v2
 

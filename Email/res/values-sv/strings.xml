@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Konfigurera e-post för de flesta konton med några få steg</string>
     <string name="read_attachment_label">läs e-postbilagor</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Markera som läst</string>
     <string name="unread_action">Mark. som oläst</string>
     <string name="favorite_action">Favoriter</string>
-    <string name="set_star_action">Lägg t.\nstjärna</string>
+    <string name="set_star_action">"Lägg t.
+stjärna"</string>
     <string name="remove_star_action">Ta bort stjärna</string>
     <string name="refresh_action">Uppdatera</string>
     <string name="add_account_action">Lägg till konto</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Sök</string>
     <string name="open_action">Öppna</string>
     <string name="account_settings_action">Kontoinställningar</string>
-    <string name="remove_account_action">Ta bort\nkonto</string>
+    <string name="remove_account_action">"Ta bort
+konto"</string>
     <string name="folders_action">Mappar</string>
     <string name="accounts_action">Konton</string>
     <string name="mark_as_read_action">Markera som läst</string>
@@ -79,20 +81,32 @@
     <string name="mailbox_list_title">E-postkonto</string>
     <string name="message_list_load_more_messages_action">Ladda fler meddelanden</string>
     <string name="message_list_send_pending_messages_action">Skicka utgående meddelanden</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">Till</string>
     <string name="message_compose_cc_hint">Kopia</string>
     <string name="message_compose_bcc_hint">hemlig kopia</string>
     <string name="message_compose_subject_hint">Rubrik</string>
     <string name="message_compose_body_hint">Skapa e-post</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- Originalmeddelande --------\nÄmne: %s\nFrån: %s\nTill: %s\nKopia: %s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s skrev:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- Originalmeddelande --------
+Ämne: %s
+Från: %s
+Till: %s
+Kopia: %s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s skrev:
+
+"</string>
     <string name="message_compose_quoted_text_label">Originalmeddelande</string>
     <string name="message_compose_error_no_recipients">Lägg till mottagare</string>
     <string name="message_compose_error_invalid_email">Ogiltig e-postadress</string>
     <string name="message_compose_attachments_skipped_toast">Vissa filer kan inte vidarebefordras för de har inte hämtats</string>
     <string name="message_compose_attachment_size">Det går inte att bifoga filen. Filen är för stor</string>
-    <string name="message_compose_display_name">%1$s och %2$d andra</string>
+    <string name="message_compose_display_name" formatted="false">%1$s och %2$d andra</string>
     <string name="message_compose_discard_dialog">Meddelandet har inte skickats. Ignorera?</string>
     <string name="message_view_to_label">Till:</string>
     <string name="message_view_cc_label">Kopia:</string>
@@ -191,11 +205,14 @@
     <string name="account_setup_options_mail_window_all">All e-post</string>
     <string name="account_setup_failed_dlg_auth_message">Felaktigt användarnamn och lösenord.</string>
     <string name="account_setup_autodiscover_failed_dlg_auth_message">Automatisk upptäckt misslyckades</string>
-    <string name="account_setup_failed_dlg_auth_message_fmt">Felaktigt användarnamn eller lösenord. \n(%s)</string>
+    <string name="account_setup_failed_dlg_auth_message_fmt">"Felaktigt användarnamn eller lösenord. 
+(%s)"</string>
     <string name="account_setup_failed_dlg_certificate_message">Kan inte ansluta till servern ordentligt</string>
-    <string name="account_setup_failed_dlg_certificate_message_fmt">Kan inte ansluta till servern på ett säkert sätt \n(%s)</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Kan inte ansluta till servern på ett säkert sätt 
+(%s)"</string>
     <string name="account_setup_failed_dlg_server_message">Kan inte ansluta till servern</string>
-    <string name="account_setup_failed_dlg_server_message_fmt">Kan inte ansluta till servern. \n(%s)</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">"Kan inte ansluta till servern. 
+(%s)"</string>
     <string name="account_setup_failed_tls_required">Servern har inte stöd för TLS</string>
     <string name="account_setup_failed_auth_required">Servern har inte stöd för autentisering</string>
     <string name="account_setup_failed_security">Kan inte öppna förbindelse till server på grund av säkerhetsfel</string>
@@ -222,7 +239,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Vibrera</string>
     <string name="account_settings_ringtone">Välj ringsignal</string>
     <string name="account_settings_servers">Serverinställningar</string>
-    <string name="account_delete_dlg_title">Ta bort\nkonto</string>
+    <string name="account_delete_dlg_title">"Ta bort
+konto"</string>
     <string name="account_delete_dlg_instructions_fmt">Kontot %s tas bort från E-post.</string>
     <string name="provider_note_yahoo">Brevlådeåtkomst stöds inte för en del Yahoo!-konton Om du inte kan ansluta kan du besöka yahoo.com för mer information</string>
     <string name="provider_note_yahoo_uk">Innan du skapar detta e-postkonto måste du besöka Yahoo!s webbplats och skapa ett lösenord för POP3-adresser</string>
@@ -355,7 +373,7 @@
     <string name="account_settings_signature_hint">Skapa en signatur för dina utgående meddelanden</string>
     <string name="notification_exchange_calendar_added">Exchange ActiveSync-kalender tillagd</string>
     <string name="gal_searching_fmt">Söker %s…</string>
-    <string name="gal_completed_limited_fmt">De första %d resultaten från %s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">De första %d resultaten från %s</string>
     <string name="account_setup_failed_security_policies_unsupported">Den här servern kräver säkerhetsfunktioner som din telefon inte stöder.</string>
     <string name="message_view_invite_accept">Ja</string>
     <string name="message_view_invite_maybe">Kanske</string>
@@ -447,7 +465,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Alla</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">E-poststorlek</string>
     <string name="account_settings_mail_empty_trash_label">Tom serverpapperskorg</string>
     <string name="account_settings_mail_empty_trash_message">Radera innehåll i serverpapperskorgen?</string>

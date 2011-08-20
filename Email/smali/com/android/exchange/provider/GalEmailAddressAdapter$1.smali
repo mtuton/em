@@ -71,7 +71,7 @@
 
     move-result-object v2
 
-    iget-wide v4, v2, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v4, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v4, v5}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 

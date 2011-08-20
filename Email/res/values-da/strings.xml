@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Du kan konfigurere e-mail for de fleste konti i få trin</string>
     <string name="read_attachment_label">læs vedhæftede filer</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Marker som læst</string>
     <string name="unread_action">Marker som ulæst</string>
     <string name="favorite_action">Favoritter</string>
-    <string name="set_star_action">Tilføj\nstjerne</string>
+    <string name="set_star_action">"Tilføj
+stjerne"</string>
     <string name="remove_star_action">Fjern stjerne</string>
     <string name="refresh_action">Opdater</string>
     <string name="add_account_action">Tilføj konto</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Søg</string>
     <string name="open_action">Åbn</string>
     <string name="account_settings_action">Kontoindstillinger</string>
-    <string name="remove_account_action">Fjern\nkonto</string>
+    <string name="remove_account_action">"Fjern
+konto"</string>
     <string name="folders_action">Mapper</string>
     <string name="accounts_action">Konti</string>
     <string name="mark_as_read_action">Marker som læst</string>
@@ -79,20 +81,32 @@
     <string name="mailbox_list_title">Postkasse</string>
     <string name="message_list_load_more_messages_action">Indlæs flere meddelelser</string>
     <string name="message_list_send_pending_messages_action">Send udgående Send udgående meddelelser</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">Til</string>
     <string name="message_compose_cc_hint">Cc</string>
     <string name="message_compose_bcc_hint">Bcc</string>
     <string name="message_compose_subject_hint">Emne</string>
     <string name="message_compose_body_hint">Skriv e-mail</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- Oprindelig meddelelse --------\nEmne: %s\nFra: %s\nTil: %s\nCC: %s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s skrev:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- Oprindelig meddelelse --------
+Emne: %s
+Fra: %s
+Til: %s
+CC: %s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s skrev:
+
+"</string>
     <string name="message_compose_quoted_text_label">Oprindelig meddelelse</string>
     <string name="message_compose_error_no_recipients">Tilføj modtagere</string>
     <string name="message_compose_error_invalid_email">Ugyldige e-mail-adresser</string>
     <string name="message_compose_attachments_skipped_toast">Visse vedhæftede filer kan ikke videresendes, fordi de ikke er downloadet</string>
     <string name="message_compose_attachment_size">Kunne ikke vedhæfte fil. Filen er for stor</string>
-    <string name="message_compose_display_name">%1$s og %2$d andre</string>
+    <string name="message_compose_display_name" formatted="false">%1$s og %2$d andre</string>
     <string name="message_compose_discard_dialog">Meddelelse er ikke sendt. Annullér?</string>
     <string name="message_view_to_label">Til:</string>
     <string name="message_view_cc_label">Cc:</string>
@@ -191,11 +205,14 @@
     <string name="account_setup_options_mail_window_all">Alle e-mails</string>
     <string name="account_setup_failed_dlg_auth_message">Brugernavn eller adgangskode forkert</string>
     <string name="account_setup_autodiscover_failed_dlg_auth_message">Autodiscover mislykkedes</string>
-    <string name="account_setup_failed_dlg_auth_message_fmt">Brugernavn eller adgangskode forkert.\n(%s)</string>
+    <string name="account_setup_failed_dlg_auth_message_fmt">"Brugernavn eller adgangskode forkert.
+(%s)"</string>
     <string name="account_setup_failed_dlg_certificate_message">Kan ikke oprette sikker forbindelse til server</string>
-    <string name="account_setup_failed_dlg_certificate_message_fmt">Kan ikke oprette sikker forbindelse til server.\n(%s)</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Kan ikke oprette sikker forbindelse til server.
+(%s)"</string>
     <string name="account_setup_failed_dlg_server_message">Kan ikke oprette forbindelse til server</string>
-    <string name="account_setup_failed_dlg_server_message_fmt">Kan ikke oprette forbindelse til server.\n(%s)</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">"Kan ikke oprette forbindelse til server.
+(%s)"</string>
     <string name="account_setup_failed_tls_required">Serveren understøtter ikke TLS</string>
     <string name="account_setup_failed_auth_required">Serveren understøtter ikke godkendelse</string>
     <string name="account_setup_failed_security">Kunne ikke oprette forbindelse til serveren på grund af sikkerhedsfejl</string>
@@ -222,7 +239,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Vibration</string>
     <string name="account_settings_ringtone">Vælg ringetone</string>
     <string name="account_settings_servers">Serverindstillinger</string>
-    <string name="account_delete_dlg_title">Fjern\nkonto</string>
+    <string name="account_delete_dlg_title">"Fjern
+konto"</string>
     <string name="account_delete_dlg_instructions_fmt">Kontoen \"%s\" bliver fjernet fra E-mail</string>
     <string name="provider_note_yahoo">Postkasseadgang understøttes ikke for visse typer af Yahoo!-mailkonti. Hvis du har problemer med at oprette forbindelse, skal du besøge yahoo.com for at få flere oplysninger</string>
     <string name="provider_note_yahoo_uk">Før du konfigurerer denne e-mail-konto, skal du besøge Yahoo!’s websted og aktivere POP3 e-mail-adgang for denne konto</string>
@@ -355,7 +373,7 @@
     <string name="account_settings_signature_hint">Opret signatur for dine udgående meddelelser</string>
     <string name="notification_exchange_calendar_added">Exchange ActiveSync-kalender tilføjet</string>
     <string name="gal_searching_fmt">Søger efter %s ??</string>
-    <string name="gal_completed_limited_fmt">Første %d resultater fra %s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Første %d resultater fra %s</string>
     <string name="account_setup_failed_security_policies_unsupported">Denne server kræver sikkerhedsfunktioner, som telefonen ikke understøtter.</string>
     <string name="message_view_invite_accept">Ja</string>
     <string name="message_view_invite_maybe">Måske</string>
@@ -445,7 +463,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Alle</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">E-mail-størrelse</string>
     <string name="account_settings_mail_empty_trash_label">Tøm serverens papirkurv</string>
     <string name="account_settings_mail_empty_trash_message">Slet indhold i servers papirkurv?</string>
@@ -546,7 +564,8 @@
     <string name="folder_server_error">Serverfejl</string>
     <string name="folder_system_error">Systemmappe kan ikke ændres</string>
     <string name="folder_not_exist_error">Mappen findes ikke. Vil du oprette en mappe og flytte elementet?</string>
-    <string name="folder_exists_error">Mappenavn\nbruges allerede</string>
+    <string name="folder_exists_error">"Mappenavn
+bruges allerede"</string>
     <string name="folder_parent_not_found_error">Overordnet mappe kan ikke ændres</string>
     <string name="move_item_failed">Kunne ikke flytte meddelelse</string>
     <string name="message_moved_toast">Meddelelsen er flyttet</string>

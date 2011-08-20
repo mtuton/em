@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Pocztę e-mail można zwykle skonfigurować w kilku krokach</string>
     <string name="read_attachment_label">odczytaj załączniki wiadomości e-mail</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Zaznacz jako przeczytane</string>
     <string name="unread_action">Ozn.jako nieprz.</string>
     <string name="favorite_action">Ulubione</string>
-    <string name="set_star_action">Dodaj\ngwiazdkę</string>
+    <string name="set_star_action">"Dodaj
+gwiazdkę"</string>
     <string name="remove_star_action">Usuń gwiazdkę</string>
     <string name="refresh_action">Odśwież</string>
     <string name="add_account_action">Dodaj konto</string>
@@ -79,20 +80,32 @@
     <string name="mailbox_list_title">Skrzynka pocztowa</string>
     <string name="message_list_load_more_messages_action">Załaduj więcej wiadomości</string>
     <string name="message_list_send_pending_messages_action">Wyślij wiadomości wychodzące</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">Do</string>
     <string name="message_compose_cc_hint">DW</string>
     <string name="message_compose_bcc_hint">UDW</string>
     <string name="message_compose_subject_hint">Temat</string>
     <string name="message_compose_body_hint">Utwórz e-mail</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- Oryginalna wiadomość --------\nTemat: %s\nOd: %s\nDo: %s\nDW: %s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s pisze:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- Oryginalna wiadomość --------
+Temat: %s
+Od: %s
+Do: %s
+DW: %s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s pisze:
+
+"</string>
     <string name="message_compose_quoted_text_label">Oryginalna wiadomość</string>
     <string name="message_compose_error_no_recipients">Dodaj odbiorców</string>
     <string name="message_compose_error_invalid_email">Nieprawidłowe adresy e-mail</string>
     <string name="message_compose_attachments_skipped_toast">Nie można przekazać niektórych załączników, ponieważ nie zostały pobrane.</string>
     <string name="message_compose_attachment_size">Nie można dołączyć pliku. Rozmiar pliku zbyt duży</string>
-    <string name="message_compose_display_name">%1$s i inne (%2$d)</string>
+    <string name="message_compose_display_name" formatted="false">%1$s i inne (%2$d)</string>
     <string name="message_compose_discard_dialog">Nie wysłano wiadomości. Usunąć?</string>
     <string name="message_view_to_label">Do:</string>
     <string name="message_view_cc_label">DW:</string>
@@ -191,11 +204,14 @@
     <string name="account_setup_options_mail_window_all">Wszystkie wiad. e-mail</string>
     <string name="account_setup_failed_dlg_auth_message">Nazwa użytkownika lub hasło są nieprawidłowe</string>
     <string name="account_setup_autodiscover_failed_dlg_auth_message">Operacja usługi Autodiscover nie powiodła się</string>
-    <string name="account_setup_failed_dlg_auth_message_fmt">Nieprawidłowa nazwa użytkownika lub nieprawidłowe hasło. \n(%s)</string>
+    <string name="account_setup_failed_dlg_auth_message_fmt">"Nieprawidłowa nazwa użytkownika lub nieprawidłowe hasło. 
+(%s)"</string>
     <string name="account_setup_failed_dlg_certificate_message">Nie można bezpiecznie połączyć się z serwerem</string>
-    <string name="account_setup_failed_dlg_certificate_message_fmt">Nie można bezpiecznie połączyć się z serwerem \n(%s)</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Nie można bezpiecznie połączyć się z serwerem 
+(%s)"</string>
     <string name="account_setup_failed_dlg_server_message">Nie można połączyć się z serwerem</string>
-    <string name="account_setup_failed_dlg_server_message_fmt">Nie można połączyć się z serwerem. \n(%s)</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">"Nie można połączyć się z serwerem. 
+(%s)"</string>
     <string name="account_setup_failed_tls_required">Serwer nie obsługuje połączeń TLS</string>
     <string name="account_setup_failed_auth_required">Serwer nie obsługuje uwierzytelniania</string>
     <string name="account_setup_failed_security">Nie można otworzyć połączenia z serwerem z powodu błędu zabezpieczeń</string>
@@ -355,7 +371,7 @@
     <string name="account_settings_signature_hint">Utwórz sygnaturę do wiadomości wychodzących</string>
     <string name="notification_exchange_calendar_added">Dodano kalendarz Exchange ActiveSync</string>
     <string name="gal_searching_fmt">Trwa przeszukiwanie %s…</string>
-    <string name="gal_completed_limited_fmt">Pierwsze %d wyników z %s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Pierwsze %d wyników z %s</string>
     <string name="account_setup_failed_security_policies_unsupported">Serwer wymaga funkcji zabezpieczeń, które nie są obsługiwane przez Twoje urządzenie</string>
     <string name="message_view_invite_accept">Tak</string>
     <string name="message_view_invite_maybe">Być może</string>
@@ -447,7 +463,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Wszystkie</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Limit rozmiaru e-mail</string>
     <string name="account_settings_mail_empty_trash_label">Opróżnij kosz na serwerze</string>
     <string name="account_settings_mail_empty_trash_message">Usunąć zawartość z kosza na serwerze?</string>

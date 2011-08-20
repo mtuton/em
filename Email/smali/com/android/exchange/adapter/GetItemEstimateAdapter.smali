@@ -36,7 +36,7 @@
 
     .line 63
     .local v0, type:Ljava/lang/String;
-    iget-object v1, p0, Lcom/android/exchange/adapter/GetItemEstimateAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget v1, v1, Lcom/android/email/provider/EmailContent$Mailbox;->mType:I
 
@@ -222,7 +222,7 @@
     .line 93
     const/16 v1, 0xb
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/GetItemEstimateAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-object v2, v2, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
 
@@ -231,7 +231,7 @@
     .line 94
     const/16 v1, 0x18a
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/GetItemEstimateAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-object v2, v2, Lcom/android/email/provider/EmailContent$Mailbox;->mServerId:Ljava/lang/String;
 
@@ -266,7 +266,7 @@
     if-eqz v1, :cond_3
 
     .line 104
-    iget-object v1, p0, Lcom/android/exchange/adapter/GetItemEstimateAdapter;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
     invoke-virtual {v1}, Lcom/android/exchange/EasSyncService;->getEmailFilter()Ljava/lang/String;
 
@@ -311,7 +311,7 @@
     if-eqz v1, :cond_4
 
     .line 106
-    iget-object v1, p0, Lcom/android/exchange/adapter/GetItemEstimateAdapter;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
     invoke-virtual {v1}, Lcom/android/exchange/EasSyncService;->getCalendarFilterType()Ljava/lang/String;
 

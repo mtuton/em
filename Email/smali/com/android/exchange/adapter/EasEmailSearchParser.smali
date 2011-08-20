@@ -115,18 +115,18 @@
 
     .line 68
     .local v1, msg:Lcom/android/email/provider/EmailContent$Message;
-    iget-object v2, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v2, v2, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v2, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     iput-wide v2, v1, Lcom/android/email/provider/EmailContent$Message;->mAccountKey:J
 
     .line 69
-    iget-object v2, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v3, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v3, v3, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v3, v3, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/16 v5, 0x8
 
@@ -154,7 +154,7 @@
     if-eq v2, v3, :cond_2
 
     .line 74
-    iget v2, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x3d8
 
@@ -174,7 +174,7 @@
     .line 77
     .end local v0           #longId:Ljava/lang/String;
     :cond_0
-    iget v2, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x3cf
 
@@ -273,7 +273,7 @@
     .line 172
     .end local v3           #msg:Lcom/android/email/provider/EmailContent$Message;
     :cond_1
-    iget-object v7, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v7, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     invoke-virtual {v7}, Lcom/android/exchange/EasSyncService;->getSynchronizer()Ljava/lang/Object;
 
@@ -283,7 +283,7 @@
 
     .line 174
     :try_start_0
-    iget-object v8, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v8, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     invoke-virtual {v8}, Lcom/android/exchange/EasSyncService;->isStopped()Z
 
@@ -303,7 +303,7 @@
     .line 176
     :cond_3
     :try_start_1
-    iget-object v8, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v8, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v9, "com.android.email.provider"
 
@@ -316,7 +316,7 @@
 
     const/4 v9, 0x0
 
-    iget-object v10, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v10, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-object v10, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
 
@@ -330,7 +330,7 @@
 
     const/4 v9, 0x2
 
-    iget-object v10, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v10, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iget-object v10, v10, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
 
@@ -377,9 +377,9 @@
     .line 188
     sget-object v7, Lcom/android/email/provider/EmailContent$Account;->ADD_TO_FIELD_URI:Landroid/net/Uri;
 
-    iget-object v8, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v8, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v8, v8, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v8, v8, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v7, v8, v9}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -387,7 +387,7 @@
 
     .line 189
     .local v6, uri:Landroid/net/Uri;
-    iget-object v7, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v7, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {v7, v6, v0, v11, v11}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
@@ -495,7 +495,7 @@
     if-eq v2, v7, :cond_4
 
     .line 100
-    iget v2, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x3cc
 
@@ -600,7 +600,7 @@
     .line 138
     .end local v1           #status:I
     :cond_1
-    iget v2, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x3ce
 
@@ -613,7 +613,7 @@
 
     .line 141
     :cond_2
-    iget v2, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x3cb
 
@@ -663,7 +663,7 @@
     .line 148
     .end local v0           #range:[Ljava/lang/String;
     :cond_3
-    iget v2, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x3d0
 
@@ -777,9 +777,9 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v2, v2, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v2, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -792,7 +792,7 @@
     invoke-static {v0, v1}, Lcom/android/exchange/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 202
-    iget-object v0, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v1, Lcom/android/email/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 
@@ -819,7 +819,7 @@
     invoke-virtual {v0, v1, v2, v5}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
     .line 204
-    iget-object v0, p0, Lcom/android/exchange/adapter/EasEmailSearchParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v1, Lcom/android/email/provider/EmailContent$Message;->UPDATED_CONTENT_URI:Landroid/net/Uri;
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Nakonfigurujte e-mail pro většinu účtů v několika krocích</string>
     <string name="read_attachment_label">čte přílohy e-mailů</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Označit jako přečtené</string>
     <string name="unread_action">Ozn. jako nepř.</string>
     <string name="favorite_action">Oblíbené</string>
-    <string name="set_star_action">Přidat\nhvězd.</string>
+    <string name="set_star_action">"Přidat
+hvězd."</string>
     <string name="remove_star_action">Odebrat hvězdičku</string>
     <string name="refresh_action">Obnovit</string>
     <string name="add_account_action">Přidat účet</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Hledat</string>
     <string name="open_action">Otevřít</string>
     <string name="account_settings_action">Nastavení účtu</string>
-    <string name="remove_account_action">Odebrat\núčet</string>
+    <string name="remove_account_action">"Odebrat
+účet"</string>
     <string name="folders_action">Složky</string>
     <string name="accounts_action">Účty</string>
     <string name="mark_as_read_action">Označit jako přečtené</string>
@@ -79,20 +81,32 @@
     <string name="mailbox_list_title">Poštovní schránka</string>
     <string name="message_list_load_more_messages_action">Načíst další zprávy</string>
     <string name="message_list_send_pending_messages_action">Odeslat odchozí zprávy</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">Do</string>
     <string name="message_compose_cc_hint">Kop</string>
     <string name="message_compose_bcc_hint">Skr</string>
     <string name="message_compose_subject_hint">Předmět</string>
     <string name="message_compose_body_hint">Vytvořit e-mail</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- Původní zpráva --------\nPředmět: %s\nOdesílatel: %s\nKomu: %s\nKopie: %s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%snapsal/a:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- Původní zpráva --------
+Předmět: %s
+Odesílatel: %s
+Komu: %s
+Kopie: %s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%snapsal/a:
+
+"</string>
     <string name="message_compose_quoted_text_label">Původní zpráva</string>
     <string name="message_compose_error_no_recipients">Přidat příjemce</string>
     <string name="message_compose_error_invalid_email">Neplatné e-mailové adresy</string>
     <string name="message_compose_attachments_skipped_toast">Některé přílohy nelze předat dál, protože nebyly staženy</string>
     <string name="message_compose_attachment_size">Soubor nelze připojit. Soubor je příliš velký</string>
-    <string name="message_compose_display_name">%1$s a (%2$d) dalších</string>
+    <string name="message_compose_display_name" formatted="false">%1$s a (%2$d) dalších</string>
     <string name="message_compose_discard_dialog">Zpráva nebyla odeslána. Zrušit?</string>
     <string name="message_view_to_label">Komu:</string>
     <string name="message_view_cc_label">Kopie:</string>
@@ -191,11 +205,14 @@
     <string name="account_setup_options_mail_window_all">Všechny e-maily</string>
     <string name="account_setup_failed_dlg_auth_message">Chybné uživatelské jméno nebo heslo</string>
     <string name="account_setup_autodiscover_failed_dlg_auth_message">Chyba služby Autodiscover</string>
-    <string name="account_setup_failed_dlg_auth_message_fmt">Chybné uživatelské jméno nebo heslo.\n(%s)</string>
+    <string name="account_setup_failed_dlg_auth_message_fmt">"Chybné uživatelské jméno nebo heslo.
+(%s)"</string>
     <string name="account_setup_failed_dlg_certificate_message">Nelze se bezpečně připojit k serveru</string>
-    <string name="account_setup_failed_dlg_certificate_message_fmt">Nelze se bezpečně připojit k serveru.\n(%s)</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Nelze se bezpečně připojit k serveru.
+(%s)"</string>
     <string name="account_setup_failed_dlg_server_message">K serveru se nelze připojit</string>
-    <string name="account_setup_failed_dlg_server_message_fmt">Nelze se připojit k serveru.\n(%s)</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">"Nelze se připojit k serveru.
+(%s)"</string>
     <string name="account_setup_failed_tls_required">Server nepodporuje TLS</string>
     <string name="account_setup_failed_auth_required">Server nepodporuje ověření</string>
     <string name="account_setup_failed_security">Nelze otevřít připojení k serveru z důvodu chyby zabezpečení</string>
@@ -222,7 +239,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Vibrace</string>
     <string name="account_settings_ringtone">Vybrat vyzváněcí tón</string>
     <string name="account_settings_servers">Nastavení serveru</string>
-    <string name="account_delete_dlg_title">Odebrat\núčet</string>
+    <string name="account_delete_dlg_title">"Odebrat
+účet"</string>
     <string name="account_delete_dlg_instructions_fmt">Účet %s bude odebrán z E-mailu</string>
     <string name="provider_note_yahoo">Pro některé typy poštovních účtů Yahoo! není přístup ke schránce podporován. Pokud máte potíže s připojením, naleznete další informace na yahoo.com</string>
     <string name="provider_note_yahoo_uk">Před nastavením tohoto e-mailového účtu navštivte webovou stránku Yahoo! a povolte přístup k e-mailu POP3 pro tento účet</string>
@@ -355,7 +373,7 @@
     <string name="account_settings_signature_hint">Vytvořte podpis pro odchozí zprávy</string>
     <string name="notification_exchange_calendar_added">Kalendář Exchange ActiveSync byl přidán</string>
     <string name="gal_searching_fmt">Vyhledávání na webu %s??</string>
-    <string name="gal_completed_limited_fmt">Prvních %d výsledků z webu %s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Prvních %d výsledků z webu %s</string>
     <string name="account_setup_failed_security_policies_unsupported">Server vyžaduje funkce zabezpečení, které nejsou zařízením podporovány</string>
     <string name="message_view_invite_accept">Ano</string>
     <string name="message_view_invite_maybe">Možná</string>
@@ -447,7 +465,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Vše</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Velikost e-mailu</string>
     <string name="account_settings_mail_empty_trash_label">Vyprázdnit koš na serveru</string>
     <string name="account_settings_mail_empty_trash_message">Odstranit obsah koše serveru?</string>
@@ -548,7 +566,8 @@
     <string name="folder_server_error">Chyba serveru</string>
     <string name="folder_system_error">Systémovou složku nelze změnit</string>
     <string name="folder_not_exist_error">Složka neexistuje. Chcete vytvořit složku a přesunout položku?</string>
-    <string name="folder_exists_error">Název složky\njiž existuje</string>
+    <string name="folder_exists_error">"Název složky
+již existuje"</string>
     <string name="folder_parent_not_found_error">Nadřazenou složku nelze změnit</string>
     <string name="move_item_failed">Zprávu nelze přesunout</string>
     <string name="message_moved_toast">Zpráva byla úspěšně přesunuta</string>

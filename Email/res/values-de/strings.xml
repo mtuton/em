@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">E-Mail für viele Konten in wenigen Schritten konfigurieren</string>
     <string name="read_attachment_label">E-Mail-Anhänge lesen</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Als gelesen markieren</string>
     <string name="unread_action">Als ungel. mark.</string>
     <string name="favorite_action">Favoriten</string>
-    <string name="set_star_action">Stern\nhinzuf.</string>
+    <string name="set_star_action">"Stern
+hinzuf."</string>
     <string name="remove_star_action">Stern entfernen</string>
     <string name="refresh_action">Aktualis.</string>
     <string name="add_account_action">Konto hinzufügen</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Suche</string>
     <string name="open_action">Öffnen</string>
     <string name="account_settings_action">Kontoeinstellungen</string>
-    <string name="remove_account_action">Konto\nentfernen</string>
+    <string name="remove_account_action">"Konto
+entfernen"</string>
     <string name="folders_action">Ordner</string>
     <string name="accounts_action">Konten</string>
     <string name="mark_as_read_action">Als gelesen markieren</string>
@@ -79,20 +81,32 @@
     <string name="mailbox_list_title">Mailbox</string>
     <string name="message_list_load_more_messages_action">Weitere Nachrichten laden</string>
     <string name="message_list_send_pending_messages_action">Ausgehende Nachrichten senden</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">An</string>
     <string name="message_compose_cc_hint">Cc</string>
     <string name="message_compose_bcc_hint">Bcc</string>
     <string name="message_compose_subject_hint">Betreff</string>
     <string name="message_compose_body_hint">E-Mail verfassen</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- Ursprüngliche Nachricht --------\nBetreff: %s\nVon: %s\nAn: %s\nCc: %s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s hat geschrieben:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- Ursprüngliche Nachricht --------
+Betreff: %s
+Von: %s
+An: %s
+Cc: %s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s hat geschrieben:
+
+"</string>
     <string name="message_compose_quoted_text_label">Ursprüngliche Nachricht</string>
     <string name="message_compose_error_no_recipients">Empfänger hinzufügen</string>
     <string name="message_compose_error_invalid_email">Ungültige E-Mail-Adresse</string>
     <string name="message_compose_attachments_skipped_toast">Einige Anhänge können nicht weitergeleitet werden, weil sie nicht heruntergeladen wurden</string>
     <string name="message_compose_attachment_size">Datei kann nicht angehängt werden. Dateigröße zu groß</string>
-    <string name="message_compose_display_name">%1$s und %2$d andere</string>
+    <string name="message_compose_display_name" formatted="false">%1$s und %2$d andere</string>
     <string name="message_compose_discard_dialog">Nachricht nicht gesendet. Verwerfen?</string>
     <string name="message_view_to_label">An:</string>
     <string name="message_view_cc_label">Cc:</string>
@@ -191,11 +205,14 @@
     <string name="account_setup_options_mail_window_all">Alle E-Mails</string>
     <string name="account_setup_failed_dlg_auth_message">Benutzername oder Passwort falsch</string>
     <string name="account_setup_autodiscover_failed_dlg_auth_message">Autom. Ermittlung fehlgeschlagen</string>
-    <string name="account_setup_failed_dlg_auth_message_fmt">Falscher Benutzername oder falsches Passwort.\n(%s)</string>
+    <string name="account_setup_failed_dlg_auth_message_fmt">"Falscher Benutzername oder falsches Passwort.
+(%s)"</string>
     <string name="account_setup_failed_dlg_certificate_message">Sichere Verbindung mit Server kann nicht hergestellt werden</string>
-    <string name="account_setup_failed_dlg_certificate_message_fmt">Es kann keine sichere Verbindung mit dem Server hergestellt werden.\n(%s)</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Es kann keine sichere Verbindung mit dem Server hergestellt werden.
+(%s)"</string>
     <string name="account_setup_failed_dlg_server_message">Verbindung mit Server kann nicht hergestellt werden</string>
-    <string name="account_setup_failed_dlg_server_message_fmt">Verbindung mit Server kann nicht hergestellt werden.\n(%s)</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">"Verbindung mit Server kann nicht hergestellt werden.
+(%s)"</string>
     <string name="account_setup_failed_tls_required">Server unterstützt TLS nicht</string>
     <string name="account_setup_failed_auth_required">Server unterstützt Authentifizierung nicht</string>
     <string name="account_setup_failed_security">Verbindung mit Server kann wegen Sicherheitsfehlern nicht geöffnet werden</string>
@@ -222,7 +239,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Vibrieren</string>
     <string name="account_settings_ringtone">Klingelton auswählen</string>
     <string name="account_settings_servers">Servereinstellungen</string>
-    <string name="account_delete_dlg_title">Konto\nentfernen</string>
+    <string name="account_delete_dlg_title">"Konto
+entfernen"</string>
     <string name="account_delete_dlg_instructions_fmt">Das Konto %s wird aus den E-Mails entfernt</string>
     <string name="provider_note_yahoo">Mailbox-Zugriff wird für einige Typen von Yahoo!-Mailkonten nicht unterstützt. Besuchen Sie bei Verbindungsproblemen yahoo.com, um weitere Informationen zu erhalten</string>
     <string name="provider_note_yahoo_uk">Besuchen Sie vor dem Einrichten dieses E-Mail-Kontos die Yahoo!-Website und aktivieren Sie den POP3-E-Mail-Zugriff für dieses Konto</string>
@@ -292,7 +310,8 @@
     <string name="low_database_storage_view_text">Speicher voll</string>
     <string name="save_to_calendar_action">Im Kalender speichern</string>
     <string name="recent_action">Kürzlich</string>
-    <string name="select_action">Hinzufü-\ngen</string>
+    <string name="select_action">"Hinzufü-
+gen"</string>
     <string name="phonebook_action">Kontakte</string>
     <string name="group_action">Gruppe</string>
     <string name="recent_list_title">Kürzlich</string>
@@ -354,7 +373,7 @@
     <string name="account_settings_signature_hint">Signatur für Ihre ausgehenden Nachrichten erstellen</string>
     <string name="notification_exchange_calendar_added">Exchange ActiveSync-Kalender hinzugefügt</string>
     <string name="gal_searching_fmt">Suche %s??</string>
-    <string name="gal_completed_limited_fmt">Erste %d Ergebnisse von %s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Erste %d Ergebnisse von %s</string>
     <string name="account_setup_failed_security_policies_unsupported">Für diesen Server sind Sicherheitsfunktionen erforderlich, die von Ihrem Telefon nicht unterstützt werden.</string>
     <string name="message_view_invite_accept">Ja</string>
     <string name="message_view_invite_maybe">Vielleicht</string>
@@ -446,7 +465,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Alle</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">E-Mail-Größe</string>
     <string name="account_settings_mail_empty_trash_label">Server-Papierkorb leeren</string>
     <string name="account_settings_mail_empty_trash_message">Inhalte in Server-Papierkorb löschen?</string>
@@ -547,7 +566,8 @@
     <string name="folder_server_error">Serverfehler</string>
     <string name="folder_system_error">Systemordner kann nicht geändert werden</string>
     <string name="folder_not_exist_error">Ordner nicht vorhanden. Ordner erstellen und Element verschieben?</string>
-    <string name="folder_exists_error">Ordnername wird\nbereits verwendet</string>
+    <string name="folder_exists_error">"Ordnername wird
+bereits verwendet"</string>
     <string name="folder_parent_not_found_error">Hauptordner kann nicht geändert werden</string>
     <string name="move_item_failed">Nachricht kann nicht verschoben werden</string>
     <string name="message_moved_toast">Nachricht verschoben</string>

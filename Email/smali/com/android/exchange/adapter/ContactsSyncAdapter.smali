@@ -772,7 +772,7 @@
 
     .line 1733
     :cond_0
-    iget-object v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
     iget-object v1, v1, Lcom/android/exchange/EasSyncService;->mProtocolVersionDouble:Ljava/lang/Double;
 
@@ -1743,7 +1743,7 @@
 
     const-string v1, "account_name"
 
-    iget-object v2, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v2, v2, Lcom/android/email/provider/EmailContent$Account;->mEmailAddress:Ljava/lang/String;
 
@@ -1929,7 +1929,7 @@
     invoke-virtual {v9}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->execute()V
 
     .line 1526
-    iget-object v2, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2136,7 +2136,7 @@
 
     .line 169
     :try_start_0
-    iget-object v5, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v5, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
     iget-object v5, v5, Lcom/android/exchange/EasSyncService;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -2153,7 +2153,7 @@
     :try_start_1
     sget-object v5, Landroid/provider/ContactsContract$SyncState;->CONTENT_URI:Landroid/net/Uri;
 
-    iget-object v6, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mAccountManagerAccount:Landroid/accounts/Account;
+    iget-object v6, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mAccountManagerAccount:Landroid/accounts/Account;
 
     invoke-static {v0, v5, v6}, Landroid/provider/SyncStateContract$Helpers;->get(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;)[B
 
@@ -2184,7 +2184,7 @@
     .local v1, cv:Landroid/content/ContentValues;
     const-string v5, "account_name"
 
-    iget-object v6, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v6, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iget-object v6, v6, Lcom/android/email/provider/EmailContent$Account;->mEmailAddress:Ljava/lang/String;
 
@@ -2286,7 +2286,7 @@
 
     .prologue
     .line 146
-    iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mAccountManagerAccount:Landroid/accounts/Account;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mAccountManagerAccount:Landroid/accounts/Account;
 
     const-string v1, "com.android.contacts"
 
@@ -2335,7 +2335,7 @@
     .line 1827
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
     move-object v7, v0
 
@@ -2353,7 +2353,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     move-object v9, v0
 
@@ -2534,11 +2534,11 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     move-object v8, v0
 
-    iget-wide v8, v8, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v8, v8, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v7, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -3796,7 +3796,7 @@
 
     .line 202
     :cond_0
-    iget-object v3, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v3, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mService:Lcom/android/exchange/EasSyncService;
 
     iget-object v3, v3, Lcom/android/exchange/EasSyncService;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -3813,7 +3813,7 @@
     :try_start_1
     sget-object v3, Landroid/provider/ContactsContract$SyncState;->CONTENT_URI:Landroid/net/Uri;
 
-    iget-object v4, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mAccountManagerAccount:Landroid/accounts/Account;
+    iget-object v4, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mAccountManagerAccount:Landroid/accounts/Account;
 
     invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
 
@@ -3851,7 +3851,7 @@
     .end local v0           #client:Landroid/content/ContentProviderClient;
     :cond_1
     :try_start_2
-    iget-object v3, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v3, p0, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iput-object p1, v3, Lcom/android/email/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
 

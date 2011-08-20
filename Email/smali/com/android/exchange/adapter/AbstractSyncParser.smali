@@ -57,7 +57,7 @@
     .line 69
     iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
-    iget-object v0, v0, Lcom/android/exchange/EasSyncService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     iput-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
 
@@ -79,14 +79,14 @@
     :cond_0
     iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
-    iget-object v0, v0, Lcom/android/exchange/EasSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     iput-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
     .line 73
     iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
-    iget-object v0, v0, Lcom/android/exchange/EasSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
+    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
     iput-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
@@ -194,20 +194,20 @@
     if-eq v9, v10, :cond_12
 
     .line 125
-    iget v9, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->tag:I
+    iget v9, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v10, 0xf
 
     if-eq v9, v10, :cond_1
 
-    iget v9, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->tag:I
+    iget v9, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v10, 0x1c
 
     if-eq v9, v10, :cond_1
 
     .line 127
-    iget v9, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->tag:I
+    iget v9, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v10, 0xe
 
@@ -291,7 +291,7 @@
 
     iget-object v11, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v11, v11, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v11, v11, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v10, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -345,7 +345,7 @@
 
     iget-object v11, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v11, v11, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v11, v11, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {v10, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -398,7 +398,7 @@
 
     iget-object v10, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v10, v10, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v10, v10, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/4 v12, 0x1
 
@@ -424,7 +424,7 @@
 
     iget-object v10, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v10, v10, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v10, v10, Lcom/android/email/provider/EmailContent;->mId:J
 
     const/4 v12, 0x1
 
@@ -572,7 +572,7 @@
     .end local v7           #sb:Ljava/lang/StringBuffer;
     .end local v8           #status:I
     :cond_b
-    iget v9, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->tag:I
+    iget v9, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v10, 0x16
 
@@ -585,7 +585,7 @@
 
     .line 212
     :cond_c
-    iget v9, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->tag:I
+    iget v9, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/4 v10, 0x6
 
@@ -598,7 +598,7 @@
 
     .line 214
     :cond_d
-    iget v9, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->tag:I
+    iget v9, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v10, 0x14
 
@@ -611,7 +611,7 @@
 
     .line 216
     :cond_e
-    iget v9, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->tag:I
+    iget v9, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v10, 0xb
 
@@ -843,7 +843,7 @@
     .line 273
     iget-object v9, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/email/provider/EmailContent$Account;
 
-    iget-wide v9, v9, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v9, v9, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v9, v10}, Lcom/android/exchange/SyncManager;->stopAccountSyncs(J)V
 
@@ -884,7 +884,7 @@
     :cond_18
     iget-object v9, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
-    iget v9, v9, Lcom/android/exchange/EasSyncService;->mChangeCount:I
+    iget v9, v9, Lcom/android/exchange/AbstractSyncService;->mChangeCount:I
 
     if-lez v9, :cond_14
 

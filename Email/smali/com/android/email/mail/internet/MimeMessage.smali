@@ -873,7 +873,7 @@
     if-nez v1, :cond_0
 
     .line 179
-    iget-object v1, p0, Lcom/android/email/mail/internet/MimeMessage;->mInternalDate:Ljava/util/Date;
+    iget-object v1, p0, Lcom/android/email/mail/Message;->mInternalDate:Ljava/util/Date;
 
     iput-object v1, p0, Lcom/android/email/mail/internet/MimeMessage;->mSentDate:Ljava/util/Date;
     :try_end_0

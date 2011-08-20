@@ -106,7 +106,7 @@
 
     move-result-object v10
 
-    iget-wide v10, v10, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v10, v10, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v9, v10, v11}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -235,7 +235,7 @@
 
     move-result-object v10
 
-    iget-wide v10, v10, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v10, v10, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v9, v10, v11, v7}, Lcom/android/email/provider/EmailContent$Body;->updateBodyWithMessageId(Landroid/content/Context;JLandroid/content/ContentValues;)V
 
@@ -291,7 +291,7 @@
     :cond_0
     const-wide/16 v9, -0x1
 
-    iput-wide v9, v2, Lcom/android/email/provider/EmailContent$Attachment;->mId:J
+    iput-wide v9, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 2927
     :cond_1
@@ -308,7 +308,7 @@
 
     move-result-object v9
 
-    iget-wide v9, v9, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v9, v9, Lcom/android/email/provider/EmailContent;->mId:J
 
     iput-wide v9, v2, Lcom/android/email/provider/EmailContent$Attachment;->mMessageKey:J
 
@@ -411,7 +411,7 @@
 
     move-result-object v10
 
-    iget-wide v10, v10, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v10, v10, Lcom/android/email/provider/EmailContent;->mId:J
 
     iget-object v12, p0, Lcom/android/email/activity/MessageCompose$11;->this$0:Lcom/android/email/activity/MessageCompose;
 
@@ -484,7 +484,7 @@
 
     move-result-object v10
 
-    iget-wide v10, v10, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v10, v10, Lcom/android/email/provider/EmailContent;->mId:J
 
     iget-object v12, p0, Lcom/android/email/activity/MessageCompose$11;->this$0:Lcom/android/email/activity/MessageCompose;
 

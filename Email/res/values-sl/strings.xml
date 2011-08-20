@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Za večino računov lahko e-pošto nastavite v nekaj korakih</string>
     <string name="read_attachment_label">Preberi e-poštne priloge</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Označi kot prebrano</string>
     <string name="unread_action">Ozn.kot neprebr.</string>
     <string name="favorite_action">Priljubljene</string>
-    <string name="set_star_action">Dodaj\nzvezdico</string>
+    <string name="set_star_action">"Dodaj
+zvezdico"</string>
     <string name="remove_star_action">Odstrani zvezdico</string>
     <string name="refresh_action">Osveži</string>
     <string name="add_account_action">Dodaj račun</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Iskanje</string>
     <string name="open_action">Odpri</string>
     <string name="account_settings_action">Nastavitve računa</string>
-    <string name="remove_account_action">Odstrani\nračun</string>
+    <string name="remove_account_action">"Odstrani
+račun"</string>
     <string name="folders_action">Mape</string>
     <string name="accounts_action">Računi</string>
     <string name="mark_as_read_action">Označi kot prebrano</string>
@@ -81,7 +83,7 @@
     <string name="mailbox_list_title">Nabiralnik</string>
     <string name="message_list_load_more_messages_action">Naloži več sporočil</string>
     <string name="message_list_send_pending_messages_action">Pošlji odhodna sporočila</string>
-    <string name="message_list_title">%1$s: %2$s</string>
+    <string name="message_list_title" formatted="false">%1$s: %2$s</string>
     <string name="message_compose_to_hint">Za</string>
     <string name="message_compose_cc_hint">Kp</string>
     <string name="message_compose_bcc_hint">SKP</string>
@@ -94,7 +96,7 @@
     <string name="message_compose_error_invalid_email">Neveljavni e-poštni naslovi</string>
     <string name="message_compose_attachments_skipped_toast">Nekaterih prilog ni mogoče posredovati, ker niso bile prenesene</string>
     <string name="message_compose_attachment_size">Ni mogoče pripeti datoteke. Velikost datoteke je prevelika</string>
-    <string name="message_compose_display_name">%1$s in %2$d drugih</string>
+    <string name="message_compose_display_name" formatted="false">%1$s in %2$d drugih</string>
     <string name="message_compose_discard_dialog">Sporočilo ni poslano. Ga želite zavreči?</string>
     <string name="message_view_to_label">Za:</string>
     <string name="message_view_cc_label">Cc:</string>
@@ -225,7 +227,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Vibriranje</string>
     <string name="account_settings_ringtone">Izberi melodijo zvonjenja</string>
     <string name="account_settings_servers">Nastavitve strežnika</string>
-    <string name="account_delete_dlg_title">Odstrani\nračun</string>
+    <string name="account_delete_dlg_title">"Odstrani
+račun"</string>
     <string name="account_delete_dlg_instructions_fmt">Račun “%s” bo odstranjen iz e-pošte</string>
     <string name="provider_note_yahoo">Dostop do nabiralnika za nekatere vrste e-poštnih računov Yahoo! ni podprt. Če imate težave s povezovanjem, za več informacij obiščite yahoo.com</string>
     <string name="provider_note_yahoo_uk">Pred nastavljanjem tega e-poštnega računa obiščite spletno mesto Yahoo! in ustvarite geslo za e-poštni dostop POP3 za ta račun</string>
@@ -358,7 +361,7 @@
     <string name="account_settings_signature_hint">Ustvarite podpis za odhodna sporočila</string>
     <string name="notification_exchange_calendar_added">Koledar Exchange ActiveSync je dodan</string>
     <string name="gal_searching_fmt">Iskanje %s...…</string>
-    <string name="gal_completed_limited_fmt">Prvih %1$d rezultatov od %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Prvih %1$d rezultatov od %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Strežnik zahteva varnostne funkcije, ki jih vaša naprava ne podpira</string>
     <string name="message_view_invite_accept">Da</string>
     <string name="message_view_invite_maybe">Morda</string>
@@ -450,7 +453,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Vse</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Velikost e-pošte</string>
     <string name="account_settings_mail_empty_trash_label">Izprazni koš strežnika</string>
     <string name="account_settings_mail_empty_trash_message">Zbrišem vsebine v košu strežnika?</string>

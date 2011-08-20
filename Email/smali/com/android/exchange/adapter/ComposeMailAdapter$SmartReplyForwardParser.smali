@@ -155,7 +155,7 @@
     const/4 v1, 0x1
 
     .line 172
-    iget v2, p0, Lcom/android/exchange/adapter/ComposeMailAdapter$SmartReplyForwardParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x552
 

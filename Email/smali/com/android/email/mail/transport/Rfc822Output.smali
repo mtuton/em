@@ -79,7 +79,7 @@
     const/4 v10, 0x1
 
     .line 135
-    iget-wide v8, p1, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v8, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {p0, v8, v9}, Lcom/android/email/provider/EmailContent$Body;->restoreBodyWithMessageId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Body;
 
@@ -266,7 +266,7 @@
     const/4 v10, 0x1
 
     .line 225
-    iget-wide v8, p1, Lcom/android/email/provider/EmailContent$Message;->mId:J
+    iget-wide v8, p1, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {p0, v8, v9}, Lcom/android/email/provider/EmailContent$Body;->restoreBodyWithMessageId(Landroid/content/Context;J)Lcom/android/email/provider/EmailContent$Body;
 

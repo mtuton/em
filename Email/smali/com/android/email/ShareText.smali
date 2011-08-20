@@ -66,7 +66,7 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/email/ShareText;->mstrText:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/email/ToolTipItem;->mstrText:Ljava/lang/String;
 
     .line 430
     const-string v2, "ShareText"
@@ -81,7 +81,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/email/ShareText;->mstrText:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/ToolTipItem;->mstrText:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

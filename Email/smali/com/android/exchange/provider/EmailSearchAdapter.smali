@@ -133,7 +133,7 @@
 
     .prologue
     .line 41
-    iget-object v0, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/email/EmailAddressAdapter;->mContentResolver:Landroid/content/ContentResolver;
 
     return-object v0
 .end method
@@ -159,7 +159,7 @@
     move-result-wide v1
 
     .line 123
-    iget-object v3, p0, Lcom/android/exchange/provider/EmailSearchAdapter;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v3, p0, Lcom/android/email/EmailAddressAdapter;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v4, Lcom/android/email/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 

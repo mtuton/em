@@ -483,7 +483,7 @@
     .line 2131
     sget-object v0, Lcom/android/email/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v0, p0, Lcom/android/email/provider/EmailContent$Account;->mBaseUri:Landroid/net/Uri;
+    iput-object v0, p0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     .line 2135
     const-string v0, "content://settings/system/notification_sound"
@@ -579,14 +579,14 @@
     .line 3211
     sget-object v0, Lcom/android/email/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v0, p0, Lcom/android/email/provider/EmailContent$Account;->mBaseUri:Landroid/net/Uri;
+    iput-object v0, p0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     .line 3212
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iput-wide v0, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 3213
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -1704,12 +1704,12 @@
 
     move-result-wide v1
 
-    iput-wide v1, p0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iput-wide v1, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 2236
     sget-object v1, Lcom/android/email/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v1, p0, Lcom/android/email/provider/EmailContent$Account;->mBaseUri:Landroid/net/Uri;
+    iput-object v1, p0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     .line 2237
     invoke-interface {p1, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -2180,7 +2180,7 @@
 
     move-object/from16 v0, v19
 
-    iget-object v0, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mBaseUri:Landroid/net/Uri;
+    iget-object v0, v0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     move-object/from16 v19, v0
 
@@ -2242,7 +2242,7 @@
 
     move-object/from16 v0, v19
 
-    iget-object v0, v0, Lcom/android/email/provider/EmailContent$HostAuth;->mBaseUri:Landroid/net/Uri;
+    iget-object v0, v0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     move-object/from16 v19, v0
 
@@ -2302,7 +2302,7 @@
 
     move-object/from16 v0, p0
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     move-wide/from16 v19, v0
 
@@ -2461,7 +2461,7 @@
     :cond_7
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/email/provider/EmailContent$Account;->mBaseUri:Landroid/net/Uri;
+    iget-object v0, v0, Lcom/android/email/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
 
     move-object/from16 v19, v0
 
@@ -2557,7 +2557,7 @@
 
     move-object/from16 v2, v19
 
-    iput-wide v0, v2, Lcom/android/email/provider/EmailContent$HostAuth;->mId:J
+    iput-wide v0, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 3025
     .end local v12           #newId:J
@@ -2600,7 +2600,7 @@
 
     move-object/from16 v2, v19
 
-    iput-wide v0, v2, Lcom/android/email/provider/EmailContent$HostAuth;->mId:J
+    iput-wide v0, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 3030
     .end local v12           #newId:J
@@ -2627,7 +2627,7 @@
 
     move-object/from16 v2, p0
 
-    iput-wide v0, v2, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iput-wide v0, v2, Lcom/android/email/provider/EmailContent;->mId:J
 
     .line 3032
     new-instance v10, Landroid/content/Intent;
@@ -3780,7 +3780,7 @@
 
     if-eqz v5, :cond_0
 
-    iget-wide v5, p0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v5, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     cmp-long v5, v0, v5
 
@@ -3844,7 +3844,7 @@
     :cond_0
     sget-object v5, Lcom/android/email/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
 
-    iget-wide v6, p0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v6, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v5, v6, v7}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -3927,7 +3927,7 @@
     const/4 v2, 0x0
 
     .line 3150
-    iget-wide v0, p0, Lcom/android/email/provider/EmailContent$Account;->mId:J
+    iget-wide v0, p0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 

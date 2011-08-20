@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_setup_basics_instructions">Може да конфиг. email за повечето акаунти с няколко действия</string>
     <string name="read_attachment_label">четене на прикачените имейл файлове</string>
@@ -31,7 +31,8 @@
     <string name="read_action">Маркирай като прочетено</string>
     <string name="unread_action">Марк. нечетено</string>
     <string name="favorite_action">Предпочитани</string>
-    <string name="set_star_action">Добави\nзвезда</string>
+    <string name="set_star_action">"Добави
+звезда"</string>
     <string name="remove_star_action">Махни звездата</string>
     <string name="refresh_action">Презар.</string>
     <string name="add_account_action">Добавяне на акаунт</string>
@@ -40,7 +41,8 @@
     <string name="search_action">Търсене</string>
     <string name="open_action">Отваряне</string>
     <string name="account_settings_action">Настройки на акаунт</string>
-    <string name="remove_account_action">Премахни\nакаунта</string>
+    <string name="remove_account_action">"Премахни
+акаунта"</string>
     <string name="folders_action">Папки</string>
     <string name="accounts_action">Акаунти</string>
     <string name="mark_as_read_action">Маркирай като прочетено</string>
@@ -81,7 +83,7 @@
     <string name="mailbox_list_title">Пощенска кутия</string>
     <string name="message_list_load_more_messages_action">Зареждане на повече съобщения</string>
     <string name="message_list_send_pending_messages_action">Изпращане на изходящите съобщения</string>
-    <string name="message_list_title">%1$s: %2$s</string>
+    <string name="message_list_title" formatted="false">%1$s: %2$s</string>
     <string name="message_compose_to_hint">До</string>
     <string name="message_compose_cc_hint">Копие</string>
     <string name="message_compose_bcc_hint">Скрито копие</string>
@@ -94,7 +96,7 @@
     <string name="message_compose_error_invalid_email">Невалидни email адреси</string>
     <string name="message_compose_attachments_skipped_toast">Някои прикачени файлове не могат да бъдат препратени, тъй като не са били изтеглени</string>
     <string name="message_compose_attachment_size">Файлът не може да се прикачи. Размерът на файла е твърде голям</string>
-    <string name="message_compose_display_name">%1$s и %2$d други</string>
+    <string name="message_compose_display_name" formatted="false">%1$s и %2$d други</string>
     <string name="message_compose_discard_dialog">Съобщението не е изпратено. Отхвърляне?</string>
     <string name="message_view_to_label">До:</string>
     <string name="message_view_cc_label">Копие:</string>
@@ -225,7 +227,8 @@
     <string name="account_settings_vibrate_when_dlg_title">Вибрация</string>
     <string name="account_settings_ringtone">Избор на тон на звънене</string>
     <string name="account_settings_servers">Натройки сървър</string>
-    <string name="account_delete_dlg_title">Премахни\nакаунта</string>
+    <string name="account_delete_dlg_title">"Премахни
+акаунта"</string>
     <string name="account_delete_dlg_instructions_fmt">Акаунтът “%s” ще бъде премахнат от Email</string>
     <string name="provider_note_yahoo">Някои типове пощенски акаунти на Yahoo! не поддържат достъп до пощенската кутия. Ако имате трудности при свързването, посетете yahoo.com за повече информация</string>
     <string name="provider_note_yahoo_uk">Преди да настроите този имейл акаунт, посетете уеб сайта Yahoo! и разрешете POP3 имейл достъп за този акаунт</string>
@@ -357,7 +360,7 @@
     <string name="account_settings_signature_hint">Създайте подпис за вашите изходящи съобщения</string>
     <string name="notification_exchange_calendar_added">Добавен е календар на Exchange ActiveSync</string>
     <string name="gal_searching_fmt">Търсене в %s...…</string>
-    <string name="gal_completed_limited_fmt">Първите %1$d резултата от %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">Първите %1$d резултата от %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Сървърът изисква функции за защита, които не се поддържат от вашето устройство</string>
     <string name="message_view_invite_accept">Да</string>
     <string name="message_view_invite_maybe">Може би</string>
@@ -449,7 +452,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">Всичко</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Размер на email</string>
     <string name="account_settings_mail_empty_trash_label">Изпразни кошчето в сървъра</string>
     <string name="account_settings_mail_empty_trash_message">Изтриване на съдържанието на кошчето в сървъра?</string>

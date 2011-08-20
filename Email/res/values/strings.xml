@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="build_number">20080722-0001</string>
     <string name="meeting_invitation" />
@@ -93,20 +93,32 @@
     <string name="mailbox_list_title">Mailbox</string>
     <string name="message_list_load_more_messages_action">Load more messages</string>
     <string name="message_list_send_pending_messages_action">Send outgoing messages</string>
-    <string name="message_list_title">%s: %s</string>
+    <string name="message_list_title" formatted="false">%s: %s</string>
     <string name="message_compose_to_hint">To</string>
     <string name="message_compose_cc_hint">Cc</string>
     <string name="message_compose_bcc_hint">Bcc</string>
     <string name="message_compose_subject_hint">Subject</string>
     <string name="message_compose_body_hint">Compose email</string>
-    <string name="message_compose_fwd_header_fmt">\n\n-------- Original message --------\nSubject: %1$s\nFrom: %2$s\nTo: %3$s\nCC: %4$s\n\n</string>
-    <string name="message_compose_reply_header_fmt">\n\n%s wrote:\n\n</string>
+    <string name="message_compose_fwd_header_fmt" formatted="false">"
+
+-------- Original message --------
+Subject: %1$s
+From: %2$s
+To: %3$s
+CC: %4$s
+
+"</string>
+    <string name="message_compose_reply_header_fmt">"
+
+%s wrote:
+
+"</string>
     <string name="message_compose_quoted_text_label">Original message</string>
     <string name="message_compose_error_no_recipients">Add recipients</string>
     <string name="message_compose_error_invalid_email">Invalid email addresses</string>
     <string name="message_compose_attachments_skipped_toast">Some attachments cannot be forwarded because they have not downloaded</string>
     <string name="message_compose_attachment_size">Unable to attach file. File size too large</string>
-    <string name="message_compose_display_name">%1$s and %2$d others</string>
+    <string name="message_compose_display_name" formatted="false">%1$s and %2$d others</string>
     <string name="message_compose_discard_dialog">Message not sent. Discard?</string>
     <string name="message_view_to_label">To:</string>
     <string name="message_view_cc_label">Cc:</string>
@@ -211,13 +223,16 @@
     <string name="account_setup_options_mail_window_all">All emails</string>
     <string name="account_setup_failed_dlg_auth_message">User name or password incorrect</string>
     <string name="account_setup_autodiscover_failed_dlg_auth_message">Autodiscover failed</string>
-    <string name="account_setup_failed_dlg_auth_message_fmt">Username or password incorrect.\n(%s)</string>
+    <string name="account_setup_failed_dlg_auth_message_fmt">"Username or password incorrect.
+(%s)"</string>
     <string name="account_setup_failed_dlg_certificate_message">Cannot safely connect to server</string>
-    <string name="account_setup_failed_dlg_certificate_message_fmt">Cannot safely connect to server.\n(%s)</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">"Cannot safely connect to server.
+(%s)"</string>
     <string name="account_setup_failed_dlg_server_message">Cannot connect to server</string>
-    <string name="account_setup_failed_dlg_server_message_fmt">Cannot connect to server.\n(%s)</string>
-    <string name="account_setup_failed_tls_required">Server doesn\'t support TLS</string>
-    <string name="account_setup_failed_auth_required">Server doesn\'t support authentication</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">"Cannot connect to server.
+(%s)"</string>
+    <string name="account_setup_failed_tls_required">"Server doesn't support TLS"</string>
+    <string name="account_setup_failed_auth_required">"Server doesn't support authentication"</string>
     <string name="account_setup_failed_security">Unable to open connection to server due to security error</string>
     <string name="account_setup_failed_ioerror">Unable to connect server</string>
     <string name="account_setup_failed_dlg_edit_details_action">Edit details</string>
@@ -336,7 +351,7 @@
     <string name="account_settings_add_signature_label">Add signature</string>
     <string name="account_settings_signature_label">Signature</string>
     <string name="message_view_forwarding">Forwarding</string>
-    <string name="account_settings_signature_default_value">Sent from my mobile</string>
+    <string name="account_settings_signature_default_value">Sent from Samsung Mobile</string>
     <string name="add_to_contacts_action">Add to Contacts</string>
     <string name="recent_list_empty">No contacts</string>
     <string name="account_setup_options_sync_calendar_label">Sync Calendar</string>
@@ -345,7 +360,7 @@
     <string name="exchange_name_alternate">Microsoft Exchange ActiveSync</string>
     <string name="device_admin_label">Email</string>
     <string name="empty_str">Empty</string>
-    <string name="message_about_storing_imei">By activating this application you accept that part of your mobile phone data (comprising IMEI and model name) will be stored, processed and used by Samsung for the purpose of reporting activation of the application to the licensors of the application software itself. Such data held by Samsung will be dealt with strictly in accordance with Samsung\'s privacy policy. A copy of the policy is available upon request. Continue?</string>
+    <string name="message_about_storing_imei">"By activating this application you accept that part of your mobile phone data (comprising IMEI and model name) will be stored, processed and used by Samsung for the purpose of reporting activation of the application to the licensors of the application software itself. Such data held by Samsung will be dealt with strictly in accordance with Samsung's privacy policy. A copy of the policy is available upon request. Continue?"</string>
     <string name="unable_to_attach">Not enough memory in phone memory. Delete some items and try again</string>
     <string name="attach_image">Pictures</string>
     <string name="attach_take_photo">Capture picture</string>
@@ -390,7 +405,7 @@
     <string name="account_settings_signature_hint">Create signature for your outgoing messages</string>
     <string name="notification_exchange_calendar_added">Exchange ActiveSync calendar added</string>
     <string name="gal_searching_fmt">Searching %s...…</string>
-    <string name="gal_completed_limited_fmt">First %1$d results from %2$s</string>
+    <string name="gal_completed_limited_fmt" formatted="false">First %1$d results from %2$s</string>
     <string name="account_setup_failed_security_policies_unsupported">Server requires security features not supported by your device</string>
     <string name="message_view_invite_accept">Accept</string>
     <string name="message_view_invite_maybe">Tentative</string>
@@ -482,7 +497,7 @@
     <string name="account_setup_options_mail_email_size_50kb">50 KB</string>
     <string name="account_setup_options_mail_email_size_100kb">100 KB</string>
     <string name="account_setup_options_mail_email_size_all">All</string>
-    <item type="string" name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</item>
+    <string name="account_setup_options_mail_email_size_default">@string/account_setup_options_mail_email_size_2kb</string>
     <string name="account_settings_mail_email_size_label">Email size</string>
     <string name="account_settings_mail_empty_trash_label">Empty server trash</string>
     <string name="account_settings_mail_empty_trash_message">Delete contents in server trash?</string>
@@ -760,7 +775,7 @@
     <string name="policy_strong_algorith">Negotiate a strong algorithm</string>
     <string name="policy_any_algorithm">Negotiate any algorithm</string>
     <string name="smime_more_message">Download more details to show S/MIME messages. Continue?</string>
-    <string name="account_setup_failed_activation_error">Activation failed. Unable to connect to network. Try again with network provider\'s default APN</string>
+    <string name="account_setup_failed_activation_error">"Activation failed. Unable to connect to network. Try again with network provider's default APN"</string>
     <string name="messageview_body_overflow_message">[Message clipped]</string>
     <string name="description_composer">composer</string>
     <string name="description_favorite_on">favorite on</string>

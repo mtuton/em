@@ -71,7 +71,7 @@
     invoke-virtual {p0, p1, p2}, Lorg/mozilla/intl/chardet/nsDetector;->HandleData([BI)Z
 
     .line 159
-    iget-boolean v0, p0, Lorg/mozilla/intl/chardet/nsDetector;->mDone:Z
+    iget-boolean v0, p0, Lorg/mozilla/intl/chardet/nsPSMDetector;->mDone:Z
 
     goto :goto_0
 .end method

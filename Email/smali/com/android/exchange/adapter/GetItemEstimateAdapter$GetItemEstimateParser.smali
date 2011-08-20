@@ -83,9 +83,9 @@
     iput-object v0, p0, Lcom/android/exchange/adapter/GetItemEstimateAdapter$GetItemEstimateParser;->estimations:Ljava/util/ArrayList;
 
     .line 140
-    iget-object v0, p0, Lcom/android/exchange/adapter/GetItemEstimateAdapter$GetItemEstimateParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
+    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/email/provider/EmailContent$Mailbox;
 
-    iget-wide v0, v0, Lcom/android/email/provider/EmailContent$Mailbox;->mId:J
+    iget-wide v0, v0, Lcom/android/email/provider/EmailContent;->mId:J
 
     invoke-static {v0, v1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
@@ -196,9 +196,9 @@
     invoke-virtual {v2, v3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;
 
     .line 216
-    iget-object v3, p0, Lcom/android/exchange/adapter/GetItemEstimateAdapter$GetItemEstimateParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v3, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
-    iget-object v3, v3, Lcom/android/exchange/EasSyncService;->mContext:Landroid/content/Context;
+    iget-object v3, v3, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3, v2}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
@@ -251,7 +251,7 @@
     if-eq v0, v1, :cond_2
 
     .line 154
-    iget v0, p0, Lcom/android/exchange/adapter/GetItemEstimateAdapter$GetItemEstimateParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x18d
 
@@ -316,7 +316,7 @@
 
     .line 171
     .local v1, estimation:Ljava/lang/String;
-    iget v2, p0, Lcom/android/exchange/adapter/GetItemEstimateAdapter$GetItemEstimateParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x18a
 
@@ -347,7 +347,7 @@
 
     .line 173
     :cond_2
-    iget v2, p0, Lcom/android/exchange/adapter/GetItemEstimateAdapter$GetItemEstimateParser;->tag:I
+    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v3, 0x18c
 
@@ -396,7 +396,7 @@
     if-eq v0, v1, :cond_2
 
     .line 193
-    iget v0, p0, Lcom/android/exchange/adapter/GetItemEstimateAdapter$GetItemEstimateParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     if-ne v0, v2, :cond_1
 
@@ -407,7 +407,7 @@
 
     .line 195
     :cond_1
-    iget v0, p0, Lcom/android/exchange/adapter/GetItemEstimateAdapter$GetItemEstimateParser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
 
     const/16 v1, 0x18e
 
