@@ -77,7 +77,7 @@
     const-string v4, "EasDevInfoSvc"
 
     .line 83
-    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v0, "iPhone"
 
     iput-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mModel:Ljava/lang/String;
 
@@ -91,12 +91,12 @@
     iput-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mImei:Ljava/lang/String;
 
     .line 85
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    const-string v0, "iPhone"
 
     iput-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mFriendlyName:Ljava/lang/String;
 
     .line 86
-    const-string v0, "Android-Linux"
+    const-string v0, "iOS"
 
     iput-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mOS:Ljava/lang/String;
 
@@ -207,7 +207,7 @@
     if-ltz v0, :cond_0
 
     .line 94
-    const-string v0, "Android/0.3"
+    const-string v0, "Apple-iPhone3C1/807.4"
 
     iput-object v0, p0, Lcom/android/exchange/EasDevInfoSvc;->mUserAgent:Ljava/lang/String;
 
